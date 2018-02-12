@@ -24,7 +24,7 @@
    
      function winOpen(){
     	 
-    	 var pUrl="NewFile.jsp";
+    	 var pUrl="reserve.jsp";
     	 var pName="new";
     	 var sizeX=1050;
     	 var sizeY=670;
@@ -273,7 +273,7 @@
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="user-image"
-								style="background-image: url(' img/demo/profile3.jpg');"></span>
+								style="background-image: url(' ../../img/demo/profile3.jpg');"></span>
 								Hi, John
 						</a>
 							<div class="dropdown-menu">
@@ -301,17 +301,26 @@
 						<div class="page-header bordered mb0">
 							<div class="row">
 								<div class="col-md-8">
-									<a href="#" class="btn-return" title="Back"><i
+								<!-- onclick="self.location='list.jsp';" -->
+									<a href="#" class="btn-return" title="Back" onclick="history.back()"><i
 										class="fa fa-angle-left"></i></a>
 									<h1>
-										${article.store_nm }<span class="label label-bordered">한식</span>
+										${article.store_nm }<span class="label label-bordered">${article.cate_nm }</span>
 										<small><i class="fa fa-map-marker"></i> 서울시 중구 남대문로
 											120 대일빌딩 3층</small>
 									</h1>
 								</div>
 								<div class="col-md-4">
 									<div class="price">
-										예약가능좌석: 20좌석 <small>현재시간:오후3시30분</small>
+										예약가능좌석 : ${article.avl_tbl_cnt }
+										<small><%Date date = new Date(); SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd");
+      									String strdate = simpleDate.format(date);%>
+   										<%Calendar cal = Calendar.getInstance();%>
+										<%= cal.get(Calendar.YEAR) %>년
+										<%= cal.get(Calendar.MONTH) + 1 %>월
+										<%= cal.get(Calendar.DATE) %>일
+										<%= cal.get(Calendar.HOUR_OF_DAY) %>시
+										<%= cal.get(Calendar.MINUTE) %>분</small>
 									</div>
 								</div>
 							</div>
@@ -333,9 +342,9 @@
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/1.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/1.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																src="img/demo/property/1.jpg"
+																src="../../img/demo/property/1.jpg"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -343,9 +352,9 @@
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/2.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/2.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/2.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/2.jpg" src="../../img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -353,9 +362,9 @@
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/3.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/3.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/3.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/3.jpg" src="../../img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -363,9 +372,9 @@
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/4.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/4.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/4.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/4.jpg" src="../../img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -373,9 +382,9 @@
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/5.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/5.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/5.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/5.jpg" src="../../img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -388,39 +397,39 @@
 											<div class="swiper-container gallery-thumbs">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/1.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/1.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/2.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/2.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/3.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/3.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/4.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/4.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/5.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/5.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/6.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/6.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/7.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/7.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/8.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/8.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/9.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/9.jpg" class="img-fluid"
 															alt="">
 													</div>
 												</div>
@@ -428,25 +437,19 @@
 										</div>
 										<div>
 											<ul class="item-features">
-												<li><span>매장테이블</span> 테이블수</li>
-												<li><span>2인</span> 4자리</li>
-												<li><span>4인</span> 10자리</li>
-												<li><span>6인</span> 2자리</li>
-												<li><span>룸</span> 3자리</li>
+												<li><span>전체테이블</span>${article.tot_tbl_cnt}</li>
+												<li><span>이용중인테이블</span>${article.cur_tbl_cnt}</li>
+												<li style="font-color:red"><span style="font-color:red">예약가능좌석</span>${article.avl_tbl_cnt}</li>
 											</ul>
 											<div class="item-description">
 												<h3 class="headline">매장 소개</h3>
 												<p>
-													<strong>윤식당</strong> 이렇게 생겨먹었고 저렇게 생겼다. 이래저래해서 처음 창립되었다.
+													<strong>${article.store_nm}</strong> ${article.store_dinfo}
 											</div>
 											<h3 class="headline">메뉴</h3>
 											<ul class="checked feature-list" id="BK_MENU">
-												<li><strong>스테이크:</strong> 17,000원</li>
-												<li><strong>함박스테이크:</strong> 18,000원</li>
-												<li><strong>돈까스:</strong> 15,000원</li>
-												<li><strong>크림스파게티:</strong> 10,000원</li>
-												<li><strong>봉골레파스타:</strong> 12,000원</li>
-												<li><strong>커피:</strong> 3,000원</li>
+												<li><strong>${article.menu_nm1} :</strong> ${article.menu_nm1_sal}</li>
+												<li><strong>${article.menu_nm2} :</strong> ${article.menu_nm2_sal}</li>
 											</ul>
 
 											<div class="item-attachments">
@@ -480,23 +483,25 @@
 															<table class="table v1">
 																<tr>
 																	<td>영업시간</td>
-																	<td>11:30~22:00</td>
+																	<td>${article.store_octime}</td>
 																</tr>
 																<tr>
 																	<td>연락처</td>
-																	<td>02-1234-1234</td>
+																	<td>${article.store_tel}</td>
 																</tr>
 																<tr>
 																	<td>예약가능좌석</td>
-																	<td id="AVL_TBL_CNT">20좌석</td>
+																	<td id="AVL_TBL_CNT">${article.avl_tbl_cnt}</td>
 																</tr>
-																<tr>
+																<!-- <tr>
 																	<td>대기현황</td>
 																	<td>0테이블</td>
-																</tr>
+																</tr> -->
 																<tr>
 																	<td>현재시간</td>
-																	<td id="">오후3시30분</td>
+																	<td id=""><%=cal.get(Calendar.DATE)%>일
+																	<%=cal.get(Calendar.HOUR_OF_DAY)%>시
+																	<%=cal.get(Calendar.MINUTE)%>분</td>
 																</tr>
 															</table>
 														</div>
@@ -509,16 +514,16 @@
 													<div class="media-left">
 														<a href="agent.html"> <img
 															class="media-object rounded-circle"
-															src="img/demo/profile.jpg" width="64" height="64" alt="">
+															src="../../img/demo/profile.jpg" width="64" height="64" alt="">
 														</a>
 													</div>
 													<div class="media-body">
 														<h4 class="media-heading">
-															<a href="agent.html">강호동</a>
+															<a href="agent.html">${article.store_owner}</a>
 														</h4>
 														<p>
-															<i class="fa fa-phone" aria-hidden="true"></i>
-															전화번호:02-1234-1234</a>
+															<i class="fa fa-phone" aria-hidden="true">전화번호<br>
+															${article.store_tel}</i>
 														</p>
 
 													</div>
