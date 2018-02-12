@@ -29,13 +29,52 @@
 <script src="lib/aos/aos.js"></script>
 <script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
 <script src="lib/lib.js"></script>
+<script>
+var placeSearch, autocomplete;
+var componentForm = {
+	//street_number: 'short_name',
+	//route: 'long_name',
+	locality: 'long_name',
+	administrative_area_level_1: 'long_name',
+	country: 'long_name',
+	postal_code: 'long_name'
+};
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+function initAutocomplete() {
+	autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
+	autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+	var place = autocomplete.getPlace();
+	for (var component in componentForm) {
+		document.getElementById(component).value = '';
+		document.getElementById(component).disabled = false;
+	}
+	
+	for (var i = 0; i < place.address_components.length; i++) {
+		var addressType = place.address_components[i].types[0];
+		if (componentForm[addressType]) {
+			var val = place.address_components[i][componentForm[addressType]];
+			document.getElementById(addressType).value = val;
+		}
+	}
+}
+</script> 
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script> 
+<script>
+	tinymce.init({
+		selector: '.text-editor',
+		height: 200,
+		menubar: false,
+		branding: false,
+		plugins: [
+			'lists link image preview',
+		],
+		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
+	});
+        </script>
+
 </head>
 <body>
 <div id="main">
@@ -142,7 +181,7 @@
                 <ul class="list-unstyled">
                   <li class="title">Account Pages</li>
                   <li><a href="my_listing_add.html">Add Listing</a></li>
-                <li><a href="my_bookmarked_listings.html">Bookmarked Listing</a></li>
+                  <li><a href="my_bookmarked_listings.jsp">우리매장 예약현황</a></li>
                   <li><a href="my_listings.html">My Listings</a></li>
                   <li><a href="my_profile.html">My Profile</a></li>
                 <li><a href="my_password.html">Change Password</a></li>
@@ -198,7 +237,8 @@
                 <div class="list-group no-border list-unstyled">
                   <span class="list-group-item heading">Manage Listings</span>
                   <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> Add Listing</a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> Bookmarked Listing</span>
+                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o">
+                  </i> 우리매장 예약현황 <span>
                     <span class="badge badge-primary badge-pill">10</span>
                     </a>
                   <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> My Listings</span>
@@ -215,56 +255,70 @@
               </div>
             </div>
           </div>
+          
+          <!--  매장정보 시작 -->
           <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
-              <h1>My profile <small>Manage your public profile</small></h1>
+              <h1> 매장명(세션으로 받아온다.) <small> 000관리자님 환영합니다(세션으로 받아온다.) </small></h1>
             </div>
             <form action="index.php">
-              <h3 class="subheadline">Basic Information</h3>
+              <h3 class="subheadline"> 매장No. 00000 </h3>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="John">
+                    <label> 매장명 </label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="강식당">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Last Name</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="Doe">
+                    <label>업종명</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="양식">
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <label>Your Email</label>
-                <input type="text" class="form-control form-control-lg" value="john.doe@email.com">
+                <label>매장소개</label>
+                <textarea class="form-control form-control-lg text-editor" name="content" rows="10" cols="73" maxlength = 200>
+                ${article.content}손님보다 사장이 더 많이 먹는 식당! 마진 0% 리얼 100% 진짜 강식당이 찾아온다!</textarea></td>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="+14155552671">
+                    <label>매장연락처</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
                   </div>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="form-group">
                     <label>Fax</label>
                     <input type="text" class="form-control form-control-lg" placeholder="" value="">
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="form-group">
-                <label>About Me</label>
+                <label> 상세페이지 매장설명</label>
                 <textarea class="form-control form-control-lg text-editor" placeholder=""></textarea>
               </div>
-              <h3 class="subheadline">Social Links</h3>
+               <div>
+               	<label> 매장 보유테이블 정보 </label>
+                <ul class="item-features">
+                  <li>  <span>540</span> 2인석 </li>
+                  <li>  <span>3</span> 4인석 </li>
+                  <li>  <span>1</span> 6인석 </li>
+                  <li>  <span>2</span> 단체룸 </li>
+                  <li>  <span>있음</span> 아기의자 </li>
+                  <li>  <span>있음</span> 놀이방 </li>
+                </ul>
+               </div>
+             <!--  <h3 class="subheadline">Social Links</h3> -->
               <div class="form-group">
-                <label>Twitter</label>
-                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-twitter"></i></span>
+                <label>Social Links</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-instagram"></i></span>
                   <input type="text" class="form-control form-control-lg" placeholder="">
                 </div>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label>Facebook</label>
                 <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-facebook"></i></span>
                   <input type="text" class="form-control form-control-lg" placeholder="">
@@ -281,8 +335,8 @@
                 <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-linkedin"></i></span>
                   <input type="text" class="form-control form-control-lg" placeholder="">
                 </div>
-              </div>
-              <h3 class="subheadline">Agent/Company Profile</h3>
+              </div> -->
+              <!-- <h3 class="subheadline">Agent/Company Profile</h3>
               <div class="form-group">
                 <label>Agent/Company Title</label>
                 <input type="text" class="form-control form-control-lg">
@@ -329,9 +383,11 @@
                   </div>
                 </div>
               </div>
-              <hr>
+              <hr> -->
               <div class="form-group action">
-                <button type="submit" class="btn btn-lg btn-primary">Update Profile</button>
+                <button type="submit" class="btn btn-lg btn-primary">수정취소</button>
+                <button type="submit" class="btn btn-lg btn-primary">정보수정</button>
+                <button type="submit" class="btn btn-lg btn-primary">미리보기</button>
               </div>
             </form>
           </div>
@@ -392,50 +448,5 @@
   </div>
 </footer>
 </div>
-<script>
-var placeSearch, autocomplete;
-var componentForm = {
-	//street_number: 'short_name',
-	//route: 'long_name',
-	locality: 'long_name',
-	administrative_area_level_1: 'long_name',
-	country: 'long_name',
-	postal_code: 'long_name'
-};
-
-function initAutocomplete() {
-	autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
-	autocomplete.addListener('place_changed', fillInAddress);
-}
-
-function fillInAddress() {
-	var place = autocomplete.getPlace();
-	for (var component in componentForm) {
-		document.getElementById(component).value = '';
-		document.getElementById(component).disabled = false;
-	}
-	
-	for (var i = 0; i < place.address_components.length; i++) {
-		var addressType = place.address_components[i].types[0];
-		if (componentForm[addressType]) {
-			var val = place.address_components[i][componentForm[addressType]];
-			document.getElementById(addressType).value = val;
-		}
-	}
-}
-</script> 
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script> 
-<script>
-	tinymce.init({
-		selector: '.text-editor',
-		height: 200,
-		menubar: false,
-		branding: false,
-		plugins: [
-			'lists link image preview',
-		],
-		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
-	});
-        </script>
 </body>
 </html>
