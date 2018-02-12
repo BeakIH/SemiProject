@@ -11,7 +11,7 @@
 <!--                      
                 -->
 <% response.sendRedirect("/SemiProject/jsp/main.do"); %>
-3
+
 </body>
 </html>
 
