@@ -6,27 +6,27 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="../lib/animate.css" rel="stylesheet">
-<link href="../lib/selectric/selectric.css" rel="stylesheet">
-<link href="../lib/swiper/css/swiper.min.css" rel="stylesheet">
-<link href="../lib/aos/aos.css" rel="stylesheet">
-<link href="../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../css/style.css" rel="stylesheet">
+<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../lib/animate.css" rel="stylesheet">
+<link href="../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../lib/swiper/css/swiper.min.css" rel="stylesheet">
+<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../lib/jquery-3.2.1.min.js"></script>
-<script src="../lib/popper.min.js"></script>
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../lib/selectric/jquery.selectric.js"></script>
-<script src="../lib/swiper/js/swiper.min.js"></script>
-<script src="../lib/aos/aos.js"></script>
-<script src="../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="../lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="../lib/lib.js"></script>
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../lib/swiper/js/swiper.min.js"></script>
+<script src="../../lib/aos/aos.js"></script>
+<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../lib/lib.js"></script>
 
 <script>
 /* 검색창 카테고리 변경시 placeholder 변경 */
@@ -71,7 +71,7 @@ $(document).ready(function(){
           메인 <span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
-            <a href="index7.do" class="dropdown-item">메인페이지</a>
+            <a href="main.do" class="dropdown-item">메인페이지</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -79,7 +79,7 @@ $(document).ready(function(){
           Listings
         </a>
         <div class="dropdown-menu">
-            <a href="test2index.jsp" class="dropdown-item">목록보기</a>
+            <a href="list.do" class="dropdown-item">목록보기</a>
             <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
@@ -116,7 +116,7 @@ $(document).ready(function(){
                   <li><a href="index4.html">Homepage 4</a></li>
                   <li><a href="index5.html">Homepage 5</a></li>
                   <li><a href="index6.html">Homepage 6</a></li>
-                  <li><a href="index7.do">메인페이지</a></li>
+                  <li><a href="main.do">메인페이지</a></li>
                   <li class="title">Login Pages</li>
                   <li><a href="signin.html">Signin</a></li>
                   <li><a href="register.html">Register</a></li>
@@ -207,7 +207,8 @@ $(document).ready(function(){
           <h2>밥 사 조</h2>
           <h3>~ 언제 어디서나 쉽게 맛집을 검색할 수 있습니다 ~</h3>
         </div>
-        <form action="test2.do"><!-- 이부분을 test2로 -->
+        <!-- <form action="/jsp/storeList/list.do"></form> -->
+        <form action="/SemiProject/jsp/storeList/list.do"><!-- 이부분을 test2로 -->
           <div class="row justify-content-md-center">
             <div class="col-md-9 col-lg-8">
             <div class="input-group input-group-lg">
@@ -237,7 +238,7 @@ $(document).ready(function(){
       </div>
     </div>
   </div>
-  <video class="search-video" autoplay loop width="0" height="0" src="../video/mainpage_video.mp4"></video>
+  <video class="search-video" autoplay loop width="0" height="0" src="../../video/mainpage_video.mp4"></video>
 </div>
 </div>
 <div id="content" class="pt0 pb0">

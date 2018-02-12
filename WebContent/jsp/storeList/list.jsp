@@ -25,29 +25,29 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../lib/animate.css" rel="stylesheet">
+<link href="../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 
 <!-- 내가 추가한 css, 나중에 바꿔야함 -->
 <!-- <link href="./style.css" rel="stylesheet"> -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/sidr/jquery.sidr.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../lib/aos/aos.js"></script>
+<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../lib/sidr/jquery.sidr.min.js"></script>
+<script src="../../lib/lib.js"></script>
 
 
 <!-- 나중에 아래쪽 script 문 따로 .js 파일 생성해서 정리해야함 -->
@@ -63,7 +63,7 @@ $(function(){
 		}else if(($(this).val()) == 1){// 카테고리 가게
 			$('.form-group input#cCategory').attr("placeholder","ex) 엘본 더 테이블, 경화루, 가온").placeholder();
 		}else if(($(this).val()) == 2){// 카테고리 지역
-			$('.form-group input#cCategory').attr("placeholder","ex) 강남, 공릉, 성북").placeholder();
+			$('.form-group input#cCategory').attr("placeholder","ex) 1~5층 ( 해당 숫자만 입력하세요 )").placeholder();
 		}
 	});
 });
@@ -82,7 +82,7 @@ $(function(){
 	    }else{
 	    	// max 값이 있는 경우 둘다넘겨줌
 	    	alert('max값이 있는 경우');
-	    	location.href='test2.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
+	    	location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
 	    }
 	});
 });
@@ -99,7 +99,7 @@ $(function(){
 	    }else{
 	    	// min 값이 있는 경우 둘다넘겨줌
 	    	alert('min값이 있는 경우');
-	    	location.href='test2.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
+	    	location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
 	    }
 	});
 });
@@ -143,7 +143,7 @@ $(function(){
 		//////////////////////
 		
 		$(this).val();
-		location.href='test2.do?cate_nm='+$(this).val();
+		location.href='list.do?cate_nm='+$(this).val();
 	});
 });
 
@@ -230,7 +230,7 @@ $(document).ready(function(){
             <a href="index4.html" class="dropdown-item">Homepage 4</a>
             <a href="index5.html" class="dropdown-item">Homepage 5</a>
             <a href="index6.html" class="dropdown-item">Homepage 6</a>
-            <a href="index7.do" class="dropdown-item">메인페이지</a>
+            <a href="main.do" class="dropdown-item">메인페이지</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -238,7 +238,7 @@ $(document).ready(function(){
           Listings
         </a>
         <div class="dropdown-menu">
-            <a href="test2.do" class="dropdown-item">목록보기</a>
+            <a href="list.do" class="dropdown-item">목록보기</a>
             <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
@@ -275,7 +275,7 @@ $(document).ready(function(){
                   <li><a href="index4.html">Homepage 4</a></li>
                   <li><a href="index5.html">Homepage 5</a></li>
                   <li><a href="index6.html">Homepage 6</a></li>
-                  <li><a href="index7.do">메인페이지</a></li>
+                  <li><a href="main.do">메인페이지</a></li>
                   <li class="title">Login Pages</li>
                   <li><a href="signin.html">Signin</a></li>
                   <li><a href="register.html">Register</a></li>
@@ -285,7 +285,7 @@ $(document).ready(function(){
               <div class="col-md-6 col-lg-3">
                 <ul class="list-unstyled">
                   <li class="title">Property Listing</li>
-                  <li><a href="test2.do">목록보기</a></li>
+                  <li><a href="list.do">목록보기</a></li>
                   <li><a href="property_grid.html">Grid View</a></li>
                   <li><a href="property_listing_map.html">Map View</a></li>
                   <li class="title">Single Property</li>
@@ -375,7 +375,7 @@ $(document).ready(function(){
                 <select class="form-control form-control-lg ui-select" id="mCategory" name="searchn" data-placeholder="Property Type"><!-- 데이터 플레이스홀더 -->
                         <option value="0" id ="fd">음식명</option>
                         <option value="1" id ="st">가게명</option>
-                        <option value="2" id ="lc">지역별</option>
+                        <option value="2" id ="lc">층별</option>
                         <option value="apartment">1</option> 
                         <option value="land">2</option>
                         <option value="room">3</option>
@@ -486,8 +486,8 @@ $(document).ready(function(){
               <div class="form-group">
               <!-- 셀렉트박스 이벤트  -->
               <!-- 폼 추가 -->
-              	<!-- <form name="t_table" method="get" action="test2.do" taget="targetFrame"> -->
-              	<form name="t_table" method="get" action="test2.do"><!-- action 태그 명시안하면 자기자신에게로 보냄 -->
+              	<!-- <form name="t_table" method="get" action="list.do" taget="targetFrame"> -->
+              	<form name="t_table" method="get" action="list.do"><!-- action 태그 명시안하면 자기자신에게로 보냄 -->
                   <select name="sortValue" class="form-control ui-select" id="sort-category" onchange="this.form.submit()">
                     <option selected="selected">정렬옵션</option>
                     <option value="0">높은 가격순</option>
@@ -501,7 +501,7 @@ $(document).ready(function(){
               </div>
               <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
               														<!-- 글쓰기버튼의 a 태그에 속성주기 -->
-              <div class="btn-group float-right" role="group"><a href="writeForm.jsp"></a><a href="test2.do" class="btn btn-light active"><i class="fa fa-bars"></i></a> </div>
+              <div class="btn-group float-right" role="group"><a href="writeForm.jsp"></a><a href="list.do" class="btn btn-light active"><i class="fa fa-bars"></i></a> </div>
               </div>
               </div>                
             </div>
@@ -522,9 +522,9 @@ $(document).ready(function(){
                   	<!-- 리스트 페이지에서 보여지는 작은 이미지 관련 html 설정 -->
                   								<!--이부분에 article.getStore_uri() -->
                   								<!-- 여기에 걸린 페이지에서 특정 파라미터를 받아서 검색하는 메서드를 실행하고 dto에 저장하고 그값을 articleList에 저장해서 리턴함-->
-                  								<!-- 리턴받은 페이지에 내가만든 list(test2) 페이지같은 기능을해서 받은 값을 뿌려주는식으로하면 틀이 하나만 있어도 가능 -->
-                  								<!-- Store_uri 컬럼에  test2_info.do 값으로 통일시켜서 넣음-->
-                    <div class="item-image"> <a href="test2_info.do?store_no=${article.store_no }"><img src=${article.simg_root } class="img-fluid" alt="">
+                  								<!-- 리턴받은 페이지에 내가만든 list(list) 페이지같은 기능을해서 받은 값을 뿌려주는식으로하면 틀이 하나만 있어도 가능 -->
+                  								<!-- Store_uri 컬럼에  list_info.do 값으로 통일시켜서 넣음-->
+                    <div class="item-image"> <a href="list_info.do?store_no=${article.store_no }"><img src=${article.simg_root } class="img-fluid" alt="">
                       <div class="item-badges">
                       <!-- 남은좌석이 6석 이하인 경우 -->
                       <c:choose>
