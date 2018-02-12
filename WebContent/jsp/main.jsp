@@ -126,7 +126,7 @@ $(document).ready(function(){
               <div class="col-md-6 col-lg-3">
                 <ul class="list-unstyled">
                   <li class="title">Property Listing</li>
-                  <li><a href="test2index.jsp">목록 보기</a></li>
+                  <li><a href="list.do">목록 보기</a></li>
                   <li><a href="property_grid.html">Grid View</a></li>
                   <li><a href="property_listing_map.html">Map View</a></li>
                   <li class="title">Single Property</li>

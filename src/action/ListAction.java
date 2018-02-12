@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import board.BoardDBBean;
 
-public class Test2Action implements CommandAction {//글 목록 처리
+public class ListAction implements CommandAction {//글 목록 처리
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
