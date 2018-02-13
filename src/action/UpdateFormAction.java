@@ -1,4 +1,4 @@
-package bbs.action;
+package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +21,6 @@ public class UpdateFormAction implements CommandAction {//글수정 폼
         request.setAttribute("pageNum", new Integer(pageNum));
         request.setAttribute("article", article);
 
-        return "/listo/notice/FormAction.jsp";//해당뷰
+        return "/notice/FormAction.jsp";//해당뷰
     }
 }

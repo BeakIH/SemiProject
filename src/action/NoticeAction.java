@@ -1,4 +1,4 @@
-package bbs.action;
+package action;
 
 
 import java.util.Collections;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bbs.BoardDBBean;
 
-public class ListAction implements CommandAction {//글목록 처리
+public class NoticeAction implements CommandAction {//글목록 처리
 
     public String requestPro(HttpServletRequest request,
         HttpServletResponse response)throws Throwable {
@@ -46,6 +46,6 @@ public class ListAction implements CommandAction {//글목록 처리
 	    request.setAttribute("number", new Integer(number));
         request.setAttribute("articleList", articleList);
        
-        return "/listo/notice/notice2.jsp";//해당 뷰
+        return "/notice/notice2.jsp";//해당 뷰
     }
 }

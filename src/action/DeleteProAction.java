@@ -1,4 +1,4 @@
-package bbs.action;
+package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +23,6 @@ public class DeleteProAction implements CommandAction {//글삭제
         request.setAttribute("pageNum", new Integer(pageNum));
         request.setAttribute("check", new Integer(check));
 
-        return "/listo/notice/DeletePro.jsp";//해당뷰
+        return "/notice/DeletePro.jsp";//해당뷰
     }
 }

@@ -1,4 +1,4 @@
-package bbs.action;
+package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +15,6 @@ public class DeleteFormAction implements CommandAction {//글삭제 폼
 	request.setAttribute("bNo", new Integer(num));
         request.setAttribute("pageNum", new Integer(pageNum));
 
-        return "/listo/notice/DeleteForm.jsp";//해당뷰
+        return "/notice/DeleteForm.jsp";//해당뷰
     }
 }

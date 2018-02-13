@@ -1,4 +1,4 @@
-package bbs.action;
+package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,6 +32,6 @@ public class UpdateProAction implements CommandAction {
         request.setAttribute("pageNum", new Integer(pageNum));
         request.setAttribute("check", new Integer(check));
 
-        return "/listo/notice/UpdatePro.jsp";
+        return "/notice/UpdatePro.jsp";
     }
 }

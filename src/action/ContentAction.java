@@ -1,4 +1,4 @@
-package bbs.action;
+package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,6 +27,6 @@ public class ContentAction implements CommandAction {//글내용 처리
         request.setAttribute("pageNum", new Integer(pageNum));
         request.setAttribute("article", article);
        
-        return "/listo/notice/ontent.jsp";//해당 뷰
+        return "notice/Content.jsp";//해당 뷰
     }
 }
