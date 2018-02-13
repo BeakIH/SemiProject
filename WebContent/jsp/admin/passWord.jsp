@@ -23,7 +23,7 @@
               </div>
               <hr>
               <div class="form-group action">
-                <button type="submit" class="btn btn-lg btn-primary">Update Password</button>
+                <button type="submit" class="btn btn-lg btn-primary"> 변경완료 </button>
               </div>
             </form>
           </div>

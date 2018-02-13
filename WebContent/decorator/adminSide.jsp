@@ -251,14 +251,14 @@ function fillInAddress() {
                     </a>
                    -->
                   <span class="list-group-item heading"> 매장관리  </span>
-                  <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="bookingList.jsp" class="list-group-item d-flex justify-content-between align-items-center">
                   	<span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
                     <span class="badge badge-primary badge-pill">7</span>
                   </a>
                   
                   <!-- <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> 직원조회 </a> -->
                   <a href="storeInfo.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 매장정보 변경</a>
-                  <a href="password.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
+                  <a href="passWord.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
                   <!-- <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
 				  <a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> Membership</a>
 				  <a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
