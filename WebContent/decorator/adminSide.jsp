@@ -264,7 +264,7 @@ function fillInAddress() {
 				  <a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> Account</a> -->
                   <span class="list-group-item heading"> 직원관리  </span>
                   <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-user"></i> 직원등록 </a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 </a>
+                  <a href="management.jsp" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원정보 </a>
                   <span class="list-group-item heading"> 우리매장소식  </span>
                   <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-edit" size = 5px></i> 소식쓰기 </a>
                 </div>
