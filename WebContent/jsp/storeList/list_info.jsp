@@ -3,8 +3,8 @@
 
 <%@ page import="java.util.*"%>
 <%@ page import="java.util.List"%>
-<%@ page import="board.BoardDBBean"%>
-<%@ page import="board.BoardDataBean"%>
+<%@ page import="list.ListDBBean"%>
+<%@ page import="list.ListDataBean"%>
 <%@ page import="java.lang.*" %>
 <%@ page import="java.text.SimpleDateFormat"%>
 
@@ -456,7 +456,13 @@
 													onclick="winOpen()"><i class="fa fa-cloud-download"
 													aria-hidden="true"></i>예약하기</a>
 											</div>
+											
+											<!-- 한줄평  -->
+											<div class="item-attachments">
+												<h3 class="headline">한줄평</h3>
 
+												한줄평 위치
+											</div>
 										</div>
 									</div>
 								</div>

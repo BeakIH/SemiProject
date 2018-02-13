@@ -13,7 +13,8 @@
 <link href="../../lib/swiper/css/swiper.min.css" rel="stylesheet">
 <link href="../../lib/aos/aos.css" rel="stylesheet">
 <link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/style.css?ver=2" rel="stylesheet">
+<link href="../../css/sidestyle.css?ver=1" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../lib/jquery-3.2.1.min.js"></script>
@@ -47,6 +48,33 @@ $(document).ready(function(){
 	});
 }); */
 
+// 사이드 바 기능
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<script>
+var check=0; // 사이드메뉴 열고닫는데에 사용되는 조건변수
+
+function openNav() {// 사이드메뉴 버튼 기능
+    if (check==0){
+    	document.getElementById("mySidenav").style.width = "250px";
+    	check+=1;
+    }else{
+	   	document.getElementById("mySidenav").style.width = "0";
+    	check-=1;
+    }
+}
+
+function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x 버튼 기능
+	document.getElementById("mySidenav").style.width = "0";
+	check-=1;
+}
 </script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -198,6 +226,18 @@ $(document).ready(function(){
   </div>
   </div>
 </nav>
+<!-- 사이드 바  -->
+<div id="mySidenav" class="sidenav">
+	<br>
+	<br>
+  	<a href="#">Services</a>
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  	<a href="#">Clients</a>
+  	<a href="#">Contact</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()"></span>
+<!-- 사이드 바 end -->
 <div class="home-search">
 <div class="main search-form v7">
   <div class="container">
@@ -586,6 +626,16 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
+<!-- 사이드바 버튼 -->
+<div id="mySidenav" class="sidenav">
+  <br>
+  <br>
+  <a href="#">Services</a><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+<button class="btn btn-primary btn-circle" id="sidebar-btn" onclick="openNav()">식당현황</button><!-- <i> 태그와 아무상관없음 -->
+<!-- 사이드바 버튼 end -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
   <div class="container">
@@ -595,7 +645,7 @@ $(document).ready(function(){
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
             <address>
-            <strong>Twitter, Inc.</strong><br>
+            <strong>Twitter, Inc..</strong><br>
             1355 Market Street, Suite 900<br>
             San Francisco, CA 94103<br>
             <abbr title="Phone">P:</abbr> (123) 456-7890
@@ -624,7 +674,7 @@ $(document).ready(function(){
           <div class="col-md-4 col-sm-12">
             <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
             <form>
-              <h4>Subscribe Newsletter</h4>
+              <h4>SSubscribe Newsletter</h4>
               <div class="input-group input-group-lg">
                 <input type="email" class="form-control" placeholder="Email Address">
                 <span class="input-group-btn">

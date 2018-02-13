@@ -7,7 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import board.BoardDBBean;
+import list.ListDBBean;
 
 public class ListAction implements CommandAction {//글 목록 처리
 	
@@ -70,7 +70,7 @@ public class ListAction implements CommandAction {//글 목록 처리
 		int number = 0; // 
 
 		List articleList = null;
-		BoardDBBean dbPro = BoardDBBean.getInstance();
+		ListDBBean dbPro = ListDBBean.getInstance();
 
 		if (search.equals("") || search == null) { // 검색이 아닌경우
 			count = dbPro.getArticleCount();

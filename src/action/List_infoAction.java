@@ -7,7 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import board.BoardDBBean;
+import list.ListDBBean;
 
 public class List_infoAction implements CommandAction {//글 목록 처리
 	
@@ -21,7 +21,7 @@ public class List_infoAction implements CommandAction {//글 목록 처리
 		System.out.println("storeNo:::"+storeNo); // 값 넘어옴
 		
 		List articleList = null;
-		BoardDBBean dbPro = BoardDBBean.getInstance();
+		ListDBBean dbPro = ListDBBean.getInstance();
 
 		// 모든 검색에 사용하는 데이터를 searchList에 저장
 		List searchList = new ArrayList();
