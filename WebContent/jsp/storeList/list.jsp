@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 
 <!-- jsp 설정들  ============== list.jsp 참조 -->
-<%@ page import="board.BoardDBBean"%>
-<%@ page import="board.BoardDataBean"%>
+<%@ page import="list.ListDBBean"%>
+<%@ page import="list.ListDataBean"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.lang.*" %>
 <%@ page import="java.text.SimpleDateFormat"%>
