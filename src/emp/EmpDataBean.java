@@ -1,75 +1,58 @@
 package emp;
 
 public class EmpDataBean {
+	private Integer empNo; // ì§ì›ë²ˆí˜¸
+	private String empNm; // ì§ì›ëª…
+	private Integer storeNo; // ì†Œì†ë§¤ì¥ë²ˆí˜¸
+	private String position; // ì§ìœ„
+	private String admYn; // ê´€ë¦¬ìê¶Œí•œìœ ë¬´
+	private String empStatus; // ì¬ì§ìƒíƒœ
 
-	// Á÷¿ø°ü¸® Á÷¿øÇöÈ²
+	public Integer getEmpNo() {
+		return empNo;
+	}
 
+	public void setEmpNo(Integer empNo) {
+		this.empNo = empNo;
+	}
 
-	    // »ç¿ø¹øÈ£ Á÷¿ø¹øÈ£
-	    private Integer empNo;
+	public String getEmpNm() {
+		return empNm;
+	}
 
-	    // »ç¿ø¸í Á÷¿ø¸í
-	    private String empNm;
+	public void setEmpNm(String empNm) {
+		this.empNm = empNm;
+	}
 
-	    // ¼Ò¼Ó ¼Ò¼Ó¸ÅÀå¹øÈ£
-	    private Integer storeNo;
+	public Integer getStoreNo() {
+		return storeNo;
+	}
 
-	    // Á÷À§ Á÷À§
-	    private String position;
+	public void setStoreNo(Integer storeNo) {
+		this.storeNo = storeNo;
+	}
 
-	    // °ü¸®ÀÚ±ÇÇÑ °ü¸®ÀÚ±ÇÇÑÀ¯¹«
-	    private String admYn;
+	public String getPosition() {
+		return position;
+	}
 
-	    //  ÀçÁ÷»óÅÂ
-	    private String empStatus;
+	public void setPosition(String position) {
+		this.position = position;
+	}
 
-	    public Integer getEmpNo() {
-	        return empNo;
-	    }
+	public String getAdmYn() {
+		return admYn;
+	}
 
-	    public void setEmpNo(Integer empNo) {
-	        this.empNo = empNo;
-	    }
+	public void setAdmYn(String admYn) {
+		this.admYn = admYn;
+	}
 
-	    public String getEmpNm() {
-	        return empNm;
-	    }
+	public String getEmpStatus() {
+		return empStatus;
+	}
 
-	    public void setEmpNm(String empNm) {
-	        this.empNm = empNm;
-	    }
-
-	    public Integer getStoreNo() {
-	        return storeNo;
-	    }
-
-	    public void setStoreNo(Integer storeNo) {
-	        this.storeNo = storeNo;
-	    }
-
-	    public String getPosition() {
-	        return position;
-	    }
-
-	    public void setPosition(String position) {
-	        this.position = position;
-	    }
-
-	    public String getAdmYn() {
-	        return admYn;
-	    }
-
-	    public void setAdmYn(String admYn) {
-	        this.admYn = admYn;
-	    }
-
-	    public String getEmpStatus() {
-	        return empStatus;
-	    }
-
-	    public void setEmpStatus(String empStatus) {
-	        this.empStatus = empStatus;
-	    }
-
-	
+	public void setEmpStatus(String empStatus) {
+		this.empStatus = empStatus;
+	}
 }
