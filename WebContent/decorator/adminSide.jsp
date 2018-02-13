@@ -252,12 +252,13 @@ function fillInAddress() {
                    -->
                   <span class="list-group-item heading"> 매장관리  </span>
                   <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center">
-                  <span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
+                  	<span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
                     <span class="badge badge-primary badge-pill">7</span>
-                    </a>
+                  </a>
+                  
                   <!-- <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> 직원조회 </a> -->
-                  <a href="my_profile.html" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 매장정보 변경</a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
+                  <a href="storeInfo.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 매장정보 변경</a>
+                  <a href="password.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
                   <!-- <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
 				  <a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> Membership</a>
 				  <a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
@@ -266,7 +267,9 @@ function fillInAddress() {
                   <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-user"></i> 직원등록 </a>
                   <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 </a>
                   <span class="list-group-item heading"> 우리매장소식  </span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-edit" size = 5px></i> 소식쓰기 </a>
+                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-paper-plane" size = 5px></i> 매장소식 </a>
+                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 매장이용후기 </a>
+                  
                 </div>
               </div>
             </div>
