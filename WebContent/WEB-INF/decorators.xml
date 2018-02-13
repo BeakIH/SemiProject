@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<decorators> 
-			<decorator page="사이트메쉬 파일 경로" name="main"> 
-				<pattern>사이트메쉬 뭍힐 url패턴</pattern>
+			<decorator page="/decorator/adminSide.jsp" name="main"> 
+				<pattern>/jsp/admin/*</pattern>
 			</decorator>
 			
 			<!-- ex)
@@ -10,7 +10,7 @@
 			</decorator> -->
 			
 			<!-- <excludes>
-				<pattern>사이트메쉬 예외 패턴</pattern>
+				<pattern></pattern>
 			</excludes> -->
 			
 	</decorators>

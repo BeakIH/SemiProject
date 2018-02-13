@@ -11,7 +11,7 @@ import board.BoardDataBean;
 public class BookingDBBean {
 	private static BookingDBBean instance = new BookingDBBean();
 	// LogonDBBean m = LogonDBBean.getInstance();
-	public static BookingDBBean getInstance() { //½Ì±ÛÅÏÆÐÅÏÀ¸·Î °´Ã¼ »ý¼ºÇØµÒ
+	public static BookingDBBean getInstance() { //ï¿½Ì±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½
 		return instance;	
 	}
 	
@@ -22,7 +22,7 @@ public class BookingDBBean {
 		return DriverManager.getConnection(jdbcDriver);
 	}
 	
-	// ¿¹¾àÇÏ±â
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 	public void insertBooking(BookingDataBean booking) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -51,9 +51,9 @@ public class BookingDBBean {
 			if(pstmt != null) try {pstmt.close();} catch(SQLException ex) {}
 		}
 		
-	}// ¸ÅÀå°ü¸®ÀÚ ¿¹¾à È®ÀÎ 
+	}// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ 
 	
-	//¿¹¾àÇßÀ»¶§ ³Ñ°Ü°¡Áö´Â °ª
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°Ü°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	public void insertReserve(BookingDataBean booking) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -62,10 +62,10 @@ public class BookingDBBean {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("insert into booking values(?,?,?,?)");
 			
-			pstmt.setString(1, booking.getStoreNm());//¿¹¾à¸ÅÀå¸í
-			pstmt.setTimestamp(2, booking.getBkDate());//¿¹¾àÀÏ½Ã
-			pstmt.setString(3, booking.getBkMenu());//¿¹¾à ¸Þ´º
-			pstmt.setString(4, booking.getBkCnt()); //¿¹¾à ÀÎ¿ø
+			pstmt.setString(1, booking.getStoreNm());//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			pstmt.setTimestamp(2, booking.getBkDate());//ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½
+			pstmt.setString(3, booking.getBkMenu());//ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½
+			pstmt.setString(4, booking.getBkCnt()); //ï¿½ï¿½ï¿½ï¿½ ï¿½Î¿ï¿½
 			
 			
 			
@@ -79,7 +79,7 @@ public class BookingDBBean {
 			if(pstmt != null) try {pstmt.close();} catch(SQLException ex) {}
 		}
 		
-	}// ¸ÅÀå°ü¸®ÀÚ ¿¹¾à È®ÀÎ 
+	}// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ 
 	
 	
 	public int updateArticle(BookingDataBean article)throws Exception{
@@ -95,8 +95,7 @@ public class BookingDBBean {
 		try {
 			conn = getConnection();
 			
-			pstmt = conn.prepareStatement(
-			"select passwd from board where num =?");
+			pstmt = conn.prepareStatement("select passwd from board where num =?");
 			pstmt.setInt(1, article.getNum());
 			rs = pstmt.executeQuery();
 			
