@@ -1,58 +1,95 @@
 package emp;
 
 public class EmpDataBean {
-	private Integer empNo; // 직원번호
-	private String empNm; // 직원명
-	private Integer storeNo; // 소속매장번호
-	private String position; // 직위
-	private String admYn; // 관리자권한유무
-	private String empStatus; // 재직상태
+	
+	// 직원관리 직원현황
 
-	public Integer getEmpNo() {
-		return empNo;
-	}
+	    // 사원번호 직원번호
+	    private Integer empNo;
 
-	public void setEmpNo(Integer empNo) {
-		this.empNo = empNo;
-	}
+	    // 사원명 직원명
+	    private String empNm;
 
-	public String getEmpNm() {
-		return empNm;
-	}
+	    // 소속 소속매장번호
+	    private Integer storeNo;
 
-	public void setEmpNm(String empNm) {
-		this.empNm = empNm;
-	}
+	    // 직위 직위
+	    private String position;
 
-	public Integer getStoreNo() {
-		return storeNo;
-	}
+	    // 관리자권한 관리자권한유무
+	    private String admYn;
 
-	public void setStoreNo(Integer storeNo) {
-		this.storeNo = storeNo;
-	}
+	    //  재직상태
+	    private String empStatus;
 
-	public String getPosition() {
-		return position;
-	}
+	    //  관리자계정ID
+	    private String admId;
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
+	    //  관리자계정PW
+	    private String admPw;
 
-	public String getAdmYn() {
-		return admYn;
-	}
+	    public int getEmpNo() {
+	        return empNo;
+	    }
 
-	public void setAdmYn(String admYn) {
-		this.admYn = admYn;
-	}
+	    public void setEmpNo(Integer empNo) {
+	        this.empNo = empNo;
+	    }
 
-	public String getEmpStatus() {
-		return empStatus;
-	}
+	    public String getEmpNm() {
+	        return empNm;
+	    }
 
-	public void setEmpStatus(String empStatus) {
-		this.empStatus = empStatus;
-	}
+	    public void setEmpNm(String empNm) {
+	        this.empNm = empNm;
+	    }
+
+	    public int getStoreNo() {
+	        return storeNo;
+	    }
+
+	    public void setStoreNo(Integer storeNo) {
+	        this.storeNo = storeNo;
+	    }
+
+	    public String getPosition() {
+	        return position;
+	    }
+
+	    public void setPosition(String position) {
+	        this.position = position;
+	    }
+
+	    public String getAdmYn() {
+	        return admYn;
+	    }
+
+	    public void setAdmYn(String admYn) {
+	        this.admYn = admYn;
+	    }
+
+	    public String getEmpStatus() {
+	        return empStatus;
+	    }
+
+	    public void setEmpStatus(String empStatus) {
+	        this.empStatus = empStatus;
+	    }
+
+	    public String getAdmId() {
+	        return admId;
+	    }
+
+	    public void setAdmId(String admId) {
+	        this.admId = admId;
+	    }
+
+	    public String getAdmPw() {
+	        return admPw;
+	    }
+
+	    public void setAdmPw(String admPw) {
+	        this.admPw = admPw;
+	    }
+	
 }

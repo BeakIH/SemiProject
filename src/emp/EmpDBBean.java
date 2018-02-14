@@ -5,9 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import emp.EmpDataBean;
 
 import store.list.JdbcUtil;
 
@@ -67,4 +66,33 @@ public class EmpDBBean {
 	public EmpDataBean get(int i) {
 		return null;
 	}
+	
+	// 회원 추가를 위한 메소드
+	public void insertAdm(EmpDataBean emp) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		//EmpDataBean empData = new EmpDataBean();
+	       try {
+	            conn = getConnection(); 
+	            //DriverManager.getConnection(jdbc:apache:commons:dbcp:pool);
+	            pstmt = conn.prepareStatement(
+	            "insert into emp values (?,?,?,?,?,?,?,?)");
+	            pstmt.setInt(1, emp.getEmpNo());
+	            pstmt.setString(2, emp.getEmpNm());
+	            pstmt.setInt(3, emp.getStoreNo()); 
+	            pstmt.setString(4, emp.getPosition());
+	            pstmt.setString(5, emp.getAdmYn());
+	            pstmt.setString(6, emp.getEmpStatus());
+	            pstmt.setString(7, emp.getAdmId());
+	            pstmt.setString(8, emp.getAdmPw());
+	            
+	            pstmt.executeUpdate();
+	        
+	        } catch(Exception ex) {
+	            ex.printStackTrace();
+	        } finally {
+	            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+	            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+	        }
+	    }
 }
