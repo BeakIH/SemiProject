@@ -10,8 +10,9 @@ import emp.EmpDBBean;
 import member.MemberDBBean;
 
 public class LoginDBBean {
+	
 	private static MemberDBBean instanceMem = new MemberDBBean();
-	private static EmpDBBean instanceAdm = new EmpDBBean();
+	private static EmpDBBean instanceEmp = new EmpDBBean();
 
 	public int userCheck(String userid, String userpw) throws Exception {
 		//그냥 입력한값을 가져온거지

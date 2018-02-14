@@ -11,19 +11,21 @@ public class LoginAction {
 	String userid = request.getParameter(userid);
 	String userpw = request.getParameter(userpw);
 	
-	LoginDBBean logPro = LoginDBBean.
+	LoginDBBean logPro = new LoginDBBean();
+			
 	int i =0;
-	i = dao.userCheck(id, pw);
+	i = logPro.userCheck(id, pw);
 			
-	return jsp;
+	if(i==0) {
+		return '';
+	} else if(i==1) {
+		return '';
+	}else if(i==2) {
+		return '';
+	}else {
+		return '';
+	}
+	
 			
-	
-	
-	
-	<%String id =  request.pr (id)
-			
-			session.Attub("id", id)
-			%>
-	
 	}
 }
