@@ -210,7 +210,7 @@ function fillInAddress() {
    
  <!-- 로그인 아이디가 관리자일때 header menu START --> 
  <c:set var ="test" value ="a" />
- <c:if test = "a=b"> 
+ <c:if test = "a=b">  
     <ul class="navbar-nav ml-auto">
       
       

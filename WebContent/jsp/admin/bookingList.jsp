@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
-<html>
+<html> 
 <head><title> </title></head>
-<body>
+<body> 
 <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered mt0">
               <h1>밥사조 <small>예약 현황나열</small></h1>

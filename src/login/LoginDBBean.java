@@ -20,7 +20,7 @@ public class LoginDBBean {
 	public static MemberDBBean getInstance1() {
 		return instanceMem;
 	}
-	
+	 
 	public static EmpDBBean getInstance2() {
 		return instanceEmp;
 	}

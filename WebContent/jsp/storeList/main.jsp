@@ -13,7 +13,7 @@
 <link href="../../lib/swiper/css/swiper.min.css" rel="stylesheet">
 <link href="../../lib/aos/aos.css" rel="stylesheet">
 <link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css?ver=2" rel="stylesheet">
+<link href="../../css/style.css?ver=2" rel="stylesheet"> 
 <link href="../../css/sidestyle.css?ver=1" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -10,7 +10,7 @@ public class LoginAction {
 	
 	request.setCharacterEncoding("UTF-8");
 		
-	String userid = request.getParameter(userid);
+	String userid = request.getParameter(userid); 
 	String userpw = request.getParameter(userpw);
 	
 	LoginDBBean logPro = LoginDBBean.getInstance1();
