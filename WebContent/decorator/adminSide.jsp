@@ -92,34 +92,34 @@ function fillInAddress() {
   <div class="collapse navbar-collapse" id="menu-content">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="../storeList/main.jsp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Home <span class="sr-only">(current)</span>
         </a>
-        <div class="dropdown-menu">
+        <!-- <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
             <a href="index2.html" class="dropdown-item">Homepage 2</a>
             <a href="index3.html" class="dropdown-item">Homepage 3</a>
             <a href="index4.html" class="dropdown-item">Homepage 4</a>
             <a href="index5.html" class="dropdown-item">Homepage 5</a>
             <a href="index6.html" class="dropdown-item">Homepage 6</a>
-            <a href="index7.html" class="dropdown-item">Homepage 7</a>
-        </div>
+            <a href="../storeList/main.jsp" class="dropdown-item">Home</a>
+        </div> -->
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Listings
+        <a class="nav-link dropdown-toggle" href="../storeList/list.jsp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Store
         </a>
-        <div class="dropdown-menu">
-            <a href="property_listing.html" class="dropdown-item">List View</a>
+        <!-- <div class="dropdown-menu">
+            <a href="../storeList/list.jsp" class="dropdown-item">Store</a>
             <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
             <a href="property_single2.html" class="dropdown-item">Single View 2</a>
             <a href="property_single3.html" class="dropdown-item">Single View 3</a>
-        </div>
+        </div> -->
       </li>
       
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Agents
         </a>
@@ -127,9 +127,9 @@ function fillInAddress() {
             <a href="agent_list.html" class="dropdown-item">Agent List</a>
             <a href="agent.html" class="dropdown-item">Agent Profile</a>
         </div>
-      </li>
+      </li> -->
       
-      <li class="nav-item dropdown megamenu">
+      <!-- <li class="nav-item dropdown megamenu">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Pages
         </a>
@@ -203,24 +203,28 @@ function fillInAddress() {
               </div>
               </div>
         </div>
-      </li>
+      </li> -->
       
     </ul>
-    
+  
+   
+ <!-- 로그인 아이디가 관리자일때 header menu START --> 
+ <c:set var ="test" value ="a" />
+ <c:if test = "a=b"> 
     <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, 세션
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="../admin/bookingList.jsp" class="dropdown-item"> 예약현황 </a>
+            <a href="../admin/storeInfo.jsp" class="dropdown-item">매장정보</a>
+            <a href="../admin/staffInfo.jsp" class="dropdown-item">직원조회</a>
+            <!-- <a href="../admin/passWord.jsp" class="dropdown-item">관리자비밀번호 변경</a> -->
+            <!-- <a href="my_payments.html" class="dropdown-item">매출현황</a>
+            <a href="my_account.html" class="dropdown-item">Account</a>  -->
         </div>
       </li>
      
@@ -231,8 +235,7 @@ function fillInAddress() {
   </div>
 </nav>
 
- <!-- 헤더 -->
- 
+ <!-- ADMIN sidebar menu START -->
 <div class="clearfix"></div>
 <div id="content">
   <div class="container">
@@ -284,7 +287,16 @@ function fillInAddress() {
     </div>
   </div>
 </div>
+</c:if>
+
+<!-- 회원 아이디로 로그인 했을때 sidebar -->
+<!-- MEMBER SIDEBAR START -->
+<%-- <c:if test= "${result.data }" --%>
+
+<!-- 화면 상단으로 이동하기 버튼 -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
+
+<!-- 푸터 START -->
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
@@ -293,23 +305,23 @@ function fillInAddress() {
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
             <address>
-            <strong>Twitter, Inc.</strong><br>
-            1355 Market Street, Suite 900<br>
-            San Francisco, CA 94103<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
+            <strong>BABSAZO, Inc.</strong><br>
+            	서울특별시 중구 남대문로 120<br>
+           		대일빌딩3층 D class<br>
+            <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
-            <p class="text-muted">Copyright &copy; 2016<br />
+            <p class="text-muted">Copyright &copy; 2018<br />
               All rights reserved</p>
           </div>
-          <div class="col-md-2  col-sm-4">
+          <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li>
+              <li><a href="#"> About BABSAJO </a></li>
+              <li><a href="#"> Team Introduction </a></li>
+              <!-- <li><a href="#">Security</a></li>
+              <li><a href="#">Plans</a></li> -->
             </ul>
           </div>
-          <div class="col-md-2 col-sm-4">
+          <!-- <div class="col-md-2 col-sm-4">
             <ul class="list-unstyled">
               <li><a href="#">For Rent</a></li>
               <li><a href="#">For Sale</a></li>
@@ -318,11 +330,11 @@ function fillInAddress() {
               <li><a href="#">Property Guides</a></li>
               <li><a href="#">Jobs</a></li>
             </ul>
-          </div>
+          </div> -->
           <div class="col-md-4 col-sm-12">
             <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
             <form>
-              <h4>Subscribe Newsletter</h4>
+              <h4>밥사조 소식 받아보기 </h4>
               <div class="input-group input-group-lg">
                 <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">

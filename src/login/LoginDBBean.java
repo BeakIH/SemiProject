@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import board.BoardDBBean;
 import emp.EmpDBBean;
 import member.MemberDBBean;
 
@@ -13,6 +14,16 @@ public class LoginDBBean {
 	
 	private static MemberDBBean instanceMem = new MemberDBBean();
 	private static EmpDBBean instanceEmp = new EmpDBBean();
+	
+
+	
+	public static MemberDBBean getInstance1() {
+		return instanceMem;
+	}
+	
+	public static EmpDBBean getInstance2() {
+		return instanceEmp;
+	}
 
 	public int userCheck(String userid, String userpw) throws Exception {
 		//그냥 입력한값을 가져온거지
@@ -42,7 +53,7 @@ public class LoginDBBean {
 				pstmt.setString(1, userid);
 				rs = pstmt.executeQuery();
 				if(rs.next()) {
-					String passwd = rs.getString("userpw");
+					String passwd = rs.getString("mem_pw");
 					if(passwd.equals(userpw)) {
 						x =2 ; // 일반회원일 떄 로그인 성공
 					}else {
@@ -70,11 +81,14 @@ public class LoginDBBean {
 				} catch (SQLException ex) {
 				}
 		}
-		return x;  //x = 0 회원아님 , 1 관리자 , 2 일반회원 , -1 비밀번호가 다름  (아이디는 맞는데)
+		return x;  //x = 0 회원아님 , 1 관리자 , 2 일반회원 , -1 비밀번호가 다름
 	}
 
 	private Connection getConnection() throws Exception {
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
 	}
+
+
+	
 }
