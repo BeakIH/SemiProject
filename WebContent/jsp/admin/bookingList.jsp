@@ -32,7 +32,7 @@
                     <div class="item-image"> <img src="../../img/profiles/cat.jpg" class="img-fluid" alt=""> </div>
                   </div>
                   <div class="col-md-9"> <a href="agent.html" class="btn btn-primary float-right">수락</a> &nbsp;
-					 <a href="agent.html" class="btn btn-primary float-right">거절</a>   
+					<!--  <a href="agent.html" class="btn btn-primary float-right">거절</a>    -->
                   <div class="col-md-9"> 
                     <h3 class="item-title"><a href="agent.html">예약자명</a></h3>
                     <div class="item-description"><i class="fa fa-calendar-check"> 예약일시 예) 2018.02.16 금요일 19:00</i></div>
