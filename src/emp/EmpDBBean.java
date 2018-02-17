@@ -67,7 +67,7 @@ public class EmpDBBean {
 		return null;
 	}
 	
-	// 회원 추가를 위한 메소드
+	// 직원추가를 위한 메소드
 	public void insertAdm(EmpDataBean emp) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;

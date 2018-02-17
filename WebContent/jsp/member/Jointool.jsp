@@ -193,7 +193,7 @@
           <h1>회원가입 <small> BABSAZO 회원만의 다양한 할인 혜택 및 프로모션이 기다리고 있어요!</small></h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
-        
+        <form action=".do"> <!-- 주소 추가필요 ( 자바쪽 경로 파일추가) -->
         <div class="form-group">
               <label for="username"><font size="4em" color="52478B">이름</label>
               <input type="text" class="form-control" id="username" placeholder="이름을 입력해 주세요">
@@ -215,8 +215,6 @@
               <label for="InputPassword2">비밀번호 확인</font></label>
               <input type="password" class="form-control" id="InputPassword2" placeholder="비밀번호 확인">
               <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p>
-          <form role="form">
-          </form>
           
           <div class="form-group">
               <label for="username"><font size="4em" color="52478B">휴대폰 번호</font></label>
@@ -308,6 +306,7 @@
               <form action="../storeList/main.jsp"><button type="submit" class="btn btn-danger">가입취소<i class="fa fa-times spaceLeft"></i></button></form>
             </div>
             </div>
+            </form>
             </div>
 
 <footer id="footer">

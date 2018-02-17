@@ -311,6 +311,7 @@
               </div>
               <div class="col-md-4">
               <div class="form-group">
+
               <label>Security Code</label>
               <input type="text" class="form-control form-control-lg">
               </div>
@@ -322,6 +323,17 @@
               <hr>
               <div class="form-group action">
                 <button type="submit" class="btn btn-lg btn-primary">Save Settings</button>
+              <label>CVC Code</label>
+              <input type="text" class="form-control form-control-lg">
+              </div>
+              </div>
+              </div>
+              <p>향후 지불 수단으로 사용하는 것에 동의합니다.</p>
+              <button class="btn btn-light" id="add_card">카드 추가하기</button>
+              </div>
+              <hr>
+              <div class="form-group action">
+                <button type="submit" class="btn btn-lg btn-primary">설정 저장하기</button>
               </div>
             </form>
           </div>
