@@ -14,8 +14,8 @@
               <div class="form-group">
                   <select class="form-control ui-select">
                     <option selected="selected">선택하세요</option>
-                    <option>입사일 기준</option>
-                    <option>평점 높은 직원</option>
+                    <option>등록일순</option>
+                    <option>당일예약</option>
                   </select>
                 </div>
               </div>
