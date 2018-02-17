@@ -3,77 +3,76 @@ package booking;
 import java.sql.Timestamp;
 
 public class BookingDataBean {
-	// ¿¹¾àÀÚ¸®½ºÆ® ¿¹¾àÇöÈ²
+	
 
+	    // ì˜ˆì•½ë²ˆí˜¸ ì˜ˆì•½ë²ˆí˜¸
+	    private Integer bkNo;
 
-	    // ¿¹¾à¹øÈ£ ¿¹¾à¹øÈ£
-	    private int bkNo;
+	    //  ëŒ€ê¸°ë²ˆí˜¸
+	    private Integer wtNo;
 
-	    //  ´ë±â¹øÈ£
-	    private int wtNo;
+	    //  ì˜ˆì•½í™•ì¸ë‹´ë‹¹ì
+	    private Integer empNo;
 
-	    //  ¿¹¾àÈ®ÀÎ´ã´çÀÚ
-	    private int empNo;
+	    // ì˜ˆì•½íšŒì›ë²ˆí˜¸ ì˜ˆì•½íšŒì›ë²ˆí˜¸
+	    private Integer memNo;
 
-	    // ¿¹¾àÈ¸¿ø¹øÈ£ ¿¹¾àÈ¸¿ø¹øÈ£
-	    private int memNo;
-
-	    // È¸¿ø¸í ¿¹¾àÀÚ¸í
+	    // íšŒì›ëª… ì˜ˆì•½ìëª…
 	    private String memNm;
 
-	    //  ¿¹¾àÀÚ¿¬¶ôÃ³
+	    //  ì˜ˆì•½ìì—°ë½ì²˜
 	    private String memTel;
 
-	    // ¿¹¾à¸ÅÀå ¿¹¾à¸ÅÀå¸í
+	    // ì˜ˆì•½ë§¤ì¥ ì˜ˆì•½ë§¤ì¥ëª…
 	    private String storeNm;
 
-	    // ¿¹¾àÀÏ½Ã ¿¹¾àÀÏ½Ã
-	    private Timestamp bkDate;
+	    // ì˜ˆì•½ì¼ì‹œ ì˜ˆì•½ì¼ì‹œ
+	    private String bkDate;
 
-	    // ¿¹¾àÀÎ¿ø ¿¹¾àÀÎ¿ø
+	    // ì˜ˆì•½ì¸ì› ì˜ˆì•½ì¸ì›
 	    private String bkCnt;
 
-	    //  ¿¹¾à¸Ş´º
+	    //  ì˜ˆì•½ë©”ë‰´
 	    private String bkMenu;
 
-	    // ¸ÅÀåÈ®ÀÎ¿©ºÎ ¸ÅÀåÈ®ÀÎ¿©ºÎ
+	    // ë§¤ì¥í™•ì¸ì—¬ë¶€ ë§¤ì¥í™•ì¸ì—¬ë¶€
 	    private String cofirmYn;
 
-	    //  ¿¹¾à»óÅÂ¸í
-	    private String bkStatus;
+	    //  ì˜ˆì•½í…Œì´ë¸”ìˆ˜
+	    private Integer bkTblCnt;
 
-	    //  ¿¹¾àÅ×ÀÌºí¼ö
-	    private int bkTblCnt;
+	    //  ë§¤ì¥ë²ˆí˜¸
+	    private Integer storeNo;
 
-	    public int getBkNo() {
+	    public Integer getBkNo() {
 	        return bkNo;
 	    }
 
-	    public void setBkNo(int bkNo) {
+	    public void setBkNo(Integer bkNo) {
 	        this.bkNo = bkNo;
 	    }
 
-	    public int getWtNo() {
+	    public Integer getWtNo() {
 	        return wtNo;
 	    }
 
-	    public void setWtNo(int wtNo) {
+	    public void setWtNo(Integer wtNo) {
 	        this.wtNo = wtNo;
 	    }
 
-	    public int getEmpNo() {
+	    public Integer getEmpNo() {
 	        return empNo;
 	    }
 
-	    public void setEmpNo(int empNo) {
+	    public void setEmpNo(Integer empNo) {
 	        this.empNo = empNo;
 	    }
 
-	    public int getMemNo() {
+	    public Integer getMemNo() {
 	        return memNo;
 	    }
 
-	    public void setMemNo(int memNo) {
+	    public void setMemNo(Integer memNo) {
 	        this.memNo = memNo;
 	    }
 
@@ -101,11 +100,11 @@ public class BookingDataBean {
 	        this.storeNm = storeNm;
 	    }
 
-	    public Timestamp getBkDate() {
+	    public String getBkDate() {
 	        return bkDate;
 	    }
 
-	    public void setBkDate(Timestamp bkDate) {
+	    public void setBkDate(String bkDate) {
 	        this.bkDate = bkDate;
 	    }
 
@@ -133,22 +132,21 @@ public class BookingDataBean {
 	        this.cofirmYn = cofirmYn;
 	    }
 
-	    public String getBkStatus() {
-	        return bkStatus;
-	    }
-
-	    public void setBkStatus(String bkStatus) {
-	        this.bkStatus = bkStatus;
-	    }
-
-	    public int getBkTblCnt() {
+	    public Integer getBkTblCnt() {
 	        return bkTblCnt;
 	    }
 
-	    public void setBkTblCnt(int bkTblCnt) {
+	    public void setBkTblCnt(Integer bkTblCnt) {
 	        this.bkTblCnt = bkTblCnt;
 	    }
 
-	    
+	    public Integer getStoreNo() {
+	        return storeNo;
+	    }
+
+	    public void setStoreNo(Integer storeNo) {
+	        this.storeNo = storeNo;
+	    }
+
 	
 }

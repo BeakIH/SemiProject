@@ -1,16 +1,16 @@
 package member;
 
 public class MemberDataBean {
-	// ¿¹¾à¼­ºñ½º¸¦ ÀÌ¿ëÇÏ±â À§ÇÏ¿© È¸¿ø°¡ÀÔ °í°´°ü¸®
+	// ï¿½ï¿½ï¿½à¼­ï¿½ñ½º¸ï¿½ ï¿½Ì¿ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-	    // È¸¿ø¹øÈ£ °í°´¹øÈ£
+	    // È¸ï¿½ï¿½ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½È£
 	    private Integer memNo;
 
-	    //  ÀÌ¿ë³»¿ª¹øÈ£
+	    //  ï¿½Ì¿ë³»ï¿½ï¿½ï¿½ï¿½È£
 	    private Integer hisNo;
 
-	    // È¸¿ø¸í °í°´¸í
+	    // È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	    private String memNm;
 
 	    // ID ID
@@ -19,25 +19,35 @@ public class MemberDataBean {
 	    // PASSWORD PASSWORD
 	    private String memPw;
 
-	    // ÈÞ´ëÆù¹øÈ£ ÈÞ´ëÆù¹øÈ£
+	    // ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½È£ ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½È£
 	    private String memTel;
 
-	    //  ÀÚÅÃÁÖ¼Ò
+	    //  ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½
 	    private String address;
 
-	    //  EMAILÁÖ¼Ò
+	    //  EMAILï¿½Ö¼ï¿½
 	    private String email;
 
-	    //  EMAIL¼ö½Å¿©ºÎ
+	    //  EMAILï¿½ï¿½ï¿½Å¿ï¿½ï¿½ï¿½
 	    private String emailYn;
 
-	    //  ¼±È£¸ÅÀå1
+	    //  ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½1
 	    private String fvrtStr1;
 
-	    //  ¼±È£¸ÅÀå2
+	    //  ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½2
 	    private String fvrtStr2;
+	    
+	    private int memYn;
 
-	    public Integer getMemNo() {
+	    public int getMemYn() {
+			return memYn;
+		}
+
+		public void setMemYn(int memYn) {
+			this.memYn = memYn;
+		}
+
+		public Integer getMemNo() {
 	        return memNo;
 	    }
 
