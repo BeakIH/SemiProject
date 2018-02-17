@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -15,6 +15,7 @@
 <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link href="lib/animate.css" rel="stylesheet">
 <link href="lib/selectric/selectric.css" rel="stylesheet">
+<link href="lib/swiper/css/swiper.min.css" rel="stylesheet">
 <link href="lib/aos/aos.css" rel="stylesheet">
 <link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -25,7 +26,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/tinymce/tinymce.min.js"></script>
+<script src="lib/swiper/js/swiper.min.js"></script>
 <script src="lib/aos/aos.js"></script>
 <script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
 <script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
@@ -188,148 +189,133 @@
   </div>
   </div>
 </nav>
-<div class="clearfix"></div>
+
+
+
+<!-- 회원 등급 페이지로 수정하기 -->
+
+
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
           <div class="col col-lg-12 col-xl-10">
-        <div class="row has-sidebar">
-          <div class="col-md-5 col-lg-4 col-xl-4">
-            <div id="sidebar" class="sidebar-left">
-              <div class="sidebar_inner">
-                <div class="list-group no-border list-unstyled">
-                
-                
-                
-                
-                
-                
-                  <span class="list-group-item heading">내 매장 목록</span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한 BABSAZO</span>
-                    <span class="badge badge-primary badge-pill">10</span>
-                    </a>
-                  <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
-                    <span class="badge badge-primary badge-pill">7</span>
-                    </a>
-                  <span class="list-group-item heading">내 계정 관리</span>
-                  <a href="my_profile.html" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
-<a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a>
-<a href="my_payments.html" class="list-group-item active"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
-<a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
-                </div>
-              </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">내 등급 확인</a></li>
+            <li class="breadcrumb-item active" aria-current="page">등급별 혜택 보기</li>
+            </ol>
+            </nav>
+        <h1 class="main-title centered"><span>BABSAZO 등급에 따른 혜택을 확인하세요</span></h1>
+        <div class="lead text-center mb50">이용 횟수, 구매 금액, 후기 작성에 따라 자동으로 포인트가 적립됩니다.<br> 적립된 점수에 따라 올라가는 할인율 및 등급별 발행 쿠폰으로 더 큰 혜택을 누리세요!  </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="pricing-column">
+              <ul>
+                <li class="title">BABSAZO의 <small>먹방요정</small></li>
+                <li class="price">BAB포인트 200,000미만 / 월(Month)</li>
+                <li>월 1회 메인 무료 쿠폰</li>
+                <li>월 1회 20% 할인 쿠폰 지급</li>
+                <li>결제시 총 금액의 3% 추가 할인</li>
+                <li>구매 금액의 3% 포인트 적립</li>
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">확인하기</a></li>
+              </ul>
             </div>
           </div>
-          
-          
-          
-          
-          
-          <!-- 거래 정보 설정 -->
-          
-          
-          <div class="col-md-7 col-lg-8 col-xl-8">
-            <div class="page-header bordered">
-              <h1>거래 정보 설정</h1>
-            </div>
-            <form action="index.php">
-              <div class="form-group">
-                <div class="checkbox">
-                  <input type="checkbox" id="private_message" checked="">
-                  <label for="private_message">기본 결제 수단 적용 및 자동 이체에 동의합니다.</label>
-                </div>
-              </div>
-              <h3 class="subheadline">신용카드 &amp; 결제 수단</h3>
-              <ul class="list-group no-border list-unstyled list-v2">
-                <li><i class="fa fa-fw fa-cc-paypal icon"></i> Paypal <a href="" class="btn btn-link set-default">기본 결제 수단으로 설정</a></li>
-                <li><i class="fa fa-fw fa-cc-stripe icon"></i> 휴대폰 <a href="" class="btn btn-link set-default">기본 결제 수단으로 설정</a></li>
-                <li><i class="fa fa-fw fa-credit-card icon hidden-xs"></i> <span class="card-number">**** **** **** ****</span><a class="btn btn-primary"><i class="fa fa-trash-o"></i></a> <span class="default">삭제</span></li>
-                
-                <!-- 
-                <li><i class="fa fa-fw fa-credit-card icon hidden-xs"></i> <span class="card-number">**** **** **** 5643</span><a class="btn btn-primary"><span><i class="fa fa-trash-o"></i></span></a> <a href="" class="btn btn-link set-default">Set as default</a></li>
-                <li><i class="fa fa-fw fa-credit-card icon hidden-xs"></i> <span class="card-number">**** **** **** 9843</span><a class="btn btn-primary"><i class="fa fa-trash-o"></i></a> <a href="" class="btn btn-link set-default">Set as default</a></li> -->
+          <div class="col-md-4">
+            <div class="pricing-column popular">
+              <ul>
+                <li class="title">BABSAZO의 <small> 프로 먹방러</small></li>
+                <li class="price">BAB포인트 200,000이상 500,000미만  / 월(Month)</li>
+                <li>월 2회 메인 무료 쿠폰 </li>
+                <li>월 2회 30% 할인 쿠폰 지급</li>
+                <li>결제시 총 금액의 5% 추가 할인</li>
+                <li>구매 금액의 5% 포인트 적립</li>
+               
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
               </ul>
-              <h3 class="subheadline">신용카드 추가</h3>
-              <div class="card">
-              <div class="form-group">
-              <label>카드번호</label>
-                <div class="input-group input-group-lg"> <span class="input-group-addon"><i class="icon fa fa-fw fa-credit-card-alt"></i></span>
-                  <input type="text" class="form-control form-control-lg" id="cc_number" value="">
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-md-8">
-             <label>유효기한 (Month/Year)</label>
-             <div class="row">
-             <div class="col-md-7">
-             <div class="form-group">
-             <select class="form-control form-control-lg ui-select">
-             <option value="jan">01</option>
-             <option value="feb">02</option>
-             <option value="mar">03</option>
-             <option value="apr">04</option>
-             <option value="may">05</option>
-             <option value="jun">06</option>
-             <option value="jul">07</option>
-             <option value="aug">08</option>
-             <option value="sep">09</option>
-             <option value="oct">10</option>
-             <option value="nov">11</option>
-             <option value="dec">12</option>
-             </select>
-             </div>
-             </div>
-             <div class="col-md-5">
-             <div class="form-group">
-             <select class="form-control form-control-lg ui-select">
-             <option value="2015">2015</option>
-             <option value="2016">2016</option>
-             <option value="2017">2017</option>
-             <option value="2018">2018</option>
-             <option value="2019">2019</option>
-             <option value="2020">2020</option>
-             <option value="2021">2021</option>
-             <option value="2022">2022</option>
-             <option value="2023">2023</option>
-             <option value="2024">2024</option>
-             <option value="2025">2025</option>
-             <option value="2026">2026</option>
-             <option value="2027">2027</option>
-             <option value="2028">2028</option>
-             <option value="2029">2029</option>
-             <option value="2030">2030</option>
-             </select>
-             </div>
-             </div>
-             </div>
-             
-             
-              
-              </div>
-              <div class="col-md-4">
-              <div class="form-group">
-              <label>CVC Code</label>
-              <input type="text" class="form-control form-control-lg">
-              </div>
-              </div>
-              </div>
-              <p>향후 지불 수단으로 사용하는 것에 동의합니다.</p>
-              <button class="btn btn-light" id="add_card">카드 추가하기</button>
-              </div>
-              <hr>
-              <div class="form-group action">
-                <button type="submit" class="btn btn-lg btn-primary">설정 저장하기</button>
-              </div>
-            </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-column">
+              <ul>
+                <li class="title">BABSAZO의 <small> 뭐로할까..</small> </li>
+                <li class="price">BAB포인트 500,000이상 / 월(Month)</li>
+                <li>월 3회 메인 무료 쿠폰</li>
+                <li>BABSAZO 이달의 식당 초대권</li>
+                <li>월 3회 40% 할인 쿠폰 지급</li>
+                <li>결제시 총 금액의 7% 추가 할인</li>
+                <li>구매 금액의 7% 포인트 적립</li>
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">얼마나 남았나</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- 요밑은 뭐로할까 
+<div class="feature-box centered gray">
+    <div data-aos="fade-up">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col col-md-10">
+            <div class="main-title"><span>What our clients say</span></div>
+            <div class="swiper-container testimonials">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="item content-box centered">
+                    <div class="image"> <img class="rounded-circle" src="img/demo/profile.jpg" width="180" alt=""> </div>
+                    <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
+                    <div class="caption">The Brown Family</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="item content-box centered">
+                    <div class="image"> <img class="rounded-circle" src="img/demo/profile2.jpg" width="180" alt="">
+                      <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
+                      <div class="caption">The Brown Family</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="item content-box centered">
+                    <div class="image"> <img class="rounded-circle" src="img/demo/profile3.jpg" width="180" alt="">
+                      <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
+                      <div class="caption">The Brown Family</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <script>
+			var swiper = new Swiper('.swiper-container', {
+				loop: true,
+				centeredSlides: true,
+					autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});-->
+        	</script> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
   <div class="container">
@@ -370,7 +356,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
+                <input type="email" class="form-control" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -382,5 +368,5 @@
   </div>
 </footer>
 </div>
-</body>
-</html>
+
+</body></html>

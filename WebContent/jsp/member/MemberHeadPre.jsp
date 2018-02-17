@@ -52,7 +52,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Home <span class="sr-only">(current)</span>
+          메인<span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
@@ -166,24 +166,29 @@
       
     </ul>
     
+    
+    
+    
     <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> -님, 안녕하세요
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="my_profile.html" class="dropdown-item"></a>
+            <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
+            <a href="my_notifications.html" class="dropdown-item">BABSAZO알림</a>
+            <a href="my_membership.html" class="dropdown-item">BABSAZO멤버십</a>
+            <a href="my_payments.html" class="dropdown-item">껼제 정보</a>
+            <a href="my_account.html" class="dropdown-item">계정 설정</a>
         </div>
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
+    
+    
     
   </div>
   </div>
@@ -192,138 +197,18 @@
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-          <div class="col col-lg-12 col-xl-10">
+      <div class="col col-lg-12 col-xl-10">
         <div class="row has-sidebar">
           <div class="col-md-5 col-lg-4 col-xl-4">
             <div id="sidebar" class="sidebar-left">
               <div class="sidebar_inner">
                 <div class="list-group no-border list-unstyled">
                 
-                
-                
-                
-                
-                
-                  <span class="list-group-item heading">내 매장 목록</span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한 BABSAZO</span>
-                    <span class="badge badge-primary badge-pill">10</span>
-                    </a>
-                  <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
-                    <span class="badge badge-primary badge-pill">7</span>
-                    </a>
-                  <span class="list-group-item heading">내 계정 관리</span>
-                  <a href="my_profile.html" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
-<a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a>
-<a href="my_payments.html" class="list-group-item active"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
-<a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          
-          
-          
-          
-          <!-- 거래 정보 설정 -->
-          
-          
-          <div class="col-md-7 col-lg-8 col-xl-8">
-            <div class="page-header bordered">
-              <h1>거래 정보 설정</h1>
-            </div>
-            <form action="index.php">
-              <div class="form-group">
-                <div class="checkbox">
-                  <input type="checkbox" id="private_message" checked="">
-                  <label for="private_message">기본 결제 수단 적용 및 자동 이체에 동의합니다.</label>
-                </div>
-              </div>
-              <h3 class="subheadline">신용카드 &amp; 결제 수단</h3>
-              <ul class="list-group no-border list-unstyled list-v2">
-                <li><i class="fa fa-fw fa-cc-paypal icon"></i> Paypal <a href="" class="btn btn-link set-default">기본 결제 수단으로 설정</a></li>
-                <li><i class="fa fa-fw fa-cc-stripe icon"></i> 휴대폰 <a href="" class="btn btn-link set-default">기본 결제 수단으로 설정</a></li>
-                <li><i class="fa fa-fw fa-credit-card icon hidden-xs"></i> <span class="card-number">**** **** **** ****</span><a class="btn btn-primary"><i class="fa fa-trash-o"></i></a> <span class="default">삭제</span></li>
-                
-                <!-- 
-                <li><i class="fa fa-fw fa-credit-card icon hidden-xs"></i> <span class="card-number">**** **** **** 5643</span><a class="btn btn-primary"><span><i class="fa fa-trash-o"></i></span></a> <a href="" class="btn btn-link set-default">Set as default</a></li>
-                <li><i class="fa fa-fw fa-credit-card icon hidden-xs"></i> <span class="card-number">**** **** **** 9843</span><a class="btn btn-primary"><i class="fa fa-trash-o"></i></a> <a href="" class="btn btn-link set-default">Set as default</a></li> -->
-              </ul>
-              <h3 class="subheadline">신용카드 추가</h3>
-              <div class="card">
-              <div class="form-group">
-              <label>카드번호</label>
-                <div class="input-group input-group-lg"> <span class="input-group-addon"><i class="icon fa fa-fw fa-credit-card-alt"></i></span>
-                  <input type="text" class="form-control form-control-lg" id="cc_number" value="">
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-md-8">
-             <label>유효기한 (Month/Year)</label>
-             <div class="row">
-             <div class="col-md-7">
-             <div class="form-group">
-             <select class="form-control form-control-lg ui-select">
-             <option value="jan">01</option>
-             <option value="feb">02</option>
-             <option value="mar">03</option>
-             <option value="apr">04</option>
-             <option value="may">05</option>
-             <option value="jun">06</option>
-             <option value="jul">07</option>
-             <option value="aug">08</option>
-             <option value="sep">09</option>
-             <option value="oct">10</option>
-             <option value="nov">11</option>
-             <option value="dec">12</option>
-             </select>
-             </div>
-             </div>
-             <div class="col-md-5">
-             <div class="form-group">
-             <select class="form-control form-control-lg ui-select">
-             <option value="2015">2015</option>
-             <option value="2016">2016</option>
-             <option value="2017">2017</option>
-             <option value="2018">2018</option>
-             <option value="2019">2019</option>
-             <option value="2020">2020</option>
-             <option value="2021">2021</option>
-             <option value="2022">2022</option>
-             <option value="2023">2023</option>
-             <option value="2024">2024</option>
-             <option value="2025">2025</option>
-             <option value="2026">2026</option>
-             <option value="2027">2027</option>
-             <option value="2028">2028</option>
-             <option value="2029">2029</option>
-             <option value="2030">2030</option>
-             </select>
-             </div>
-             </div>
-             </div>
-             
-             
-              
-              </div>
-              <div class="col-md-4">
-              <div class="form-group">
-              <label>CVC Code</label>
-              <input type="text" class="form-control form-control-lg">
-              </div>
-              </div>
-              </div>
-              <p>향후 지불 수단으로 사용하는 것에 동의합니다.</p>
-              <button class="btn btn-light" id="add_card">카드 추가하기</button>
-              </div>
-              <hr>
-              <div class="form-group action">
-                <button type="submit" class="btn btn-lg btn-primary">설정 저장하기</button>
-              </div>
-            </form>
+       
+       
+       뫄뫄뫄
+       
+       
           </div>
         </div>
       </div>
@@ -334,7 +219,7 @@
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
-          <div class="col col-md-10">
+      <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
@@ -384,3 +269,6 @@
 </div>
 </body>
 </html>
+                
+                
+                
