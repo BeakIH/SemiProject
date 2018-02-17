@@ -17,9 +17,17 @@ public class EmpDataBean {
 	    private String position;
 
 	    // 관리자권한 관리자권한유무
-	    private String admYn;
+	    private int admYn;
 
-	    //  재직상태
+	    public int getAdmYn() {
+			return admYn;
+		}
+
+		public void setAdmYn(int admYn) {
+			this.admYn = admYn;
+		}
+
+		//  재직상태
 	    private String empStatus;
 
 	    //  관리자계정ID
@@ -60,13 +68,7 @@ public class EmpDataBean {
 	        this.position = position;
 	    }
 
-	    public String getAdmYn() {
-	        return admYn;
-	    }
 
-	    public void setAdmYn(String admYn) {
-	        this.admYn = admYn;
-	    }
 
 	    public String getEmpStatus() {
 	        return empStatus;

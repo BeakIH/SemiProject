@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,25 +11,25 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../lib/animate.css" rel="stylesheet">
-<link href="../../lib/selectric/selectric.css" rel="stylesheet">
-<link href="../../lib/aos/aos.css" rel="stylesheet">
-<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css" rel="stylesheet">
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate.css" rel="stylesheet">
+<link href="lib/selectric/selectric.css" rel="stylesheet">
+<link href="lib/aos/aos.css" rel="stylesheet">
+<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../../lib/jquery-3.2.1.min.js"></script>
-<script src="../../lib/popper.min.js"></script>
+<script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../lib/selectric/jquery.selectric.js"></script>
-<script src="../../lib/aos/aos.js"></script>
-<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="../../lib/lib.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/selectric/jquery.selectric.js"></script>
+<script src="lib/aos/aos.js"></script>
+<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -186,17 +187,40 @@
   </div>
   </div>
 </nav>
+<div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-8  col-lg-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
+            <li class="breadcrumb-item"><a href="#">계정</a></li>
+            <li class="breadcrumb-item active" aria-current="page">비밀번호 찾기</li>
+            </ol>
+            </nav>
+        <div class="page-header">
+        <h1>비밀번호 찾기</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-12">
-        <div class="error-template text-center"> <i class="fa fa-exclamation-triangle fa-5x text-danger animated zoomIn mb50"></i>
-          <h3 class="main-title centered"><span>BABSAZO 회원만 이용 가능한 콘텐츠 입니다</span></h3>
-          <div class="main-title-description"> 할인은 물론 무료 사이즈 업, 각종 서비스 · 기념일 쿠폰부터 <br> 오직 BABSAZO회원에게만 제공되는 게릴라 타임세일
-           <br> 먹으면서 누리는 자동 적립혜택까지 !
-           <br> 이 모든 것을 BABSAZO에서 맛있게 즐기세요 -  </div>
-          <div class="error-actions"> <a href="../member/Jointool.jsp" class="btn btn-primary btn-lg">BABSAZO 가입하기 </a> <a href="signin.html" class="btn btn-light btn-lg"> 회원 로그인 </a> </div>
-        </div>
+      <div class="col col-md-8  col-lg-6">
+      
+      <br>
+      <p> &nbsp;비밀번호를 잊으셨나요? 
+      <br><br>가입시 등록하신 이메일을 입력해주세요. 도착한 메일의 링크를 클릭하시면 비밀번호 변경 페이지로 이동합니다.</p>
+            <form>
+            <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <input type="email" id="email" class="form-control input-lg" placeholder="Email Address">
+          </div>
+              <button type="submit" class="btn btn-primary btn-lg">입력</button>
+            </form>
+        
+        
+        <div> </div>
       </div>
     </div>
   </div>
