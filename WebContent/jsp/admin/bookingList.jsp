@@ -31,7 +31,7 @@
                   <div class="col-md-3">
                     <div class="item-image"> <img src="../../img/profiles/cat.jpg" class="img-fluid" alt=""> </div>
                   </div>
-                  <div class="col-md-9"> <a href="agent.html" class="btn btn-primary float-right">수락</a> &nbsp;
+                  <div class="col-md-9"> <a href="/jsp/admin/bookingList.do" class="btn btn-primary float-right">수락</a> &nbsp;
 					<!--  <a href="agent.html" class="btn btn-primary float-right">거절</a>    -->
                   <div class="col-md-9"> 
                     <h3 class="item-title"><a href="agent.html">예약자명</a></h3>

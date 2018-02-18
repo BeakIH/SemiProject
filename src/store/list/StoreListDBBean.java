@@ -5,6 +5,8 @@ import java.text.*;
 import java.util.*;
 import java.util.Date;
 
+import board.BoardDataBean;
+
 
 public class StoreListDBBean { //DAO
 
@@ -13,10 +15,10 @@ public class StoreListDBBean { //DAO
 		return instance;
 	}
 	
-	// ºó ¸Ş¼Òµå »ı¼º
+	// ï¿½ï¿½ ï¿½Ş¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½
 	public StoreListDBBean() {}
 	
-	//DB¿¬°á
+	//DBï¿½ï¿½ï¿½ï¿½
 	private Connection getConnection() throws Exception{
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
@@ -33,9 +35,9 @@ public class StoreListDBBean { //DAO
          Date date = new Date(System.currentTimeMillis());
          SimpleDateFormat simple = new SimpleDateFormat("m");
          String sysdate = simple.format(date).toString();
-         String x = sysdate.substring(1); // ºĞÀº 2ÀÚ¸®´Ï±î ÀÎµ¦½º´Â 0ºÎÅÍÁö¸¸ 1À»»Ì¾Ò´Ù. 1ÀÇ ÀÚ¸® ºñ±³ÇÒ¶ó±¸..
+         String x = sysdate.substring(1); // ï¿½ï¿½ï¿½ï¿½ 2ï¿½Ú¸ï¿½ï¿½Ï±ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½Ì¾Ò´ï¿½. 1ï¿½ï¿½ ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½Ò¶ï¿½..
          if (x.equals("5")) {
-            System.out.println("5ºĞ¸¶´Ù ¾÷µ¥ÀÌÆ®µË´Ï´Ù.");
+            System.out.println("5ï¿½Ğ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ë´Ï´ï¿½.");
             String sql = "update booking set confirm_yn = 'y'";
             conn = getConnection();
             pstmt = conn.prepareStatement(sql);
@@ -48,12 +50,12 @@ public class StoreListDBBean { //DAO
                list = new ArrayList<StoreListDataBean>();
                while (rs.next()) {
                   StoreListDataBean dto = new StoreListDataBean();
-                  // »ı¼ºÇÑ dto °´Ã¼ÀÇ È­¸éÀÇ º¸¿©ÁÙ °ªÀ» ´ã¾ÆÁÖ´Â ÄÚµå setÀ»
+                  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dto ï¿½ï¿½Ã¼ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Úµï¿½ setï¿½ï¿½
                   list.add(dto);
                }
             }
          } else {
-            System.out.println("³É³É");
+            System.out.println("ï¿½É³ï¿½");
          }
          conn.commit();
          conn.setAutoCommit(true);
@@ -72,11 +74,99 @@ public class StoreListDBBean { //DAO
       }
       return list; 
    }
+   
+   
+ //storeInfo.jsp : ìˆ˜ì •í¼ì— í•œì¤„ì˜ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¬ë•Œ.
+   public BoardDataBean updateGetArticle(int num) throws Exception {
+       Connection conn = null;
+       PreparedStatement pstmt = null;
+       ResultSet rs = null;
+       BoardDataBean article=null;
+       try {
+           conn = getConnection();
+
+           pstmt = conn.prepareStatement(
+           "select store_no, cate_nm,  from board where store_no = ?");
+           pstmt.setInt(1, num);
+           rs = pstmt.executeQuery();
+
+           if (rs.next()) {
+               article = new BoardDataBean();
+               article.setNum(rs.getInt("num"));
+               article.setWriter(rs.getString("writer"));
+               article.setEmail(rs.getString("email"));
+               article.setSubject(rs.getString("subject"));
+               article.setPasswd(rs.getString("passwd"));
+               article.setReg_date(rs.getTimestamp("reg_date"));
+               article.setReadcount(rs.getInt("readcount"));
+               article.setRef(rs.getInt("ref"));
+               article.setRe_step(rs.getInt("re_step"));
+               article.setRe_level(rs.getInt("re_level"));
+               article.setContent(rs.getString("content"));
+               article.setIp(rs.getString("ip"));    
+	    }
+       } catch(Exception ex) {
+           ex.printStackTrace();
+       } finally {
+           if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+           if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+           if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+       }
+	return article;
+   }
+   
+ //storeInfoPro.jsp : ì‹¤ì œ ë°ì´í„°ë¥¼ ìˆ˜ì •í•˜ëŠ” ë©”ì†Œë“œ
+   public int updateArticle(BoardDataBean article) throws Exception {
+       Connection conn = null;
+       PreparedStatement pstmt = null;
+       ResultSet rs= null;
+
+       String dbpasswd="";
+       String sql="";
+       int x=-1;
+       try {
+           conn = getConnection();
+          
+	    pstmt = conn.prepareStatement("select passwd from board where num = ?");
+           pstmt.setInt(1, article.getNum());
+           rs = pstmt.executeQuery();
+          
+	if(rs.next()){
+	    dbpasswd= rs.getString("passwd");
+	    if(dbpasswd.equals(article.getPasswd())){
+		sql="update board set writer=?,email=?,subject=?,passwd=?";
+		sql+=",content=? where num=?";
+               pstmt = conn.prepareStatement(sql);
+
+               pstmt.setString(1, article.getWriter());
+               pstmt.setString(2, article.getEmail());
+               pstmt.setString(3, article.getSubject());
+               pstmt.setString(4, article.getPasswd());
+               pstmt.setString(5, article.getContent());
+               pstmt.setInt(6, article.getNum());
+               pstmt.executeUpdate();
+               x= 1;
+	    }else{
+	    	x= 0;
+	    }
+	  }
+       } catch(Exception ex) {
+           ex.printStackTrace();
+       } finally {
+	    if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+           if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+           if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+       }
+	 return x;
+   }
 
 public StoreListDataBean get(int i) {
 	// TODO Auto-generated method stub
 	return null;
 }
+
+
+	
 
 
 }

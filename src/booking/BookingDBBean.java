@@ -3,12 +3,13 @@ package booking;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import board.BoardDataBean;
-import board.Exception;
-import board.ResultSet;
-import board.String;
+import emp.EmpDataBean;
+
 
 public class BookingDBBean {
 	private static BookingDBBean instance = new BookingDBBean();
@@ -54,13 +55,14 @@ public class BookingDBBean {
 	
 	// insert된 예약 건에 대한 매장확인 (confirm_yn컬럼의 값을 Y로 업데이트)
 	// confirm_yn이 y로 업데이트 되면 store_list 테이블의 avl_tbl_cnt 값은 trigger에 의하여 변경됨.
-	public void updateConfirm(int store_no) throws Exception{
+	public void updateConfirm(String userid, String userpw) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null; 
+		
 		try{
 			conn = getConnection();
 			pstmt = conn.prepareStatement("update booking set confirm_yn = 'Y' where store_no = ?");
-			pstmt.setInt(1, store_no);
+			pstmt.setInt(1, getInt("store_no"));
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
