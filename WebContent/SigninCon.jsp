@@ -1,0 +1,409 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>BABSAZO</title>
+
+<!-- Bootstrap -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate.css" rel="stylesheet">
+<link href="lib/selectric/selectric.css" rel="stylesheet">
+<link href="lib/aos/aos.css" rel="stylesheet">
+<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/popper.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/selectric/jquery.selectric.js"></script>
+<script src="lib/aos/aos.js"></script>
+<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="lib/lib.js"></script>
+
+
+ <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
+  <div class="container">
+  <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="menu-content">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Home <span class="sr-only">(current)</span>
+        </a>
+        <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">Homepage 1</a>
+            <a href="index2.html" class="dropdown-item">Homepage 2</a>
+            <a href="index3.html" class="dropdown-item">Homepage 3</a>
+            <a href="index4.html" class="dropdown-item">Homepage 4</a>
+            <a href="index5.html" class="dropdown-item">Homepage 5</a>
+            <a href="index6.html" class="dropdown-item">Homepage 6</a>
+            <a href="index7.html" class="dropdown-item">Homepage 7</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Listings
+        </a>
+        <div class="dropdown-menu">
+            <a href="property_listing.html" class="dropdown-item">List View</a>
+            <a href="property_grid.html" class="dropdown-item">Grid View</a>
+            <a href="property_listing_map.html" class="dropdown-item">Map View</a>
+            <a href="property_single.html" class="dropdown-item">Single View 1</a>
+            <a href="property_single2.html" class="dropdown-item">Single View 2</a>
+            <a href="property_single3.html" class="dropdown-item">Single View 3</a>
+        </div>
+      </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Agents
+        </a>
+        <div class="dropdown-menu">
+            <a href="agent_list.html" class="dropdown-item">Agent List</a>
+            <a href="agent.html" class="dropdown-item">Agent Profile</a>
+        </div>
+      </li>
+      
+      <li class="nav-item dropdown megamenu">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Pages
+        </a>
+        <div class="dropdown-menu">
+        <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-md-8">
+            <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <ul class="list-unstyled">
+                  <li class="title">Homepage</li>
+                  <li><a href="index.html">Homepage 1</a></li>
+                  <li><a href="index2.html">Homepage 2</a></li>
+                  <li><a href="index3.html">Homepage 3</a></li>
+                  <li><a href="index4.html">Homepage 4</a></li>
+                  <li><a href="index5.html">Homepage 5</a></li>
+                  <li><a href="index6.html">Homepage 6</a></li>
+                  <li><a href="index7.html">Homepage 7</a></li>
+                  <li class="title">Login Pages</li>
+                  <li><a href="signin.html">Signin</a></li>
+                  <li><a href="register.html">Register</a></li>
+                  <li><a href="forgot-password.html">Forgot Password</a></li>
+                 </ul>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <ul class="list-unstyled">
+                  <li class="title">Property Listing</li>
+                  <li><a href="property_listing.html">List View</a></li>
+                  <li><a href="property_grid.html">Grid View</a></li>
+                  <li><a href="property_listing_map.html">Map View</a></li>
+                  <li class="title">Single Property</li>
+                  <li><a href="property_single.html">Single View 1</a></li>
+                  <li><a href="property_single2.html">Single View 2</a></li>
+                  <li><a href="property_single3.html">Single View 3</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <ul class="list-unstyled">
+                  <li class="title">Other Pages</li>
+                  <li><a href="plans.html">Plans</a></li>
+                  <li><a href="information_page.html">Information Page</a></li>
+                  <li><a href="coming_soon.html">Coming Soon</a></li>
+                  <li><a href="404_error.html">Error Page</a></li>
+                  <li><a href="success.html">Success Page</a></li>
+                  <li><a href="contact.html">Contact Page</a></li>
+                  <li><a href="compare.html">Compare Properties</a></li>
+                  <li class="title">Agent Pages</li>
+                  <li><a href="agent_list.html">Agent List</a></li>
+                  <li><a href="agent.html">Agent Profile</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <ul class="list-unstyled">
+                  <li class="title">Account Pages</li>
+                  <li><a href="my_listing_add.html">Add Listing</a></li>
+                <li><a href="my_bookmarked_listings.html">Bookmarked Listing</a></li>
+                  <li><a href="my_listings.html">My Listings</a></li>
+                  <li><a href="my_profile.html">My Profile</a></li>
+                <li><a href="my_password.html">Change Password</a></li>
+                <li><a href="my_notifications.html">Notifications</a></li>
+                <li><a href="my_membership.html">Membership</a></li>
+                <li><a href="my_payments.html">Payments</a></li>
+                <li><a href="my_account.html">Account</a></li>
+                <li class="title">Blog Pages</li>
+                  <li><a href="blog.html">Blog Archive</a></li>
+                  <li><a href="blog_single.html">Blog Single</a></li>
+                </ul>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+        </div>
+      </li>
+      
+    </ul>
+        <ul class="navbar-nav ml-auto">
+      
+      
+      <li class="nav-item dropdown user-account">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+        </a>
+        <div class="dropdown-menu">
+            <a href="my_profile.html" class="dropdown-item">My Profile</a>
+            <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
+            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
+            <a href="my_membership.html" class="dropdown-item">Membership</a>
+            <a href="my_payments.html" class="dropdown-item">Payments</a>
+            <a href="my_account.html" class="dropdown-item">Account</a>
+        </div>
+      </li>
+      <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
+    </ul>
+    
+  </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-12 col-lg-10 col-xl-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
+            <li class="breadcrumb-item"><a href="#">계정</a></li>
+            <li class="breadcrumb-item active" aria-current="page">로그인</li>
+            </ol>
+            </nav>
+        <div class="page-header">
+        <h1>로그인 또는 회원가입</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="content">
+  <div class="container">
+    <div class="row justify-content-md-center align-items-center">
+      <div class="col col-xs-6 col-lg-6 col-xl-6">
+        <ul class="nav nav-tabs tab-lg" role="tablist">
+          <li role="presentation" class="nav-item"><a class="nav-link active" href="signin.html">로그인</a></li>
+          <li role="presentation" class="nav-item"><a class="nav-link" href="RegisterPre.html">이용하기</a></li>
+          <li role="presentation" class="nav-item"><a class="nav-link" href="joinPre.html">가입하기</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="login">
+          
+                
+            <form>
+          
+              <div class="form-group">
+                <label for="email">이메일 주소</label>
+                <input type="email" id="email" class="form-control form-control-lg" placeholder="Email">
+              </div>
+                      
+              <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" class="form-control form-control-lg" placeholder="Password">
+              </div>
+        
+        <p class="text-lg-right"><a href="forgot-password.html">비밀번호를 잊으셨나요?</a></p>
+        
+              <div class="checkbox">
+                <input type="checkbox" id="remember_me">
+                <label for="remember_me">아이디 및 비밀번호 저장</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">로그인</button>
+            </form>
+          </div>
+        </div>
+        <div> 
+        </div>
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-lg-3 col-xl-3">
+        <div class="socal-login-buttons"> 
+        <a href="#" class="btn btn-social btn-block btn-twitter"><i class="icon fa fa-twitter"></i> 트위터로 시작하기</a> 
+   
+   
+   
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.12&appId=598913833780626&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+<br>
+<br>
+
+
+
+
+<head>
+  <meta name="google-signin-client_id" content="1040068865620-q458emc189ucg0upk0j04g1tbmi15bn3.apps.googleusercontent.com	 
+  .apps.googleusercontent.com">
+</head>
+<body>
+  <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 280,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+       
+       
+       <br>
+       
+ 
+       
+       
+       
+      
+ <div id="naver_id_login"></div>
+
+  <script type="text/javascript">
+  
+  	var naver_id_login = new naver_id_login("2aXoBjqxKTuEIBd9PCM6", "YOUR_CALLBACK_URL");
+  	var state = naver_id_login.getUniqState();
+  	naver_id_login.setButton("green", 3, 60);
+  	naver_id_login.setDomain("YOUR_SERVICE_URL");
+  	naver_id_login.setState(state);
+  	naver_id_login.setPopup();
+  	naver_id_login.init_naver_id_login();
+  	
+  </script>
+  </div>
+     
+     <br>
+       
+       
+       
+          <a id="custom-login-btn" href="javascript:loginWithKakao()">
+   <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/></a>
+   <script type='text/javascript'>
+    Kakao.init('5116b3bc667703bf84b154ab8a58f70a');
+    function loginWithKakao() {
+   Kakao.Auth.login({
+   success: function(authObj) {
+    alert(JSON.stringify(authObj));  },
+      fail: function(err) {
+       alert(JSON.stringify(err)); }  });    };  </script>
+      
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
+
+<footer id="footer">
+  <div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-10">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <p><span class="icon-uilove-realestate"></span></p>
+            <address>
+            <strong>Twitter, Inc.</strong><br>
+            1355 Market Street, Suite 900<br>
+            San Francisco, CA 94103<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+            <p class="text-muted">Copyright &copy; 2016<br />
+              All rights reserved</p>
+          </div>
+          <div class="col-md-2  col-sm-4">
+            <ul class="list-unstyled">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Plans</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-sm-4">
+            <ul class="list-unstyled">
+              <li><a href="#">For Rent</a></li>
+              <li><a href="#">For Sale</a></li>
+              <li><a href="#">Commercial</a></li>
+              <li><a href="#">Agents</a></li>
+              <li><a href="#">Property Guides</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
+            <form>
+              <h4>Subscribe Newsletter</h4>
+              <div class="input-group input-group-lg">
+                <input type="email" class="form-control" placeholder="Email Address">
+                <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Go!</button>
+                </span> </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+</body></html>
