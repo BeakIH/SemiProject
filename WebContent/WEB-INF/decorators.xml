@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<decorators> 
-		<decorator page="/decorator/sideMenu.jsp" name="main"> 
+		<decorator page="/decorator/adminSide.jsp" name="main"> 
 			<pattern>/jsp/admin/*</pattern>
 		</decorator>
 			
