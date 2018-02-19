@@ -29,7 +29,7 @@ public class LoginAction {
 	
 	//0 = 아이디 없음 , 1 = 관리자 , 2=회원 , -1 = 비밀번호틀림
 
-	return "../jsp/login/loginPro.jsp";
+	return "/jsp/login/loginPro.jsp";
 	
 	
 	
