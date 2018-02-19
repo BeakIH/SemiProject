@@ -1,9 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+   
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -187,17 +190,40 @@
   </div>
   </div>
 </nav>
+<div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-8  col-lg-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
+            <li class="breadcrumb-item"><a href="#">계정</a></li>
+            <li class="breadcrumb-item active" aria-current="page">비밀번호 찾기</li>
+            </ol>
+            </nav>
+        <div class="page-header">
+        <h1>비밀번호 찾기</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-12">
-        <div class="error-template text-center"> <i class="fa fa-exclamation-triangle fa-5x text-danger animated zoomIn mb50"></i>
-          <h3 class="main-title centered"><span>BABSAZO 회원만 이용 가능한 콘텐츠 입니다</span></h3>
-          <div class="main-title-description"> 할인은 물론 무료 사이즈 업, 각종 서비스 · 기념일 쿠폰부터 <br> 오직 BABSAZO회원에게만 제공되는 게릴라 타임세일
-           <br> 먹으면서 누리는 자동 적립혜택까지 !
-           <br> 이 모든 것을 BABSAZO에서 맛있게 즐기세요 -  </div>
-          <div class="error-actions"> <a href="jointool2.html" class="btn btn-primary btn-lg">BABSAZO 가입하기 </a> <a href="signin.html" class="btn btn-light btn-lg"> 회원 로그인 </a> </div>
-        </div>
+      <div class="col col-md-8  col-lg-6">
+      
+      <br>
+      <p> &nbsp;비밀번호를 잊으셨나요? 
+      <br><br>가입시 등록하신 이메일을 입력해주세요. 도착한 메일의 링크를 클릭하시면 비밀번호 변경 페이지로 이동합니다.</p>
+            <form>
+            <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <input type="email" id="email" class="form-control input-lg" placeholder="Email Address">
+          </div>
+              <button type="submit" class="btn btn-primary btn-lg">입력</button>
+            </form>
+        
+        
+        <div> </div>
       </div>
     </div>
   </div>

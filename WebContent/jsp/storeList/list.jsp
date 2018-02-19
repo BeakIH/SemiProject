@@ -141,10 +141,9 @@ $(function(){
 		$(".checkbox input").attr("checked", false); // 모든 대상의 체크를 해제
 		$(this).attr("checked", true); // 클릭한 대상만 체크
 		//////////////////////
-		
+		 
 		$(this).val();
 		location.href='list.do?cate_nm='+$(this).val();
-	});
 });
 
 $(function() { 

@@ -1,44 +1,86 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>BABSAZO</title>
+<title>Real Estate</title>
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../lib/animate.css" rel="stylesheet">
+<link href="../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../lib/aos/aos.js"></script>
+<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../lib/lib.js"></script>
+<script>
+var placeSearch, autocomplete;
+var componentForm = {
+	//street_number: 'short_name',
+	//route: 'long_name',
+	locality: 'long_name',
+	administrative_area_level_1: 'long_name',
+	country: 'long_name',
+	postal_code: 'long_name'
+};
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+function initAutocomplete() {
+	autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
+	autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+	var place = autocomplete.getPlace();
+	for (var component in componentForm) {
+		document.getElementById(component).value = '';
+		document.getElementById(component).disabled = false;
+	}
+	
+	for (var i = 0; i < place.address_components.length; i++) {
+		var addressType = place.address_components[i].types[0];
+		if (componentForm[addressType]) {
+			var val = place.address_components[i][componentForm[addressType]];
+			document.getElementById(addressType).value = val;
+		}
+	}
+}
+</script> 
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script> 
+<script>
+	tinymce.init({
+		selector: '.text-editor',
+		height: 200,
+		menubar: false,
+		branding: false,
+		plugins: [
+			'lists link image preview',
+		],
+		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
+	});
+        </script>
+
 </head>
 <body>
+<!-- 헤더 -->
 <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
   <div class="container">
@@ -50,34 +92,34 @@
   <div class="collapse navbar-collapse" id="menu-content">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="../storeList/main.jsp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Home <span class="sr-only">(current)</span>
         </a>
-        <div class="dropdown-menu">
+        <!-- <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
             <a href="index2.html" class="dropdown-item">Homepage 2</a>
             <a href="index3.html" class="dropdown-item">Homepage 3</a>
             <a href="index4.html" class="dropdown-item">Homepage 4</a>
             <a href="index5.html" class="dropdown-item">Homepage 5</a>
             <a href="index6.html" class="dropdown-item">Homepage 6</a>
-            <a href="index7.html" class="dropdown-item">Homepage 7</a>
-        </div>
+            <a href="../storeList/main.jsp" class="dropdown-item">Home</a>
+        </div> -->
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Listings
+        <a class="nav-link dropdown-toggle" href="../storeList/list.jsp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Store
         </a>
-        <div class="dropdown-menu">
-            <a href="property_listing.html" class="dropdown-item">List View</a>
+        <!-- <div class="dropdown-menu">
+            <a href="../storeList/list.jsp" class="dropdown-item">Store</a>
             <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
             <a href="property_single2.html" class="dropdown-item">Single View 2</a>
             <a href="property_single3.html" class="dropdown-item">Single View 3</a>
-        </div>
+        </div> -->
       </li>
       
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Agents
         </a>
@@ -85,9 +127,9 @@
             <a href="agent_list.html" class="dropdown-item">Agent List</a>
             <a href="agent.html" class="dropdown-item">Agent Profile</a>
         </div>
-      </li>
+      </li> -->
       
-      <li class="nav-item dropdown megamenu">
+      <!-- <li class="nav-item dropdown megamenu">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Pages
         </a>
@@ -143,7 +185,7 @@
                 <ul class="list-unstyled">
                   <li class="title">Account Pages</li>
                   <li><a href="my_listing_add.html">Add Listing</a></li>
-                <li><a href="my_bookmarked_listings.html">Bookmarked Listing</a></li>
+                  <li><a href="my_bookmarked_listings.jsp">우리매장 예약현황</a></li>
                   <li><a href="my_listings.html">My Listings</a></li>
                   <li><a href="my_profile.html">My Profile</a></li>
                 <li><a href="my_password.html">Change Password</a></li>
@@ -161,48 +203,100 @@
               </div>
               </div>
         </div>
-      </li>
+      </li> -->
       
     </ul>
-    
+  
+   
+ <!-- 로그인 아이디가 관리자일때 header menu START --> 
+ <c:set var ="test" value ="a" />
+ <c:if test = "a=b">  
     <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, 세션
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="../admin/bookingList.jsp" class="dropdown-item"> 예약현황 </a>
+            <a href="../admin/storeInfo.jsp" class="dropdown-item">매장정보</a>
+            <a href="../admin/staffInfo.jsp" class="dropdown-item">직원조회</a>
+            <!-- <a href="../admin/passWord.jsp" class="dropdown-item">관리자비밀번호 변경</a> -->
+            <!-- <a href="my_payments.html" class="dropdown-item">매출현황</a>
+            <a href="my_account.html" class="dropdown-item">Account</a>  -->
         </div>
       </li>
+     
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
     
   </div>
   </div>
 </nav>
+
+ <!-- ADMIN sidebar menu START -->
+<div class="clearfix"></div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-12">
-        <div class="error-template text-center"> <i class="fa fa-exclamation-triangle fa-5x text-danger animated zoomIn mb50"></i>
-          <h3 class="main-title centered"><span>BABSAZO 회원만 이용 가능한 콘텐츠 입니다</span></h3>
-          <div class="main-title-description"> 할인은 물론 무료 사이즈 업, 각종 서비스 · 기념일 쿠폰부터 <br> 오직 BABSAZO회원에게만 제공되는 게릴라 타임세일
-           <br> 먹으면서 누리는 자동 적립혜택까지 !
-           <br> 이 모든 것을 BABSAZO에서 맛있게 즐기세요 -  </div>
-          <div class="error-actions"> <a href="jointool2.html" class="btn btn-primary btn-lg">BABSAZO 가입하기 </a> <a href="signin.html" class="btn btn-light btn-lg"> 회원 로그인 </a> </div>
+          <div class="col col-lg-12 col-xl-10">
+        <div class="row has-sidebar">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <div id="sidebar" class="sidebar-left">
+              <div class="sidebar_inner">
+                <div class="list-group no-border list-unstyled">
+                  <!-- <span class="list-group-item heading"> 예약관리 </span>
+                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> Add Listing</a>
+                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span>
+                  <i class="fa fa-fw fa-bookmark-o"></i> 우리매장 예약현황 </span>
+                    <span class="badge badge-primary badge-pill"> db </span>
+                    </a>
+                   -->
+                  <span class="list-group-item heading"> 매장관리  </span>
+                  <a href="bookingList.jsp" class="list-group-item d-flex justify-content-between align-items-center">
+                  	<span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
+                    <span class="badge badge-primary badge-pill">7</span>
+                  </a>
+                  
+                  <!-- <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> 직원조회 </a> -->
+                  <a href="storeInfo.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 매장정보 변경</a>
+                  <a href="passWord.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
+                  <!-- <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
+				  <a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> Membership</a>
+				  <a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
+				  <a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> Account</a> -->
+                  <span class="list-group-item heading"> 직원관리  </span>
+                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-user"></i> 직원등록 </a>
+                  <a href="management.jsp" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원정보 </a>
+                  <span class="list-group-item heading"> 우리매장소식  </span>
+                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-paper-plane" size = 5px></i> 매장소식 </a>
+                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 매장이용후기 </a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+         <decorator:body/>
+         
+         
         </div>
       </div>
     </div>
   </div>
 </div>
+</c:if>
+
+<!-- 회원 아이디로 로그인 했을때 sidebar -->
+<!-- MEMBER SIDEBAR START -->
+<%-- <c:if test= "${result.data }" --%>
+
+<!-- 화면 상단으로 이동하기 버튼 -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
+
+<!-- 푸터 START -->
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
@@ -211,23 +305,23 @@
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
             <address>
-            <strong>Twitter, Inc.</strong><br>
-            1355 Market Street, Suite 900<br>
-            San Francisco, CA 94103<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
+            <strong>BABSAZO, Inc.</strong><br>
+            	서울특별시 중구 남대문로 120<br>
+           		대일빌딩3층 D class<br>
+            <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
-            <p class="text-muted">Copyright &copy; 2016<br />
+            <p class="text-muted">Copyright &copy; 2018<br />
               All rights reserved</p>
           </div>
-          <div class="col-md-2  col-sm-4">
+          <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li>
+              <li><a href="#"> About BABSAJO </a></li>
+              <li><a href="#"> Team Introduction </a></li>
+              <!-- <li><a href="#">Security</a></li>
+              <li><a href="#">Plans</a></li> -->
             </ul>
           </div>
-          <div class="col-md-2 col-sm-4">
+          <!-- <div class="col-md-2 col-sm-4">
             <ul class="list-unstyled">
               <li><a href="#">For Rent</a></li>
               <li><a href="#">For Sale</a></li>
@@ -236,13 +330,13 @@
               <li><a href="#">Property Guides</a></li>
               <li><a href="#">Jobs</a></li>
             </ul>
-          </div>
+          </div> -->
           <div class="col-md-4 col-sm-12">
             <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
             <form>
-              <h4>Subscribe Newsletter</h4>
+              <h4>밥사조 소식 받아보기 </h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -254,5 +348,5 @@
   </div>
 </footer>
 </div>
-
-</body></html>
+</body>
+</html>

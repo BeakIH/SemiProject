@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -25,6 +25,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/selectric/jquery.selectric.js"></script>
+<script src="lib/tinymce/tinymce.min.js"></script>
 <script src="lib/aos/aos.js"></script>
 <script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
 <script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
@@ -165,6 +166,13 @@
       
     </ul>
     
+    
+    
+    
+    
+    
+    
+    
     <ul class="navbar-nav ml-auto">
       
       
@@ -173,7 +181,7 @@
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
+            <a href="my_profile.html" class="dropdown-item"></a>
             <a href="my_password.html" class="dropdown-item">Change Password</a>
             <a href="my_notifications.html" class="dropdown-item">Notifications</a>
             <a href="my_membership.html" class="dropdown-item">Membership</a>
@@ -184,29 +192,77 @@
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
     
+    
+    
+    
+    
   </div>
   </div>
 </nav>
+<div class="clearfix"></div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-12">
-        <div class="error-template text-center"> <i class="fa fa-exclamation-triangle fa-5x text-danger animated zoomIn mb50"></i>
-          <h3 class="main-title centered"><span>BABSAZO 회원만 이용 가능한 콘텐츠 입니다</span></h3>
-          <div class="main-title-description"> 할인은 물론 무료 사이즈 업, 각종 서비스 · 기념일 쿠폰부터 <br> 오직 BABSAZO회원에게만 제공되는 게릴라 타임세일
-           <br> 먹으면서 누리는 자동 적립혜택까지 !
-           <br> 이 모든 것을 BABSAZO에서 맛있게 즐기세요 -  </div>
-          <div class="error-actions"> <a href="jointool2.html" class="btn btn-primary btn-lg">BABSAZO 가입하기 </a> <a href="signin.html" class="btn btn-light btn-lg"> 회원 로그인 </a> </div>
+      <div class="col col-lg-12 col-xl-10">
+        <div class="row has-sidebar">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <div id="sidebar" class="sidebar-left">
+              <div class="sidebar_inner">
+                <div class="list-group no-border list-unstyled">
+                
+                
+                
+                
+                
+                
+                
+                
+                 <span class="list-group-item heading">내 매장 목록</span> <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a> <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한 BABSAZO</span> <span class="badge badge-primary badge-pill">10</span> </a> <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span> <span class="badge badge-primary badge-pill">7</span> </a>
+                  <span class="list-group-item heading">내 계정 관리</span> <a href="my_profile.html" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
+                   <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a> <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
+                    <a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a> <a href="my_payments.html" class="list-group-item">
+                    <i class="fa fa-fw fa-credit-card"></i> 결제 정보</a> 
+                    <a href="my_account.html" class="list-group-item active">
+                    <i class="fa fa-fw fa-cog"></i> 계정 설정</a> </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 계정 정보 설정부분 -->
+          
+          
+          <div class="col-md-7 col-lg-8 col-xl-8">
+            <div class="page-header bordered">
+              <h1>계정 설정</h1>
+            </div>
+            <form action="index.php">
+              <h3 class="subheadline">SNS 연동</h3>
+              <ul class="list-group no-border list-unstyled list-v2">
+                <li><i class="fa fa-fw fa-twitter icon"></i> Twitter <a class="btn btn-primary">연결 끊기</a> <span class="connected">연결됨</span></li>
+                <li><i class="fa fa-fw fa-facebook icon"></i> Facebook <a class="btn btn-light">연동하기</a></li>
+                <li><i class="fa fa-fw fa-google-plus icon"></i> Google Plus <a class="btn btn-light">연동하기</a></li>
+              </ul>
+              <h3 class="subheadline">계정 삭제</h3>
+              <p>더 이상 사용을 원치 않으실 경우 아래 버튼을 클릭하여 계정 삭제가 가능합니다.</p>
+              <a href="#" class="btn btn-lg btn-light">회원 탈퇴</a>
+              <hr>
+              <div class="form-group action">
+                <button type="submit" class="btn btn-lg btn-primary">설정 저장</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
-          <div class="col col-md-10">
+      <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
@@ -242,7 +298,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -254,5 +310,5 @@
   </div>
 </footer>
 </div>
-
-</body></html>
+</body>
+</html>

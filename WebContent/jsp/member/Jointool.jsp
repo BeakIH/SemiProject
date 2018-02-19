@@ -10,25 +10,25 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../lib/animate.css" rel="stylesheet">
+<link href="../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../lib/aos/aos.js"></script>
+<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -193,7 +193,7 @@
           <h1>회원가입 <small> BABSAZO 회원만의 다양한 할인 혜택 및 프로모션이 기다리고 있어요!</small></h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
-        
+        <form action=".do"> <!-- 주소 추가필요 ( 자바쪽 경로 파일추가) -->
         <div class="form-group">
               <label for="username"><font size="4em" color="52478B">이름</label>
               <input type="text" class="form-control" id="username" placeholder="이름을 입력해 주세요">
@@ -215,8 +215,6 @@
               <label for="InputPassword2">비밀번호 확인</font></label>
               <input type="password" class="form-control" id="InputPassword2" placeholder="비밀번호 확인">
               <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p>
-          <form role="form">
-          </form>
           
           <div class="form-group">
               <label for="username"><font size="4em" color="52478B">휴대폰 번호</font></label>
@@ -304,10 +302,11 @@
               </div>
             </div>
             <div class="row justify-content-md-center">
-              <form action="#"><button type="submit" class="btn btn-warning"><font color="#800080"></font>회원가입<i class="fa fa-check spaceLeft"></i></button></form>
-               <form action="#"><button type="submit" class="btn btn-danger">가입취소<i class="fa fa-times spaceLeft"></i></button></form>
+              <form action=""><button type="submit" class="btn btn-warning"><font color="#800080"></font>회원가입<i class="fa fa-check spaceLeft"></i></button></form>
+              <form action="../storeList/main.jsp"><button type="submit" class="btn btn-danger">가입취소<i class="fa fa-times spaceLeft"></i></button></form>
             </div>
             </div>
+            </form>
             </div>
 
 <footer id="footer">

@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -25,6 +25,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/selectric/jquery.selectric.js"></script>
+<script src="lib/tinymce/tinymce.min.js"></script>
 <script src="lib/aos/aos.js"></script>
 <script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
 <script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
@@ -51,7 +52,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Home <span class="sr-only">(current)</span>
+          메인<span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
@@ -165,38 +166,50 @@
       
     </ul>
     
+    
+    
+    
     <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> -님, 안녕하세요
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="my_profile.html" class="dropdown-item"></a>
+            <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
+            <a href="my_notifications.html" class="dropdown-item">BABSAZO알림</a>
+            <a href="my_membership.html" class="dropdown-item">BABSAZO멤버십</a>
+            <a href="my_payments.html" class="dropdown-item">껼제 정보</a>
+            <a href="my_account.html" class="dropdown-item">계정 설정</a>
         </div>
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
     
+    
+    
   </div>
   </div>
 </nav>
+<div class="clearfix"></div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-12">
-        <div class="error-template text-center"> <i class="fa fa-exclamation-triangle fa-5x text-danger animated zoomIn mb50"></i>
-          <h3 class="main-title centered"><span>BABSAZO 회원만 이용 가능한 콘텐츠 입니다</span></h3>
-          <div class="main-title-description"> 할인은 물론 무료 사이즈 업, 각종 서비스 · 기념일 쿠폰부터 <br> 오직 BABSAZO회원에게만 제공되는 게릴라 타임세일
-           <br> 먹으면서 누리는 자동 적립혜택까지 !
-           <br> 이 모든 것을 BABSAZO에서 맛있게 즐기세요 -  </div>
-          <div class="error-actions"> <a href="jointool2.html" class="btn btn-primary btn-lg">BABSAZO 가입하기 </a> <a href="signin.html" class="btn btn-light btn-lg"> 회원 로그인 </a> </div>
+      <div class="col col-lg-12 col-xl-10">
+        <div class="row has-sidebar">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <div id="sidebar" class="sidebar-left">
+              <div class="sidebar_inner">
+                <div class="list-group no-border list-unstyled">
+                
+       
+       
+       뫄뫄뫄
+       
+       
+          </div>
         </div>
       </div>
     </div>
@@ -206,7 +219,7 @@
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
-          <div class="col col-md-10">
+      <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
@@ -242,7 +255,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -254,5 +267,8 @@
   </div>
 </footer>
 </div>
-
-</body></html>
+</body>
+</html>
+                
+                
+                
