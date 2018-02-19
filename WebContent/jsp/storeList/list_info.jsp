@@ -7,6 +7,7 @@
 <%@ page import="list.ListDataBean"%>
 <%@ page import="java.lang.*" %>
 <%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.*, java.text.*" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -18,13 +19,59 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+	realtimeClock();
+});
+
+function realtimeClock() {
+	
+	$('#realTime').html(getTimeStamp("1"));
+	$('#realtimeTd').html(getTimeStamp("2"));
+	
+	  setTimeout("realtimeClock()", 1000);
+	}
 
 
-<script language="JavaScript">
-   
+	function getTimeStamp(dept) { // 24시간제
+	  var d = new Date();
+
+	  var s = "";
+	  if(dept == "1"){
+	  s =  leadingZeros(d.getFullYear(), 4) + '년 ' +
+	    leadingZeros(d.getMonth() + 1, 2) + '월 ' +
+	    leadingZeros(d.getDate(), 2) + '일 ' +
+	    leadingZeros(d.getHours(), 2) + '시 ' +
+	    leadingZeros(d.getMinutes(), 2) + '분 ' +
+	    leadingZeros(d.getSeconds(), 2) + "초";
+	  }
+	  else if(dept == "2"){
+		  s = leadingZeros(d.getHours(), 2) + '시 ' +
+		    leadingZeros(d.getMinutes(), 2) + '분 ' +
+		    leadingZeros(d.getSeconds(), 2) + "초";
+	  }
+	  return s;
+	}
+
+
+	function leadingZeros(n, digits) {
+	  var zero = '';
+	  n = n.toString();
+
+	  if (n.length < digits) {
+	    for (i = 0; i < digits - n.length; i++)
+	      zero += '0';
+	  }
+	  return zero + n;
+	}
+
+
+
      function winOpen(){
     	 
-    	 var pUrl="NewFile.jsp";
+    	 var pUrl="reserve.do?store_no="+$('#storeNo').val();
     	 var pName="new";
     	 var sizeX=1050;
     	 var sizeY=670;
@@ -113,7 +160,7 @@
 <link href="../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../../lib/jquery-3.2.1.min.js"></script>
+
 <script src="../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
@@ -301,17 +348,18 @@
 						<div class="page-header bordered mb0">
 							<div class="row">
 								<div class="col-md-8">
-									<a href="#" class="btn-return" title="Back"><i
+									<a href="javascript:history.back();" class="btn-return" title="Back"><i
 										class="fa fa-angle-left"></i></a>
 									<h1>
-										${article.store_nm }<span class="label label-bordered">한식</span>
+									<input type="hidden" value="${article.store_no }" id="storeNo" />
+										${article.store_nm }<span class="label label-bordered">${article.cate_nm }</span>
 										<small><i class="fa fa-map-marker"></i> 서울시 중구 남대문로
 											120 대일빌딩 3층</small>
 									</h1>
 								</div>
 								<div class="col-md-4">
 									<div class="price">
-										예약가능좌석: 20좌석 <small>현재시간:오후3시30분</small>
+										예약가능좌석: ${article.avl_tbl_cnt } <br /><span id="realTime" style="font-size:16px; color:blue"></span>										
 									</div>
 								</div>
 							</div>
@@ -429,10 +477,8 @@
 										<div>
 											<ul class="item-features">
 												<li><span>매장테이블</span> 테이블수</li>
-												<li><span>2인</span> 4자리</li>
-												<li><span>4인</span> 10자리</li>
-												<li><span>6인</span> 2자리</li>
-												<li><span>룸</span> 3자리</li>
+												<li><span>전체테이블</span>${article.tot_tbl_cnt }자리</li>
+												<li><span>예약가능좌석</span>${article.avl_tbl_cnt }자리</li>
 											</ul>
 											<div class="item-description">
 												<h3 class="headline">매장 소개</h3>
@@ -441,13 +487,18 @@
 											</div>
 											<h3 class="headline">메뉴</h3>
 											<ul class="checked feature-list" id="BK_MENU">
-												<li><strong>스테이크:</strong> 17,000원</li>
-												<li><strong>함박스테이크:</strong> 18,000원</li>
-												<li><strong>돈까스:</strong> 15,000원</li>
-												<li><strong>크림스파게티:</strong> 10,000원</li>
-												<li><strong>봉골레파스타:</strong> 12,000원</li>
-												<li><strong>커피:</strong> 3,000원</li>
+											<c:forEach var="menuList" items="${article.menuList}">
+												<li><strong>${menuList.menu_nm1} : </strong>${menuList.menu_nm1_sal}원</li>
+											</c:forEach>
+<%-- 												<li><strong>${article.menu_nm2}</strong>${article.menu_nm2_sal}</li> --%>
 											</ul>
+											
+											<!-- 한줄평  -->
+											<div class="item-attachments">
+												<h3 class="headline">한줄평</h3>
+
+												한줄평 위치
+											</div>
 
 											<div class="item-attachments">
 												<h3 class="headline">예약</h3>
@@ -455,13 +506,6 @@
 												<a href="#" class="btn btn-lg btn-inverse"
 													onclick="winOpen()"><i class="fa fa-cloud-download"
 													aria-hidden="true"></i>예약하기</a>
-											</div>
-											
-											<!-- 한줄평  -->
-											<div class="item-attachments">
-												<h3 class="headline">한줄평</h3>
-
-												한줄평 위치
 											</div>
 										</div>
 									</div>
@@ -486,23 +530,20 @@
 															<table class="table v1">
 																<tr>
 																	<td>영업시간</td>
-																	<td>11:30~22:00</td>
+																	<td>${article.store_octime}</td>
 																</tr>
 																<tr>
 																	<td>연락처</td>
-																	<td>02-1234-1234</td>
+																	<td>${article.store_tel}</td>
 																</tr>
 																<tr>
 																	<td>예약가능좌석</td>
-																	<td id="AVL_TBL_CNT">20좌석</td>
-																</tr>
-																<tr>
-																	<td>대기현황</td>
-																	<td>0테이블</td>
+																	<td id="AVL_TBL_CNT">${article.avl_tbl_cnt}</td>
 																</tr>
 																<tr>
 																	<td>현재시간</td>
-																	<td id="">오후3시30분</td>
+																	<td id="realtimeTd">
+ 																			
 																</tr>
 															</table>
 														</div>
@@ -515,16 +556,16 @@
 													<div class="media-left">
 														<a href="agent.html"> <img
 															class="media-object rounded-circle"
-															src="img/demo/profile.jpg" width="64" height="64" alt="">
+															src="../../img/demo/profile.jpg" width="64" height="64" alt="">
 														</a>
 													</div>
 													<div class="media-body">
 														<h4 class="media-heading">
-															<a href="agent.html">강호동</a>
+															<a href="agent.html">${article.store_owner}</a>
 														</h4>
 														<p>
-															<i class="fa fa-phone" aria-hidden="true"></i>
-															전화번호:02-1234-1234</a>
+															<i class="fa fa-phone" aria-hidden="true">매장번호:</i><br>
+															${article.store_tel}
 														</p>
 
 													</div>
