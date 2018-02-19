@@ -32,6 +32,7 @@
 <script src="../../lib/aos/aos.js"></script>
 <script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
 <script src="../../lib/lib.js"></script>
+<script src="../../lib/checkValue.js"></script>
 <script>
 var placeSearch, autocomplete;
 var componentForm = {
@@ -264,8 +265,8 @@ function fillInAddress() {
 				  <a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
 				  <a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> Account</a> -->
                   <span class="list-group-item heading"> 직원관리  </span>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-user"></i> 직원등록 </a>
-                  <a href="management.jsp" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원정보 </a>
+                  <a href="createEmp.jsp" class="list-group-item"><i class="fa fa-fw fa-user"></i> 직원등록 </a>
+                  <a href="management_list.do?store_no=1" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원정보 </a>
                   <span class="list-group-item heading"> 우리매장소식  </span>
                   <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-paper-plane" size = 5px></i> 매장소식 </a>
                   <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 매장이용후기 </a>
