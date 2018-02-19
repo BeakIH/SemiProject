@@ -14,13 +14,18 @@ public class LoginAction {
 		
 	String userid = request.getParameter("userid"); 
 	String userpw = request.getParameter("userpw");
+ 	String storeNo = request.getParameter("store_no");
+	
 	
 	LoginDBBean logPro = LoginDBBean.getInstance();
 	
-			
+	request.getSession().setAttribute("id",userid);
+	request.getSession().setAttribute("pw",userpw);
+	request.getSession().setAttribute("sno",storeNo);
+	
 	List noList =logPro.userCheck2(userid, userpw);
 	
-	request.setAttribute("noList", noList);
+	//request.getSession().setAttribute("noList", noList);
 	
 	//0 = 아이디 없음 , 1 = 관리자 , 2=회원 , -1 = 비밀번호틀림
 

@@ -5,8 +5,6 @@ import java.text.*;
 import java.util.*;
 import java.util.Date;
 
-import board.BoardDataBean;
-
 
 public class StoreListDBBean { //DAO
 
@@ -15,10 +13,10 @@ public class StoreListDBBean { //DAO
 		return instance;
 	}
 	
-	// �� �޼ҵ� ����
+	// 빈 메소드 생성
 	public StoreListDBBean() {}
 	
-	//DB����
+	//DB연결
 	private Connection getConnection() throws Exception{
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
@@ -35,27 +33,27 @@ public class StoreListDBBean { //DAO
          Date date = new Date(System.currentTimeMillis());
          SimpleDateFormat simple = new SimpleDateFormat("m");
          String sysdate = simple.format(date).toString();
-         String x = sysdate.substring(1); // ���� 2�ڸ��ϱ� �ε����� 0�������� 1���̾Ҵ�. 1�� �ڸ� ���Ҷ�..
+         String x = sysdate.substring(1); // 분은 2자리니까 인덱스는 0부터지만 1을뽑았다. 1의 자리 비교할라구..
          if (x.equals("5")) {
-            System.out.println("5�и��� ������Ʈ�˴ϴ�.");
-            String sql = "update booking set confirm_yn = 'y'";
+            System.out.println("현재 5분때 시간입니다.");
+            String sql = "update 문 들어갈 곳(cur_cnt컬럼)";
             conn = getConnection();
             pstmt = conn.prepareStatement(sql);
             conn.setAutoCommit(false);
             int check = pstmt.executeUpdate();
             if (check == 1) {
-               sql = "select store_nm, cur_tbl_cnt, avl_tbl_cnt from store_list";
+               sql = "값을 가져올 sql";
                pstmt = conn.prepareStatement(sql);
                rs = pstmt.executeQuery();
                list = new ArrayList<StoreListDataBean>();
                while (rs.next()) {
                   StoreListDataBean dto = new StoreListDataBean();
-                  // ������ dto ��ü�� ȭ���� ������ ���� ����ִ� �ڵ� set��
+                  // 생성한 dto 객체의 화면의 보여줄 값을 담아주는 코드 set을
                   list.add(dto);
                }
             }
          } else {
-            System.out.println("�ɳ�");
+            System.out.println("냥냥");
          }
          conn.commit();
          conn.setAutoCommit(true);
