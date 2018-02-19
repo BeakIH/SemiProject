@@ -10,7 +10,7 @@ public class BookingDataBean {
 
 	    //  대기번호
 	    private Integer wtNo;
-
+ 
 	    //  예약확인담당자
 	    private Integer empNo;
 
@@ -43,8 +43,19 @@ public class BookingDataBean {
 
 	    //  매장번호
 	    private Integer storeNo;
+	    // 예약음식 총 가격
+	    private String bkPriSum;
+	    
+	    
+	    public String getBkPriSum() {
+			return bkPriSum;
+		}
 
-	    public Integer getBkNo() {
+		public void setBkPriSum(String bkPriSum) {
+			this.bkPriSum = bkPriSum;
+		}
+
+		public Integer getBkNo() {
 	        return bkNo;
 	    }
 

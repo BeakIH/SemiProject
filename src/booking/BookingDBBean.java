@@ -6,10 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import board.BoardDataBean;
-import board.Exception;
+/*import board.Exception;
 import board.ResultSet;
 import board.String;
-
+*/
 public class BookingDBBean {
 	private static BookingDBBean instance = new BookingDBBean();
 	
@@ -22,28 +22,31 @@ public class BookingDBBean {
 		return DriverManager.getConnection(jdbcDriver);
 	}
 	
-	// 예약신청 발생했을 때 
+	// 예약신청 발생했을 때 insert하는 메서드 
 	public void insertBooking(BookingDataBean booking) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null; 
 		
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,'N',?,?)");
-			pstmt.setInt(1, booking.getBkNo());
-			pstmt.setInt(2, booking.getWtNo());
-			pstmt.setInt(3, booking.getEmpNo());
-			pstmt.setInt(4, booking.getMemNo());
-			pstmt.setString(5, booking.getMemNm());
-			pstmt.setString(6, booking.getMemTel());
-			pstmt.setString(7, booking.getStoreNm() );
+			
+			pstmt = conn.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			pstmt.setInt(1, 1);
+			pstmt.setInt(2, 1);
+			pstmt.setInt(3, 1);
+			pstmt.setInt(4, 1);
+			pstmt.setString(5, "강호동");
+			pstmt.setString(6, "010-1111-1241");
+			pstmt.setString(7, booking.getStoreNm());
 			pstmt.setString(8, booking.getBkDate());
 			pstmt.setString(9, booking.getBkCnt());
 			pstmt.setString(10, booking.getBkMenu());
-			//pstmt.setString(11, booking.getCofirmYn());
+			/*pstmt.setString(11, booking.getCofirmYn());*/ //N값 넣어줘야됨
 			pstmt.setInt(11, booking.getBkTblCnt());
 			pstmt.setInt(12, booking.getStoreNo());
-		
+			pstmt.setString(13, booking.getBkPriSum());
+			pstmt.executeUpdate();
+		 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
