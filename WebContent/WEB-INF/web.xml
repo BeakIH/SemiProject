@@ -27,7 +27,7 @@
   		<init-param>
   			<param-name>propertyConfig</param-name>
   			<!-- <param-value>/WEB-INF/commandHandlerURI.properties</param-value> -->
-  			<param-value>/WEB-INF/commandHandlerURI.properties</param-value>
+  			<param-value>C:\Users\IH\git\SemiProject\WebContent\WEB-INF\commandHandlerURI.properties</param-value>
   		</init-param>
   	</servlet>
   
