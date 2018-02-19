@@ -76,34 +76,29 @@ public class StoreListDBBean { //DAO
    }
    
    
- //storeInfo.jsp : 수정폼에 한줄의 데이터를 가져올때.
-   public BoardDataBean updateGetArticle(int num) throws Exception {
+ //storeInfo.jsp : 매장정보 폼에서 한줄의 데이터를 가져온다.
+   public StoreListDataBean updateGetArticle(int store_no) throws Exception {
        Connection conn = null;
        PreparedStatement pstmt = null;
        ResultSet rs = null;
-       BoardDataBean article=null;
+       StoreListDataBean article=null;
        try {
            conn = getConnection();
 
            pstmt = conn.prepareStatement(
-           "select store_no, cate_nm,  from board where store_no = ?");
-           pstmt.setInt(1, num);
+           "select store_no, cate_nm, store_exp, store_tel, store_exp_dt,store_url from store_list where store_no = ?");
+           pstmt.setInt(1, store_no);
            rs = pstmt.executeQuery();
 
            if (rs.next()) {
-               article = new BoardDataBean();
-               article.setNum(rs.getInt("num"));
-               article.setWriter(rs.getString("writer"));
-               article.setEmail(rs.getString("email"));
-               article.setSubject(rs.getString("subject"));
-               article.setPasswd(rs.getString("passwd"));
-               article.setReg_date(rs.getTimestamp("reg_date"));
-               article.setReadcount(rs.getInt("readcount"));
-               article.setRef(rs.getInt("ref"));
-               article.setRe_step(rs.getInt("re_step"));
-               article.setRe_level(rs.getInt("re_level"));
-               article.setContent(rs.getString("content"));
-               article.setIp(rs.getString("ip"));    
+               article = new StoreListDataBean();
+               article.setStoreNm(rs.getString("storeNm"));
+               article.setCateNm(rs.getString("cateNm"));
+               article.setStoreExp(rs.getString("storeExp"));
+               article.setStoreTel(rs.getString("storeTel"));
+               article.setStoreExpDt(rs.getString("storeExpDt"));
+               article.setStoreUrl(rs.getString("storeUrl"));
+                 
 	    }
        } catch(Exception ex) {
            ex.printStackTrace();
@@ -115,35 +110,34 @@ public class StoreListDBBean { //DAO
 	return article;
    }
    
- //storeInfoPro.jsp : 실제 데이터를 수정하는 메소드
-   public int updateArticle(BoardDataBean article) throws Exception {
+ //storeInfoPro.jsp : 실제 매장정보를 수정하는 메소드
+   public int updateArticle(StoreListDataBean article) throws Exception {
        Connection conn = null;
        PreparedStatement pstmt = null;
        ResultSet rs= null;
 
-       String dbpasswd="";
+       String dbstoreno="";
        String sql="";
        int x=-1;
        try {
            conn = getConnection();
           
-	    pstmt = conn.prepareStatement("select passwd from board where num = ?");
-           pstmt.setInt(1, article.getNum());
+	    pstmt = conn.prepareStatement("select store_no from store_list where store_no = ?");
+           pstmt.setInt(1, article.getStoreNo());
            rs = pstmt.executeQuery();
           
 	if(rs.next()){
-	    dbpasswd= rs.getString("passwd");
-	    if(dbpasswd.equals(article.getPasswd())){
-		sql="update board set writer=?,email=?,subject=?,passwd=?";
-		sql+=",content=? where num=?";
+	    dbstoreno= rs.getString("storeNo");
+	    if(dbstoreno.equals(article.getStoreNo())){
+		sql="update store_list set store_no=?, cate_nm=?, store_exp=?, store_tel=?, store_exp_dt=?,store_url=? where store_no=?";
                pstmt = conn.prepareStatement(sql);
-
-               pstmt.setString(1, article.getWriter());
-               pstmt.setString(2, article.getEmail());
-               pstmt.setString(3, article.getSubject());
-               pstmt.setString(4, article.getPasswd());
-               pstmt.setString(5, article.getContent());
-               pstmt.setInt(6, article.getNum());
+               
+               pstmt.setString(1, article.getStoreNm());
+               pstmt.setString(2, article.getCateNm());
+               pstmt.setString(3, article.getStoreExp());
+               pstmt.setString(4, article.getStoreTel());
+               pstmt.setString(5, article.getStoreExpDt());
+               pstmt.setString(6, article.getStoreUrl());
                pstmt.executeUpdate();
                x= 1;
 	    }else{
