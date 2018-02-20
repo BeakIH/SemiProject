@@ -1,6 +1,6 @@
 package jdbc;
 
-import java.sql.DriverManager;
+import java.sql.DriverManager; 
 import java.util.Properties;
 
 import javax.servlet.ServletException;

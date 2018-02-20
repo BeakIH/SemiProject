@@ -8,4 +8,4 @@
 <body>
 <% response.sendRedirect("/SemiProject/notice/notice2.do"); %>
 </body>
-</html>
+</html> 

@@ -1,6 +1,6 @@
 package board;
 
-import java.sql.*;
+import java.sql.*; 
 
 import javax.sql.*;
 import javax.naming.*;

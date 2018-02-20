@@ -1,7 +1,7 @@
 package emp;
 
 //직원관리 직원현황
-public class EmpDataBean {
+public class EmpDataBean { 
 
 	    private int empNo; // 사원번호 직원번호
 	    private String empNm; // 사원명 직원명

@@ -1,6 +1,6 @@
 package bbs;
 
-import java.sql.DriverManager;
+import java.sql.DriverManager; 
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,6 +1,6 @@
 package board;
 
-public class BoardDataBean {
+public class BoardDataBean { 
 	private int store_no;
 	private int emp_no;
 	private String cate_nm;

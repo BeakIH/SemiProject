@@ -1,6 +1,6 @@
 package action;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest; 
 import javax.servlet.http.HttpServletResponse;
 
 public class DeleteFormAction implements CommandAction {//글삭제 폼

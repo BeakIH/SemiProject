@@ -1,6 +1,6 @@
 package action;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest; 
 import javax.servlet.http.HttpServletResponse;
 
 public class WriteFormAction implements CommandAction {//글 입력 폼 처리
