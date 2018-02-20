@@ -21,11 +21,9 @@ public class UpdateProAction implements CommandAction {
         article.setbTitle(request.getParameter("btitle"));
         article.setempNm(request.getParameter("empnm"));
         article.setbContent(request.getParameter("bcontent"));
-        //article.setbViewCnt(Integer.parseInt(request.getParameter("bviewcnt")));
+        article.setbViewCnt(Integer.parseInt(request.getParameter("bviewcnt")));
         //article.setAdm_pw(request.getParameter("admpw"));
-        
-        
-   
+ 
 	BoardDBBean dbPro = BoardDBBean.getInstance();
         int check = dbPro.updateArticle(article);
 

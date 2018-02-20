@@ -1,7 +1,16 @@
 package bbs;
+
 import java.sql.*; 
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 //BoardDBBean bd = BoardDBBean.getInstance()
 public class BoardDBBean {   
@@ -62,13 +71,6 @@ public class BoardDBBean {
         }
         
     }
-	        
-
-            
-           
-          
-            
-
    
     //list.jsp : 페이징을 위해서 전체 DB에 입력된 행의수가 필요하다...!!!
     public int getArticleCount() throws Exception {
@@ -145,8 +147,7 @@ public class BoardDBBean {
         }
 	return articleList;
     }
-
-    //content.jsp : DB로부터 한줄의 데이터를 가져온다.
+    
     @SuppressWarnings({ "null", "resource" })
 	public BoardDataBean getArticle(int bno) throws Exception {
         Connection conn = null;
