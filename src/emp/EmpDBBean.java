@@ -21,6 +21,7 @@ public class EmpDBBean {
 	}
 
 	private Connection getConnection() throws Exception {
+		System.out.println("김소희바보");
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
 	}
@@ -32,10 +33,12 @@ public class EmpDBBean {
 		ResultSet rs = null;
 
 		try {
+			System.out.println("커넥션메서드전 에");
 			conn = getConnection();
+			System.out.println("여기서에");
 			conn.setAutoCommit(false);
 			
-			String sql = "select * from emp10 where store_No = ? order by emp_no";
+			String sql = "select * from emp where store_No = ? order by emp_no";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, storeNo);
 			
@@ -81,7 +84,7 @@ public class EmpDBBean {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			pstmt = conn.prepareStatement("insert into emp10(emp_no, emp_nm, store_no, position, adm_yn, emp_status) values (emp_seq.nextval, ?, ?, ?, 'N', '재직')");
+			pstmt = conn.prepareStatement("insert into emp(emp_no, emp_nm, store_no, position, adm_yn, emp_status) values (emp_seq.nextval, ?, ?, ?, 'N', '재직')");
 			pstmt.setString(1, emp.getEmpNm());
 			pstmt.setInt(2, emp.getStoreNo());
 			pstmt.setString(3, emp.getPosition());
