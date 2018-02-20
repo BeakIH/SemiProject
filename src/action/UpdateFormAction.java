@@ -21,6 +21,6 @@ public class UpdateFormAction implements CommandAction {//글수정 폼
         request.setAttribute("pageNum", new Integer(pageNum));
         request.setAttribute("article", article);
 
-        return "/notice/FormAction.jsp";//해당뷰
+        return "/notice/updateForm.jsp";//해당뷰
     }
 }

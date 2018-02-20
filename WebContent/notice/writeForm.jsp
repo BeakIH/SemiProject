@@ -208,7 +208,7 @@
 					<h4 class="inquiry_title"><span style="visibility:hidden;position:absolute">공지사항</span></h4>
 					<span class="inquiry_required"><span class="txt_red ">&nbsp;*&nbsp;</span> 표시는 필수입력사항입니다.</span>
 					
-					<form method="post" name="writeform" action="/Project_bbs/listo/notice/writePro.do" onsubmit="return writeSave()">
+					<form method="post" name="writeform" action="/SemiProject/notice/writePro.do" onsubmit="return writeSave()">
 						<input type="hidden" name="bNo"  value="${bNo}">
 						<input type="hidden" name="bviewcnt" value=0>
 																	
@@ -220,23 +220,23 @@
 
 								<tbody>
 								<tr>
-								<td colspan="2" style="text-align:right;"><a href="/Project_bbs/listo/notice2.do">글목록</a>
+								<td colspan="2" style="text-align:right;"><a href="/SemiProject/notice/notice2.do">글목록</a>
 								</td>
 								 </tr>
 								 <!-- 게시직원명 db4 -->
 								<tr>
-									<th scope="row"><span>직원명<span class="req"></span></span></th> 
+									<th scope="row"><span>직원명</span></th> 
 									<td><input type="text" name="empnm" id="empnm" maxlength="50"></td>
 								</tr>
 								<!-- 직원번호 db2 -->
 								<tr>
-									<th scope="row"><span>직원번호<span class="req"></span></span></th> 
+									<th scope="row"><span>직원번호</span></th> 
 									<td><input type="text" name="empNo" id="empNo" maxlength="50"></td>
 										
 								</tr>
 								<!-- 공지글 제목 db3 -->
 								<tr>
-									<th scope="row"><label for="bTitle">제목</label></th>
+									<th scope="row"><span>제목</span></th>
 									<td><input type="text" name="btitle" id="btitle" maxlength="50"></td>
 								</tr>
 								<!-- 공지글 내용 db5 -->

@@ -256,7 +256,7 @@
 									<c:out value="${number}"/>
   <c:set var="number" value="${number - 1}"/></li>
 									<li class="cell02"><!-- 제목 -->
-									<a href="">
+									<a href="/SemiProject/notice/Content.do?bNo=${article.bNo}&pageNum=${currentPage}">
           ${article.bTitle}</a></li>
 									<li class="cell03"><!-- 게시일자 -->
 									<span>${article.postDate}
@@ -284,15 +284,15 @@
    </c:if>
    
    <c:if test="${startPage > 10}">
-        <a href="/Project_bbs/listo/notice/notice2.do?pageNum=${startPage - 10 }">[이전]</a>
+        <a href="/SemiProject/notice/notice2.do?pageNum=${startPage - 10 }">[이전]</a>
    </c:if>
 
    <c:forEach var="i" begin="${startPage}" end="${endPage}">
-       <a href="/Project_bbs/listo/notice/notice2.do?pageNum=${i}"><div style="visibility:hidden">[${i}]</div></a>
+       <a href="/SemiProject/notice/notice2.do?pageNum=${i}"><div style="visibility:hidden">[${i}]</div></a>
    </c:forEach>
 
    <c:if test="${endPage < pageCount}">
-        <a href="/Project_bbs/listo/notice/notice2.do?pageNum=${startPage + 10}">[다음]</a>
+        <a href="/SemiProject/notice/notice2.do?pageNum=${startPage + 10}">[다음]</a>
    </c:if>
    <div class="pagenate_area">
    							<ul class="pagenate">
@@ -362,7 +362,7 @@
 </c:if>
 
  																	<div style="float:right;" >
-<a href="/Project_bbs/listo/notice/writeForm.do">글쓰기</a>
+<a href="/SemiProject/notice/writeForm.do">글쓰기</a>
 </div>			
 
 			</div>

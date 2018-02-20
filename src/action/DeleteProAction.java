@@ -23,6 +23,6 @@ public class DeleteProAction implements CommandAction {//글삭제
         request.setAttribute("pageNum", new Integer(pageNum));
         request.setAttribute("check", new Integer(check));
 
-        return "/notice/DeletePro.jsp";//해당뷰
+        return "/notice/deletePro.jsp";//해당뷰
     }
 }

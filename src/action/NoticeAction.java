@@ -26,7 +26,8 @@ public class NoticeAction implements CommandAction {//글목록 처리
         int count = 0;
         int number=0;
 
-        List articleList = null;
+        @SuppressWarnings("rawtypes")
+		List articleList = null;
         BoardDBBean dbPro = BoardDBBean.getInstance();//DB연동
         count = dbPro.getArticleCount();//전체 글의 수
        

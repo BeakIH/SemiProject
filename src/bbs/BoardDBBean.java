@@ -147,7 +147,8 @@ public class BoardDBBean {
     }
 
     //content.jsp : DB로부터 한줄의 데이터를 가져온다.
-    public BoardDataBean getArticle(int bno) throws Exception {
+    @SuppressWarnings({ "null", "resource" })
+	public BoardDataBean getArticle(int bno) throws Exception {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -166,13 +167,14 @@ public class BoardDBBean {
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
+            	article = new BoardDataBean();
 		          article.setbNo(rs.getInt("B_NO"));
 		          article.setempNo(rs.getInt("EMP_NO"));
-                  article.setbTitle(rs.getString("B_TITLE"));
-                  article.setempNm(rs.getString("EMP_NM"));
-                  article.setbContent(rs.getString("B_CONTENT"));
-                  article.setpostDate(rs.getTimestamp("POST_DATE"));
-		          article.setbViewCnt(rs.getInt("B_VIEW_CNT"));   
+              article.setbTitle(rs.getString("B_TITLE"));
+              article.setempNm(rs.getString("EMP_NM"));
+              article.setbContent(rs.getString("B_CONTENT"));
+              article.setpostDate(rs.getTimestamp("POST_DATE"));
+		          article.setbViewCnt(rs.getInt("B_VIEW_CNT")); 
 	    }
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -186,7 +188,7 @@ public class BoardDBBean {
 
     //updateForm.jsp : 수정폼에 한줄의 데이터를 가져올때.
     @SuppressWarnings("null")
-	public BoardDataBean updateGetArticle(int num) throws Exception {
+	public BoardDataBean updateGetArticle(int bno) throws Exception {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -196,7 +198,7 @@ public class BoardDBBean {
 
             pstmt = conn.prepareStatement(
             "select * from board where b_no = ?");
-            pstmt.setInt(1, num);
+            pstmt.setInt(1, bno);
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
@@ -261,7 +263,7 @@ public class BoardDBBean {
     }
    
     //deletePro.jsp : 실제 데이터를 삭제하는 메소드...
-    public int deleteArticle(int num, String passwd) throws Exception {
+    public int deleteArticle(int bno, String passwd) throws Exception {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs= null;
@@ -272,14 +274,14 @@ public class BoardDBBean {
 
             pstmt = conn.prepareStatement(
             "select adm_pw from emp_adm where emp_no = ?");
-            pstmt.setInt(1, num);
+            pstmt.setInt(1, bno);
             rs = pstmt.executeQuery();
            
             if(rs.next()){
 		dbpasswd= rs.getString("passwd");
 		if(dbpasswd.equals(passwd)){
 		    pstmt = conn.prepareStatement("delete from board where emp_no=?");
-                    pstmt.setInt(1, num);
+                    pstmt.setInt(1, bno);
                     pstmt.executeUpdate();
 		    x= 1; //글삭제 성공
 		}else

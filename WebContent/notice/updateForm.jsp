@@ -217,7 +217,7 @@
 
 								<tbody>
 								<tr>
-								<td colspan="2" style="text-align:right;"><a href="/Project_bbs/listo/notice2.do">글목록</a>
+								<td colspan="2" style="text-align:right;"><a href="/SemiProject/notice/notice2.do">글목록</a>
 								</td>
 								 </tr>
 								 <!-- 게시직원명 db4 -->
