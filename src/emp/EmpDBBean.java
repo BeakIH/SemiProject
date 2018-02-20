@@ -21,7 +21,7 @@ public class EmpDBBean {
 	}
 
 	private Connection getConnection() throws Exception {
-		System.out.println("김소희바보");
+		//System.out.println("김소희바보");
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
 	}
@@ -33,9 +33,9 @@ public class EmpDBBean {
 		ResultSet rs = null;
 
 		try {
-			System.out.println("커넥션메서드전 에");
+			//System.out.println("커넥션메서드전 에");
 			conn = getConnection();
-			System.out.println("여기서에");
+			//System.out.println("여기서에");
 			conn.setAutoCommit(false);
 			
 			String sql = "select * from emp where store_No = ? order by emp_no";

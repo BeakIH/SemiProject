@@ -8,7 +8,7 @@
 	<!-- -1: 비밀번호 오류 -->
 	<c:when test= "${check==-1}">
 		<c:out value="${passfalse}" escapeXml = "false" />
-		<meta http-equive ="refresh" content="0;URL ='../jsp/member/Jointool.do'">
+		<meta http-equive ="refresh" content="0;URL ='../jsp/member/SigninCon.jsp'">
 	</c:when>
 	
 	<!-- 0: 비회원 -->
