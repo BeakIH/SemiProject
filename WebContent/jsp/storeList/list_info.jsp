@@ -352,8 +352,7 @@ function realtimeClock() {
 									<h1>
 									<input type="hidden" value="${article.store_no }" id="storeNo" />
 										${article.store_nm }<span class="label label-bordered">${article.cate_nm }</span>
-										<small><i class="fa fa-map-marker"></i> 서울시 중구 남대문로
-											120 대일빌딩 3층</small>
+										<small><i class="fa fa-map-marker"></i>${article.store_plc }</small>
 									</h1>
 								</div>
 								<div class="col-md-4">
@@ -487,7 +486,7 @@ function realtimeClock() {
 											<h3 class="headline">메뉴</h3>
 											<ul class="checked feature-list" id="BK_MENU">
 											<c:forEach var="menuList" items="${article.menuList}">
-												<li><strong>${menuList.menu_nm1} : </strong>${menuList.menu_nm1_sal}원</li>
+												<li><strong>${menuList.menu_nm} : </strong>${menuList.price}원</li>
 											</c:forEach>
 <%-- 												<li><strong>${article.menu_nm2}</strong>${article.menu_nm2_sal}</li> --%>
 											</ul>
