@@ -1,4 +1,5 @@
 package bbs.controller;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bbs.action.CommandAction;
+import action.CommandAction;
 
 public class ControllerUsingURI extends HttpServlet {
    
