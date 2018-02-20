@@ -46,7 +46,7 @@
 							</div>
 						</div>
 						<div class="col-md-9">
-							<a href="modifyEmp.jsp?store_no=1" class="btn btn-primary float-right">정보 수정</a>
+							<a href="modifyEmp.jsp?store_no=1001" class="btn btn-primary float-right">정보 수정</a>
 							<h3 class="item-title">
 								<a href="agent.html">직원번호 : ${manage.empNo }</a>
 							</h3>

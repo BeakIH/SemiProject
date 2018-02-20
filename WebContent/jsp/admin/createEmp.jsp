@@ -27,6 +27,7 @@
 							<option value="" selected="selected">선택하세요</option>
 							<option value="직원">직원</option>
 							<option value="매니저">매니저</option>
+							<option value="주방장">주방장</option>
 							<option value="점장">점장</option>
 						</select>
 					</div>
