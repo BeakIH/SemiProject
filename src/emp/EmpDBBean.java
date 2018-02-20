@@ -35,7 +35,7 @@ public class EmpDBBean {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 			
-			String sql = "select * from emp where store_No = ? order by emp_no";
+			String sql = "select * from emp10 where store_No = ? order by emp_no";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, storeNo);
 			
@@ -81,7 +81,7 @@ public class EmpDBBean {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			pstmt = conn.prepareStatement("insert into emp values (seq.nextval, ?, ?, ?, 0, 1)");
+			pstmt = conn.prepareStatement("insert into emp10(emp_no, emp_nm, store_no, position, adm_yn, emp_status) values (emp_seq.nextval, ?, ?, ?, 'N', '재직')");
 			pstmt.setString(1, emp.getEmpNm());
 			pstmt.setInt(2, emp.getStoreNo());
 			pstmt.setString(3, emp.getPosition());
@@ -90,7 +90,7 @@ public class EmpDBBean {
 			conn.commit();
 			conn.setAutoCommit(true);
 
-		} catch (ClassNotFoundException | SQLException sqle) {
+		} catch (ClassNotFoundException | SQLException sqle) {	
 			conn.rollback();
 		} finally {
 			try {
