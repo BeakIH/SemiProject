@@ -16,24 +16,19 @@ public class LoginAction {
 	String userpw = request.getParameter("userpw");
  	String storeNo = request.getParameter("store_no");
 	
-	
 	LoginDBBean logPro = LoginDBBean.getInstance();
+	
+	List noList =logPro.userCheck2(userid, userpw);
 	
 	request.getSession().setAttribute("id",userid);
 	request.getSession().setAttribute("pw",userpw);
 	request.getSession().setAttribute("sno",storeNo);
-	
-	List noList =logPro.userCheck2(userid, userpw);
 	
 	//request.getSession().setAttribute("noList", noList);
 	
 	//0 = 아이디 없음 , 1 = 관리자 , 2=회원 , -1 = 비밀번호틀림
 
 	return "/jsp/login/loginPro.jsp";
-	
-	
-	
-	
 			
 ////로그인 계정 유형에 따른 뷰화면들.. 
 //	if(i==0) { // 0 : 아이디없음 -> 회원가입으로 

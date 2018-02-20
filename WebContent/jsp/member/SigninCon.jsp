@@ -223,16 +223,16 @@
           <div role="tabpanel" class="tab-pane active" id="login">
           
                 
-            <form method = "post" action="./login.do">
+            <form method ="post" action="./login.do">
           
               <div class="form-group">
                 <label for="text">아이디</label>
-                <input type="text" id="id" class="form-control form-control-lg" placeholder="text">
+                <input type="text" name="userid" class="form-control form-control-lg" placeholder="text">
               </div>
                       
               <div class="form-group">
                 <label for="password">비밀번호</label>
-                <input type="password" id="password" class="form-control form-control-lg" placeholder="Password">
+                <input type="password" name="userpw" class="form-control form-control-lg" placeholder="Password">
               </div>
         
         <p class="text-lg-right"><a href="forgot-password.html">비밀번호를 잊으셨나요?</a></p>

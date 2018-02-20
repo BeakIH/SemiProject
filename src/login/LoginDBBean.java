@@ -14,14 +14,12 @@ import member.MemberDataBean;
 public class LoginDBBean {
 	
 	private static LoginDBBean instance = new LoginDBBean();
-	
 
 	private LoginDBBean(){}
+	
 	public static LoginDBBean getInstance() {
 		return instance;
 	}
-	 
-
 
 //	public int userCheck(String userid, String userpw) throws Exception {
 //		//그냥 입력한값을 가져온거지
@@ -107,7 +105,7 @@ public class LoginDBBean {
 					no.setAdmId(rs.getString("admId"));
 					no.setAdmPw(rs.getString("admPw"));
 					no.setStoreNo(rs.getInt("store_no"));
-					no.setAdmYn(1);
+					no.setAdmYn("Y");
 					noList.add(no); // 관리자 id로 로그인성공
 				}
 			} 
@@ -124,7 +122,7 @@ public class LoginDBBean {
 						
 						no.setMemId(rs.getString("mem_id"));
 						no.setMemPw(rs.getString("mem_pw"));
-						no.setMemYn(2);
+						no.setMemYn('2');
 						noList.add(no);
 						// 일반회원일 떄 로그인 성공
 					}else {
@@ -135,7 +133,6 @@ public class LoginDBBean {
 						noList.add(no);
 					}
 				}
-				
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
