@@ -70,7 +70,6 @@ function realtimeClock() {
 
 
      function winOpen(){
-    	 
     	 var pUrl="reserve.do?store_no="+$('#storeNo').val();
     	 var pName="new";
     	 var sizeX=1050;
@@ -359,7 +358,7 @@ function realtimeClock() {
 								</div>
 								<div class="col-md-4">
 									<div class="price">
-										예약가능좌석: ${article.avl_tbl_cnt } <br /><span id="realTime" style="font-size:16px; color:blue"></span>										
+										예약가능테이블: ${article.avl_tbl_cnt } <br /><span id="realTime" style="font-size:16px; color:blue"></span>										
 									</div>
 								</div>
 							</div>
@@ -381,9 +380,9 @@ function realtimeClock() {
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/1.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/1.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																src="img/demo/property/1.jpg"
+																src="../../img/demo/property/1.jpg"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -391,9 +390,9 @@ function realtimeClock() {
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/2.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/2.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/2.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/2.jpg" src="img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -401,9 +400,9 @@ function realtimeClock() {
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/3.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/3.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/3.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/3.jpg" src="img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -411,9 +410,9 @@ function realtimeClock() {
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/4.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/4.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/4.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/4.jpg" src="img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -421,9 +420,9 @@ function realtimeClock() {
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
-															<a href="img/demo/property/5.jpg" itemprop="contentUrl"
+															<a href="../../img/demo/property/5.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="img/demo/property/5.jpg" src="img/spacer.png"
+																data-src="../../img/demo/property/5.jpg" src="img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -436,39 +435,39 @@ function realtimeClock() {
 											<div class="swiper-container gallery-thumbs">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/1.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/1.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/2.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/2.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/3.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/3.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/4.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/4.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/5.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/5.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/6.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/6.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/7.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/7.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/8.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/8.jpg" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="img/demo/property/thumb/9.jpg" class="img-fluid"
+														<img src="../../img/demo/property/thumb/9.jpg" class="img-fluid"
 															alt="">
 													</div>
 												</div>
@@ -478,12 +477,12 @@ function realtimeClock() {
 											<ul class="item-features">
 												<li><span>매장테이블</span> 테이블수</li>
 												<li><span>전체테이블</span>${article.tot_tbl_cnt }자리</li>
-												<li><span>예약가능좌석</span>${article.avl_tbl_cnt }자리</li>
+												<li><span>예약가능테이블</span>${article.avl_tbl_cnt }자리</li>
 											</ul>
 											<div class="item-description">
 												<h3 class="headline">매장 소개</h3>
 												<p>
-													<strong>윤식당</strong> 이렇게 생겨먹었고 저렇게 생겼다. 이래저래해서 처음 창립되었다.
+													<strong>${article.store_nm}</strong><br>${article.store_dinfo}
 											</div>
 											<h3 class="headline">메뉴</h3>
 											<ul class="checked feature-list" id="BK_MENU">
@@ -537,7 +536,7 @@ function realtimeClock() {
 																	<td>${article.store_tel}</td>
 																</tr>
 																<tr>
-																	<td>예약가능좌석</td>
+																	<td>빈테이블</td>
 																	<td id="AVL_TBL_CNT">${article.avl_tbl_cnt}</td>
 																</tr>
 																<tr>

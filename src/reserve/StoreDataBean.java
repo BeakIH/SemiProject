@@ -9,6 +9,7 @@ public class StoreDataBean {
 	private int emp_no;
 	private String cate_nm;
 	private String store_nm;
+	private String store_plc;
 	private String store_owner;
 	private String store_octime;
 	private String store_info;
@@ -133,6 +134,12 @@ public class StoreDataBean {
 	}
 	public int getStore_score() {
 		return store_score;
+	}
+	public void setStore_plc(String store_plc) {
+		this.store_plc = store_plc;
+	}
+	public String getStore_plc() {
+		return store_plc;
 	}
 	public void setStore_score(int store_score) {
 		this.store_score = store_score;

@@ -46,10 +46,10 @@ public class ReserveDBBean {
 				conn = getConnection();
 				if(dept == "all") {
 					pstmt = conn.prepareStatement(
-							"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_uri,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score from store_list s");
+							"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_uri,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score,s.store_plc from store_list s");
 				}else {
 					pstmt = conn.prepareStatement(
-						"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_uri,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score from store_list s where s.store_no = ?");
+						"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_uri,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score,s.store_plc from store_list s where s.store_no = ?");
 					pstmt.setInt(1, store_no);
 				}
 				rs = pstmt.executeQuery();
@@ -76,6 +76,7 @@ public class ReserveDBBean {
 						article.setPimg_root(rs.getString("pimg_root"));
 						article.setStore_avgsal(rs.getInt("store_avgsal"));
 						article.setStore_score(rs.getInt("store_score"));
+						article.setStore_plc(rs.getString("store_plc"));
 						
 //						// 메뉴관련정보
 //						article.setMenu_no(rs.getInt("menu_no"));

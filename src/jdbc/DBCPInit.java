@@ -36,7 +36,7 @@ public class DBCPInit extends HttpServlet {
 	
 	private void initConnectionPool() {
 		try {
-			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:XE";
+			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:orcl";
 			String username = "scott";
 			String pw = "tiger";
 			
