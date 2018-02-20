@@ -10,6 +10,7 @@ import java.util.List;
 
 import emp.EmpDataBean;
 import member.MemberDataBean;
+import store.list.JdbcUtil;
 
 public class LoginDBBean {
 	
@@ -80,12 +81,12 @@ public class LoginDBBean {
 //		return x;  //x = 0 회원아님 , 1 관리자 , 2 일반회원 , -1 비밀번호가 다름
 //	}
 
-	public List userCheck2(String userid, String userpw) throws Exception {
+/*	public List userCheck2(String userid, String userpw) throws Exception {
 		//그냥 입력한값을 가져온거지
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List noList ; // 아이디 없음
+		List noList = new ArrayList(10);; // 아이디 없음
 		String dbpasswd = "";
 		try { // 로그인 아이디가 관리자일 경우
 			conn = getConnection();
@@ -98,7 +99,6 @@ public class LoginDBBean {
 			if (rs.next()) { //있을경우
 				dbpasswd = rs.getString("ADM_PW"); //관리자 패스워드를 가져옴
 				if (dbpasswd.equals(userpw)) { // 비밀번호 비교
-					noList = new ArrayList(10);
 
 					EmpDataBean no = new EmpDataBean();
 					
@@ -122,7 +122,7 @@ public class LoginDBBean {
 						
 						no.setMemId(rs.getString("mem_id"));
 						no.setMemPw(rs.getString("mem_pw"));
-						no.setMemYn('2');
+						no.setMemYn(2);
 						noList.add(no);
 						// 일반회원일 떄 로그인 성공
 					}else {
@@ -154,14 +154,66 @@ public class LoginDBBean {
 				}
 		}
 		return noList;  //x = 0 회원아님 , 1 관리자 , 2 일반회원 , -1 비밀번호가 다름
-	}
+	}*/
 	
 	
 	private Connection getConnection() throws Exception {
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
 	}
+	
+	public int userCheck(String userid, String userpw) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String pwd = "";
+		int result = 0;
 
+		try {
+			conn = getConnection();
+			String sql = "select mem_id, mem_pw from member where mem_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			
+			rs = pstmt.executeQuery();
 
+			if (rs.next()) {
+				pwd = rs.getString("mem_pw");
+				result = 2;
+				
+				if(!pwd.equals(userpw)) {
+					result = -1;
+				}
+				return result;
+			} else {
+				sql = "select adm_id, adm_pw from emp where adm_id = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, userid);
+				
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					pwd = rs.getString("adm_pw");
+					result = 1;
+					
+					if(!pwd.equals(userpw)) {
+						result = -1;
+					}
+					return result;
+				}
+			} 
+			
+		} catch (ClassNotFoundException | SQLException sqle) {
+			conn.rollback();
+		} finally {
+			try {
+				JdbcUtil.close(rs);
+				JdbcUtil.close(pstmt);
+				JdbcUtil.close(conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 	
 }

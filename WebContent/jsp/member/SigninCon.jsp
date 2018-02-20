@@ -205,7 +205,7 @@
             </ol>
             </nav>
         <div class="page-header">
-        <h1>로그인 또는 회원가입</h1>
+        <h1>BABSAZO</h1>
         </div>
       </div>
     </div>
@@ -216,14 +216,12 @@
       <div class="col col-xs-6 col-lg-6 col-xl-6">
         <ul class="nav nav-tabs tab-lg" role="tablist">
           <li role="presentation" class="nav-item"><a class="nav-link active" href="signin.html">로그인</a></li>
-          <li role="presentation" class="nav-item"><a class="nav-link" href="RegisterPre.html">이용하기</a></li>
-          <li role="presentation" class="nav-item"><a class="nav-link" href="joinPre.html">가입하기</a></li>
         </ul>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="login">
           
                 
-            <form method ="post" action="./login.do">
+            <form method ="post" action="/SemiProject/jsp/login/login.do">
           
               <div class="form-group">
                 <label for="text">아이디</label>
@@ -239,7 +237,7 @@
         
               <div class="checkbox">
                 <input type="checkbox" id="remember_me">
-                <label for="remember_me">아이디 및 비밀번호 저장</label>
+                <label for="remember_me">아이디 기억하기</label>
               </div>
               <button type="submit" class="btn btn-primary btn-lg">로그인</button>
             </form>
@@ -249,15 +247,9 @@
         </div>
       </div>
       
-      
-      
       <div class="col-md-3 col-lg-3 col-xl-3">
         <div class="socal-login-buttons"> 
         <a href="#" class="btn btn-social btn-block btn-twitter"><i class="icon fa fa-twitter"></i> 트위터로 시작하기</a> 
-   
-   
-   
-
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
