@@ -48,13 +48,29 @@
 }
 
 .sidenav a {
-	padding: 8px 8px 8px 32px;
+	padding: 8px 8px 8px 1px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 18px;
 	color: #818181;
 	display: block;
 	transition: 0.3s;
 }
+
+.sidenav a#linkedA{
+	font-size: 15px;
+	color: #818181;
+	transition: 0.3s;
+}
+
+.sidenav a#subside {
+	/* padding: 8px 8px 8px 32px;
+	text-decoration: none; */
+	font-size: 15px;
+	/* color: #818181; */
+	/* display: block; */
+	transition: 0.3s;
+}
+
 
 .sidenav a:hover {
 	color: #f1f1f1;
