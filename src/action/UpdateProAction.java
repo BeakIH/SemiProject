@@ -23,15 +23,13 @@ public class UpdateProAction implements CommandAction {
         article.setbContent(request.getParameter("bcontent"));
         article.setbViewCnt(Integer.parseInt(request.getParameter("bviewcnt")));
         //article.setAdm_pw(request.getParameter("admpw"));
-        
-        
-   
+ 
 	BoardDBBean dbPro = BoardDBBean.getInstance();
         int check = dbPro.updateArticle(article);
 
         request.setAttribute("pageNum", new Integer(pageNum));
         request.setAttribute("check", new Integer(check));
 
-        return "/listo/notice/UpdatePro.jsp";
+        return "/notice/UpdatePro.jsp";
     }
 }

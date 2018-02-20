@@ -1337,15 +1337,29 @@ nav+.page-header{
     padding: 0;
     border-radius: 50%;
 }
+
 .btn#to-top {
 	width: 52px;
     height: 52px;
 	position:fixed;
 	right: 50px;
-    bottom: 50px;
+    bottom: 50px;/* 초기값 50px */
 	visibility:hidden;
 	opacity:0;
 	transition: all 1s;
+}
+
+/* 추가된 사이드바 css  */
+.btn#sidebar-btn{
+	width: 62px;
+    height: 180px;
+	position:fixed;
+	right: auto;
+    bottom: 360px;
+	visibility:hidden;
+	opacity:0;
+	transition: all 1s;
+	border-radius: 5%;
 }
 
 .btn.close-panel {

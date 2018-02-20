@@ -1,7 +1,12 @@
 package bbs;
-import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.util.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 //BoardDBBean bd = BoardDBBean.getInstance()
 public class BoardDBBean {   
@@ -62,13 +67,6 @@ public class BoardDBBean {
         }
         
     }
-	        
-
-            
-           
-          
-            
-
    
     //list.jsp : 페이징을 위해서 전체 DB에 입력된 행의수가 필요하다...!!!
     public int getArticleCount() throws Exception {
@@ -280,6 +278,141 @@ public class BoardDBBean {
 		if(dbpasswd.equals(passwd)){
 		    pstmt = conn.prepareStatement("delete from board where emp_no=?");
                     pstmt.setInt(1, num);
+    @SuppressWarnings({ "null", "resource" })
+	public BoardDataBean getArticle(int bno) throws Exception {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        BoardDataBean article=null;
+        try {
+            conn = getConnection();
+
+            pstmt = conn.prepareStatement(
+            "update board set B_VIEW_CNT=B_VIEW_CNT+1 where b_no = ?");
+            pstmt.setInt(1, bno);
+	    pstmt.executeUpdate();
+
+            pstmt = conn.prepareStatement(
+            "select * from board where b_no = ?");
+            pstmt.setInt(1, bno);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+            	article = new BoardDataBean();
+		          article.setbNo(rs.getInt("B_NO"));
+		          article.setempNo(rs.getInt("EMP_NO"));
+              article.setbTitle(rs.getString("B_TITLE"));
+              article.setempNm(rs.getString("EMP_NM"));
+              article.setbContent(rs.getString("B_CONTENT"));
+              article.setpostDate(rs.getTimestamp("POST_DATE"));
+		          article.setbViewCnt(rs.getInt("B_VIEW_CNT")); 
+	    }
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+	return article;
+    }
+
+    //updateForm.jsp : 수정폼에 한줄의 데이터를 가져올때.
+    @SuppressWarnings("null")
+	public BoardDataBean updateGetArticle(int bno) throws Exception {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        BoardDataBean article=null;
+        try {
+            conn = getConnection();
+
+            pstmt = conn.prepareStatement(
+            "select * from board where b_no = ?");
+            pstmt.setInt(1, bno);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+		          article.setbNo(rs.getInt("B_NO"));
+		          article.setempNo(rs.getInt("EMP_NO"));
+                article.setbTitle(rs.getString("B_TITLE"));
+                article.setempNm(rs.getString("EMP_NM"));
+                article.setbContent(rs.getString("B_CONTENT"));
+                article.setpostDate(rs.getTimestamp("POST_DATE"));
+		          article.setbViewCnt(rs.getInt("B_VIEW_CNT"));    
+	    }
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+	return article;
+    }
+
+    //updatePro.jsp : 실제 데이터를 수정하는 메소드.
+    public int updateArticle(BoardDataBean article) throws Exception {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs= null;
+
+        String dbpasswd="";
+        String sql="";
+	int x=-1;
+        try {
+            conn = getConnection();
+           
+	    pstmt = conn.prepareStatement("select adm_pw from emp_adm where emp_no = ?");
+            pstmt.setInt(1, article.getempNo());
+            rs = pstmt.executeQuery();
+           
+	if(rs.next()){
+	    dbpasswd= rs.getString("adm_pw");
+	    if(dbpasswd.equals(article.getadm_pw())){
+		sql="update board set B_TITLE=?,B_CONTENT=? ";
+		sql+="where emp_no=?";
+                pstmt = conn.prepareStatement(sql);
+
+                pstmt.setString(1, article.getbTitle());
+                pstmt.setString(2, article.getbContent());
+                pstmt.setInt(3, article.getempNo());
+
+		x= 1;
+	    }else{
+		x= 0;
+	    }
+	  }
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        } finally {
+	    if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+	 return x;
+    }
+   
+    //deletePro.jsp : 실제 데이터를 삭제하는 메소드...
+    public int deleteArticle(int bno, String passwd) throws Exception {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs= null;
+        String dbpasswd="";
+        int x=-1;
+        try {
+	    conn = getConnection();
+
+            pstmt = conn.prepareStatement(
+            "select adm_pw from emp_adm where emp_no = ?");
+            pstmt.setInt(1, bno);
+            rs = pstmt.executeQuery();
+           
+            if(rs.next()){
+		dbpasswd= rs.getString("passwd");
+		if(dbpasswd.equals(passwd)){
+		    pstmt = conn.prepareStatement("delete from board where emp_no=?");
+                    pstmt.setInt(1, bno);
                     pstmt.executeUpdate();
 		    x= 1; //글삭제 성공
 		}else

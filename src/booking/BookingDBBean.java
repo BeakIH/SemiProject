@@ -5,130 +5,82 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import emp.EmpDataBean;
+
 
 import board.BoardDataBean;
-
+/*import board.Exception;
+import board.ResultSet;
+import board.String;
+*/
 public class BookingDBBean {
 	private static BookingDBBean instance = new BookingDBBean();
-	// LogonDBBean m = LogonDBBean.getInstance();
-	public static BookingDBBean getInstance() { //½Ì±ÛÅÏÆĞÅÏÀ¸·Î °´Ã¼ »ı¼ºÇØµÒ
-		return instance;	
-	}
 	
-	public BookingDBBean() {}
+	public static BookingDBBean getInstance(){
+		return instance;
+	}
 	
 	private Connection getConnection() throws Exception{
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
 	}
 	
-	// ¿¹¾àÇÏ±â
+	// ì˜ˆì•½ì‹ ì²­ ë°œìƒí–ˆì„ ë•Œ insertí•˜ëŠ” ë©”ì„œë“œ 
 	public void insertBooking(BookingDataBean booking) throws Exception{
 		Connection conn = null;
-		PreparedStatement pstmt = null;
+		PreparedStatement pstmt = null; 
 		
 		try {
 			conn = getConnection();
+			
 			pstmt = conn.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			pstmt.setInt(1, booking.getBkNo());
-			pstmt.setInt(2, booking.getWtNo());
-			pstmt.setInt(3, booking.getEmpNo());
-			pstmt.setInt(4, booking.getMemNo());
-			pstmt.setString(5, booking.getMemNm());
-			pstmt.setString(6, booking.getMemTel());
+			pstmt.setInt(1, 1);
+			pstmt.setInt(2, 1);
+			pstmt.setInt(3, 1);
+			pstmt.setInt(4, 1);
+			pstmt.setString(5, "ê°•í˜¸ë™");
+			pstmt.setString(6, "010-1111-1241");
 			pstmt.setString(7, booking.getStoreNm());
-			pstmt.setTimestamp(8, booking.getBkDate());
+			pstmt.setString(8, booking.getBkDate());
 			pstmt.setString(9, booking.getBkCnt());
 			pstmt.setString(10, booking.getBkMenu());
-			pstmt.setString(11, booking.getCofirmYn());
-			pstmt.setString(12, booking.getBkStatus());
-			pstmt.setInt(13, booking.getBkNo());
-		
+			/*pstmt.setString(11, booking.getCofirmYn());*/ //Nê°’ ë„£ì–´ì¤˜ì•¼ë¨
+			pstmt.setInt(11, booking.getBkTblCnt());
+			pstmt.setInt(12, booking.getStoreNo());
+			pstmt.setString(13, booking.getBkPriSum());
+			pstmt.executeUpdate();
+		 
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		} finally {
-			if(conn != null) try {conn.close();} catch(SQLException ex) {}
-			if(pstmt != null) try {pstmt.close();} catch(SQLException ex) {}
-		}
-		
-	}// ¸ÅÀå°ü¸®ÀÚ ¿¹¾à È®ÀÎ 
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+    }
 	
-	//¿¹¾àÇßÀ»¶§ ³Ñ°Ü°¡Áö´Â °ª
-	public void insertReserve(BookingDataBean booking) throws Exception{
+	// insertëœ ì˜ˆì•½ ê±´ì— ëŒ€í•œ ë§¤ì¥í™•ì¸ (confirm_ynì»¬ëŸ¼ì˜ ê°’ì„ Yë¡œ ì—…ë°ì´íŠ¸)
+	// confirm_ynì´ yë¡œ ì—…ë°ì´íŠ¸ ë˜ë©´ store_list í…Œì´ë¸”ì˜ avl_tbl_cnt ê°’ì€ triggerì— ì˜í•˜ì—¬ ë³€ê²½ë¨.
+	public void updateConfirm(int store_no) throws Exception{
 		Connection conn = null;
-		PreparedStatement pstmt = null;
+		PreparedStatement pstmt = null; 
 		
-		try {
+		try{
 			conn = getConnection();
-			pstmt = conn.prepareStatement("insert into booking values(?,?,?,?)");
-			
-			pstmt.setString(1, booking.getStoreNm());//¿¹¾à¸ÅÀå¸í
-			pstmt.setTimestamp(2, booking.getBkDate());//¿¹¾àÀÏ½Ã
-			pstmt.setString(3, booking.getBkMenu());//¿¹¾à ¸Ş´º
-			pstmt.setString(4, booking.getBkCnt()); //¿¹¾à ÀÎ¿ø
-			
-			
-			
-			
-			
+			pstmt = conn.prepareStatement("update booking set confirm_yn = 'Y' where store_no = ?");
+			pstmt.setInt(1, store_no);
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
 		
-		} catch (Exception e) {
-			// TODO: handle exception
 		} finally {
-			if(conn != null) try {conn.close();} catch(SQLException ex) {}
-			if(pstmt != null) try {pstmt.close();} catch(SQLException ex) {}
-		}
-		
-	}// ¸ÅÀå°ü¸®ÀÚ ¿¹¾à È®ÀÎ 
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+    } //updateConfirm ends.
 	
 	
-	public int updateArticle(BookingDataBean article)throws Exception{
-		Connection conn = null;
-		PreparedStatement pstmt= null;
-		ResultSet rs = null;
-		
-		String dbpasswd="";
-		String sql="";
-		
-		int x = -1;
-		
-		try {
-			conn = getConnection();
-			
-			pstmt = conn.prepareStatement(
-			"select passwd from board where num =?");
-			pstmt.setInt(1, article.getNum());
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				dbpasswd = rs.getString("passwd");
-				if(dbpasswd.equals(article.getPasswd())) {
-					sql="update board set writer=?,email=?,subject=?,passwd=?,content=? where num = ?";
-					
-					pstmt = conn.prepareStatement(sql);
-					
-					pstmt.setString(1, article.getWriter());
-					pstmt.setString(2, article.getEmail());
-					pstmt.setString(3, article.getSubject());
-					pstmt.setString(4, article.getPasswd());
-					pstmt.setString(5, article.getContent());
-					pstmt.setInt(6, article.getNum());
-					
-					pstmt.executeUpdate();
-					
-			x = 1;
-		}else {
-			x= 0;
-		}
-		}
-		}catch(Exception ex) {
-				ex.printStackTrace();
-		}finally {
-			if(rs!=null)try {rs.close();}catch(SQLException ex) {}
-			if(pstmt!=null)try {pstmt.close();}catch(SQLException ex) {}
-			if(conn!=null)try {conn.close();}catch(SQLException ex) {}
-		}
-		return x;
-	}
 	
-}// class ends.
+}

@@ -15,6 +15,6 @@ public class DeleteFormAction implements CommandAction {//글삭제 폼
 	request.setAttribute("bNo", new Integer(num));
         request.setAttribute("pageNum", new Integer(pageNum));
 
-        return "/notice/DeleteForm.jsp";//해당뷰
+        return "/notice/deleteForm.jsp";//해당뷰
     }
 }

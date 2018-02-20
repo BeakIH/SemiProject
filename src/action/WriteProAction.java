@@ -31,7 +31,7 @@ public class WriteProAction implements CommandAction {// 입력된 글 처리
 		BoardDBBean dbPro = BoardDBBean.getInstance();// DB처리
 		dbPro.insertArticle(article);
 
-		return "/listo/notice/writePro.jsp";
+		return "/notice/writePro.jsp";
 	}
 }
 

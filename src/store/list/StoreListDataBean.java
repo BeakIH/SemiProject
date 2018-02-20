@@ -2,55 +2,55 @@ package store.list;
 
 public class StoreListDataBean {
 
-	// ¸ÅÀå¹øÈ£ ¸ÅÀå¹øÈ£
+	// ë§¤ì¥ë²ˆí˜¸ ë§¤ì¥ë²ˆí˜¸
     private Integer storeNo;
 
-    //  ¸®ºä±Û¹øÈ£
+    //  ë¦¬ë·°ê¸€ë²ˆí˜¸
     private Integer rvNo;
 
-    //  ¸ÅÀå°ü¸®ÀÚ
+    //  ë§¤ì¥ê´€ë¦¬ì
     private Integer empNo;
 
-    // Ãë±ŞÇ×¸ñ Ãë±ŞÇ×¸ñ¸í
+    // ì·¨ê¸‰í•­ëª© ì·¨ê¸‰í•­ëª©ëª…
     private String cateNm;
 
-    // ¸ÅÀå¸í ¸ÅÀå¸í
+    // ë§¤ì¥ëª… ë§¤ì¥ëª…
     private String storeNm;
 
-    //  °£´Ü¸ÅÀå¼³¸í
+    //  ê°„ë‹¨ë§¤ì¥ì„¤ëª…
     private String storeExp;
 
-    // ¸ÅÀåÀ§Ä¡ ¸ÅÀåÀ§Ä¡
+    // ë§¤ì¥ìœ„ì¹˜ ë§¤ì¥ìœ„ì¹˜
     private String storePlc;
 
-    // ¸ÅÀåÀüÈ­¹øÈ£ ¸ÅÀåÀüÈ­¹øÈ£
+    // ë§¤ì¥ì „í™”ë²ˆí˜¸ ë§¤ì¥ì „í™”ë²ˆí˜¸
     private String storeTel;
 
-    //  ¿µ¾÷ÀÏÁ¤º¸
+    //  ì˜ì—…ì¼ì •ë³´
     private String storeInfo;
 
-    //  ¸ÅÀå¼³¸í
+    //  ë§¤ì¥ì„¤ëª…
     private String storeExpDt;
 
-    //  ÀüÃ¼Å×ÀÌºí¼ö
+    //  ì „ì²´í…Œì´ë¸”ìˆ˜
     private Integer totTblCnt;
 
-    //  ÀÌ¿ë°¡´ÉÅ×ÀÌºí¼ö
+    //  ì´ìš©ê°€ëŠ¥í…Œì´ë¸”ìˆ˜
     private Integer avlTblCnt;
 
-    //  ¸ÅÀåÈ¨ÆäÀÌÁö
+    //  ë§¤ì¥í™ˆí˜ì´ì§€
     private String storeUrl;
 
-    //  ¸ÅÀåÀÌ¹ÌÁöÀúÀå°æ·Î
+    //  ë§¤ì¥ì´ë¯¸ì§€ì €ì¥ê²½ë¡œ
     private String imgRoot;
 
-    //  ¸ÅÀåº° Æò±Õ¸Ş´º°¡
+    //  ë§¤ì¥ë³„ í‰ê· ë©”ë‰´ê°€
     private Integer avgPrice;
 
-    //  ¸ÅÀåº° ¼±È£µµ
+    //  ë§¤ì¥ë³„ ì„ í˜¸ë„
     private Integer preference;
     
-    //  »ç¿ëÁßÀÎÅ×ÀÌºí¼ö
+    //  ì‚¬ìš©ì¤‘ì¸í…Œì´ë¸”ìˆ˜
     private Integer curTblCnt;
     
 

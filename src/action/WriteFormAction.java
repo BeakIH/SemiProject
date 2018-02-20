@@ -20,6 +20,6 @@ public class WriteFormAction implements CommandAction {//글 입력 폼 처리
 		request.setAttribute("bNo", new Integer(bNo));
 
 
-		return "/listo/notice/writeForm.jsp";//해당 뷰
+		return "/notice/writeForm.jsp";//해당 뷰
 	}
 }

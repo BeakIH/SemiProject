@@ -100,6 +100,16 @@ $(window).ready(function(e) {
 		});
 	}
 	
+	// 사이드메뉴에 대한 이벤트
+	$(document).scroll(function() {
+		var btnSide = $('#sidebar-btn');
+		if ($(document).scrollTop() >= 50) {
+			btnSide.css({'visibility': 'visible', 'opacity' : '1'});
+		} else {
+			btnSide.css({'visibility': 'hidden', 'opacity' : '0'});
+		}
+	});
+
 	$(document).scroll(function() {
 		var btnTop = $('#to-top');
 		if ($(document).scrollTop() >= 50) {
@@ -108,8 +118,6 @@ $(window).ready(function(e) {
 			btnTop.css({'visibility': 'hidden', 'opacity' : '0'});
 		}
 	});
-
-
 	
 	$('#to-top').on('click', function() {
 		$('html').animate({ scrollTop: 0 }, "slow");

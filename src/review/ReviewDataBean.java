@@ -1,95 +1,108 @@
 package review;
 
 public class ReviewDataBean {
-	// ¸ÅÀå º° Æò°¡ ¹× ÀÌ¿ëÈÄ±â°ü¸® ÀÌ¿ë°í°´ÀÇ ¸ÅÀå Æò°¡ ¹× ÀÌ¿ëÈÄ±â
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ä±ï¿½
 
-	    // ±Û¹øÈ£ ¸®ºä±Û¹øÈ£
-	    private Integer rvNo;
+	    // ë¦¬ë·°ê¸€ ë²ˆí˜¸
+	    private int rvno;
 
-	    //  ¸ÅÀå¹øÈ£
-	    private Integer storeNo;
+	    //  ë§¤ì¥ ë²ˆí˜¸
+	    private int storeno;
 
-	    // È¸¿ø¸í È¸¿ø¸í
-	    private String memNm;
+	    // íšŒì›ëª…
+	    private String memnm;
 
-	    // ¸ÅÀå¸í ¸ÅÀå¸í
-	    private String storeNm;
+	    // ë§¤ì¥ëª…
+	    private String storenm;
 
-	    // ÀÌ¿ëÀÏÀÚ ¹æ¹®ÀÏÀÚ
-	    private String visitDate;
+	    // ë°©ë¬¸ì¼ì
+	    private String visitnate;
 
-	    // ±ÛÁ¦¸ñ ¸®ºä±ÛÁ¦¸ñ
-	    private String rvTitle;
+	    // ë¦¬ë·°ê¸€ ì œëª©
+	    private String rvtitle;
+	    // ë¦¬ë·° ë‚´ìš©
+	    
+	    private String rvcontent;
 
-	    // ÁÁ¾Æ¿ä ÁÁ¾Æ¿ä
-	    private Integer likeCnt;
+	    // ì¢‹ì•„ìš”
+	    private int likecnt;
 
-	    // Á¶È¸¼ö Á¶È¸¼ö
-	    private Integer rViewCnt;
+	    // ì¡°íšŒìˆ˜
+	    private int rviewcnt;
 
-	    public Integer getRvNo() {
-	        return rvNo;
-	    }
+		public int getRvno() {
+			return rvno;
+		}
 
-	    public void setRvNo(Integer rvNo) {
-	        this.rvNo = rvNo;
-	    }
+		public void setRvno(int rvno) {
+			this.rvno = rvno;
+		}
 
-	    public Integer getStoreNo() {
-	        return storeNo;
-	    }
+		public int getStoreno() {
+			return storeno;
+		}
 
-	    public void setStoreNo(Integer storeNo) {
-	        this.storeNo = storeNo;
-	    }
+		public void setStoreno(int storeno) {
+			this.storeno = storeno;
+		}
 
-	    public String getMemNm() {
-	        return memNm;
-	    }
+		public String getMemnm() {
+			return memnm;
+		}
 
-	    public void setMemNm(String memNm) {
-	        this.memNm = memNm;
-	    }
+		public void setMemnm(String memnm) {
+			this.memnm = memnm;
+		}
 
-	    public String getStoreNm() {
-	        return storeNm;
-	    }
+		public String getStorenm() {
+			return storenm;
+		}
 
-	    public void setStoreNm(String storeNm) {
-	        this.storeNm = storeNm;
-	    }
+		public void setStorenm(String storenm) {
+			this.storenm = storenm;
+		}
 
-	    public String getVisitDate() {
-	        return visitDate;
-	    }
+		public String getVisitnate() {
+			return visitnate;
+		}
 
-	    public void setVisitDate(String visitDate) {
-	        this.visitDate = visitDate;
-	    }
+		public void setVisitnate(String visitnate) {
+			this.visitnate = visitnate;
+		}
 
-	    public String getRvTitle() {
-	        return rvTitle;
-	    }
+		public String getRvtitle() {
+			return rvtitle;
+		}
 
-	    public void setRvTitle(String rvTitle) {
-	        this.rvTitle = rvTitle;
-	    }
+		public void setRvtitle(String rvtitle) {
+			this.rvtitle = rvtitle;
+		}
 
-	    public Integer getLikeCnt() {
-	        return likeCnt;
-	    }
+		public String getRvcontent() {
+			return rvcontent;
+		}
 
-	    public void setLikeCnt(Integer likeCnt) {
-	        this.likeCnt = likeCnt;
-	    }
+		public void setRvcontent(String rvcontent) {
+			this.rvcontent = rvcontent;
+		}
 
-	    public Integer getRViewCnt() {
-	        return rViewCnt;
-	    }
+		public int getLikecnt() {
+			return likecnt;
+		}
 
-	    public void setRViewCnt(Integer rViewCnt) {
-	        this.rViewCnt = rViewCnt;
-	    }
+		public void setLikecnt(int likecnt) {
+			this.likecnt = likecnt;
+		}
+
+		public int getRviewcnt() {
+			return rviewcnt;
+		}
+
+		public void setRviewcnt(int rviewcnt) {
+			this.rviewcnt = rviewcnt;
+		}
+
+	    
 
 
 }

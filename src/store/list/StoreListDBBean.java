@@ -13,10 +13,10 @@ public class StoreListDBBean { //DAO
 		return instance;
 	}
 	
-	// ºó ¸Ş¼Òµå »ı¼º
+	// ë¹ˆ ë©”ì†Œë“œ ìƒì„±
 	public StoreListDBBean() {}
 	
-	//DB¿¬°á
+	//DBì—°ê²°
 	private Connection getConnection() throws Exception{
 		String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
 		return DriverManager.getConnection(jdbcDriver);
@@ -33,27 +33,27 @@ public class StoreListDBBean { //DAO
          Date date = new Date(System.currentTimeMillis());
          SimpleDateFormat simple = new SimpleDateFormat("m");
          String sysdate = simple.format(date).toString();
-         String x = sysdate.substring(1); // ºĞÀº 2ÀÚ¸®´Ï±î ÀÎµ¦½º´Â 0ºÎÅÍÁö¸¸ 1À»»Ì¾Ò´Ù. 1ÀÇ ÀÚ¸® ºñ±³ÇÒ¶ó±¸..
+         String x = sysdate.substring(1); // ë¶„ì€ 2ìë¦¬ë‹ˆê¹Œ ì¸ë±ìŠ¤ëŠ” 0ë¶€í„°ì§€ë§Œ 1ì„ë½‘ì•˜ë‹¤. 1ì˜ ìë¦¬ ë¹„êµí• ë¼êµ¬..
          if (x.equals("5")) {
-            System.out.println("5ºĞ¸¶´Ù ¾÷µ¥ÀÌÆ®µË´Ï´Ù.");
-            String sql = "update booking set confirm_yn = 'y'";
+            System.out.println("í˜„ì¬ 5ë¶„ë•Œ ì‹œê°„ì…ë‹ˆë‹¤.");
+            String sql = "update ë¬¸ ë“¤ì–´ê°ˆ ê³³(cur_cntì»¬ëŸ¼)";
             conn = getConnection();
             pstmt = conn.prepareStatement(sql);
             conn.setAutoCommit(false);
             int check = pstmt.executeUpdate();
             if (check == 1) {
-               sql = "select store_nm, cur_tbl_cnt, avl_tbl_cnt from store_list";
+               sql = "ê°’ì„ ê°€ì ¸ì˜¬ sql";
                pstmt = conn.prepareStatement(sql);
                rs = pstmt.executeQuery();
                list = new ArrayList<StoreListDataBean>();
                while (rs.next()) {
                   StoreListDataBean dto = new StoreListDataBean();
-                  // »ı¼ºÇÑ dto °´Ã¼ÀÇ È­¸éÀÇ º¸¿©ÁÙ °ªÀ» ´ã¾ÆÁÖ´Â ÄÚµå setÀ»
+                  // ìƒì„±í•œ dto ê°ì²´ì˜ í™”ë©´ì˜ ë³´ì—¬ì¤„ ê°’ì„ ë‹´ì•„ì£¼ëŠ” ì½”ë“œ setì„
                   list.add(dto);
                }
             }
          } else {
-            System.out.println("³É³É");
+            System.out.println("ëƒ¥ëƒ¥");
          }
          conn.commit();
          conn.setAutoCommit(true);
@@ -72,11 +72,93 @@ public class StoreListDBBean { //DAO
       }
       return list; 
    }
+   
+   
+ //storeInfo.jsp : ë§¤ì¥ì •ë³´ í¼ì—ì„œ í•œì¤„ì˜ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+   public StoreListDataBean updateGetArticle(int store_no) throws Exception {
+       Connection conn = null;
+       PreparedStatement pstmt = null;
+       ResultSet rs = null;
+       StoreListDataBean article=null;
+       try {
+           conn = getConnection();
+
+           pstmt = conn.prepareStatement(
+           "select store_no, cate_nm, store_exp, store_tel, store_exp_dt,store_url from store_list where store_no = ?");
+           pstmt.setInt(1, store_no);
+           rs = pstmt.executeQuery();
+
+           if (rs.next()) {
+               article = new StoreListDataBean();
+               article.setStoreNm(rs.getString("storeNm"));
+               article.setCateNm(rs.getString("cateNm"));
+               article.setStoreExp(rs.getString("storeExp"));
+               article.setStoreTel(rs.getString("storeTel"));
+               article.setStoreExpDt(rs.getString("storeExpDt"));
+               article.setStoreUrl(rs.getString("storeUrl"));
+                 
+	    }
+       } catch(Exception ex) {
+           ex.printStackTrace();
+       } finally {
+           if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+           if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+           if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+       }
+	return article;
+   }
+   
+ //storeInfoPro.jsp : ì‹¤ì œ ë§¤ì¥ì •ë³´ë¥¼ ìˆ˜ì •í•˜ëŠ” ë©”ì†Œë“œ
+   public int updateArticle(StoreListDataBean article) throws Exception {
+       Connection conn = null;
+       PreparedStatement pstmt = null;
+       ResultSet rs= null;
+
+       String dbstoreno="";
+       String sql="";
+       int x=-1;
+       try {
+           conn = getConnection();
+          
+	    pstmt = conn.prepareStatement("select store_no from store_list where store_no = ?");
+           pstmt.setInt(1, article.getStoreNo());
+           rs = pstmt.executeQuery();
+          
+	if(rs.next()){
+	    dbstoreno= rs.getString("storeNo");
+	    if(dbstoreno.equals(article.getStoreNo())){
+		sql="update store_list set store_no=?, cate_nm=?, store_exp=?, store_tel=?, store_exp_dt=?,store_url=? where store_no=?";
+               pstmt = conn.prepareStatement(sql);
+               
+               pstmt.setString(1, article.getStoreNm());
+               pstmt.setString(2, article.getCateNm());
+               pstmt.setString(3, article.getStoreExp());
+               pstmt.setString(4, article.getStoreTel());
+               pstmt.setString(5, article.getStoreExpDt());
+               pstmt.setString(6, article.getStoreUrl());
+               pstmt.executeUpdate();
+               x= 1;
+	    }else{
+	    	x= 0;
+	    }
+	  }
+       } catch(Exception ex) {
+           ex.printStackTrace();
+       } finally {
+	    if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+           if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+           if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+       }
+	 return x;
+   }
 
 public StoreListDataBean get(int i) {
 	// TODO Auto-generated method stub
 	return null;
 }
+
+
+	
 
 
 }

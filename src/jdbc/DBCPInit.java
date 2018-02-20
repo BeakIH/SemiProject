@@ -36,46 +36,86 @@ public class DBCPInit extends HttpServlet {
 	
 	private void initConnectionPool() {
 		try {
-			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:XE";
+<<<<<<< HEAD
+			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:xe";
 			String username = "scott";
 			String pw = "tiger";
+=======
+			String jdbcUrl =  "jdbc:oracle:thin:@192.168.40.7:1521:XE";
+			String username = "SCOTT1";
+			String pw = "TIGER";
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			
-			/* ÀÌ ¾Æ·¡ ÄÚµåµéÀº º¯°æ¾øÀÌ ±×´ë·Î ¾²¸é µÈ´Ù. */
+<<<<<<< HEAD
+			/* ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½. */
+=======
+			
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(jdbcUrl, username, pw);
 			PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connFactory, null);
 			poolableConnFactory.setValidationQuery("select 1");
-			 //Ä¿³Ø¼Ç Ç®ÀÇ ¼³Á¤ Á¤º¸¸¦ »ý¼ºÇÑ´Ù.
+<<<<<<< HEAD
+			 //Ä¿ï¿½Ø¼ï¿½ Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+=======
+			
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
-			//À¯È¿ Ä¿³Ø¼Ç °Ë»ç ÁÖ±â
+<<<<<<< HEAD
+			//ï¿½ï¿½È¿ Ä¿ï¿½Ø¼ï¿½ ï¿½Ë»ï¿½ ï¿½Ö±ï¿½
+=======
+			
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			poolConfig.setTimeBetweenEvictionRunsMillis(1000L * 60L * 5L);
-			//Ç®¿¡ ÀÖ´Â Ä¿³Ø¼ÇÀÌ À¯È¿ÇÑÁö °Ë»ç À¯¹« ¼³Á¤
+<<<<<<< HEAD
+			//Ç®ï¿½ï¿½ ï¿½Ö´ï¿½ Ä¿ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+=======
+			
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			poolConfig.setTestWhileIdle(true);
-			 //Ä¿³Ø¼Ç ÃÖ¼Ò°¹¼ö ¼³Á¤
+<<<<<<< HEAD
+			 //Ä¿ï¿½Ø¼ï¿½ ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+=======
+			 
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			poolConfig.setMinIdle(4);
-			  //Ä¿³Ø¼Ç ÃÖ´ë °¹¼ö ¼³Á¤
+<<<<<<< HEAD
+			  //Ä¿ï¿½Ø¼ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+=======
+			 
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			poolConfig.setMaxTotal(50);
-           //Ä¿³Ø¼Ç Ç® »ý¼º. ÀÎÀÚ·Î´Â À§¿¡¼­ »ý¼ºÇÑ  PoolabeConnectionFactory¿Í GenericObjectPoolConfig¸¦ »ç¿ëÇÑ´Ù.
+<<<<<<< HEAD
+           //Ä¿ï¿½Ø¼ï¿½ Ç® ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½Ú·Î´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  PoolabeConnectionFactoryï¿½ï¿½ GenericObjectPoolConfigï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+=======
+          
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			GenericObjectPool<PoolableConnection> connectionPool = 
 					new GenericObjectPool<>(poolableConnFactory, poolConfig);
-			//PoolabeConnectionFactory¿¡µµ Ä¿³Ø¼Ç Ç®À» ¿¬°á
+<<<<<<< HEAD
+			//PoolabeConnectionFactoryï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ø¼ï¿½ Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+=======
+			
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			poolableConnFactory.setPool(connectionPool);
-			//Ä¿³Ø¼Ç Ç®À» Á¦°øÇÏ´Â jdbc µå¶óÀÌ¹ö¸¦ µî·Ï.
+<<<<<<< HEAD
+			//Ä¿ï¿½Ø¼ï¿½ Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ jdbc ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
+=======
+			
+>>>>>>> refs/remotes/origin/YJ_CHOI
 			Class.forName("org.apache.commons.dbcp2.PoolingDriver");
 			
 			PoolingDriver driver = 
 					(PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
-			 //À§¿¡¼­ Ä¿³Ø¼Ç Ç® µå¶óÀÌ¹ö¿¡ »ý¼ºÇÑ Ä¿³Ø¼Ç Ç®À» µî·ÏÇÑ´Ù. ÀÌ¸§Àº poolÀÌ´Ù.
+<<<<<<< HEAD
+			 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ø¼ï¿½ Ç® ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ø¼ï¿½ Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. ï¿½Ì¸ï¿½ï¿½ï¿½ poolï¿½Ì´ï¿½.
+=======
+			
+>>>>>>> refs/remotes/origin/YJ_CHOI
 											driver.registerPool("pool", connectionPool);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 }

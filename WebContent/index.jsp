@@ -10,7 +10,7 @@
 <!--    /를 안 붙여서 경로를 건 경우  =>  http://localhost:9108/MVC_board/MVC_board/MVC/list.jsp 라는 경로를 요청하게 되어 에러 발생-->
 <!--                      
                 -->
-<% response.sendRedirect("/SemiProject/jsp/main.do"); %>
+<% response.sendRedirect("/SemiProject/jsp/admin/management_list.do"); %>
 
 </body>
 </html>
