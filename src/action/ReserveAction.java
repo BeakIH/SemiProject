@@ -26,7 +26,7 @@ public String requestPro(HttpServletRequest request, HttpServletResponse respons
 		List searchList = new ArrayList();
 
 		// 점포번호를 가지고 검색하는 메서드 실행
-		articleList = dbPro.getInfo(storeNo, "all");
+		articleList = dbPro.getInfo(storeNo, "ones");
 
 		//해당 뷰에서 사용할 속성
 		request.setAttribute("articleList", articleList);
