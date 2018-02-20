@@ -16,7 +16,7 @@ public class ReviewDataBean {
 	    private String storenm;
 
 	    // 방문일자
-	    private String visitnate;
+	    private String visitdate;
 
 	    // 리뷰글 제목
 	    private String rvtitle;
@@ -62,12 +62,12 @@ public class ReviewDataBean {
 			this.storenm = storenm;
 		}
 
-		public String getVisitnate() {
-			return visitnate;
+		public String getVisitdate() {
+			return visitdate;
 		}
 
-		public void setVisitnate(String visitnate) {
-			this.visitnate = visitnate;
+		public void setVisitdate(String visitdate) {
+			this.visitdate = visitdate;
 		}
 
 		public String getRvtitle() {
