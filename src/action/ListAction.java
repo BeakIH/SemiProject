@@ -141,7 +141,6 @@ public class ListAction implements CommandAction {//글 목록 처리
 		request.setAttribute("search", search);
 		
 		request.setAttribute("articleList", articleList);
-		
 		return "/jsp/storeList/list.jsp";//해당 뷰
 	}
 }

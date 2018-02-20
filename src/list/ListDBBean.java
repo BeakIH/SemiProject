@@ -621,6 +621,73 @@ public class ListDBBean {
 		return articleList;
 	}
 
+	public List getAllData() throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List articleList = null;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(
+					"select * from store_list");
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				articleList = new ArrayList(20);// end 자리에 10을 가라로 넣어둠
+				do {
+					ListDataBean article = new ListDataBean();
+					article.setStore_no(rs.getInt("store_no"));
+					article.setEmp_no(rs.getInt("emp_no"));
+					article.setCate_nm(rs.getString("cate_nm"));
+					article.setStore_nm(rs.getString("store_nm"));
+					article.setStore_owner(rs.getString("store_owner"));
+					article.setStore_octime(rs.getString("store_octime"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_floor(rs.getString("store_floor"));
+					article.setStore_tel(rs.getString("store_tel"));
+					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
+					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
+					article.setStore_uri(rs.getString("store_uri"));
+					article.setSimg_root(rs.getString("simg_root"));
+					article.setPimg_root(rs.getString("pimg_root"));
+					article.setStore_avgsal(rs.getInt("store_avgsal"));
+					article.setStore_score(rs.getInt("store_score"));
+					
+					// 메뉴관련정보
+/*					article.setMenu_no(rs.getInt("menu_no"));
+					article.setMenu_nm1(rs.getString("menu_nm1"));
+					article.setMenu_nm1_sal(rs.getInt("menu_nm1_sal"));
+					article.setMenu_nm2(rs.getString("menu_nm2"));
+					article.setMenu_nm2_sal(rs.getInt("menu_nm2_sal"));*/					
+					articleList.add(article);
+					
+				} while (rs.next());
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException ex) {
+				}
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+				}
+		}
+		return articleList;
+	}
 	// 다중검색 메서드, 하나의 메서드로 모든 검색, 정렬을 대응
 	/*public List getTotalArticles(List list) throws Exception {
 		Connection conn = null;

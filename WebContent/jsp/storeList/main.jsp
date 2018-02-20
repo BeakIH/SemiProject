@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +17,8 @@
 <link href="../../lib/swiper/css/swiper.min.css" rel="stylesheet">
 <link href="../../lib/aos/aos.css" rel="stylesheet">
 <link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css?ver=2" rel="stylesheet">
-<link href="../../css/sidestyle.css?ver=1" rel="stylesheet">
+<link href="../../css/style.css?ver=7" rel="stylesheet">
+<link href="../../css/sidestyle.css?ver=4" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../lib/jquery-3.2.1.min.js"></script>
@@ -30,6 +34,7 @@
 <script src="../../lib/lib.js"></script>
 
 <script>
+
 /* 검색창 카테고리 변경시 placeholder 변경 */
 $(document).ready(function(){
 	$('.search-in label').click(function(){
@@ -49,21 +54,41 @@ $(document).ready(function(){
 }); */
 
 // 사이드 바 기능
-function openNav() {
+/* function openNav() { // 여기에 ajax 기능 추가
     document.getElementById("mySidenav").style.width = "250px";
+    alert('확인');
+    location.href='sideList.do';
+    // ajax
+    $.ajax({
+    	// 설정
+    	url: "jsp/storeList/sideList.do",
+		type: "get",
+		data:  안넘겨줘도 실행하도록 
+    	async: false,
+    	// 성공시
+    	success:function(data){
+    		
+    	}
+    	// 에러시
+    	error: function(xhr, textStatus, errorThrown) {
+			$("div").html("<div>" + textStatus + " (HTTP-" + xhr.status + " / " + errorThrown + ")</div>" );
+		}
+    })
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-}
+} */
 </script>
 
 <script>
 var check=0; // 사이드메뉴 열고닫는데에 사용되는 조건변수
 
 function openNav() {// 사이드메뉴 버튼 기능
+	/* alert('확인'); */
+	/* location.href='sideList.do'; */
     if (check==0){
-    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("mySidenav").style.width = "330px";
     	check+=1;
     }else{
 	   	document.getElementById("mySidenav").style.width = "0";
@@ -75,7 +100,10 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 	document.getElementById("mySidenav").style.width = "0";
 	check-=1;
 }
+
+
 </script>
+
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -84,6 +112,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
     <![endif]-->
 </head>
 <body>
+
 <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark navbar-over absolute-top" id="menu">
   <div class="container">
@@ -104,7 +133,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Listings
+         	검색하기
         </a>
         <div class="dropdown-menu">
             <a href="list.do" class="dropdown-item">목록보기</a>
@@ -230,10 +259,38 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 <div id="mySidenav" class="sidenav">
 	<br>
 	<br>
-  	<a href="#">Services</a>
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  	<a href="#">Clients</a>
-  	<a href="#">Contact</a>
+  	<!-- <a href="#">Services</a> -->
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
+  	<!-- <a href="#">Clients</a>
+  	<a href="#">Contact</a> -->
+	<div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:80px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div>
+  	<c:forEach var="article" items="${articleList}">
+  	<table>
+  		<tr>
+  		<td style="width:80px;padding-right: 10px;background-color:none;display:inline-block;"><a id="linkedA" href="list_info.do?store_no=${article.store_no }">${article.store_nm }</a></td>
+  		<td style="width:80px;padding-right: 10px;background-color:none;display:inline-block;">${article.avl_tbl_cnt }</td>
+  		<td style="width:80px;padding-right: 10px;background-color:none;display:inline-block;">
+  		<c:choose>
+  		<c:when test="${article.avl_tbl_cnt>0 && article.avl_tbl_cnt <=40 }">
+  		<font color="red">예약불가</font>
+  		</c:when>
+  		<c:when test="${article.avl_tbl_cnt>40 && article.avl_tbl_cnt <=100 }">
+  		<font color="green">예약가능</font>
+  		</c:when>
+  		</c:choose>
+  		</td>
+  		</tr>
+  	</table>
+	</c:forEach>
+	<%-- <a id="subside" href="list_info.do?store_no=${article.store_no }"><div style="display:inline-block;background-color:red;width:80px;">${article.store_nm }</div><div style="display:inline-block;width:80px;">${article.avl_tbl_cnt }</div><div style="display:inline-block;width:80px;">예약가능</div></a> --%>
+	<!-- foreach 문 사용 -->
+	
+	<%-- 
+	<c:forEach var="article" items="${articleList}">
+	<a></a>
+	</c:forEach>
+	--%>
+	
 </div>
 
 <span style="font-size:30px;cursor:pointer" onclick="openNav()"></span>
@@ -252,7 +309,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           <div class="row justify-content-md-center">
             <div class="col-md-9 col-lg-8">
             <div class="input-group input-group-lg">
-      <input type="text" class="form-control" name="search"  placeholder="ex) 자장면, 김치찌개, 파스타">
+      <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
       <span class="input-group-btn">
       <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
         <!-- <button class="btn btn-primary" type="button">검색!</button> -->
@@ -295,16 +352,16 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
               <div class="row">
                 <div class="col-md-6">
                   <div class="item item-lg">
-                    <div class="item-image" style="background-image:url(img/demo/property/13.jpg);"><a href="property_single.html">
+                    <div class="item-image" style="background-image:url(../../img/store_img/store_elbonmain.jpg);"><a href="list_info.do?store_no=3">
                       <div class="item-meta">
                         <div class="item-info">
-                          <h3 class="item-title">3 bed semi-detached house</h3>
-                          <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
+                          <h3 class="item-title">엘본 더 테이블</h3>
+                          <div class="item-location"><i class="fa fa-map-marker"></i> 4층 </div>
                         </div>
-                        <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                        <div class="item-price">13000원 <small>스타쉐프 최현석의 선택</small> </div>
                       </div>
                       <div class="item-badges">
-                        <div class="item-badge-right">For Sale</div>
+                        <div class="item-badge-right">세일중</div>
                       </div>
                       </a> </div>
                   </div>
@@ -313,16 +370,16 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="item item-md">
-                        <div class="item-image" style="background-image:url(img/demo/property/2.jpg);"><a href="property_single.html">
+                        <div class="item-image" style="background-image:url(../../img/store_img/store_gyunghwa.jpg);"><a href="list_info.do?store_no=2">
                           <div class="item-meta">
                             <div class="item-info">
-                              <h3 class="item-title">3 bed semi-detached house</h3>
-                              <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
+                              <h3 class="item-title">경화루</h3>
+                              <div class="item-location"><i class="fa fa-map-marker"></i> 2층 </div>
                             </div>
-                            <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                            <div class="item-price">7000원대 <small>중화요리의 절대고수 이연복</small> </div>
                           </div>
                           <div class="item-badges">
-                            <div class="item-badge-right">For Sale</div>
+                            <div class="item-badge-right">예약가능</div>
                           </div>
                           </a> </div>
                       </div>
@@ -331,32 +388,32 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="item item-sm">
-                        <div class="item-image" style="background-image:url(img/demo/property/3.jpg);"><a href="property_single.html">
+                        <div class="item-image" style="background-image:url(../../img/store_img/store_layuen.jpg);"><a href="list_info.do?store_no=1">
                           <div class="item-meta">
                             <div class="item-info">
-                              <h3 class="item-title">3 bed semi-detached house</h3>
-                              <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
+                              <h3 class="item-title">라연</h3>
+                              <div class="item-location"><i class="fa fa-map-marker"></i> 1층 </div>
                             </div>
-                            <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                            <div class="item-price">10000원대 <small>미쉐린 스타쉐프 김성일의 식당</small> </div>
                           </div>
                           <div class="item-badges">
-                            <div class="item-badge-right">For Sale</div>
+                            <div class="item-badge-right">예약가능</div>
                           </div>
                           </a> </div>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="item item-sm">
-                        <div class="item-image" style="background-image:url(img/demo/property/4.jpg);"><a href="property_single.html">
+                        <div class="item-image" style="background-image:url(../../img/store_img/store_manbbo.jpg);"><a href="list_info.do?store_no=4">
                           <div class="item-meta">
                             <div class="item-info">
-                              <h3 class="item-title">3 bed semi-detached house</h3>
-                              <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
+                              <h3 class="item-title">만뽀</h3>
+                              <div class="item-location"><i class="fa fa-map-marker"></i> 2층</div>
                             </div>
-                            <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                            <div class="item-price">6500원대 <small>전통 일식의 그맛</small> </div>
                           </div>
                           <div class="item-badges">
-                            <div class="item-badge-right">For Sale</div>
+                            <div class="item-badge-right">예약가능</div>
                           </div>
                           </a> </div>
                       </div>
@@ -634,7 +691,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   <a href="#">Clients</a>
   <a href="#">Contact</a>
 </div>
-<button class="btn btn-primary btn-circle" id="sidebar-btn" onclick="openNav()">식당현황</button><!-- <i> 태그와 아무상관없음 -->
+<button class="btn btn-primary btn-circle" id="sidebar-btn" onMouseOver="openNav()">식<br>당<br>현<br>황</button><!-- <i> 태그와 아무상관없음 -->
 <!-- 사이드바 버튼 end -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
