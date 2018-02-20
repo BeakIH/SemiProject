@@ -1,11 +1,10 @@
 package action;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bbs.BoardDataBean;
 import bbs.BoardDBBean;
-
-
 
 public class ContentAction implements CommandAction {//글내용 처리
 

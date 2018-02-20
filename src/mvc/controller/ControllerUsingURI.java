@@ -18,17 +18,17 @@ import action.CommandAction;
 
 public class ControllerUsingURI extends HttpServlet {
 
-	private Map commandMap = new HashMap();// ¸í·É¾î¿Í ¸í·É¾î Ã³¸® Å¬·¡½º¸¦ ½ÖÀ¸·Î ÀúÀå
+	private Map commandMap = new HashMap();// ï¿½ï¿½É¾ï¿½ï¿½ ï¿½ï¿½É¾ï¿½ Ã³ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	// ¸í·É¾î¿Í Ã³¸®Å¬·¡½º°¡ ¸ÅÇÎµÇ¾î ÀÖ´Â properties ÆÄÀÏÀ» ÀÐ¾î¼­ Map°´Ã¼ÀÎ commandMap¿¡ ÀúÀå
-	// ¸í·É¾î¿Í Ã³¸®Å¬·¡½º°¡ ¸ÅÇÎµÇ¾î ÀÖ´Â properties ÆÄÀÏÀº Command.propertiesÆÄÀÏ
+	// ï¿½ï¿½É¾ï¿½ï¿½ Ã³ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÎµÇ¾ï¿½ ï¿½Ö´ï¿½ properties ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾î¼­ Mapï¿½ï¿½Ã¼ï¿½ï¿½ commandMapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½É¾ï¿½ï¿½ Ã³ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÎµÇ¾ï¿½ ï¿½Ö´ï¿½ properties ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Command.propertiesï¿½ï¿½ï¿½ï¿½
 	public void init(ServletConfig config) throws ServletException {
-		String props = config.getInitParameter("propertyConfig");// web.xml¿¡¼­ propertyConfig¿¡ ÇØ´çÇÏ´Â init-param ÀÇ °ªÀ» ÀÐ¾î¿È
-		Properties pr = new Properties();// ¸í·É¾î¿Í Ã³¸®Å¬·¡½ºÀÇ ¸ÅÇÎÁ¤º¸¸¦ ÀúÀåÇÒ Properties°´Ã¼ »ý¼º
+		String props = config.getInitParameter("propertyConfig");// web.xmlï¿½ï¿½ï¿½ï¿½ propertyConfigï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ init-param ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ï¿½
+		Properties pr = new Properties();// ï¿½ï¿½É¾ï¿½ï¿½ Ã³ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Propertiesï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
 		FileInputStream f = null;
 		try {
-			f = new FileInputStream(props); // Command.propertiesÆÄÀÏÀÇ ³»¿ëÀ» ÀÐ¾î¿È
-			pr.load(f);// Command.propertiesÆÄÀÏÀÇ Á¤º¸¸¦ Properties°´Ã¼¿¡ ÀúÀå
+			f = new FileInputStream(props); // Command.propertiesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ï¿½
+			pr.load(f);// Command.propertiesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Propertiesï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		} catch (IOException e) {
 			throw new ServletException(e);
 		} finally {
@@ -38,14 +38,15 @@ public class ControllerUsingURI extends HttpServlet {
 				} catch (IOException ex) {
 				}
 		}
-		Iterator keyIter = pr.keySet().iterator();// Iterator°´Ã¼´Â Enumeration°´Ã¼¸¦ È®Àå½ÃÅ² °³³äÀÇ °´Ã¼
-		while (keyIter.hasNext()) {// °´Ã¼¸¦ ÇÏ³ª¾¿ ²¨³»¼­ ±× °´Ã¼¸íÀ¸·Î Properties°´Ã¼¿¡ ÀúÀåµÈ °´Ã¼¿¡ Á¢±Ù
+		
+		Iterator keyIter = pr.keySet().iterator();// Iteratorï¿½ï¿½Ã¼ï¿½ï¿½ Enumerationï¿½ï¿½Ã¼ï¿½ï¿½ È®ï¿½ï¿½ï¿½Å² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+		while (keyIter.hasNext()) {// ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Propertiesï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			String command = (String) keyIter.next();/*key*/
 			String className = pr.getProperty(command); /*value*/
 			try {
-				Class commandClass = Class.forName(className);// ÇØ´ç ¹®ÀÚ¿­À» Å¬·¡½º·Î ¸¸µç´Ù. new ListAction() class action.ListAction
-				Object commandInstance = commandClass.newInstance();// ÇØ´çÅ¬·¡½ºÀÇ °´Ã¼¸¦ »ý¼º   class action.ListAction.newInstance(); 
-				commandMap.put(command, commandInstance);// Map°´Ã¼ÀÎ commandMap¿¡ °´Ã¼ ÀúÀå
+				Class commandClass = Class.forName(className);// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½. new ListAction() class action.ListAction
+				Object commandInstance = commandClass.newInstance();// ï¿½Ø´ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   class action.ListAction.newInstance(); 
+				commandMap.put(command, commandInstance);// Mapï¿½ï¿½Ã¼ï¿½ï¿½ commandMapï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
 			} catch (ClassNotFoundException e) {
 				throw new ServletException(e);
 			} catch (InstantiationException e) {
@@ -54,23 +55,23 @@ public class ControllerUsingURI extends HttpServlet {
 				throw new ServletException(e);
 			}
 		}
-	} // ¸í·É¾î - ½ÇÇàÇÒ °´Ã¼
+	} // ï¿½ï¿½É¾ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
 
-	public void doGet(// get¹æ½ÄÀÇ ¼­ºñ½º ¸Þ¼Òµå
+	public void doGet(// getï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		requestPro(request, response);
 	}
 
-	protected void doPost(// post¹æ½ÄÀÇ ¼­ºñ½º ¸Þ¼Òµå
+	protected void doPost(// postï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		requestPro(request, response);
 	}
 
-	// ½Ã¿ëÀÚÀÇ ¿äÃ»À» ºÐ¼®ÇØ¼­ ÇØ´ç ÀÛ¾÷À» Ã³¸®
+	// ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ð¼ï¿½ï¿½Ø¼ï¿½ ï¿½Ø´ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 	private void requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String view = null; // view Á¤º¸
-		CommandAction com = null; // model °´Ã¼
+		String view = null; // view ï¿½ï¿½ï¿½ï¿½
+		CommandAction com = null; // model ï¿½ï¿½Ã¼
 		try {
 			String command = request.getRequestURI();
 			if (command.indexOf(request.getContextPath()) == 0) {

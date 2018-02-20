@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<decorators> 
+		<decorator page="/decorator/adminSide.jsp" name="main"> 
+			<pattern>/jsp/admin/*</pattern>
+		</decorator>
+			
+			<!-- ex)
+			<decorator page="/decorator/adminlayout.jsp" name="admin"> 
+				<pattern>/adminpage/*</pattern>
+			</decorator> -->
+			
+			<!-- <excludes>
+				<pattern></pattern>
+			</excludes> -->
+		<!-- <decorator page="/decorator/headerFooter.jsp" name="main"> 
+			<pattern>/jsp/member/*</pattern>
+		</decorator> -->
+		
+	</decorators>
+
