@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%> 
     
-<%-- 자바빈 클래스 import --%>      
+      
 <%@ page import="jsp.member.model.MemberBean" %>  
-<%-- DAO import --%>   
+ 
 <%@ page import="jsp.member.model.MemberDAO" %> 
  
 <html>
