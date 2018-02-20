@@ -18,18 +18,18 @@ public class StoreListServlet extends HttpServlet {
 	   private static final long serialVersionUID = 1L;
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	      
-	      System.out.println("doPost °¡ ½ÇÇàµÇ¾ú½À´Ï´Ù.");
+	      System.out.println("doPost ê°€ ì‹¤í–‰ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	      StoreListDBBean dao = new StoreListDBBean();
 	      List<StoreListDataBean> list = new ArrayList<StoreListDataBean>();
 	      
 	      list = dao.getUpdateCurCnt();
 	      StringBuffer sb = new StringBuffer();
-	      sb.append("{\"result\":[");//jsp ¿¡¼­ °¡Á®¿À´Â result // jsonÇüÅÂ·Î ¸¸µé¾î¿ä(27-34)
+	      sb.append("{\"result\":[");//jsp ì—ì„œ ê°€ì ¸ì˜¤ëŠ” result // jsoní˜•íƒœë¡œ ë§Œë“¤ì–´ìš”(27-34)
 	      
 	      for(int i =0; i<list.size(); i++) {
-	    	  sb.append("[{\"value\": \""+ list.get(i).getStoreNm()+"\"},");    // ¸ÅÀå¸í , ÇöÀç ,ÀÌ¿ë°¡´É
-	    	  sb.append("{\"value\": \""+ list.get(i).getCurTblCnt()+"\"},");
-	    	  sb.append("{\"value\": \""+ list.get(i).getAvlTblCnt()+"\"}]");
+	/*         result.append("[{\"value\": \""+ dto.get(i).getEmpno()+"\"},");    // ë§¤ì¥ëª… , í˜„ì¬ ,ì´ìš©ê°€ëŠ¥
+	         result.append("{\"value\": \""+ dto.get(i).getFormatTime()+"\"},");
+	         result.append("{\"value\": \""+ dto.get(i).getC_cnt()+"\"}]");*/
 	      }   
 	      sb.append("]\"}");
 	      response.getWriter().write(sb.toString()); 
