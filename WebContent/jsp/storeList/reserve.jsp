@@ -192,7 +192,7 @@ $( document ).ready(function() {
  var sto_open_Time = $('#oTime').val().split(" ~ ")[0];
  var sto_close_Time = $('#oTime').val().split(" ~ ")[1];
  
- for(var i = sto_open_Time.split(":")[0] * 1; i <= sto_close_Time.split(":")[0] * 1 - 1; i++){
+ for(var i = sto_open_Time.split(":")[0] * 1 + 1; i <= sto_close_Time.split(":")[0] * 1 - 1; i++){
 	 if(i < 10) from2_text = from2_text + "<label><input type='radio' style='text-align:center;width: 35px;' value='0" + i + ":00' name='chk2' /><span style='font-weight:bold; font-size: 16px;'>0" + i + ":00</span></label><br />"; 
 	 else from2_text = from2_text + "<label><input type='radio' style='text-align:center; width: 35px;' value='" + i + ":00' name='chk2' /><span style='font-weight:bold; font-size: 16px;'>" + i + ":00</span></label><br />"; 
  }
