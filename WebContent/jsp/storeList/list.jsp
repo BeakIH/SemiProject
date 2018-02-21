@@ -505,8 +505,6 @@ $(document).ready(function(){
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">홈</a></li>
 						<li class="breadcrumb-item"><a href="#">매장 리스트</a></li>
-						<li class="breadcrumb-item active" aria-current="page">North
-							Yorkshire</li>
 					</ol>
 				</nav>
 				<div class="page-header">
