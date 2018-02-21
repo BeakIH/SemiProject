@@ -158,7 +158,7 @@
                 <li><a href="my_notifications.html">Notifications</a></li>
                 <li><a href="my_membership.html">Membership</a></li>
                 <li><a href="my_payments.html">Payments</a></li>
-                <li><a href="my_account.html">Account</a></li>
+                <li><a href="../login/logutPro.jsp">로그아웃</a></li>
                 <li class="title">Blog Pages</li>
                   <li><a href="blog.html">Blog Archive</a></li>
                   <li><a href="blog_single.html">Blog Single</a></li>
@@ -177,7 +177,7 @@
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name }
         </a>
         <div class="dropdown-menu">
             <a href="my_profile.html" class="dropdown-item">My Profile</a>
@@ -185,7 +185,7 @@
             <a href="my_notifications.html" class="dropdown-item">Notifications</a>
             <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a>
         </div>
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>

@@ -213,7 +213,7 @@ function fillInAddress() {
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name } 야 ~~
         </a>
         <div class="dropdown-menu">
             <a href="my_profile.html" class="dropdown-item">My Profile</a>
@@ -221,7 +221,7 @@ function fillInAddress() {
             <a href="my_notifications.html" class="dropdown-item">Notifications</a>
             <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a>
         </div>
       </li>
      
