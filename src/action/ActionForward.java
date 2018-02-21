@@ -1,9 +1,9 @@
-package jsp.member.action;
+package action;
  
 /**
  * 페이지 이동을 처리하기 위한 클래스
  */
-public class ActionForward {
+public class ActionForward{
     
     private boolean isRedirect = false;
     private String nextPath = null; // 이동할 다음 화면

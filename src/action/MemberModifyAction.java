@@ -1,4 +1,4 @@
-package jsp.member.action;
+package action;
  
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +11,7 @@ import jsp.member.model.MemberDAO;
  * 회원정보 수정작업을 처리하는 Action 클래스
  *
  */
-public class MemberModifyAction implements Action
+public class MemberModifyAction implements CommandAction
 {
  
 	  @Override

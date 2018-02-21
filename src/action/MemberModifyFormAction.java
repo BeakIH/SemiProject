@@ -1,4 +1,4 @@
-package jsp.member.action;
+package action;
  
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ import jsp.member.model.MemberDAO;
 /** 
  *  회원정보 수정화면에 현재 회원정보를 출력하는 Action 클래스
  */
-public class MemberModifyFormAction implements Action
+public class MemberModifyFormAction implements CommandAction
 {
  
 	  @Override

@@ -1,4 +1,4 @@
-package jsp.member.action;
+package action;
  
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +11,7 @@ import jsp.member.model.MemberDAO;
  *  JoinForm.jsp에서 넘겨받은 정보를 이용하여
  *  회원가입을 처리한다.
  */
-public class MemberJoinAction implements Action{
+public class MemberJoinAction implements CommandAction{
 
 	   @Override
 	   public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {

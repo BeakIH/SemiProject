@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import emp.EmpDBBean;
 import emp.EmpDataBean;
-import mvc.controller.ControllerUsingURI;
+import mvc.controller2.ControllerUsingURI;
 
 public class Management_CreateAction implements CommandAction {
 
