@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>공지 사항</title>
-
+ 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
 <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -216,11 +216,11 @@
 							<legend>공지사항</legend>
 												
 							<table class="inquiry_data">
-								<caption>공지사항</caption>
+								
 
 								<tbody>
 								<tr>
-								<td colspan="2" style="text-align:right;"><a href="/SemiProject/notice/notice2.do">글목록</a>
+								<td colspan="2" style="text-align:right;"><a href="/SemiProject/notice/notice2.do" class="btn btn-lg btn-primary">글목록</a>
 								</td>
 								 </tr>
 								 <!-- 게시직원명 db4 -->
@@ -247,11 +247,61 @@
 								
 							</tbody></table>
 						</fieldset>
-						
-  <input type="submit" value="글쓰기" > 
-  <input type="reset" value="다시작성">
+						<br>
+  <input type="submit" value="글쓰기" class="btn btn-lg btn-primary"> 
+  <input type="reset" value="다시작성" class="btn btn-lg btn-primary">
 					</form>
 
 				</div>
+				<footer id="footer">
+  <div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-10">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <p><span class="icon-uilove-realestate"></span></p>
+            <address>
+            <strong>Twitter, Inc..</strong><br>
+            1355 Market Street, Suite 900<br>
+            San Francisco, CA 94103<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+            <p class="text-muted">Copyright &copy; 2016<br />
+              All rights reserved</p>
+          </div>
+          <div class="col-md-2  col-sm-4">
+            <ul class="list-unstyled">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Plans</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-sm-4">
+            <ul class="list-unstyled">
+              <li><a href="#">For Rent</a></li>
+              <li><a href="#">For Sale</a></li>
+              <li><a href="#">Commercial</a></li>
+              <li><a href="#">Agents</a></li>
+              <li><a href="#">Property Guides</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
+            <form>
+              <h4>SSubscribe Newsletter</h4>
+              <div class="input-group input-group-lg">
+                <input type="email" class="form-control" placeholder="Email Address">
+                <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Go!</button>
+                </span> </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

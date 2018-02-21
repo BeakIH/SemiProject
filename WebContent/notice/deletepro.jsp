@@ -8,4 +8,4 @@
 비밀번호가 다릅니다.
 <br>
 <a href="javascript:history.go(-1)">[글삭제 폼으로 돌아가기]</a>
-</c:if>
+</c:if> 

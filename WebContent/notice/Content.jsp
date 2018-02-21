@@ -1,13 +1,14 @@
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>공지 사항</title>
-
+  
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
 <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -187,57 +188,84 @@
   </div>
   </div>
 </nav>
-<h1><center>공지사항</center></h1>
-<div class="content_data_table">
-<div class="content_title"><span><b>번호 : ${article.bNo}</b></span></div>
-<br>
+<div class="col-detail">
 
-<form>
-<table class="content_data"> 
-  <tr>
-    <th class="sell01">작성자</th>
-    <td class="sell02">${article.empNm}</td>
-        <th class="sell03">사원번호</th>
-    <td class="sell04">${article.empNo}</td>
-  </tr>
-  <tr>
-          <th>작성일</th>
-    <td>${article.postDate}</td>
-    <th>조회수</th>
-    <td>${article.bViewCnt}</td>
-
-  </tr>
-  <tr>
-
-
-  </tr>
-  <tr>
-    <th>글제목</th>
-    <td colspan="4">${article.bTitle}</td>
-  </tr>
-  <tr>
-    <th class="sell_content">글내용</th>
-    <td colspan="4"><pre>${article.bContent}</pre></td>
-  </tr>
-  <tr>     
-    <td>
-  <input type="button" value="글수정"
-       onclick="document.location.href='/SemiProject/notice/updateForm.do?bNo=${article.bNo}&pageNum=${pageNum}'">
-
-  
-
-      
-
-
-    </td>
-    <td><input type="button" value="글삭제"
-       onclick="document.location.href='/SemiProject/notice/deleteForm.do?bNo=${article.bNo}&pageNum=${pageNum}'"></td>
-    <td>       <input type="button" value="글목록"
-       onclick="document.location.href='/SemiProject/notice/notice2.do?pageNum=${pageNum}'"></td>
-  </tr>
-</table>   
-</form>     
+			<div class="board_view_area">
+							<h1 class="tit">공지/뉴스</h1>
+				<p class="stit">밥사조의 여러가지 소식들을 확인하실 수 있습니다.</p>
+				<ul class="top_title_faq">
+					<li class="title" >[${article.bTitle}]</li>
+					<li class="stit_area">
+						<span>등록일<span class="regist_day">
+						<c:set var="pv" value="${article.postDate}"/>${fn:substring(pv,0,10)}</span></span>
+						<span class="check_tit_area">조회수<em class="check_num">${article.bViewCnt}</em></span>
+					</li>
+				</ul>
+				<div class="view_area">
+				<pre>${article.bContent}</pre>
 </div>
-
+<br>
+<span style="float:right;"><input type="button" value="글수정" class="btn btn-lg btn-primary"
+       onclick="document.location.href='/SemiProject/notice/updateForm.do?bNo=${article.bNo}&pageNum=${pageNum}'">
+<input type="button" value="글삭제" class="btn btn-lg btn-primary"
+       onclick="document.location.href='/SemiProject/notice/deleteForm.do?bNo=${article.bNo}&pageNum=${pageNum}'">
+<input type="button" value="글목록" class="btn btn-lg btn-primary"
+       onclick="document.location.href='/SemiProject/notice/notice2.do?pageNum=${pageNum}'">  
+       </span>
+       <br>
+				<!-- 이전글,다음글 (e) -->
+			</div>
+		</div>
+<br>
+<footer id="footer">
+  <div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-10">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <p><span class="icon-uilove-realestate"></span></p>
+            <address>
+            <strong>Twitter, Inc..</strong><br>
+            1355 Market Street, Suite 900<br>
+            San Francisco, CA 94103<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+            <p class="text-muted">Copyright &copy; 2016<br />
+              All rights reserved</p>
+          </div>
+          <div class="col-md-2  col-sm-4">
+            <ul class="list-unstyled">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Plans</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-sm-4">
+            <ul class="list-unstyled">
+              <li><a href="#">For Rent</a></li>
+              <li><a href="#">For Sale</a></li>
+              <li><a href="#">Commercial</a></li>
+              <li><a href="#">Agents</a></li>
+              <li><a href="#">Property Guides</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
+            <form>
+              <h4>SSubscribe Newsletter</h4>
+              <div class="input-group input-group-lg">
+                <input type="email" class="form-control" placeholder="Email Address">
+                <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Go!</button>
+                </span> </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>    
