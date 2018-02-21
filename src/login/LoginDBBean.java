@@ -5,11 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-import emp.EmpDataBean;
-import member.MemberDataBean;
 import store.list.JdbcUtil;
 
 public class LoginDBBean {
@@ -82,7 +80,6 @@ public class LoginDBBean {
 //	}
 
 /*	public List userCheck2(String userid, String userpw) throws Exception {
-//	public List userCheck2(String userid, String userpw) throws Exception {
 //		//그냥 입력한값을 가져온거지
 //		Connection conn = null;
 //		PreparedStatement pstmt = null;
@@ -241,7 +238,7 @@ public class LoginDBBean {
 		return DriverManager.getConnection(jdbcDriver);
 	}
 	
-/*	public int userCheck(String userid, String userpw) throws Exception {
+	/*public int userCheck(String userid, String userpw) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -361,29 +358,32 @@ public class LoginDBBean {
 		return result;
 	}
 	
-	public int userLogin(String userid, String userpw) {
+	public Map<String, Object> userLogin(String userid, String userpw) {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int result = 0;
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("result", 0);
 		
 		try {
 			if(userCheck(userid) == 1) { //일반회원
+				result.put("result", 0);
 				conn = getConnection();
-				String sql = "select mem_id, mem_pw from member where mem_id = ? and mem_pw = ?";
+				String sql = "select mem_id, mem_pw, mem_nm from member where mem_id = ? and mem_pw = ?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, userid);
 				pstmt.setString(2, userpw);
-			    
+			   
 				rs = pstmt.executeQuery();
-				
 				while(rs.next()) {
-					result = 1;
+					result.put("result", 1);
+					result.put("name", rs.getString("mem_nm"));
 				}
 			} else if(adminCheck(userid) == 2) { //관리자
+				result.put("result", 0);
 				conn = getConnection();
-				String sql = "select adm_id, adm_pw from emp where adm_id = ? and adm_pw = ?";
+				String sql = "select adm_id, adm_pw, emp_nm from emp where adm_id = ? and adm_pw = ?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, userid);
 				pstmt.setString(2, userpw);
@@ -391,10 +391,11 @@ public class LoginDBBean {
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()) {
-					result = 2;
+					result.put("result", 2);
+					result.put("name", rs.getString("adm_nm"));
 				}
 			} else {
-				result = 3;
+				result.put("result", 3);
 			}
 			// result 0 : ID 존재  비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
 			return result;
@@ -410,6 +411,6 @@ public class LoginDBBean {
 				e.printStackTrace();
 			}
 		}
-		return 0;
+		return result;
 	}
 }
