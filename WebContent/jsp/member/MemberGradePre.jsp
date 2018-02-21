@@ -11,26 +11,26 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../lib/animate.css" rel="stylesheet">
+<link href="../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/tinymce/tinymce.min.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../lib/aos/aos.js"></script>
+<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -211,12 +211,12 @@
                     <span class="badge badge-primary badge-pill">7</span>
                     </a>
                   <span class="list-group-item heading"> 내 계정 관리</span>
-                  <a href="my_profile.html" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
-<a href="my_membership.html" class="list-group-item active"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a>
-<a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
-<a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
+                  <a href="../member/ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
+                  <a href="../member/ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="../member/NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
+				  <a href="../member/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-fw fa-cubes"></i> BABSAZO 멤버십</a>
+				  <a href="../member/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+				  <a href="../member/SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@
               <div class="media mt-0">
                     <div class="media-left"> <a href="agent.html"> <img class="media-object rounded-circle" src="img/demo/badge.png" width="100" height="100" alt=""> </a> </div>
                     <div class="media-body">
-                      <a class="btn btn-link float-right" href="#"> 멤버십 설정 기준 </a>
+                      <a class="btn btn-link float-right" href="../member/Gradecheck.jsp"> 멤버십 설정 기준 </a>
                       <h4 class="media-heading"><a href="plans.html">BABSAZO의 <strong>프로 먹방러</strong></a></h4>
                       <p class="text-muted">가입일 : 2018년 2월 16일</p>                      
                       
