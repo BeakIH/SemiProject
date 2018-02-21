@@ -23,9 +23,9 @@ public class LoginAction implements CommandAction{
 	
 	System.out.println(check);
 	//request.getSession().setAttribute("noList", noList);
-	
+	request.getSession().setAttribute("id", userid);  // session 에 값넣기 
 	//0 = 아이디 없음 , 1 = 관리자 , 2=회원 , -1 = 비밀번호틀림
-
+	
 	return "/jsp/login/loginPro.jsp";
 	}
 }
