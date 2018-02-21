@@ -17,8 +17,8 @@
 <link href="../../lib/swiper/css/swiper.min.css" rel="stylesheet">
 <link href="../../lib/aos/aos.css" rel="stylesheet">
 <link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css?ver=2" rel="stylesheet"> 
-<link href="../../css/sidestyle.css?ver=1" rel="stylesheet">
+<link href="../../css/style.css?ver=3" rel="stylesheet"> 
+<link href="../../css/sidestyle.css?ver=4" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../lib/jquery-3.2.1.min.js"></script>
@@ -42,7 +42,7 @@ $(document).ready(function(){
 		if(($(this).text())=="음식명으로 찾기"){// 카테고리 음식
 			$('.input-group-lg>.form-control').attr("placeholder","ex) 자장면, 김치찌개, 파스타").placeholder();
 		}else if(($(this).text())=="매장명으로 찾기"){// 카테고리 가게
-			$('.input-group-lg>.form-control').attr("placeholder","ex) 엘본 더 테이블, 경화루, 가온").placeholder();
+			$('.input-group-lg>.form-control').attr("placeholder","ex) 엘본 더 테이블, 경화루, 라연").placeholder();
 		}
 	});
 });
@@ -263,7 +263,10 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
   	<!-- <a href="#">Clients</a>
   	<a href="#">Contact</a> -->
-	<div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div>
+	<!-- <div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div> -->
+	<div class="sideMenu" style="width:80px;">매장명</div>
+	<div class="sideMenu" style="width:95px;">현재인원</div>
+	<div class="sideMenu" style="width:80px;">상태</div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>
@@ -312,7 +315,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
       <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
    	 <span class="input-group-btn">
       	 <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-         <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> 
+         <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button> 
       </span>
     </div>
     <div class="search-in">
@@ -334,7 +337,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
       </div>
     </div>
   </div>
-  <video class="search-video" autoplay loop width="0" height="0" src="../../video/mainpage_video.mp4"></video>
+  <video class="search-video" autoplay loop width="0" height="0" src="../../video/mainpage_video.mp4" muted></video>
 </div>
 </div>
 <div id="content" class="pt0 pb0">
