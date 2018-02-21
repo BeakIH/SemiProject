@@ -11,7 +11,7 @@ import login.LoginDBBean;
 
 public class LoginAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-	System.out.println("3");
+		
 	request.setCharacterEncoding("UTF-8");
 	
 	LoginDBBean loginDao = LoginDBBean.getInstance();
@@ -19,12 +19,13 @@ public class LoginAction implements CommandAction{
 	String userid = request.getParameter("userid");
 	String userpw = request.getParameter("userpw");
 	
-	int check = loginDao.userCheck(userid, userpw);
+	int check = loginDao.userLogin(userid, userpw);
 	
 	System.out.println(check);
-	//request.getSession().setAttribute("noList", noList);
+	
 	request.getSession().setAttribute("id", userid);  // session 에 값넣기 
-	//0 = 아이디 없음 , 1 = 관리자 , 2=회원 , -1 = 비밀번호틀림
+	
+	//  0 : ID 존재  비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
 	
 	return "/jsp/login/loginPro.jsp";
 	}
