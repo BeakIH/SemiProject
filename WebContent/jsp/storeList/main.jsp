@@ -313,12 +313,13 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <div class="col-md-9 col-lg-8">
             <div class="input-group input-group-lg">
       <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
-      <span class="input-group-btn">
-      <!-- <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button> -->
-        <!-- <button class="btn btn-primary" type="button">검색!</button> -->
-        <!-- <input type="submit" class="btn btn-primary" value="가즈아"> -->
-        <button class="btn btn-primary btn-circle" id="to-top"><i class="fas fa-search"></i></button>
-      </span>
+   <!-- <span class="input-group-btn">
+      	 <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+         <button class="btn btn-primary" type="button">검색!</button> 
+         <input type="submit" class="btn btn-primary" value="가즈아"> 
+      </span> -->
+      <span></i> 우리매장 예약현황 </span>
+        <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-bell"></i></button>
     </div>
     <div class="search-in">
 <div class="radio-box" id ="food">
