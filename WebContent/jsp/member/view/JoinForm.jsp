@@ -357,7 +357,7 @@
                             <option>nate.com</option>                        
                         </select>  -->
             
-            <div> <input type="checkbox" name="emailyn" value="동의">이메일 수신에 동의합니다</div>
+            <div> <input type="checkbox" name="email_yn" value="동의">이메일 수신에 동의합니다</div>
               <div><p class="help-block">(이메일 BABSAZO 뉴스레터 쿠폰 발급과 이벤트 참여가 가능합니다)</p></div>
             
             <br>
