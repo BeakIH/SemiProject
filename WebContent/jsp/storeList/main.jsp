@@ -117,7 +117,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 <nav class="navbar navbar-expand-lg navbar-dark navbar-over absolute-top" id="menu">
   <div class="container">
   <a class="navbar-brand" href="index.html"><!-- <span class="icon-uilove-realestate"></span> -->
-	 <span><img src="../../img/밥사조2층.png" alt="Smiley face" height="70" width="60"></span>
+	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="100"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -719,7 +719,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <!-- <p><span class="icon-uilove-realestate"></span></p> -->
-            <p><span><img src="../../img/밥사조가로.png" alt="Smiley face" height="60" width="120"></span></p>
+            <p><span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
             	서울특별시 중구 남대문로 120<br>
