@@ -39,9 +39,9 @@
 $(document).ready(function(){
 	$('.search-in label').click(function(){
 	 	
-		if(($(this).text())=="음식명으로 검색"){// 카테고리 음식
+		if(($(this).text())=="음식명으로 찾기"){// 카테고리 음식
 			$('.input-group-lg>.form-control').attr("placeholder","ex) 자장면, 김치찌개, 파스타").placeholder();
-		}else if(($(this).text())=="매장명으로 검색"){// 카테고리 가게
+		}else if(($(this).text())=="매장명으로 찾기"){// 카테고리 가게
 			$('.input-group-lg>.form-control').attr("placeholder","ex) 엘본 더 테이블, 경화루, 가온").placeholder();
 		}
 	});
@@ -313,13 +313,10 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <div class="col-md-9 col-lg-8">
             <div class="input-group input-group-lg">
       <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
-   <!-- <span class="input-group-btn">
+   	 <span class="input-group-btn">
       	 <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-         <button class="btn btn-primary" type="button">검색!</button> 
-         <input type="submit" class="btn btn-primary" value="가즈아"> 
-      </span> -->
-      <span></i> 우리매장 예약현황 </span>
-        <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-bell"></i></button>
+         <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> 
+      </span>
     </div>
     <div class="search-in">
 <div class="radio-box" id ="food">
@@ -343,8 +340,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   <video class="search-video" autoplay loop width="0" height="0" src="../../video/mainpage_video.mp4"></video>
 </div>
 </div>
-<div id="content" class="pt0 pb0" style="min-height:300px;">
-<!--   <div class="feature-box centered gray">
+<div id="content" class="pt0 pb0">
+  <div class="feature-box centered gray">
     <div data-aos="fade-up">
       <div class="container">
         <div class="row justify-content-md-center">
@@ -428,13 +425,13 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
               </div>
               </div>
             </div>
-            <div class="text-center"><a href="#" class="btn btn-xlg btn-link">바로 검색하기!</a></div>
+            <div class="text-center"><a href="#" class="btn btn-xlg btn-link"> 밥사조 시작하기 </a></div>
           </div>
         </div>
       </div>
     </div>
-  </div> -->
- <!--  <div class="feature-box centered">
+  </div>
+  <!-- <div class="feature-box centered">
     <div data-aos="fade-up">
       <div class="container">
         <div class="row justify-content-md-center">
@@ -687,16 +684,16 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
       </div>
     </div>
   </div>
-</div> -->
-<!-- 사이드바 버튼 -->
+</div>
+사이드바 버튼
 <div id="mySidenav" class="sidenav">
   <br>
   <br>
   <a href="#">Services</a><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>
-</div>
-<button class="btn btn-primary btn-circle" id="sidebar-btn" onMouseOver="openNav()">바<br>로<br>확<br>인</button><!-- <i> 태그와 아무상관없음 -->
+</div> -->
+<button class="btn btn-primary btn-circle" id="sidebar-btn" onMouseOver="openNav()">바<br>로<br>가<br>기</button><!-- <i> 태그와 아무상관없음 -->
 <!-- 사이드바 버튼 end -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <!-- 푸터 START -->
@@ -706,7 +703,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
-            <p><span class="icon-uilove-realestate"></span></p>
+            <!-- <p><span class="icon-uilove-realestate"></span></p> -->
+            <p><span><img src="../../img/백인호작품.jpg" alt="Smiley face" height="70" width="100"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
             	서울특별시 중구 남대문로 120<br>

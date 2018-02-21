@@ -241,7 +241,7 @@ public class LoginDBBean {
 		return DriverManager.getConnection(jdbcDriver);
 	}
 	
-	public int userCheck(String userid, String userpw) throws Exception {
+/*	public int userCheck(String userid, String userpw) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -293,7 +293,7 @@ public class LoginDBBean {
 			}
 		}
 		return result;
-	}
+	}*/
 	
 	
 	public int userCheck(String userid) throws Exception {
@@ -301,6 +301,7 @@ public class LoginDBBean {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int result = 0;
+		
 
 		try {
 			conn = getConnection();
@@ -336,7 +337,7 @@ public class LoginDBBean {
 
 		try {
 			conn = getConnection();
-			String sql = "select adm_id, adm_pw from member where adm_id = ?";
+			String sql = "select adm_id, adm_pw from emp where adm_id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userid);
 			
@@ -368,7 +369,7 @@ public class LoginDBBean {
 		int result = 0;
 		
 		try {
-			if(userCheck(userid) == 1) {
+			if(userCheck(userid) == 1) { //일반회원
 				conn = getConnection();
 				String sql = "select mem_id, mem_pw from member where mem_id = ? and mem_pw = ?";
 				pstmt = conn.prepareStatement(sql);
@@ -380,9 +381,9 @@ public class LoginDBBean {
 				while(rs.next()) {
 					result = 1;
 				}
-			} else if(adminCheck(userid) == 2) {
+			} else if(adminCheck(userid) == 2) { //관리자
 				conn = getConnection();
-				String sql = "select adm_id, adm_pw from member where adm_id = ? and adm_pw = ?";
+				String sql = "select adm_id, adm_pw from emp where adm_id = ? and adm_pw = ?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, userid);
 				pstmt.setString(2, userpw);

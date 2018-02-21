@@ -173,7 +173,8 @@ blockquote:before {
 	z-index: 1052;
 	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05);
 	background-image:none;
-	background-color: #563d7c;
+	/* background-color: #563d7c; */
+	background-color: #FFBB00;
 	margin-bottom: 15px;
 	transition: background-color 0.3s ease;
 	margin-left: auto;
@@ -327,9 +328,11 @@ blockquote:before {
 	color: #ffce40;
 }
 #menu .navbar-nav>li.register>a>span, #menu .navbar-nav>li.add-listing>a>span {
-	color: #ffce40;
+	/* color: #ffce40; */
+	color: #563d7c
 	font-weight: bold;
-	border: 1px solid #ffce40;
+	/* border: 1px solid #ffce40; */
+	border: 1px solid #563d7c;
 	padding: 10px 20px;
 	border-radius: 3px;
 }

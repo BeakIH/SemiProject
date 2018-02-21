@@ -37,8 +37,8 @@ public class DBCPInit extends HttpServlet {
 	private void initConnectionPool() {
 		try {
 			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:xe";
-			String username = "scott";
-			String pw = "tiger";
+			String username = "SCOTT1";
+			String pw = "TIGER";
 			
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(jdbcUrl, username, pw);
 			PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connFactory, null);

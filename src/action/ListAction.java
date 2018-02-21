@@ -13,6 +13,8 @@ public class ListAction implements CommandAction {//글 목록 처리
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		int pageSize = 10;//하나의 페이지에서 보여줄 행의 수
 		/*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");*/
 		
