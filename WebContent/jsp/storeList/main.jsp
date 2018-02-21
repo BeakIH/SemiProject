@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>밥사조 프로젝트명</title>
+<title>밥은먹고다니니</title>
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
@@ -39,9 +39,9 @@
 $(document).ready(function(){
 	$('.search-in label').click(function(){
 	 	
-		if(($(this).text())=="음식별로 검색하기"){// 카테고리 음식
+		if(($(this).text())=="음식명으로 검색"){// 카테고리 음식
 			$('.input-group-lg>.form-control').attr("placeholder","ex) 자장면, 김치찌개, 파스타").placeholder();
-		}else if(($(this).text())=="점포명으로 검색하기"){// 카테고리 가게
+		}else if(($(this).text())=="매장명으로 검색"){// 카테고리 가게
 			$('.input-group-lg>.form-control').attr("placeholder","ex) 엘본 더 테이블, 경화루, 가온").placeholder();
 		}
 	});
@@ -263,7 +263,10 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
   	<!-- <a href="#">Clients</a>
   	<a href="#">Contact</a> -->
-	<div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:80px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div>
+  	매장 테이블 현황은 5분마다 업데이트 됩니다.
+	<div style="display:inline-block;background-color:none;width:80px;">매장명</div>
+	<div style="display:inline-block;width:80px;">이용중</div>
+	<div style="display:inline-block;width:80px;"><span style="font-weight:bold;" color="red">이용가능</span></div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>
@@ -301,8 +304,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
     <div class="row justify-content-md-center">
       <div class="col-md-12 col-lg-10">
         <div class="heading">
-          <h2>밥 사 조</h2>
-          <h3>~ 언제 어디서나 쉽게 맛집을 검색할 수 있습니다 ~</h3>
+          <h2> B A B S A Z O</h2>
+          <h3> 밥사조와 함께하는 식도락 여행, 시작해볼까요  </h3>
         </div>
         <!-- <form action="/jsp/storeList/list.do"></form> -->
         <form action="/SemiProject/jsp/storeList/list.do"><!-- 이부분을 test2로 -->
@@ -311,20 +314,21 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <div class="input-group input-group-lg">
       <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
       <span class="input-group-btn">
-      <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+      <!-- <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button> -->
         <!-- <button class="btn btn-primary" type="button">검색!</button> -->
-        <input type="submit" class="btn btn-primary" value="검색!">
+        <!-- <input type="submit" class="btn btn-primary" value="가즈아"> -->
+        <button class="btn btn-primary btn-circle" id="to-top"><i class="fas fa-search"></i></button>
       </span>
     </div>
     <div class="search-in">
 <div class="radio-box" id ="food">
 <input type="radio" name="searchn" value="0" id="rent22" checked >
 							<!-- label 태그의 for 속성은 해당 속성값과 같은 id를 가진 대상과 연결시켜줌 -->
-<label class="radio-inline" for="rent22" id ="food" >음식별로 검색하기</label><!-- placeholder 변경을 위한 value값 추가, 파라미터와는 상관x -->
+<label class="radio-inline" for="rent22" id ="food" >음식명으로 찾기</label><!-- placeholder 변경을 위한 value값 추가, 파라미터와는 상관x -->
 </div>
 <div class="radio-box">
 <input type="radio" name="searchn" value="1" id="sell22" >
-<label class="radio-inline" for="sell22" >점포명으로 검색하기</label>
+<label class="radio-inline" for="sell22" >매장명으로 찾기</label>
 </div>
     </div>
     </div>
@@ -338,8 +342,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   <video class="search-video" autoplay loop width="0" height="0" src="../../video/mainpage_video.mp4"></video>
 </div>
 </div>
-<div id="content" class="pt0 pb0">
-  <div class="feature-box centered gray">
+<div id="content" class="pt0 pb0" style="min-height:300px;">
+<!--   <div class="feature-box centered gray">
     <div data-aos="fade-up">
       <div class="container">
         <div class="row justify-content-md-center">
@@ -428,8 +432,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
         </div>
       </div>
     </div>
-  </div>
-  <div class="feature-box centered">
+  </div> -->
+ <!--  <div class="feature-box centered">
     <div data-aos="fade-up">
       <div class="container">
         <div class="row justify-content-md-center">
@@ -476,7 +480,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
               <div class="row">
                 <div class="col-md-4">
                   <div class="item">
-                  	<!-- 리스트 목록 이미지 관련 경로 -->
+                  	리스트 목록 이미지 관련 경로
                     <div class="item-image"><a href="property_single.html"><img src="../img/demo/property/1.jpg" class="img-fluid" alt="">
                       <div class="item-meta">
                         <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
@@ -568,7 +572,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                   </div>
                 </div>
               </div>
-              <!-- Add Arrows -->
+              Add Arrows
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
@@ -682,7 +686,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- 사이드바 버튼 -->
 <div id="mySidenav" class="sidenav">
   <br>
@@ -691,9 +695,10 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   <a href="#">Clients</a>
   <a href="#">Contact</a>
 </div>
-<button class="btn btn-primary btn-circle" id="sidebar-btn" onMouseOver="openNav()">식<br>당<br>현<br>황</button><!-- <i> 태그와 아무상관없음 -->
+<button class="btn btn-primary btn-circle" id="sidebar-btn" onMouseOver="openNav()">바<br>로<br>확<br>인</button><!-- <i> 태그와 아무상관없음 -->
 <!-- 사이드바 버튼 end -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
+<!-- 푸터 START -->
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
@@ -702,23 +707,23 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
             <address>
-            <strong>Twitter, Inc..</strong><br>
-            1355 Market Street, Suite 900<br>
-            San Francisco, CA 94103<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
+            <strong>BABSAZO, Inc.</strong><br>
+            	서울특별시 중구 남대문로 120<br>
+           		대일빌딩3층 D CLASS<br>
+            <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
-            <p class="text-muted">Copyright &copy; 2016<br />
+            <p class="text-muted">Copyright &copy; 2018<br />
               All rights reserved</p>
           </div>
-          <div class="col-md-2  col-sm-4">
+          <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li>
+              <li><a href="#"> About BABSAJO </a></li>
+              <li><a href="#"> Team Introduction </a></li>
+              <!-- <li><a href="#">Security</a></li>
+              <li><a href="#">Plans</a></li> -->
             </ul>
           </div>
-          <div class="col-md-2 col-sm-4">
+          <!-- <div class="col-md-2 col-sm-4">
             <ul class="list-unstyled">
               <li><a href="#">For Rent</a></li>
               <li><a href="#">For Sale</a></li>
@@ -727,13 +732,13 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
               <li><a href="#">Property Guides</a></li>
               <li><a href="#">Jobs</a></li>
             </ul>
-          </div>
+          </div> -->
           <div class="col-md-4 col-sm-12">
             <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
             <form>
-              <h4>SSubscribe Newsletter</h4>
+              <h4>밥사조 소식 받아보기 </h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
