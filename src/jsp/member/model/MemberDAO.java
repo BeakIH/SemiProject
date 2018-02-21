@@ -12,7 +12,7 @@ import javax.naming.NamingException;
 import jsp.util.DBConnection;
 
 /**
- * jsp_member 테이블과 연관된 DAO로
+ * nontest 테이블과 연관된 DAO로
  * 회원 데이터를 처리하는 클래스이다.
  * <br><br>
  * Data Access Object - 테이블 당 한개의 DAO를 작성한다.
@@ -53,7 +53,7 @@ public class MemberDAO
 	         conn = getConnection();
 	         
 	         //DriverManager.getConnection(jdbc:apache:commons:dbcp:pool);
-	         String sql = "insert into jsp_member values(?, ?, ?, ?, ?, ?, ?, ?, ?)";  
+	         String sql = "insert into nontest values(?, ?, ?, ?, ?, ?, ?, ?, ?)";  
 	         pstmt = conn.prepareStatement(sql);
 	         
 	         pstmt = conn.prepareStatement(sql);
@@ -118,7 +118,7 @@ public class MemberDAO
         try {
             // 쿼리
             StringBuffer query = new StringBuffer();
-            query.append("SELECT * FROM jsp_member WHERE ID=?");
+            query.append("SELECT * FROM nontest WHERE ID=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
@@ -184,7 +184,7 @@ public class MemberDAO
         try {
  
             StringBuffer query = new StringBuffer();
-            query.append("UPDATE jsp_member SET");
+            query.append("UPDATE nontest SET");
             query.append(" PASSWORD=?, MAIL=?, PHONE=?, ADDRESS=?");
             query.append(" WHERE ID=?");
  
@@ -237,11 +237,11 @@ public class MemberDAO
         try {
             // 비밀번호 조회
             StringBuffer query1 = new StringBuffer();
-            query1.append("SELECT PASSWORD FROM jsp_member WHERE ID=?");
+            query1.append("SELECT PASSWORD FROM nontest WHERE ID=?");
  
             // 회원 삭제
             StringBuffer query2 = new StringBuffer();
-            query2.append("DELETE FROM jsp_member WHERE ID=?");
+            query2.append("DELETE FROM nontest WHERE ID=?");
  
             conn = DBConnection.getConnection();
  
@@ -307,7 +307,7 @@ public class MemberDAO
         try {
             // 쿼리 - 먼저 입력된 아이디로 DB에서 비밀번호를 조회한다.
             StringBuffer query = new StringBuffer();
-            query.append("SELECT PASSWORD FROM jsp_member WHERE ID=?");
+            query.append("SELECT PASSWORD FROM nontest WHERE ID=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
