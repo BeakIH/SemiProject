@@ -116,7 +116,10 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark navbar-over absolute-top" id="menu">
   <div class="container">
-  <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a>
+  <a class="navbar-brand" href="index.html"><!-- <span class="icon-uilove-realestate"></span> -->
+	 <span><img src="../../img/밥사조2층.png" alt="Smiley face" height="70" width="60"></span>
+   <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -125,36 +128,47 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          메인 <span class="sr-only">(current)</span>
+       	밥사조
+        <span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
-            <a href="main.do" class="dropdown-item">메인페이지</a>
+            <a href="main.do" class="dropdown-item">밥사조 이야기</a>
+            <a href="main.do" class="dropdown-item">밥사조 식구들</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	검색하기
+         	조회
         </a>
         <div class="dropdown-menu">
             <a href="list.do" class="dropdown-item">목록보기</a>
-            <a href="property_grid.html" class="dropdown-item">Grid View</a>
+            <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
             <a href="property_single2.html" class="dropdown-item">Single View 2</a>
-            <a href="property_single3.html" class="dropdown-item">Single View 3</a>
+            <a href="property_single3.html" class="dropdown-item">Single View 3</a> -->
         </div>
       </li>
       
-      <li class="nav-item dropdown">
+       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Agents
+         	매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">Agent List</a>
-            <a href="agent.html" class="dropdown-item">Agent Profile</a>
+            <a href="agent_list.html" class="dropdown-item">공지사항</a>
+            <a href="agent.html" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
-      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         	도움말
+        </a>
+        <div class="dropdown-menu">
+            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
+            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
+        </div>
+      </li>
+      <!--
       <li class="nav-item dropdown megamenu">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Pages
@@ -229,7 +243,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
               </div>
               </div>
         </div>
-      </li>
+      </li> -->
       
     </ul>
     
@@ -311,16 +325,20 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <div class="input-group input-group-lg">
       <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
    	 <span class="input-group-btn">
-      	 <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+      	 <!-- <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button> -->
          <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> 
       </span>
     </div>
     <div class="search-in">
 <div class="radio-box" id ="food">
+<!-- <button class="btn btn-primary" type="button"><i class="fas fa-utensils"> 음식명 </i></button>  -->
 <input type="radio" name="searchn" value="0" id="rent22" checked >
 							<!-- label 태그의 for 속성은 해당 속성값과 같은 id를 가진 대상과 연결시켜줌 -->
 <label class="radio-inline" for="rent22" id ="food" >음식명으로 찾기</label><!-- placeholder 변경을 위한 value값 추가, 파라미터와는 상관x -->
 </div>
+
+
+
 <div class="radio-box">
 <input type="radio" name="searchn" value="1" id="sell22" >
 <label class="radio-inline" for="sell22" >매장명으로 찾기</label>
@@ -701,7 +719,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <!-- <p><span class="icon-uilove-realestate"></span></p> -->
-            <p><span><img src="../../img/백인호작품.jpg" alt="Smiley face" height="70" width="100"></span></p>
+            <p><span><img src="../../img/밥사조가로.png" alt="Smiley face" height="60" width="120"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
             	서울특별시 중구 남대문로 120<br>
@@ -736,7 +754,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
               <div class="input-group input-group-lg">
                 <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Go!</button>
+                <button class="btn btn-primary" type="button"> 구독 </button>
                 </span> </div>
             </form>
           </div>
