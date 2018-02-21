@@ -12,7 +12,7 @@ import javax.naming.NamingException;
 import jsp.util.DBConnection;
 
 /**
- * nontest 테이블과 연관된 DAO로
+ * MEMBER 테이블과 연관된 DAO로
  * 회원 데이터를 처리하는 클래스이다.
  * <br><br>
  * Data Access Object - 테이블 당 한개의 DAO를 작성한다.
@@ -36,16 +36,12 @@ public class MemberDAO
 	      return DriverManager.getConnection(jdbcDriver);
 	   }
 	   
-	   
-	   
-	   
-	   //입력
-	   //inputProAction.java
+	
 	   public void insertMember(MemberBean member) throws Exception{
 	      Connection conn = null;
 	      PreparedStatement pstmt = null;
 	      
-	          String data1 = "2018-02-20";
+	         
 	      
 	      try {
 	         
@@ -53,39 +49,42 @@ public class MemberDAO
 	         conn = getConnection();
 	         
 	         //DriverManager.getConnection(jdbc:apache:commons:dbcp:pool);
-	         String sql = "insert into nontest values(?, ?, ?, ?, ?, ?, ?, ?, ?)";  
+	         String sql = "insert into MEMBER values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";  
 	         pstmt = conn.prepareStatement(sql);
 	         
-	         pstmt = conn.prepareStatement(sql);
-	            pstmt.setString(1, member.getId());
-	            pstmt.setString(2, member.getPassword());
-	            pstmt.setString(3, member.getName());
-	            pstmt.setString(4, member.getGender());
-	            pstmt.setDate(5, stringToDate(member));
-	            pstmt.setString(6, member.getMail1()+"@"+member.getMail2());
-	            pstmt.setString(7, member.getPhone());
-	            pstmt.setString(8, member.getAddress()); 
-	            pstmt.setString(9, data1);
-	      
+	         pstmt = conn.prepareStatement(sql); 
+	            
+	            pstmt.setString(1, member.getMem_no());
+	            pstmt.setString(2, member.getMem_nm());
+	            pstmt.setString(3, member.getMem_id());
+	            pstmt.setString(4, member.getMem_pw());
+	            pstmt.setString(5, member.getMem_tel());
+	            pstmt.setString(6, member.getAddress());
+	            pstmt.setString(7, member.getEmail());
+	            pstmt.setString(8, member.getEmail_yn());
+	            pstmt.setString(9, member.getFvrt_str_1());
+	            pstmt.setString(10, member.getFvrt_str_2());
+	                    
+	            
+	            
 	         pstmt.executeUpdate();
 	         
 	      }catch(Exception ex) {
 	         ex.printStackTrace();
 	      }finally {
+	    	  
 	         if(pstmt !=null) try {pstmt.close();} catch(SQLException ex) {}
 	         if(conn !=null) try {conn.close();} catch(SQLException ex) {}
 	      }
 	   }
+	   
+	   
+	   
 	
     /**
-     * String -> java.sql.Date로 변경하는 메서드
-     * <pre>
-     * 문자열로된 생년월일을 Date로 변경하기 위해 필요하다.
-     * java.util.Date클래스로는 오라클의 Date형식과 연동할 수 없다.
-     * Oracle의 date형식과 연동되는 java의 Date는 java.sql.Date 클래스이다. </pre>
-     * @param member 회원정보를 담고있는 TO
-     * @return java.sql.Date
-     */
+     * 
+       생년월일 
+       
     public Date stringToDate(MemberBean member)
     {
         String year = member.getBirthyy();
@@ -103,11 +102,8 @@ public class MemberDAO
     
 
     
-    /**
-     * 아이디를 이용해 현재 회원정보를 가져온다.
-     * @param id 회원 아이디
      * @return MemberBean
-     */
+     **/
     public MemberBean getUserInfo(String id) 
     {
         Connection conn = null;
@@ -118,7 +114,7 @@ public class MemberDAO
         try {
             // 쿼리
             StringBuffer query = new StringBuffer();
-            query.append("SELECT * FROM nontest WHERE ID=?");
+            query.append("SELECT * FROM MEMBER WHERE ID=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
@@ -127,6 +123,7 @@ public class MemberDAO
  
             if (rs.next()) // 회원정보를 DTO에 담는다.
             {
+            	/**
                 // DB의 생년월일정보 -> 년, 월, 일로 문자열 자른다.
                 String birthday = rs.getDate("birth").toString();
                 String year = birthday.substring(0, 4);
@@ -138,22 +135,20 @@ public class MemberDAO
                 int idx = mail.indexOf("@"); 
                 String mail1 = mail.substring(0, idx);
                 String mail2 = mail.substring(idx+1);
-                
+                **/
                 // 자바빈에 정보를 담는다.
                 member = new MemberBean();
-                member.setId(rs.getString("id"));
-                member.setPassword(rs.getString("password"));
-                member.setName(rs.getString("name"));
-                member.setGender(rs.getString("gender"));
-                member.setBirthyy(year);
-                member.setBirthmm(month);
-                member.setBirthdd(day);
-                member.setMail1(mail1);
-                member.setMail2(mail2);
-                member.setPhone(rs.getString("phone"));
+                member.setMem_no(rs.getString("memno"));
+                member.setMem_nm(rs.getString("name"));
+                member.setMem_id(rs.getString("id"));
+                member.setMem_pw(rs.getString("password"));
+                member.setMem_tel(rs.getString("phone"));
                 member.setAddress(rs.getString("address"));
-                member.setReg(rs.getTimestamp("reg"));
-            }
+                member.setEmail(rs.getString("email"));
+                member.setEmail_yn(rs.getString("emailyn"));
+                member.setFvrt_str_1(rs.getString("food1"));
+                member.setFvrt_str_1(rs.getString("food2"));
+             }
  
             return member;
  
@@ -172,8 +167,7 @@ public class MemberDAO
     
     
     /**
-     * 회원정보를 수정한다.
-     * @param member 수정할 회원정보를 담고있는 TO
+     * 회원정보를 수정 member 수정 정보 담고있는
      * @throws SQLException
      */
     public void updateMember(MemberBean member) throws SQLException{
@@ -184,7 +178,7 @@ public class MemberDAO
         try {
  
             StringBuffer query = new StringBuffer();
-            query.append("UPDATE nontest SET");
+            query.append("UPDATE MEMBER SET");
             query.append(" PASSWORD=?, MAIL=?, PHONE=?, ADDRESS=?");
             query.append(" WHERE ID=?");
  
@@ -194,11 +188,11 @@ public class MemberDAO
             // 자동 커밋을 false로 한다.
             conn.setAutoCommit(false);
             
-            pstmt.setString(1, member.getPassword());
-            pstmt.setString(2, member.getMail1()+"@"+member.getMail2());
-            pstmt.setString(3, member.getPhone());
+            pstmt.setString(1, member.getMem_pw());
+            pstmt.setString(2, member.getEmail());
+            pstmt.setString(3, member.getMem_tel());
             pstmt.setString(4, member.getAddress());
-            pstmt.setString(5, member.getId());
+            pstmt.setString(5, member.getMem_id());
  
             pstmt.executeUpdate();
             // 완료시 커밋
@@ -237,11 +231,11 @@ public class MemberDAO
         try {
             // 비밀번호 조회
             StringBuffer query1 = new StringBuffer();
-            query1.append("SELECT PASSWORD FROM nontest WHERE ID=?");
+            query1.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
  
             // 회원 삭제
             StringBuffer query2 = new StringBuffer();
-            query2.append("DELETE FROM nontest WHERE ID=?");
+            query2.append("DELETE FROM MEMBER WHERE ID=?");
  
             conn = DBConnection.getConnection();
  
@@ -307,7 +301,7 @@ public class MemberDAO
         try {
             // 쿼리 - 먼저 입력된 아이디로 DB에서 비밀번호를 조회한다.
             StringBuffer query = new StringBuffer();
-            query.append("SELECT PASSWORD FROM nontest WHERE ID=?");
+            query.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
@@ -343,4 +337,5 @@ public class MemberDAO
 }
  
  
+
 

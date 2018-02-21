@@ -25,4 +25,3 @@ public class ActionForward {
         this.nextPath = nextPath;
     }
 }
-

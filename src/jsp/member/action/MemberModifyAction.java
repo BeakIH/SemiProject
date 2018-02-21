@@ -44,8 +44,9 @@ public class MemberModifyAction implements Action
            // 회원정보 수정 성공 메시지를 세션에 담는다.
            session.setAttribute("msg", "0");
            
-        return "/member/view/LoginForm.jsp";
+        return "/WebContent/jsp/member/view/Success.jsp";
     }
  
 }
+
 

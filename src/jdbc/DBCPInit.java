@@ -36,9 +36,9 @@ public class DBCPInit extends HttpServlet {
 	
 	private void initConnectionPool() {
 		try {
-			String jdbcUrl =  "jdbc:oracle:thin:@192.168.40.56:1521:XE";
-			String username = "scott";
-			String pw = "tiger";
+			String jdbcUrl =  "jdbc:oracle:thin:@192.168.40.7:1521:XE";
+			String username = "SCOTT1";
+			String pw = "TIGER";
 			
 			
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(jdbcUrl, username, pw);
@@ -70,12 +70,6 @@ public class DBCPInit extends HttpServlet {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 }

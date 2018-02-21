@@ -205,7 +205,7 @@
         // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
         function checkValue()
         {
-            if(!document.userInfo.id.value){
+            if(!document.userInfo.mem_id.value){
                 alert("아이디를 입력하세요.");
                 return false;
             }
@@ -219,6 +219,8 @@
             if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
                 alert("비밀번호를 동일하게 입력하세요.");
                 return false;
+                
+           
             }
         }
         
@@ -231,75 +233,16 @@
     
    <!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
         <!-- 값(파라미터) 전송은 POST 방식, 전송할 페이지는 JoinPro.jsp -->
-    <form method="post" action="/MVC_Test/test.do" name="userInfo" 
-                onsubmit="return checkValue()">
-             
- 
-    
-    
+    <form method="post" action="/SemiProject/test.do" name="userInfo" onsubmit="return checkValue()">
+                
       
                  <table>
-             
-                
-                
-                <tr>
-                      <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">회원 아이디</font></label>
-              <td id="title"></td>
-              <div class="input-group">
-                <input type="text" name="id" maxlength="50" class="form-control" id="username" placeholder="사용하실 아이디를 입력해 주세요">
-                <span class="input-group-btn">
-                  <button class="btn btn-warning"><font color="F9FFFF">아이디 중복 체크</font><i class="fa fa-edit spaceLeft"></i></button>
-                </span>
-                    </tr> 
-                </div>
-  
-                        <br>
-                        
-                <tr>                
-              <div class="form-group">
-              <label for="InputPassword1"><font size="4em" color="52478B">비밀번호</font></label>
-                    <td id="title"></td>              
-              <input type="password" name="password" maxlength="50" class="form-control" id="InputPassword1" placeholder="비밀번호">
-            </div>
-              </tr>
-              
-              <br>
-              
-                <tr>
-            <div class="form-group">
-              <label for="InputPassword2"><font size="4em" color="52478B">비밀번호 확인</font></label>
-                <td id="title"></td>
-              <input type="password" name="passwordcheck" maxlength="50" class="form-control" id="InputPassword2" placeholder="비밀번호 확인">
-               <p class="help-block">비밀번호 확인을 위해 다시한번 입력해주세요</p>
-          </div></tr>
-          
-                  <br>
-                                      
-                <tr>
-                <div class="form-group">
-               <label for="username"><font size="4em" color="52478B">이름</font></label>
-               <td id="title"></td>
-              <input type="text" name="name" maxlength="50" class="form-control" id="username" placeholder="이름을 입력해 주세요">
-            </div></tr>
-                    
-                    <br>
-                <tr>
-                 <div class="form-group">
-               <label for="username"><font size="4em" color="52478B">성별</label>
-               <td id="title"></td> 
-              <input type="radio" name="gender" value="남" checked >남
-              <input type="radio" name="gender" value="여" checked>여
-                  </font>  </td>
-                </tr>
-                    
-                    <br><br>
-               
-                <tr>
+                 
+                   <tr>
                <div class="form-group">
               <label for="birth"><font size="4em" color="52478B">생년월일 또는 기념일</font></label>
                 <td id="title"></td> 
-              <input type="text" name="birthyy" maxlength="4" placeholder="년(4자)" size="6" >  
+              <input type="text" name="mem_no" maxlength="4" placeholder="년(4자)" size="6" >  
                       &nbsp;<select name="birthmm">
                             <option value="">월</option>
                             <option value="01" >1</option>
@@ -322,28 +265,55 @@
           
           <br>
           
-            <div class="form-group">
-              <label for="InputEmail"><font size="4em" color="52478B">이메일 주소</label></font>
-              <td id="title"></td>
-              <input type="text" name="mail1" class="form-control" id="username" placeholder="이메일을 입력해 주세요">
-            </div>
-                         <select name="mail2">
-                            <option>naver.com</option>
-                            <option>daum.net</option>
-                            <option>gmail.com</option>
-                            <option>nate.com</option>                        
-                        </select> 
-            
-            <div> <input type="checkbox" name="chk_info" value="동의">이메일 수신에 동의합니다</div>
-              <div><p class="help-block">(이메일 BABSAZO 뉴스레터 쿠폰 발급과 이벤트 참여가 가능합니다)</p></div>
-            
-            <br>
+             
+                    <tr>
+                <div class="form-group">
+               <label for="username"><font size="4em" color="52478B">이름</font></label>
+               <td id="title"></td>
+              <input type="text" name="mem_nm" maxlength="50" class="form-control" id="username" placeholder="이름을 입력해 주세요">
+            </div></tr>
                     
-                     
+                    <br>
+                
+                <tr>
+                      <div class="form-group">
+              <label for="username"><font size="4em" color="52478B">회원 아이디</font></label>
+              <td id="title"></td>
+              <div class="input-group">
+                <input type="text" name="mem_id" maxlength="50" class="form-control" id="username" placeholder="사용하실 아이디를 입력해 주세요">
+                <span class="input-group-btn">
+                  <button class="btn btn-warning"><font color="F9FFFF">아이디 중복 체크</font><i class="fa fa-edit spaceLeft"></i></button>
+                </span>
+                    </tr> 
+                </div>
+  
+                        <br>
+                        
+                <tr>                
+              <div class="form-group">
+              <label for="InputPassword1"><font size="4em" color="52478B">비밀번호</font></label>
+                    <td id="title"></td>              
+              <input type="password" name="mem_pw" maxlength="50" class="form-control" id="InputPassword1" placeholder="비밀번호">
+            </div>
+              </tr>
+              
+              <br>
+              
+                <tr>
+            <div class="form-group">
+              <label for="InputPassword2"><font size="4em" color="52478B">비밀번호 확인</font></label>
+                <td id="title"></td>
+              <input type="password" name="passwordcheck" maxlength="50" class="form-control" id="InputPassword2" placeholder="비밀번호 확인">
+               <p class="help-block">비밀번호 확인을 위해 다시한번 입력해주세요</p>
+          </div></tr>
+          
+                  <br>
+                                      
+                                                      
           <div class="form-group">
               <label for="username"><font size="4em" color="52478B">휴대폰 번호</font></label>
               <td id="title"></td>
-              <input type="tel" name="phone" class="form-control" id="username" placeholder="- 없이 입력해 주세요"></div>
+              <input type="tel" name="mem_tel" class="form-control" id="username" placeholder="- 없이 입력해 주세요"></div>
                
               <div> <input type="checkbox" name="chk_info" value="동의">휴대폰 수신에 동의합니다</div>
               <div><p class="help-block">(모바일 전용 쿠폰 및 게릴라 할인시 푸시 알림을 받으실 수 있어요)</p></div>
@@ -372,6 +342,39 @@
               <div><p class="help-block">(BABSAZO 소식지 전용 쿠폰 및 새로운 BABSAZO 제일 먼저 받아보세요)</p></div>
             
             <br> 
+            
+            
+            <div class="form-group">
+              <label for="InputEmail"><font size="4em" color="52478B">이메일 주소</label></font>
+              <td id="title"></td>
+              <input type="text" name="email" class="form-control" id="username" placeholder="이메일을 입력해 주세요">
+            </div>
+            <!-- 
+                         <select name="mail2">
+                            <option>naver.com</option>
+                            <option>daum.net</option>
+                            <option>gmail.com</option>
+                            <option>nate.com</option>                        
+                        </select>  -->
+            
+            <div> <input type="checkbox" name="emailyn" value="동의">이메일 수신에 동의합니다</div>
+              <div><p class="help-block">(이메일 BABSAZO 뉴스레터 쿠폰 발급과 이벤트 참여가 가능합니다)</p></div>
+            
+            <br>
+            
+            <!-- 
+                <tr>
+                 <div class="form-group">
+               <label for="username"><font size="4em" color="52478B">성별</label>
+               <td id="title"></td> 
+              <input type="radio" name="gender" value="남" checked >남
+              <input type="radio" name="gender" value="여" checked>여
+                  </font>  </td>
+                </tr>
+                    
+                    <br><br>  -->
+                    
+     
             
               <div class="form-group">
               <label for="username"><font size="4em" color="52478B">SNS/블로그</font></label>

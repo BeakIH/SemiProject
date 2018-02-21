@@ -32,7 +32,8 @@ public class MemberModifyFormAction implements Action
         forward.setRedirect(false);
         forward.setNextPath("ModifyFrom.do");
         
-        return 	"/member/view/LoginForm.jsp";
+        return 	"/WebContent/jsp/member/view/Success.jsp";
     }
 }
+
 

@@ -17,6 +17,7 @@
         
         전체를 감싸주는 태그 #wrap 
         */
+        
         #wrap {
             width: 800px;
             margin: 0 auto 0 auto;
