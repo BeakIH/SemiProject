@@ -20,9 +20,10 @@ public class LoginAction implements CommandAction{
 	String userpw = request.getParameter("userpw");
 	
 	int check = loginDao.userLogin(userid, userpw);
-	request.setAttribute("check", check);
 	
 	System.out.println(check);
+	
+	request.setAttribute("check", check);
 	
 	request.getSession().setAttribute("id", userid);  // session 에 값넣기 
 	
