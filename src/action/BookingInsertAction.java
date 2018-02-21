@@ -14,15 +14,15 @@ public class BookingInsertAction implements CommandAction{
 			HttpServletResponse response) throws Throwable {
 		
 		request.setCharacterEncoding("UTF-8");
-		/*System.out.println(request.getParameter("bk_menu"));
+		System.out.println(request.getParameter("bk_menu"));
 		System.out.println(request.getParameter("bk_pri_sum"));
 		System.out.println(request.getParameter("store_nm"));
 		System.out.println(request.getParameter("bk_tbl_cnt"));
 		
 		System.out.println(request.getParameter("bk_date"));
 		System.out.println(request.getParameter("bk_cnt"));
-		System.out.println(request.getParameter("store_no"));*/
-		
+		System.out.println(request.getParameter("store_no"));
+
 		
 		BookingDataBean article = new BookingDataBean();
 		article.setBkMenu(request.getParameter("bk_menu")); //예약 음식메뉴

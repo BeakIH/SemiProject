@@ -87,7 +87,7 @@ public class ReserveDBBean {
 						List<MenuDataBean> menuList = new ArrayList<MenuDataBean>();
 						connSub = getConnection();
 						pstmtSub = connSub.prepareStatement(
-								"SELECT menu_no, store_no, cate_nm, menu_nm1, menu_nm1_sal FROM preorder where store_no = ?");
+								"SELECT menu_no, store_no, cate_nm, menu_nm, price FROM preorder where store_no = ?");
 						pstmtSub.setInt(1, rs.getInt("store_no"));
 						rsSub = pstmtSub.executeQuery();
 						
@@ -98,8 +98,8 @@ public class ReserveDBBean {
 								menu.setMenu_no(rsSub.getInt("menu_no"));
 								menu.setStore_no(rsSub.getInt("store_no"));
 								menu.setCate_nm(rsSub.getString("cate_nm"));
-								menu.setMenu_nm1(rsSub.getString("menu_nm1"));
-								menu.setMenu_nm1_sal(rsSub.getInt("menu_nm1_sal"));
+								menu.setMenu_nm(rsSub.getString("menu_nm"));
+								menu.setPrice(rsSub.getInt("price"));
 								
 								menuList.add(menu);
 								
