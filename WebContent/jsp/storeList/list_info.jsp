@@ -381,7 +381,7 @@ function realtimeClock() {
 															itemtype="http://schema.org/ImageObject">
 															<a href="../../img/demo/property/1.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																src="../../img/demo/property/1.jpg"
+																src="${article.simg_root }"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
@@ -391,42 +391,11 @@ function realtimeClock() {
 															itemtype="http://schema.org/ImageObject">
 															<a href="../../img/demo/property/2.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="../../img/demo/property/2.jpg" src="img/spacer.png"
+																data-src="${article.simg_root }" src="img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
 													</div>
-													<div class="swiper-slide">
-														<figure itemprop="associatedMedia" itemscope
-															itemtype="http://schema.org/ImageObject">
-															<a href="../../img/demo/property/3.jpg" itemprop="contentUrl"
-																data-size="2000x1414"> <img
-																data-src="../../img/demo/property/3.jpg" src="img/spacer.png"
-																class="img-fluid swiper-lazy" alt="Drawing Room">
-															</a>
-														</figure>
-													</div>
-													<div class="swiper-slide">
-														<figure itemprop="associatedMedia" itemscope
-															itemtype="http://schema.org/ImageObject">
-															<a href="../../img/demo/property/4.jpg" itemprop="contentUrl"
-																data-size="2000x1414"> <img
-																data-src="../../img/demo/property/4.jpg" src="img/spacer.png"
-																class="img-fluid swiper-lazy" alt="Drawing Room">
-															</a>
-														</figure>
-													</div>
-													<div class="swiper-slide">
-														<figure itemprop="associatedMedia" itemscope
-															itemtype="http://schema.org/ImageObject">
-															<a href="../../img/demo/property/5.jpg" itemprop="contentUrl"
-																data-size="2000x1414"> <img
-																data-src="../../img/demo/property/5.jpg" src="img/spacer.png"
-																class="img-fluid swiper-lazy" alt="Drawing Room">
-															</a>
-														</figure>
-													</div>
-
 												</div>
 												<div class="swiper-button-next"></div>
 												<div class="swiper-button-prev"></div>
@@ -434,41 +403,14 @@ function realtimeClock() {
 											<div class="swiper-container gallery-thumbs">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/1.jpg" class="img-fluid"
+														<img src="${article.simg_root }" class="img-fluid"
 															alt="">
 													</div>
 													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/2.jpg" class="img-fluid"
+														<img src="${article.simg_root }" class="img-fluid"
 															alt="">
 													</div>
-													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/3.jpg" class="img-fluid"
-															alt="">
-													</div>
-													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/4.jpg" class="img-fluid"
-															alt="">
-													</div>
-													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/5.jpg" class="img-fluid"
-															alt="">
-													</div>
-													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/6.jpg" class="img-fluid"
-															alt="">
-													</div>
-													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/7.jpg" class="img-fluid"
-															alt="">
-													</div>
-													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/8.jpg" class="img-fluid"
-															alt="">
-													</div>
-													<div class="swiper-slide">
-														<img src="../../img/demo/property/thumb/9.jpg" class="img-fluid"
-															alt="">
-													</div>
+													
 												</div>
 											</div>
 										</div>

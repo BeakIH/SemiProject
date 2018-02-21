@@ -1,5 +1,5 @@
 package booking;
- 
+
 import java.sql.Timestamp;
 
 public class BookingDataBean {
