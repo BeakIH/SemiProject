@@ -4,7 +4,7 @@
 			<pattern>/jsp/admin/*</pattern>
 		</decorator>
 		
-		<decorator page="/decorator/adminSide.jsp" name="main"> 
+		<decorator page="/decorator/memberSide.jsp" name="main"> 
 			<pattern>/jsp/member/*</pattern>
 		</decorator>
 			

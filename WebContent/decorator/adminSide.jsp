@@ -85,7 +85,8 @@ function fillInAddress() {
 <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
   <div class="container">
-  <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a>
+  <!-- <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a> -->
+  <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="100"></span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -94,42 +95,47 @@ function fillInAddress() {
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Home <span class="sr-only">(current)</span>
+       	밥사조
+        <span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
-            <a href="index.html" class="dropdown-item">Homepage 1</a>
-            <a href="index2.html" class="dropdown-item">Homepage 2</a>
-            <a href="index3.html" class="dropdown-item">Homepage 3</a>
-            <a href="index4.html" class="dropdown-item">Homepage 4</a>
-            <a href="index5.html" class="dropdown-item">Homepage 5</a>
-            <a href="index6.html" class="dropdown-item">Homepage 6</a>
-            <a href="index7.html" class="dropdown-item">Homepage 7</a>
+            <a href="main.do" class="dropdown-item">밥사조 이야기</a>
+            <a href="main.do" class="dropdown-item">밥사조 식구들</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Listings
+         	조회
         </a>
         <div class="dropdown-menu">
-            <a href="property_listing.html" class="dropdown-item">List View</a>
-            <a href="property_grid.html" class="dropdown-item">Grid View</a>
+            <a href="list.do" class="dropdown-item">목록보기</a>
+            <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
             <a href="property_single2.html" class="dropdown-item">Single View 2</a>
-            <a href="property_single3.html" class="dropdown-item">Single View 3</a>
+            <a href="property_single3.html" class="dropdown-item">Single View 3</a> -->
         </div>
       </li>
       
-      <li class="nav-item dropdown">
+       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Agents
+         	매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">Agent List</a>
-            <a href="agent.html" class="dropdown-item">Agent Profile</a>
+            <a href="agent_list.html" class="dropdown-item">공지사항</a>
+            <a href="agent.html" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
-      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         	도움말
+        </a>
+        <div class="dropdown-menu">
+            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
+            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
+        </div>
+      </li>
+      <!--
       <li class="nav-item dropdown megamenu">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Pages
@@ -148,7 +154,7 @@ function fillInAddress() {
                   <li><a href="index4.html">Homepage 4</a></li>
                   <li><a href="index5.html">Homepage 5</a></li>
                   <li><a href="index6.html">Homepage 6</a></li>
-                  <li><a href="index7.html">Homepage 7</a></li>
+                  <li><a href="main.do">메인페이지</a></li>
                   <li class="title">Login Pages</li>
                   <li><a href="signin.html">Signin</a></li>
                   <li><a href="register.html">Register</a></li>
@@ -158,7 +164,7 @@ function fillInAddress() {
               <div class="col-md-6 col-lg-3">
                 <ul class="list-unstyled">
                   <li class="title">Property Listing</li>
-                  <li><a href="property_listing.html">List View</a></li>
+                  <li><a href="list.do">목록 보기</a></li>
                   <li><a href="property_grid.html">Grid View</a></li>
                   <li><a href="property_listing_map.html">Map View</a></li>
                   <li class="title">Single Property</li>
@@ -186,7 +192,7 @@ function fillInAddress() {
                 <ul class="list-unstyled">
                   <li class="title">Account Pages</li>
                   <li><a href="my_listing_add.html">Add Listing</a></li>
-                  <li><a href="my_bookmarked_listings.jsp">우리매장 예약현황</a></li>
+                <li><a href="my_bookmarked_listings.html">Bookmarked Listing</a></li>
                   <li><a href="my_listings.html">My Listings</a></li>
                   <li><a href="my_profile.html">My Profile</a></li>
                 <li><a href="my_password.html">Change Password</a></li>
@@ -204,9 +210,10 @@ function fillInAddress() {
               </div>
               </div>
         </div>
-      </li>
+      </li> -->
       
     </ul>
+    
     
     <ul class="navbar-nav ml-auto">
       
@@ -276,7 +283,7 @@ function fillInAddress() {
             </div>
           </div>
           
-          
+          <!-- 데코레이터 -->
          <decorator:body/>
          
          
@@ -293,11 +300,12 @@ function fillInAddress() {
           <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
-            <p><span class="icon-uilove-realestate"></span></p>
+            <!-- <p><span class="icon-uilove-realestate"></span></p> -->
+            <p><span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
             	서울특별시 중구 남대문로 120<br>
-           		대일빌딩3층 D class<br>
+           		대일빌딩3층 D CLASS<br>
             <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
             <p class="text-muted">Copyright &copy; 2018<br />
@@ -328,7 +336,7 @@ function fillInAddress() {
               <div class="input-group input-group-lg">
                 <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Go!</button>
+                <button class="btn btn-primary" type="button"> 구독 </button>
                 </span> </div>
             </form>
           </div>
