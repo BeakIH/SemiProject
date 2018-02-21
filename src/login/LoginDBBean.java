@@ -282,7 +282,7 @@ public class LoginDBBean {
 			} 
 			
 		} catch (ClassNotFoundException | SQLException sqle) {
-			conn.rollback();
+			sqle.printStackTrace();
 		} finally {
 			try {
 				JdbcUtil.close(rs);
@@ -315,7 +315,7 @@ public class LoginDBBean {
 			}
 			
 		} catch (ClassNotFoundException | SQLException sqle) {
-			conn.rollback();
+			sqle.printStackTrace();
 		} finally {
 			try {
 				JdbcUtil.close(rs);
