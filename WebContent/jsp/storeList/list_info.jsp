@@ -352,7 +352,7 @@ function realtimeClock() {
 									<h1>
 									<input type="hidden" value="${article.store_no }" id="storeNo" />
 										${article.store_nm }<span class="label label-bordered">${article.cate_nm }</span>
-										<small><i class="fa fa-map-marker"></i>${article.store_floor }</small>
+										<small><i class="fa fa-map-marker"></i>${article.store_floor }층</small>
 									</h1>
 								</div>
 								<div class="col-md-4">
@@ -375,45 +375,54 @@ function realtimeClock() {
 										<div class="item-gallery">
 											<div class="swiper-container gallery-top" data-pswp-uid="1">
 												<div class="swiper-wrapper lazyload">
-
+													<c:forEach var="menuList" items="${article.menuList}">
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
 															<a href="../../img/demo/property/1.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																src="${article.simg_root }"
+																src="${menuList.menu_img_root }"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
 													</div>
+													</c:forEach>
+													<%-- <c:forEach var="menuList" items="${article.menuList}">
 													<div class="swiper-slide">
 														<figure itemprop="associatedMedia" itemscope
 															itemtype="http://schema.org/ImageObject">
 															<a href="../../img/demo/property/2.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
-																data-src="${article.simg_root }" src="img/spacer.png"
+																data-src="${menuList.menu_img_root }" src="img/spacer.png"
 																class="img-fluid swiper-lazy" alt="Drawing Room">
 															</a>
 														</figure>
 													</div>
+													</c:forEach> --%>
 												</div>
 												<div class="swiper-button-next"></div>
 												<div class="swiper-button-prev"></div>
 											</div>
+											
 											<div class="swiper-container gallery-thumbs">
 												<div class="swiper-wrapper">
+												    <c:forEach var="menuList" items="${article.menuList}">
 													<div class="swiper-slide">
-														<img src="${article.simg_root }" class="img-fluid"
+														<img src="${menuList.menu_img_root }" class="img-fluid"
 															alt="">
 													</div>
+													</c:forEach>
+													<%-- <c:forEach var="menuList" items="${article.menuList}">
 													<div class="swiper-slide">
-														<img src="${article.simg_root }" class="img-fluid"
+														<img src="${menuList.menu_img_root }" class="img-fluid"
 															alt="">
 													</div>
-													
+													</c:forEach> --%>
 												</div>
 											</div>
+											
 										</div>
+										
 										<div>
 											<ul class="item-features">
 												<li><span>매장테이블</span> 테이블수</li>

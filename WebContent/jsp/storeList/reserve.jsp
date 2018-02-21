@@ -381,7 +381,6 @@ $( document ).ready(function() {
       	<input type="checkbox" name="bk_menu" id="bk_menu"  value="${menu.menu_nm}/${menu.menu_price}">
       	<span style="font-weight: bold;font-size:16px;">${menu.menu_nm} : ${menu.menu_price}원</span></label><br>
       </c:forEach>
-      </div>
       
        <div data-obj-id="yZe8J" data-obj-type="element"
          data-text-editable="true" class=""
@@ -444,7 +443,7 @@ $( document ).ready(function() {
         <div class="row">
             <div class="col-lg-12">
               <h2 class="subheadline">매장 위치</h2>
-              <input type="text" id="store_plc" name="store_plc"class="form-control form-control-lg" placeholder="" value="${article.store_floor }">
+              <input type="text" id="store_plc" name="store_plc"class="form-control form-control-lg" placeholder="" value="${article.store_floor }층">
           </div>
         </div>
         <div class="row">
