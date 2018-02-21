@@ -20,6 +20,7 @@ public class LoginAction implements CommandAction{
 	String userpw = request.getParameter("userpw");
 	
 	int check = loginDao.userLogin(userid, userpw);
+	request.setAttribute("check", check);
 	
 	System.out.println(check);
 	
