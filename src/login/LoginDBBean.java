@@ -328,12 +328,45 @@ public class LoginDBBean {
 		return result;
 	}
 	
+	public int adminCheck(String userid) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int result = 0;
+
+		try {
+			conn = getConnection();
+			String sql = "select adm_id, adm_pw from member where adm_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result = 2;
+			}
+			
+		} catch (ClassNotFoundException | SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			try {
+				JdbcUtil.close(rs);
+				JdbcUtil.close(pstmt);
+				JdbcUtil.close(conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
 	public int userLogin(String userid, String userpw) {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int result = 0;
+		
 		try {
 			if(userCheck(userid) == 1) {
 				conn = getConnection();
@@ -345,18 +378,37 @@ public class LoginDBBean {
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()) {
-					result = 1 ;
+					result = 1;
 				}
-			}else {
-				result = 2;
+			} else if(adminCheck(userid) == 2) {
+				conn = getConnection();
+				String sql = "select adm_id, adm_pw from member where adm_id = ? and adm_pw = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, userid);
+				pstmt.setString(2, userpw);
+			    
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					result = 2;
+				}
+			} else {
+				result = 3;
 			}
-			// result 0 : ID 존재  비밀번호 불일치 / 1 : 로그인 성공 / 2: 아이디 없음 
+			// result 0 : ID 존재  비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
 			return result;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				JdbcUtil.close(rs);
+				JdbcUtil.close(pstmt);
+				JdbcUtil.close(conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-	return 0;
+		return 0;
 	}
-	
 }
