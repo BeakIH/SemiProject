@@ -263,7 +263,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
   	<!-- <a href="#">Clients</a>
   	<a href="#">Contact</a> -->
-	<div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:80px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div>
+	<div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>
