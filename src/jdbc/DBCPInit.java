@@ -24,7 +24,6 @@ public class DBCPInit extends HttpServlet {
 		loadJDBCDriver();
 		initConnectionPool();
 	}
-	
 	private void loadJDBCDriver() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
