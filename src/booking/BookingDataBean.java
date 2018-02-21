@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class BookingDataBean {
 	
-
+ 
 	    // 예약번호 예약번호
 	    private Integer bkNo;
 
