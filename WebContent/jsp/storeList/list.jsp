@@ -146,9 +146,10 @@ $(function(){
 		$(".checkbox#food input").attr("checked", false); // 모든 대상의 체크를 해제
 		$(this).attr("checked", true); // 클릭한 대상만 체크
 		//////////////////////
-		 
+		
 		$(this).val();
 		location.href='list.do?cate_nm='+$(this).val();
+	});
 });
 
 $(function() { 
@@ -452,9 +453,19 @@ $(document).ready(function(){
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
+								<c:set var="numberAsString">${search }</c:set>
+								<c:choose>
+								<c:when test="${numberAsString.matches('[0-9]+')}"><!-- 숫자인경우 value값을 찍어주지 않기위해 -->
 									<input type="text" class="form-control form-control-lg"
 										id="cCategory" name="search" placeholder="ex) 자장면, 김치찌개, 파스타"
-										value=${search }>
+										value="">
+								</c:when>
+								<c:otherwise><!-- 숫자가 아닌경우 검색어를 검색창에 표시해줌 -->
+									<input type="text" class="form-control form-control-lg"
+											id="cCategory" name="search" placeholder="ex) 자장면, 김치찌개, 파스타"
+											value=${search }>
+								</c:otherwise>
+								</c:choose>
 									<!-- 여기 수정중  search값이 숫자인경우에는 받아오면안되거나 빈값으로 초기화-->
 								</div>
 							</div>
@@ -469,10 +480,7 @@ $(document).ready(function(){
 												<!-- 데이터 플레이스홀더 -->
 												<option value="0" id="fd">음식명</option>
 												<option value="1" id="st">가게명</option>
-												<option value="2" id="lc">층별</option>
-												<option value="apartment">1</option>
-												<option value="land">2</option>
-												<option value="room">3</option>
+												<!-- <option value="2" id="lc">층별</option> -->
 											</select>
 										</div>
 									</div>
@@ -593,10 +601,6 @@ $(document).ready(function(){
 														<input type="checkbox" name="CATE_NM" value="3" id="farms">
 														<label for="farms">일식</label>
 													</div>
-													<div class="checkbox" id="food">
-														<input type="checkbox" name="CATE_NM" value="4" id="room">
-														<label for="room">예비 메뉴</label>
-													</div>
 												</div>
 											</div>
 										</div>
@@ -631,10 +635,6 @@ $(document).ready(function(){
 													<div class="checkbox" id="floor">
 														<input type="checkbox" name="search" value="4" id="4floor">
 														<label for="4floor">4층</label>
-													</div>
-													<div class="checkbox" id="floor">
-														<input type="checkbox" name="search" value="5" id="room">
-														<label for="room">예비 메뉴</label>
 													</div>
 												</div>
 											</div>
@@ -712,9 +712,9 @@ $(document).ready(function(){
 															<div class="item-badge-right">세일 중</div>
 														</div>
 														<div class="item-meta">
-															<div class="item-price">${article.store_avgsal }원선
+															<div class="item-price">${article.avg_price }원선
 																<!-- <small>09 : 00 open / 22 : 00 close </small> -->
-																<small><div>${article.store_octime }</div></small>
+																<small><div>${article.store_exp }</div></small>
 															</div>
 														</div> </a>
 													<!-- 북마크 기능 버튼  -->
@@ -750,7 +750,7 @@ $(document).ready(function(){
 
 													</div>
 													<div class="col-md-6">
-														<a href="#" class="added-by">by ${article.store_owner }</a>
+														<a href="#" class="added-by">by ${article.emp_nm }</a>
 
 													</div>
 												</div>

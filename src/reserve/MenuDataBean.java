@@ -4,8 +4,8 @@ public class MenuDataBean {
 	private int menu_no;
 	private int store_no;
 	private String cate_nm;
-	private String menu_nm1;
-	private int menu_nm1_sal;
+	private String menu_nm;
+	private int menu_price;
 	
 	public int getMenu_no() {
 		return menu_no;
@@ -25,18 +25,16 @@ public class MenuDataBean {
 	public void setCate_nm(String cate_nm) {
 		this.cate_nm = cate_nm;
 	}
-	public String getMenu_nm1() {
-		return menu_nm1;
+	public String getMenu_nm() {
+		return menu_nm;
 	}
-	public void setMenu_nm1(String menu_nm1) {
-		this.menu_nm1 = menu_nm1;
+	public void setMenu_nm(String menu_nm) {
+		this.menu_nm = menu_nm;
 	}
-	public int getMenu_nm1_sal() {
-		return menu_nm1_sal;
+	public int getMenu_price() {
+		return menu_price;
 	}
-	public void setMenu_nm1_sal(int menu_nm1_sal) {
-		this.menu_nm1_sal = menu_nm1_sal;
+	public void setMenu_price(int menu_price) {
+		this.menu_price = menu_price;
 	}
-	
-	
 }

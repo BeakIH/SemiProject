@@ -57,39 +57,14 @@
 
 </style>
 <script type="text/javascript">
-function setCheckBoxAsRadio(targetObj, inObj){
-    var len = targetObj.length;
-    
-    if(len>1){ // 객체가 배열이라면. 배열이 아니면 그냥 체크박스로 작동
-     for(var i=0; i<len; i++){
-      if(targetObj[i] != inObj)
-       targetObj[i].checked = false;
-     }
-    }
-   }
-   
-function setCheckBoxAsRadio2(targetObj, inObj){
-    var len = targetObj.length;
-    
-    if(len>1){ // 객체가 배열이라면. 배열이 아니면 그냥 체크박스로 작동
-     for(var i=0; i<len; i++){
-      if(targetObj[i] != inObj)
-       targetObj[i].checked = false;
-     }
-    }
-   }
-   
-function setCheckBoxAsRadio3(targetObj, inObj){
-    var len = targetObj.length;
-    
-    if(len>1){ // 객체가 배열이라면. 배열이 아니면 그냥 체크박스로 작동
-     for(var i=0; i<len; i++){
-      if(targetObj[i] != inObj)
-       targetObj[i].checked = false;
-     }
-    }
-   }
-   
+
+//자기자신창을 닫습니다.
+function javascript(){
+    self.close(); 
+}
+
+
+
 </script>
 
 
@@ -131,6 +106,62 @@ function setCheckBoxAsRadio3(targetObj, inObj){
 <script type="text/javascript">
 $( document ).ready(function() {
 	
+//예약메뉴 체크여부 이벤트
+  /* $('#submit_button').click(function() {
+  if (!$("input[name='bk_menu']:checked").val()) {
+  	alert('Nothing is checked!');
+	return false;
+  }
+  else {
+  alert('One of the radio buttons is checked!');
+  }
+  }); */
+  
+ 	//라디오버튼 체크여부 이벤트
+	  $('#submit_button').click(function() {
+	    if (!$("input[name='chk1']:checked").val()) {
+	       alert('예약 날짜를 선택해주세요.');
+	        return false;
+	    }
+	    else {
+	   
+	    }
+	  });
+  
+ 	$('#submit_button').click(function() {
+	    if (!$("input[name='chk2']:checked").val()) {
+	       alert('예약시간을 선택해주세요.');
+	        return false;
+	    }
+	    else {
+	     
+	    }
+	  });
+ 
+	//셀렉트박스 체크여부 이벤트
+ 	$('#submit_button').click(function() {
+	if(!$('#bk_tbl_cnt > option:selected').val()) {
+    alert("테이블수를 선택해주세요.");
+    	return false;
+	}else{
+		
+	}
+	});
+	//인원수 셀렉트박스 체크여부 이벤트
+ 	$('#submit_button').click(function() {
+ 		if(!$('#bk_cnt > option:selected').val()) {
+ 	    alert("인원수를 선택해주세요.");
+ 	    	return false;
+ 		}else{
+ 			
+ 		}
+ 		});
+
+
+	
+ 
+	
+	
 	/* 날짜  */
  var a = new Date();
  $('#monthText').html((a.getMonth()+1) + "월");
@@ -148,9 +179,9 @@ $( document ).ready(function() {
  for(var i = 0; i < b.length; i++){
 	 var d = b[i].getDay();
 	 var e = b[i].getFullYear() + "-" + (b[i].getMonth()+1) + "-" + b[i].getDate();
-	 if(b[i].getDay() == 0) from3_text = from3_text + "<input type='radio' value='" + e + "' name='chk1' /><span style='color:red;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span><br />";
-	 else if(b[i].getDay() == 6) from3_text = from3_text + "<input type='radio' value='" + e + "' name='chk1' /><span style='color:blue;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span><br />";
-	 else from3_text = from3_text + "<input type='radio' value='" + e + "' name='chk1' />" + b[i].getDate() + "일 " + week[b[i].getDay()] + "<br />";
+	 if(b[i].getDay() == 0) from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='color:red; font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
+	 else if(b[i].getDay() == 6) from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='color:blue; font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
+	 else from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
 	 
  }
  //div id로 바꾸고 이름정해주기
@@ -162,8 +193,8 @@ $( document ).ready(function() {
  var sto_close_Time = $('#oTime').val().split(" ~ ")[1];
  
  for(var i = sto_open_Time.split(":")[0] * 1; i <= sto_close_Time.split(":")[0] * 1 - 1; i++){
-	 if(i < 10) from2_text = from2_text + "<input type='radio' value='0" + i + ":00' name='chk2' />0" + i + ":00<br />"; 
-	 else from2_text = from2_text + "<input type='radio' value='" + i + ":00' name='chk2' />" + i + ":00<br />"; 
+	 if(i < 10) from2_text = from2_text + "<label><input type='radio' style='text-align:center;width: 35px;' value='0" + i + ":00' name='chk2' /><span style='font-weight:bold; font-size: 16px;'>0" + i + ":00</span></label><br />"; 
+	 else from2_text = from2_text + "<label><input type='radio' style='text-align:center; width: 35px;' value='" + i + ":00' name='chk2' /><span style='font-weight:bold; font-size: 16px;'>" + i + ":00</span></label><br />"; 
  }
  
  $('form[name="form2"]').html(from2_text);
@@ -201,7 +232,8 @@ $( document ).ready(function() {
 	 $('#bk_date').val(bk_date[0] + " " + bk_date[1]);
  });
  
- 
+/* 	$('#chkBox').children('label').find('#bk_menu').bind('click',function(){ */
+
  
  /* 인원 수 이벤트 */
  var useCnt = "1명";
@@ -216,7 +248,7 @@ $( document ).ready(function() {
  
  /* 테이블수 이벤트*/
  
-  var useTbl = "";
+  var useTbl = 1;
  $('#useTbl').val(useTbl);
  
  $('#bk_tbl_cnt').bind('change',function(i){
@@ -246,29 +278,40 @@ $( document ).ready(function() {
  	 	$('#menuSum').val(menuSumTemp + "원");
  	});
 });
-
-
-
+//수량 이벤트
+/* $(function(){ 
+	  $('.bt_up').click(function(){ 
+	    var n = $('.bt_up').index(this);
+	    var num = $(".num:eq("+n+")").val();
+	    num = $(".num:eq("+n+")").val(num*1+1); 
+	  });
+	  $('.bt_down').click(function(){ 
+	    var n = $('.bt_down').index(this);
+	    var num = $(".num:eq("+n+")").val();
+	    num = $(".num:eq("+n+")").val(num*1-1); 
+	  });
+	}) 
+ */
 </script>
 </head>
 <body>
 
+
 <h1 class="maintext">예약</h1>
 	 <c:forEach var="article" items="${articleList}">
-	   <input type="hidden" value="${article.store_octime }" id="oTime" />
-	   <input type="hidden" value="${article.avl_tbl_cnt }" id="avl_tbl_cnt" /> --%>
-      <div style="overflow:scroll; width:350px; height:600px; padding:10px; background-color:wheat; white-space:nowrap; float:left;">
+	   <input type="hidden" value="${article.store_exp }" id="oTime" />
+	   <input type="hidden" value="${article.avl_tbl_cnt }" id="avl_tbl_cnt" />
+      <div style="overflow:scroll; width:350px; height:600px; padding:10px; background-color:#f5f5f5; white-space:nowrap; float:left;">
       <div data-obj-id="yZe8J" data-obj-type="element"
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
          <div data-text-content="true"
-            style="background-color:dimgray; text-align: center; font-size: 17px;"
-            class=""><span style="color:white">매장명</span></div>
-                 
+            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            class=""><span style="color:white; font-weight: bold">매장명</span></div>
+                
       <form name="form1">
       
-      <label><input name="store_nm" style="background-color:white; height: 56px; width: 309px; text-align:center; font-size:30px;" value="${article.store_nm}"></label><br/>
-    
+    <input type="hidden"><h1 name="store_nm"style="text-align:center; font-size:45px; padding-top: 25px;" >${article.store_nm}</h1><br/>
        
       </form>
    
@@ -279,9 +322,9 @@ $( document ).ready(function() {
 
       
       
-      <div style="overflow:scroll; width:180px; height:600px; padding:10px; background-color:wheat; white-space:nowrap; float:left;">
-       <div data-text-content="true" style="background-color:dimgray; 
-      text-align: center; font-size: 17px;" class=""><span style="color:white">날짜</span></div></br>
+      <div style="overflow:scroll; width:180px; height:600px; padding:10px; background-color:#f5f5f5; white-space:nowrap; float:left;">
+       <div data-text-content="true" style="background-color:#563d7c; 
+      text-align: center; font-size: 17px;" class=""><span style="color:white;font-weight: bold">날짜</span></div></br>
           <h2 id="monthText" style="text-align:center"></h2>
           <form name="form3">
      
@@ -289,13 +332,13 @@ $( document ).ready(function() {
       
 
    </div>
-    <div style="overflow:scroll; width:150px; height:600px; padding:10px; background-color:wheat; white-space:nowrap; float:left;">
+    <div style="overflow:scroll; width:150px; height:600px; padding:10px; background-color:#f5f5f5; white-space:nowrap; float:left;">
       <div data-obj-id="1mWAj" data-obj-type="element"
          data-text-editable="true" class=""
          top: 499px; left: 305px; width: 82px; height: 23px;">
       <div data-text-content="true"
-         style="background-color: dimgray; text-align: center; font-size: 17px;"
-         class=""><span style="color:white">이용시간</span></div>
+         style="background-color: #563d7c; text-align: center; font-size: 17px;"
+         class=""><span style="color:white;font-weight: bold">이용시간</span></div>
             </div>
             
             <form name="form2">
@@ -304,20 +347,39 @@ $( document ).ready(function() {
       </div>
       
       
-       <div style="overflow:scroll; width:350px; height:600px; padding:10px; background-color:wheat; white-space:nowrap; float:left;">
+       <div style="overflow:scroll; width:350px; height:600px; padding:10px; background-color:#f5f5f5; white-space:nowrap; float:left;">
        <div data-obj-id="yZe8J" data-obj-type="element"
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
          <div data-text-content="true"
-            style="background-color:dimgray; text-align: center; font-size: 17px;"
-            class=""><span style="color:white">미리주문</span></div>
+            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            class=""><span style="color:white;font-weight: bold">미리주문</span></div>
          </div>
-
+         
+	<!--  
+	수량 카운터 할 수있는
+	 <td>
+          <table>
+            <tr>
+              <td><input type="text" name="num" value="1" id="" class="num"/></td>
+              <td>
+                <div>
+                  <img src="http://placehold.it/10x10" alt="" width="10" height="10" class="bt_up"/>
+                </div>
+                <div>
+                  <img src="http://placehold.it/10x10" alt="" width="10" height="10" class="bt_down" />
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td> -->
+        
+        
 		<div id="chkBox">
       <c:forEach var="menu" items="${article.menuList}" varStatus="status">
       <label>
-      	<input type="checkbox" name="bk_menu" id="bk_menu" value="${menu.menu_nm1}/${menu.menu_nm1_sal}">
-      	${menu.menu_nm1} : ${menu.menu_nm1_sal}원</label><br>
+      	<input type="checkbox" name="bk_menu" id="bk_menu"  value="${menu.menu_nm}/${menu.menu_price}">
+      	<span style="font-weight: bold;font-size:16px;">${menu.menu_nm} : ${menu.menu_price}원</span></label><br>
       </c:forEach>
       </div>
       
@@ -325,10 +387,10 @@ $( document ).ready(function() {
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
          <div data-text-content="true"
-            style="background-color:dimgray; text-align: center; font-size: 17px;"
-            class=""><span style="color:white">예약인원</span></div>   
-      <label>예약 인원수</label>
-                <select name="bk_cnt" id="bk_cnt" style="width:100px; height:30px;">
+            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            class=""><span style="color:white;font-weight: bold">예약인원</span></div>   
+      <label><span style='font-weight:bold; font-size: 16px;'>예약 인원수</span></label>
+                <select name="bk_cnt" id="bk_cnt" style="width:100px; height:30px; font-weight:bold; font-size: 16px;">
              
                 </select>
                 
@@ -336,20 +398,19 @@ $( document ).ready(function() {
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
          <div data-text-content="true"
-            style="background-color:dimgray; text-align: center; font-size: 17px;"
-            class=""><span style="color:white">예약테이블</span></div>
+            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            class=""><span style="color:white;font-weight: bold">예약테이블</span></div>
             <div data-text-content="true"
-            style="background-color:dimgray; text-align: center; font-size: 17px;"
-            class=""><span style="color:white">최대 4인기준 1개 테이블입니다.</span></div>
-      <label>예약 테이블</label>
-                <select name="bk_tbl_cnt" id="bk_tbl_cnt" style="width:100px; height:30px;">
-             
+            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            class=""><span style="color:white;font-weight: bold">최대 4인기준 1개 테이블입니다.</span></div>
+      <label><span style='font-weight:bold; font-size: 16px;'>예약 테이블</span></label>
+                <select name="bk_tbl_cnt" id="bk_tbl_cnt" style="width:120px; height:30px; font-weight:bold; font-size: 16px;">
                 </select>
       
       
       <div id="reserve">
-      <button type="submit" class="cancellation" >취소</button>
-      <button type="submit" class="reservation" data-target="#modal" data-toggle="modal">예약</button>
+      <button type="submit" class="btn btn-lg btn-primary"onclick='javascript()' style="width: 100px;height: 48px;margin-left: 103px;margin-top: 15px; ">취소</button>
+      <button type="submit" id="submit_button" class="btn btn-lg btn-primary" style="width: 100px;height: 48px;margin-top: 15px;"data-target="#modal" data-toggle="modal">예약</button>
    
 
    	
@@ -359,13 +420,13 @@ $( document ).ready(function() {
    </c:forEach>
   <form action="./reserveInsert.do">
  <c:forEach var="article" items="${articleList}">
-	   <input type="hidden" value="${article.store_octime }" name="oTime" />
+	   <input type="hidden" value="${article.store_exp }" name="oTime" />
 	   <input type="hidden" value="${article.avl_tbl_cnt }" name="avl_tbl_cnt" />
 	   <input type="hidden" value="${article.store_nm }" name="store_nm" />
 	   <input type="hidden" value="${article.store_no }" name="store_no" />
 	   
 	   
-   <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modar" aria-hidden="true"> 
+   <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modar" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
   <div class="modal-dialog modal-lg"> 
     <div class="modal-content"> 
       <div class="modal-header"> 
@@ -382,8 +443,8 @@ $( document ).ready(function() {
         </div>
         <div class="row">
             <div class="col-lg-12">
-              <h2 class="subheadline">매장주소</h2>
-              <input type="text" id="store_plc" name="store_plc"class="form-control form-control-lg" placeholder="" value="${article.store_plc }">
+              <h2 class="subheadline">매장 위치</h2>
+              <input type="text" id="store_plc" name="store_plc"class="form-control form-control-lg" placeholder="" value="${article.store_floor }">
           </div>
         </div>
         <div class="row">
@@ -451,7 +512,6 @@ $( document ).ready(function() {
   </c:forEach>
   </form>
 </div>
-   
    
 <%-- </c:forEach>
  --%>

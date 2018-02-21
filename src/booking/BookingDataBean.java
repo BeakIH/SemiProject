@@ -1,10 +1,10 @@
 package booking;
- 
+
 import java.sql.Timestamp;
 
 public class BookingDataBean {
 	
-
+ 
 	    // 예약번호 예약번호
 	    private Integer bkNo;
 
@@ -158,6 +158,4 @@ public class BookingDataBean {
 	    public void setStoreNo(Integer storeNo) {
 	        this.storeNo = storeNo;
 	    }
-
-	
 }

@@ -46,38 +46,36 @@ public class ReserveDBBean {
 				conn = getConnection();
 				if(dept == "all") {
 					pstmt = conn.prepareStatement(
-							"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_uri,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score,s.store_plc from store_list s");
+							"select * from store_list");
 				}else {
 					pstmt = conn.prepareStatement(
-						"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_uri,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score,s.store_plc from store_list s where s.store_no = ?");
+						"select * from store_list where store_no = ?");
 					pstmt.setInt(1, store_no);
 				}
 				rs = pstmt.executeQuery();
 				
 				if (rs.next()) {
-					//articleList;// end 자리에 10을 가라로 넣어둠
+					
 					do {
 						StoreDataBean article = new StoreDataBean();
 						article.setStore_no(rs.getInt("store_no"));
 						article.setEmp_no(rs.getInt("emp_no"));
 						article.setCate_nm(rs.getString("cate_nm"));
 						article.setStore_nm(rs.getString("store_nm"));
-						article.setStore_owner(rs.getString("store_owner"));
-						article.setStore_octime(rs.getString("store_octime"));
-						article.setStore_info(rs.getString("store_info"));
-						article.setStore_dinfo(rs.getString("store_dinfo"));
+						article.setStore_exp(rs.getString("store_exp"));
 						article.setStore_floor(rs.getString("store_floor"));
 						article.setStore_tel(rs.getString("store_tel"));
+						article.setStore_info(rs.getString("store_info"));
+						article.setStore_exp_dt(rs.getString("store_exp_dt"));
 						article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 						article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-						article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-						article.setStore_uri(rs.getString("store_uri"));
+						article.setStore_url(rs.getString("store_url"));
 						article.setSimg_root(rs.getString("simg_root"));
+						article.setAvg_price(rs.getInt("avg_price"));
+						article.setPreference(rs.getInt("preference"));
+						article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));						
 						article.setPimg_root(rs.getString("pimg_root"));
-						article.setStore_avgsal(rs.getInt("store_avgsal"));
-						article.setStore_score(rs.getInt("store_score"));
-						article.setStore_plc(rs.getString("store_plc"));
-						
+						article.setEmp_nm(rs.getString("emp_nm"));
 //						// 메뉴관련정보
 //						article.setMenu_no(rs.getInt("menu_no"));
 //						article.setMenu_nm1(rs.getString("menu_nm1"));
@@ -87,7 +85,7 @@ public class ReserveDBBean {
 						List<MenuDataBean> menuList = new ArrayList<MenuDataBean>();
 						connSub = getConnection();
 						pstmtSub = connSub.prepareStatement(
-								"SELECT menu_no, store_no, cate_nm, menu_nm1, menu_nm1_sal FROM preorder where store_no = ?");
+								"SELECT menu_no, store_no, cate_nm, menu_nm, menu_price FROM preorder where store_no = ?");
 						pstmtSub.setInt(1, rs.getInt("store_no"));
 						rsSub = pstmtSub.executeQuery();
 						
@@ -98,8 +96,8 @@ public class ReserveDBBean {
 								menu.setMenu_no(rsSub.getInt("menu_no"));
 								menu.setStore_no(rsSub.getInt("store_no"));
 								menu.setCate_nm(rsSub.getString("cate_nm"));
-								menu.setMenu_nm1(rsSub.getString("menu_nm1"));
-								menu.setMenu_nm1_sal(rsSub.getInt("menu_nm1_sal"));
+								menu.setMenu_nm(rsSub.getString("menu_nm"));
+								menu.setMenu_price(rsSub.getInt("menu_price"));
 								
 								menuList.add(menu);
 								

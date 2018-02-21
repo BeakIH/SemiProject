@@ -1,15 +1,9 @@
 package booking;
 
-import java.sql.Connection; 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-import emp.EmpDataBean;
-
 
 import board.BoardDataBean;
 /*import board.Exception;
@@ -35,7 +29,7 @@ public class BookingDBBean {
 		
 		try {
 			conn = getConnection();
-			
+			//가라 데이터 집어넣기 - 수정해서 가라데이터 집어넣어줘야함
 			pstmt = conn.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			pstmt.setInt(1, 1);
 			pstmt.setInt(2, 1);
@@ -66,7 +60,6 @@ public class BookingDBBean {
 	public void updateConfirm(int store_no) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null; 
-		
 		try{
 			conn = getConnection();
 			pstmt = conn.prepareStatement("update booking set confirm_yn = 'Y' where store_no = ?");
