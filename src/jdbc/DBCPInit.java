@@ -1,6 +1,6 @@
 package jdbc;
 
-import java.sql.DriverManager; 
+import java.sql.DriverManager;
 import java.util.Properties;
 
 import javax.servlet.ServletException;
@@ -36,8 +36,8 @@ public class DBCPInit extends HttpServlet {
 	private void initConnectionPool() {
 		try {
 			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:xe";
-			String username = "SCOTT1";
-			String pw = "TIGER";
+			String username = "scott";
+			String pw = "tiger";
 			
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(jdbcUrl, username, pw);
 			PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connFactory, null);
