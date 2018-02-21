@@ -17,7 +17,7 @@
 <link href="../../lib/swiper/css/swiper.min.css" rel="stylesheet">
 <link href="../../lib/aos/aos.css" rel="stylesheet">
 <link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css?ver=3" rel="stylesheet"> 
+<link href="../../css/style.css?ver=4" rel="stylesheet"> 
 <link href="../../css/sidestyle.css?ver=4" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -264,21 +264,21 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   	<!-- <a href="#">Clients</a>
   	<a href="#">Contact</a> -->
 	<!-- <div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div> -->
-	<div class="sideMenu" style="width:80px;">매장명</div>
+	<div class="sideMenu" style="width:80px;padding-left: 15px;">매장명</div>
 	<div class="sideMenu" style="width:95px;">현재인원</div>
 	<div class="sideMenu" style="width:80px;">상태</div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>
-  		<td style="width:80px;padding-right: 10px;background-color:none;display:inline-block;"><a id="linkedA" href="list_info.do?store_no=${article.store_no }">${article.store_nm }</a></td>
-  		<td style="width:80px;padding-right: 10px;background-color:none;display:inline-block;">${article.avl_tbl_cnt }</td>
-  		<td style="width:80px;padding-right: 10px;background-color:none;display:inline-block;">
+  		<td style="width:80px;padding-left: 20px;padding-right: 10px;background-color:none;display:inline-block;"><a id="linkedA" href="list_info.do?store_no=${article.store_no }">${article.store_nm }</a></td>
+  		<td style="width:80px;padding-left: 20px;padding-right: 10px;background-color:none;display:inline-block;">${article.avl_tbl_cnt }</td>
+  		<td style="width:80px;padding-left: 10px;padding-right: 10px;background-color:none;display:inline-block;">
   		<c:choose>
   		<c:when test="${article.avl_tbl_cnt>0 && article.avl_tbl_cnt <=40 }">
   		<font color="red">예약불가</font>
   		</c:when>
   		<c:when test="${article.avl_tbl_cnt>40 && article.avl_tbl_cnt <=100 }">
-  		<font color="green">예약가능</font>
+  		<font color="blue">예약가능</font>
   		</c:when>
   		</c:choose>
   		</td>

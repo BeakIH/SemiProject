@@ -2368,8 +2368,10 @@ input[type="radio"], input[type="checkbox"] {
 	padding-bottom:0;
 }
 
-.sidenav{
-	
+.sideMenu{
+	display:inline-block;
+	font-weight: bold;
+	color: white;
 }
 /* Side CSS */
 
