@@ -392,7 +392,7 @@ public class LoginDBBean {
 				
 				while(rs.next()) {
 					result.put("result", 2);
-					result.put("name", rs.getString("adm_nm"));
+					result.put("name", rs.getString("emp_nm"));
 				}
 			} else {
 				result.put("result", 3);
