@@ -6,6 +6,7 @@ public class MenuDataBean {
 	private String cate_nm;
 	private String menu_nm;
 	private int menu_price;
+	private String menu_img_root;
 	
 	public int getMenu_no() {
 		return menu_no;
@@ -37,4 +38,11 @@ public class MenuDataBean {
 	public void setMenu_price(int menu_price) {
 		this.menu_price = menu_price;
 	}
+	public String getMenu_img_root() {
+		return menu_img_root;
+	}
+	public void setMenu_img_root(String menu_img_root) {
+		this.menu_img_root = menu_img_root;
+	}
+	
 }
