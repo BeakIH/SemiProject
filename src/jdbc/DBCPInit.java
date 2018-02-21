@@ -36,8 +36,8 @@ public class DBCPInit extends HttpServlet {
 	private void initConnectionPool() {
 		try {
 			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:xe";
-			String username = "scott";
-			String pw = "tiger";
+			String username = "SCOTT1";
+			String pw = "TIGER";
 			
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(jdbcUrl, username, pw);
 			PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connFactory, null);
@@ -54,7 +54,7 @@ public class DBCPInit extends HttpServlet {
 			
 			PoolingDriver driver = 
 					(PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
-											driver.registerPool("pool", connectionPool);
+					driver.registerPool("pool", connectionPool);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
