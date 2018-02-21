@@ -286,6 +286,7 @@ function fillInAddress() {
   </div>
 </div>
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
+<!-- 푸터 START -->
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
@@ -294,23 +295,23 @@ function fillInAddress() {
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
             <address>
-            <strong>Twitter, Inc.</strong><br>
-            1355 Market Street, Suite 900<br>
-            San Francisco, CA 94103<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
+            <strong>BABSAZO, Inc.</strong><br>
+            	서울특별시 중구 남대문로 120<br>
+           		대일빌딩3층 D class<br>
+            <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
-            <p class="text-muted">Copyright &copy; 2016<br />
+            <p class="text-muted">Copyright &copy; 2018<br />
               All rights reserved</p>
           </div>
-          <div class="col-md-2  col-sm-4">
+          <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li>
+              <li><a href="#"> About BABSAJO </a></li>
+              <li><a href="#"> Team Introduction </a></li>
+              <!-- <li><a href="#">Security</a></li>
+              <li><a href="#">Plans</a></li> -->
             </ul>
           </div>
-          <div class="col-md-2 col-sm-4">
+          <!-- <div class="col-md-2 col-sm-4">
             <ul class="list-unstyled">
               <li><a href="#">For Rent</a></li>
               <li><a href="#">For Sale</a></li>
@@ -319,11 +320,11 @@ function fillInAddress() {
               <li><a href="#">Property Guides</a></li>
               <li><a href="#">Jobs</a></li>
             </ul>
-          </div>
+          </div> -->
           <div class="col-md-4 col-sm-12">
             <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
             <form>
-              <h4>Subscribe Newsletter</h4>
+              <h4>밥사조 소식 받아보기 </h4>
               <div class="input-group input-group-lg">
                 <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
