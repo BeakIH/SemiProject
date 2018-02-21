@@ -51,8 +51,9 @@ public class MemberLoginAction implements Action
                forward.setNextPath("MainForm.do");
         }
            
-        return 	"/member/view/LoginForm.jsp";
+        return 	"/jsp/member/view/Success.jsp";
     }
  
 }
+
 

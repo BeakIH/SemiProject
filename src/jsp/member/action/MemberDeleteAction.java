@@ -34,6 +34,7 @@ public class MemberDeleteAction implements Action{
             return null;
         }
         
-        return "/member/view/LoginForm.jsp";
+        return "/jsp/member/view/Success.jsp";
     }
 }
+

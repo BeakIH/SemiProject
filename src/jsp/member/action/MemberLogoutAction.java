@@ -21,7 +21,8 @@ public class MemberLogoutAction implements Action
         forward.setRedirect(true);
         forward.setNextPath("MainForm.do");
         
-        return "/member/view/LoginForm.jsp";
+        return "/jsp/member/view/Success.jsp";
     }
 }
+
 

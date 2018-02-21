@@ -24,17 +24,17 @@ public class MemberJoinAction implements Action{
         
         // 입력된 정보를 자바빈에 세팅한다.
         MemberBean member = new MemberBean();
-        member.setId(request.getParameter("id"));
-        member.setPassword(request.getParameter("password"));
-        member.setName(request.getParameter("name"));
-        member.setGender(request.getParameter("gender"));;
-        member.setBirthyy(request.getParameter("birthyy"));
-        member.setBirthmm(request.getParameterValues("birthmm")[0]);
-        member.setBirthdd(request.getParameter("birthdd"));
-        member.setMail1(request.getParameter("mail1"));
-        member.setMail2(request.getParameterValues("mail2")[0]);
-        member.setPhone(request.getParameter("phone"));
+        member.setMem_no(request.getParameter("mem_no"));
+        member.setMem_nm(request.getParameter("mem_nm"));
+        member.setMem_id(request.getParameter("mem_id"));
+        member.setMem_pw(request.getParameter("mem_pw"));;
+        member.setMem_tel(request.getParameter("mem_tel"));
         member.setAddress(request.getParameter("address"));
+        member.setEmail(request.getParameter("email"));
+        member.setEmail_yn(request.getParameter("email_yn"));
+        member.setFvrt_str_1(request.getParameter("fvrt_str_1"));
+        member.setFvrt_str_2(request.getParameter("fvrt_str_2"));
+       
 
         
         // 회원가입 실행
@@ -47,7 +47,8 @@ public class MemberJoinAction implements Action{
            // 가입성공 메시지를 세션에 담는다.
            request.getSession().setAttribute("msg", "1");
            
-        return "/member/view/LoginForm.jsp";
+        return "/jsp/member/view/Success.jsp";
     }
 }
  
+

@@ -35,21 +35,30 @@ public class DBCPInit extends HttpServlet {
 	
 	private void initConnectionPool() {
 		try {
-			String jdbcUrl =  "jdbc:oracle:thin:@localhost:1521:xe";
-			String username = "scott";
-			String pw = "tiger";
+			String jdbcUrl =  "jdbc:oracle:thin:@192.168.40.7:1521:XE";
+			String username = "SCOTT1";
+			String pw = "TIGER";
+			
 			
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(jdbcUrl, username, pw);
 			PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connFactory, null);
 			poolableConnFactory.setValidationQuery("select 1");
+			
 			GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
+			
 			poolConfig.setTimeBetweenEvictionRunsMillis(1000L * 60L * 5L);
+			
 			poolConfig.setTestWhileIdle(true);
+			 
 			poolConfig.setMinIdle(4);
+			 
 			poolConfig.setMaxTotal(50);
+          
 			GenericObjectPool<PoolableConnection> connectionPool = 
 					new GenericObjectPool<>(poolableConnFactory, poolConfig);
+			
 			poolableConnFactory.setPool(connectionPool);
+			
 			Class.forName("org.apache.commons.dbcp2.PoolingDriver");
 			
 			PoolingDriver driver = 

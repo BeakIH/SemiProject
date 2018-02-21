@@ -33,8 +33,9 @@ public class MemberInfoAction implements Action
         forward.setNextPath("UserInfoForm.do");
         // MainForm.jsp?contentPage=member/view/UserInfoForm.jsp
         
-        return "/member/view/LoginForm.jsp";
+        return "/jsp/member/view/Success.jsp";
     }
  
 }
+
 
