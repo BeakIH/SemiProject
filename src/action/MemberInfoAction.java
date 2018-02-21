@@ -1,4 +1,4 @@
-package jsp.member.action;
+package action;
  
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ import jsp.member.model.MemberDAO;
 /** 
  * 현재 로그인한 사용자의 회원정보를 보여주는 Action 클래스
  */
-public class MemberInfoAction implements Action
+public class MemberInfoAction implements CommandAction
 {
 
 	   @Override

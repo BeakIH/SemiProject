@@ -1,4 +1,4 @@
-package jsp.member.action;
+package action;
  
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *  로그아웃 작업을 처리하는 Action 클래스
  */
-public class MemberLogoutAction implements Action
+public class MemberLogoutAction implements CommandAction
 {
  
 	  @Override
