@@ -5,7 +5,7 @@ public class MenuDataBean {
 	private int store_no;
 	private String cate_nm;
 	private String menu_nm;
-	private int price;
+	private int menu_price;
 	
 	public int getMenu_no() {
 		return menu_no;
@@ -31,12 +31,10 @@ public class MenuDataBean {
 	public void setMenu_nm(String menu_nm) {
 		this.menu_nm = menu_nm;
 	}
-	public int getPrice() {
-		return price;
+	public int getMenu_price() {
+		return menu_price;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setMenu_price(int menu_price) {
+		this.menu_price = menu_price;
 	}
-	
-	
 }

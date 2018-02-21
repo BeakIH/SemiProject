@@ -352,7 +352,7 @@ function realtimeClock() {
 									<h1>
 									<input type="hidden" value="${article.store_no }" id="storeNo" />
 										${article.store_nm }<span class="label label-bordered">${article.cate_nm }</span>
-										<small><i class="fa fa-map-marker"></i>${article.store_plc }</small>
+										<small><i class="fa fa-map-marker"></i>${article.store_floor }</small>
 									</h1>
 								</div>
 								<div class="col-md-4">
@@ -423,12 +423,12 @@ function realtimeClock() {
 											<div class="item-description">
 												<h3 class="headline">매장 소개</h3>
 												<p>
-													<strong>${article.store_nm}</strong><br>${article.store_dinfo}
+													<strong>${article.store_nm}</strong><br>${article.store_exp_dt}
 											</div>
 											<h3 class="headline">메뉴</h3>
 											<ul class="checked feature-list" id="BK_MENU">
 											<c:forEach var="menuList" items="${article.menuList}">
-												<li><strong>${menuList.menu_nm} : </strong>${menuList.price}원</li>
+												<li><strong>${menuList.menu_nm} : </strong>${menuList.menu_price}원</li>
 											</c:forEach>
 <%-- 												<li><strong>${article.menu_nm2}</strong>${article.menu_nm2_sal}</li> --%>
 											</ul>
@@ -470,7 +470,7 @@ function realtimeClock() {
 															<table class="table v1">
 																<tr>
 																	<td>영업시간</td>
-																	<td>${article.store_octime}</td>
+																	<td>${article.store_exp}</td>
 																</tr>
 																<tr>
 																	<td>연락처</td>
@@ -496,12 +496,12 @@ function realtimeClock() {
 													<div class="media-left">
 														<a href="agent.html"> <img
 															class="media-object rounded-circle"
-															src="../../img/demo/profile.jpg" width="64" height="64" alt="">
+															src="${article.pimg_root }" width="64" height="64" alt="">
 														</a>
 													</div>
 													<div class="media-body">
 														<h4 class="media-heading">
-															<a href="agent.html">${article.store_owner}</a>
+															<a href="agent.html">${article.emp_nm}</a>
 														</h4>
 														<p>
 															<i class="fa fa-phone" aria-hidden="true">매장번호:</i><br>

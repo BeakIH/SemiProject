@@ -299,7 +299,7 @@ $( document ).ready(function() {
 
 <h1 class="maintext">예약</h1>
 	 <c:forEach var="article" items="${articleList}">
-	   <input type="hidden" value="${article.store_octime }" id="oTime" />
+	   <input type="hidden" value="${article.store_exp }" id="oTime" />
 	   <input type="hidden" value="${article.avl_tbl_cnt }" id="avl_tbl_cnt" />
       <div style="overflow:scroll; width:350px; height:600px; padding:10px; background-color:#f5f5f5; white-space:nowrap; float:left;">
       <div data-obj-id="yZe8J" data-obj-type="element"
@@ -378,8 +378,8 @@ $( document ).ready(function() {
 		<div id="chkBox">
       <c:forEach var="menu" items="${article.menuList}" varStatus="status">
       <label>
-      	<input type="checkbox" name="bk_menu" id="bk_menu"  value="${menu.menu_nm}/${menu.price}">
-      	<span style="font-weight: bold;font-size:16px;">${menu.menu_nm} : ${menu.price}원</span></label><br>
+      	<input type="checkbox" name="bk_menu" id="bk_menu"  value="${menu.menu_nm}/${menu.menu_price}">
+      	<span style="font-weight: bold;font-size:16px;">${menu.menu_nm} : ${menu.menu_price}원</span></label><br>
       </c:forEach>
       </div>
       
@@ -420,7 +420,7 @@ $( document ).ready(function() {
    </c:forEach>
   <form action="./reserveInsert.do">
  <c:forEach var="article" items="${articleList}">
-	   <input type="hidden" value="${article.store_octime }" name="oTime" />
+	   <input type="hidden" value="${article.store_exp }" name="oTime" />
 	   <input type="hidden" value="${article.avl_tbl_cnt }" name="avl_tbl_cnt" />
 	   <input type="hidden" value="${article.store_nm }" name="store_nm" />
 	   <input type="hidden" value="${article.store_no }" name="store_no" />
@@ -444,7 +444,7 @@ $( document ).ready(function() {
         <div class="row">
             <div class="col-lg-12">
               <h2 class="subheadline">매장 위치</h2>
-              <input type="text" id="store_plc" name="store_plc"class="form-control form-control-lg" placeholder="" value="${article.store_plc }">
+              <input type="text" id="store_plc" name="store_plc"class="form-control form-control-lg" placeholder="" value="${article.store_floor }">
           </div>
         </div>
         <div class="row">
@@ -512,7 +512,6 @@ $( document ).ready(function() {
   </c:forEach>
   </form>
 </div>
-   
    
 <%-- </c:forEach>
  --%>

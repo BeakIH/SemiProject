@@ -158,6 +158,4 @@ public class BookingDataBean {
 	    public void setStoreNo(Integer storeNo) {
 	        this.storeNo = storeNo;
 	    }
-
-	
 }

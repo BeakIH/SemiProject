@@ -174,9 +174,9 @@ public class ListDBBean {
 
 			// 이부분 생각해봐야함
 			// 남은좌석을 내림차순으로 정렬 ( 남은 좌석이 많을수록 위쪽에 보여지도록 )
-			String sql = "select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,r "
-					+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,rownum r "
-					+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score "
+			String sql = "select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,r "
+					+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,rownum r "
+					+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm "
 					+ "from store_list order by avl_tbl_cnt desc) where " + column_name[searhn] + " like '%" + searchKeyword
 					+ "%' order by avl_tbl_cnt desc ) where r >= ? and r <= ?";
 
@@ -196,20 +196,20 @@ public class ListDBBean {
 					article.setEmp_no(rs.getInt("emp_no"));
 					article.setCate_nm(rs.getString("cate_nm"));
 					article.setStore_nm(rs.getString("store_nm"));
-					article.setStore_owner(rs.getString("store_owner"));
-					article.setStore_octime(rs.getString("store_octime"));
-					article.setStore_info(rs.getString("Store_info"));
-					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_exp(rs.getString("store_exp"));
 					article.setStore_floor(rs.getString("store_floor"));
 					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
 					article.setPimg_root(rs.getString("pimg_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
+					article.setEmp_nm(rs.getString("emp_nm"));
 
 					articleList.add(article); //// 여기~~~
 				} while (rs.next());
@@ -245,7 +245,7 @@ public class ListDBBean {
 		String sql = "";
 		// 낮은 가격순 미정 if 문 써서 selectValue 값이 2 이면 asc 하도록 하면될듯
 		// 여기고치는중~~~~~~~~~~ // 높은가격순, 낮은가격순 , 인기순, 잔여석 순 (맨앞 0번째 인덱스는 빈값)
-		String[] column_name = { "store_avgsal", "store_avgsal", "store_score", "avl_tbl_cnt" };
+		String[] column_name = { "avg_price", "avg_price", "preference", "avl_tbl_cnt" };
 
 		try {
 			conn = getConnection();
@@ -253,15 +253,15 @@ public class ListDBBean {
 			// 이부분 생각해봐야함
 			// 남은좌석을 내림차순으로 정렬 ( 남은 좌석이 많을수록 위쪽에 보여지도록 )
 			if (selectValue == 1) {// 낮은가격순 정렬인 경우 정렬을 오름차순으로 해야하므로
-				sql = "select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,r "
-						+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,rownum r "
-						+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score "
+				sql = "select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,r "
+						+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,rownum r "
+						+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm "
 						+ "from store_list order by avl_tbl_cnt desc) order by avl_tbl_cnt ) order by "
 						+ column_name[selectValue] + " asc";
 			} else {
-				sql = "select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,r "
-						+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,rownum r "
-						+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score "
+				sql = "select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,r "
+						+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,rownum r "
+						+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm "
 						+ "from store_list order by avl_tbl_cnt desc) order by avl_tbl_cnt ) order by "
 						+ column_name[selectValue] + " desc";
 			}
@@ -283,20 +283,20 @@ public class ListDBBean {
 					article.setEmp_no(rs.getInt("emp_no"));
 					article.setCate_nm(rs.getString("cate_nm"));
 					article.setStore_nm(rs.getString("store_nm"));
-					article.setStore_owner(rs.getString("store_owner"));
-					article.setStore_octime(rs.getString("store_octime"));
-					article.setStore_info(rs.getString("Store_info"));
-					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_exp(rs.getString("store_exp"));
 					article.setStore_floor(rs.getString("store_floor"));
 					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
 					article.setPimg_root(rs.getString("pimg_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
+					article.setEmp_nm(rs.getString("emp_nm"));
 
 					articleList.add(article); //// 여기~~~
 				} while (rs.next());
@@ -335,9 +335,9 @@ public class ListDBBean {
 		try {
 			conn = getConnection();
 
-			sql = "select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,r "
-					+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,rownum r "
-					+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score "
+			sql = "select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,r "
+					+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,rownum r "
+					+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm "
 					+ "from store_list order by avl_tbl_cnt desc) order by avl_tbl_cnt ) where cate_nm="
 					+ column_name[cate_nm];
 
@@ -360,20 +360,20 @@ public class ListDBBean {
 					article.setEmp_no(rs.getInt("emp_no"));
 					article.setCate_nm(rs.getString("cate_nm"));
 					article.setStore_nm(rs.getString("store_nm"));
-					article.setStore_owner(rs.getString("store_owner"));
-					article.setStore_octime(rs.getString("store_octime"));
-					article.setStore_info(rs.getString("Store_info"));
-					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_exp(rs.getString("store_exp"));
 					article.setStore_floor(rs.getString("store_floor"));
 					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
 					article.setPimg_root(rs.getString("pimg_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
+					article.setEmp_nm(rs.getString("emp_nm"));
 
 					articleList.add(article); //// 여기~~~
 				} while (rs.next());
@@ -412,10 +412,10 @@ public class ListDBBean {
 
 			// 이부분 생각해봐야함
 			// 남은좌석을 내림차순으로 정렬 ( 남은 좌석이 많을수록 위쪽에 보여지도록 )
-			String sql = "select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,r "
-					+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,rownum r "
-					+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score "
-					+ "from store_list order by avl_tbl_cnt desc) where store_avgsal>=? and store_avgsal<=?) where r >= ? and r <= ?";
+			String sql = "select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,r "
+					+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,rownum r "
+					+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm "
+					+ "from store_list order by avl_tbl_cnt desc) where avg_price>=? and avg_price<=?) where r >= ? and r <= ?";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, iminSal);
@@ -435,20 +435,20 @@ public class ListDBBean {
 					article.setEmp_no(rs.getInt("emp_no"));
 					article.setCate_nm(rs.getString("cate_nm"));
 					article.setStore_nm(rs.getString("store_nm"));
-					article.setStore_owner(rs.getString("store_owner"));
-					article.setStore_octime(rs.getString("store_octime"));
-					article.setStore_info(rs.getString("Store_info"));
-					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_exp(rs.getString("store_exp"));
 					article.setStore_floor(rs.getString("store_floor"));
 					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
 					article.setPimg_root(rs.getString("pimg_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
+					article.setEmp_nm(rs.getString("emp_nm"));
 
 					articleList.add(article); //// 여기~~~
 				} while (rs.next());
@@ -493,9 +493,9 @@ public class ListDBBean {
 
 			// 여기~~~~~
 			pstmt = conn.prepareStatement(
-					"select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,r "
-							+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score,rownum r "
-							+ "from (select store_no,emp_no,cate_nm,store_nm,store_owner,store_octime,store_info,store_dinfo,store_floor,store_tel,tot_tbl_cnt,avl_tbl_cnt,cur_tbl_cnt,store_uri,simg_root,pimg_root,store_avgsal,store_score "
+					"select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,r "
+							+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm,rownum r "
+							+ "from (select store_no,emp_no,cate_nm,store_nm,store_exp,store_floor,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,simg_root,avg_price,preference,cur_tbl_cnt,pimg_root,emp_nm "
 							+ "from store_list order by avl_tbl_cnt desc) order by avl_tbl_cnt ) where r >= ? and r <= ?"); // 한페이지
 																															// (11~20)
 			pstmt.setInt(1, start);
@@ -506,24 +506,25 @@ public class ListDBBean {
 				articleList = new ArrayList(end);
 				do {
 					ListDataBean article = new ListDataBean();
+					
 					article.setStore_no(rs.getInt("store_no"));
 					article.setEmp_no(rs.getInt("emp_no"));
 					article.setCate_nm(rs.getString("cate_nm"));
 					article.setStore_nm(rs.getString("store_nm"));
-					article.setStore_owner(rs.getString("store_owner"));
-					article.setStore_octime(rs.getString("store_octime"));
-					article.setStore_info(rs.getString("Store_info"));
-					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_exp(rs.getString("store_exp"));
 					article.setStore_floor(rs.getString("store_floor"));
 					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
 					article.setPimg_root(rs.getString("pimg_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
+					article.setEmp_nm(rs.getString("emp_nm"));
 
 					articleList.add(article);
 				} while (rs.next());
@@ -550,7 +551,7 @@ public class ListDBBean {
 		return articleList;
 	}
 
-	// 리스트에서 목록 선택시 관련 정보를 뿌려주기 위한 검색 메서드
+	// 리스트에서 목록 선택시 관련 정보를 뿌려주기 위한 검색 메서드 ( store_no 와 관련된 모든 데이터를 셀렉트 )
 	public List getInfo(int store_no) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -561,7 +562,8 @@ public class ListDBBean {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(
-					"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_uri,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score,p.menu_no,p.menu_nm1,p.menu_nm1_sal,p.menu_nm2,p.menu_nm2_sal from store_list s inner join preorder p on s.store_no = p.store_no where s.store_no = ?");
+					"select * from store_list s,preorder p where s.store_no=p.store_no and s.store_no=?");
+					/*"select s.store_no,s.emp_no,s.cate_nm,s.store_nm,s.store_owner,s.store_octime,s.store_info,s.store_dinfo,s.store_floor,s.store_tel,s.tot_tbl_cnt,s.avl_tbl_cnt,s.cur_tbl_cnt,s.store_url,s.simg_root,s.pimg_root,s.store_avgsal,s.store_score,p.menu_no,p.menu_nm1,p.menu_nm1_sal,p.menu_nm2,p.menu_nm2_sal from store_list s inner join preorder p on s.store_no = p.store_no where s.store_no = ?"*/
 			pstmt.setInt(1, store_no);
 			rs = pstmt.executeQuery();
 			
@@ -569,32 +571,30 @@ public class ListDBBean {
 				articleList = new ArrayList(20);// end 자리에 10을 가라로 넣어둠
 				do {
 					ListDataBean article = new ListDataBean();
+					
 					article.setStore_no(rs.getInt("store_no"));
 					article.setEmp_no(rs.getInt("emp_no"));
 					article.setCate_nm(rs.getString("cate_nm"));
 					article.setStore_nm(rs.getString("store_nm"));
-					article.setStore_owner(rs.getString("store_owner"));
-					article.setStore_octime(rs.getString("store_octime"));
-					article.setStore_info(rs.getString("store_info"));
-					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_exp(rs.getString("store_exp"));
 					article.setStore_floor(rs.getString("store_floor"));
 					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
 					article.setPimg_root(rs.getString("pimg_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
+					article.setEmp_nm(rs.getString("emp_nm"));
 					
 					// 메뉴관련정보
 					article.setMenu_no(rs.getInt("menu_no"));
-					article.setMenu_nm1(rs.getString("menu_nm1"));
-					article.setMenu_nm1_sal(rs.getInt("menu_nm1_sal"));
-					article.setMenu_nm2(rs.getString("menu_nm2"));
-					article.setMenu_nm2_sal(rs.getInt("menu_nm2_sal"));
-					
+					article.setMenu_nm(rs.getString("menu_nm"));
+					article.setMenu_price(rs.getInt("menu_price"));
 					articleList.add(article);
 					
 				} while (rs.next());
@@ -638,24 +638,25 @@ public class ListDBBean {
 				articleList = new ArrayList(20);// end 자리에 10을 가라로 넣어둠
 				do {
 					ListDataBean article = new ListDataBean();
+					
 					article.setStore_no(rs.getInt("store_no"));
 					article.setEmp_no(rs.getInt("emp_no"));
 					article.setCate_nm(rs.getString("cate_nm"));
 					article.setStore_nm(rs.getString("store_nm"));
-					article.setStore_owner(rs.getString("store_owner"));
-					article.setStore_octime(rs.getString("store_octime"));
-					article.setStore_info(rs.getString("store_info"));
-					article.setStore_dinfo(rs.getString("store_dinfo"));
+					article.setStore_exp(rs.getString("store_exp"));
 					article.setStore_floor(rs.getString("store_floor"));
 					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
-					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
 					article.setPimg_root(rs.getString("pimg_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
+					article.setEmp_nm(rs.getString("emp_nm"));
 					
 					// 메뉴관련정보
 /*					article.setMenu_no(rs.getInt("menu_no"));
@@ -701,9 +702,9 @@ public class ListDBBean {
 
 			// 이부분 생각해봐야함
 			// 남은좌석을 내림차순으로 정렬 ( 남은 좌석이 많을수록 위쪽에 보여지도록 )
-			String sql = "select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_uri,img_root,store_avgsal,store_score,r "
-					+ "from (select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_uri,img_root,store_avgsal,store_score,rownum r "
-					+ "from (select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_uri,img_root,store_avgsal,store_score "
+			String sql = "select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,img_root,store_avgsal,store_score,r "
+					+ "from (select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,img_root,store_avgsal,store_score,rownum r "
+					+ "from (select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,img_root,store_avgsal,store_score "
 					+ "from store_list order by avl_tbl_cnt desc) where store_avgsal>=? and store_avgsal<=?) where r >= ? and r <= ?";
 
 			pstmt = conn.prepareStatement(sql);
@@ -732,7 +733,7 @@ public class ListDBBean {
 					article.setStore_exp_dt(rs.getString("Store_exp_dt"));
 					article.setTot_tbl_cnt(rs.getInt("Tot_tbl_cnt"));
 					article.setAvl_tbl_cnt(rs.getInt("Avl_tbl_cnt"));
-					article.setStore_uri(rs.getString("store_uri"));
+					article.setStore_url(rs.getString("store_url"));
 					article.setImg_root(rs.getString("img_root"));
 					article.setStore_avgsal(rs.getInt("store_avgsal"));
 					article.setStore_score(rs.getInt("store_score"));

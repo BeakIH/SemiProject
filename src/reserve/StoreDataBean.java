@@ -5,152 +5,213 @@ import java.util.List;
 import reserve.MenuDataBean;
 
 public class StoreDataBean {
-	private int store_no;
-	private int emp_no;
-	private String cate_nm;
-	private String store_nm;
-	private String store_plc;
-	private String store_owner;
-	private String store_octime;
-	private String store_info;
-	private String store_dinfo;
-	private String store_floor;
-	private String store_tel;
-	private int tot_tbl_cnt;
-	private int avl_tbl_cnt;
-	private int cur_tbl_cnt;
-	private String store_uri;
-	private String simg_root;
-	private String pimg_root;
-	private int store_avgsal;
-	private int store_score;
-	private List<MenuDataBean> menuList;
-//	private int menu_no;
-//	private String menu_nm1;
-//	private String menu_nm2;
-//	private int menu_nm1_sal;
-//	private int menu_nm2_sal;
+
+	// 매장번호 매장번호
+    private int store_no;
+
+    //  매장관리자
+    private int emp_no;
+
+    // 취급항목 취급항목명
+    private String cate_nm;
+
+    // 매장명 매장명
+    private String store_nm;
+
+    //  간단매장설명
+    private String store_exp;
+
+    // 매장위치 매장위치
+    private String store_floor;
+
+    // 매장전화번호 매장전화번호
+    private String store_tel;
+
+    //  영업일정보
+    private String store_info;
+
+    //  매장설명
+    private String store_exp_dt;
+
+    //  전체테이블수
+    private int tot_tbl_cnt;
+
+    //  이용가능테이블수
+    private int avl_tbl_cnt;
+
+    //  매장홈페이지
+    private String store_url;
+
+    //  매장이미지저장경로
+    private String simg_root;
+
+    //  매장별 평균메뉴가
+    private int avg_price;
+
+    //  매장별 선호도
+    private int preference;
+
+    //  사용중인테이블수
+    private int cur_tbl_cnt;
+
+    //  프로필이미지
+    private String pimg_root;
+    
+    //  매장관리자
+    private String emp_nm;
+    //음식메뉴 리스트
+    private List<MenuDataBean> menuList;
+
 	public int getStore_no() {
 		return store_no;
 	}
+
 	public void setStore_no(int store_no) {
 		this.store_no = store_no;
 	}
+
 	public int getEmp_no() {
 		return emp_no;
 	}
+
 	public void setEmp_no(int emp_no) {
 		this.emp_no = emp_no;
 	}
+
 	public String getCate_nm() {
 		return cate_nm;
 	}
+
 	public void setCate_nm(String cate_nm) {
 		this.cate_nm = cate_nm;
 	}
+
 	public String getStore_nm() {
 		return store_nm;
 	}
+
 	public void setStore_nm(String store_nm) {
 		this.store_nm = store_nm;
 	}
-	public String getStore_owner() {
-		return store_owner;
+
+	public String getStore_exp() {
+		return store_exp;
 	}
-	public void setStore_owner(String store_owner) {
-		this.store_owner = store_owner;
+
+	public void setStore_exp(String store_exp) {
+		this.store_exp = store_exp;
 	}
-	public String getStore_octime() {
-		return store_octime;
-	}
-	public void setStore_octime(String store_octime) {
-		this.store_octime = store_octime;
-	}
-	public String getStore_info() {
-		return store_info;
-	}
-	public void setStore_info(String store_info) {
-		this.store_info = store_info;
-	}
-	public String getStore_dinfo() {
-		return store_dinfo;
-	}
-	public void setStore_dinfo(String store_dinfo) {
-		this.store_dinfo = store_dinfo;
-	}
+
 	public String getStore_floor() {
 		return store_floor;
 	}
+
 	public void setStore_floor(String store_floor) {
 		this.store_floor = store_floor;
 	}
+
 	public String getStore_tel() {
 		return store_tel;
 	}
+
 	public void setStore_tel(String store_tel) {
 		this.store_tel = store_tel;
 	}
+
+	public String getStore_info() {
+		return store_info;
+	}
+
+	public void setStore_info(String store_info) {
+		this.store_info = store_info;
+	}
+
+	public String getStore_exp_dt() {
+		return store_exp_dt;
+	}
+
+	public void setStore_exp_dt(String store_exp_dt) {
+		this.store_exp_dt = store_exp_dt;
+	}
+
 	public int getTot_tbl_cnt() {
 		return tot_tbl_cnt;
 	}
+
 	public void setTot_tbl_cnt(int tot_tbl_cnt) {
 		this.tot_tbl_cnt = tot_tbl_cnt;
 	}
+
 	public int getAvl_tbl_cnt() {
 		return avl_tbl_cnt;
 	}
+
 	public void setAvl_tbl_cnt(int avl_tbl_cnt) {
 		this.avl_tbl_cnt = avl_tbl_cnt;
 	}
-	public int getCur_tbl_cnt() {
-		return cur_tbl_cnt;
+
+	public String getStore_url() {
+		return store_url;
 	}
-	public void setCur_tbl_cnt(int cur_tbl_cnt) {
-		this.cur_tbl_cnt = cur_tbl_cnt;
+
+	public void setStore_url(String store_url) {
+		this.store_url = store_url;
 	}
-	public String getStore_uri() {
-		return store_uri;
-	}
-	public void setStore_uri(String store_uri) {
-		this.store_uri = store_uri;
-	}
+
 	public String getSimg_root() {
 		return simg_root;
 	}
+
 	public void setSimg_root(String simg_root) {
 		this.simg_root = simg_root;
 	}
+
+	public int getAvg_price() {
+		return avg_price;
+	}
+
+	public void setAvg_price(int avg_price) {
+		this.avg_price = avg_price;
+	}
+
+	public int getPreference() {
+		return preference;
+	}
+
+	public void setPreference(int preference) {
+		this.preference = preference;
+	}
+
+	public int getCur_tbl_cnt() {
+		return cur_tbl_cnt;
+	}
+
+	public void setCur_tbl_cnt(int cur_tbl_cnt) {
+		this.cur_tbl_cnt = cur_tbl_cnt;
+	}
+
 	public String getPimg_root() {
 		return pimg_root;
 	}
+
 	public void setPimg_root(String pimg_root) {
 		this.pimg_root = pimg_root;
 	}
-	public int getStore_avgsal() {
-		return store_avgsal;
-	}
-	public void setStore_avgsal(int store_avgsal) {
-		this.store_avgsal = store_avgsal;
-	}
-	public int getStore_score() {
-		return store_score;
-	}
-	public void setStore_plc(String store_plc) {
-		this.store_plc = store_plc;
-	}
-	public String getStore_plc() {
-		return store_plc;
-	}
-	public void setStore_score(int store_score) {
-		this.store_score = store_score;
-	}
+
 	public List<MenuDataBean> getMenuList() {
 		return menuList;
 	}
+
 	public void setMenuList(List<MenuDataBean> menuList) {
 		this.menuList = menuList;
 	}
-	
-	
+
+	public String getEmp_nm() {
+		return emp_nm;
+	}
+
+	public void setEmp_nm(String emp_nm) {
+		this.emp_nm = emp_nm;
+	}
 	
 }
