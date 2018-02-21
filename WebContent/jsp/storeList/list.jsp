@@ -36,7 +36,7 @@
 <link href="../../lib/aos/aos.css" rel="stylesheet">
 <link href="../../lib/Magnific-Popup/magnific-popup.css"
 	rel="stylesheet">
-<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/style.css?ver=4" rel="stylesheet">
 
 <!-- 내가 추가한 css, 나중에 바꿔야함 -->
 <!-- <link href="./style.css" rel="stylesheet"> -->
@@ -66,10 +66,10 @@ $(function(){
 		if(($(this).val()) == 0){// 카테고리 음식
 			$('.form-group input#cCategory').attr("placeholder","ex) 자장면, 김치찌개, 파스타").placeholder();
 		}else if(($(this).val()) == 1){// 카테고리 가게
-			$('.form-group input#cCategory').attr("placeholder","ex) 엘본 더 테이블, 경화루, 가온").placeholder();
-		}else if(($(this).val()) == 2){// 카테고리 지역
+			$('.form-group input#cCategory').attr("placeholder","ex) 엘본 더 테이블, 경화루, 라연").placeholder();
+		}/* else if(($(this).val()) == 2){// 카테고리 지역
 			$('.form-group input#cCategory').attr("placeholder","ex) 1~5층 ( 해당 숫자만 입력하세요 )").placeholder();
-		}
+		} */
 	});
 });
 
@@ -696,18 +696,20 @@ $(document).ready(function(){
 													<a href="list_info.do?store_no=${article.store_no }"><img
 														src=${article.simg_root } class="img-fluid" alt="">
 														<div class="item-badges">
-															<!-- 남은좌석이 6석 이하인 경우 -->
+															<!-- 남은좌석에 따라 달리보여줌 -->
 															<c:choose>
-																<c:when test="${article.avl_tbl_cnt le 11 } ">
-																	<div class="item-badge-left">예약불가</div>
-																</c:when>
+																<%-- <c:when test="${article.avl_tbl_cnt>0 && article.avl_tbl_cnt <=40 } ">
+																	<div class="item-badge-left-fail"><font color="red">예약불가</font></div>
+																</c:when> --%>
 
+																<c:when test="${article.avl_tbl_cnt>40 && article.avl_tbl_cnt <=100 }">
+																	<div class="item-badge-left"><font color="white">예약가능</font></div>
+																</c:when>
 																<c:otherwise>
-																	<!-- 남은좌석이 6석 이상인 경우 -->
-																	<div class="item-badge-left">예약가능</div>
+																	<div class="item-badge-left-fail"><font color="white">예약불가</font></div>
 																</c:otherwise>
 															</c:choose>
-															<div class="item-badge-right">세일 중</div>
+															<div class="item-badge-right">세일 중</div><!-- 오른쪽 상자, 빼도됨 -->
 														</div>
 														<div class="item-meta">
 															<div class="item-price">${article.avg_price }원선
@@ -730,9 +732,9 @@ $(document).ready(function(){
 													<!-- 위치  -->
 													<div class="item-details-i">
 														<span class="bedrooms" data-toggle="tooltip"
-															title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span
+															title="유아용 좌석"><!-- 값이 보여질 공간  --><i class="fa fa-bed"></i></span> <span
 															class="bathrooms" data-toggle="tooltip"
-															title="2 Bathrooms">2 <i class="fa fa-bath"></i></span>
+															title="스터디 가능"><!-- 값이 보여질 공간  --><i class="fa fa-bath"></i></span>
 													</div>
 													<div class="item-details">
 														<ul>

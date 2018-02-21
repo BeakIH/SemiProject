@@ -836,8 +836,23 @@ nav+.page-header{
 	overflow: hidden;
 	height: 100px;
 }
+/* 예약가능한 경우 */
 .item-listing .item .item-badges .item-badge-left {
-	background-color: #563d7c;
+	background-color: #FE9A2E;
+	padding: 5px 10px;
+	color: #FFF;
+	float: left;
+	left: 15px;
+	top: 15px;
+	position: relative;
+	text-align: center;
+	margin: 0;
+	border-radius: 3px;
+}
+
+/* 예약불가한 경우 */
+.item-listing .item .item-badges .item-badge-left-fail {
+	background-color: rgba(74,74,76,0.7);
 	padding: 5px 10px;
 	color: #FFF;
 	float: left;
@@ -2353,7 +2368,12 @@ input[type="radio"], input[type="checkbox"] {
 	padding-bottom:0;
 }
 
-/* Sidr CSS */
+.sideMenu{
+	display:inline-block;
+	font-weight: bold;
+	color: white;
+}
+/* Side CSS */
 
 
 @media (max-width: 767px) {
