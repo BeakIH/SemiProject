@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import emp.EmpDataBean;
-import member.MemberDataBean;
 import store.list.JdbcUtil;
 
 public class LoginDBBean {
@@ -325,6 +324,7 @@ public class LoginDBBean {
             rs = pstmt.executeQuery();
             while(rs.next()) {
                result.put("result", 1);
+               result.put("id", rs.getString("mem_id"));
                result.put("name", rs.getString("mem_nm"));
             }
          } else if(adminCheck(userid) == 2) { //관리자
@@ -339,6 +339,7 @@ public class LoginDBBean {
             
             while(rs.next()) {
                result.put("result", 2);
+               result.put("id", rs.getString("adm_id"));
                result.put("name", rs.getString("emp_nm"));
             }
          } else {
@@ -359,51 +360,5 @@ public class LoginDBBean {
          }
       }
       return result;
-   }
-   
-   public MemberDataBean getData(String userid, String userpw) throws Exception {
-      
-      Connection conn = null;
-      PreparedStatement pstmt = null;
-      ResultSet rs = null;
-      MemberDataBean dto = null;
-      
-      try {
-         conn = getConnection();
-         String sql = "select * from emp where mem_id = ? and mem_pw = ?";
-         pstmt = conn.prepareStatement(sql);
-         pstmt.setString(1, userid);
-         pstmt.setString(2, userpw);
-         
-         rs = pstmt.executeQuery();
-         
-         while(rs.next()) {
-            
-            dto = new MemberDataBean();
-
-            dto.setMemNo(rs.getInt("mem_no"));
-            dto.setHisNo(rs.getInt("his_no"));
-            dto.setMemNm(rs.getString("mem_nm"));
-            dto.setMemId(rs.getString("mem_id"));
-            dto.setMemPw(rs.getString("mem_pw"));
-            dto.setMemTel(rs.getString("mem_tel"));
-            dto.setAddress(rs.getString("address"));
-            dto.setEmail(rs.getString("email"));
-            dto.setEmailYn(rs.getString("email_yn"));
-            dto.setFvrtStr1(rs.getString("fvrt_str_1"));
-            dto.setFvrtStr2(rs.getString("fvrt_str_2"));
-         }
-      } catch (ClassNotFoundException | SQLException sqle) {
-         sqle.printStackTrace();
-      } finally {
-         try {
-            JdbcUtil.close(rs);
-            JdbcUtil.close(pstmt);
-            JdbcUtil.close(conn);
-         } catch (Exception e) {
-            e.printStackTrace();
-         }
-      }
-      return dto;
    }
 }
