@@ -250,9 +250,9 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
     <ul class="navbar-nav ml-auto">
       
       
-      <li class="nav-item dropdown user-account">
+      <!-- <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 로그인
         </a>
         <div class="dropdown-menu">
             <a href="my_profile.html" class="dropdown-item">My Profile</a>
@@ -262,8 +262,12 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <a href="my_payments.html" class="dropdown-item">Payments</a>
             <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
-      </li>
-      <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
+      </li> -->
+       <button class="btn btn-primary" type="submit"><a href="/jsp/member/SignInCon.do"><i class="fa fa-power-off"></i></a></button>
+       
+      <!-- <li class="nav-item add-listing"><a class="nav-link" href="/jsp/member/SigninCon.jsp"><span> -->
+     <!--  <i class="fa fa-power-off" ></i> 로그인 </span></a></li> -->
+    
     </ul>
     
   </div>
@@ -278,9 +282,9 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   	<!-- <a href="#">Clients</a>
   	<a href="#">Contact</a> -->
 	<!-- <div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div> -->
-	<div class="sideMenu" style="width:80px;padding-left: 15px;">매장명</div>
-	<div class="sideMenu" style="width:95px;">현재인원</div>
-	<div class="sideMenu" style="width:80px;">상태</div>
+	<div class="sideMenu" style="width:95px;padding-left: 15px;">매장명</div>
+	<div class="sideMenu" style="width:95px;">이용중</div>
+	<div class="sideMenu" style="width:95px;">이용가능</div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>

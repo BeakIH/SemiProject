@@ -21,6 +21,7 @@ public class LoginAction implements CommandAction {
       Map<String, Object> result = loginDao.userLogin(userid, userpw);
       
       request.setAttribute("check", result.get("result"));
+      
       if (result.get("name") != null) {
          request.getSession().setAttribute("id", result.get("id"));
          request.getSession().setAttribute("name", result.get("name"));

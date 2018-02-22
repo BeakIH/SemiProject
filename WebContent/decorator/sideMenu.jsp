@@ -1,6 +1,7 @@
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">  <!-- 공통디자인 START -->
 <head>
@@ -8,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>BABSAJO</title>
+<title>BABSAZO</title>
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
@@ -37,7 +38,9 @@
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-
+<script>
+alert('${check}')
+</script>
 <script>
 var placeSearch, autocomplete;
 var componentForm = {
@@ -87,6 +90,7 @@ function fillInAddress() {
 </head>
 <body> <!-- 공통디자인 end --> 
 <!-- 관리자 세션일때 START -->
+<c:choose>
 <c:when test= "${check==2}">
 
 <!-- 헤더 -->
@@ -301,9 +305,8 @@ function fillInAddress() {
   </div>
 </div>
 
-</c:when> <!-- 관리자 세션일때  End -->
+</c:when>
 
-<!-- 회원 세션일때 START -->
 <c:when test= "${check==1}">
 <!-- 헤더  -->
 <div id="main">
@@ -501,13 +504,13 @@ function fillInAddress() {
     </div>
   </div>
 </div>
-</c:when> <!-- 회원 세션일때  End -->
+</c:when>
 
-<!-- 세션없음 START -->
+
 <c:when test= "${check==null}">
 
-</c:when> <!-- 세션없음  End -->
-
+</c:when>
+</c:choose>
 <!-- 푸터 START -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
