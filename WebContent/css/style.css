@@ -11,6 +11,10 @@
 	font-style: normal;
 }
 
+/* 로고와 메뉴간의 사이값 주기 */
+div#menu-content{
+	padding-left: 5%;
+}
 .icon-uilove-realestate {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'uilove-realestate' !important;

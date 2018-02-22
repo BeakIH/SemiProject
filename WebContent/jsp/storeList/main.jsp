@@ -117,7 +117,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 <nav class="navbar navbar-expand-lg navbar-dark navbar-over absolute-top" id="menu">
   <div class="container">
   <a class="navbar-brand" href="index.html"><!-- <span class="icon-uilove-realestate"></span> -->
-	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="100"></span>
+	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -328,7 +328,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <div class="input-group input-group-lg">
       <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
    	 <span class="input-group-btn">
-      	 <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+      	 <!-- <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button> -->
          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button> 
       </span>
     </div>
