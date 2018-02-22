@@ -183,9 +183,9 @@
       
       
       <li class="nav-item dropdown user-account">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name }
-        </a>
+        <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"> </span> 
+        </a> -->
         <div class="dropdown-menu">
             <a href="my_profile.html" class="dropdown-item">My Profile</a>
             <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
@@ -232,12 +232,12 @@
           
               <div class="form-group">
                 <label for="text">아이디</label>
-                <input type="text" name="userid" class="form-control form-control-lg" placeholder="text">
+                <input type="text" name="userid" class="form-control form-control-lg" placeholder="아이디를 입력하세요">
               </div>
                       
               <div class="form-group">
                 <label for="password">비밀번호</label>
-                <input type="password" name="userpw" class="form-control form-control-lg" placeholder="Password">
+                <input type="password" name="userpw" class="form-control form-control-lg" placeholder="비밀번호를 입력하세요">
               </div>
         
         <p class="text-lg-right"><a href="forgot-password.html">비밀번호를 잊으셨나요?</a></p>
@@ -246,7 +246,8 @@
                 <input type="checkbox" id="remember_me">
                 <label for="remember_me">아이디 기억하기</label>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg">로그인</button>
+              <button type="submit" class="btn btn-primary btn-lg" > 로그인 </button> 
+              <button type="submit" class="btn btn-primary btn-lg" style="margin-left: 40px" >회원가입</button>
             </form>
           </div>
         </div>

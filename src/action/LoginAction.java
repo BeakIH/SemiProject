@@ -24,9 +24,9 @@ public class LoginAction implements CommandAction {
       MemberDataBean dto = loginDao.getData(userid, userpw);
       
       request.setAttribute("check", result.get("result"));
+      
       if (result.get("name") != null) {
          request.getSession().setAttribute("name", result.get("name"));
-         request.getSession().setAttribute("member", dto);
       }
 
       // 0 : ID 존재 비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
