@@ -702,11 +702,11 @@ $(document).ready(function(){
 																	<div class="item-badge-left-fail"><font color="red">예약불가</font></div>
 																</c:when> --%>
 
-																<c:when test="${article.avl_tbl_cnt>40 && article.avl_tbl_cnt <=100 }">
-																	<div class="item-badge-left"><font color="white">예약가능</font></div>
+																<c:when test="${article.cur_tbl_cnt>0 && article.cur_tbl_cnt <=5 }">
+																	<div class="item-badge-left-fail"><font color="white">예약불가</font></div>
 																</c:when>
 																<c:otherwise>
-																	<div class="item-badge-left-fail"><font color="white">예약불가</font></div>
+																	<div class="item-badge-left"><font color="white">예약가능</font></div>
 																</c:otherwise>
 															</c:choose>
 															<div class="item-badge-right">세일 중</div><!-- 오른쪽 상자, 빼도됨 -->

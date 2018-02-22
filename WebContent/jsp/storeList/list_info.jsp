@@ -83,7 +83,11 @@ function realtimeClock() {
  		myWin.close();                                                             
  }
    
-   </script>
+     
+     function BookFail(){
+    	 alert('현재 좌석이 없어 예약이 불가능합니다');
+     }
+</script>
 
 <style>
 .modal {
@@ -451,10 +455,17 @@ function realtimeClock() {
 
 											<div class="item-attachments">
 												<h3 class="headline">예약</h3>
-
+												<c:choose>
+												<c:when test="${article.cur_tbl_cnt>0 && article.cur_tbl_cnt <=5 }">
+												<div class="btn btn-lg btn-inverse" onclick="BookFail()">
+													<i class="fa fa-cloud-download" aria-hidden="true"></i>예약불가</div>
+												</c:when>
+												<c:otherwise>
 												<a href="#" class="btn btn-lg btn-inverse"
-													onclick="winOpen()"><i class="fa fa-cloud-download"
-													aria-hidden="true"></i>예약하기</a>
+													onclick="winOpen()" style="background-color:#FFBF00"><i class="fa fa-cloud-download"
+													aria-hidden="true" ></i>예약하기</a>
+												</c:otherwise>
+												</c:choose>
 											</div>
 										</div>
 									</div>
