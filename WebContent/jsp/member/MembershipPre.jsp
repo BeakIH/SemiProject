@@ -4,9 +4,8 @@
 <html> 
 <head><title> </title></head>
 <body> 
-
-          
-          <!-- 멤버십 정보 -->
+<c:if test="${check==2}">
+            <!-- 멤버십 정보 -->
           
           <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
@@ -31,9 +30,14 @@
             </form>
             
             <!-- 등급 어떻게 산정/나눌것? 혜택페이지 필요 -->
-            
-            
+      
           </div>
-        
-</body>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</c:if>
+
+</body>  
 </html>
