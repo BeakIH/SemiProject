@@ -30,18 +30,18 @@ public class BookingDBBean {
 		try {
 			conn = getConnection();
 			//가라 데이터 집어넣기 - 수정해서 가라데이터 집어넣어줘야함
-			pstmt = conn.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			pstmt.setInt(1, 1);
-			pstmt.setInt(2, 1);
-			pstmt.setInt(3, 1);
-			pstmt.setInt(4, 1);
-			pstmt.setString(5, "강호동");
-			pstmt.setString(6, "010-1111-1241");
+			pstmt = conn.prepareStatement("insert into booking values(SEQ_ID.NEXTVAL,?,?,?,?,?,?,?,?,?,'N',?,?,?)");
+			pstmt.setInt(1, booking.getBkNo());
+			pstmt.setInt(2, booking.getWtNo());
+			pstmt.setInt(3, booking.getEmpNo());
+			pstmt.setInt(4, booking.getMemNo());
+			pstmt.setString(5, booking.getMemNm());
+			pstmt.setString(6, booking.getMemTel());
 			pstmt.setString(7, booking.getStoreNm());
 			pstmt.setString(8, booking.getBkDate());
 			pstmt.setString(9, booking.getBkCnt());
 			pstmt.setString(10, booking.getBkMenu());
-			/*pstmt.setString(11, booking.getCofirmYn());*/ //N값 넣어줘야됨
+			//pstmt.setString(11, booking.getCofirmYn()); //N값 넣어줘야됨
 			pstmt.setInt(11, booking.getBkTblCnt());
 			pstmt.setInt(12, booking.getStoreNo());
 			pstmt.setString(13, booking.getBkPriSum());
