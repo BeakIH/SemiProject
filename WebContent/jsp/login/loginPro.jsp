@@ -5,7 +5,7 @@
 <c:set var="passfalse" value="<script type='text/javascript'> alert('비밀번호를 확인해주세요.');</script>"/>
 <c:set var="idfalse" value="<script type='text/javascript'> alert('아이디를 확인해주세요.');</script>"/>
 <c:set var="maneger" value="<script type='text/javascript'> alert('관리자로 로그인합니다. ${name} 님 환영합니다.');</script>"/>
-<<<<<<< HEAD
+
 <c:set var="normal" value="<script type='text/javascript'> alert('${name} 님 환영합니다.');</script>"/>
 <c:set var="check" value="${check}"/>
 <c:choose>
@@ -17,7 +17,7 @@
 	
 	<c:when test= "${check==1}">
 		<c:out value="${normal}" escapeXml = "false" />
-		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/storeList/main.jsp'">  
+		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/member/MembershipPre.jsp'">  
 	</c:when>
 	
 	<c:when test= "${check==2}">
@@ -31,3 +31,5 @@
 	</c:when>
 	
 </c:choose>
+
+<!-- <meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/storeList/main.jsp'"> -->

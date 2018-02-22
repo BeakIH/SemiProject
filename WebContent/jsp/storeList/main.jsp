@@ -116,7 +116,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark navbar-over absolute-top" id="menu">
   <div class="container">
-  <a class="navbar-brand" href="index.html"><!-- <span class="icon-uilove-realestate"></span> -->
+  <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
 	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
@@ -141,7 +141,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
          	조회
         </a>
         <div class="dropdown-menu">
-            <a href="list.do" class="dropdown-item">목록보기</a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">매장보기</a>
             <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
@@ -263,7 +263,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
       </li> -->
-       <button class="btn btn-primary" type="submit"><a href="/jsp/member/SignInCon.do"><i class="fa fa-power-off"></i></a></button>
+       <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off"></i></a></button>
        
       <!-- <li class="nav-item add-listing"><a class="nav-link" href="/jsp/member/SigninCon.jsp"><span> -->
      <!--  <i class="fa fa-power-off" ></i> 로그인 </span></a></li> -->

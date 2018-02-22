@@ -4,7 +4,7 @@
 <html> 
 <head><title> </title></head>
 <body> 
-<c:if test="${check==2}">
+
             <!-- 멤버십 정보 -->
           
           <div class="col-md-7 col-lg-8 col-xl-8">
@@ -37,7 +37,7 @@
     </div>
   </div>
 </div>
-</c:if>
+
 
 </body>  
 </html>

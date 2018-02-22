@@ -38,9 +38,9 @@
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<script>
+<!-- <script>
 alert('${check}')
-</script>
+</script> -->
 <script>
 var placeSearch, autocomplete;
 var componentForm = {
@@ -507,9 +507,7 @@ function fillInAddress() {
 </c:when>
 
 
-<c:when test= "${check==null}">
 
-</c:when>
 </c:choose>
 <!-- 푸터 START -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
@@ -532,7 +530,7 @@ function fillInAddress() {
           </div>
           <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#"> About BABSAJO </a></li>
+              <li><a href="#"> About BABSAZO </a></li>
               <li><a href="#"> Team Introduction </a></li>
               <!-- <li><a href="#">Security</a></li>
               <li><a href="#">Plans</a></li> -->
