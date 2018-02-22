@@ -16,7 +16,7 @@ public class MemberJoinAction implements CommandAction{
 	   @Override
 	   public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         
-        request.setCharacterEncoding("euc-kr"); // 인코딩
+        request.setCharacterEncoding("utf-8"); // 인코딩
        
         ActionForward forward = new ActionForward();
         

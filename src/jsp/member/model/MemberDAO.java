@@ -41,10 +41,7 @@ public class MemberDAO
 	      Connection conn = null;
 	      PreparedStatement pstmt = null;
 	      
-	         
-	      
 	      try {
-	         
 	         
 	         conn = getConnection();
 	         
@@ -52,9 +49,7 @@ public class MemberDAO
 	         String sql = "insert into MEMBER values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";  
 	         pstmt = conn.prepareStatement(sql);
 	         
-	         pstmt = conn.prepareStatement(sql); 
-	            
-	            pstmt.setString(1, member.getMem_no());
+	         	pstmt.setInt(1, member.getMem_no());
 	            pstmt.setString(2, member.getMem_nm());
 	            pstmt.setString(3, member.getMem_id());
 	            pstmt.setString(4, member.getMem_pw());
@@ -64,8 +59,6 @@ public class MemberDAO
 	            pstmt.setString(8, member.getEmail_yn());
 	            pstmt.setString(9, member.getFvrt_str_1());
 	            pstmt.setString(10, member.getFvrt_str_2());
-	                    
-	            
 	            
 	         pstmt.executeUpdate();
 	         
@@ -138,16 +131,16 @@ public class MemberDAO
                 **/
                 // 자바빈에 정보를 담는다.
                 member = new MemberBean();
-                member.setMem_no(rs.getString("memno"));
-                member.setMem_nm(rs.getString("name"));
-                member.setMem_id(rs.getString("id"));
+                member.setMem_no(rs.getString("mem_no"));
+                member.setMem_nm(rs.getString("mem_nm"));
+                member.setMem_id(rs.getString("mem_id"));
                 member.setMem_pw(rs.getString("password"));
-                member.setMem_tel(rs.getString("phone"));
+                member.setMem_tel(rs.getString("mem_tel"));
                 member.setAddress(rs.getString("address"));
                 member.setEmail(rs.getString("email"));
-                member.setEmail_yn(rs.getString("emailyn"));
-                member.setFvrt_str_1(rs.getString("food1"));
-                member.setFvrt_str_1(rs.getString("food2"));
+                member.setEmail_yn(rs.getString("email_yn"));
+                member.setFvrt_str_1(rs.getString("fvr_str_1"));
+                member.setFvrt_str_2(rs.getString("fvr_str_2"));
              }
  
             return member;
