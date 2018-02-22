@@ -6,16 +6,16 @@ public class BookingDataBean {
 	
  
 	    // 예약번호 예약번호
-	    private Integer bkNo;
+	    private int bkNo;
 
 	    //  대기번호
-	    private Integer wtNo;
+	    private int wtNo;
  
 	    //  예약확인담당자
-	    private Integer empNo;
+	    private int empNo;
 
 	    // 예약회원번호 예약회원번호
-	    private Integer memNo;
+	    private int memNo;
 
 	    // 회원명 예약자명
 	    private String memNm;
@@ -39,10 +39,10 @@ public class BookingDataBean {
 	    private String cofirmYn;
 
 	    //  예약테이블수
-	    private Integer bkTblCnt;
+	    private int bkTblCnt;
 
 	    //  매장번호
-	    private Integer storeNo;
+	    private int storeNo;
 	    // 예약음식 총 가격
 	    private String bkPriSum;
 	    
@@ -55,35 +55,35 @@ public class BookingDataBean {
 			this.bkPriSum = bkPriSum;
 		}
 
-		public Integer getBkNo() {
+		public int getBkNo() {
 	        return bkNo;
 	    }
 
-	    public void setBkNo(Integer bkNo) {
+	    public void setBkNo(int bkNo) {
 	        this.bkNo = bkNo;
 	    }
 
-	    public Integer getWtNo() {
+	    public int getWtNo() {
 	        return wtNo;
 	    }
 
-	    public void setWtNo(Integer wtNo) {
+	    public void setWtNo(int wtNo) {
 	        this.wtNo = wtNo;
 	    }
 
-	    public Integer getEmpNo() {
+	    public int getEmpNo() {
 	        return empNo;
 	    }
 
-	    public void setEmpNo(Integer empNo) {
+	    public void setEmpNo(int empNo) {
 	        this.empNo = empNo;
 	    }
 
-	    public Integer getMemNo() {
+	    public int getMemNo() {
 	        return memNo;
 	    }
 
-	    public void setMemNo(Integer memNo) {
+	    public void setMemNo(int memNo) {
 	        this.memNo = memNo;
 	    }
 
@@ -143,19 +143,19 @@ public class BookingDataBean {
 	        this.cofirmYn = cofirmYn;
 	    }
 
-	    public Integer getBkTblCnt() {
+	    public int getBkTblCnt() {
 	        return bkTblCnt;
 	    }
 
-	    public void setBkTblCnt(Integer bkTblCnt) {
+	    public void setBkTblCnt(int bkTblCnt) {
 	        this.bkTblCnt = bkTblCnt;
 	    }
 
-	    public Integer getStoreNo() {
+	    public int getStoreNo() {
 	        return storeNo;
 	    }
 
-	    public void setStoreNo(Integer storeNo) {
+	    public void setStoreNo(int storeNo) {
 	        this.storeNo = storeNo;
 	    }
 }
