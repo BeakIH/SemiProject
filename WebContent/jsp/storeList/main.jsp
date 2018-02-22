@@ -17,8 +17,8 @@
 <link href="../../lib/swiper/css/swiper.min.css" rel="stylesheet">
 <link href="../../lib/aos/aos.css" rel="stylesheet">
 <link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css?ver=4" rel="stylesheet"> 
-<link href="../../css/sidestyle.css?ver=4" rel="stylesheet">
+<link href="../../css/style.css?ver=5" rel="stylesheet"> 
+<link href="../../css/sidestyle.css?ver=5" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../lib/jquery-3.2.1.min.js"></script>
@@ -79,6 +79,38 @@ $(document).ready(function(){
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 } */
+
+/* 자동완성 */
+/* $(function(){
+    $( "#autocomplete" ).autocomplete({
+        source : function( request, response ) {
+             $.ajax({
+                    type: 'post',
+                    url: "/jsp/storeList/main.do",
+                    dataType: "json",
+                    //request.term = $("#autocomplete").val()
+                    data: { value : request.term },
+                    success: function(data) {
+                        //서버에서 json 데이터 response 후 목록에 뿌려주기 위함
+                        response(
+                            $.map(data, function(item) {
+                                return {
+                                    label: item.data,
+                                    value: item.data
+                                }
+                            })
+                        );
+                    }
+               });
+            },
+        //조회를 위한 최소글자수
+        minLength: 2,
+        select: function( event, ui ) {
+            // 만약 검색리스트에서 선택하였을때 선택한 데이터에 의한 이벤트발생
+        }
+    });
+}) */
+
 </script>
 
 <script>
@@ -87,13 +119,14 @@ var check=0; // 사이드메뉴 열고닫는데에 사용되는 조건변수
 function openNav() {// 사이드메뉴 버튼 기능
 	/* alert('확인'); */
 	/* location.href='sideList.do'; */
+    /* if (check == 0){ */
     if (check==0){
     	document.getElementById("mySidenav").style.width = "330px";
     	check+=1;
-    }else{
+    }else{     
 	   	document.getElementById("mySidenav").style.width = "0";
     	check-=1;
-    }
+    }   // 1(l) 0  1 0  1  0 -1  
 }
 
 function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x 버튼 기능
@@ -270,7 +303,9 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   </div>
 </nav>
 <!-- 사이드 바  -->
+<!-- <div id="mySidenav" class="sidenav" onMouseOut="closeNav()"> -->
 <div id="mySidenav" class="sidenav">
+<!-- <div id="mySidenav" class="sidenav"> -->
 	<br>
 	<br>
   	<!-- <a href="#">Services</a> -->
@@ -288,10 +323,10 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   		<td style="width:80px;padding-left: 20px;padding-right: 10px;background-color:none;display:inline-block;">${article.avl_tbl_cnt }</td>
   		<td style="width:80px;padding-left: 10px;padding-right: 10px;background-color:none;display:inline-block;">
   		<c:choose>
-  		<c:when test="${article.avl_tbl_cnt>0 && article.avl_tbl_cnt <=40 }">
+  		<c:when test="${article.cur_tbl_cnt>0 && article.cur_tbl_cnt <=5 }">
   		<font color="red">예약불가</font>
   		</c:when>
-  		<c:when test="${article.avl_tbl_cnt>40 && article.avl_tbl_cnt <=100 }">
+  		<c:when test="${article.cur_tbl_cnt>5 && article.cur_tbl_cnt <=30 }">
   		<font color="blue">예약가능</font>
   		</c:when>
   		</c:choose>
@@ -310,6 +345,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 	
 </div>
 
+<!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()"></span> -->
 <span style="font-size:30px;cursor:pointer" onclick="openNav()"></span>
 <!-- 사이드 바 end -->
 <div class="home-search">
@@ -326,7 +362,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           <div class="row justify-content-md-center">
             <div class="col-md-9 col-lg-8">
             <div class="input-group input-group-lg">
-      <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
+      <input type="text" class="form-control" name="search" id="autocomplete" placeholder="ex) 자장면, 김치찌개, 파스타"> <!-- 여기여깅 -->
    	 <span class="input-group-btn">
       	 <!-- <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button> -->
          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button> 
@@ -381,7 +417,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                         <div class="item-price">13000원 <small>스타쉐프 최현석의 선택</small> </div>
                       </div>
                       <div class="item-badges">
-                        <div class="item-badge-right">세일중</div>
+                        <div class="item-badge-right">행사중</div>
                       </div>
                       </a> </div>
                   </div>
@@ -399,7 +435,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                             <div class="item-price">7000원대 <small>중화요리의 절대고수 이연복</small> </div>
                           </div>
                           <div class="item-badges">
-                            <div class="item-badge-right">예약가능</div>
+                            <div class="item-badge-right">행사중</div>
                           </div>
                           </a> </div>
                       </div>
@@ -417,7 +453,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                             <div class="item-price">10000원대 <small>미쉐린 스타쉐프 김성일의 식당</small> </div>
                           </div>
                           <div class="item-badges">
-                            <div class="item-badge-right">예약가능</div>
+                            <div class="item-badge-right">행사중</div>
                           </div>
                           </a> </div>
                       </div>
@@ -433,7 +469,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                             <div class="item-price">6500원대 <small>전통 일식의 그맛</small> </div>
                           </div>
                           <div class="item-badges">
-                            <div class="item-badge-right">예약가능</div>
+                            <div class="item-badge-right">행사중</div>
                           </div>
                           </a> </div>
                       </div>
@@ -734,7 +770,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           </div>
           <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#"> About BABSAJO </a></li>
+              <li><a href="#"> About BABSAZO </a></li>
               <li><a href="#"> Team Introduction </a></li>
               <!-- <li><a href="#">Security</a></li>
               <li><a href="#">Plans</a></li> -->
