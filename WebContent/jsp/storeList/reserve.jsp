@@ -203,17 +203,17 @@ $( document ).ready(function() {
  /* 인원 수 */
  var avl = $('#avl_tbl_cnt').val() * 4;
  $('#bk_cnt').html('');
- for(var i = 1; i <= avl; i++){
+ for(var i = 1; i <= avl -5*4; i++){
  	$('#bk_cnt').append('<option value="' + i + '">' + i + '인</option>');
- 	if(i == 40) break;
+ 	if(i == 20) break;
  }
  
  /* 테이블 수 */
  var avl_tbl_cnt = $('#avl_tbl_cnt').val();
  $('#bk_tbl_cnt').html('');
- for(var i = 1; i <= avl_tbl_cnt; i++){
+ for(var i = 1; i <= avl_tbl_cnt-5; i++){
 	 	$('#bk_tbl_cnt').append('<option value="' + i + '">' + i + '개 테이블</option>');
-	 	if(i == 10) break;
+	 	if(i == 5) break;
 	 }
  
  /* raido 이벤트 */
@@ -400,10 +400,7 @@ $( document ).ready(function() {
    </div>
    </c:forEach>
   <form action="./reserveInsert.do">
-  <%-- <c:forEach var="member" items="${member}"> 
-  		<input type="hidden" value="${member.memNo }" name="mem_no" />
-  		<input type="hidden" value="${member.memNm }" name="mem_nm" />
-  		<input type="hidden" value="${member.memTel }" name="mem_tel" /> --%>
+ 
  <c:forEach var="article" items="${articleList}">
 	   <input type="hidden" value="${article.store_exp }" name="oTime" />
 	   <input type="hidden" value="${article.avl_tbl_cnt }" name="avl_tbl_cnt" />
@@ -436,7 +433,13 @@ $( document ).ready(function() {
           <div class="col-lg-3">
             <div class="form-group">
               <label><h5 style="padding-top: 15px";> 예약자 성함</h5></label>
-                <input type="text" id="useName" name="mem_nm"class="form-control form-control-lg" placeholder="" value="이수근<%-- ${member.memNm } --%>">
+      <%--  <c:forEach var="member" items="${member}"> 
+  		<input type="hidden" value="${member.memNo }" name="mem_no" />
+  		<input type="hidden" value="${member.memNm }" name="mem_nm" />
+  		<input type="hidden" value="${member.memTel }" name="mem_tel" />  --%>
+  		  
+                <input type="text" id="useName" name="mem_nm"class="form-control form-control-lg" placeholder="" value=" ${member.memNm }">
+           <%--  </c:forEach> --%> 
             </div>
           </div>
            <div class="col-lg-3">
@@ -495,12 +498,10 @@ $( document ).ready(function() {
     </div>
   </div>
   </c:forEach>
- <%--  </c:forEach> --%>
+ 
   </form>
 </div>
    
-<%-- </c:forEach>
- --%>
 
 </body>
 </html>

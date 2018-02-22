@@ -357,7 +357,7 @@ function realtimeClock() {
 								</div>
 								<div class="col-md-4">
 									<div class="price">
-										예약가능테이블: ${article.avl_tbl_cnt } <br /><span id="realTime" style="font-size:16px; color:blue"></span>										
+										예약가능테이블: ${article.avl_tbl_cnt -5 } <br /><span id="realTime" style="font-size:16px; color:blue"></span>										
 									</div>
 								</div>
 							</div>
