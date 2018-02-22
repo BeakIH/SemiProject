@@ -217,35 +217,38 @@
                 <li>월 1회 20% 할인 쿠폰 지급</li>
                 <li>결제시 총 금액의 3% 추가 할인</li>
                 <li>구매 금액의 3% 포인트 적립</li>
-                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">확인하기</a></li>
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md-4">
             <div class="pricing-column popular">
               <ul>
-                <li class="title">BABSAZO의 <small> 프로 먹방러</small></li>
+                <li class="title">BABSAZO의 <small> 대지주</small></li>
                 <li class="price">BAB포인트 200,000이상 500,000미만  / 월(Month)</li>
-                <li>월 2회 메인 무료 쿠폰 </li>
-                <li>월 2회 30% 할인 쿠폰 지급</li>
-                <li>결제시 총 금액의 5% 추가 할인</li>
-                <li>구매 금액의 5% 포인트 적립</li>
-               
-                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="pricing-column">
-              <ul>
-                <li class="title">BABSAZO의 <small> 대지주 </small> </li>
                 <li class="price">BAB포인트 500,000이상 / 월(Month)</li>
                 <li>월 3회 메인 무료 쿠폰</li>
                 <li>BABSAZO 이달의 식당 초대권</li>
                 <li>월 3회 40% 할인 쿠폰 지급</li>
                 <li>결제시 총 금액의 7% 추가 할인</li>
                 <li>구매 금액의 7% 포인트 적립</li>
-                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">얼마나 남았나</a></li>
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
+              </ul>
+                
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-column">
+              <ul>
+                <li class="title">BABSAZO의 <small> 프로 먹방러 </small> </li>
+                <li class="price">BAB포인트 500,000이상 / 월(Month)</li>
+                
+                <li>월 2회 메인 무료 쿠폰 </li>
+                <li>월 2회 30% 할인 쿠폰 지급</li>
+                <li>결제시 총 금액의 5% 추가 할인</li>
+                <li>구매 금액의 5% 포인트 적립</li>
+               
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
               </ul>
             </div>
           </div>

@@ -7,7 +7,7 @@ package jsp.member.model;
 public class MemberBean 
 {
 	
-	private String mem_no;
+	private int mem_no;
 	private String mem_nm;
 	private String mem_id;            
     private String mem_pw;    
@@ -18,10 +18,10 @@ public class MemberBean
     private String fvrt_str_1;      
     private String fvrt_str_2;
     
-	public String getMem_no() {
+	public int getMem_no() {
 		return mem_no;
 	}
-	public void setMem_no(String mem_no) {
+	public void setMem_no(int mem_no) {
 		this.mem_no = mem_no;
 	}
 	public String getMem_nm() {
