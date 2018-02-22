@@ -116,8 +116,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark navbar-over absolute-top" id="menu">
   <div class="container">
-  <a class="navbar-brand" href="index.html"><!-- <span class="icon-uilove-realestate"></span> -->
-	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="100"></span>
+  <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
+	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,7 +141,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
          	조회
         </a>
         <div class="dropdown-menu">
-            <a href="list.do" class="dropdown-item">목록보기</a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">매장보기</a>
             <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
@@ -250,9 +250,9 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
     <ul class="navbar-nav ml-auto">
       
       
-      <li class="nav-item dropdown user-account">
+      <!-- <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 로그인
         </a>
         <div class="dropdown-menu">
             <a href="my_profile.html" class="dropdown-item">My Profile</a>
@@ -262,8 +262,12 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <a href="my_payments.html" class="dropdown-item">Payments</a>
             <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
-      </li>
-      <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
+      </li> -->
+       <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off"></i></a></button>
+       
+      <!-- <li class="nav-item add-listing"><a class="nav-link" href="/jsp/member/SigninCon.jsp"><span> -->
+     <!--  <i class="fa fa-power-off" ></i> 로그인 </span></a></li> -->
+    
     </ul>
     
   </div>
@@ -278,9 +282,9 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   	<!-- <a href="#">Clients</a>
   	<a href="#">Contact</a> -->
 	<!-- <div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div> -->
-	<div class="sideMenu" style="width:80px;padding-left: 15px;">매장명</div>
-	<div class="sideMenu" style="width:95px;">현재인원</div>
-	<div class="sideMenu" style="width:80px;">상태</div>
+	<div class="sideMenu" style="width:95px;padding-left: 15px;">매장명</div>
+	<div class="sideMenu" style="width:95px;">이용중</div>
+	<div class="sideMenu" style="width:95px;">이용가능</div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>
@@ -328,7 +332,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <div class="input-group input-group-lg">
       <input type="text" class="form-control" name="search" id="mainsearch" placeholder="ex) 자장면, 김치찌개, 파스타">
    	 <span class="input-group-btn">
-      	 <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+      	 <!-- <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button> -->
          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button> 
       </span>
     </div>

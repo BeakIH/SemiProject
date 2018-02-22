@@ -203,17 +203,17 @@ $( document ).ready(function() {
  /* 인원 수 */
  var avl = $('#avl_tbl_cnt').val() * 4;
  $('#bk_cnt').html('');
- for(var i = 1; i <= avl; i++){
+ for(var i = 1; i <= avl -5*4; i++){
  	$('#bk_cnt').append('<option value="' + i + '">' + i + '인</option>');
- 	if(i == 40) break;
+ 	if(i == 20) break;
  }
  
  /* 테이블 수 */
  var avl_tbl_cnt = $('#avl_tbl_cnt').val();
  $('#bk_tbl_cnt').html('');
- for(var i = 1; i <= avl_tbl_cnt; i++){
+ for(var i = 1; i <= avl_tbl_cnt-5; i++){
 	 	$('#bk_tbl_cnt').append('<option value="' + i + '">' + i + '개 테이블</option>');
-	 	if(i == 10) break;
+	 	if(i == 5) break;
 	 }
  
  /* raido 이벤트 */
@@ -355,25 +355,7 @@ $( document ).ready(function() {
             style="background-color:#563d7c; text-align: center; font-size: 17px;"
             class=""><span style="color:white;font-weight: bold">미리주문</span></div>
          </div>
-         
-	<!--  
-	수량 카운터 할 수있는
-	 <td>
-          <table>
-            <tr>
-              <td><input type="text" name="num" value="1" id="" class="num"/></td>
-              <td>
-                <div>
-                  <img src="http://placehold.it/10x10" alt="" width="10" height="10" class="bt_up"/>
-                </div>
-                <div>
-                  <img src="http://placehold.it/10x10" alt="" width="10" height="10" class="bt_down" />
-                </div>
-              </td>
-            </tr>
-          </table>
-        </td> -->
-        
+   
         
 		<div id="chkBox">
       <c:forEach var="menu" items="${article.menuList}" varStatus="status">
@@ -418,12 +400,13 @@ $( document ).ready(function() {
    </div>
    </c:forEach>
   <form action="./reserveInsert.do">
+ 
  <c:forEach var="article" items="${articleList}">
 	   <input type="hidden" value="${article.store_exp }" name="oTime" />
 	   <input type="hidden" value="${article.avl_tbl_cnt }" name="avl_tbl_cnt" />
 	   <input type="hidden" value="${article.store_nm }" name="store_nm" />
 	   <input type="hidden" value="${article.store_no }" name="store_no" />
-	   
+	   <input type="hidden" value="${article.emp_no }" name="emp_no" />
 	   
    <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modar" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
   <div class="modal-dialog modal-lg"> 
@@ -449,8 +432,14 @@ $( document ).ready(function() {
         <div class="row">
           <div class="col-lg-3">
             <div class="form-group">
-              <label><h5 style="padding-top: 15px";> 이름</h5></label>
-                <input type="text" id="useName" name="mem_nm"class="form-control form-control-lg" placeholder="" value="이수근">
+              <label><h5 style="padding-top: 15px";> 예약자 성함</h5></label>
+      <%--  <c:forEach var="member" items="${member}"> 
+  		<input type="hidden" value="${member.memNo }" name="mem_no" />
+  		<input type="hidden" value="${member.memNm }" name="mem_nm" />
+  		<input type="hidden" value="${member.memTel }" name="mem_tel" />  --%>
+  		  
+                <input type="text" id="useName" name="mem_nm"class="form-control form-control-lg" placeholder="" value=" ${member.memNm }">
+           <%--  </c:forEach> --%> 
             </div>
           </div>
            <div class="col-lg-3">
@@ -509,11 +498,10 @@ $( document ).ready(function() {
     </div>
   </div>
   </c:forEach>
+ 
   </form>
 </div>
    
-<%-- </c:forEach>
- --%>
 
 </body>
 </html>

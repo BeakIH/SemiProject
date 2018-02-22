@@ -4,7 +4,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>BABSAZO</title>
 
+<!-- Bootstrap -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
+<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../lib/animate.css" rel="stylesheet">
+<link href="../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../lib/popper.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../lib/aos/aos.js"></script>
+<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../lib/lib.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 <body>
 <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
@@ -18,7 +53,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Home <span class="sr-only">(current)</span>
+          메인<span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
@@ -132,24 +167,29 @@
       
     </ul>
     
+    
+    
+    
     <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> -님, 안녕하세요
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="my_profile.html" class="dropdown-item"></a>
+            <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
+            <a href="my_notifications.html" class="dropdown-item">BABSAZO알림</a>
+            <a href="my_membership.html" class="dropdown-item">BABSAZO멤버십</a>
+            <a href="my_payments.html" class="dropdown-item">껼제 정보</a>
+            <a href="my_account.html" class="dropdown-item">계정 설정</a>
         </div>
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
+    
+    
     
   </div>
   </div>
@@ -158,39 +198,18 @@
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-          <div class="col col-lg-12 col-xl-10">
+      <div class="col col-lg-12 col-xl-10">
         <div class="row has-sidebar">
           <div class="col-md-5 col-lg-4 col-xl-4">
             <div id="sidebar" class="sidebar-left">
               <div class="sidebar_inner">
                 <div class="list-group no-border list-unstyled">
                 
-                
-                
-                
-                  <span class="list-group-item heading"> 내 매장 목록</span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한 BABSAZO</span>
-                    <span class="badge badge-primary badge-pill">10</span>
-                    </a>
-                  <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
-                    <span class="badge badge-primary badge-pill">7</span>
-                    </a>
-                  <span class="list-group-item heading"> 내 계정 관리</span>
-                  <a href="my_profile.html" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
-<a href="my_membership.html" class="list-group-item active"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a>
-<a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
-<a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-            <decorator:body/>
-            
-            
+       
+       
+       뫄뫄뫄
+       
+       
           </div>
         </div>
       </div>
@@ -201,7 +220,7 @@
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
-          <div class="col col-md-10">
+      <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
@@ -251,3 +270,6 @@
 </div>
 </body>
 </html>
+                
+                
+                

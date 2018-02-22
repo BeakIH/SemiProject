@@ -11,26 +11,25 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../lib/animate.css" rel="stylesheet">
-<link href="../../lib/selectric/selectric.css" rel="stylesheet">
-<link href="../../lib/aos/aos.css" rel="stylesheet">
-<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css" rel="stylesheet">
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate.css" rel="stylesheet">
+<link href="lib/selectric/selectric.css" rel="stylesheet">
+<link href="lib/aos/aos.css" rel="stylesheet">
+<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../../lib/jquery-3.2.1.min.js"></script>
-<script src="../../lib/popper.min.js"></script>
+<script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../lib/selectric/jquery.selectric.js"></script>
-<script src="../../lib/tinymce/tinymce.min.js"></script>
-<script src="../../lib/aos/aos.js"></script>
-<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="../../lib/lib.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/selectric/jquery.selectric.js"></script>
+<script src="lib/aos/aos.js"></script>
+<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,7 +51,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          메인<span class="sr-only">(current)</span>
+          Home <span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
@@ -166,51 +165,62 @@
       
     </ul>
     
-    
-    
-    
     <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> -님, 안녕하세요
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item"></a>
-            <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
-            <a href="my_notifications.html" class="dropdown-item">BABSAZO알림</a>
-            <a href="my_membership.html" class="dropdown-item">BABSAZO멤버십</a>
-            <a href="my_payments.html" class="dropdown-item">껼제 정보</a>
-            <a href="my_account.html" class="dropdown-item">계정 설정</a>
+            <a href="my_profile.html" class="dropdown-item">My Profile</a>
+            <a href="my_password.html" class="dropdown-item">Change Password</a>
+            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
+            <a href="my_membership.html" class="dropdown-item">Membership</a>
+            <a href="my_payments.html" class="dropdown-item">Payments</a>
+            <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
     
-    
-    
   </div>
   </div>
 </nav>
-<div class="clearfix"></div>
+<div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-8  col-lg-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
+            <li class="breadcrumb-item"><a href="#">계정</a></li>
+            <li class="breadcrumb-item active" aria-current="page">비밀번호 찾기</li>
+            </ol>
+            </nav>
+        <div class="page-header">
+        <h1>비밀번호 찾기</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-12 col-xl-10">
-        <div class="row has-sidebar">
-          <div class="col-md-5 col-lg-4 col-xl-4">
-            <div id="sidebar" class="sidebar-left">
-              <div class="sidebar_inner">
-                <div class="list-group no-border list-unstyled">
-                
-       
-       
-       뫄뫄뫄
-       
-       
+      <div class="col col-md-8  col-lg-6">
+      
+      <br>
+      <p> &nbsp;비밀번호를 잊으셨나요? 
+      <br><br>가입시 등록하신 이메일을 입력해주세요. 도착한 메일의 링크를 클릭하시면 비밀번호 변경 페이지로 이동합니다.</p>
+            <form>
+            <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <input type="email" id="email" class="form-control input-lg" placeholder="Email Address">
           </div>
-        </div>
+              <button type="submit" class="btn btn-primary btn-lg">입력</button>
+            </form>
+        
+        
+        <div> </div>
       </div>
     </div>
   </div>
@@ -219,7 +229,7 @@
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-md-10">
+          <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
@@ -255,7 +265,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
+                <input type="email" class="form-control" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -267,8 +277,5 @@
   </div>
 </footer>
 </div>
-</body>
-</html>
-                
-                
-                
+
+</body></html>
