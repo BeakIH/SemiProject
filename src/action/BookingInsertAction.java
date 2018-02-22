@@ -26,10 +26,10 @@ public class BookingInsertAction implements CommandAction{
 		
 		BookingDataBean article = new BookingDataBean();
 		
-		article.setBkTblCnt(Integer.parseInt(request.getParameter("mem_no"))); //예약확인 담당자
+		/*article.setBkTblCnt(Integer.parseInt(request.getParameter("mem_no"))); //예약확인 담당자
 		article.setMemNm(request.getParameter("mem_nm")); //로그인 회원이름
 		article.setMemNm(request.getParameter("mem_tel")); //회원 전화번호
-		
+		*/
 		
 		article.setBkTblCnt(Integer.parseInt(request.getParameter("emp_no"))); //예약확인 담당자
 		article.setBkMenu(request.getParameter("bk_menu")); //예약 음식메뉴

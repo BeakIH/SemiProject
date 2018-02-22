@@ -355,25 +355,7 @@ $( document ).ready(function() {
             style="background-color:#563d7c; text-align: center; font-size: 17px;"
             class=""><span style="color:white;font-weight: bold">미리주문</span></div>
          </div>
-         
-	<!--  
-	수량 카운터 할 수있는
-	 <td>
-          <table>
-            <tr>
-              <td><input type="text" name="num" value="1" id="" class="num"/></td>
-              <td>
-                <div>
-                  <img src="http://placehold.it/10x10" alt="" width="10" height="10" class="bt_up"/>
-                </div>
-                <div>
-                  <img src="http://placehold.it/10x10" alt="" width="10" height="10" class="bt_down" />
-                </div>
-              </td>
-            </tr>
-          </table>
-        </td> -->
-        
+   
         
 		<div id="chkBox">
       <c:forEach var="menu" items="${article.menuList}" varStatus="status">
@@ -418,10 +400,10 @@ $( document ).ready(function() {
    </div>
    </c:forEach>
   <form action="./reserveInsert.do">
-  <c:forEach var="member" items="${member}"> 
+  <%-- <c:forEach var="member" items="${member}"> 
   		<input type="hidden" value="${member.memNo }" name="mem_no" />
   		<input type="hidden" value="${member.memNm }" name="mem_nm" />
-  		<input type="hidden" value="${member.memTel }" name="mem_tel" />
+  		<input type="hidden" value="${member.memTel }" name="mem_tel" /> --%>
  <c:forEach var="article" items="${articleList}">
 	   <input type="hidden" value="${article.store_exp }" name="oTime" />
 	   <input type="hidden" value="${article.avl_tbl_cnt }" name="avl_tbl_cnt" />
@@ -454,7 +436,7 @@ $( document ).ready(function() {
           <div class="col-lg-3">
             <div class="form-group">
               <label><h5 style="padding-top: 15px";> 예약자 성함</h5></label>
-                <input type="text" id="useName" name="mem_nm"class="form-control form-control-lg" placeholder="" value="${member.memNm }">
+                <input type="text" id="useName" name="mem_nm"class="form-control form-control-lg" placeholder="" value="이수근<%-- ${member.memNm } --%>">
             </div>
           </div>
            <div class="col-lg-3">
@@ -513,7 +495,7 @@ $( document ).ready(function() {
     </div>
   </div>
   </c:forEach>
-  </c:forEach>
+ <%--  </c:forEach> --%>
   </form>
 </div>
    
