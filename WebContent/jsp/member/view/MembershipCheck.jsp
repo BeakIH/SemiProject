@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -11,25 +11,26 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../../lib/animate.css" rel="stylesheet">
+<link href="../../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../../lib/aos/aos.js"></script>
+<script src="../../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -165,7 +166,7 @@
       
     </ul>
     
-     <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
@@ -187,171 +188,105 @@
   </div>
   </div>
 </nav>
- 
- 
-         <article class="container">
-        <div class="page-header">
-          <h1>회원가입 <small> BABSAZO 회원만의 다양한 할인 혜택 및 프로모션이 기다리고 있어요!</small></h1>
-        </div>
-        
-        
-        <form method="post" action="/SemiProject_CYJ/test3.do"> 
-        
-        
-        <div class="col-md-6 col-md-offset-3">
-        
-        <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">이름</label>
-              <input type="text" class="form-control" name="name" placeholder="이름을 입력해 주세요">
-            </div>
-            <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">회원 아이디</font></label>
-              <div class="input-group">
-                <input type="text" class="form-control" name="id" placeholder="사용하실 아이디를 입력해 주세요">
-                <span class="input-group-btn">
-                  <button class="btn btn-warning"><font color="F9FFFF">아이디 중복 체크</font><i class="fa fa-edit spaceLeft"></i></button>
-                </span>
-                </div>
-                <br>
-              <div class="form-group">
-              <label for="InputPassword1">비밀번호</label>
-              <input type="password" class="form-control" name="password" placeholder="비밀번호">
-            </div>
-            <div class="form-group">
-              <label for="InputPassword2">비밀번호 확인</font></label>
-              <input type="password" class="form-control" name="passwordcheck" placeholder="비밀번호 확인">
-              <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p>
-        
-          
-          
-          <div class="form-group">
-         <tr>
-                    <td id="title">생일</td>
-                    <td>
-                        <input type="text" name="birth_yy" maxlength="4" placeholder="년(4자)" size="6" >
-                        <select name="birth_mm">
-                            <option value="">월</option>
-                            <option value="01" >1</option>
-                            <option value="02" >2</option>
-                            <option value="03" >3</option>
-                            <option value="04" >4</option>
-                            <option value="05" >5</option>
-                            <option value="06" >6</option>
-                            <option value="07" >7</option>
-                            <option value="08" >8</option>
-                            <option value="09" >9</option>
-                            <option value="10" >10</option>
-                            <option value="11" >11</option>
-                            <option value="12" >12</option>
-                        </select>
-                        <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4" >
-                    </td>
-                </tr>
-                </div>
-
-
-          
-          
-          
-          <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">휴대폰 번호</font></label>
-              <div class="input-group">
-                <input type="tel" class="form-control" name="phone" placeholder="- 없이 입력해 주세요"></div> 
-              <div> <input type="checkbox"  value="동의">휴대폰 수신에 동의합니다</div>
-              <div><p class="help-block">(모바일 전용 쿠폰 및 게릴라 할인시 푸시 알림을 받으실 수 있어요)</p></div>
-               <!--  <span class="input-group-btn"> 
-                  <button class="btn btn-warning"><font color="#F9FFFFE">인증번호 전송</font><i class="fa fa-mail-forward spaceLeft"></i></button>
-                </span> --> 
+<div class="clearfix"></div>
+<div id="content">
+  <div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-lg-12 col-xl-10">
+        <div class="row has-sidebar">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <div id="sidebar" class="sidebar-left">
+              <div class="sidebar_inner">
+                <div class="list-group no-border list-unstyled">
                 
+                
+                
+                
+                  <span class="list-group-item heading"> 내 매장 목록</span>
+                  <a href="#" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
+                  <a href="MyCoupon.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> BABSAZO 쿠폰</span>
+                    <span class="badge badge-primary badge-pill">10</span>
+                    </a>
+                  <a href="#" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
+                    <span class="badge badge-primary badge-pill">7</span>
+                    </a>
+                  <span class="list-group-item heading"> 내 계정 관리</span>
+                  <a href="ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
+                  <a href="ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
+<a href="MemberGradePre.jsp" class="list-group-item active"><i class="fa fa-fw fa-cubes"></i> BABSAZO 멤버십</a>
+<a href="PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+<a href="SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
+                </div>
+              </div>
+            </div>
+          </div>
+             <div class="col-md-7 col-lg-8 col-xl-8">
+            <div class="page-header bordered">
+          
+     
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">내 등급 확인</a></li>
+            <li class="breadcrumb-item active" aria-current="page">등급별 혜택 보기</li>
+            </ol>
+            </nav>
+        <h1 class="main-title centered"><span>BABSAZO 등급에 따른 혜택을 확인하세요</span></h1>
+        <div class="lead text-center mb50">이용 횟수, 구매 금액, 후기 작성 등의 활동을 통해
+        <BR>자동으로 BAP포인트가 적립됩니다.<br> 적립된 점수에 따라 올라가는 할인율 및 등급별 발행 쿠폰으로 <br>더 큰 혜택을 누리세요!  </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="pricing-column">
+              <ul>
+                <li class="title">BABSAZO의 <small>먹방요정</small></li>
+                <li class="title centered">BAB포인트 200,000미만 / 월(Month)</li>
+                <li>월 1회 메인 무료 </li>
+                <li>월 1회 20% 할인 </li>
+                <li>결제시 총 금액의 3% 추가 할인</li>
+                <li>구매 금액의 3% 적립</li>
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-column popular">
+              <ul>
+                <li class="title">BABSAZO의 <small> 대지주</small></li>
+                <li class="title centered">BAB포인트 200,000이상 500,000미만  / 월(Month)</li>
+             
+                <li>월 3회 메인 무료</li>
+                <li>이달의 식당 초대권</li>
+                <li>월 3회 40% 할인</li>
+                <li>결제시 총 금액의 7% 추가 할인</li>
+                <li>구매 금액의 7% 적립</li>
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
+              </ul>
+                
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-column">
+              <ul>
+                <li class="title">BABSAZO의 <small> 프로 먹방러 </small> </li>
+                <li class="title centered">BAB포인트 500,000이상 / 월(Month)</li>
+                
+                <li>월 2회 메인 무료 </li>
+                <li>월 2회 30% 할인</li>
+                <li>결제시 총 금액의 5% 추가 할인</li>
+                <li>구매 금액의 5% 적립</li>
                
-                
-             <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">주소</font></label>
-              
-              <div class="input-group">
-                <input type="text" class="form-control" id="username" placeholder="도로명/지번/동·읍·면">
-                <span class="input-group-btn">
-                 
-                 
-                 
-                 <!-- 우편번호 !-->                 
+                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-                  <a href="DoroEx.jsp" class="btn btn-warning"><font color="F9FFFF">우편번호 검색</font><i class="fa fa-mail-forward spaceLeft"></i></a> 
-                </span>
-              </div>
-                <div class="form-group">
-                <input type="text" class="form-control" id="username" placeholder="상세 주소를 입력해 주세요">
-            </div>
-           
-            
-                    
-                <div>
-                
-            <div class="form-group">
-              <label for="InputEmail"><font size="4em" color="52478B">이메일 주소</label></font>
-              <input type="email" class="form-control" name="email" placeholder="이메일을 입력해 주세요">
-            </div>
-            <div> <input type="checkbox" name="chk_info" value="동의">이메일 수신에 동의합니다</div>
-              <div><p class="help-block">(뉴스레터를 통해 새로운 BABSAZO 소식 및 신간 쿠폰을 제일 먼저 받아보세요)</p></div>
-            
-           
-            </div>
-           
-            </div>
-        
-            <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">SNS/블로그(선택)</label></font>
-              <input type="text" class="form-control" name="sns" placeholder="SNS 혹은 블로그 주소를 입력해 주세요">
-                 <p class="help-block">SNS 또는 블로그 등의 공유 활동으로 BABSAZO 포인트를 쌓아보세요</p>
-            </div>
-            
-            <div class="form-group">
-              <font size="4em" color="52478B"><label for="username">선호하는 음식(중복선택 가능)</font></label>
-               <!-- 카테고리 나오면 하위항목 재설정 -->
-           <div> <input type="checkbox" name="chk_info" value="한식">한식
-                 <input type="checkbox" name="chk_info" value="중식">중식
-                 <input type="checkbox" name="chk_info" value="일식">일식 
-                 <input type="checkbox" name="chk_info" value="양식">양식
-                 <input type="checkbox" name="chk_info" value="세계음식">세계음식
-                 <input type="checkbox" name="chk_info" value="디저트">디저트 
-                 <div> 
-                 <input type="checkbox" name="chk_info" value="밥">밥
-                 <input type="checkbox" name="chk_info" value="면">면
-                 <input type="checkbox" name="chk_info" value="분식">분식  
-                 <input type="checkbox" name="chk_info" value="채식">채식
-                 <input type="checkbox" name="chk_info" value="육류">육류
-                 <input type="checkbox" name="chk_info" value="후식">후식   
-              </div>
-              </div>
-              <input type="text" class="form-control" name="foodetc" placeholder="기타">
-            </div>
-            
-           </div> </div> 
-            
-            <div class="form-group">
-                <label>약관 동의</label>
-              <div data-toggle="buttons">
-              <label class="btn btn-info active">
-                  <span class="fa fa-check"></span>
-                  <input id="agree" type="checkbox" autocomplete="off" checked>
-              </label>
-              <a href="#"><font size="4em">이용약관 및 개인정보 처리방침에 동의합니다.(필수)</a></font>
-              </div>
-            </div>
-            <div class="row justify-content-md-center">
-            <button type="submit" class="btn btn-warning"><font color="#800080"></font>회원가입<i class="fa fa-check spaceLeft"></i></button>
-              <button type="button" class="btn btn-danger">가입취소<i class="fa fa-times spaceLeft"></i></button>
-            </form>
-            
-            </div>
-            </div>
-            
-            </article>
-            </html>
-            
- 
-      
 
+<button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
@@ -391,7 +326,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -403,5 +338,5 @@
   </div>
 </footer>
 </div>
-
-</body></html>
+</body>
+</html>

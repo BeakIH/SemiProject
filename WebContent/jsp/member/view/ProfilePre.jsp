@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,26 +11,26 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../../lib/animate.css" rel="stylesheet">
+<link href="../../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/tinymce/tinymce.min.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../../lib/aos/aos.js"></script>
+<script src="../../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -182,13 +181,16 @@
             <a href="my_payments.html" class="dropdown-item">Payments</a>
             <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
+        
+        
+        
+        
+        
+        
+        
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
-    
-    
-    
-    
     
   </div>
   </div>
@@ -206,23 +208,26 @@
                 
                 
                 
+                <!-- 회원계정 페이지 전체수정 필요(account.html) -->
                 
-                
-                  <span class="list-group-item heading">BABSAZO 알림설정</span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한 BABSAZO</span>
+                  <span class="list-group-item heading"> 내 매장 목록</span>
+                      <a href="#" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
+                  <a href="MyCoupon.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> BABSAZO 쿠폰</span>
                     <span class="badge badge-primary badge-pill">10</span>
                     </a>
-                  <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
+                  <a href="#" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
                     <span class="badge badge-primary badge-pill">7</span>
                     </a>
+                
+                
+                
                   <span class="list-group-item heading">내 계정 관리</span>
-                  <a href="my_profile.html" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="my_notifications.html" class="list-group-item active"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
-<a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a>
-<a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
-<a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
+                 <a href="ProfilePre.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
+                  <a href="ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
+<a href="MemberGradePre.jsp" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO 멤버십</a>
+<a href="PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+<a href="SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
                 </div>
               </div>
             </div>
@@ -231,48 +236,142 @@
           
           
           
-          <!-- 알림 수신 설정 부분 -->
+          
+          <!-- 프로필.html수정 -->
+          
           <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
-              <h1>BABSAZO 알림 설정</h1>
+              <h1>프로필 설정<small>BABSAZO에서 사용할 프로필을 설정해주세요</small></h1>
             </div>
             <form action="index.php">
-            <h3 class="subheadline">휴대폰 알림 설정</h3>
-              <div class="form-group">
-                <div class="checkbox">
-                    <input type="checkbox" id="private_message" checked>
-                    <label for="private_message">BABSAZO 게릴라 세일 푸시 알림에 동의합니다. </label>
+              <h3 class="subheadline">기본 정보</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> 성</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="밥">
                   </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>이름</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="사조">
+                  </div>
+                </div>
               </div>
               <div class="form-group">
-                <div class="checkbox">
-                    <input type="checkbox" id="item_message" checked>
-                    <label for="item_message">BABSAZO 이벤트 소식 및 쿠폰을 받겠습니다.</label>
+                <label>이메일</label>
+                <input type="text" class="form-control form-control-lg" value="babsazo@email.com">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>휴대폰</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
                   </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>집/팩스</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>회원님은 어떤 분이신가요?</label>
+                <textarea class="form-control form-control-lg text-editor" placeholder=""></textarea>
+              </div>
+              <h3 class="subheadline">SNS</h3>
+              <div class="form-group">
+                <label>Twitter</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-twitter"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Facebook</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-facebook"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Google Plus</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-google-plus"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+              
+              <!-- 인스타그램으로 바꿔보기-->
+                <label>Linkedin</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-linkedin"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                   
+                </div>
               </div>
               <br>
-            <h3 class="subheadline">기타 알림 설정</h3> 
-            <div class="form-group">
-                <div class="checkbox">
-                    <input type="checkbox" id="marketing_emails" checked>
-                    <label for="marketing_emails"> 이메일로 BABSAZO 쿠폰 및 광고를 받겠습니다.</label>
-                  </div>
-              </div>
+              
+              <h3 class="subheadline">거주지 또는 관심 BABSAZO 지역</h3>
               <div class="form-group">
-                <div class="checkbox">
-                    <input type="checkbox" id="monthly_newsletter" checked>
-                    <label for="monthly_newsletter">우편으로 BABSAZO 월간 소식지 및 쿠폰을 받겠습니다.</label>
-                  </div>
+                <label>예) 서울/종로구</label>
+                <input type="text" class="form-control form-control-lg">
               </div>
-              <div class="form-group">
-                <div class="checkbox">
-                    <input type="checkbox" id="weekly_digest" checked>
-                    <label for="weekly_digest">이메일로 주간 BABSAZO 쿠폰 및 알림을 받겠습니다.</label>
+              
+              
+              <div class="row">
+              
+              
+              <!-- 주소 / 관심지역설정(?) 일단보류
+                <div class="col-lg-6">
+              
+                  <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" class="form-control form-control-lg" id="autocomplete" placeholder="Enter your location">
                   </div>
-              </div>             
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="locality">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="administrative_area_level_1">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="country">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Zipcode</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="postal_code">
+                  --> 
+                  
+                  
+                  
+                  
+                  </div> 
+                </div>
+              </div>
               <hr>
-              <div class="form-group">
-                <button type="submit" class="btn btn-lg btn-primary">알림 설정 저장</button>
+              <div class="form-group action">
+                <button type="submit" class="btn btn-lg btn-primary">프로필 수정</button>
               </div>
             </form>
           </div>
@@ -332,6 +431,51 @@
     </div>
   </div>
 </footer>
-</div>  
+</div>
+<script>
+var placeSearch, autocomplete;
+var componentForm = {
+	//street_number: 'short_name',
+	//route: 'long_name',
+	locality: 'long_name',
+	administrative_area_level_1: 'long_name',
+	country: 'long_name',
+	postal_code: 'long_name'
+};
+
+function initAutocomplete() {
+	autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
+	autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+	var place = autocomplete.getPlace();
+	for (var component in componentForm) {
+		document.getElementById(component).value = '';
+		document.getElementById(component).disabled = false;
+	}
+	
+	for (var i = 0; i < place.address_components.length; i++) {
+		var addressType = place.address_components[i].types[0];
+		if (componentForm[addressType]) {
+			var val = place.address_components[i][componentForm[addressType]];
+			document.getElementById(addressType).value = val;
+		}
+	}
+}
+</script> 
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script> 
+<script>
+	tinymce.init({
+		selector: '.text-editor',
+		height: 200,
+		menubar: false,
+		branding: false,
+		plugins: [
+			'lists link image preview',
+		],
+		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
+	});
+        </script>
 </body>
 </html>

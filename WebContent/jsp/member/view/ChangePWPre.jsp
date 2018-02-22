@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -8,28 +8,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>BABSAZO</title>
-<!-- ㅇㅇ -->
+
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../../lib/animate.css" rel="stylesheet">
+<link href="../../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../../lib/aos/aos.js"></script>
+<script src="../../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -180,6 +181,13 @@
             <a href="my_payments.html" class="dropdown-item">Payments</a>
             <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
+        
+        
+        
+        
+        
+        
+        
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
@@ -187,14 +195,133 @@
   </div>
   </div>
 </nav>
+<div class="clearfix"></div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-12">
-        <div class="error-template text-center"> <i class="fa fa-check fa-5x text-success mb50 animated zoomIn"></i>
-          <h3 class="main-title centered"><span>회원가입이 완료 되었습니다</span></h3>
-          <div class="main-title-description"> BABSAZO의 회원이 되신 것을 환영합니다 <br> 밥사조 회원만의 다양한 혜택을 확인하세요  </div>
-          <div class="error-actions"><a href="#" class="btn btn-primary btn-lg"> 내 쿠폰함 </a> </div>
+          <div class="col col-lg-12 col-xl-10">
+        <div class="row has-sidebar">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <div id="sidebar" class="sidebar-left">
+              <div class="sidebar_inner">
+                <div class="list-group no-border list-unstyled">
+                
+                
+                
+                <!-- 회원계정 페이지 전체수정 필요(account.html) -->
+                
+                  <span class="list-group-item heading"> 내 매장 목록</span>
+                      <a href="#" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
+                  <a href="MyCoupon.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> BABSAZO 쿠폰</span>
+                    <span class="badge badge-primary badge-pill">10</span>
+                    </a>
+                  <a href="#" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
+                    <span class="badge badge-primary badge-pill">7</span>
+                    </a>
+                
+                
+                
+                  <span class="list-group-item heading">내 계정 관리</span>
+                 <a href="ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
+                  <a href="ChangePWPre.jsp" class="list-group-item active"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
+<a href="MemberGradePre.jsp" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO 멤버십</a>
+<a href="PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+<a href="SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          
+          
+          <!-- 수정 -->
+          
+          <div class="col-md-7 col-lg-8 col-xl-8">
+            <div class="page-header bordered">
+              <h1>비밀번호 변경<small>
+              <br>계정 보안을 위해 다음 사항을 참고하여 비밀번호를 설정해주세요 </small></h1>
+              <br>
+              <h1><small>하나 이상의 특수문자를 포함
+              <br> 소문자 및 대문자 모두 사용
+              <br> 최소 8자 이상의 문자 길이
+              <br> 생년월일 아이디와 4자이상 겹치는 숫자 사용 불가 </small></h1>
+            </div>
+            <form action="index.php">
+              <h3 class="subheadline">새로운 비밀번호 입력</h3>
+             
+                  <div class="form-group">
+                    
+                    <input type="text" class="form-control form-control-lg" placeholder="" >
+                  </div>
+                  </form>
+                
+            <form action="index.php">
+              <h3 class="subheadline">비밀번호 확인</h3>
+                  <div class="form-group">
+                    <label> 비밀번호를 다시 한 번 입력해주세요</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" >
+                  </div>
+            
+                
+           </form>
+           
+           <!-- 비밀번호 힌트할까?  
+             <div class="row">
+                <div class="col-md-6"> 
+              <div class="form-group">
+                <label>이메일</label>
+                <input type="text" class="form-control form-control-lg" value="babsazo@email.com">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>휴대폰</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>집/팩스</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>회원님은 어떤 분이신가요?</label>
+                <textarea class="form-control form-control-lg text-editor" placeholder=""></textarea>
+              </div>
+              <h3 class="subheadline">SNS</h3>
+              <div class="form-group">
+                <label>Twitter</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-twitter"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Facebook</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-facebook"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Google Plus</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-google-plus"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group"> -->
+                   </div> 
+                </div>
+              </div>
+              <hr>
+              <div class="form-group action">
+                <button type="submit" class="btn btn-lg btn-primary">프로필 수정</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -240,7 +367,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -252,5 +379,50 @@
   </div>
 </footer>
 </div>
+<script>
+var placeSearch, autocomplete;
+var componentForm = {
+	//street_number: 'short_name',
+	//route: 'long_name',
+	locality: 'long_name',
+	administrative_area_level_1: 'long_name',
+	country: 'long_name',
+	postal_code: 'long_name'
+};
 
-</body></html>
+function initAutocomplete() {
+	autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
+	autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+	var place = autocomplete.getPlace();
+	for (var component in componentForm) {
+		document.getElementById(component).value = '';
+		document.getElementById(component).disabled = false;
+	}
+	
+	for (var i = 0; i < place.address_components.length; i++) {
+		var addressType = place.address_components[i].types[0];
+		if (componentForm[addressType]) {
+			var val = place.address_components[i][componentForm[addressType]];
+			document.getElementById(addressType).value = val;
+		}
+	}
+}
+</script> 
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script> 
+<script>
+	tinymce.init({
+		selector: '.text-editor',
+		height: 200,
+		menubar: false,
+		branding: false,
+		plugins: [
+			'lists link image preview',
+		],
+		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
+	});
+        </script>
+</body>
+</html>

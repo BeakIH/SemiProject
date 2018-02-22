@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,7 +191,7 @@
  
          <article class="container">
         <div class="page-header">
-          <h1>È¸¿ø°¡ÀÔ <small> BABSAZO È¸¿ø¸¸ÀÇ ´Ù¾çÇÑ ÇÒÀÎ ÇýÅÃ ¹× ÇÁ·Î¸ð¼ÇÀÌ ±â´Ù¸®°í ÀÖ¾î¿ä!</small></h1>
+          <h1>íšŒì›ê°€ìž… <small> BABSAZO íšŒì›ë§Œì˜ ë‹¤ì–‘í•œ í• ì¸ í˜œíƒ ë° í”„ë¡œëª¨ì…˜ì´ ê¸°ë‹¤ë¦¬ê³  ìžˆì–´ìš”!</small></h1>
         </div>
         
         
@@ -202,37 +202,37 @@
  
             <script type="text/javascript">
     
-        // ÇÊ¼ö ÀÔ·ÂÁ¤º¸ÀÎ ¾ÆÀÌµð, ºñ¹Ð¹øÈ£°¡ ÀÔ·ÂµÇ¾ú´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+        // í•„ìˆ˜ ìž…ë ¥ì •ë³´ì¸ ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸ê°€ ìž…ë ¥ë˜ì—ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
         function checkValue()
         {
             if(!document.userInfo.mem_id.value){
-                alert("¾ÆÀÌµð¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ì•„ì´ë””ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 return false;
             }
             
             if(!document.userInfo.password.value){
-                alert("ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 return false;
             }
             
-            // ºñ¹Ð¹øÈ£¿Í ºñ¹Ð¹øÈ£ È®ÀÎ¿¡ ÀÔ·ÂµÈ °ªÀÌ µ¿ÀÏÇÑÁö È®ÀÎ
+            // ë¹„ë°€ë²ˆí˜¸ì™€ ë¹„ë°€ë²ˆí˜¸ í™•ì¸ì— ìž…ë ¥ëœ ê°’ì´ ë™ì¼í•œì§€ í™•ì¸
             if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
-                alert("ºñ¹Ð¹øÈ£¸¦ µ¿ÀÏÇÏ°Ô ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ë™ì¼í•˜ê²Œ ìž…ë ¥í•˜ì„¸ìš”.");
                 return false;
                 
            
             }
         }
         
-        // Ãë¼Ò ¹öÆ° Å¬¸¯½Ã ·Î±×ÀÎ È­¸éÀ¸·Î ÀÌµ¿
+        // ì·¨ì†Œ ë²„íŠ¼ í´ë¦­ì‹œ ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™
         function goLoginForm() {
             location.href="LoginForm.jsp";
         }
     </script>
     
     
-   <!-- ÀÔ·ÂÇÑ °ªÀ» Àü¼ÛÇÏ±â À§ÇØ form ÅÂ±×¸¦ »ç¿ëÇÑ´Ù -->
-        <!-- °ª(ÆÄ¶ó¹ÌÅÍ) Àü¼ÛÀº POST ¹æ½Ä, Àü¼ÛÇÒ ÆäÀÌÁö´Â JoinPro.jsp -->
+   <!-- ìž…ë ¥í•œ ê°’ì„ ì „ì†¡í•˜ê¸° ìœ„í•´ form íƒœê·¸ë¥¼ ì‚¬ìš©í•œë‹¤ -->
+        <!-- ê°’(íŒŒë¼ë¯¸í„°) ì „ì†¡ì€ POST ë°©ì‹, ì „ì†¡í•  íŽ˜ì´ì§€ëŠ” JoinPro.jsp -->
     <form method="post" action="/SemiProject/test.do" name="userInfo" onsubmit="return checkValue()">
                 
       
@@ -240,11 +240,11 @@
                  
                    <tr>
                <div class="form-group">
-              <label for="birth"><font size="4em" color="52478B">»ý³â¿ùÀÏ ¶Ç´Â ±â³äÀÏ</font></label>
+              <label for="birth"><font size="4em" color="52478B">ìƒë…„ì›”ì¼ ë˜ëŠ” ê¸°ë…ì¼</font></label>
                 <td id="title"></td> 
-              <input type="text" name="mem_no" maxlength="4" placeholder="³â(4ÀÚ)" size="6" >  
+              <input type="text" name="mem_no" maxlength="4" placeholder="ë…„(4ìž)" size="6" >  
                       &nbsp;<select name="birthmm">
-                            <option value="">¿ù</option>
+                            <option value="">ì›”</option>
                             <option value="01" >1</option>
                             <option value="02" >2</option>
                             <option value="03" >3</option>
@@ -258,31 +258,31 @@
                             <option value="11" >11</option>
                             <option value="12" >12</option>
                         </select>
-                     &nbsp; <input type="text" name="birthdd" maxlength="2" placeholder="ÀÏ" size="6" >
+                     &nbsp; <input type="text" name="birthdd" maxlength="2" placeholder="ì¼" size="6" >
                     </td>
                 </tr>
-                <p class="help-block">±â³äÀÏ ÀÔ·Â½Ã ÄíÆùÀ» ¹ß±ÞÇØµå·Á¿ä</p> </div>
+                <p class="help-block">ê¸°ë…ì¼ ìž…ë ¥ì‹œ ì¿ í°ì„ ë°œê¸‰í•´ë“œë ¤ìš”</p> </div>
           
           <br>
           
              
                     <tr>
                 <div class="form-group">
-               <label for="username"><font size="4em" color="52478B">ÀÌ¸§</font></label>
+               <label for="username"><font size="4em" color="52478B">ì´ë¦„</font></label>
                <td id="title"></td>
-              <input type="text" name="mem_nm" maxlength="50" class="form-control" id="username" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
+              <input type="text" name="mem_nm" maxlength="50" class="form-control" id="username" placeholder="ì´ë¦„ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”">
             </div></tr>
                     
                     <br>
                 
                 <tr>
                       <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">È¸¿ø ¾ÆÀÌµð</font></label>
+              <label for="username"><font size="4em" color="52478B">íšŒì› ì•„ì´ë””</font></label>
               <td id="title"></td>
               <div class="input-group">
-                <input type="text" name="mem_id" maxlength="50" class="form-control" id="username" placeholder="»ç¿ëÇÏ½Ç ¾ÆÀÌµð¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
+                <input type="text" name="mem_id" maxlength="50" class="form-control" id="username" placeholder="ì‚¬ìš©í•˜ì‹¤ ì•„ì´ë””ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”">
                 <span class="input-group-btn">
-                  <button class="btn btn-warning"><font color="F9FFFF">¾ÆÀÌµð Áßº¹ Ã¼Å©</font><i class="fa fa-edit spaceLeft"></i></button>
+                  <button class="btn btn-warning"><font color="F9FFFF">ì•„ì´ë”” ì¤‘ë³µ ì²´í¬</font><i class="fa fa-edit spaceLeft"></i></button>
                 </span>
                     </tr> 
                 </div>
@@ -291,9 +291,9 @@
                         
                 <tr>                
               <div class="form-group">
-              <label for="InputPassword1"><font size="4em" color="52478B">ºñ¹Ð¹øÈ£</font></label>
+              <label for="InputPassword1"><font size="4em" color="52478B">ë¹„ë°€ë²ˆí˜¸</font></label>
                     <td id="title"></td>              
-              <input type="password" name="mem_pw" maxlength="50" class="form-control" id="InputPassword1" placeholder="ºñ¹Ð¹øÈ£">
+              <input type="password" name="mem_pw" maxlength="50" class="form-control" id="InputPassword1" placeholder="ë¹„ë°€ë²ˆí˜¸">
             </div>
               </tr>
               
@@ -301,53 +301,53 @@
               
                 <tr>
             <div class="form-group">
-              <label for="InputPassword2"><font size="4em" color="52478B">ºñ¹Ð¹øÈ£ È®ÀÎ</font></label>
+              <label for="InputPassword2"><font size="4em" color="52478B">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</font></label>
                 <td id="title"></td>
-              <input type="password" name="passwordcheck" maxlength="50" class="form-control" id="InputPassword2" placeholder="ºñ¹Ð¹øÈ£ È®ÀÎ">
-               <p class="help-block">ºñ¹Ð¹øÈ£ È®ÀÎÀ» À§ÇØ ´Ù½ÃÇÑ¹ø ÀÔ·ÂÇØÁÖ¼¼¿ä</p>
+              <input type="password" name="passwordcheck" maxlength="50" class="form-control" id="InputPassword2" placeholder="ë¹„ë°€ë²ˆí˜¸ í™•ì¸">
+               <p class="help-block">ë¹„ë°€ë²ˆí˜¸ í™•ì¸ì„ ìœ„í•´ ë‹¤ì‹œí•œë²ˆ ìž…ë ¥í•´ì£¼ì„¸ìš”</p>
           </div></tr>
           
                   <br>
                                       
                                                       
           <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">ÈÞ´ëÆù ¹øÈ£</font></label>
+              <label for="username"><font size="4em" color="52478B">íœ´ëŒ€í° ë²ˆí˜¸</font></label>
               <td id="title"></td>
-              <input type="tel" name="mem_tel" class="form-control" id="username" placeholder="- ¾øÀÌ ÀÔ·ÂÇØ ÁÖ¼¼¿ä"></div>
+              <input type="tel" name="mem_tel" class="form-control" id="username" placeholder="- ì—†ì´ ìž…ë ¥í•´ ì£¼ì„¸ìš”"></div>
                
-              <div> <input type="checkbox" name="chk_info" value="µ¿ÀÇ">ÈÞ´ëÆù ¼ö½Å¿¡ µ¿ÀÇÇÕ´Ï´Ù</div>
-              <div><p class="help-block">(¸ð¹ÙÀÏ Àü¿ë ÄíÆù ¹× °Ô¸±¶ó ÇÒÀÎ½Ã Çª½Ã ¾Ë¸²À» ¹ÞÀ¸½Ç ¼ö ÀÖ¾î¿ä)</p></div>
+              <div> <input type="checkbox" name="chk_info" value="ë™ì˜">íœ´ëŒ€í° ìˆ˜ì‹ ì— ë™ì˜í•©ë‹ˆë‹¤</div>
+              <div><p class="help-block">(ëª¨ë°”ì¼ ì „ìš© ì¿ í° ë° ê²Œë¦´ë¼ í• ì¸ì‹œ í‘¸ì‹œ ì•Œë¦¼ì„ ë°›ìœ¼ì‹¤ ìˆ˜ ìžˆì–´ìš”)</p></div>
           
-          <!-- ÀÎÁõ¹øÈ£ Àü¼Û ±â´ÉÀº º°µµ »çÀÌÆ®¿¡¼­ ±¸ÀÔÇÊ¿ä
+          <!-- ì¸ì¦ë²ˆí˜¸ ì „ì†¡ ê¸°ëŠ¥ì€ ë³„ë„ ì‚¬ì´íŠ¸ì—ì„œ êµ¬ìž…í•„ìš”
             <span class="input-group-btn"> 
-                  <button class="btn btn-warning"><font color="#F9FFFFE">ÀÎÁõ¹øÈ£ Àü¼Û</font><i class="fa fa-mail-forward spaceLeft"></i></button>
+                  <button class="btn btn-warning"><font color="#F9FFFFE">ì¸ì¦ë²ˆí˜¸ ì „ì†¡</font><i class="fa fa-mail-forward spaceLeft"></i></button>
                 </span> -->
    
                <br>
                   
              <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">ÁÖ¼Ò</font></label>
+              <label for="username"><font size="4em" color="52478B">ì£¼ì†Œ</font></label>
               <td id="title"></td>
               <div class="input-group">
-                <input type="text" name="address" class="form-control" id="username" placeholder="µµ·Î¸í/Áö¹ø/µ¿¡¤À¾¡¤¸é">
+                <input type="text" name="address" class="form-control" id="username" placeholder="ë„ë¡œëª…/ì§€ë²ˆ/ë™Â·ìÂ·ë©´">
                 <span class="input-group-btn">
    
-                  <a href="DoroEx.jsp" class="btn btn-warning"><font color="F9FFFF">¿ìÆí¹øÈ£ °Ë»ö</font><i class="fa fa-mail-forward spaceLeft"></i></a> 
+                  <a href="DoroEx.jsp" class="btn btn-warning"><font color="F9FFFF">ìš°íŽ¸ë²ˆí˜¸ ê²€ìƒ‰</font><i class="fa fa-mail-forward spaceLeft"></i></a> 
                 </span>
               </div>
                 <div class="form-group">
-                <input type="text" class="form-control" id="username" placeholder="»ó¼¼ ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
+                <input type="text" class="form-control" id="username" placeholder="ìƒì„¸ ì£¼ì†Œë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”">
             </div>
-            <div> <input type="checkbox" name="chk_info" value="µ¿ÀÇ">¿ìÆíÀ¸·Î BABSAZO ¼Ò½ÄÁö¸¦ ¹Þ°Ú½À´Ï´Ù</div>
-              <div><p class="help-block">(BABSAZO ¼Ò½ÄÁö Àü¿ë ÄíÆù ¹× »õ·Î¿î BABSAZO Á¦ÀÏ ¸ÕÀú ¹Þ¾Æº¸¼¼¿ä)</p></div>
+            <div> <input type="checkbox" name="chk_info" value="ë™ì˜">ìš°íŽ¸ìœ¼ë¡œ BABSAZO ì†Œì‹ì§€ë¥¼ ë°›ê² ìŠµë‹ˆë‹¤</div>
+              <div><p class="help-block">(BABSAZO ì†Œì‹ì§€ ì „ìš© ì¿ í° ë° ìƒˆë¡œìš´ BABSAZO ì œì¼ ë¨¼ì € ë°›ì•„ë³´ì„¸ìš”)</p></div>
             
             <br> 
             
             
             <div class="form-group">
-              <label for="InputEmail"><font size="4em" color="52478B">ÀÌ¸ÞÀÏ ÁÖ¼Ò</label></font>
+              <label for="InputEmail"><font size="4em" color="52478B">ì´ë©”ì¼ ì£¼ì†Œ</label></font>
               <td id="title"></td>
-              <input type="text" name="email" class="form-control" id="username" placeholder="ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
+              <input type="text" name="email" class="form-control" id="username" placeholder="ì´ë©”ì¼ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”">
             </div>
             <!-- 
                          <select name="mail2">
@@ -357,18 +357,18 @@
                             <option>nate.com</option>                        
                         </select>  -->
             
-            <div> <input type="checkbox" name="email_yn" value="µ¿ÀÇ">ÀÌ¸ÞÀÏ ¼ö½Å¿¡ µ¿ÀÇÇÕ´Ï´Ù</div>
-              <div><p class="help-block">(ÀÌ¸ÞÀÏ BABSAZO ´º½º·¹ÅÍ ÄíÆù ¹ß±Þ°ú ÀÌº¥Æ® Âü¿©°¡ °¡´ÉÇÕ´Ï´Ù)</p></div>
+            <div> <input type="checkbox" name="email_yn" value="ë™ì˜">ì´ë©”ì¼ ìˆ˜ì‹ ì— ë™ì˜í•©ë‹ˆë‹¤</div>
+              <div><p class="help-block">(ì´ë©”ì¼ BABSAZO ë‰´ìŠ¤ë ˆí„° ì¿ í° ë°œê¸‰ê³¼ ì´ë²¤íŠ¸ ì°¸ì—¬ê°€ ê°€ëŠ¥í•©ë‹ˆë‹¤)</p></div>
             
             <br>
             
             <!-- 
                 <tr>
                  <div class="form-group">
-               <label for="username"><font size="4em" color="52478B">¼ºº°</label>
+               <label for="username"><font size="4em" color="52478B">ì„±ë³„</label>
                <td id="title"></td> 
-              <input type="radio" name="gender" value="³²" checked >³²
-              <input type="radio" name="gender" value="¿©" checked>¿©
+              <input type="radio" name="gender" value="ë‚¨" checked >ë‚¨
+              <input type="radio" name="gender" value="ì—¬" checked>ì—¬
                   </font>  </td>
                 </tr>
                     
@@ -377,42 +377,42 @@
      
             
               <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">SNS/ºí·Î±×</font></label>
+              <label for="username"><font size="4em" color="52478B">SNS/ë¸”ë¡œê·¸</font></label>
               <td id="title"></td>
-              <input type="text" name="sns" class="form-control" id="username" placeholder="SNS ID È¤Àº ºí·Î±× ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
-                 <p class="help-block"> °¢Á¾ °øÀ¯ È°µ¿À¸·Î BABSAZO Æ÷ÀÎÆ®¸¦ Àû¸³ÇÒ ¼ö ÀÖ½À´Ï´Ù</p>
+              <input type="text" name="sns" class="form-control" id="username" placeholder="SNS ID í˜¹ì€ ë¸”ë¡œê·¸ ì£¼ì†Œë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”">
+                 <p class="help-block"> ê°ì¢… ê³µìœ  í™œë™ìœ¼ë¡œ BABSAZO í¬ì¸íŠ¸ë¥¼ ì ë¦½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤</p>
             </div>
             
             <br>
             
             <div class="form-group">
-               <label for="username"><font size="4em" color="52478B"><label for="username">¼±È£ÇÏ´Â À½½Ä(Áßº¹¼±ÅÃ °¡´É)</font></label>
+               <label for="username"><font size="4em" color="52478B"><label for="username">ì„ í˜¸í•˜ëŠ” ìŒì‹(ì¤‘ë³µì„ íƒ ê°€ëŠ¥)</font></label>
             <td id="title"></td>
                  
-           <div> <input type="checkbox" name="chk_info" value="ÇÑ½Ä">ÇÑ½Ä
-                 <input type="checkbox" name="chk_info" value="Áß½Ä">Áß½Ä
-                 <input type="checkbox" name="chk_info" value="ÀÏ½Ä">ÀÏ½Ä 
-                 <input type="checkbox" name="chk_info" value="¾ç½Ä">¾ç½Ä
-                 <input type="checkbox" name="chk_info" value="¼¼°èÀ½½Ä">¼¼°èÀ½½Ä
-                 <input type="checkbox" name="chk_info" value="µðÀúÆ®">µðÀúÆ® 
+           <div> <input type="checkbox" name="chk_info" value="í•œì‹">í•œì‹
+                 <input type="checkbox" name="chk_info" value="ì¤‘ì‹">ì¤‘ì‹
+                 <input type="checkbox" name="chk_info" value="ì¼ì‹">ì¼ì‹ 
+                 <input type="checkbox" name="chk_info" value="ì–‘ì‹">ì–‘ì‹
+                 <input type="checkbox" name="chk_info" value="ì„¸ê³„ìŒì‹">ì„¸ê³„ìŒì‹
+                 <input type="checkbox" name="chk_info" value="ë””ì €íŠ¸">ë””ì €íŠ¸ 
                  <div> 
-                 <input type="checkbox" name="chk_info" value="¹ä">¹ä
-                 <input type="checkbox" name="chk_info" value="¸é">¸é
-                 <input type="checkbox" name="chk_info" value="ºÐ½Ä">ºÐ½Ä  
-                 <input type="checkbox" name="chk_info" value="Ã¤½Ä">Ã¤½Ä
-                 <input type="checkbox" name="chk_info" value="À°·ù">À°·ù
-                 <input type="checkbox" name="chk_info" value="ÈÄ½Ä">ÈÄ½Ä   
+                 <input type="checkbox" name="chk_info" value="ë°¥">ë°¥
+                 <input type="checkbox" name="chk_info" value="ë©´">ë©´
+                 <input type="checkbox" name="chk_info" value="ë¶„ì‹">ë¶„ì‹  
+                 <input type="checkbox" name="chk_info" value="ì±„ì‹">ì±„ì‹
+                 <input type="checkbox" name="chk_info" value="ìœ¡ë¥˜">ìœ¡ë¥˜
+                 <input type="checkbox" name="chk_info" value="í›„ì‹">í›„ì‹   
               </div>
               </div>
-              <input type="text" name="fav" class="form-control" id="username" placeholder="±âÅ¸">
+              <input type="text" name="fav" class="form-control" id="username" placeholder="ê¸°íƒ€">
             </div>
             
            </div>
    
    
    <!-- 
-            <input type="submit" value="°¡ÀÔ"/>  
-            <input type="button" value="Ãë¼Ò" onclick="goLoginForm()">
+            <input type="submit" value="ê°€ìž…"/>  
+            <input type="button" value="ì·¨ì†Œ" onclick="goLoginForm()">
       -->
     
 </table>
@@ -423,12 +423,12 @@
                   <span class="fa fa-check"></span>
                   <input id="agree" type="checkbox" autocomplete="off" checked>
               </label>
-              <a href="#"><font size="4em">ÀÌ¿ë¾à°ü ¹× °³ÀÎÁ¤º¸ Ã³¸®¹æÄ§¿¡ µ¿ÀÇÇÕ´Ï´Ù.(ÇÊ¼ö)</a></font>
+              <a href="#"><font size="4em">ì´ìš©ì•½ê´€ ë° ê°œì¸ì •ë³´ ì²˜ë¦¬ë°©ì¹¨ì— ë™ì˜í•©ë‹ˆë‹¤.(í•„ìˆ˜)</a></font>
               </div>
             </div>
             <div class="row justify-content-md-center">
-              <form action="#"><button type="submit" class="btn btn-warning"><font color="#800080"></font>È¸¿ø°¡ÀÔ<i class="fa fa-check spaceLeft"></i></button></form>
-              &nbsp; <form action="#"><button type="submit" class="btn btn-danger">°¡ÀÔÃë¼Ò<i class="fa fa-times spaceLeft"></i></button></form>
+              <form action="#"><button type="submit" class="btn btn-warning"><font color="#800080"></font>íšŒì›ê°€ìž…<i class="fa fa-check spaceLeft"></i></button></form>
+              &nbsp; <form action="#"><button type="submit" class="btn btn-danger">ê°€ìž…ì·¨ì†Œ<i class="fa fa-times spaceLeft"></i></button></form>
             </div>
             </div>
             </div>
