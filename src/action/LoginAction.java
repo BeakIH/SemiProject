@@ -20,11 +20,11 @@ public class LoginAction implements CommandAction {
       
       Map<String, Object> result = loginDao.userLogin(userid, userpw);
       
-      
       request.setAttribute("check", result.get("result"));
       if (result.get("name") != null) {
          request.getSession().setAttribute("id", result.get("id"));
          request.getSession().setAttribute("name", result.get("name"));
+         request.getSession().setAttribute("admYn", result.get("admYn"));
       }
 
       // 0 : ID 존재 비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
