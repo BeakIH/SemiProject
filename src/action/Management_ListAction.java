@@ -16,7 +16,7 @@ public class Management_ListAction implements CommandAction {
 		int stNo = Integer.parseInt(request.getParameter("store_no"));
 		EmpDBBean dao = EmpDBBean.getInstance();
 		ArrayList<EmpDataBean> manageList = dao.getEmpList(stNo);
-		request.setAttribute("manageList", manageList);
+		request.getSession().setAttribute("manageList", manageList);
 
 		return "/jsp/admin/management.jsp";
 	}

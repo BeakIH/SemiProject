@@ -20,21 +20,19 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-	 <!-- 답변형 게시판 설정 -->
   	<servlet>
   		<servlet-name>ControllerUsingURI</servlet-name>
   		<servlet-class>mvc.controller2.ControllerUsingURI</servlet-class>
   		<init-param>
   			<param-name>propertyConfig</param-name>
-  			<param-value>C:\Users\user1\git\SemiProject\WebContent\WEB-INF\commandHandlerURI.properties</param-value>
+  			<param-value>\WEB-INF\commandHandlerURI.properties</param-value>
   		</init-param>
   	</servlet>
   
   	<servlet-mapping>
   		<servlet-name>ControllerUsingURI</servlet-name>
-  		<url-pattern>*.do</url-pattern><!-- 임의의 확장자를 결정해서 해당 서블릿이 실행되도록 하는것 ex) .do, .nhn 등등 사전에 정해두고 통일하기 -->
+  		<url-pattern>*.do</url-pattern>  <!-- 임의의 확장자를 결정해서 해당 서블릿이 실행되도록 하는것 ex) .do, .nhn 등등 사전에 정해두고 통일하기 -->
   	</servlet-mapping>
-  <!-- 답변형 게시판 설정 -->
   
   <filter>
 		  <filter-name>semifile</filter-name>
