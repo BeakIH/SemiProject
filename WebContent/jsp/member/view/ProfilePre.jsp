@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -11,27 +11,26 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../lib/animate.css" rel="stylesheet">
-<link href="../../lib/selectric/selectric.css" rel="stylesheet">
-<link href="../../lib/aos/aos.css" rel="stylesheet">
-<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css" rel="stylesheet">
+<link href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../../lib/animate.css" rel="stylesheet">
+<link href="../../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../../lib/jquery-3.2.1.min.js"></script>
-<script src="../../lib/popper.min.js"></script>
+<script src="../../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../lib/selectric/jquery.selectric.js"></script>
-<script src="../../lib/tinymce/tinymce.min.js"></script>
-<script src="../../lib/aos/aos.js"></script>
-<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="../../lib/lib.js"></script>
-
+<script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../../lib/aos/aos.js"></script>
+<script src="../../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -182,6 +181,13 @@
             <a href="my_payments.html" class="dropdown-item">Payments</a>
             <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
+        
+        
+        
+        
+        
+        
+        
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
@@ -189,136 +195,191 @@
   </div>
   </div>
 </nav>
-
-
-
-<!-- 회원 등급 페이지로 수정하기 -->
-
-
+<div class="clearfix"></div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
           <div class="col col-lg-12 col-xl-10">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">내 등급 확인</a></li>
-            <li class="breadcrumb-item active" aria-current="page">등급별 혜택 보기</li>
-            </ol>
-            </nav>
-        <h1 class="main-title centered"><span>BABSAZO 등급에 따른 혜택을 확인하세요</span></h1>
-        <div class="lead text-center mb50">이용 횟수, 구매 금액, 후기 작성에 따라 자동으로 포인트가 적립됩니다.<br> 적립된 점수에 따라 올라가는 할인율 및 등급별 발행 쿠폰으로 더 큰 혜택을 누리세요!  </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="pricing-column">
-              <ul>
-                <li class="title">BABSAZO의 <small>먹방요정</small></li>
-                <li class="price">BAB포인트 200,000미만 / 월(Month)</li>
-                <li>월 1회 메인 무료 쿠폰</li>
-                <li>월 1회 20% 할인 쿠폰 지급</li>
-                <li>결제시 총 금액의 3% 추가 할인</li>
-                <li>구매 금액의 3% 포인트 적립</li>
-                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
-              </ul>
+        <div class="row has-sidebar">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <div id="sidebar" class="sidebar-left">
+              <div class="sidebar_inner">
+                <div class="list-group no-border list-unstyled">
+                
+                
+                
+                <!-- 회원계정 페이지 전체수정 필요(account.html) -->
+                
+                  <span class="list-group-item heading"> 내 매장 목록</span>
+                      <a href="#" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
+                  <a href="MyCoupon.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> BABSAZO 쿠폰</span>
+                    <span class="badge badge-primary badge-pill">10</span>
+                    </a>
+                  <a href="#" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
+                    <span class="badge badge-primary badge-pill">7</span>
+                    </a>
+                
+                
+                
+                  <span class="list-group-item heading">내 계정 관리</span>
+                 <a href="ProfilePre.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
+                  <a href="ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
+<a href="MemberGradePre.jsp" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO 멤버십</a>
+<a href="PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+<a href="SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="pricing-column popular">
-              <ul>
-                <li class="title">BABSAZO의 <small> 대지주</small></li>
-                <li class="price">BAB포인트 200,000이상 500,000미만  / 월(Month)</li>
-                <li class="price">BAB포인트 500,000이상 / 월(Month)</li>
-                <li>월 3회 메인 무료 쿠폰</li>
-                <li>BABSAZO 이달의 식당 초대권</li>
-                <li>월 3회 40% 할인 쿠폰 지급</li>
-                <li>결제시 총 금액의 7% 추가 할인</li>
-                <li>구매 금액의 7% 포인트 적립</li>
-                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
-              </ul>
-                
+          
+          
+          
+          
+          
+          <!-- 프로필.html수정 -->
+          
+          <div class="col-md-7 col-lg-8 col-xl-8">
+            <div class="page-header bordered">
+              <h1>프로필 설정<small>BABSAZO에서 사용할 프로필을 설정해주세요</small></h1>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="pricing-column">
-              <ul>
-                <li class="title">BABSAZO의 <small> 프로 먹방러 </small> </li>
-                <li class="price">BAB포인트 500,000이상 / 월(Month)</li>
-                
-                <li>월 2회 메인 무료 쿠폰 </li>
-                <li>월 2회 30% 할인 쿠폰 지급</li>
-                <li>결제시 총 금액의 5% 추가 할인</li>
-                <li>구매 금액의 5% 포인트 적립</li>
-               
-                <li class="action"><a class="btn btn-primary btn-lg btn-block" href="#">내 포인트 현황</a></li>
-              </ul>
-            </div>
+            <form action="index.php">
+              <h3 class="subheadline">기본 정보</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> 성</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="밥">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>이름</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="사조">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>이메일</label>
+                <input type="text" class="form-control form-control-lg" value="babsazo@email.com">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>휴대폰</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>집/팩스</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>회원님은 어떤 분이신가요?</label>
+                <textarea class="form-control form-control-lg text-editor" placeholder=""></textarea>
+              </div>
+              <h3 class="subheadline">SNS</h3>
+              <div class="form-group">
+                <label>Twitter</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-twitter"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Facebook</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-facebook"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Google Plus</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-google-plus"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+              
+              <!-- 인스타그램으로 바꿔보기-->
+                <label>Linkedin</label>
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-linkedin"></i></span>
+                  <input type="text" class="form-control form-control-lg" placeholder="">
+                   
+                </div>
+              </div>
+              <br>
+              
+              <h3 class="subheadline">거주지 또는 관심 BABSAZO 지역</h3>
+              <div class="form-group">
+                <label>예) 서울/종로구</label>
+                <input type="text" class="form-control form-control-lg">
+              </div>
+              
+              
+              <div class="row">
+              
+              
+              <!-- 주소 / 관심지역설정(?) 일단보류
+                <div class="col-lg-6">
+              
+                  <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" class="form-control form-control-lg" id="autocomplete" placeholder="Enter your location">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="locality">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="administrative_area_level_1">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="country">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Zipcode</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" id="postal_code">
+                  --> 
+                  
+                  
+                  
+                  
+                  </div> 
+                </div>
+              </div>
+              <hr>
+              <div class="form-group action">
+                <button type="submit" class="btn btn-lg btn-primary">프로필 수정</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- 요밑은 뭐로할까 
-<div class="feature-box centered gray">
-    <div data-aos="fade-up">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-md-10">
-            <div class="main-title"><span>What our clients say</span></div>
-            <div class="swiper-container testimonials">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="item content-box centered">
-                    <div class="image"> <img class="rounded-circle" src="img/demo/profile.jpg" width="180" alt=""> </div>
-                    <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
-                    <div class="caption">The Brown Family</div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="item content-box centered">
-                    <div class="image"> <img class="rounded-circle" src="img/demo/profile2.jpg" width="180" alt="">
-                      <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
-                      <div class="caption">The Brown Family</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="item content-box centered">
-                    <div class="image"> <img class="rounded-circle" src="img/demo/profile3.jpg" width="180" alt="">
-                      <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
-                      <div class="caption">The Brown Family</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-            <script>
-			var swiper = new Swiper('.swiper-container', {
-				loop: true,
-				centeredSlides: true,
-					autoplay: {
-					delay: 5000,
-					disableOnInteraction: false,
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					clickable: true,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});-->
-        	</script> 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
   <div class="container">
@@ -359,7 +420,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -371,5 +432,50 @@
   </div>
 </footer>
 </div>
+<script>
+var placeSearch, autocomplete;
+var componentForm = {
+	//street_number: 'short_name',
+	//route: 'long_name',
+	locality: 'long_name',
+	administrative_area_level_1: 'long_name',
+	country: 'long_name',
+	postal_code: 'long_name'
+};
 
-</body></html>
+function initAutocomplete() {
+	autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
+	autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+	var place = autocomplete.getPlace();
+	for (var component in componentForm) {
+		document.getElementById(component).value = '';
+		document.getElementById(component).disabled = false;
+	}
+	
+	for (var i = 0; i < place.address_components.length; i++) {
+		var addressType = place.address_components[i].types[0];
+		if (componentForm[addressType]) {
+			var val = place.address_components[i][componentForm[addressType]];
+			document.getElementById(addressType).value = val;
+		}
+	}
+}
+</script> 
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script> 
+<script>
+	tinymce.init({
+		selector: '.text-editor',
+		height: 200,
+		menubar: false,
+		branding: false,
+		plugins: [
+			'lists link image preview',
+		],
+		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
+	});
+        </script>
+</body>
+</html>

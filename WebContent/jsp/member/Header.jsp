@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>»ó´Ü ¿µ¿ª</title>
+    <title>ìƒë‹¨ ì˜ì—­</title>
     
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
@@ -18,23 +18,23 @@
         
         function changeView(value){
             
-            if(value == "0") // HOME ¹öÆ° Å¬¸¯½Ã Ã¹È­¸éÀ¸·Î ÀÌµ¿
+            if(value == "0") // HOME ë²„íŠ¼ í´ë¦­ì‹œ ì²«í™”ë©´ìœ¼ë¡œ ì´ë™
             {
                 location.href="MainForm.jsp";
             }
-            else if(value == "1") // ·Î±×ÀÎ ¹öÆ° Å¬¸¯½Ã ·Î±×ÀÎ È­¸éÀ¸·Î ÀÌµ¿
+            else if(value == "1") // ë¡œê·¸ì¸ ë²„íŠ¼ í´ë¦­ì‹œ ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™
             {
                 location.href="MainForm.jsp?contentPage=member/view/LoginForm.jsp";
             }
-            else if(value == "2") // È¸¿ø°¡ÀÔ ¹öÆ° Å¬¸¯½Ã È¸¿ø°¡ÀÔ È­¸éÀ¸·Î ÀÌµ¿
+            else if(value == "2") // íšŒì›ê°€ì… ë²„íŠ¼ í´ë¦­ì‹œ íšŒì›ê°€ì… í™”ë©´ìœ¼ë¡œ ì´ë™
             {
                 location.href="MainForm.jsp?contentPage=member/view/JoinForm.jsp";
             }
-            else if(value == "3") // ·Î±×¾Æ¿ô ¹öÆ° Å¬¸¯½Ã ·Î±×¾Æ¿ô Ã³¸®
+            else if(value == "3") // ë¡œê·¸ì•„ì›ƒ ë²„íŠ¼ í´ë¦­ì‹œ ë¡œê·¸ì•„ì›ƒ ì²˜ë¦¬
             {
                 location.href="member/pro/LogoutPro.jsp";
             }
-            else if(value == "4") // ³»Á¤º¸ ¹öÆ° Å¬¸¯½Ã È¸¿øÁ¤º¸ º¸¿©ÁÖ´Â È­¸éÀ¸·Î ÀÌµ¿
+            else if(value == "4") // ë‚´ì •ë³´ ë²„íŠ¼ í´ë¦­ì‹œ íšŒì›ì •ë³´ ë³´ì—¬ì£¼ëŠ” í™”ë©´ìœ¼ë¡œ ì´ë™
             {
                 location.href="MainForm.jsp?contentPage=member/view/UserInfoForm.jsp";
             }
@@ -47,21 +47,21 @@
         <p>
             <button class="btn btn-success" onclick="changeView(0)">HOME</button>
         <%
-            // ·Î±×ÀÎ ¾ÈµÇ¾úÀ» °æ¿ì - ·Î±×ÀÎ, È¸¿ø°¡ÀÔ ¹öÆ°À» º¸¿©ÁØ´Ù.
+            // ë¡œê·¸ì¸ ì•ˆë˜ì—ˆì„ ê²½ìš° - ë¡œê·¸ì¸, íšŒì›ê°€ì… ë²„íŠ¼ì„ ë³´ì—¬ì¤€ë‹¤.
             if(session.getAttribute("sessionID")==null){ 
         %>
-            <button id="loginBtn" class="btn btn-primary" onclick="changeView(1)">·Î±×ÀÎ</button>
-            <button id="joinBtn" class="btn btn-primary" onclick="changeView(2)">È¸¿ø°¡ÀÔ</button>
+            <button id="loginBtn" class="btn btn-primary" onclick="changeView(1)">ë¡œê·¸ì¸</button>
+            <button id="joinBtn" class="btn btn-primary" onclick="changeView(2)">íšŒì›ê°€ì…</button>
             
         <%
-            // ·Î±×ÀÎ µÇ¾úÀ» °æ¿ì - ·Î±×¾Æ¿ô, ³»Á¤º¸ ¹öÆ°À» º¸¿©ÁØ´Ù.
+            // ë¡œê·¸ì¸ ë˜ì—ˆì„ ê²½ìš° - ë¡œê·¸ì•„ì›ƒ, ë‚´ì •ë³´ ë²„íŠ¼ì„ ë³´ì—¬ì¤€ë‹¤.
             }else{ 
         %>
-            <button id="logoutBtn" class="btn btn-primary" onclick="changeView(3)">·Î±×¾Æ¿ô</button>
-            <button id="updateBtn" class="btn btn-primary" onclick="changeView(4)">³»Á¤º¸</button>
+            <button id="logoutBtn" class="btn btn-primary" onclick="changeView(3)">ë¡œê·¸ì•„ì›ƒ</button>
+            <button id="updateBtn" class="btn btn-primary" onclick="changeView(4)">ë‚´ì •ë³´</button>
         <%    }    %>    
  
-            <button id="memberViewBtn" class="btn btn-warning">È¸¿øº¸±â</button>
+            <button id="memberViewBtn" class="btn btn-warning">íšŒì›ë³´ê¸°</button>
         </p>
     </div>
 </body>

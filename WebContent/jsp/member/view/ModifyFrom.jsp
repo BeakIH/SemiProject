@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="jsp.member.model.MemberDAO" %>    
 <%@ page import="jsp.member.model.MemberBean" %>
 <html>
@@ -11,7 +11,7 @@
         MemberBean memberBean = dao.getUserInfo(id);
     %>
  
-    <title>È¸¿øÁ¤º¸ ¼öÁ¤È­¸é</title>
+    <title>íšŒì›ì •ë³´ ìˆ˜ì •í™”ë©´</title>
     
     <style type="text/css">
         table{
@@ -37,21 +37,21 @@
  
         function setComboValue(val) 
         {
-            var selectMail = document.getElementById('mail2'); // select ¾ÆÀÌµð¸¦ °¡Á®¿Â´Ù.
-            for (i = 0, j = selectMail.length; i < j; i++)  // select ÇÏ´Ü option ¼ö¸¸Å­ ¹Ýº¹¹® µ¹¸°´Ù.
+            var selectMail = document.getElementById('mail2'); // select ì•„ì´ë””ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+            for (i = 0, j = selectMail.length; i < j; i++)  // select í•˜ë‹¨ option ìˆ˜ë§Œí¼ ë°˜ë³µë¬¸ ëŒë¦°ë‹¤.
             {
-                if (selectMail.options[i].value == val)  // ÀÔ·ÂµÈ°ª°ú optionÀÇ value°¡ °°ÀºÁö ºñ±³
+                if (selectMail.options[i].value == val)  // ìž…ë ¥ëœê°’ê³¼ optionì˜ valueê°€ ê°™ì€ì§€ ë¹„êµ
                 {
-                    selectMail.options[i].selected = true; // °°Àº°æ¿ì¶ó¸é Ã¼Å©µÇµµ·Ï ÇÑ´Ù.
+                    selectMail.options[i].selected = true; // ê°™ì€ê²½ìš°ë¼ë©´ ì²´í¬ë˜ë„ë¡ í•œë‹¤.
                     break;
                 }
             }
         }
         
-        // ºñ¹Ð¹øÈ£ ÀÔ·Â¿©ºÎ Ã¼Å©
+        // ë¹„ë°€ë²ˆí˜¸ ìž…ë ¥ì—¬ë¶€ ì²´í¬
         function checkValue() {
             if(!document.userInfo.password.value){
-                alert("ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 return false;
             }
         }
@@ -62,21 +62,21 @@
 <body onload="init()">
  
         <br><br>
-        <b><font size="6" color="gray">È¸¿øÁ¤º¸ ¼öÁ¤</font></b>
+        <b><font size="6" color="gray">íšŒì›ì •ë³´ ìˆ˜ì •</font></b>
         <br><br><br>
         
-        <!-- ÀÔ·ÂÇÑ °ªÀ» Àü¼ÛÇÏ±â À§ÇØ form ÅÂ±×¸¦ »ç¿ëÇÑ´Ù -->
-        <!-- °ª(ÆÄ¶ó¹ÌÅÍ) Àü¼ÛÀº POST ¹æ½Ä -->
+        <!-- ìž…ë ¥í•œ ê°’ì„ ì „ì†¡í•˜ê¸° ìœ„í•´ form íƒœê·¸ë¥¼ ì‚¬ìš©í•œë‹¤ -->
+        <!-- ê°’(íŒŒë¼ë¯¸í„°) ì „ì†¡ì€ POST ë°©ì‹ -->
         <form method="post" action="MainForm.jsp?contentPage=member/pro/ModifyPro.jsp" 
                 name="userInfo" onsubmit="return checkValue()">
                 
             <table>
                 <tr>
-                    <td id="title">¾ÆÀÌµð</td>
+                    <td id="title">ì•„ì´ë””</td>
                     <td id="title"><%=memberBean.getId() %></td>
                 </tr>
                 <tr>
-                    <td id="title">ºñ¹Ð¹øÈ£</td>
+                    <td id="title">ë¹„ë°€ë²ˆí˜¸</td>
                     <td>
                         <input type="password" name="password" maxlength="50" 
                             value="<%=memberBean.getPassword()%>">
@@ -87,26 +87,26 @@
             <table>
  
                 <tr>
-                    <td id="title">ÀÌ¸§</td>
+                    <td id="title">ì´ë¦„</td>
                     <td><%=memberBean.getName() %></td>
                 </tr>
                     
                 <tr>
-                    <td id="title">¼ºº°</td>
+                    <td id="title">ì„±ë³„</td>
                     <td><%=memberBean.getGender()%></td>
                 </tr>
                     
                 <tr>
-                    <td id="title">»ýÀÏ</td>
+                    <td id="title">ìƒì¼</td>
                     <td>
-                        <%=memberBean.getBirthyy() %>³â 
-                        <%=memberBean.getBirthmm() %>¿ù 
-                        <%=memberBean.getBirthdd() %>ÀÏ
+                        <%=memberBean.getBirthyy() %>ë…„ 
+                        <%=memberBean.getBirthmm() %>ì›” 
+                        <%=memberBean.getBirthdd() %>ì¼
                     </td>
                 </tr>
                     
                 <tr>
-                    <td id="title">ÀÌ¸ÞÀÏ</td>
+                    <td id="title">ì´ë©”ì¼</td>
                     <td>
                         <input type="text" name="mail1" maxlength="50" 
                             value="<%=memberBean.getMail1() %>">
@@ -121,13 +121,13 @@
                 </tr>
                     
                 <tr>
-                    <td id="title">ÈÞ´ëÀüÈ­</td>
+                    <td id="title">íœ´ëŒ€ì „í™”</td>
                     <td>
                         <input type="text" name="phone" value="<%=memberBean.getPhone() %>"/>
                     </td>
                 </tr>
                 <tr>
-                    <td id="title">ÁÖ¼Ò</td>
+                    <td id="title">ì£¼ì†Œ</td>
                     <td>
                         <input type="text" size="50" name="address"
                             value="<%=memberBean.getAddress() %>"/>
@@ -135,8 +135,8 @@
                 </tr>
             </table>
             <br><br>
-            <input type="button" value="Ãë¼Ò" onclick="javascript:window.location='MainForm.jsp'">
-            <input type="submit" value="¼öÁ¤"/>  
+            <input type="button" value="ì·¨ì†Œ" onclick="javascript:window.location='MainForm.jsp'">
+            <input type="submit" value="ìˆ˜ì •"/>  
         </form>
         
 </body>

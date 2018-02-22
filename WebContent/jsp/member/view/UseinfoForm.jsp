@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="jsp.member.model.MemberDAO" %>    
 <%@ page import="jsp.member.model.MemberBean" %>
 <html>
 <head>
-    <title>«ˆ¿Á ¿Ø¿˙¡§∫∏ √‚∑¬»≠∏È</title>
+    <title>ÌòÑÏû¨ Ïú†Ï†ÄÏ†ïÎ≥¥ Ï∂úÎ†•ÌôîÎ©¥</title>
     
     <style type="text/css">
         table{
@@ -41,48 +41,48 @@
     <%
         String id = session.getAttribute("sessionID").toString();
         
-        // ººº«ø° ¿˙¿Âµ» æ∆¿Ãµ∏¶ ∞°¡ÆøÕº≠
-        // ±◊ æ∆¿Ãµ «ÿ¥Á«œ¥¬ »∏ø¯¡§∫∏∏¶ ∞°¡Æø¬¥Ÿ.
+        // ÏÑ∏ÏÖòÏóê Ï†ÄÏû•Îêú ÏïÑÏù¥ÎîîÎ•º Í∞ÄÏ†∏ÏôÄÏÑú
+        // Í∑∏ ÏïÑÏù¥Îîî Ìï¥ÎãπÌïòÎäî ÌöåÏõêÏ†ïÎ≥¥Î•º Í∞ÄÏ†∏Ïò®Îã§.
         MemberDAO dao = MemberDAO.getInstance();
         MemberBean memberBean = dao.getUserInfo(id);
     %>
  
         <br><br>
-        <b><font size="6" color="gray">≥ª ¡§∫∏</font></b>
+        <b><font size="6" color="gray">ÎÇ¥ Ï†ïÎ≥¥</font></b>
         <br><br><br>
-                        <!-- ∞°¡Æø¬ »∏ø¯¡§∫∏∏¶ √‚∑¬«—¥Ÿ. -->
+                        <!-- Í∞ÄÏ†∏Ïò® ÌöåÏõêÏ†ïÎ≥¥Î•º Ï∂úÎ†•ÌïúÎã§. -->
         <table>
             <tr>
-                <td id="title">æ∆¿Ãµ</td>
+                <td id="title">ÏïÑÏù¥Îîî</td>
                 <td><%=memberBean.getId() %></td>
             </tr>
                         
             <tr>
-                <td id="title">∫Òπ–π¯»£</td>
+                <td id="title">ÎπÑÎ∞ÄÎ≤àÌò∏</td>
                 <td><%=memberBean.getPassword() %></td>
             </tr>
                     
             <tr>
-                <td id="title">¿Ã∏ß</td>
+                <td id="title">Ïù¥Î¶Ñ</td>
                 <td><%=memberBean.getName() %></td>
             </tr>
                     
             <tr>
-                <td id="title">º∫∫∞</td>
+                <td id="title">ÏÑ±Î≥Ñ</td>
                 <td><%=memberBean.getGender()%></td>
             </tr>
                     
             <tr>
-                <td id="title">ª˝¿œ</td>
+                <td id="title">ÏÉùÏùº</td>
                 <td>
-                    <%=memberBean.getBirthyy() %>≥‚ 
-                    <%=memberBean.getBirthmm() %>ø˘ 
-                    <%=memberBean.getBirthdd() %>¿œ
+                    <%=memberBean.getBirthyy() %>ÎÖÑ 
+                    <%=memberBean.getBirthmm() %>Ïõî 
+                    <%=memberBean.getBirthdd() %>Ïùº
                 </td>
             </tr>
                     
             <tr>
-                <td id="title">¿Ã∏ﬁ¿œ</td>
+                <td id="title">Ïù¥Î©îÏùº</td>
                 <td>
                     <%=memberBean.getMail1() %>@
                     <%=memberBean.getMail2() %>
@@ -90,11 +90,11 @@
             </tr>
                     
             <tr>
-                <td id="title">»ﬁ¥Î¿¸»≠</td>
+                <td id="title">Ìú¥ÎåÄÏ†ÑÌôî</td>
                 <td><%=memberBean.getPhone() %></td>
             </tr>
             <tr>
-                <td id="title">¡÷º“</td>
+                <td id="title">Ï£ºÏÜå</td>
                 <td>
                     <%=memberBean.getAddress() %>
                 </td>
@@ -102,9 +102,9 @@
         </table>
         
         <br>
-        <input type="button" value="µ⁄∑Œ" onclick="changeForm(-1)">
-        <input type="button" value="»∏ø¯¡§∫∏ ∫Ø∞Ê" onclick="changeForm(0)">
-        <input type="button" value="»∏ø¯≈ª≈" onclick="changeForm(1)">
+        <input type="button" value="Îí§Î°ú" onclick="changeForm(-1)">
+        <input type="button" value="ÌöåÏõêÏ†ïÎ≥¥ Î≥ÄÍ≤Ω" onclick="changeForm(0)">
+        <input type="button" value="ÌöåÏõêÌÉàÌá¥" onclick="changeForm(1)">
 </body>
 </html>
 

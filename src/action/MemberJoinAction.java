@@ -24,7 +24,6 @@ public class MemberJoinAction implements CommandAction{
         
         // 입력된 정보를 자바빈에 세팅한다.
         MemberBean member = new MemberBean();
-        member.setMem_no(request.getParameter("mem_no"));
         member.setMem_nm(request.getParameter("mem_nm"));
         member.setMem_id(request.getParameter("mem_id"));
         member.setMem_pw(request.getParameter("mem_pw"));;
@@ -34,8 +33,6 @@ public class MemberJoinAction implements CommandAction{
         member.setEmail_yn(request.getParameter("email_yn"));
         member.setFvrt_str_1(request.getParameter("fvrt_str_1"));
         member.setFvrt_str_2(request.getParameter("fvrt_str_2"));
-       
-
         
         // 회원가입 실행
         dao.insertMember(member);

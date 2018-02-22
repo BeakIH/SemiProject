@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -12,26 +11,26 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../../lib/animate.css" rel="stylesheet">
+<link href="../../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/tinymce/tinymce.min.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../../lib/aos/aos.js"></script>
+<script src="../../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -212,24 +211,23 @@
                 <!-- 회원계정 페이지 전체수정 필요(account.html) -->
                 
                   <span class="list-group-item heading"> 내 매장 목록</span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한 BABSAZO</span>
+                      <a href="#" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
+                  <a href="MyCoupon.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> BABSAZO 쿠폰</span>
                     <span class="badge badge-primary badge-pill">10</span>
                     </a>
-                  <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
+                  <a href="#" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
                     <span class="badge badge-primary badge-pill">7</span>
                     </a>
                 
                 
                 
-                
                   <span class="list-group-item heading">내 계정 관리</span>
-                  <a href="my_profile.html" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
-                  <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
-<a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a>
-<a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
-<a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
+                 <a href="ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
+                  <a href="ChangePWPre.jsp" class="list-group-item active"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
+<a href="MemberGradePre.jsp" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> BABSAZO 멤버십</a>
+<a href="PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+<a href="SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
                 </div>
               </div>
             </div>
@@ -239,28 +237,40 @@
           
           
           
-          <!-- 프로필.html수정 -->
+          <!-- 수정 -->
           
           <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
-              <h1>프로필 설정<small>BABSAZO에서 사용할 프로필을 설정해주세요</small></h1>
+              <h1>비밀번호 변경<small>
+              <br>계정 보안을 위해 다음 사항을 참고하여 비밀번호를 설정해주세요 </small></h1>
+              <br>
+              <h1><small>하나 이상의 특수문자를 포함
+              <br> 소문자 및 대문자 모두 사용
+              <br> 최소 8자 이상의 문자 길이
+              <br> 생년월일 아이디와 4자이상 겹치는 숫자 사용 불가 </small></h1>
             </div>
             <form action="index.php">
-              <h3 class="subheadline">기본 정보</h3>
-              <div class="row">
-                <div class="col-md-6">
+              <h3 class="subheadline">새로운 비밀번호 입력</h3>
+             
                   <div class="form-group">
-                    <label> 성</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="밥">
+                    
+                    <input type="text" class="form-control form-control-lg" placeholder="" >
                   </div>
-                </div>
-                <div class="col-md-6">
+                  </form>
+                
+            <form action="index.php">
+              <h3 class="subheadline">비밀번호 확인</h3>
                   <div class="form-group">
-                    <label>이름</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="사조">
+                    <label> 비밀번호를 다시 한 번 입력해주세요</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="" >
                   </div>
-                </div>
-              </div>
+            
+                
+           </form>
+           
+           <!-- 비밀번호 힌트할까?  
+             <div class="row">
+                <div class="col-md-6"> 
               <div class="form-group">
                 <label>이메일</label>
                 <input type="text" class="form-control form-control-lg" value="babsazo@email.com">
@@ -302,73 +312,8 @@
                   <input type="text" class="form-control form-control-lg" placeholder="">
                 </div>
               </div>
-              <div class="form-group">
-              
-              <!-- 인스타그램으로 바꿔보기-->
-                <label>Linkedin</label>
-                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-linkedin"></i></span>
-                  <input type="text" class="form-control form-control-lg" placeholder="">
-                   
-                </div>
-              </div>
-              <br>
-              
-              <h3 class="subheadline">거주지 또는 관심 BABSAZO 지역</h3>
-              <div class="form-group">
-                <label>예) 서울/종로구</label>
-                <input type="text" class="form-control form-control-lg">
-              </div>
-              
-              
-              <div class="row">
-              
-              
-              <!-- 주소 / 관심지역설정(?) 일단보류
-                <div class="col-lg-6">
-              
-                  <div class="form-group">
-                    <label>Location</label>
-                    <input type="text" class="form-control form-control-lg" id="autocomplete" placeholder="Enter your location">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Address</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>City</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" id="locality">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>State</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" id="administrative_area_level_1">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Country</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" id="country">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Zipcode</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" id="postal_code">
-                  --> 
-                  
-                  
-                  
-                  
-                  </div> 
+              <div class="form-group"> -->
+                   </div> 
                 </div>
               </div>
               <hr>
