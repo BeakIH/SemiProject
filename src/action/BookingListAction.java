@@ -11,7 +11,7 @@ public class BookingListAction {
 		
 		request.setCharacterEncoding("UTF-8");
 			
-		String id = (String)session.getAttribute("id");
+		String id = (String)request.getSession().getAttribute("id");
 
 		return "../jsp/admin/bookingListPro.jsp";
 	

@@ -10,14 +10,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>BABSAZO<decorator:title/></title>
-
+<script>
+alert('${errorpage}');
+</script>
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
 <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link href="../../lib/animate.css" rel="stylesheet">
+<c:if test="${errorpage!='MyCoupon'}">
 <link href="../../lib/selectric/selectric.css" rel="stylesheet">
 <link href="../../lib/aos/aos.css" rel="stylesheet">
+</c:if>
 <link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
 <link href="../../css/style.css" rel="stylesheet">
 
@@ -296,7 +300,7 @@ function fillInAddress() {
           </div>
           
           <!-- 데코레이터 -->
-         <%-- <decorator:body/> --%>
+         <decorator:body/>
          
          
         </div>
@@ -496,8 +500,8 @@ function fillInAddress() {
             </div>
           </div>
           
-          <%-- <!-- 데코레이터 -->
-         <decorator:body/> --%>
+         <!-- 데코레이터 -->
+         <decorator:body/>
             
           </div>
         </div>
