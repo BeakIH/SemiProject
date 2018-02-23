@@ -7,8 +7,11 @@ import java.sql.SQLException;
 import java.sql.Date;
 import java.sql.DriverManager;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import javax.naming.NamingException;
- 
+import javax.sql.DataSource;
+
 import jsp.util.DBConnection;
 
 /**
@@ -71,9 +74,52 @@ public class MemberDAO
 	   }
 	   
 	   
+
 	   
+	//아이디중복체크  
+	   
+	 
+			 
+		//db연동 메서드
+	   public int ConfirmId(String id) {
+		 
+		   Connection conn = null;
+	       PreparedStatement pstmt = null;
+	       ResultSet rs = null;
+		   int result = 0;
+		 
+		   try {
+			   conn = getOracle();
+			   String sql = "select mem_id from member where mem_id=?";
+					   pstmt = conn.prepareStatement(sql);
+			   pstmt.setString(1, id);
+			   rs = pstmt.executeQuery();
+			   if(rs.next()) {
+				   result = 1;
+			   }
+		   } catch(Exception e) {
+			   e.printStackTrace();
+			   
+		   }finally {
+			   if(rs != null) try { rs.close();} catch(SQLException ex) {}
+		         if(pstmt !=null)try {pstmt.close();   }catch(SQLException ex) {}
+		         if(conn !=null) try {conn.close();} catch(SQLException ex) {}
+		   }
+		   return result;
+	   	
+	   }
+	   //ConfirmId메서드
+		private Connection getOracle() throws Exception {
 	
-    /**
+			Context ctx = new InitialContext();
+			Context env = (Context) ctx.lookup("java:comp/env");
+			DataSource ds = (DataSource) env.lookup("jdbc/orcl");
+			return ds.getConnection();
+	}
+
+
+
+	/**
      * 
        생년월일 
        
