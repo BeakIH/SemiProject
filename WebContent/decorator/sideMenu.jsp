@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>BABSAZO</title>
+<title>BABSAZO<decorator:title/></title>
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
@@ -86,7 +86,7 @@ function fillInAddress() {
 		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
 	});
         </script>
-
+<decorator:head/>
 </head>
 <body> <!-- 공통디자인 end --> 
 <!-- 관리자 세션일때 START -->

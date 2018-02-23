@@ -2,29 +2,28 @@
 	<decorators> 
 		<decorator page="/decorator/sideMenu.jsp" name="main"> 
 			<pattern>/jsp/admin/*</pattern>
-		</decorator>
-		
-		<decorator page="/decorator/sideMenu.jsp" name="main"> 
 			<pattern>/jsp/member/sideMenu/*</pattern>
+			<pattern>/jsp/sessionMenu/*</pattern>
 		</decorator>
 		
-		<decorator page="/decorator/headerFooter.jsp" name="main"> 
+		
+		<decorator page="/decorator/headerFooter.jsp" name="good"> 
 			<pattern>/jsp/member/*</pattern>
-		</decorator> 
+		</decorator>
 			
+		<excludes>
+			<pattern>/jsp/member/SigninCon.jsp</pattern>
+		</excludes>
+	</decorators>
 			<!-- ex)
 			<decorator page="/decorator/adminlayout.jsp" name="admin"> 
 				<pattern>/adminpage/*</pattern>
 			</decorator> -->
 			
-		<excludes>
-			<pattern>/jsp/member/SigninCon.jsp</pattern>
-		</excludes> 
 		
 		<!-- <decorator page="/decorator/headerFooter.jsp" name="main"> 
 			<pattern>/jsp/member/*</pattern>
 		</decorator> -->
 		
-	</decorators>
 
  

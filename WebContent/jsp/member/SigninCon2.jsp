@@ -4,22 +4,6 @@
 <html> 
 <head><title> </title></head>
 <body>
-<div class="container">
-    <div class="row justify-content-md-center">
-          <div class="col col-md-12 col-lg-10 col-xl-8">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
-            <li class="breadcrumb-item"><a href="#">계정</a></li>
-            <li class="breadcrumb-item active" aria-current="page">로그인</li>
-            </ol>
-            </nav>
-        <div class="page-header">
-        <h1>B A B S A Z O</h1>
-        </div>
-      </div>
-    </div>
-  </div>
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center align-items-center">
@@ -80,11 +64,11 @@
 
 
 
-<head>
+
   <meta name="google-signin-client_id" content="1040068865620-q458emc189ucg0upk0j04g1tbmi15bn3.apps.googleusercontent.com	 
   .apps.googleusercontent.com">
-</head>
-<body>
+
+
   <div id="my-signin2"></div>
   <script>
     function onSuccess(googleUser) {
@@ -107,7 +91,7 @@
   </script>
 
   <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-</body>
+
        
        
        <br>
