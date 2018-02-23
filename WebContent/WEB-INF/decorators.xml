@@ -14,12 +14,16 @@
 		<excludes>
 			<pattern>/jsp/member/SigninCon.jsp</pattern>
 		</excludes>
-	</decorators>
+	
+	
+		<excludes>
+			<pattern>/jsp/sessionMenu/MyCoupon.jsp</pattern>
+		</excludes>
 			<!-- ex)
 			<decorator page="/decorator/adminlayout.jsp" name="admin"> 
 				<pattern>/adminpage/*</pattern>
 			</decorator> -->
-			
+		</decorators>
 		
 		<!-- <decorator page="/decorator/headerFooter.jsp" name="main"> 
 			<pattern>/jsp/member/*</pattern>
