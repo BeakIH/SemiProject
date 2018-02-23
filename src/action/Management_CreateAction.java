@@ -34,6 +34,6 @@ public class Management_CreateAction implements CommandAction {
 			ex.printStackTrace();
 		}
 		
-		return "/jsp/admin/management_list.do?store_no=1001";
+		return "/jsp/admin/management_list.do?store_no=1004";
 	}
 }

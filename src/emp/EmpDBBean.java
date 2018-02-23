@@ -11,6 +11,12 @@ import emp.EmpDataBean;
 import store.list.JdbcUtil;
 
 public class EmpDBBean {
+	ArrayList<EmpDataBean> list = new ArrayList<EmpDataBean>();
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	EmpDataBean dto = null;
+
 	private static EmpDBBean instance = new EmpDBBean();
 
 	public static EmpDBBean getInstance() {
@@ -26,10 +32,6 @@ public class EmpDBBean {
 	}
 
 	public ArrayList<EmpDataBean> getEmpList(int storeNo) throws Exception {
-		ArrayList<EmpDataBean> list = new ArrayList<EmpDataBean>();
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 
 		try {
 			conn = getConnection();
@@ -74,8 +76,6 @@ public class EmpDBBean {
 
 	// 직원 추가를 위한 메소드
 	public void insertEmp(EmpDataBean emp) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
 
 		try {
 			conn = getConnection();
@@ -126,10 +126,6 @@ public class EmpDBBean {
 	 */
 
 	public EmpDataBean selectEmp(int admid) throws Exception {
-		EmpDataBean dto = null;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 
 		try {
 			conn = getConnection();
@@ -163,11 +159,35 @@ public class EmpDBBean {
 		}
 		return dto;
 	}
-	
+
 	public boolean modifyEmp(EmpDataBean dto) throws Exception {
-		boolean b=false;
+		
+		boolean b = false;
+
 		try {
-			
+			conn = getConnection();
+			conn.setAutoCommit(false);
+
+			String sql = "update emp set emp_nm= ? , Position= ? , adm_yn= ? , emp_status = ? where adm_id=?";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, dto.getEmpNm());
+			pstmt.setString(2, dto.getPosition());
+			pstmt.setString(3, dto.getAdmYn());
+			pstmt.setString(4, dto.getEmpStatus());
+
+			if (pstmt.executeUpdate() > 0) {
+				b = true;
+			}
+		} catch (ClassNotFoundException | SQLException sqle) {
+			conn.rollback();
+		} finally {
+			try {
+				JdbcUtil.close(pstmt);
+				JdbcUtil.close(conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		return b;
 	}
