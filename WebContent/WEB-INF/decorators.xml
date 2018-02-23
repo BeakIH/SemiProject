@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<decorators> 
-		<decorator page="/decorator/sideMenu.jsp" name="main"> 
-			<pattern>/jsp/admin/*</pattern>
-			<pattern>/jsp/member/sideMenu/*</pattern>
-			<pattern>/jsp/sessionMenu/*</pattern>
-		</decorator>
-		
-		
-		<decorator page="/decorator/headerFooter.jsp" name="good"> 
-			<pattern>/jsp/member/*</pattern>
-		</decorator>
-			
-		<excludes>
-			<pattern>/jsp/member/SigninCon.jsp</pattern>
-		</excludes>
-	
-	
-		<excludes>
-			<pattern>/jsp/sessionMenu/MyCoupon.jsp</pattern>
-		</excludes>
-			<!-- ex)
-			<decorator page="/decorator/adminlayout.jsp" name="admin"> 
-				<pattern>/adminpage/*</pattern>
-			</decorator> -->
-		</decorators>
-		
-		<!-- <decorator page="/decorator/headerFooter.jsp" name="main"> 
-			<pattern>/jsp/member/*</pattern>
-		</decorator> -->
-		
-
- 
+   <decorators> 
+      <decorator page="/decorator/sideMenu.jsp" name="main"> 
+         <pattern>/jsp/admin/*</pattern>
+         <pattern>/jsp/sessionMenu/*</pattern>
+      </decorator>
+      
+      
+      <decorator page="/decorator/headerFooter.jsp" name="good"> 
+         <pattern>/jsp/member/*</pattern>
+      </decorator>
+      
+      <!-- <excludes>
+         <pattern>/jsp/sessionMenu/MyCoupon.jsp</pattern>
+      </excludes> -->
+      <!-- <excludes>
+         <pattern>/jsp/member/SigninCon.jsp</pattern>
+      </excludes> -->
+   </decorators>
+         <!-- ex)
+         <decorator page="/decorator/adminlayout.jsp" name="admin"> 
+            <pattern>/adminpage/*</pattern>
+         </decorator> -->
+         
+      
+      <!-- <decorator page="/decorator/headerFooter.jsp" name="main"> 
+         <pattern>/jsp/member/*</pattern>
+      </decorator> -->

@@ -17,7 +17,7 @@
 	
 	<c:when test= "${check==1}">
 		<c:out value="${normal}" escapeXml = "false" />
-		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/member/MembershipPre.jsp'">  
+		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/sessionMenu/MembershipPre.jsp'">  
 	</c:when>
 	
 	<c:when test= "${check==2}">
@@ -27,7 +27,7 @@
 	
 	<c:when test= "${check==3}">
 		<c:out value="${idfalse}" escapeXml = "false" />
-		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/member/Jointool.jsp'">
+		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/member/JoinYeah.jsp'">
 	</c:when>
 	
 </c:choose>
