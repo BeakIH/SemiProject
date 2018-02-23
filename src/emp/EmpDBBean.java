@@ -103,27 +103,27 @@ public class EmpDBBean {
 		}
 	}
 
-	/*
-	 * public EmpDataBean getData(int storeNo) throws Exception { EmpDataBean dto =
-	 * null; Connection conn = null; PreparedStatement pstmt = null; ResultSet rs =
-	 * null;
-	 * 
-	 * try { conn = getConnection(); conn.setAutoCommit(false);
-	 * 
-	 * String sql = "select * from emp where store_no = ?"; pstmt =
-	 * conn.prepareStatement(sql); pstmt.setInt(1, storeNo);
-	 * 
-	 * rs = pstmt.executeQuery();
-	 * 
-	 * if(rs.next()) { dto = new EmpDataBean(); dto.setEmpNm(rs.getString("empNm"));
-	 * dto.setPosition(rs.getString("position")); }
-	 * 
-	 * conn.commit(); conn.setAutoCommit(true);
-	 * 
-	 * } catch (ClassNotFoundException | SQLException sqle) { conn.rollback(); }
-	 * finally { try { JdbcUtil.close(pstmt); JdbcUtil.close(conn); } catch
-	 * (Exception e) { e.printStackTrace(); } } return dto; }
-	 */
+	
+	 public EmpDataBean getData(int storeNo) throws Exception { EmpDataBean dto =
+	 null; Connection conn = null; PreparedStatement pstmt = null; ResultSet rs =
+	 null;
+	 
+	 try { conn = getConnection(); conn.setAutoCommit(false);
+	 
+	 String sql = "select * from emp where store_no = ?"; pstmt =
+	 conn.prepareStatement(sql); pstmt.setInt(1, storeNo);
+	 
+	 rs = pstmt.executeQuery();
+	 
+	 if(rs.next()) { dto = new EmpDataBean(); dto.setEmpNm(rs.getString("empNm"));
+	 dto.setPosition(rs.getString("position")); }
+	 
+	 conn.commit(); conn.setAutoCommit(true);
+	 
+	 } catch (ClassNotFoundException | SQLException sqle) { conn.rollback(); }
+	 finally { try { JdbcUtil.close(pstmt); JdbcUtil.close(conn); } catch
+	 (Exception e) { e.printStackTrace(); } } return dto; }
+	 
 
 	public EmpDataBean selectEmp(int admid) throws Exception {
 
