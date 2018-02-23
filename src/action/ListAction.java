@@ -64,7 +64,10 @@ public class ListAction implements CommandAction {//글 목록 처리
 			searchn = Integer.parseInt(request.getParameter("searchn"));
 		}
 		
-
+/*		System.out.println("search::"+search);
+		System.out.println("searchn::"+searchn);
+		System.out.println("isortvalue::"+iSortValue);*/
+		
 		int currentPage = Integer.parseInt(pageNum);
 		int startRow = (currentPage * pageSize) - (pageSize-1); // 1page = (1*10)-(10-9)
 		int endRow = currentPage * pageSize;
@@ -101,6 +104,7 @@ public class ListAction implements CommandAction {//글 목록 처리
 		/* count 가 0보다 크다면 값을 select 해와서 articleList 에 저장해야하므로 dao 클래스의 메서드를 실행함 */
 		if (count > 0) {
 			if (search.equals("") || search == null) { // 검색어에 값이 없는경우 ( 검색 x : 기본페이지 )
+				/*System.out.println("검색이 아닌 경우");*/
 				if (iSortValue >= 0){// 셀렉트 박스 선택한 경우
 					/* System.out.println("iSortValue:::"+iSortValue); // 값 확인 */
 					articleList = dbPro.getArticles(startRow, endRow, iSortValue);
@@ -108,15 +112,27 @@ public class ListAction implements CommandAction {//글 목록 처리
 					/* System.out.println("iCateName:::"+iCateName); // 값 확인  */
 					articleList = dbPro.getArticles(iCateName); // 여기도 startRow, endRow 받아야함
 				} else if (iminSal >=0 && imaxSal >=0) { // 가격 정렬
-					System.out.println("iminValue:::"+iminSal); // 값 확인
+					/*System.out.println("iminValue:::"+iminSal); // 값 확인
 					System.out.println("imaxValue:::"+imaxSal); // 값 확인
-					articleList = dbPro.getSortSal(startRow, endRow, iminSal, imaxSal);
+*/					articleList = dbPro.getSortSal(startRow, endRow, iminSal, imaxSal);
 				} else {// 정렬옵션 선택 x ( = 초기화면 )
 				//System.out.println("start:"+startRow+"  end:"+endRow);
 				articleList = dbPro.getArticles(startRow, endRow); // 검색어가 없으므로 매개변수가 둘
 				}
 			}else { // 검색한 경우에 뿌려줄 리스트를 저장
-				articleList = dbPro.getArticles(startRow, endRow, searchn, search);
+				/*System.out.println("검색한 경우");*/
+				/*System.out.println("search::"+search);
+				System.out.println("searchn::"+searchn);
+				System.out.println("isortvalue::"+iSortValue);*/
+				if(iSortValue == -1) {//정렬 x 
+					articleList = dbPro.getArticles(startRow, endRow, searchn, search);
+				}else {//정렬 o 
+					articleList = dbPro.getTotalArticles(search,searchn,iSortValue);
+				}
+				
+				// 여기에 검색한경우+ 파라미터의 존재유무에따라서 다른 메서드를 출력하도록하거나
+				// 혹은 하나의 통합검색기능을가진 메서드를 만들어서 해당 메서드 내에서 매개변수에따라서
+				// 다른 sql 쿼리 조건을 검색하도록하기
 			}
 		}
 
@@ -141,6 +157,7 @@ public class ListAction implements CommandAction {//글 목록 처리
 		request.setAttribute("imaxValue", new Integer(imaxSal));
 		request.setAttribute("cateName", cateName);
 		request.setAttribute("search", search);
+		request.setAttribute("searchn", searchn);
 		
 		request.setAttribute("articleList", articleList);
 		return "/jsp/storeList/list.jsp";//해당 뷰
