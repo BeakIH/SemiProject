@@ -1,6 +1,6 @@
 package emp;
 
-import java.sql.Connection; 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,11 +34,11 @@ public class EmpDBBean {
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
-			
+
 			String sql = "select * from emp where store_No = ? order by emp_no";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, storeNo);
-			
+
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -54,10 +54,10 @@ public class EmpDBBean {
 
 				list.add(dto);
 			}
-			
+
 			conn.commit();
 			conn.setAutoCommit(true);
-			
+
 		} catch (ClassNotFoundException | SQLException sqle) {
 			conn.rollback();
 		} finally {
@@ -81,16 +81,17 @@ public class EmpDBBean {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			pstmt = conn.prepareStatement("insert into emp(emp_no, emp_nm, store_no, position, adm_yn, emp_status) values (emp_seq.nextval, ?, ?, ?, 'N', '재직')");
+			pstmt = conn.prepareStatement(
+					"insert into emp(emp_no, emp_nm, store_no, position, adm_yn, emp_status) values (emp_seq.nextval, ?, ?, ?, 'N', '재직')");
 			pstmt.setString(1, emp.getEmpNm());
 			pstmt.setInt(2, emp.getStoreNo());
 			pstmt.setString(3, emp.getPosition());
-			
+
 			pstmt.executeUpdate();
 			conn.commit();
 			conn.setAutoCommit(true);
 
-		} catch (ClassNotFoundException | SQLException sqle) {	
+		} catch (ClassNotFoundException | SQLException sqle) {
 			conn.rollback();
 		} finally {
 			try {
@@ -102,7 +103,29 @@ public class EmpDBBean {
 		}
 	}
 
-	/*public EmpDataBean getData(int storeNo) throws Exception {
+	/*
+	 * public EmpDataBean getData(int storeNo) throws Exception { EmpDataBean dto =
+	 * null; Connection conn = null; PreparedStatement pstmt = null; ResultSet rs =
+	 * null;
+	 * 
+	 * try { conn = getConnection(); conn.setAutoCommit(false);
+	 * 
+	 * String sql = "select * from emp where store_no = ?"; pstmt =
+	 * conn.prepareStatement(sql); pstmt.setInt(1, storeNo);
+	 * 
+	 * rs = pstmt.executeQuery();
+	 * 
+	 * if(rs.next()) { dto = new EmpDataBean(); dto.setEmpNm(rs.getString("empNm"));
+	 * dto.setPosition(rs.getString("position")); }
+	 * 
+	 * conn.commit(); conn.setAutoCommit(true);
+	 * 
+	 * } catch (ClassNotFoundException | SQLException sqle) { conn.rollback(); }
+	 * finally { try { JdbcUtil.close(pstmt); JdbcUtil.close(conn); } catch
+	 * (Exception e) { e.printStackTrace(); } } return dto; }
+	 */
+
+	public EmpDataBean selectEmp(int admid) throws Exception {
 		EmpDataBean dto = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -111,19 +134,20 @@ public class EmpDBBean {
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
-			
-			String sql = "select * from emp where store_no = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, storeNo);
-			
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				dto = new EmpDataBean();
-				dto.setEmpNm(rs.getString("empNm"));
-				dto.setPosition(rs.getString("position"));
-			}
 
+			String sql = "select * from emp where adm_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, admid);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				dto = new EmpDataBean();
+				dto.setEmpNo(rs.getInt("emp_no"));
+				dto.setEmpNm(rs.getString("emp_nm"));
+				dto.setPosition(rs.getString("Position"));
+				dto.setAdmYn(rs.getString("adm_Yn"));
+				dto.setEmpStatus(rs.getString("emp_status"));
+			}
 			conn.commit();
 			conn.setAutoCommit(true);
 
@@ -138,25 +162,13 @@ public class EmpDBBean {
 			}
 		}
 		return dto;
-	}*/
+	}
 	
-	public EmpDataBean modifyEmp(int admid) throws Exception {
-		EmpDataBean dto = null;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
+	public boolean modifyEmp(EmpDataBean dto) throws Exception {
+		boolean b=false;
 		try {
-			conn=getConnection();
 			
-			String sql="select * from emp where adm_id = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, admid);
-			rs=pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
-			}
 		}
+		return b;
 	}
 }
