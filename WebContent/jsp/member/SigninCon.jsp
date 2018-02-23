@@ -2,7 +2,9 @@
 
 <!DOCTYPE html>
 <html> 
-<head><title> </title></head>
+<head><title> </title>
+
+</head>
 <body>
 <div id="content">
   <div class="container">

@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>BABSAZO</title>
-
+</head>
 <body>
 <!-- 
         <div class="row has-sidebar">
@@ -51,7 +51,7 @@
               <div class="item" data-aos="fade-up">
                 <div class="row">
                   <div class="col-lg-5">
-                    <div class="item-image"> <a href="property_single.html"><img src="../../../img/mycoupon_img/BABMonth.png" class="img-fluid" alt="">
+                    <div class="item-image"> <a href="property_single.html"><img src="../../img/mycoupon_img/BABMonth.png" class="img-fluid" alt="">
                       <div class="item-badges">
                    <!-- <div class="item-badge-left">예약하기</div>  -->
                       <div class="item-badge-right">예약하기</div>
@@ -99,7 +99,7 @@
               <div class="item" data-aos="fade-up">
                 <div class="row">
                   <div class="col-lg-5">
-                    <div class="item-image"> <a href="property_single.html"><img src="../../../img/mycoupon_img/BAB20.png" class="img-fluid" alt="">
+                    <div class="item-image"> <a href="property_single.html"><img src="../../img/mycoupon_img/BAB20.png" class="img-fluid" alt="">
                       <div class="item-badges">
                       <!-- <div class="item-badge-left">Sponsored</div>  -->
                       <div class="item-badge-right">예약하기</div>
@@ -150,7 +150,7 @@
               <div class="item" data-aos="fade-up">
                 <div class="row">
                   <div class="col-lg-5">
-                    <div class="item-image"> <a href="property_single.html"><img src="../../../img/mycoupon_img/BABFree.png" class="img-fluid" alt="">
+                    <div class="item-image"> <a href="property_single.html"><img src="../../img/mycoupon_img/BABFree.png" class="img-fluid" alt="">
                       <div class="item-badges">
                       <!-- <div class="item-badge-left">Sponsored</div>  -->
                       <div class="item-badge-right">예약하기</div>
