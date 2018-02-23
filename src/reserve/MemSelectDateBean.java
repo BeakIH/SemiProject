@@ -2,42 +2,40 @@ package reserve;
 
 public class MemSelectDateBean {
 
-	
+	// ȸ����ȣ ����ȣ
+	private int mem_no;
 
-    // ȸ����ȣ ����ȣ
-    private int mem_no;
+	// �̿볻����ȣ
+	private int his_no;
 
-    //  �̿볻����ȣ
-    private int his_no;
+	// ȸ���� ����
+	private String mem_nm;
 
-    // ȸ���� ����
-    private String mem_nm;
+	// ID ID
+	private String mem_id;
 
-    // ID ID
-    private String mem_id;
+	// PASSWORD PASSWORD
+	private String mem_pw;
 
-    // PASSWORD PASSWORD
-    private String mem_pw;
+	// �޴�����ȣ �޴�����ȣ
+	private String mem_tel;
 
-    // �޴�����ȣ �޴�����ȣ
-    private String mem_tel;
+	// �����ּ�
+	private String address;
 
-    //  �����ּ�
-    private String address;
+	// EMAIL�ּ�
+	private String email;
 
-    //  EMAIL�ּ�
-    private String email;
+	// EMAIL���ſ���
+	private String email_yn;
 
-    //  EMAIL���ſ���
-    private String email_yn;
+	// ��ȣ����1
+	private String fvrt_str_1;
 
-    //  ��ȣ����1
-    private String fvrt_str1;
+	// ��ȣ����2
+	private String fvrt_str_2;
 
-    //  ��ȣ����2
-    private String fvrt_str2;
-    
-   /* private String mem_yn;*/
+	/* private String mem_yn; */
 
 	public int getMem_no() {
 		return mem_no;
@@ -111,30 +109,20 @@ public class MemSelectDateBean {
 		this.email_yn = email_yn;
 	}
 
-	public String getFvrt_str1() {
-		return fvrt_str1;
+	public String getFvrt_str_1() {
+		return fvrt_str_1;
 	}
 
-	public void setFvrt_str1(String fvrt_str1) {
-		this.fvrt_str1 = fvrt_str1;
+	public void setFvrt_str_1(String fvrt_str_1) {
+		this.fvrt_str_1 = fvrt_str_1;
 	}
 
-	public String getFvrt_str2() {
-		return fvrt_str2;
+	public String getFvrt_str_2() {
+		return fvrt_str_2;
 	}
 
-	public void setFvrt_str2(String fvrt_str2) {
-		this.fvrt_str2 = fvrt_str2;
+	public void setFvrt_str_2(String fvrt_str_2) {
+		this.fvrt_str_2 = fvrt_str_2;
 	}
-
-	/*public String getMem_yn() {
-		return mem_yn;
-	}
-
-	public void setMem_yn(String mem_yn) {
-		this.mem_yn = mem_yn;
-	}*/
-
-    
 
 }

@@ -26,25 +26,30 @@ public class BookingDBBean {
 	public void insertBooking(BookingDataBean booking) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null; 
-		
+		System.out.println("메뉴?:::"+booking.getBkMenu());
+		System.out.println("nm?:::"+booking.getEmpNo());
+
 		try {
 			conn = getConnection();
 			//가라 데이터 집어넣기 - 수정해서 가라데이터 집어넣어줘야함
-			pstmt = conn.prepareStatement("insert into booking values(SEQ_ID.NEXTVAL,?,?,?,?,?,?,?,?,?,'N',?,?,?)");
-			pstmt.setInt(1, booking.getBkNo());
-			pstmt.setInt(2, booking.getWtNo());
-			pstmt.setInt(3, booking.getEmpNo());
-			pstmt.setInt(4, booking.getMemNo());
-			pstmt.setString(5, booking.getMemNm());
-			pstmt.setString(6, booking.getMemTel());
-			pstmt.setString(7, booking.getStoreNm());
-			pstmt.setString(8, booking.getBkDate());
-			pstmt.setString(9, booking.getBkCnt());
-			pstmt.setString(10, booking.getBkMenu());
+			pstmt = conn.prepareStatement("insert into booking values(booking_seq.NEXTVAL,?,?,?,?,?,?,?,?,'N',?,?,?)");
+			/*pstmt.setInt(1, booking.getBkNo());*/
+			/*pstmt.setInt(2, booking.getWtNo());*/
+			pstmt.setInt(1, booking.getEmpNo());
+			
+			pstmt.setInt(2, booking.getMemNo());
+			pstmt.setString(3, booking.getMemNm());
+			pstmt.setString(4, booking.getMemTel());
+			
+			
+			pstmt.setString(5, booking.getStoreNm());
+			pstmt.setString(6, booking.getBkDate());
+			pstmt.setString(7, booking.getBkCnt());
+			pstmt.setString(8, booking.getBkMenu());
 			//pstmt.setString(11, booking.getCofirmYn()); //N값 넣어줘야됨
-			pstmt.setInt(11, booking.getBkTblCnt());
-			pstmt.setInt(12, booking.getStoreNo());
-			pstmt.setString(13, booking.getBkPriSum());
+			pstmt.setInt(9, booking.getBkTblCnt());
+			pstmt.setInt(10, booking.getStoreNo());
+			pstmt.setString(11, booking.getBkPriSum());
 			pstmt.executeUpdate();
 		 
 		} catch (Exception e) {

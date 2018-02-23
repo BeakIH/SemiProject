@@ -19,8 +19,6 @@ public class List_infoAction implements CommandAction {//글 목록 처리
 		// 파라미터 값 저장
 		int storeNo = Integer.parseInt(request.getParameter("store_no"));
 		
-		System.out.println("storeNo:::"+storeNo); // 값 넘어옴
-		
 		List articleList = null;
 //		ListDBBean dbPro = ListDBBean.getInstance();
 		ReserveDBBean dbPro = ReserveDBBean.getInstance();
@@ -29,7 +27,6 @@ public class List_infoAction implements CommandAction {//글 목록 처리
 		List searchList = new ArrayList();
 
 		// 점포번호를 가지고 검색하는 메서드 실행
-		System.out.println("테스트1");
 		articleList = dbPro.getInfo(storeNo,"ones");
 
 		//해당 뷰에서 사용할 속성
