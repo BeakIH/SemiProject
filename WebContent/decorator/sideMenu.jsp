@@ -296,7 +296,7 @@ function fillInAddress() {
           </div>
           
           <!-- 데코레이터 -->
-         <decorator:body/>
+         <%-- <decorator:body/> --%>
          
          
         </div>
@@ -475,28 +475,29 @@ function fillInAddress() {
               <div class="sidebar_inner">
                 <div class="list-group no-border list-unstyled">
                 
-                  <span class="list-group-item heading"> 내 매장 목록</span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> BABSAZO하기</a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한 BABSAZO</span>
+                  <span class="list-group-item heading"> BABSAZO 즐기기 </span>
+                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"> </i> 예약확인  </a>
+                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한  BABSAZO</span>
                     <span class="badge badge-primary badge-pill">10</span>
                     </a>
                   <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
                     <span class="badge badge-primary badge-pill">7</span>
                     </a>
                   <span class="list-group-item heading"> 내 계정 관리</span>
-                  <a href="../jsp/member/ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> 프로필 설정</a>
-                  <a href="../jsp/member/ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="../jsp/member/NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO알림</a>
-				  <a href="../jsp/member/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-fw fa-cubes"></i> BABSAZO멤버십</a>
-				  <a href="../jsp/member/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
-                  <a href="../jsp/member/SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a>
+                  <a href="../sessionMenu/ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> ${name}님 정보</a>
+                  <a href="../sessionMenu/ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="../sessionMenu/MyCoupon.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 내쿠폰보기</a>
+                  <a href="../sessionMenu/NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
+				  <a href="../sessionMenu/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-bitcoin"></i> BABSAZO 멤버십</a>
+				  <a href="../sessionMenu/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+                  <!-- <a href="../sessionMenu/SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a> -->
                 </div>
               </div>
             </div>
           </div>
           
-         <!-- 데코레이터 -->
-         <decorator:body/>
+          <%-- <!-- 데코레이터 -->
+         <decorator:body/> --%>
             
           </div>
         </div>
