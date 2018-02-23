@@ -29,17 +29,17 @@ public class MemSelectDBBean {
 		return DriverManager.getConnection(jdbcDriver);
 	}
 	
-	public List MemInfo (String memId) throws Exception {
+	public List MemInfo (String mem_id) throws Exception {
 	       Connection conn = null;
 	       PreparedStatement pstmt = null;
 	       ResultSet rs = null;
-	       List<MemSelectDateBean> articleList = new ArrayList();
+	       List<MemSelectDateBean> articleList2 = new ArrayList();
 	       try {
 	           conn = getConnection();
 
 	           pstmt = conn.prepareStatement(
 	           "select * from member where mem_id = ?");
-	           pstmt.setString(1, memId);
+	           pstmt.setString(1, mem_id);
 	           rs = pstmt.executeQuery();
 
 	           if (rs.next()) {
@@ -47,21 +47,21 @@ public class MemSelectDBBean {
 	        	   do {
 	        	   MemSelectDateBean article = new MemSelectDateBean();
 	               article.setMem_no(rs.getInt("mem_no"));
-	               article.setHis_no(rs.getInt("his_no"));
-	               article.setMem_nm(rs.getString("mem_nm"));
+/*	               article.setHis_no(rs.getInt("his_no"));
+*/	               article.setMem_nm(rs.getString("mem_nm"));
 	               article.setMem_id(rs.getString("mem_id"));
 	               article.setMem_pw(rs.getString("mem_pw"));
 	               article.setMem_tel(rs.getString("mem_tel"));
 	               article.setAddress(rs.getString("address"));
 	               article.setEmail(rs.getString("email"));
 	               article.setEmail_yn(rs.getString("email_yn"));
-	               article.setFvrt_str1(rs.getString("fvrt_str1"));
-	               article.setFvrt_str2(rs.getString("fvrt_str2"));
+	               article.setFvrt_str_1(rs.getString("fvrt_str_1"));
+	               article.setFvrt_str_2(rs.getString("fvrt_str_2"));
 	              /* article.setMem_yn(rs.getString("mem_yn"));*/
 	               
+	              
 	               
-	               
-	               articleList.add(article);
+	               articleList2.add(article);
 		    }while (rs.next());
 	        }
 	       } catch(Exception ex) {
@@ -71,6 +71,6 @@ public class MemSelectDBBean {
 	           if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
 	           if (conn != null) try { conn.close(); } catch(SQLException ex) {}
 	       }
-		return articleList;
+		return articleList2;
 	   }
 }
