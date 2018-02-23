@@ -44,7 +44,7 @@ public class MemberJoinAction implements CommandAction{
            // 가입성공 메시지를 세션에 담는다.
            request.getSession().setAttribute("msg", "1");
            
-        return "/jsp/member/view/Success.jsp";
+        return "/jsp/member/Success.jsp";
     }
 }
  

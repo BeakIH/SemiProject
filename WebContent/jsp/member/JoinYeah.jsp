@@ -216,10 +216,25 @@
 
 
 					<script type="text/javascript">
-						// 중복처리
-						function overlapId(){
-							alert('중복처리');ㅣ
+					
+					
+					// 중복처리
+						
+						function ConfirmId(){
+						alert("실행");
+						var id = document.getElementById("inputID").value;
+							if(document.getElementById("inputID").value == "") {
+							alert('사용하실 ID를 입력하세요.');
+							return;
 						}
+							alert(id);
+						url = "ConfirmId.jsp?id="+id;
+						open(url, "confirm","toolbar=no,location=no,status=no,scrollbars=no,resizable=no");
+						}
+						
+						
+						
+						
 						
 						// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
 						function checkValue() {
@@ -305,10 +320,10 @@
 									<td id="title"></td>
 									<div class="input-group">
 										<input type="text" name="mem_id" maxlength="50"
-											class="form-control" id="username"
+											class="form-control" id="inputID"
 											placeholder="사용하실 아이디를 입력해 주세요" required> <span
 											class="input-group-btn">
-											<button type="button" class="btn btn-warning" onClick="overlapId();" required>
+											<button type="button" class="btn btn-warning" onClick="ConfirmId();">
 												<font color="F9FFFF">아이디 중복 체크</font><i
 													class="fa fa-edit spaceLeft"></i>
 											</button>
