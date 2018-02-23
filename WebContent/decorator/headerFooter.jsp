@@ -11,7 +11,7 @@
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
 
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>BABSAZO</title>
+<title>BABSAZO<decorator:title/></title>
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />

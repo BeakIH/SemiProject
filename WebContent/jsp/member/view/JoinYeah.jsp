@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,26 +11,31 @@
 <title>BABSAZO</title>
 
 <!-- Bootstrap -->
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans"
+	rel="stylesheet" />
+<link href="../../../lib/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="../../../lib/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href="../../../lib/animate.css" rel="stylesheet">
+<link href="../../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../../lib/Magnific-Popup/magnific-popup.css"
+	rel="stylesheet">
+<link href="../../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
+<script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../../lib/aos/aos.js"></script>
+<script src="../../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,211 +45,226 @@
     <![endif]-->
 </head>
 <body>
-<div id="main">
-<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
-  <div class="container">
-  <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	<div id="main">
+		<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><span
+					class="icon-uilove-realestate"></span></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#menu-content" aria-controls="menu-content"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-  <div class="collapse navbar-collapse" id="menu-content">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Home <span class="sr-only">(current)</span>
-        </a>
-        <div class="dropdown-menu">
-            <a href="index.html" class="dropdown-item">Homepage 1</a>
-            <a href="index2.html" class="dropdown-item">Homepage 2</a>
-            <a href="index3.html" class="dropdown-item">Homepage 3</a>
-            <a href="index4.html" class="dropdown-item">Homepage 4</a>
-            <a href="index5.html" class="dropdown-item">Homepage 5</a>
-            <a href="index6.html" class="dropdown-item">Homepage 6</a>
-            <a href="index7.html" class="dropdown-item">Homepage 7</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Listings
-        </a>
-        <div class="dropdown-menu">
-            <a href="property_listing.html" class="dropdown-item">List View</a>
-            <a href="property_grid.html" class="dropdown-item">Grid View</a>
-            <a href="property_listing_map.html" class="dropdown-item">Map View</a>
-            <a href="property_single.html" class="dropdown-item">Single View 1</a>
-            <a href="property_single2.html" class="dropdown-item">Single View 2</a>
-            <a href="property_single3.html" class="dropdown-item">Single View 3</a>
-        </div>
-      </li>
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Agents
-        </a>
-        <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">Agent List</a>
-            <a href="agent.html" class="dropdown-item">Agent Profile</a>
-        </div>
-      </li>
-      
-      <li class="nav-item dropdown megamenu">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Pages
-        </a>
-        <div class="dropdown-menu">
-        <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col col-md-8">
-            <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Homepage</li>
-                  <li><a href="index.html">Homepage 1</a></li>
-                  <li><a href="index2.html">Homepage 2</a></li>
-                  <li><a href="index3.html">Homepage 3</a></li>
-                  <li><a href="index4.html">Homepage 4</a></li>
-                  <li><a href="index5.html">Homepage 5</a></li>
-                  <li><a href="index6.html">Homepage 6</a></li>
-                  <li><a href="index7.html">Homepage 7</a></li>
-                  <li class="title">Login Pages</li>
-                  <li><a href="signin.html">Signin</a></li>
-                  <li><a href="register.html">Register</a></li>
-                  <li><a href="forgot-password.html">Forgot Password</a></li>
-                 </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Property Listing</li>
-                  <li><a href="property_listing.html">List View</a></li>
-                  <li><a href="property_grid.html">Grid View</a></li>
-                  <li><a href="property_listing_map.html">Map View</a></li>
-                  <li class="title">Single Property</li>
-                  <li><a href="property_single.html">Single View 1</a></li>
-                  <li><a href="property_single2.html">Single View 2</a></li>
-                  <li><a href="property_single3.html">Single View 3</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Other Pages</li>
-                  <li><a href="plans.html">Plans</a></li>
-                  <li><a href="information_page.html">Information Page</a></li>
-                  <li><a href="coming_soon.html">Coming Soon</a></li>
-                  <li><a href="404_error.html">Error Page</a></li>
-                  <li><a href="success.html">Success Page</a></li>
-                  <li><a href="contact.html">Contact Page</a></li>
-                  <li><a href="compare.html">Compare Properties</a></li>
-                  <li class="title">Agent Pages</li>
-                  <li><a href="agent_list.html">Agent List</a></li>
-                  <li><a href="agent.html">Agent Profile</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Account Pages</li>
-                  <li><a href="my_listing_add.html">Add Listing</a></li>
-                <li><a href="my_bookmarked_listings.html">Bookmarked Listing</a></li>
-                  <li><a href="my_listings.html">My Listings</a></li>
-                  <li><a href="my_profile.html">My Profile</a></li>
-                <li><a href="my_password.html">Change Password</a></li>
-                <li><a href="my_notifications.html">Notifications</a></li>
-                <li><a href="my_membership.html">Membership</a></li>
-                <li><a href="my_payments.html">Payments</a></li>
-                <li><a href="my_account.html">Account</a></li>
-                <li class="title">Blog Pages</li>
-                  <li><a href="blog.html">Blog Archive</a></li>
-                  <li><a href="blog_single.html">Blog Single</a></li>
-                </ul>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
-        </div>
-      </li>
-      
-    </ul>
-    
-     <ul class="navbar-nav ml-auto">
-      
-      
-      <li class="nav-item dropdown user-account">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
-        </a>
-        <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
-        </div>
-      </li>
-      <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
-    </ul>
-    
-  </div>
-  </div>
-</nav>
- 
-         <article class="container">
-        <div class="page-header">
-          <h1>È¸¿ø°¡ÀÔ <small> BABSAZO È¸¿ø¸¸ÀÇ ´Ù¾çÇÑ ÇÒÀÎ ÇıÅÃ ¹× ÇÁ·Î¸ğ¼ÇÀÌ ±â´Ù¸®°í ÀÖ¾î¿ä!</small></h1>
-        </div>
-        
-        
-        <div class="col-md-6 col-md-offset-3">
-        
-        <div class="form-group">
-        
- 
-            <script type="text/javascript">
-    
-        // ÇÊ¼ö ÀÔ·ÂÁ¤º¸ÀÎ ¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£°¡ ÀÔ·ÂµÇ¾ú´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
-        function checkValue()
-        {
-            if(!document.userInfo.mem_id.value){
-                alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-                return false;
-            }
-            
-            if(!document.userInfo.password.value){
-                alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-                return false;
-            }
-            
-            // ºñ¹Ğ¹øÈ£¿Í ºñ¹Ğ¹øÈ£ È®ÀÎ¿¡ ÀÔ·ÂµÈ °ªÀÌ µ¿ÀÏÇÑÁö È®ÀÎ
-            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
-                alert("ºñ¹Ğ¹øÈ£¸¦ µ¿ÀÏÇÏ°Ô ÀÔ·ÂÇÏ¼¼¿ä.");
-                return false;
-                
-           
-            }
-        }
-        
-        // Ãë¼Ò ¹öÆ° Å¬¸¯½Ã ·Î±×ÀÎ È­¸éÀ¸·Î ÀÌµ¿
-        function goLoginForm() {
-            location.href="LoginForm.jsp";
-        }
-    </script>
-    
-    
-   <!-- ÀÔ·ÂÇÑ °ªÀ» Àü¼ÛÇÏ±â À§ÇØ form ÅÂ±×¸¦ »ç¿ëÇÑ´Ù -->
-        <!-- °ª(ÆÄ¶ó¹ÌÅÍ) Àü¼ÛÀº POST ¹æ½Ä, Àü¼ÛÇÒ ÆäÀÌÁö´Â JoinPro.jsp -->
-    <form method="post" action="/SemiProject/test.do" name="userInfo" onsubmit="return checkValue()">
-                
-      
-                 <table>
-                 
-                   <tr>
-               <div class="form-group">
-              <label for="birth"><font size="4em" color="52478B">»ı³â¿ùÀÏ ¶Ç´Â ±â³äÀÏ</font></label>
-                <td id="title"></td> 
-              <input type="text" name="mem_no" maxlength="4" placeholder="³â(4ÀÚ)" size="6" >  
-                     <!--  &nbsp;<select name="birthmm">
-                            <option value="">¿ù</option>
+				<div class="collapse navbar-collapse" id="menu-content">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Home <span class="sr-only">(current)</span>
+						</a>
+							<div class="dropdown-menu">
+								<a href="index.html" class="dropdown-item">Homepage 1</a> <a
+									href="index2.html" class="dropdown-item">Homepage 2</a> <a
+									href="index3.html" class="dropdown-item">Homepage 3</a> <a
+									href="index4.html" class="dropdown-item">Homepage 4</a> <a
+									href="index5.html" class="dropdown-item">Homepage 5</a> <a
+									href="index6.html" class="dropdown-item">Homepage 6</a> <a
+									href="index7.html" class="dropdown-item">Homepage 7</a>
+							</div></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Listings </a>
+							<div class="dropdown-menu">
+								<a href="property_listing.html" class="dropdown-item">List
+									View</a> <a href="property_grid.html" class="dropdown-item">Grid
+									View</a> <a href="property_listing_map.html" class="dropdown-item">Map
+									View</a> <a href="property_single.html" class="dropdown-item">Single
+									View 1</a> <a href="property_single2.html" class="dropdown-item">Single
+									View 2</a> <a href="property_single3.html" class="dropdown-item">Single
+									View 3</a>
+							</div></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Agents </a>
+							<div class="dropdown-menu">
+								<a href="agent_list.html" class="dropdown-item">Agent List</a> <a
+									href="agent.html" class="dropdown-item">Agent Profile</a>
+							</div></li>
+
+						<li class="nav-item dropdown megamenu"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Pages </a>
+							<div class="dropdown-menu">
+								<div class="container">
+									<div class="row justify-content-md-center">
+										<div class="col col-md-8">
+											<div class="row">
+												<div class="col-md-6 col-lg-3">
+													<ul class="list-unstyled">
+														<li class="title">Homepage</li>
+														<li><a href="index.html">Homepage 1</a></li>
+														<li><a href="index2.html">Homepage 2</a></li>
+														<li><a href="index3.html">Homepage 3</a></li>
+														<li><a href="index4.html">Homepage 4</a></li>
+														<li><a href="index5.html">Homepage 5</a></li>
+														<li><a href="index6.html">Homepage 6</a></li>
+														<li><a href="index7.html">Homepage 7</a></li>
+														<li class="title">Login Pages</li>
+														<li><a href="signin.html">Signin</a></li>
+														<li><a href="register.html">Register</a></li>
+														<li><a href="forgot-password.html">Forgot
+																Password</a></li>
+													</ul>
+												</div>
+												<div class="col-md-6 col-lg-3">
+													<ul class="list-unstyled">
+														<li class="title">Property Listing</li>
+														<li><a href="property_listing.html">List View</a></li>
+														<li><a href="property_grid.html">Grid View</a></li>
+														<li><a href="property_listing_map.html">Map View</a></li>
+														<li class="title">Single Property</li>
+														<li><a href="property_single.html">Single View 1</a></li>
+														<li><a href="property_single2.html">Single View 2</a></li>
+														<li><a href="property_single3.html">Single View 3</a></li>
+													</ul>
+												</div>
+												<div class="col-md-6 col-lg-3">
+													<ul class="list-unstyled">
+														<li class="title">Other Pages</li>
+														<li><a href="plans.html">Plans</a></li>
+														<li><a href="information_page.html">Information
+																Page</a></li>
+														<li><a href="coming_soon.html">Coming Soon</a></li>
+														<li><a href="404_error.html">Error Page</a></li>
+														<li><a href="success.html">Success Page</a></li>
+														<li><a href="contact.html">Contact Page</a></li>
+														<li><a href="compare.html">Compare Properties</a></li>
+														<li class="title">Agent Pages</li>
+														<li><a href="agent_list.html">Agent List</a></li>
+														<li><a href="agent.html">Agent Profile</a></li>
+													</ul>
+												</div>
+												<div class="col-md-6 col-lg-3">
+													<ul class="list-unstyled">
+														<li class="title">Account Pages</li>
+														<li><a href="my_listing_add.html">Add Listing</a></li>
+														<li><a href="my_bookmarked_listings.html">Bookmarked
+																Listing</a></li>
+														<li><a href="my_listings.html">My Listings</a></li>
+														<li><a href="my_profile.html">My Profile</a></li>
+														<li><a href="my_password.html">Change Password</a></li>
+														<li><a href="my_notifications.html">Notifications</a></li>
+														<li><a href="my_membership.html">Membership</a></li>
+														<li><a href="my_payments.html">Payments</a></li>
+														<li><a href="my_account.html">Account</a></li>
+														<li class="title">Blog Pages</li>
+														<li><a href="blog.html">Blog Archive</a></li>
+														<li><a href="blog_single.html">Blog Single</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></li>
+
+					</ul>
+
+					<ul class="navbar-nav ml-auto">
+
+
+						<li class="nav-item dropdown user-account"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="user-image"
+								style="background-image: url(' img/demo/profile3.jpg');"></span>
+								Hi, John
+						</a>
+							<div class="dropdown-menu">
+								<a href="my_profile.html" class="dropdown-item">My Profile</a> <a
+									href="my_password.html" class="dropdown-item">Change
+									Password</a> <a href="my_notifications.html" class="dropdown-item">Notifications</a>
+								<a href="my_membership.html" class="dropdown-item">Membership</a>
+								<a href="my_payments.html" class="dropdown-item">Payments</a> <a
+									href="my_account.html" class="dropdown-item">Account</a>
+							</div></li>
+						<li class="nav-item add-listing"><a class="nav-link"
+							href="my_listing_add.html"><span><i class="fa fa-plus"
+									aria-hidden="true"></i> Add listing</span></a></li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+		<article class="container">
+			<div class="page-header">
+				<h1>
+					íšŒì›ê°€ì… <small> BABSAZO íšŒì›ë§Œì˜ ë‹¤ì–‘í•œ í• ì¸ í˜œíƒ ë° í”„ë¡œëª¨ì…˜ì´ ê¸°ë‹¤ë¦¬ê³  ìˆì–´ìš”!</small>
+				</h1>
+			</div>
+
+
+			<div class="col-md-6 col-md-offset-3">
+
+				<div class="form-group">
+
+
+					<script type="text/javascript">
+						// ì¤‘ë³µì²˜ë¦¬
+						function overlapId(){
+							alert('ì¤‘ë³µì²˜ë¦¬');ã…£
+						}
+						
+						// í•„ìˆ˜ ì…ë ¥ì •ë³´ì¸ ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸ê°€ ì…ë ¥ë˜ì—ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
+						function checkValue() {
+							if (!document.userInfo.mem_id.value) {
+								alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+								return false;
+							}
+
+							if (!document.userInfo.password.value) {
+								alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+								return false;
+							}
+
+							// ë¹„ë°€ë²ˆí˜¸ì™€ ë¹„ë°€ë²ˆí˜¸ í™•ì¸ì— ì…ë ¥ëœ ê°’ì´ ë™ì¼í•œì§€ í™•ì¸
+							if (document.userInfo.password.value != document.userInfo.passwordcheck.value) {
+								alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ë™ì¼í•˜ê²Œ ì…ë ¥í•˜ì„¸ìš”.");
+								return false;
+
+							}
+						}
+
+						// ì·¨ì†Œ ë²„íŠ¼ í´ë¦­ì‹œ ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™
+						function goLoginForm() {
+							location.href = "LoginForm.jsp";
+						}
+					</script>
+
+
+					<!-- ì…ë ¥í•œ ê°’ì„ ì „ì†¡í•˜ê¸° ìœ„í•´ form íƒœê·¸ë¥¼ ì‚¬ìš©í•œë‹¤ -->
+					<!-- ê°’(íŒŒë¼ë¯¸í„°) ì „ì†¡ì€ POST ë°©ì‹, ì „ì†¡í•  í˜ì´ì§€ëŠ” JoinPro.jsp -->
+					<form method="get"
+						action="/SemiProject/jsp/member/view/JoinYeah.do" name="userInfo"
+						onsubmit="return checkValue()">
+
+
+						<table>
+
+							<tr>
+								<div class="form-group">
+									<label for="birth"><font size="4em" color="52478B">ìƒë…„ì›”ì¼
+											ë˜ëŠ” ê¸°ë…ì¼</font></label>
+									<td id="title"></td> <input type="text" name="mem_no"
+										maxlength="4" placeholder="ë…„(4ì)" size="6" required>
+									<!--  &nbsp;<select name="birthmm">
+                            <option value="">ì›”</option>
                             <option value="01" >1</option>
                             <option value="02" >2</option>
                             <option value="03" >3</option>
@@ -258,236 +278,358 @@
                             <option value="11" >11</option>
                             <option value="12" >12</option>
                         </select>
-                     &nbsp; <input type="text" name="birthdd" maxlength="2" placeholder="ÀÏ" size="6" >
+                     &nbsp; <input type="text" name="birthdd" maxlength="2" placeholder="ì¼" size="6" >
                     </td>  -->
-                </tr>
-                <p class="help-block">±â³äÀÏ ÀÔ·Â½Ã ÄíÆùÀ» ¹ß±ŞÇØµå·Á¿ä</p> </div>
-          
-          <br>
-          
-             
-                    <tr>
-                <div class="form-group">
-               <label for="username"><font size="4em" color="52478B">ÀÌ¸§</font></label>
-               <td id="title"></td>
-              <input type="text" name="mem_nm" maxlength="50" class="form-control" id="username" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
-            </div></tr>
-                    
-                    <br>
-                
-                <tr>
-                      <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">È¸¿ø ¾ÆÀÌµğ</font></label>
-              <td id="title"></td>
-              <div class="input-group">
-                <input type="text" name="mem_id" maxlength="50" class="form-control" id="username" placeholder="»ç¿ëÇÏ½Ç ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
-                <span class="input-group-btn">
-                  <button class="btn btn-warning"><font color="F9FFFF">¾ÆÀÌµğ Áßº¹ Ã¼Å©</font><i class="fa fa-edit spaceLeft"></i></button>
-                </span>
-                    </tr> 
-                </div>
-  
-                        <br>
-                        
-                <tr>                
-              <div class="form-group">
-              <label for="InputPassword1"><font size="4em" color="52478B">ºñ¹Ğ¹øÈ£</font></label>
-                    <td id="title"></td>              
-              <input type="password" name="mem_pw" maxlength="50" class="form-control" id="InputPassword1" placeholder="ºñ¹Ğ¹øÈ£">
-            </div>
-              </tr>
-              
-              <br>
-              
-                <tr>
-            <div class="form-group">
-              <label for="InputPassword2"><font size="4em" color="52478B">ºñ¹Ğ¹øÈ£ È®ÀÎ</font></label>
-                <td id="title"></td> <!-- name="passwordcheck" -->
-              <input type="password"  maxlength="50" class="form-control" id="InputPassword2" placeholder="ºñ¹Ğ¹øÈ£ È®ÀÎ">
-               <p class="help-block">ºñ¹Ğ¹øÈ£ È®ÀÎÀ» À§ÇØ ´Ù½ÃÇÑ¹ø ÀÔ·ÂÇØÁÖ¼¼¿ä</p>
-          </div></tr>
-          
-                  <br>
-                                      
-                                                      
-          <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">ÈŞ´ëÆù ¹øÈ£</font></label>
-              <td id="title"></td>
-              <input type="tel" name="mem_tel" class="form-control" id="username" placeholder="- ¾øÀÌ ÀÔ·ÂÇØ ÁÖ¼¼¿ä"></div>
-                                          <!-- name="chk_info" -->
-              <div> <input type="checkbox"  value="µ¿ÀÇ">ÈŞ´ëÆù ¼ö½Å¿¡ µ¿ÀÇÇÕ´Ï´Ù</div>
-              <div><p class="help-block">(¸ğ¹ÙÀÏ Àü¿ë ÄíÆù ¹× °Ô¸±¶ó ÇÒÀÎ½Ã Çª½Ã ¾Ë¸²À» ¹ŞÀ¸½Ç ¼ö ÀÖ¾î¿ä)</p></div>
-          
-          <!-- ÀÎÁõ¹øÈ£ Àü¼Û ±â´ÉÀº º°µµ »çÀÌÆ®¿¡¼­ ±¸ÀÔÇÊ¿ä
+							</tr>
+							<p class="help-block">ê¸°ë…ì¼ ì…ë ¥ì‹œ ì¿ í°ì„ ë°œê¸‰í•´ë“œë ¤ìš”</p>
+							</div>
+
+							<br>
+
+
+							<tr>
+								<div class="form-group">
+									<label for="username"><font size="4em" color="52478B">ì´ë¦„</font></label>
+									<td id="title"></td> <input type="text" name="mem_nm"
+										maxlength="50" class="form-control" id="username"
+										placeholder="ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”" required>
+								</div>
+							</tr>
+
+							<br>
+
+							<tr>
+								<div class="form-group">
+									<label for="username"><font size="4em" color="52478B">íšŒì›
+											ì•„ì´ë””</font></label>
+									<td id="title"></td>
+									<div class="input-group">
+										<input type="text" name="mem_id" maxlength="50"
+											class="form-control" id="username"
+											placeholder="ì‚¬ìš©í•˜ì‹¤ ì•„ì´ë””ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”" required> <span
+											class="input-group-btn">
+											<button type="button" class="btn btn-warning" onClick="overlapId();" required>
+												<font color="F9FFFF">ì•„ì´ë”” ì¤‘ë³µ ì²´í¬</font><i
+													class="fa fa-edit spaceLeft"></i>
+											</button>
+										</span>
+							</tr>
+							</div>
+
+							<br>
+
+							<tr>
+								<div class="form-group">
+									<label for="InputPassword1"><font size="4em"
+										color="52478B">ë¹„ë°€ë²ˆí˜¸</font></label>
+									<td id="title"></td> <input type="password" name="mem_pw"
+										maxlength="50" class="form-control" id="InputPassword1"
+										placeholder="ë¹„ë°€ë²ˆí˜¸" required>
+								</div>
+							</tr>
+
+							<br>
+
+							<tr>
+								<div class="form-group">
+									<label for="InputPassword2"><font size="4em"
+										color="52478B">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</font></label>
+									<td id="title"></td>
+									<!-- name="passwordcheck" -->
+									<input type="password" maxlength="50" class="form-control"
+										id="InputPassword2" placeholder="ë¹„ë°€ë²ˆí˜¸ í™•ì¸" required>
+									<p class="help-block">ë¹„ë°€ë²ˆí˜¸ í™•ì¸ì„ ìœ„í•´ ë‹¤ì‹œí•œë²ˆ ì…ë ¥í•´ì£¼ì„¸ìš”</p>
+								</div>
+							</tr>
+
+							<br>
+
+
+							<div class="form-group">
+								<label for="username"><font size="4em" color="52478B">íœ´ëŒ€í°
+										ë²ˆí˜¸</font></label>
+								<td id="title"></td> <input type="tel" name="mem_tel"
+									class="form-control" id="username" placeholder="- ì—†ì´ ì…ë ¥í•´ ì£¼ì„¸ìš”" required>
+							</div>
+							<!-- name="chk_info" -->
+							<div>
+								<input type="checkbox" value="ë™ì˜">íœ´ëŒ€í° ìˆ˜ì‹ ì— ë™ì˜í•©ë‹ˆë‹¤
+							</div>
+							<div>
+								<p class="help-block">(ëª¨ë°”ì¼ ì „ìš© ì¿ í° ë° ê²Œë¦´ë¼ í• ì¸ì‹œ í‘¸ì‹œ ì•Œë¦¼ì„ ë°›ìœ¼ì‹¤ ìˆ˜ ìˆì–´ìš”)</p>
+							</div>
+
+							<!-- ì¸ì¦ë²ˆí˜¸ ì „ì†¡ ê¸°ëŠ¥ì€ ë³„ë„ ì‚¬ì´íŠ¸ì—ì„œ êµ¬ì…í•„ìš”
             <span class="input-group-btn"> 
-                  <button class="btn btn-warning"><font color="#F9FFFFE">ÀÎÁõ¹øÈ£ Àü¼Û</font><i class="fa fa-mail-forward spaceLeft"></i></button>
+                  <button class="btn btn-warning"><font color="#F9FFFFE">ì¸ì¦ë²ˆí˜¸ ì „ì†¡</font><i class="fa fa-mail-forward spaceLeft"></i></button>
                 </span> -->
-   
-               <br>
-                  
-             <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">ÁÖ¼Ò</font></label>
-              <td id="title"></td>
-              <div class="input-group">
-                <input type="text" name="address" class="form-control" id="username" placeholder="µµ·Î¸í/Áö¹ø/µ¿¡¤À¾¡¤¸é">
-                <span class="input-group-btn">
-   
-                  <a href="DoroEx.jsp" class="btn btn-warning"><font color="F9FFFF">¿ìÆí¹øÈ£ °Ë»ö</font><i class="fa fa-mail-forward spaceLeft"></i></a> 
-                </span>
-              </div>
-                <div class="form-group">
-                <input type="text" class="form-control" id="username" placeholder="»ó¼¼ ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
-            </div>                     <!-- name="chk_info" -->
-            <div> <input type="checkbox"  value="µ¿ÀÇ">¿ìÆíÀ¸·Î BABSAZO ¼Ò½ÄÁö¸¦ ¹Ş°Ú½À´Ï´Ù</div>
-              <div><p class="help-block">(BABSAZO ¼Ò½ÄÁö Àü¿ë ÄíÆù ¹× »õ·Î¿î BABSAZO Á¦ÀÏ ¸ÕÀú ¹Ş¾Æº¸¼¼¿ä)</p></div>
-            
-            <br> 
-            
-            
-            <div class="form-group">
-              <label for="InputEmail"><font size="4em" color="52478B">ÀÌ¸ŞÀÏ ÁÖ¼Ò</label></font>
-              <td id="title"></td>
-              <input type="text" name="email" class="form-control" id="username" placeholder="ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
-            </div>
-            <!-- 
+
+							<br>
+
+							<div class="form-group">
+								<label for="username"><font size="4em" color="52478B">ì£¼ì†Œ</font></label>
+								<td id="title"></td>
+								<div class="input-group">
+									<!-- ì—¬ê¸° ì£¼ì†Œê°€ë“¤ì–´ê° -->
+									<input type="text" name="address" class="form-control"
+										id="roadAddress" placeholder="ë„ë¡œëª…/ì§€ë²ˆ/ë™Â·ìÂ·ë©´" required> <span
+										class="input-group-btn"><button onclick="execDaumPostcode()" class="btn btn-warning"><font color="F9FFFF">ìš°í¸ë²ˆí˜¸
+												ê²€ìƒ‰</font><i class="fa fa-mail-forward spaceLeft"></i></button>
+									</span>
+								</div>
+								<div class="form-group">
+									<!-- ì—¬ê¸° ìš°í¸ë²ˆí˜¸ê°€ ë“¤ì–´ê° -->
+									<input type="text" class="form-control" id="zip_code"
+										placeholder="ìš°í¸ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" required>
+								</div>
+								<!-- name="chk_info" -->
+								<div>
+									<input type="checkbox" value="ë™ì˜">ìš°í¸ìœ¼ë¡œ BABSAZO ì†Œì‹ì§€ë¥¼
+									ë°›ê² ìŠµë‹ˆë‹¤
+								</div>
+								<div>
+									<p class="help-block">(BABSAZO ì†Œì‹ì§€ ì „ìš© ì¿ í° ë° ìƒˆë¡œìš´ BABSAZO ì œì¼
+										ë¨¼ì € ë°›ì•„ë³´ì„¸ìš”)</p>
+								</div>
+
+								<br>
+
+
+								<div class="form-group">
+									<label for="InputEmail"><font size="4em" color="52478B">ì´ë©”ì¼
+											ì£¼ì†Œ</label></font>
+									<td id="title"></td> <input type="text" name="email"
+										class="form-control" id="username" placeholder="ì´ë©”ì¼ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”" required>
+								</div>
+								<br>
+								
+								<!-- 
                          <select name="mail2">
                             <option>naver.com</option>
                             <option>daum.net</option>
                             <option>gmail.com</option>
                             <option>nate.com</option>                        
                         </select>  -->
-            
-            <div class="form-group">
-              <label for="InputEmail"><font size="4em" color="52478B">db¶«¿¡ ÀÏ´Ü¸¸µë</label></font>
-              <td id="title"></td>
-              <input type="Y / N" name="email_yn" class="form-control" id="username" >
-             <input type="checkbox" value="µ¿ÀÇ">ÀÌ¸ŞÀÏ ¼ö½Å¿¡ µ¿ÀÇÇÕ´Ï´Ù</div>
-              <div><p class="help-block">(ÀÌ¸ŞÀÏ BABSAZO ´º½º·¹ÅÍ ÄíÆù ¹ß±Ş°ú ÀÌº¥Æ® Âü¿©°¡ °¡´ÉÇÕ´Ï´Ù)</p></div>
-            
-            <br>
-            
-            <!-- 
-                <tr>
+
+								<div class="form-group">
+									<label for="InputEmail"><font size="4em" color="52478B">DBë•œì— ì¼ë‹¨ë§Œë“¬</label></font>
+									<td id="title"></td> <input type="text" name="email_yn"
+										class="form-control" id="username" placeholder="y/n ì„ ì…ë ¥í•˜ì„¸ìš”" required> <input
+										type="checkbox" value="ë™ì˜">ì´ë©”ì¼ ìˆ˜ì‹ ì— ë™ì˜í•©ë‹ˆë‹¤
+								</div>
+								<div>
+									<p class="help-block">(ì´ë©”ì¼ BABSAZO ë‰´ìŠ¤ë ˆí„° ì¿ í° ë°œê¸‰ê³¼ ì´ë²¤íŠ¸ ì°¸ì—¬ê°€ ê°€ëŠ¥í•©ë‹ˆë‹¤)</p>
+								</div>
+
+								<br>
+
+								<!-- <tr>
                  <div class="form-group">
-               <label for="username"><font size="4em" color="52478B">¼ºº°</label>
+               <label for="username"><font size="4em" color="52478B">ì„±ë³„</label>
                <td id="title"></td> 
-              <input type="radio" name="gender" value="³²" checked >³²
-              <input type="radio" name="gender" value="¿©" checked>¿©
+              <input type="radio" name="gender" value="ë‚¨" checked >ë‚¨
+              <input type="radio" name="gender" value="ì—¬" checked>ì—¬
                   </font>  </td>
                 </tr>
                     
                     <br><br>  -->
-                    
-     
-            
-              <div class="form-group">
-              <label for="username"><font size="4em" color="52478B">SNS/ºí·Î±×</font></label>
-              <td id="title"></td>
-              <input type="text" name="fvrt_str_1" class="form-control" id="username" placeholder="SNS ID È¤Àº ºí·Î±× ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä">
-                 <p class="help-block"> °¢Á¾ °øÀ¯ È°µ¿À¸·Î BABSAZO Æ÷ÀÎÆ®¸¦ Àû¸³ÇÒ ¼ö ÀÖ½À´Ï´Ù</p>
-            </div>
-            
-            <br>
-            
-            <div class="form-group">
-               <label for="username"><font size="4em" color="52478B"><label for="username">¼±È£ÇÏ´Â À½½Ä(Áßº¹¼±ÅÃ °¡´É)</font></label>
-            <td id="title"></td>
-                 <!-- 
-           <div> <input type="checkbox" name="chk_info" value="ÇÑ½Ä">ÇÑ½Ä
-                 <input type="checkbox" name="chk_info" value="Áß½Ä">Áß½Ä
-                 <input type="checkbox" name="chk_info" value="ÀÏ½Ä">ÀÏ½Ä 
-                 <input type="checkbox" name="chk_info" value="¾ç½Ä">¾ç½Ä
-                 <input type="checkbox" name="chk_info" value="¼¼°èÀ½½Ä">¼¼°èÀ½½Ä
-                 <input type="checkbox" name="chk_info" value="µğÀúÆ®">µğÀúÆ® 
+
+
+
+								<div class="form-group">
+									<label for="username"><font size="4em" color="52478B">SNS/ë¸”ë¡œê·¸</font></label>
+									<td id="title"></td> <input type="text" name="fvrt_str_1"
+										class="form-control" id="username"
+										placeholder="SNS ID í˜¹ì€ ë¸”ë¡œê·¸ ì£¼ì†Œë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”" required>
+									<p class="help-block">ê°ì¢… ê³µìœ  í™œë™ìœ¼ë¡œ BABSAZO í¬ì¸íŠ¸ë¥¼ ì ë¦½í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤</p>
+								</div>
+
+								<br>
+
+								<div class="form-group">
+									<label for="username"><font size="4em" color="52478B"><label for="username">ì„ í˜¸í•˜ëŠ” ìŒì‹(ì¤‘ë³µì„ íƒ ê°€ëŠ¥)</font></label>
+									<td id="title"></td>
+									<!-- 
+           <div> <input type="checkbox" name="chk_info" value="í•œì‹">í•œì‹
+                 <input type="checkbox" name="chk_info" value="ì¤‘ì‹">ì¤‘ì‹
+                 <input type="checkbox" name="chk_info" value="ì¼ì‹">ì¼ì‹ 
+                 <input type="checkbox" name="chk_info" value="ì–‘ì‹">ì–‘ì‹
+                 <input type="checkbox" name="chk_info" value="ì„¸ê³„ìŒì‹">ì„¸ê³„ìŒì‹
+                 <input type="checkbox" name="chk_info" value="ë””ì €íŠ¸">ë””ì €íŠ¸ 
                  <div> 
-                 <input type="checkbox" name="chk_info" value="¹ä">¹ä
-                 <input type="checkbox" name="chk_info" value="¸é">¸é
-                 <input type="checkbox" name="chk_info" value="ºĞ½Ä">ºĞ½Ä  
-                 <input type="checkbox" name="chk_info" value="Ã¤½Ä">Ã¤½Ä
-                 <input type="checkbox" name="chk_info" value="À°·ù">À°·ù
-                 <input type="checkbox" name="chk_info" value="ÈÄ½Ä">ÈÄ½Ä   
+                 <input type="checkbox" name="chk_info" value="ë°¥">ë°¥
+                 <input type="checkbox" name="chk_info" value="ë©´">ë©´
+                 <input type="checkbox" name="chk_info" value="ë¶„ì‹">ë¶„ì‹  
+                 <input type="checkbox" name="chk_info" value="ì±„ì‹">ì±„ì‹
+                 <input type="checkbox" name="chk_info" value="ìœ¡ë¥˜">ìœ¡ë¥˜
+                 <input type="checkbox" name="chk_info" value="í›„ì‹">í›„ì‹   
               </div>  -->
-              </div>
-              <input type="text" name="fvrt_str_2" class="form-control" id="username" placeholder="±âÅ¸">
-            </div>
-             </div>
-      
-   <!-- 
-            <input type="submit" value="°¡ÀÔ"/>  
-            <input type="button" value="Ãë¼Ò" onclick="goLoginForm()">
+								</div>
+								<input type="text" name="fvrt_str_2" class="form-control"
+									id="username" placeholder="ê¸°íƒ€" required>
+							</div>
+							</div>
+
+							<!-- 
+            <input type="submit" value="ê°€ì…"/>  
+            <input type="button" value="ì·¨ì†Œ" onclick="goLoginForm()">
       -->
-    
-</table>
-<br>             
-            <div class="form-group">
-               <div data-toggle="buttons">
-              <label class="btn btn-info active">
-                  <span class="fa fa-check"></span>
-                  <input id="agree" type="checkbox" autocomplete="off" checked>
-              </label>
-              <a href="#"><font size="4em">ÀÌ¿ë¾à°ü ¹× °³ÀÎÁ¤º¸ Ã³¸®¹æÄ§¿¡ µ¿ÀÇÇÕ´Ï´Ù.(ÇÊ¼ö)</a></font>
-              </div>
-            </div>
-            <div class="row justify-content-md-center">
-              <form action="#"><button type="submit" class="btn btn-warning"><font color="#800080"></font>È¸¿ø°¡ÀÔ<i class="fa fa-check spaceLeft"></i></button></form>
-              &nbsp; <form action="#"><button type="submit" class="btn btn-danger">°¡ÀÔÃë¼Ò<i class="fa fa-times spaceLeft"></i></button></form>
-            </div>
-            </div>
-            </div>
+
+						</table>
+						<br>
+						<div class="form-group">
+							<div data-toggle="buttons">
+								<label class="btn btn-info active"> <span
+									class="fa fa-check"></span> <input id="agree" type="checkbox"
+									autocomplete="off" checked >
+								</label> <a href="#"><font size="2em">ì´ìš©ì•½ê´€ ë° ê°œì¸ì •ë³´ ì²˜ë¦¬ë°©ì¹¨ì—ë™ì˜í•©ë‹ˆë‹¤.(í•„ìˆ˜)</a></font>
+							</div>
+						</div>
+						<div class="row justify-content-md-center">
+							<form action="#">
+								<button type="submit" class="btn btn-warning">
+									<font color="#800080"></font>íšŒì›ê°€ì…<i
+										class="fa fa-check spaceLeft"></i>
+								</button>
+							</form>
+							&nbsp;
+							<form action="#">
+								<button type="submit" class="btn btn-danger">
+									ê°€ì…ì·¨ì†Œ<i class="fa fa-times spaceLeft"></i>
+								</button>
+							</form>
+						</div>
+				</div>
+			</div>
 
 
 
 
-<footer id="footer">
-  <div class="container">
-    <div class="row justify-content-md-center">
-          <div class="col col-md-10">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <p><span class="icon-uilove-realestate"></span></p>
-            <address>
-            <strong>Twitter, Inc.</strong><br>
-            1355 Market Street, Suite 900<br>
-            San Francisco, CA 94103<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-            </address>
-            <p class="text-muted">Copyright &copy; 2016<br />
-              All rights reserved</p>
-          </div>
-          <div class="col-md-2  col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li>
-            </ul>
-          </div>
-          <div class="col-md-2 col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#">For Rent</a></li>
-              <li><a href="#">For Sale</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Property Guides</a></li>
-              <li><a href="#">Jobs</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
-            <form>
-              <h4>Subscribe Newsletter</h4>
-              <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
-                <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Go!</button>
-                </span> </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-</div>
+			<footer id="footer">
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col col-md-10">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<p>
+										<span class="icon-uilove-realestate"></span>
+									</p>
+									<address>
+										<strong>Twitter, Inc.</strong><br> 1355 Market Street,
+										Suite 900<br> San Francisco, CA 94103<br> <abbr
+											title="Phone">P:</abbr> (123) 456-7890
+									</address>
+									<p class="text-muted">
+										Copyright &copy; 2016<br /> All rights reserved
+									</p>
+								</div>
+								<div class="col-md-2  col-sm-4">
+									<ul class="list-unstyled">
+										<li><a href="#">About</a></li>
+										<li><a href="#">Team</a></li>
+										<li><a href="#">Security</a></li>
+										<li><a href="#">Plans</a></li>
+									</ul>
+								</div>
+								<div class="col-md-2 col-sm-4">
+									<ul class="list-unstyled">
+										<li><a href="#">For Rent</a></li>
+										<li><a href="#">For Sale</a></li>
+										<li><a href="#">Commercial</a></li>
+										<li><a href="#">Agents</a></li>
+										<li><a href="#">Property Guides</a></li>
+										<li><a href="#">Jobs</a></li>
+									</ul>
+								</div>
+								<div class="col-md-4 col-sm-12">
+									<div class="social-sharebox">
+										<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
+											class="fa fa-facebook"></i></a> <a href="#"><i
+											class="fa fa-google"></i></a> <a href="#"><i
+											class="fa fa-linkedin"></i></a> <a href="#"><i
+											class="fa fa-youtube-play"></i></a> <a href="#"><i
+											class="fa fa-pinterest"></i></a>
+									</div>
+									<form>
+										<h4>Subscribe Newsletter</h4>
+										<div class="input-group input-group-lg">
+											<input type="email" class="form-control"
+												placeholder="Email Address"> <span
+												class="input-group-btn">
+												<button class="btn btn-primary" type="button">Go!</button>
+											</span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+	</div>
 
-</body></html>
+<!-- ì£¼ì†Œê²€ìƒ‰ ì½”ë“œ ì¶”í›„ì— ë”°ë¡œ íŒŒì¼ ë§Œë“¤ì–´ì„œ ì •ë¦¬ -->
+<span id="guide" style="color:#999"></span>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+    //ë³¸ ì˜ˆì œì—ì„œëŠ” ë„ë¡œëª… ì£¼ì†Œ í‘œê¸° ë°©ì‹ì— ëŒ€í•œ ë²•ë ¹ì— ë”°ë¼, ë‚´ë ¤ì˜¤ëŠ” ë°ì´í„°ë¥¼ ì¡°í•©í•˜ì—¬ ì˜¬ë°”ë¥¸ ì£¼ì†Œë¥¼ êµ¬ì„±í•˜ëŠ” ë°©ë²•ì„ ì„¤ëª…í•©ë‹ˆë‹¤.
+    function execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // íŒì—…ì—ì„œ ê²€ìƒ‰ê²°ê³¼ í•­ëª©ì„ í´ë¦­í–ˆì„ë•Œ ì‹¤í–‰í•  ì½”ë“œë¥¼ ì‘ì„±í•˜ëŠ” ë¶€ë¶„.
+                // ë„ë¡œëª… ì£¼ì†Œì˜ ë…¸ì¶œ ê·œì¹™ì— ë”°ë¼ ì£¼ì†Œë¥¼ ì¡°í•©í•œë‹¤.
+                // ë‚´ë ¤ì˜¤ëŠ” ë³€ìˆ˜ê°€ ê°’ì´ ì—†ëŠ” ê²½ìš°ì—” ê³µë°±('')ê°’ì„ ê°€ì§€ë¯€ë¡œ, ì´ë¥¼ ì°¸ê³ í•˜ì—¬ ë¶„ê¸° í•œë‹¤.
+                var fullRoadAddr = data.roadAddress; // ë„ë¡œëª… ì£¼ì†Œ ë³€ìˆ˜
+                var extraRoadAddr = ''; // ë„ë¡œëª… ì¡°í•©í˜• ì£¼ì†Œ ë³€ìˆ˜
+                var sido = data.sido;
+                var sigungu = data.sigungu;
+                // ë²•ì •ë™ëª…ì´ ìˆì„ ê²½ìš° ì¶”ê°€í•œë‹¤. (ë²•ì •ë¦¬ëŠ” ì œì™¸)
+                // ë²•ì •ë™ì˜ ê²½ìš° ë§ˆì§€ë§‰ ë¬¸ìê°€ "ë™/ë¡œ/ê°€"ë¡œ ëë‚œë‹¤.
+                if(data.bname !== '' && /[ë™|ë¡œ|ê°€]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+                // ê±´ë¬¼ëª…ì´ ìˆê³ , ê³µë™ì£¼íƒì¼ ê²½ìš° ì¶”ê°€í•œë‹¤.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // ë„ë¡œëª…, ì§€ë²ˆ ì¡°í•©í˜• ì£¼ì†Œê°€ ìˆì„ ê²½ìš°, ê´„í˜¸ê¹Œì§€ ì¶”ê°€í•œ ìµœì¢… ë¬¸ìì—´ì„ ë§Œë“ ë‹¤.
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+                // ë„ë¡œëª…, ì§€ë²ˆ ì£¼ì†Œì˜ ìœ ë¬´ì— ë”°ë¼ í•´ë‹¹ ì¡°í•©í˜• ì£¼ì†Œë¥¼ ì¶”ê°€í•œë‹¤.
+                if(fullRoadAddr !== ''){
+                    fullRoadAddr += extraRoadAddr;
+                }
+                var remainRoadAddr = fullRoadAddr.replace(sido + " " + sigungu, "");
+                var remainjibunAddr = data.jibunAddress.replace(sido + " " + sigungu, "");
+                // ìš°í¸ë²ˆí˜¸ì™€ ì£¼ì†Œ ì •ë³´ë¥¼ í•´ë‹¹ í•„ë“œì— ë„£ëŠ”ë‹¤.
+                document.getElementById('zip_code').value = data.zonecode; //5ìë¦¬ ìƒˆìš°í¸ë²ˆí˜¸ ì‚¬ìš©
+                document.getElementById('roadAddress').value = fullRoadAddr;
+                /* document.getElementById('old_zip_code').value = data.postcode; //6ìë¦¬ ìš°í¸ë²ˆí˜¸ ì‚¬ìš©
+                document.getElementById('jibunAddress').value = data.jibunAddress;
+                document.getElementById('user_selected_type').value = data.userSelectedType; //ê²€ìƒ‰ ê²°ê³¼ì—ì„œ ì‚¬ìš©ìê°€ ì„ íƒí•œ ì£¼ì†Œì˜ íƒ€ì…(R(ë„ë¡œëª…), J(ì§€ë²ˆ))
+                document.getElementById('sido').value = sido;
+                document.getElementById('sido2').value = sido;
+                document.getElementById('sigungu').value = sigungu;
+                document.getElementById('sigungu2').value = sigungu;
+                document.getElementById('remain_road_addr').value = remainRoadAddr;
+                document.getElementById('remain_jibun_addr').value = remainjibunAddr; */
+                // ì‚¬ìš©ìê°€ 'ì„ íƒ ì•ˆí•¨'ì„ í´ë¦­í•œ ê²½ìš°, ì˜ˆìƒ ì£¼ì†Œë¼ëŠ” í‘œì‹œë¥¼ í•´ì¤€ë‹¤.
+                if(data.autoRoadAddress) {
+                    //ì˜ˆìƒë˜ëŠ” ë„ë¡œëª… ì£¼ì†Œì— ì¡°í•©í˜• ì£¼ì†Œë¥¼ ì¶”ê°€í•œë‹¤.
+                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                    document.getElementById('guide').innerHTML = '(ì˜ˆìƒ ë„ë¡œëª… ì£¼ì†Œ : ' + expRoadAddr + ')';
+                } else if(data.autoJibunAddress) {
+                    var expJibunAddr = data.autoJibunAddress;
+                    document.getElementById('guide').innerHTML = '(ì˜ˆìƒ ì§€ë²ˆ ì£¼ì†Œ : ' + expJibunAddr + ')';
+                } else {
+                    document.getElementById('guide').innerHTML = '';
+                }
+            }
+        }).open();
+    }
+</script>
+<!-- ì£¼ì†Œê²€ìƒ‰ ì½”ë“œ ë -->
+</body>
+</html>

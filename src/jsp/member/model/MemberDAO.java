@@ -46,19 +46,18 @@ public class MemberDAO
 	         conn = getConnection();
 	         
 	         //DriverManager.getConnection(jdbc:apache:commons:dbcp:pool);
-	         String sql = "insert into MEMBER values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";  
+	         String sql = "insert into MEMBER values(member_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";  
 	         pstmt = conn.prepareStatement(sql);
 	         
-	         	pstmt.setInt(1, member.getMem_no());
-	            pstmt.setString(2, member.getMem_nm());
-	            pstmt.setString(3, member.getMem_id());
-	            pstmt.setString(4, member.getMem_pw());
-	            pstmt.setString(5, member.getMem_tel());
-	            pstmt.setString(6, member.getAddress());
-	            pstmt.setString(7, member.getEmail());
-	            pstmt.setString(8, member.getEmail_yn());
-	            pstmt.setString(9, member.getFvrt_str_1());
-	            pstmt.setString(10, member.getFvrt_str_2());
+	            pstmt.setString(1, member.getMem_nm());
+	            pstmt.setString(2, member.getMem_id());
+	            pstmt.setString(3, member.getMem_pw());
+	            pstmt.setString(4, member.getMem_tel());
+	            pstmt.setString(5, member.getAddress());
+	            pstmt.setString(6, member.getEmail());
+	            pstmt.setString(7, member.getEmail_yn());
+	            pstmt.setString(8, member.getFvrt_str_1());
+	            pstmt.setString(9, member.getFvrt_str_2());
 	            
 	         pstmt.executeUpdate();
 	         
@@ -107,7 +106,7 @@ public class MemberDAO
         try {
             // 쿼리
             StringBuffer query = new StringBuffer();
-            query.append("SELECT * FROM MEMBER WHERE ID=?");
+            query.append("SELECT * FROM MEMBER WHERE mem_id=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
@@ -131,7 +130,7 @@ public class MemberDAO
                 **/
                 // 자바빈에 정보를 담는다.
                 member = new MemberBean();
-                member.setMem_no(rs.getString("mem_no"));
+                member.setMem_no(rs.getInt("mem_no"));
                 member.setMem_nm(rs.getString("mem_nm"));
                 member.setMem_id(rs.getString("mem_id"));
                 member.setMem_pw(rs.getString("password"));
@@ -172,8 +171,8 @@ public class MemberDAO
  
             StringBuffer query = new StringBuffer();
             query.append("UPDATE MEMBER SET");
-            query.append(" PASSWORD=?, MAIL=?, PHONE=?, ADDRESS=?");
-            query.append(" WHERE ID=?");
+            query.append(" mem_pw=?, email=?, mem_tel=?, ADDRESS=?");
+            query.append(" WHERE mem_id=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
@@ -224,11 +223,11 @@ public class MemberDAO
         try {
             // 비밀번호 조회
             StringBuffer query1 = new StringBuffer();
-            query1.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
+            query1.append("SELECT mem_pw FROM MEMBER WHERE mem_id=?");
  
             // 회원 삭제
             StringBuffer query2 = new StringBuffer();
-            query2.append("DELETE FROM MEMBER WHERE ID=?");
+            query2.append("DELETE FROM MEMBER WHERE mem_id=?");
  
             conn = DBConnection.getConnection();
  
@@ -242,7 +241,7 @@ public class MemberDAO
  
             if (rs.next()) 
             {
-                dbpw = rs.getString("password");
+                dbpw = rs.getString("mem_pw");
                 if (dbpw.equals(pw)) // 입력된 비밀번호와 DB비번 비교
                 {
                     // 같을경우 회원삭제 진행
@@ -294,7 +293,7 @@ public class MemberDAO
         try {
             // 쿼리 - 먼저 입력된 아이디로 DB에서 비밀번호를 조회한다.
             StringBuffer query = new StringBuffer();
-            query.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
+            query.append("SELECT mem_pw FROM MEMBER WHERE mem_id=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
@@ -303,7 +302,7 @@ public class MemberDAO
  
             if (rs.next()) // 입려된 아이디에 해당하는 비번 있을경우
             {
-                dbPW = rs.getString("password"); // 비번을 변수에 넣는다.
+                dbPW = rs.getString("mem_pw"); // 비번을 변수에 넣는다.
  
                 if (dbPW.equals(pw)) 
                     x = 1; // 넘겨받은 비번과 꺼내온 비번 비교. 같으면 인증성공

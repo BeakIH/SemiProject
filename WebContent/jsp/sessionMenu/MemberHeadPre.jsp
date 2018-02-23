@@ -1,43 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
-
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>BABSAZO</title>
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate.css" rel="stylesheet">
-<link href="lib/selectric/selectric.css" rel="stylesheet">
-<link href="lib/aos/aos.css" rel="stylesheet">
-<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../lib/animate.css" rel="stylesheet">
+<link href="../../lib/selectric/selectric.css" rel="stylesheet">
+<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script src="lib/jquery-3.2.1.min.js"></script>
-<script src="lib/popper.min.js"></script>
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="../../lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/selectric/jquery.selectric.js"></script>
-<script src="lib/aos/aos.js"></script>
-<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="lib/lib.js"></script>
-
-
- <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../lib/selectric/jquery.selectric.js"></script>
+<script src="../../lib/tinymce/tinymce.min.js"></script>
+<script src="../../lib/aos/aos.js"></script>
+<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="../../lib/lib.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,7 +53,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Home <span class="sr-only">(current)</span>
+          메인<span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
@@ -84,7 +78,8 @@
             <a href="property_single3.html" class="dropdown-item">Single View 3</a>
         </div>
       </li>
-            <li class="nav-item dropdown">
+      
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Agents
         </a>
@@ -171,192 +166,61 @@
       </li>
       
     </ul>
-        <ul class="navbar-nav ml-auto">
+    
+    
+    
+    
+    <ul class="navbar-nav ml-auto">
       
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> -님, 안녕하세요
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
+            <a href="my_profile.html" class="dropdown-item"></a>
             <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
+            <a href="my_notifications.html" class="dropdown-item">BABSAZO알림</a>
+            <a href="my_membership.html" class="dropdown-item">BABSAZO멤버십</a>
+            <a href="my_payments.html" class="dropdown-item">껼제 정보</a>
+            <a href="my_account.html" class="dropdown-item">계정 설정</a>
         </div>
       </li>
       <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
     </ul>
     
+    
+    
   </div>
   </div>
 </nav>
-<div class="container">
-    <div class="row justify-content-md-center">
-          <div class="col col-md-12 col-lg-10 col-xl-8">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
-            <li class="breadcrumb-item"><a href="#">계정</a></li>
-            <li class="breadcrumb-item active" aria-current="page">로그인</li>
-            </ol>
-            </nav>
-        <div class="page-header">
-        <h1>로그인 또는 회원가입</h1>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="clearfix"></div>
 <div id="content">
   <div class="container">
-    <div class="row justify-content-md-center align-items-center">
-      <div class="col col-xs-6 col-lg-6 col-xl-6">
-        <ul class="nav nav-tabs tab-lg" role="tablist">
-          <li role="presentation" class="nav-item"><a class="nav-link active" href="signin.html">로그인</a></li>
-          <li role="presentation" class="nav-item"><a class="nav-link" href="RegisterPre.html">이용하기</a></li>
-          <li role="presentation" class="nav-item"><a class="nav-link" href="joinPre.html">가입하기</a></li>
-        </ul>
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="login">
-          
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12 col-xl-10">
+        <div class="row has-sidebar">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <div id="sidebar" class="sidebar-left">
+              <div class="sidebar_inner">
+                <div class="list-group no-border list-unstyled">
                 
-            <form>
-          
-              <div class="form-group">
-                <label for="email">이메일 주소</label>
-                <input type="email" id="email" class="form-control form-control-lg" placeholder="Email">
-              </div>
-                      
-              <div class="form-group">
-                <label for="password">비밀번호</label>
-                <input type="password" id="password" class="form-control form-control-lg" placeholder="Password">
-              </div>
-        
-        <p class="text-lg-right"><a href="forgot-password.html">비밀번호를 잊으셨나요?</a></p>
-        
-              <div class="checkbox">
-                <input type="checkbox" id="remember_me">
-                <label for="remember_me">아이디 및 비밀번호 저장</label>
-              </div>
-              <button type="submit" class="btn btn-primary btn-lg">로그인</button>
-            </form>
+       
+       
+       뫄뫄뫄
+       
+       
           </div>
-        </div>
-        <div> 
-        </div>
-      </div>
-      
-      
-      
-      <div class="col-md-3 col-lg-3 col-xl-3">
-        <div class="socal-login-buttons"> 
-        <a href="#" class="btn btn-social btn-block btn-twitter"><i class="icon fa fa-twitter"></i> 트위터로 시작하기</a> 
-   
-   
-   
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.12&appId=598913833780626&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-<br>
-<br>
-
-
-
-
-<head>
-  <meta name="google-signin-client_id" content="1040068865620-q458emc189ucg0upk0j04g1tbmi15bn3.apps.googleusercontent.com	 
-  .apps.googleusercontent.com">
-</head>
-<body>
-  <div id="my-signin2"></div>
-  <script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 280,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
-
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-</body>
-       
-       
-       <br>
-       
- 
-       
-       
-       
-      
- <div id="naver_id_login"></div>
-
-  <script type="text/javascript">
-  
-  	var naver_id_login = new naver_id_login("2aXoBjqxKTuEIBd9PCM6", "YOUR_CALLBACK_URL");
-  	var state = naver_id_login.getUniqState();
-  	naver_id_login.setButton("green", 3, 60);
-  	naver_id_login.setDomain("YOUR_SERVICE_URL");
-  	naver_id_login.setState(state);
-  	naver_id_login.setPopup();
-  	naver_id_login.init_naver_id_login();
-  	
-  </script>
-  </div>
-     
-     <br>
-       
-       
-       
-          <a id="custom-login-btn" href="javascript:loginWithKakao()">
-   <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/></a>
-   <script type='text/javascript'>
-    Kakao.init('5116b3bc667703bf84b154ab8a58f70a');
-    function loginWithKakao() {
-   Kakao.Auth.login({
-   success: function(authObj) {
-    alert(JSON.stringify(authObj));  },
-      fail: function(err) {
-       alert(JSON.stringify(err)); }  });    };  </script>
-      
-      
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
-
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
-          <div class="col col-md-10">
+      <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <p><span class="icon-uilove-realestate"></span></p>
@@ -392,7 +256,7 @@
             <form>
               <h4>Subscribe Newsletter</h4>
               <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">Go!</button>
                 </span> </div>
@@ -403,6 +267,9 @@
     </div>
   </div>
 </footer>
-
-
-</body></html>
+</div>
+</body>
+</html>
+                
+                
+                

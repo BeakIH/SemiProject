@@ -296,7 +296,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <a href="my_account.html" class="dropdown-item">Account</a>
         </div>
       </li> -->
-       <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off"></i></a></button>
+       <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
        
       <!-- <li class="nav-item add-listing"><a class="nav-link" href="/jsp/member/SigninCon.jsp"><span> -->
      <!--  <i class="fa fa-power-off" ></i> 로그인 </span></a></li> -->

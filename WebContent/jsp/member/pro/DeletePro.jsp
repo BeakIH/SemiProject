@@ -1,36 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="jsp.member.model.MemberDAO" %>    
 <%@ page import="jsp.member.model.MemberBean" %>    
 <html>
 <head>
-    <title>È¸¿ø »èÁ¦ Ã³¸®</title>
+    <title>íšŒì› ì‚­ì œ ì²˜ë¦¬</title>
 </head>
 <body>
     <%
         String id= (String)session.getAttribute("sessionID"); 
         String pw = request.getParameter("password");
         
-        // ¼¼¼Ç¿¡¼­ ¾ÆÀÌµð¸¦, DeleteForm.jsp¿¡¼­ ÀÔ·Â¹ÞÀº ºñ¹Ð¹øÈ£¸¦ °¡Á®¿Â´Ù.
-        // °¡Á®¿Â °á°ú¸¦ °¡Áö°í È¸¿øÁ¤º¸¸¦ »èÁ¦ÇÑ´Ù. - »èÁ¦°á°ú¸¦ ¹ÝÈ¯
+        // ì„¸ì…˜ì—ì„œ ì•„ì´ë””ë¥¼, DeleteForm.jspì—ì„œ ìž…ë ¥ë°›ì€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+        // ê°€ì ¸ì˜¨ ê²°ê³¼ë¥¼ ê°€ì§€ê³  íšŒì›ì •ë³´ë¥¼ ì‚­ì œí•œë‹¤. - ì‚­ì œê²°ê³¼ë¥¼ ë°˜í™˜
         MemberDAO dao = MemberDAO.getInstance();
         int check = dao.deleteMember(id, pw);
         
         if(check == 1){
-            session.invalidate(); // »èÁ¦Çß´Ù¸é ¼¼¼ÇÁ¤º¸¸¦ »èÁ¦ÇÑ´Ù.
+            session.invalidate(); // ì‚­ì œí–ˆë‹¤ë©´ ì„¸ì…˜ì •ë³´ë¥¼ ì‚­ì œí•œë‹¤.
     %>
         <br><br>
-        <b><font size="4" color="gray">È¸¿øÁ¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.</font></b>
+        <b><font size="4" color="gray">íšŒì›ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.</font></b>
         <br><br><br>
     
-        <input type="button" value="È®ÀÎ" onclick="javascript:window.location='MainForm.jsp'">
+        <input type="button" value="í™•ì¸" onclick="javascript:window.location='MainForm.jsp'">
     
     <%    
-         // ºñ¹Ð¹øÈ£°¡ Æ²¸±°æ¿ì - »èÁ¦°¡ ¾ÈµÇ¾úÀ» °æ¿ì
+         // ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦´ê²½ìš° - ì‚­ì œê°€ ì•ˆë˜ì—ˆì„ ê²½ìš°
         }else{
     %>
         <script>
-            alert("ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+            alert("ë¹„ë°€ë²ˆí˜¸ê°€ ë§žì§€ ì•ŠìŠµë‹ˆë‹¤.");
             history.go(-1);
         </script>
     <%

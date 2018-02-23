@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
     <%
-        // ÀÎÄÚµù Ã³¸®
-        request.setCharacterEncoding("euc-kr"); 
+        // ì¸ì½”ë”© ì²˜ë¦¬
+        request.setCharacterEncoding("utf-8"); 
     %>
-    <title>·Î±×ÀÎ È­¸é</title>
+    <title>ë¡œê·¸ì¸ í™”ë©´</title>
     
-    <!-- css ÆÄÀÏ ºĞ¸® -->
+    <!-- css íŒŒì¼ ë¶„ë¦¬ -->
     <link href='../../css/join_style.css' rel='stylesheet' style='text/css'/>
     
     <script type="text/javascript">
@@ -18,19 +18,19 @@
             inputForm = eval("document.loginInfo");
             if(!inputForm.id.value)
             {
-                alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");    
+                alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");    
                 inputForm.id.focus();
                 return false;
             }
             if(!inputForm.password.value)
             {
-                alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");    
+                alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");    
                 inputForm.password.focus();
                 return false;
             }
         }
     
-        // È¸¿ø°¡ÀÔ ¹öÆ° Å¬¸¯½Ã È¸¿ø°¡ÀÔ È­¸éÀ¸·Î ÀÌµ¿
+        // íšŒì›ê°€ì… ë²„íŠ¼ í´ë¦­ì‹œ íšŒì›ê°€ì… í™”ë©´ìœ¼ë¡œ ì´ë™
         function goJoinForm() {
             location.href="JoinForm.jsp";
         }    
@@ -42,39 +42,39 @@
         <form name="loginInfo" method="post" action="../pro/LoginPro.jsp" 
                 onsubmit="return checkValue()">
         
-            <!-- ÀÌ¹ÌÁö Ãß°¡ -->
+            <!-- ì´ë¯¸ì§€ ì¶”ê°€ -->
             <img src="../../img/babsazo.png">
             <br><br>
             
             <table>
                 <tr>
-                    <td bgcolor="skyblue">¾ÆÀÌµğ</td>
+                    <td bgcolor="skyblue">ì•„ì´ë””</td>
                     <td><input type="text" name="id" maxlength="50"></td>
                 </tr>
                 <tr>
-                    <td bgcolor="skyblue">ºñ¹Ğ¹øÈ£</td>
+                    <td bgcolor="skyblue">ë¹„ë°€ë²ˆí˜¸</td>
                     <td><input type="password" name="password" maxlength="50"></td>
                 </tr>
             </table>
             <br>
-            <input type="submit" value="·Î±×ÀÎ"/>
-            <input type="button" value="È¸¿ø°¡ÀÔ" onclick="goJoinForm()" />
+            <input type="submit" value="ë¡œê·¸ì¸"/>
+            <input type="button" value="íšŒì›ê°€ì…" onclick="goJoinForm()" />
         </form>
         
         <% 
-            // ¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£°¡ Æ²¸±°æ¿ì È­¸é¿¡ ¸Ş½ÃÁö Ç¥½Ã
-            // LoginPro.jsp¿¡¼­ ·Î±×ÀÎ Ã³¸® °á°ú¿¡ µû¸¥ ¸Ş½ÃÁö¸¦ º¸³½´Ù.
+            // ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦´ê²½ìš° í™”ë©´ì— ë©”ì‹œì§€ í‘œì‹œ
+            // LoginPro.jspì—ì„œ ë¡œê·¸ì¸ ì²˜ë¦¬ ê²°ê³¼ì— ë”°ë¥¸ ë©”ì‹œì§€ë¥¼ ë³´ë‚¸ë‹¤.
             String msg=request.getParameter("msg");
             
             if(msg!=null && msg.equals("0")) 
             {
                 out.println("<br>");
-                out.println("<font color='red' size='5'>ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä.</font>");
+                out.println("<font color='red' size='5'>ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ ì£¼ì„¸ìš”.</font>");
             }
             else if(msg!=null && msg.equals("-1"))
             {    
                 out.println("<br>");
-                out.println("<font color='red' size='5'>¾ÆÀÌµğ¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä.</font>");
+                out.println("<font color='red' size='5'>ì•„ì´ë””ë¥¼ í™•ì¸í•´ ì£¼ì„¸ìš”.</font>");
             }
         %>    
     </div>    
