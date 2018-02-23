@@ -102,7 +102,7 @@ public class EmpDBBean {
 		}
 	}
 
-	public EmpDataBean getData(int storeNo) throws Exception {
+	/*public EmpDataBean getData(int storeNo) throws Exception {
 		EmpDataBean dto = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -138,5 +138,25 @@ public class EmpDBBean {
 			}
 		}
 		return dto;
+	}*/
+	
+	public EmpDataBean modifyEmp(int admid) throws Exception {
+		EmpDataBean dto = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn=getConnection();
+			
+			String sql="select * from emp where adm_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, admid);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+			}
+		}
 	}
 }
