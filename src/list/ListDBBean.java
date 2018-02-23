@@ -690,54 +690,61 @@ public class ListDBBean {
 		return articleList;
 	}
 	// 다중검색 메서드, 하나의 메서드로 모든 검색, 정렬을 대응
-	/*public List getTotalArticles(List list) throws Exception {
+	public List getTotalArticles(String search,int searchn,int isortValue) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List articleList = null;
-		List plist = list;// 모든파라미터를 담은 List 객체
+		String sql ="";
+		/*List plist = list;// 모든파라미터를 담은 List 객체 */		
+		String[] column_name = { "store_info", "store_nm", "store_floor" };
 		
+		// 여기고치는중~~~~~~~~~~ // 높은가격순, 낮은가격순 , 인기순, 잔여석 순 (맨앞 0번째 인덱스는 빈값)
+		String[] column_name2 = { "avg_price", "avg_price", "preference", "avl_tbl_cnt" };
+				
 		try {
 			conn = getConnection();
 
 			// 이부분 생각해봐야함
 			// 남은좌석을 내림차순으로 정렬 ( 남은 좌석이 많을수록 위쪽에 보여지도록 )
-			String sql = "select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,img_root,store_avgsal,store_score,r "
-					+ "from (select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,img_root,store_avgsal,store_score,rownum r "
-					+ "from (select store_no,rv_no,emp_no,cate_nm,store_nm,store_exp,store_plc,store_tel,store_info,store_exp_dt,tot_tbl_cnt,avl_tbl_cnt,store_url,img_root,store_avgsal,store_score "
-					+ "from store_list order by avl_tbl_cnt desc) where store_avgsal>=? and store_avgsal<=?) where r >= ? and r <= ?";
+			if(isortValue == 1) {
+				sql = "select * from store_list where "+column_name[searchn]+" like '%" + search
+						+ "%' order by " + column_name2[isortValue] +" asc";
+			}else {
+				sql = "select * from store_list where "+column_name[searchn]+" like '%" + search
+						+ "%' order by " + column_name2[isortValue] +" desc";
+			}
 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, iminSal);
-			pstmt.setInt(2, imaxSal);
-			pstmt.setInt(3, start);
-			pstmt.setInt(4, end);
 
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				articleList = new ArrayList(end);
+				articleList = new ArrayList();
 
 				do {
-					BoardDataBean article = new BoardDataBean();
+					ListDataBean article = new ListDataBean();
 
-					article.setStore_no(rs.getInt("Store_no"));
-					article.setRv_no(rs.getInt("Rv_no"));
+					/*article.setStore_no(rs.getInt("Store_no"));*/
+					article.setStore_no(rs.getInt("store_no"));
 					article.setEmp_no(rs.getInt("emp_no"));
-					article.setCate_nm(rs.getString("Cate_nm"));
-					article.setStore_nm(rs.getString("Store_nm"));
-					article.setStore_exp(rs.getString("Store_exp"));
-					article.setStore_plc(rs.getString("Store_plc"));
-					article.setStore_tel(rs.getString("Store_tel"));
-					article.setStore_info(rs.getString("Store_info"));
-					article.setStore_exp_dt(rs.getString("Store_exp_dt"));
-					article.setTot_tbl_cnt(rs.getInt("Tot_tbl_cnt"));
-					article.setAvl_tbl_cnt(rs.getInt("Avl_tbl_cnt"));
+					article.setCate_nm(rs.getString("cate_nm"));
+					article.setStore_nm(rs.getString("store_nm"));
+					article.setStore_exp(rs.getString("store_exp"));
+					article.setStore_floor(rs.getString("store_floor"));
+					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
+					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
+					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
 					article.setStore_url(rs.getString("store_url"));
-					article.setImg_root(rs.getString("img_root"));
-					article.setStore_avgsal(rs.getInt("store_avgsal"));
-					article.setStore_score(rs.getInt("store_score"));
-
+					article.setSimg_root(rs.getString("simg_root"));
+					article.setPimg_root(rs.getString("pimg_root"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setEmp_nm(rs.getString("emp_nm"));
+				
 					articleList.add(article); //// 여기~~~
 				} while (rs.next());
 			}
@@ -761,7 +768,7 @@ public class ListDBBean {
 				}
 		}
 		return articleList;
-	}*/
+	}
 	///////////////////
 	
 	

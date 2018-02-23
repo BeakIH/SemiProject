@@ -2375,7 +2375,7 @@ input[type="radio"], input[type="checkbox"] {
 .sideMenu{
 	display:inline-block;
 	font-weight: bold;
-	color: white;
+	color: black;
 }
 /* Side CSS */
 

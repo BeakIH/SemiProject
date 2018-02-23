@@ -57,15 +57,58 @@
 
 <!-- 나중에 아래쪽 script 문 따로 .js 파일 생성해서 정리해야함 -->
 <script>
+/* 검색어 카테고리에 따라서 선택된 카테고리값 변경 */
+	/* searchn 값이 같은 대상의 속성값을 selected 로 변경 */
+$(function(){
+	var getParameters = function (paramName) {
+	    // 리턴값을 위한 변수 선언
+	    var returnValue;
+
+	    // 현재 URL 가져오기
+	    var url = location.href;
+
+	    // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+	    var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+
+	    // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
+	    for (var i = 0; i < parameters.length; i++) {
+	        var varName = parameters[i].split('=')[0];
+	        if (varName.toUpperCase() == paramName.toUpperCase()) {
+	            returnValue = parameters[i].split('=')[1];
+	            return decodeURIComponent(returnValue);
+	        }
+	    }
+	};
+	/* $('.form-group select#mCategory option').val('${search}').prop('selected',true); */
+	/* alert('속성값변경'); */
+/* 	alert('searchn 값'+${searchn}); */
+	/* console.log(getParameters('search')); */
+	/* alert(getParameters('search'));
+	alert(getParameters('searchn')); */
+	
+	if(getParameters('searchn')==undefined || getParameters('search')==undefined){
+		/* alert('아무것도안함'); */
+	}else{
+		/* alert('값이 있는경우'); */
+		if(getParameters('searchn')==1){
+			$('.selectric span.label').text('가게명');
+		}
+		/* $('select#mCategory').val(getParameters('searchn')).attr("selected","selected"); */
+		/* $('.form-group select#mCategory option').val("getParameters('searchn')").prop('selected',true); */
+	}
+		/* searchn 값이 있을경우 */
+});
 
 /* 검색창 카테고리 변경시 placeholder 변경 */
 $(function(){
 	$('.form-group select#mCategory').change(function(){
-		/* alert('변경'); */
-		/* alert($(this).val()); */
+/* 		alert('변경');
+		alert($(this).val()); */
 		if(($(this).val()) == 0){// 카테고리 음식
+			/* alert('음식선택'); */
 			$('.form-group input#cCategory').attr("placeholder","ex) 자장면, 김치찌개, 파스타").placeholder();
 		}else if(($(this).val()) == 1){// 카테고리 가게
+			/* alert('가게선택'); */
 			$('.form-group input#cCategory').attr("placeholder","ex) 엘본 더 테이블, 경화루, 라연").placeholder();
 		}/* else if(($(this).val()) == 2){// 카테고리 지역
 			$('.form-group input#cCategory').attr("placeholder","ex) 1~5층 ( 해당 숫자만 입력하세요 )").placeholder();
@@ -77,16 +120,16 @@ $(function(){
 /* 좌측 가격입력시 이벤트 처리 // 포커스 아웃시에 이벤트 발생  */
 $(function(){
 	$('.form-group input#min').change(function(){
-		alert('변경');
-		alert($('.form-group input#min').val());
+		/* alert('변경');
+		alert($('.form-group input#min').val()); */
 		/* var minVal = $('.form-group input#min').val(); */
 	    if($('.form-group input#max').val() == null || $('.form-group input#max').val() == ""){
 	    	// max 값이 없는경우 파라미터를 min 값만 넘겨줌
-	    	alert('max값이 없는 경우');
+	    	/* alert('max값이 없는 경우'); */
 	    	$('.form-group input#max').focus();
 	    }else{
 	    	// max 값이 있는 경우 둘다넘겨줌
-	    	alert('max값이 있는 경우');
+	    	/* alert('max값이 있는 경우'); */
 	    	location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
 	    }
 	});
@@ -94,16 +137,16 @@ $(function(){
 
 $(function(){
 	$('.form-group input#max').change(function(){
-		alert('변경');
+		/* alert('변경'); */
 		/* alert(minval); */
 		/* var maxVal = $('.form-group input#max').val(); */
 	    if($('.form-group input#min').val() == null || $('.form-group input#min').val() == ""){
 	    	// min 값이 없는경우 파라미터를 max 값만 넘겨줌
-	    	alert('min값이 없는 경우');
+	    	/* alert('min값이 없는 경우'); */
 	    	$('.form-group input#min').focus();
 	    }else{
 	    	// min 값이 있는 경우 둘다넘겨줌
-	    	alert('min값이 있는 경우');
+	    	/* alert('min값이 있는 경우'); */
 	    	location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
 	    }
 	});
@@ -187,7 +230,81 @@ $(function() {
 		});
 }); 
 
+/* 정렬옵션 선택시 기존검색한 상태로 정렬하는지 아닌지 판별하는 펑션 */
+ 
+/*  ${search }   기존 검색어 */
+$(function(){
+	$('#sort-category').change(function(){
+		/* alert('이벤트확인'); */
+		var getParameters = function (paramName) {
+		    // 리턴값을 위한 변수 선언
+		    var returnValue;
 
+		    // 현재 URL 가져오기
+		    var url = location.href;
+
+		    // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+		    var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+
+		    // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
+		    for (var i = 0; i < parameters.length; i++) {
+		        var varName = parameters[i].split('=')[0];
+		        if (varName.toUpperCase() == paramName.toUpperCase()) {
+		            returnValue = parameters[i].split('=')[1];
+		            return decodeURIComponent(returnValue);
+		        }
+		    }
+		}; // 여기까지 url 파라미터 받아오기
+		
+		/* alert(getParameters('search'));
+		alert(getParameters('searchn'));
+		alert('확인1');
+		alert($(this).val());
+		alert('확인2'); */
+		if(getParameters('search')!=undefined || getParameters('searchn')!=undefined){// 검색한 값이 있는경우
+			/* alert('검색한 값이 있는경우'); */
+			location.href='list.do?sortValue='+$(this).val()+'&search='+getParameters('search')+'&searchn='+getParameters('searchn');
+		}else{ // 없는경우 
+			/* alert('검색한 값이 없는경우'); */
+			location.href='list.do?sortValue='+$(this).val();
+		}
+		
+	});
+});
+
+
+/* function checkSort(){
+	var getParameters = function (paramName) {
+	    // 리턴값을 위한 변수 선언
+	    var returnValue;
+
+	    // 현재 URL 가져오기
+	    var url = location.href;
+
+	    // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+	    var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+
+	    // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
+	    for (var i = 0; i < parameters.length; i++) {
+	        var varName = parameters[i].split('=')[0];
+	        if (varName.toUpperCase() == paramName.toUpperCase()) {
+	            returnValue = parameters[i].split('=')[1];
+	            return decodeURIComponent(returnValue);
+	        }
+	    }
+	};
+	
+	alert(getParameters('search'));
+	alert(getParameters('searchn'));
+	alert('확인1');
+	alert($(this).val());
+	alert('확인2');
+	if(getParameters('search')!=undefined || getParameters('searchn')!=undefined){// 검색한 값이 있는경우
+		alert('검색한 값이 있는경우');
+	}else{ // 없는경우 
+		alert('검색한 값이 없는경우');
+	}
+} */
 
 
 /* // 검색시 해당 선택옵션값 표시해주기
@@ -292,8 +409,7 @@ $(document).ready(function(){
 	<div id="main">
 		<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
 			<div class="container">
-				<a class="navbar-brand" href="index.html"><span
-					class="icon-uilove-realestate"></span></a>
+				<a class="navbar-brand" href="index.html"><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#menu-content" aria-controls="menu-content"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -305,44 +421,33 @@ $(document).ready(function(){
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Home <span class="sr-only">(current)</span>
+								밥사조 <span class="sr-only">(current)</span>
 						</a>
 							<div class="dropdown-menu">
-								<a href="index.html" class="dropdown-item">Homepage 1</a> <a
-									href="index2.html" class="dropdown-item">Homepage 2</a> <a
-									href="index3.html" class="dropdown-item">Homepage 3</a> <a
-									href="index4.html" class="dropdown-item">Homepage 4</a> <a
-									href="index5.html" class="dropdown-item">Homepage 5</a> <a
-									href="index6.html" class="dropdown-item">Homepage 6</a> <a
-									href="main.do" class="dropdown-item">메인페이지</a>
+								<a href="main.do" class="dropdown-item">밥사조 이야기</a>
+								<a href="main.do" class="dropdown-item">밥사조 식구들</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Listings </a>
+								조회 </a>
 							<div class="dropdown-menu">
-								<a href="list.do" class="dropdown-item">목록보기</a> <a
-									href="property_grid.html" class="dropdown-item">Grid View</a> <a
-									href="property_listing_map.html" class="dropdown-item">Map
-									View</a> <a href="property_single.html" class="dropdown-item">Single
-									View 1</a> <a href="property_single2.html" class="dropdown-item">Single
-									View 2</a> <a href="property_single3.html" class="dropdown-item">Single
-									View 3</a>
+								<a href="list.do" class="dropdown-item">목록보기</a>
 							</div></li>
 
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Agents </a>
+								매장소식 </a>
 							<div class="dropdown-menu">
-								<a href="agent_list.html" class="dropdown-item">Agent List</a> <a
-									href="agent.html" class="dropdown-item">Agent Profile</a>
+								<a href="agent_list.html" class="dropdown-item">공지사항</a> <a
+									href="agent.html" class="dropdown-item">매장별 이용후기</a>
 							</div></li>
 
 						<li class="nav-item dropdown megamenu"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Pages </a>
+								도움말 </a>
 							<div class="dropdown-menu">
 								<div class="container">
 									<div class="row justify-content-md-center">
@@ -649,10 +754,11 @@ $(document).ready(function(){
 											<!-- 셀렉트박스 이벤트  -->
 											<!-- 폼 추가 -->
 											<!-- <form name="t_table" method="get" action="list.do" taget="targetFrame"> -->
-											<form name="t_table" method="get" action="list.do">
+											<!-- <form name="t_table" method="get" action="list.do">  원본 -->
+											<form name="t_table" method="get">
 												<!-- action 태그 명시안하면 자기자신에게로 보냄 -->
 												<select name="sortValue" class="form-control ui-select"
-													id="sort-category" onchange="this.form.submit()">
+													id="sort-category">
 													<option selected="selected">정렬옵션</option>
 													<option value="0">높은 가격순</option>
 													<option value="1">낮은 가격순</option>
