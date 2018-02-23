@@ -275,7 +275,7 @@ $( document ).ready(function() {
  			}
  		});
  		$('#menuName').html(menuName);
- 	 	$('#menuSum').val(menuSumTemp + "원");
+ 	 	$('#menuSum').val(menuSumTemp * 1);
  	});
 });
 //수량 이벤트
