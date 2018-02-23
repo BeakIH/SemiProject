@@ -1,7 +1,8 @@
 package action;
 
 
-import java.util.Collections; 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,14 +26,18 @@ public class NoticeAction implements CommandAction {//글목록 처리
         int endRow = currentPage * pageSize;//한 페이지의 마지막 글번호
         int count = 0;
         int number=0;
+        String opt = request.getParameter("opt");
+        String condition = request.getParameter("condition");
+        
 
         @SuppressWarnings("rawtypes")
 		List articleList = null;
         BoardDBBean dbPro = BoardDBBean.getInstance();//DB연동
-        count = dbPro.getArticleCount();//전체 글의 수
+        count = dbPro.getArticleCount(opt, condition);//전체 글의 수
        
         if (count > 0) {
-            articleList = dbPro.getArticles(startRow, endRow);//현재 페이지에 해당하는 글 목록
+			articleList = dbPro.getArticles(startRow, endRow, opt, condition);//현재 페이지에 해당하는 글 목록
+            
         } else {
             articleList = Collections.EMPTY_LIST;
         }

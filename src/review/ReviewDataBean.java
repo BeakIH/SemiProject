@@ -7,16 +7,16 @@ public class ReviewDataBean {
 	    private int rvno;
 
 	    //  매장 번호
-	    private int storeno;
+	    private int storeno; //공통
 
 	    // 회원명
-	    private String memnm;
+	    private String memnm; 
 
 	    // 매장명
-	    private String storenm;
+	    private String storenm; //공통
 
 	    // 방문일자
-	    private String visitnate;
+	    private String visitdate;
 
 	    // 리뷰글 제목
 	    private String rvtitle;
@@ -62,12 +62,12 @@ public class ReviewDataBean {
 			this.storenm = storenm;
 		}
 
-		public String getVisitnate() {
-			return visitnate;
+		public String getVisitdate() {
+			return visitdate;
 		}
 
-		public void setVisitnate(String visitnate) {
-			this.visitnate = visitnate;
+		public void setVisitdate(String visitdate) {
+			this.visitdate = visitdate;
 		}
 
 		public String getRvtitle() {
@@ -101,6 +101,8 @@ public class ReviewDataBean {
 		public void setRviewcnt(int rviewcnt) {
 			this.rviewcnt = rviewcnt;
 		}
+
+	
 
 	    
 

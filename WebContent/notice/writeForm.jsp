@@ -226,12 +226,12 @@
 								 <!-- 게시직원명 db4 -->
 								<tr>
 									<th scope="row"><span>직원명</span></th> 
-									<td><input type="text" name="empnm" id="empnm" maxlength="50"></td>
+									<td>${empnm}</td>
 								</tr>
 								<!-- 직원번호 db2 -->
 								<tr>
 									<th scope="row"><span>직원번호</span></th> 
-									<td><input type="text" name="empNo" id="empNo" maxlength="50"></td>
+									<td>${empnm}</td>
 										
 								</tr>
 								<!-- 공지글 제목 db3 -->

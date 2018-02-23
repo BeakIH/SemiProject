@@ -209,25 +209,26 @@
 			<!-- list_view_wrapper -->
 			<div class="list_view_wrapper">
 				<!-- search form -->
-				
+				<form>
 					<fieldset>
 						<legend style=visibility:hidden;>검색</legend>
 						<div class="search_area">
-							<select name="searchType" id="searchType" title="검색어 유형 선택">
+							<select name="opt" id="opt" title="검색어 유형 선택">
 								<option value="" selected="selected">전체</option>
 								<option value="T">제목</option>
 								<option value="C">내용</option>
-								<option value="S">매장명</option>
+							<!--  	<option value="S">매장명</option> -->
 							</select>
-							<input type="text" name="searchWord" id="searchWord" class="searchword" value="" placeholder="검색어를 입력하세요" title="검색어를 입력하세요">
-							<button class="submit"><span class="m_txt">검색하기</span></button>
+							<input type="text" name="condition" id="condition" class="condition" value="" placeholder="검색어를 입력하세요" title="검색어를 입력하세요">
+							<button type="submit" class="submit"><span class="m_txt">검색하기</span></button>
 						</div>
+						
 </fieldset>
 
 <div style="float:right;">
-<a href="notice2.do" class="list-btn btn-primary">목록(전체 글:${count})</a>
+<a href="notice2.do" class="list-btn btn-primary">목록(전체 글:${count})</a><br>
 </div>
-				
+	</form>			
 
 
 							

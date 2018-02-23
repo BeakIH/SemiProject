@@ -26,7 +26,7 @@ public class BoardDataBean {
  private String bContent;
 
  // 게시일자 게시일자
- private Timestamp postDate;
+ private String postDate;
 
  // 조회수 조회수
  private int bViewCnt;
@@ -80,12 +80,12 @@ public void setbNo(int bNo) {
      this.bContent = bContent;
  }
 
- public Timestamp getpostDate() {
+ public String getpostDate() {
 	 
      return postDate;
  }
 
- public void setpostDate(Timestamp postDate) {
+ public void setpostDate(String postDate) {
 	 
 	 this.postDate = postDate;
 	 

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 //import list.ListDBBean;
 import reserve.ReserveDBBean;
+import review.ReviewDBBean;
 
 public class List_infoAction implements CommandAction {//글 목록 처리
 	
@@ -19,16 +20,20 @@ public class List_infoAction implements CommandAction {//글 목록 처리
 		// 파라미터 값 저장
 		int storeNo = Integer.parseInt(request.getParameter("store_no"));
 		
+		System.out.println("storeNo:::"+storeNo); // 값 넘어옴
+		
 		List articleList = null;
 //		ListDBBean dbPro = ListDBBean.getInstance();
 		ReserveDBBean dbPro = ReserveDBBean.getInstance();
-
+		ReviewDBBean dbPro1 = ReviewDBBean.getInstance();
+ 
 		// 모든 검색에 사용하는 데이터를 searchList에 저장
 		List searchList = new ArrayList();
+		List reviewList = new ArrayList();
 
 		// 점포번호를 가지고 검색하는 메서드 실행
+		System.out.println("테스트1");
 		articleList = dbPro.getInfo(storeNo,"ones");
-
 		//해당 뷰에서 사용할 속성
 		request.setAttribute("articleList", articleList);
 		
