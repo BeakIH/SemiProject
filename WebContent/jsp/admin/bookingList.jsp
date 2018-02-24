@@ -6,14 +6,14 @@
 <body> 
 <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered mt0">
-              <h1>밥사조 <small>예약 현황나열</small></h1>
+              <h1>${storeNm} <small></small></h1>
             </div>
             <div class="sorting">
               <div class="row justify-content-between">
               <div class="col-sm-5 col-md-5 col-lg-4 col-xl-4">
               <div class="form-group">
                   <select class="form-control ui-select">
-                    <option selected="selected">선택하세요</option>
+                    <option selected="selected"> 정렬기준 </option>
                     <option>등록일순</option>
                     <option>당일예약</option>
                   </select>

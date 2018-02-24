@@ -241,18 +241,17 @@ function fillInAddress() {
         </a>
         <div class="dropdown-menu">
             <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
+            
             <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
             <a href="my_notifications.html" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
             <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a> -->
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
+             <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
         </div>
       </li>
-      <div>
-     
-       <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> 
-      <!-- <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
-     </div>
+       <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> -->
+       <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li>
     </ul>
     
   </div>
@@ -283,8 +282,8 @@ function fillInAddress() {
                   	<span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
                     <span class="badge badge-primary badge-pill">7</span>
                   </a>
-                  
-                  <!-- <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> 직원조회 </a> -->
+                  <!-- <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-fw fa-plus-square-o"></i>미리주문 메뉴관리 </a> -->
+                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> 미리주문 메뉴관리  </a>
                   <a href="storeInfo.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 매장정보 변경</a>
                   <a href="passWord.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
                   <!-- <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
@@ -293,7 +292,7 @@ function fillInAddress() {
 				  <a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> Account</a> -->
                   <span class="list-group-item heading"> 직원관리  </span>
                   <a href="createEmp.jsp" class="list-group-item"><i class="fa fa-fw fa-user"></i> 직원등록 </a>
-                  <a href="management_list.do?store_no=${storeNo }" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원정보 </a>
+                  <a href="management_list.do?store_no=${storeNo}" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원정보 </a>
                   <span class="list-group-item heading"> 우리매장소식  </span>
                   <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-paper-plane" size = 5px></i> 매장소식 </a>
                   <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 매장이용후기 </a>
@@ -459,7 +458,7 @@ function fillInAddress() {
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 환영합니다 
         </a>
         <div class="dropdown-menu">
             <a href="my_profile.html" class="dropdown-item">My Profile</a>
