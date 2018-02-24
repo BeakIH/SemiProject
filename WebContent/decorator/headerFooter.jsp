@@ -190,10 +190,10 @@
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 다시 만나요  </a> 
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 안녕하세요  </a> 
         <div class="dropdown-menu">
             <a href="my_profile.html" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
-            <a href="my_password.html" class="dropdown-item"> <i class="fa fa-utensils"></i> 매장조회</a> 
+            <a href="my_password.html" class="dropdown-item"> <i class="fa fa fa-utensils"></i> 매장조회</a> 
             <!-- <a href="my_notifications.html" class="dropdown-item">Notifications</a>
             <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a>
