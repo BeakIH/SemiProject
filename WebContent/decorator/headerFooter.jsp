@@ -54,9 +54,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
   <div class="container">
   <!-- <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a> -->
-  <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+	<!-- <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span> -->
+    <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
+	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+   <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
+  </a>
   </button>
 
   <div class="collapse navbar-collapse" id="menu-content">
@@ -185,19 +189,20 @@
       
       
       <li class="nav-item dropdown user-account">
-        <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"> </span> 
-        </a> -->
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 다시 만나요  </a> 
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">비밀번호 변경</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
+            <a href="my_profile.html" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
+            <a href="my_password.html" class="dropdown-item"> <i class="fa fa-utensils"></i> 매장조회</a> 
+            <!-- <a href="my_notifications.html" class="dropdown-item">Notifications</a>
             <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a>
+            <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
         </div>
       </li>
-      <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
+      <div>
+      <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
+      </div>
     </ul>
     
   </div>
@@ -248,7 +253,7 @@
           <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
               <li><a href="#"> About BABSAJO </a></li>
-              <li><a href="#"> Team Introduction </a></li>
+              <li><a href="#"> BABSAJO Introduction </a></li>
               <!-- <li><a href="#">Security</a></li>
               <li><a href="#">Plans</a></li> -->
             </ul>

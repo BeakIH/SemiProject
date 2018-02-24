@@ -775,7 +775,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
               <li><a href="#"> About BABSAZO </a></li>
-              <li><a href="#"> Team Introduction </a></li>
+              <li><a href="#"> BABSAZO Introduction </a></li>
               <!-- <li><a href="#">Security</a></li>
               <li><a href="#">Plans</a></li> -->
             </ul>

@@ -8,6 +8,7 @@
       
       <decorator page="/decorator/headerFooter.jsp" name="good"> 
          <pattern>/jsp/member/*</pattern>
+         <pattern>/jsp/login/*</pattern>
       </decorator>
       
       <!-- <excludes>
