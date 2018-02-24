@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>직원정보 화면</title>
 </head>
@@ -47,7 +47,7 @@
 							</div>
 						</div>
 						<div class="col-md-9">
-							<a href="modifyEmp.jsp?store_no=${manage.storeNo}" class="btn btn-primary float-right">정보 수정</a>
+							<a href="management_modify.do?adm_id=${id}" class="btn btn-primary float-right">정보 수정</a>
 							<h3 class="item-title">
 								<a href="agent.html">직원번호 : ${manage.empNo}</a>
 							</h3>

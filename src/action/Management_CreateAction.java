@@ -14,6 +14,8 @@ public class Management_CreateAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
+		int sNo = 0;
+		
 		try {
 			request.setCharacterEncoding("UTF-8");
 			
@@ -21,7 +23,7 @@ public class Management_CreateAction implements CommandAction {
 			EmpDBBean dao = new EmpDBBean();
 			
 			String name = request.getParameter("name");
-			int sNo = Integer.parseInt(request.getParameter("sNo"));
+			sNo = Integer.parseInt(request.getParameter("sNo"));
 			String pos = request.getParameter("position");
 			
 			dto.setEmpNm(name);
@@ -34,6 +36,6 @@ public class Management_CreateAction implements CommandAction {
 			ex.printStackTrace();
 		}
 		
-		return "/jsp/admin/management_list.do?store_no=1004";
+		return "/jsp/admin/management_list.do?store_no="+sNo;
 	}
 }

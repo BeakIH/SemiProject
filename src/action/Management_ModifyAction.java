@@ -17,13 +17,14 @@ public class Management_ModifyAction implements CommandAction {
 			EmpDataBean dto = new EmpDataBean();
 			EmpDBBean dao = new EmpDBBean();
 			
-			String admId = request.getParameter("id");
+			String adm_Id = (String)request.getSession().getAttribute("id");
 			
-			dto.setEmpNm(admId);
+			dto.setEmpNm(adm_Id);
 			
 			boolean b = dao.modifyEmp(dto);
 			
 			request.setAttribute("result", b);
+			request.setAttribute("errorpage", "0");
 
 		} catch (Exception ex) {
 			ex.printStackTrace();

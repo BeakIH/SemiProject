@@ -31,15 +31,15 @@ public class EmpDBBean {
 		return DriverManager.getConnection(jdbcDriver);
 	}
 
-	public ArrayList<EmpDataBean> getEmpList(int storeNo) throws Exception {
+	public ArrayList<EmpDataBean> getEmpList(int store_no) throws Exception {
 
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			String sql = "select * from emp where store_No = ? order by emp_no";
+			String sql = "select * from emp where store_no = ? order by emp_no";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, storeNo);
+			pstmt.setInt(1, store_no);
 
 			rs = pstmt.executeQuery();
 
@@ -103,15 +103,15 @@ public class EmpDBBean {
 		}
 	}
 
-	public EmpDataBean getData(int storeNo) throws Exception {
+	public EmpDataBean getData(String adm_id) throws Exception {
 
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			String sql = "select * from emp where store_no = ?";
+			String sql = "select * from emp where adm_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, storeNo);
+			pstmt.setString(1, adm_id);
 
 			rs = pstmt.executeQuery();
 
@@ -137,7 +137,7 @@ public class EmpDBBean {
 		return dto;
 	}
 
-	public EmpDataBean selectEmp(String admid) throws Exception {
+	public EmpDataBean selectEmp(String adm_id) throws Exception {
 
 		try {
 			conn = getConnection();
@@ -145,7 +145,7 @@ public class EmpDBBean {
 
 			String sql = "select * from emp where adm_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, admid);
+			pstmt.setString(1, adm_id);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {

@@ -316,7 +316,7 @@ public class LoginDBBean {
          if(userCheck(userid) == 1) { //일반회원
             result.put("result", 0);
             conn = getConnection();
-            String sql = "select mem_id, mem_pw, mem_nm from member where mem_id = ? and mem_pw = ?";
+            String sql = "select * from member where mem_id = ? and mem_pw = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, userid);
             pstmt.setString(2, userpw);
@@ -330,7 +330,7 @@ public class LoginDBBean {
          } else if(adminCheck(userid) == 2) { //관리자
             result.put("result", 0);
             conn = getConnection();
-            String sql = "select adm_id, adm_pw, emp_nm from emp where adm_id = ? and adm_pw = ?";
+            String sql = "select * from emp where adm_id = ? and adm_pw = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, userid);
             pstmt.setString(2, userpw);
@@ -341,6 +341,8 @@ public class LoginDBBean {
                result.put("result", 2);
                result.put("id", rs.getString("adm_id"));
                result.put("name", rs.getString("emp_nm"));
+               result.put("admYn", rs.getString("adm_yn"));
+               result.put("storeNo", rs.getString("store_no"));
             }
          } else {
             result.put("result", 3);

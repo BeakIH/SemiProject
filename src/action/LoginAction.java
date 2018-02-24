@@ -27,6 +27,7 @@ public class LoginAction implements CommandAction {
          request.getSession().setAttribute("id", result.get("id"));
          request.getSession().setAttribute("name", result.get("name"));
          request.getSession().setAttribute("admYn", result.get("admYn"));
+         request.getSession().setAttribute("storeNo", result.get("storeNo"));
       }
 
       // 0 : ID 존재 비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
