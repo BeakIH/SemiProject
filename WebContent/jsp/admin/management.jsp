@@ -11,7 +11,7 @@
 	<div class="col-md-7 col-lg-8 col-xl-8">
 		<div class="page-header bordered mt0">
 			<h1>
-				매장명 <small>매장 직원들 리스트</small>
+				${storeNm} <small>매장 직원들 리스트</small>
 			</h1>
 		</div>
 		<div class="sorting">
@@ -58,7 +58,7 @@
 								<a href="tel:02080226348"><i class="fa fa-phone"></i> 020
 									8022 6348</a> <a href="agent.html"><i class="fa fa-envelope-o"></i>
 									Contact Agent</a>
-							</div>	
+							</div>
 						</div>
 					</div>
 				</div>

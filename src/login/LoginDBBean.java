@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import emp.EmpDataBean;
 import store.list.JdbcUtil;
 
 public class LoginDBBean {
@@ -330,7 +329,7 @@ public class LoginDBBean {
          } else if(adminCheck(userid) == 2) { //관리자
             result.put("result", 0);
             conn = getConnection();
-            String sql = "select * from emp where adm_id = ? and adm_pw = ?";
+            String sql = "SELECT * FROM emp, store_list WHERE emp.STORE_NO = store_list.STORE_NO and adm_id = ? and adm_pw = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, userid);
             pstmt.setString(2, userpw);
@@ -343,6 +342,7 @@ public class LoginDBBean {
                result.put("name", rs.getString("emp_nm"));
                result.put("admYn", rs.getString("adm_yn"));
                result.put("storeNo", rs.getString("store_no"));
+               result.put("storeNm", rs.getString("store_nm"));
             }
          } else {
             result.put("result", 3);
@@ -350,7 +350,6 @@ public class LoginDBBean {
          // result 0 : ID 존재  비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
          return result;
       } catch (Exception e) {
-         // TODO Auto-generated catch block
          e.printStackTrace();
       } finally {
          try {
