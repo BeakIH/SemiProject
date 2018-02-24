@@ -17,7 +17,9 @@ public class Management_ListAction implements CommandAction {
 		EmpDBBean dao = EmpDBBean.getInstance();
 		ArrayList<EmpDataBean> manageList = dao.getEmpList(stNo);
 		request.getSession().setAttribute("manageList", manageList);
-
+		
+		request.setAttribute("errorpage", "0");
+		System.out.print("dd");
 		return "/jsp/admin/management.jsp";
 	}
 }
