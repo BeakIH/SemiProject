@@ -19,7 +19,7 @@ public class Management_ModifyAction implements CommandAction {
 			
 			String adm_Id = (String)request.getSession().getAttribute("id");
 			
-			dto.setEmpNm(adm_Id);
+			dto.setAdmId(adm_Id);
 			
 			boolean b = dao.modifyEmp(dto);
 			

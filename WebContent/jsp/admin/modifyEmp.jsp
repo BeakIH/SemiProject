@@ -4,8 +4,8 @@
 <jsp:useBean id="membermanager" class="emp.EmpDBBean"/>
 
 <%
-	int storeNo = Integer.parseInt((String)session.getAttribute("storeNo"));
-	EmpDataBean dto = membermanager.getData(storeNo);
+	String admId = (String)session.getAttribute("admId");
+	EmpDataBean dto = membermanager.getData(admId); 
 %>
 <html>
 <head>
