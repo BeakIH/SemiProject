@@ -1,14 +1,18 @@
 package action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest; 
 import javax.servlet.http.HttpServletResponse;
 
+import emp.EmpDBBean;
+import emp.EmpDataBean;
 import store.list.StoreListDBBean;
 import store.list.StoreListDataBean;
 
 public class StoreInfoAction implements CommandAction {
 
-    public String requestPro( HttpServletRequest request,
+/*    public String requestPro( HttpServletRequest request,
         HttpServletResponse response) throws Throwable {
     	
     	// 한글 인코딩 처리 
@@ -30,5 +34,17 @@ public class StoreInfoAction implements CommandAction {
         request.setAttribute("check", new Integer(check));
 
         return "/jsp/storeInfoPro.jsp";
-    }
+    } */
+	
+	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		
+		int store_no = Integer.parseInt(request.getParameter("store_no"));
+		StoreListDBBean dao = StoreListDBBean.getInstance();
+		ArrayList<StoreListDBBean> manageList = dao.getEmpList(store_no);
+		
+		request.setAttribute("manageList", manageList);
+		request.setAttribute("errorpage", "0");
+		
+		return "/jsp/admin/management.jsp";
+	}
 }

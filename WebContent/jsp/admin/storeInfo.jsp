@@ -7,21 +7,21 @@
 <!--  매장정보 시작 -->
           <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
-              <h1> 매장명(세션으로 받아온다.) <small> 000관리자님 환영합니다(세션으로 받아온다.) </small></h1>
+              <h1> ${storeNm } <small> ${empnm}관리자님 환영합니다.</small></h1>
             </div>
             <form action="index.php">
-              <h3 class="subheadline"> 매장No. 00000 </h3>
+              <h3 class="subheadline"> 매장 No.${storeNo} </h3>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label> 매장명 </label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="강식당">
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="${storeNm }">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>업종명</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="양식">
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="${cateNm }">
                   </div>
                 </div>
               </div>

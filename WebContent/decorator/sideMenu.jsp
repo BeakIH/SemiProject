@@ -283,7 +283,7 @@ function fillInAddress() {
                     <span class="badge badge-primary badge-pill">7</span>
                   </a>
                   <!-- <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-fw fa-plus-square-o"></i>미리주문 메뉴관리 </a> -->
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> 미리주문 메뉴관리  </a>
+                  <a href="menu.jsp" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"></i> 미리주문 메뉴관리  </a>
                   <a href="storeInfo.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 매장정보 변경</a>
                   <a href="passWord.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
                   <!-- <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
