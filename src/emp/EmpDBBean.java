@@ -103,29 +103,41 @@ public class EmpDBBean {
 		}
 	}
 
-	
-	 public EmpDataBean getData(int storeNo) throws Exception { EmpDataBean dto =
-	 null; Connection conn = null; PreparedStatement pstmt = null; ResultSet rs =
-	 null;
-	 
-	 try { conn = getConnection(); conn.setAutoCommit(false);
-	 
-	 String sql = "select * from emp where store_no = ?"; pstmt =
-	 conn.prepareStatement(sql); pstmt.setInt(1, storeNo);
-	 
-	 rs = pstmt.executeQuery();
-	 
-	 if(rs.next()) { dto = new EmpDataBean(); dto.setEmpNm(rs.getString("empNm"));
-	 dto.setPosition(rs.getString("position")); }
-	 
-	 conn.commit(); conn.setAutoCommit(true);
-	 
-	 } catch (ClassNotFoundException | SQLException sqle) { conn.rollback(); }
-	 finally { try { JdbcUtil.close(pstmt); JdbcUtil.close(conn); } catch
-	 (Exception e) { e.printStackTrace(); } } return dto; }
-	 
+	public EmpDataBean getData(int storeNo) throws Exception {
 
-	public EmpDataBean selectEmp(int admid) throws Exception {
+		try {
+			conn = getConnection();
+			conn.setAutoCommit(false);
+
+			String sql = "select * from emp where store_no = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, storeNo);
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				dto = new EmpDataBean();
+				dto.setEmpNm(rs.getString("empNm"));
+				dto.setPosition(rs.getString("position"));
+			}
+
+			conn.commit();
+			conn.setAutoCommit(true);
+
+		} catch (ClassNotFoundException | SQLException sqle) {
+			conn.rollback();
+		} finally {
+			try {
+				JdbcUtil.close(pstmt);
+				JdbcUtil.close(conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return dto;
+	}
+
+	public EmpDataBean selectEmp(String admid) throws Exception {
 
 		try {
 			conn = getConnection();
@@ -133,7 +145,7 @@ public class EmpDBBean {
 
 			String sql = "select * from emp where adm_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, admid);
+			pstmt.setString(1, admid);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -161,14 +173,14 @@ public class EmpDBBean {
 	}
 
 	public boolean modifyEmp(EmpDataBean dto) throws Exception {
-		
+
 		boolean b = false;
 
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			String sql = "update emp set emp_nm= ? , Position= ? , adm_yn= ? , emp_status = ? where adm_id=?";
+			String sql = "update emp set emp_nm= ? , Position= ? , adm_yn= ? , emp_status = ? where adm_id= ? ";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, dto.getEmpNm());
