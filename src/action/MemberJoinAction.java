@@ -6,22 +6,36 @@ import javax.servlet.http.HttpServletResponse;
 import jsp.member.model.MemberBean;
 import jsp.member.model.MemberDAO;
  
-/** 
- *  회원가입을 처리하는 Action 클래스<br>
- *  JoinForm.jsp에서 넘겨받은 정보를 이용하여
- *  회원가입을 처리한다.
- */
+
 public class MemberJoinAction implements CommandAction{
 
 	   @Override
 	   public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         
         request.setCharacterEncoding("utf-8"); // 인코딩
-       
+        
+        String totalfoodcheckbox="";
+        
+        for(int i=0;i<8;i++) {
+        	String foodbox1="food"+i;
+        	String foodbox2=request.getParameter(foodbox1);
+        	if(!(foodbox2==null || foodbox2=="")) {
+        		totalfoodcheckbox += foodbox2;
+        	}
+        }
+        		
+        String checkbox = request.getParameter("food");
+        System.out.println("확인");
+        System.out.println("checkbox::"+checkbox);
+        System.out.println("종료");
         ActionForward forward = new ActionForward();
-        
+
         MemberDAO dao = MemberDAO.getInstance();
-        
+
+ 	   
+  
+             
+             
         // 입력된 정보를 자바빈에 세팅한다.
         MemberBean member = new MemberBean();
         member.setMem_nm(request.getParameter("mem_nm"));
@@ -32,7 +46,8 @@ public class MemberJoinAction implements CommandAction{
         member.setEmail(request.getParameter("email"));
         member.setEmail_yn(request.getParameter("email_yn"));
         member.setFvrt_str_1(request.getParameter("fvrt_str_1"));
-        member.setFvrt_str_2(request.getParameter("fvrt_str_2"));
+        member.setFvrt_str_2(totalfoodcheckbox);
+        
         
         // 회원가입 실행
         dao.insertMember(member);

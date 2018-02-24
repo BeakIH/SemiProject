@@ -46,161 +46,7 @@
 </head>
 <body>
 	<div id="main">
-		<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
-			<div class="container">
-				<a class="navbar-brand" href="index.html"><span
-					class="icon-uilove-realestate"></span></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#menu-content" aria-controls="menu-content"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
 
-				<div class="collapse navbar-collapse" id="menu-content">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Home <span class="sr-only">(current)</span>
-						</a>
-							<div class="dropdown-menu">
-								<a href="index.html" class="dropdown-item">Homepage 1</a> <a
-									href="index2.html" class="dropdown-item">Homepage 2</a> <a
-									href="index3.html" class="dropdown-item">Homepage 3</a> <a
-									href="index4.html" class="dropdown-item">Homepage 4</a> <a
-									href="index5.html" class="dropdown-item">Homepage 5</a> <a
-									href="index6.html" class="dropdown-item">Homepage 6</a> <a
-									href="index7.html" class="dropdown-item">Homepage 7</a>
-							</div></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Listings </a>
-							<div class="dropdown-menu">
-								<a href="property_listing.html" class="dropdown-item">List
-									View</a> <a href="property_grid.html" class="dropdown-item">Grid
-									View</a> <a href="property_listing_map.html" class="dropdown-item">Map
-									View</a> <a href="property_single.html" class="dropdown-item">Single
-									View 1</a> <a href="property_single2.html" class="dropdown-item">Single
-									View 2</a> <a href="property_single3.html" class="dropdown-item">Single
-									View 3</a>
-							</div></li>
-
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Agents </a>
-							<div class="dropdown-menu">
-								<a href="agent_list.html" class="dropdown-item">Agent List</a> <a
-									href="agent.html" class="dropdown-item">Agent Profile</a>
-							</div></li>
-
-						<li class="nav-item dropdown megamenu"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Pages </a>
-							<div class="dropdown-menu">
-								<div class="container">
-									<div class="row justify-content-md-center">
-										<div class="col col-md-8">
-											<div class="row">
-												<div class="col-md-6 col-lg-3">
-													<ul class="list-unstyled">
-														<li class="title">Homepage</li>
-														<li><a href="index.html">Homepage 1</a></li>
-														<li><a href="index2.html">Homepage 2</a></li>
-														<li><a href="index3.html">Homepage 3</a></li>
-														<li><a href="index4.html">Homepage 4</a></li>
-														<li><a href="index5.html">Homepage 5</a></li>
-														<li><a href="index6.html">Homepage 6</a></li>
-														<li><a href="index7.html">Homepage 7</a></li>
-														<li class="title">Login Pages</li>
-														<li><a href="signin.html">Signin</a></li>
-														<li><a href="register.html">Register</a></li>
-														<li><a href="forgot-password.html">Forgot
-																Password</a></li>
-													</ul>
-												</div>
-												<div class="col-md-6 col-lg-3">
-													<ul class="list-unstyled">
-														<li class="title">Property Listing</li>
-														<li><a href="property_listing.html">List View</a></li>
-														<li><a href="property_grid.html">Grid View</a></li>
-														<li><a href="property_listing_map.html">Map View</a></li>
-														<li class="title">Single Property</li>
-														<li><a href="property_single.html">Single View 1</a></li>
-														<li><a href="property_single2.html">Single View 2</a></li>
-														<li><a href="property_single3.html">Single View 3</a></li>
-													</ul>
-												</div>
-												<div class="col-md-6 col-lg-3">
-													<ul class="list-unstyled">
-														<li class="title">Other Pages</li>
-														<li><a href="plans.html">Plans</a></li>
-														<li><a href="information_page.html">Information
-																Page</a></li>
-														<li><a href="coming_soon.html">Coming Soon</a></li>
-														<li><a href="404_error.html">Error Page</a></li>
-														<li><a href="success.html">Success Page</a></li>
-														<li><a href="contact.html">Contact Page</a></li>
-														<li><a href="compare.html">Compare Properties</a></li>
-														<li class="title">Agent Pages</li>
-														<li><a href="agent_list.html">Agent List</a></li>
-														<li><a href="agent.html">Agent Profile</a></li>
-													</ul>
-												</div>
-												<div class="col-md-6 col-lg-3">
-													<ul class="list-unstyled">
-														<li class="title">Account Pages</li>
-														<li><a href="my_listing_add.html">Add Listing</a></li>
-														<li><a href="my_bookmarked_listings.html">Bookmarked
-																Listing</a></li>
-														<li><a href="my_listings.html">My Listings</a></li>
-														<li><a href="my_profile.html">My Profile</a></li>
-														<li><a href="my_password.html">Change Password</a></li>
-														<li><a href="my_notifications.html">Notifications</a></li>
-														<li><a href="my_membership.html">Membership</a></li>
-														<li><a href="my_payments.html">Payments</a></li>
-														<li><a href="my_account.html">Account</a></li>
-														<li class="title">Blog Pages</li>
-														<li><a href="blog.html">Blog Archive</a></li>
-														<li><a href="blog_single.html">Blog Single</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div></li>
-
-					</ul>
-
-					<ul class="navbar-nav ml-auto">
-
-
-						<li class="nav-item dropdown user-account"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="user-image"
-								style="background-image: url(' img/demo/profile3.jpg');"></span>
-								Hi, John
-						</a>
-							<div class="dropdown-menu">
-								<a href="my_profile.html" class="dropdown-item">My Profile</a> <a
-									href="my_password.html" class="dropdown-item">Change
-									Password</a> <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-								<a href="my_membership.html" class="dropdown-item">Membership</a>
-								<a href="my_payments.html" class="dropdown-item">Payments</a> <a
-									href="my_account.html" class="dropdown-item">Account</a>
-							</div></li>
-						<li class="nav-item add-listing"><a class="nav-link"
-							href="my_listing_add.html"><span><i class="fa fa-plus"
-									aria-hidden="true"></i> Add listing</span></a></li>
-					</ul>
-
-				</div>
-			</div>
-		</nav>
 
 		<article class="container">
 			<div class="page-header">
@@ -234,8 +80,6 @@
 						
 						
 						
-						
-						
 						// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
 						function checkValue() {
 							if (!document.userInfo.mem_id.value) {
@@ -265,17 +109,12 @@
 
 					<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
 					<!-- 값(파라미터) 전송은 POST 방식, 전송할 페이지는 JoinPro.jsp -->
-					<form method="get"
-						action="/SemiProject/jsp/member/view/JoinYeah.do" name="userInfo"
-						onsubmit="return checkValue()">
-
+					<form method="get" action="/SemiProject/jsp/member/view/JoinYeah.do" name="userInfo" onsubmit="return checkValue()">
 
 						<table>
-
 							<tr>
 								<div class="form-group">
-									<label for="birth"><font size="4em" color="52478B">생년월일
-											또는 기념일</font></label>
+									<label for="birth"><font size="4em" color="52478B">생년월일 또는 기념일</font></label>
 									<td id="title"></td> <input type="text" name="mem_no"
 										maxlength="4" placeholder="년(4자)" size="6" required>
 									<!--  &nbsp;<select name="birthmm">
@@ -300,9 +139,7 @@
 							</div>
 
 							<br>
-
-
-							<tr>
+                          	<tr>
 								<div class="form-group">
 									<label for="username"><font size="4em" color="52478B">이름</font></label>
 									<td id="title"></td> <input type="text" name="mem_nm"
@@ -312,8 +149,7 @@
 							</tr>
 
 							<br>
-
-							<tr>
+                  			<tr>
 								<div class="form-group">
 									<label for="username"><font size="4em" color="52478B">회원
 											아이디</font></label>
@@ -358,15 +194,12 @@
 							</tr>
 
 							<br>
-
-
-							<div class="form-group">
-								<label for="username"><font size="4em" color="52478B">휴대폰
-										번호</font></label>
+                      	<div class="form-group">
+								<label for="username"><font size="4em" color="52478B">휴대폰 번호</font></label>
 								<td id="title"></td> <input type="tel" name="mem_tel"
 									class="form-control" id="username" placeholder="- 없이 입력해 주세요" required>
 							</div>
-							<!-- name="chk_info" -->
+					
 							<div>
 								<input type="checkbox" value="동의">휴대폰 수신에 동의합니다
 							</div>
@@ -399,20 +232,15 @@
 								</div>
 								<!-- name="chk_info" -->
 								<div>
-									<input type="checkbox" value="동의">우편으로 BABSAZO 소식지를
-									받겠습니다
+									<input type="checkbox" value="동의">우편으로 BABSAZO 소식지를 받겠습니다
 								</div>
 								<div>
-									<p class="help-block">(BABSAZO 소식지 전용 쿠폰 및 새로운 BABSAZO 제일
-										먼저 받아보세요)</p>
+									<p class="help-block">(BABSAZO 소식지 전용 쿠폰 및 새로운 BABSAZO 제일 먼저 받아보세요)</p>
 								</div>
 
 								<br>
-
-
-								<div class="form-group">
-									<label for="InputEmail"><font size="4em" color="52478B">이메일
-											주소</label></font>
+                                <div class="form-group">
+									<label for="InputEmail"><font size="4em" color="52478B">이메일 주소</label></font>
 									<td id="title"></td> <input type="text" name="email"
 										class="form-control" id="username" placeholder="이메일을 입력해 주세요" required>
 								</div>
@@ -427,76 +255,180 @@
                         </select>  -->
 
 								<div class="form-group">
-									<label for="InputEmail"><font size="4em" color="52478B">DB땜에 일단만듬</label></font>
-									<td id="title"></td> <input type="text" name="email_yn"
-										class="form-control" id="username" placeholder="y/n 을 입력하세요" required> <input
-										type="checkbox" value="동의">이메일 수신에 동의합니다
-								</div>
-								<div>
+									<font size="4em" color="52478B">이메일 수신여부</label></font>
+									<td id="title"></td> BABSAZO 이메일 뉴스레터 수신에 동의합니다<br>
+							    	 예<input type="radio" name="email_yn" value="y">
+                                                                                    아니오<input type="radio" name="email_yn" value="n">
 									<p class="help-block">(이메일 BABSAZO 뉴스레터 쿠폰 발급과 이벤트 참여가 가능합니다)</p>
 								</div>
 
 								<br>
 
-								<!-- <tr>
-                 <div class="form-group">
+								<!--  <div class="form-group">
                <label for="username"><font size="4em" color="52478B">성별</label>
                <td id="title"></td> 
               <input type="radio" name="gender" value="남" checked >남
               <input type="radio" name="gender" value="여" checked>여
                   </font>  </td>
-                </tr>
-                    
-                    <br><br>  -->
-
-
-
-								<div class="form-group">
-									<label for="username"><font size="4em" color="52478B">SNS/블로그</font></label>
+                </tr><br><br>  -->
+                 			
+                 			<div class="form-group">
+                 			<label for="username"><font size="4em" color="52478B"> 관심 BABSAZO 메장</font></label>
+                 			<br>
+							
+							
+						
+						  <div class="checkbox" id="store"> 한식
+						  <hr>
+			
+														
+														<input type="checkbox" name="store0" value="조양관" id="store0">
+														<label for="store0">조양관</label>
+														<input type="checkbox" name="store1" value="석양" id="store1">
+														<label for="store1">석양</label>
+														<input type="checkbox" name="store2" value="스믓스" id="store2">
+														<label for="store2">스믓스</label>
+														<input type="checkbox" name="store3" value="오라방" id="store3">
+														<label for="store3">오라방</label>
+														<input type="checkbox" name="store4" value="큐스닭강정" id="store4">
+														<label for="store4">큐스닭강정</label>
+														<input type="checkbox" name="store5" value="꽃추장" id="store5">
+														<label for="store5">꽃추장</label>
+														<input type="checkbox" name="store6" value="태양식당" id="store6">
+														<label for="store6">태양식당</label>
+														<input type="checkbox" name="store7" value="라연" id="store7">
+														<label for="store7">라연</label>
+														<input type="checkbox" name="store8" value="원기정" id="store8">
+														<label for="store8">원기정</label>
+														<input type="checkbox" name="store9" value="한강껍데기" id="store9">
+														<label for="store9">한강껍데기</label>
+														<input type="checkbox" name="store10" value="밀면집" id="store10">
+														<label for="store10">밀면집</label>
+														<input type="checkbox" name="store11" value="홍두깨손칼국수" id="store11">
+														<label for="store11">홍두깨손칼국수</label>
+							
+							
+							</div>
+							
+							<div class="checkbox" id="store"> 일식
+									  <hr>
+						  
+														
+														<input type="checkbox" name="store12" value="미자카야" id="store12">
+														<label for="store12">미자카야</label>
+														<input type="checkbox" name="store13" value="가마덴" id="store13">
+														<label for="store13">가마덴</label>
+														<input type="checkbox" name="store14" value="이치젠" id="store14">
+														<label for="store14">이치젠</label>
+														<input type="checkbox" name="store15" value="로사미나미" id="store15">
+														<label for="store15">로사미나미</label>
+														<input type="checkbox" name="store16" value="만뽀" id="store16">
+														<label for="store16">만뽀</label>
+														<input type="checkbox" name="store17" value="카페나하" id="store17">
+														<label for="store17">카페나하</label>
+							</div>
+							<div class="checkbox" id="store"> 중식 
+							<hr>
+							
+														
+														<input type="checkbox" name="store18" value="차이" id="store18">
+														<label for="store18">차이</label>
+														<input type="checkbox" name="store19" value="동일루" id="store19">
+														<label for="store19">동일루</label>
+														<input type="checkbox" name="store20" value="경화루" id="store20">
+														<label for="store20">경화루</label>
+														<input type="checkbox" name="store21" value="가향" id="store21">
+														<label for="store21">가향</label>
+							</div>
+								<div class="checkbox" id="store"> 양식
+								<hr>
+														
+														<input type="checkbox" name="store22" value="엘본더테이블" id="store22">
+														<label for="store22">엘본더테이블</label>
+														<input type="checkbox" name="store23" value="미스티" id="store23">
+														<label for="store23">미스티</label>
+														<input type="checkbox" name="store24" value="다이닝비" id="store24">
+														<label for="store24">다이닝비</label>
+														<input type="checkbox" name="store25" value="문인더랩" id="store25">
+														<label for="store25">문인더랩</label>
+														<input type="checkbox" name="store26" value="베를린키친" id="store26">
+														<label for="store26">베를린키친</label>
+														<input type="checkbox" name="store27" value="주오일식당" id="store27">
+														<label for="store27">주오일식당</label>
+														<input type="checkbox" name="store28" value="파이브테이블즈" id="store28">
+														<label for="store28">파이브테이블즈</label>
+														<input type="checkbox" name="store29" value="시크릿" id="store29">
+														<label for="store29">시크릿</label>
+							</div>
+							<div class="checkbox" id="store"> 기타
+							<hr>
+														
+														<input type="checkbox" name="store30" value="찍먹닭" id="store30">
+														<label for="store30">찍먹닭</label>
+														<input type="checkbox" name="store31" value="보라초" id="store31">
+														<label for="store31">보라초</label>
+														<input type="checkbox" name="store32" value="발리인망원" id="store32">
+														<label for="store32">발리인망원</label>
+														<input type="checkbox" name="store33" value="프롬하노이" id="store33">
+														<label for="store33">프롬하노이</label>
+														<input type="checkbox" name="store34" value="라오삐약" id="store34">
+														<label for="store34">라오삐약</label>
+							</div>
+								
+									<p class="help-block">해당 매장의 쿠폰 발행시 자동 발급해드립니다</p>
+								</div>
+									
 									<td id="title"></td> <input type="text" name="fvrt_str_1"
 										class="form-control" id="username"
-										placeholder="SNS ID 혹은 블로그 주소를 입력해 주세요" required>
-									<p class="help-block">각종 공유 활동으로 BABSAZO 포인트를 적립할 수 있습니다</p>
-								</div>
+										placeholder="BABSAZO 타워에 입점 희망하시는 매장이 있다면 적어주세요">
+									
+				
 
 								<br>
 
 								<div class="form-group">
-									<label for="username"><font size="4em" color="52478B"><label for="username">선호하는 음식(중복선택 가능)</font></label>
+									<label for="username"><font size="4em" color="52478B"><label for="username"> 선호하는 음식(중복선택 가능)</font></label>
 									<td id="title"></td>
-									<!-- 
-           <div> <input type="checkbox" name="chk_info" value="한식">한식
-                 <input type="checkbox" name="chk_info" value="중식">중식
-                 <input type="checkbox" name="chk_info" value="일식">일식 
-                 <input type="checkbox" name="chk_info" value="양식">양식
-                 <input type="checkbox" name="chk_info" value="세계음식">세계음식
-                 <input type="checkbox" name="chk_info" value="디저트">디저트 
-                 <div> 
-                 <input type="checkbox" name="chk_info" value="밥">밥
-                 <input type="checkbox" name="chk_info" value="면">면
-                 <input type="checkbox" name="chk_info" value="분식">분식  
-                 <input type="checkbox" name="chk_info" value="채식">채식
-                 <input type="checkbox" name="chk_info" value="육류">육류
-                 <input type="checkbox" name="chk_info" value="후식">후식   
-              </div>  -->
+									 </div>
+               
+  							<div class="checkbox" id="food">
+														<input type="checkbox" name="food0" value="면류" id="house">
+														<label for="house">면류</label>
+														<input type="checkbox" name="food1" value="찌개류" id="house1">
+														<label for="house1">찌개류</label>
+														<input type="checkbox" name="food2" value="디저트류" id="house2">
+														<label for="house2">디저트류</label>
+							</div>
+							<div class="checkbox" id="food">
+														<input type="checkbox" name="food3" value="밥류" id="house3">
+														<label for="house3">밥류</label>
+														<input type="checkbox" name="food4" value="고기류" id="house4">
+														<label for="house4">고기류</label>
+														<input type="checkbox" name="food5" value="해산물류" id="house5">
+														<label for="house5">해산물류</label>
+							</div>
+							<div class="checkbox" id="food">
+														<input type="checkbox" name="food6" value="찜류" id="house6">
+														<label for="house6">찜류</label>
+														<input type="checkbox" name="food7" value="튀김류" id="house7">
+														<label for="house7">튀김류</label>
+							</div>
 								</div>
 								<input type="text" name="fvrt_str_2" class="form-control"
-									id="username" placeholder="기타" required>
+									id="username" placeholder="기타">
 							</div>
-							</div>
+							
+							
+							<!-- <input type="submit" value="가입"/>  
+            <input type="button" value="취소" onclick="goLoginForm()">-->
 
-							<!-- 
-            <input type="submit" value="가입"/>  
-            <input type="button" value="취소" onclick="goLoginForm()">
-      -->
 
 						</table>
 						<br>
 						<div class="form-group">
 							<div data-toggle="buttons">
-								<label class="btn btn-info active"> <span
-									class="fa fa-check"></span> <input id="agree" type="checkbox"
-									autocomplete="off" checked >
+								<label class="btn btn-info active"> <span class="fa fa-check"></span> 
+								<input id="agree" type="checkbox" autocomplete="off" checked >
 								</label> <a href="#"><font size="2em">이용약관 및 개인정보 처리방침에동의합니다.(필수)</a></font>
 							</div>
 						</div>
@@ -517,71 +449,6 @@
 				</div>
 			</div>
 
-
-
-
-			<footer id="footer">
-				<div class="container">
-					<div class="row justify-content-md-center">
-						<div class="col col-md-10">
-							<div class="row">
-								<div class="col-md-4 col-sm-4">
-									<p>
-										<span class="icon-uilove-realestate"></span>
-									</p>
-									<address>
-										<strong>Twitter, Inc.</strong><br> 1355 Market Street,
-										Suite 900<br> San Francisco, CA 94103<br> <abbr
-											title="Phone">P:</abbr> (123) 456-7890
-									</address>
-									<p class="text-muted">
-										Copyright &copy; 2016<br /> All rights reserved
-									</p>
-								</div>
-								<div class="col-md-2  col-sm-4">
-									<ul class="list-unstyled">
-										<li><a href="#">About</a></li>
-										<li><a href="#">Team</a></li>
-										<li><a href="#">Security</a></li>
-										<li><a href="#">Plans</a></li>
-									</ul>
-								</div>
-								<div class="col-md-2 col-sm-4">
-									<ul class="list-unstyled">
-										<li><a href="#">For Rent</a></li>
-										<li><a href="#">For Sale</a></li>
-										<li><a href="#">Commercial</a></li>
-										<li><a href="#">Agents</a></li>
-										<li><a href="#">Property Guides</a></li>
-										<li><a href="#">Jobs</a></li>
-									</ul>
-								</div>
-								<div class="col-md-4 col-sm-12">
-									<div class="social-sharebox">
-										<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
-											class="fa fa-facebook"></i></a> <a href="#"><i
-											class="fa fa-google"></i></a> <a href="#"><i
-											class="fa fa-linkedin"></i></a> <a href="#"><i
-											class="fa fa-youtube-play"></i></a> <a href="#"><i
-											class="fa fa-pinterest"></i></a>
-									</div>
-									<form>
-										<h4>Subscribe Newsletter</h4>
-										<div class="input-group input-group-lg">
-											<input type="email" class="form-control"
-												placeholder="Email Address"> <span
-												class="input-group-btn">
-												<button class="btn btn-primary" type="button">Go!</button>
-											</span>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-	</div>
 
 <!-- 주소검색 코드 추후에 따로 파일 만들어서 정리 -->
 <span id="guide" style="color:#999"></span>
@@ -645,6 +512,6 @@
         }).open();
     }
 </script>
-<!-- 주소검색 코드 끝 -->
+
 </body>
 </html>
