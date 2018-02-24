@@ -81,10 +81,10 @@ public class StoreListDBBean { //DAO
        ResultSet rs = null;
        StoreListDataBean article=null;
        try {
-           conn = getConnection();
+           conn = getConnection(false);
 
            pstmt = conn.prepareStatement(
-           "select store_no, cate_nm, store_exp, store_tel, store_exp_dt,store_url from store_list where store_no = ?");
+           "select * from store_list, emp where emp.store_no = storeList.store_no and store_no = ?");
            pstmt.setInt(1, store_no);
            rs = pstmt.executeQuery();
 
@@ -98,6 +98,9 @@ public class StoreListDBBean { //DAO
                article.setStoreUrl(rs.getString("storeUrl"));
                  
 	    }
+           conn.commit();
+		   conn.setAutoCommit(true); 
+           
        } catch(Exception ex) {
            ex.printStackTrace();
        } finally {

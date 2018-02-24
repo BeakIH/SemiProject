@@ -5,13 +5,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>직원정보 화면</title>
+<title>밥은먹고다니니</title>
 </head>
 <body>
 	<div class="col-md-7 col-lg-8 col-xl-8">
 		<div class="page-header bordered mt0">
 			<h1>
-				매장명 <small>매장 직원들 리스트</small>
+				${storeNm } <small>매장 직원들 리스트</small>
 			</h1>
 		</div>
 		<div class="sorting">
