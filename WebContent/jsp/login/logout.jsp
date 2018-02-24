@@ -1,45 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>BABSAZO</title>
-
-<!-- Bootstrap -->
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../lib/animate.css" rel="stylesheet">
-<link href="../../lib/selectric/selectric.css" rel="stylesheet">
-<link href="../../lib/aos/aos.css" rel="stylesheet">
-<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css" rel="stylesheet">
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../../lib/jquery-3.2.1.min.js"></script>
-<script src="../../lib/popper.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../lib/selectric/jquery.selectric.js"></script>
-<script src="../../lib/aos/aos.js"></script>
-<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="../../lib/lib.js"></script>
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-<div id="main">
+<html> 
+<head><title> </title></head>
+<body> 
+<!-- <div id="main">
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
   <div class="container">
   <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a>
@@ -53,7 +18,7 @@
         <a class="nav-link dropdown-toggle" href="../storeList/main.jsp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Home <span class="sr-only">(current)</span>
         </a>
-        <!-- <div class="dropdown-menu">
+        <div class="dropdown-menu">
             <a href="index.html" class="dropdown-item">Homepage 1</a>
             <a href="index2.html" class="dropdown-item">Homepage 2</a>
             <a href="index3.html" class="dropdown-item">Homepage 3</a>
@@ -61,23 +26,23 @@
             <a href="index5.html" class="dropdown-item">Homepage 5</a>
             <a href="index6.html" class="dropdown-item">Homepage 6</a>
             <a href="../storeList/main.jsp" class="dropdown-item">Home</a>
-        </div> -->
+        </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="../storeList/list.jsp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Store
         </a>
-        <!-- <div class="dropdown-menu">
+        <div class="dropdown-menu">
             <a href="../storeList/list.jsp" class="dropdown-item">Store</a>
             <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
             <a href="property_single2.html" class="dropdown-item">Single View 2</a>
             <a href="property_single3.html" class="dropdown-item">Single View 3</a>
-        </div> -->
+        </div>
       </li>
       
-      <!-- <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Agents
         </a>
@@ -85,9 +50,9 @@
             <a href="agent_list.html" class="dropdown-item">Agent List</a>
             <a href="agent.html" class="dropdown-item">Agent Profile</a>
         </div>
-      </li> -->
+      </li>
       
-      <!-- <li class="nav-item dropdown megamenu">
+      <li class="nav-item dropdown megamenu">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Pages
         </a>
@@ -161,7 +126,7 @@
               </div>
               </div>
         </div>
-      </li> -->
+      </li>
       
     </ul>
     
@@ -186,7 +151,7 @@
     
   </div>
   </div>
-</nav>
+</nav> -->
 <div id="content">
   <div class="container">
     <div class="row justify-content-md-center">
@@ -203,17 +168,19 @@
 </div>
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <!-- 푸터 START -->
+<button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
           <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
-            <p><span class="icon-uilove-realestate"></span></p>
+            <!-- <p><span class="icon-uilove-realestate"></span></p> -->
+            <p><span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
             	서울특별시 중구 남대문로 120<br>
-           		대일빌딩3층 D class<br>
+           		대일빌딩3층 D CLASS<br>
             <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
             <p class="text-muted">Copyright &copy; 2018<br />
@@ -221,8 +188,8 @@
           </div>
           <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#"> About BABSAJO </a></li>
-              <li><a href="#"> Team Introduction </a></li>
+              <li><a href="#"> About BABSAZO </a></li>
+              <li><a href="#"> BABSAZO Introduction </a></li>
               <!-- <li><a href="#">Security</a></li>
               <li><a href="#">Plans</a></li> -->
             </ul>
@@ -244,7 +211,7 @@
               <div class="input-group input-group-lg">
                 <input type="email" class="form-control form-control-lg" placeholder="Email Address">
                 <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Go!</button>
+                <button class="btn btn-primary" type="button"> 구독 </button>
                 </span> </div>
             </form>
           </div>

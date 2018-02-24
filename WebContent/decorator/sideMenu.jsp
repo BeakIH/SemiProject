@@ -99,9 +99,13 @@ function fillInAddress() {
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
   <div class="container">
   <!-- <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a> -->
-	<span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>  
+	<!-- <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>  
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span> -->
+    <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
+	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+   <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
+  </a>
   </button>
 
   <div class="collapse navbar-collapse" id="menu-content">
@@ -233,19 +237,22 @@ function fillInAddress() {
       
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name } 야 ~~
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name }님, 어서오세요 
         </a>
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a>
+            <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
+            <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
+            <a href="my_notifications.html" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
+            <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
+            <a href="my_payments.html" class="dropdown-item">Payments</a> -->
+            <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
         </div>
       </li>
+      <div>
      
-      <li class="nav-item add-listing"><a class="nav-link" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
+       <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> 
+      <!-- <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
+     </div>
     </ul>
     
   </div>
@@ -314,10 +321,14 @@ function fillInAddress() {
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
   <div class="container">
   <!-- <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a> -->
-  <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+  <!-- <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <span class="navbar-toggler-icon"></span> 
+  </button> -->
+  <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
+	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+   <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
+  </a>
 
   <div class="collapse navbar-collapse" id="menu-content">
     <ul class="navbar-nav mr-auto">
@@ -533,7 +544,7 @@ function fillInAddress() {
           <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
               <li><a href="#"> About BABSAZO </a></li>
-              <li><a href="#"> Team Introduction </a></li>
+              <li><a href="#"> BABSAZO Introduction </a></li>
               <!-- <li><a href="#">Security</a></li>
               <li><a href="#">Plans</a></li> -->
             </ul>
