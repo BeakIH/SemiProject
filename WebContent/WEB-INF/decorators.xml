@@ -9,10 +9,11 @@
       <decorator page="/decorator/headerFooter.jsp" name="good"> 
          <pattern>/jsp/member/*</pattern>
          <pattern>/jsp/login/*</pattern>
+         <!-- <pattern>/jsp/storeList/*</pattern> -->
       </decorator>
-      
-      <!-- <excludes>
-         <pattern>/jsp/sessionMenu/MyCoupon.jsp</pattern>
+      <!-- 
+      <excludes>
+         <pattern>/jsp/storeList/main.do</pattern>
       </excludes> -->
       <!-- <excludes>
          <pattern>/jsp/member/SigninCon.jsp</pattern>

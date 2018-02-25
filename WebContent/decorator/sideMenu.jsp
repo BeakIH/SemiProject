@@ -125,7 +125,7 @@ function fillInAddress() {
          	조회
         </a>
         <div class="dropdown-menu">
-            <a href="list.do" class="dropdown-item">목록보기</a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">매장보기</a>
             <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
@@ -139,8 +139,8 @@ function fillInAddress() {
          	매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">공지사항</a>
-            <a href="agent.html" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">공지사항</a>
+            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -148,8 +148,8 @@ function fillInAddress() {
          	도움말
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
-            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
+            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">자주묻는 질문</a>
+            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
       <!--
@@ -236,6 +236,7 @@ function fillInAddress() {
       
       
       <li class="nav-item dropdown user-account">
+       
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name }님, 어서오세요 
         </a>
@@ -336,7 +337,7 @@ function fillInAddress() {
        	밥사조
         <span class="sr-only">(current)</span>
         </a>
-        <div class="dropdown-menu">
+      <div class="dropdown-menu">
             <a href="main.do" class="dropdown-item">밥사조 이야기</a>
             <a href="main.do" class="dropdown-item">밥사조 식구들</a>
         </div>
@@ -346,7 +347,7 @@ function fillInAddress() {
          	조회
         </a>
         <div class="dropdown-menu">
-            <a href="list.do" class="dropdown-item">목록보기</a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">매장보기</a>
             <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
@@ -360,8 +361,8 @@ function fillInAddress() {
          	매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">공지사항</a>
-            <a href="agent.html" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">공지사항</a>
+            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -372,8 +373,8 @@ function fillInAddress() {
             <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
             <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
         </div>
-      </li>
-      <!--
+      </li>     
+       <!--
       <li class="nav-item dropdown megamenu">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Pages
@@ -497,7 +498,7 @@ function fillInAddress() {
             <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 내 예약보기  </a>
             
             <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 내 쿠폰보기 <a>
-            <a href="my_notifications.html" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 내가 쓴 글보기 </a>
+            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 내가 쓴 글보기 </a>
             <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a> -->
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
@@ -524,11 +525,11 @@ function fillInAddress() {
                 <div class="list-group no-border list-unstyled">
                 
                   <span class="list-group-item heading"> BABSAZO 즐기기 </span>
-                  <a href="my_listing_add.html" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"> </i> 예약확인  </a>
-                  <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한  BABSAZO</span>
+                  <a href="/jsp/sessionMenu/404.jsp" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"> </i> 예약확인  </a>
+                  <a href="/jsp/sessionMenu/404.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한  BABSAZO</span>
                     <span class="badge badge-primary badge-pill">10</span>
                     </a>
-                  <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
+                  <a href="/jsp/sessionMenu/404.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
                     <span class="badge badge-primary badge-pill">7</span>
                     </a>
                   <span class="list-group-item heading"> 내 계정 관리</span>

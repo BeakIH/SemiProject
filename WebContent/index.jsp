@@ -13,4 +13,4 @@
 <% response.sendRedirect("/SemiProject/jsp/storeList/main.do"); %>
 
 </body>
-</html>
+</html>        

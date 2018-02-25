@@ -94,8 +94,8 @@
          	매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">공지사항</a>
-            <a href="agent.html" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="404.do" class="dropdown-item">공지사항</a>
+            <a href="404.do" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -103,8 +103,8 @@
          	도움말
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
-            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
+            <a href="404.do" class="dropdown-item">자주묻는 질문</a>
+            <a href="404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
       <!--
@@ -192,8 +192,8 @@
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 안녕하세요  </a> 
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
-            <a href="my_password.html" class="dropdown-item"> <i class="fa fa fa-utensils"></i> 매장조회</a> 
+            <a href="main.do" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
+            <a href="list.do" class="dropdown-item"> <i class="fa fas fa-street-view"></i> 매장조회</a>
             <!-- <a href="my_notifications.html" class="dropdown-item">Notifications</a>
             <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a>
