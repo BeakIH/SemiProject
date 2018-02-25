@@ -273,9 +273,9 @@ $( document ).ready(function() {
  			if($(item).prop("checked")){
  				/* alert($(item).val()); */
  				if(menuName == "") menuName = $(item).val().split("/")[0];
- 				else menuName = menuName + ", " + $(item).val().split("/")[0];
+ 				else menuName = menuName + "\n " + $(item).val().split("/")[0];
  				menuSumTemp = menuSumTemp * 1 + $(item).val().split("/")[1] * 1;
- 				alert(menuSumTemp);
+ 				/* alert(menuSumTemp); */
  			}
  		});
  		$('#menuName').html(menuName);
@@ -365,7 +365,7 @@ $( document ).ready(function() {
 		<div id="chkBox">
       <c:forEach var="menu" items="${article.menuList}" varStatus="status">
       <label>
-      	<input type="checkbox" name="bk_menu" id="bk_menu"  value="${menu.menu_nm}/${menu.menu_price}">
+      	<input type="checkbox" name="bk_menu" id="bk_menu" value="${menu.menu_nm}/${menu.menu_price}">
       	<span style="font-weight: bold;font-size:16px;">${menu.menu_nm} : ${menu.menu_price}원</span></label><br>
       </c:forEach>
       
@@ -394,16 +394,30 @@ $( document ).ready(function() {
                 </select>
       
       
-      <div id="reserve">
+      <!--  <div id="reserve">
       <button type="submit" class="btn btn-lg btn-primary"onclick='javascript()' style="width: 100px;height: 48px;margin-left: 103px;margin-top: 15px; ">취소</button>
-      <button type="submit" id="submit_button" class="btn btn-lg btn-primary" style="width: 100px;height: 48px;margin-top: 15px;"data-target="#modal" data-toggle="modal">예약</button>
+      <button type="submit" id="submit_button" class="btn btn-lg btn-primary" style="width: 100px;height: 48px;margin-top: 15px;"data-target="#modal" data-toggle="modal">다음</button>
+       
+   </div> -->
+      <div class="row justify-content-md-center" style="margin-top: 30px;margin-left: 130px;" >
+				<button class="btn btn-danger" onclick='javascript()' data-dismiss="modal" style="margin-right: 20px;">취소<i class="fa fa-times spaceLeft"></i></button>
+		
+	 	   
+	 	   
+		
+		
+			<button type="submit" id="submit_button" class="btn btn-warning" style="background:#1DDB16; border-color: #1DDB16; color:white;" 
+			data-target="#modal" data-toggle="modal"><font color="#47C83E"></font>다음<i class="fa fa-check spaceLeft"></i></button>
+		   </disv> 
+		   
    
-
-   	
-      </div>
-      </div>
+   
+  
+   </div>
    </div>
    </c:forEach>
+   
+  
   <form action="./reserveInsert.do" method="get">
   
  <c:forEach var="article" items="${articleList}" >
@@ -451,6 +465,7 @@ $( document ).ready(function() {
 	   	   <c:forEach var="article2" items="${articleList2}">
 	   	    <input type="hidden" value="${article2.mem_no }" name="mem_no" />
 	   	    <input type="hidden" value="${article2.mem_tel }" name="mem_tel" />
+	   	    
    		   <!-- 히든값 -->
         <div class="row">
             <div class="col-lg-4">
@@ -459,9 +474,10 @@ $( document ).ready(function() {
           	</div>
         </div>
         <div class="col-lg-8">
-        <input type="text" id="store_nm" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="${article2.mem_nm}">
+        <input type="text" id="mem_nm" name="mem_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="${article2.mem_nm}">
         </div>
         </div>
+        </c:forEach>
         <!-- 이용시간 -->
         <div class="row">
             <div class="col-lg-4">
@@ -470,7 +486,7 @@ $( document ).ready(function() {
           	</div>
         </div>
         <div class="col-lg-8">
-        <input type="text" id="bk_date" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
+        <input type="text" id="bk_date" name="bk_date" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
         </div>
         </div>
         <!-- 예약테이블수 -->
@@ -481,7 +497,7 @@ $( document ).ready(function() {
           	</div>
         </div>
         <div class="col-lg-8">
-        <input type="text" id="useTbl" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
+        <input type="text" id="useTbl" name="bk_tbl_cnt" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
         </div>
         </div>
         <!-- 예약인원수 -->
@@ -492,7 +508,7 @@ $( document ).ready(function() {
           	</div>
         </div>
         <div class="col-lg-8">
-        <input type="text" id="useCnt" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
+        <input type="text" id="useCnt" name="bk_cnt" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
         </div>
         </div>
         <!-- 매장전화번호 -->
@@ -503,23 +519,31 @@ $( document ).ready(function() {
           	</div>
         </div>
         <div class="col-lg-8">
-        <input type="text" id="store_nm" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="${article.store_tel}">
+        <input type="text" id="store_tel" name="store_tel" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="${article.store_tel}">
         </div>
         </div>
         <!-- 주문한 메뉴 -->
         <div class="row">
             <div class="col-lg-4">
-          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center; font-size: 17px;" class="">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center ; font-size: 17px;" class="">
           	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">주문한 메뉴</h5></label>
           	</div>
         </div>
         <div class="col-lg-8">
-        	<textarea id="menuName" name="bk_menu"class="form-control form-control-lg text-editor" style="text-align: center;"placeholder=""></textarea>
+        	<textarea id="menuName" name="bk_menu"class="form-control form-control-lg text-editor" style="text-align: center; height: 125px; "placeholder=""></textarea>
+        </div>
+        </div>
+        <!-- 분리 라인 -->
+        <div class="row">
+        <div class="col-md-12">
+        <div class="page-header bordered" style="margin-top: 0px;">
+        </div>
         </div>
         </div>
         <!-- 총가격 -->
         <div class="row">
-         <div class="col-md-6">
+         <div class="col-md-12">
+       
              <div class="form-group">
              <div style="background-color: #FFBB00; text-align: center; font-size: 17px;"
          class=""><label><h5 style="padding-top: 15px; color:white; font-weight: bold">예약음식 총 가격</h5></label></div>
@@ -529,15 +553,21 @@ $( document ).ready(function() {
                <input type="text"  id="menuSum" name="bk_pri_sum"class="form-control form-control-lg" style="text-align: center;" placeholder="" value="50,000원">
              </div>
            </div>
+          
          </div>
-          </c:forEach>
-         <hr>
-           <div class="form-group action" style="padding-left:70%">
-           <button type="submit" class="btn btn-lg btn-primary" >예약하기</button>
-         </div>
-          <div class="form-group action" style="padding-left:70%">
-           <button class="btn btn-lg btn-primary" style="width: 114px;" data-dismiss="modal" >취소</button>
-         </div>
+        <div class="row">
+         <div class="col-md-6">
+           <div class="row justify-content-md-center" style="padding-left:50%" >
+				<button class="btn btn-danger" data-dismiss="modal" >예약취소<i class="fa fa-times spaceLeft"></i></button>
+		   </div>
+	 	</div>
+				
+		 <div class="col-md-6">
+		 <div class="row justify-content-md-center" style="padding-right:50%">
+			<button type="submit" class="btn btn-warning" style="background:#1DDB16; border-color: #1DDB16; color:white;"><font color="#800080"></font>예약하기<i class="fa fa-check spaceLeft"></i></button>
+		</div>
+		 </div>
+	   </div>
       </div>
           </div>
         </div>
@@ -545,9 +575,8 @@ $( document ).ready(function() {
     </div>
   </div>
   </c:forEach>
-  
   </form>
-</div>
+
    
 
 </body>
