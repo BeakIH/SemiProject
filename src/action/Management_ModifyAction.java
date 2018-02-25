@@ -27,6 +27,7 @@ public class Management_ModifyAction implements CommandAction {
 			boolean b = dao.modifyEmp(dto);
 			
 			request.setAttribute("result", b);
+			request.getSession().setAttribute("name", dto.getEmpNm());
 			request.setAttribute("errorpage", "0");
 
 		} catch (Exception ex) {

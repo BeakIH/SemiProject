@@ -18,7 +18,7 @@
               </div>
               <div class="form-group">
                 <label> 매장번호 </label>
-                <input type="text" name="sNo" class="form-control form-control-lg" placeholder="아이디에 따라 매장번호 자동">
+                <input type="text" name="sNo" class="form-control form-control-lg" value="${storeNo}" readOnly>
               </div>
               <div class="col-sm-5 col-md-5 col-lg-4 col-xl-4">
               	<div class="form-group">

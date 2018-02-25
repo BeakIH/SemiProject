@@ -2,6 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<script>
+	var N;
+	N=prompt("관리자 비밀번호를 입력하세요.");
+</script>
+
 <!DOCTYPE html>
 <html>
 <head>

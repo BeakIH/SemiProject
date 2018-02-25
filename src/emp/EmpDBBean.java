@@ -185,7 +185,7 @@ public class EmpDBBean {
 			pstmt.setString(2, dto.getPosition());
 			pstmt.setString(3, dto.getAdmId());
 			
-			if (pstmt.executeUpdate() == 0) {
+			if (pstmt.executeUpdate() == 1) {
 				b = true;
 			}
 			
