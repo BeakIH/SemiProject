@@ -10,13 +10,14 @@
 	<script>
 
 		alert("수정 성공");
-		location.href = "jsp/member/Success.jsp";
+		location.href = "./management_list.do?store_no=${storeNo}";
 
 	</script>	
 
 <% } else { %>
 	<script>
-
+	
+		alert(<%=b%>);
 		alert("수정 실패!\n관리자에 문의바람");
 		history.back();
 
