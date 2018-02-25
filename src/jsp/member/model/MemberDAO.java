@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
+
 import java.sql.DriverManager;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
+
 import javax.sql.DataSource;
 
 import jsp.util.DBConnection;
@@ -78,8 +78,6 @@ public class MemberDAO
 	   
 	//아이디중복체크  
 	   
-	 
-			 
 		//db연동 메서드
 	   public int ConfirmId(String id) {
 		 
@@ -87,11 +85,10 @@ public class MemberDAO
 	       PreparedStatement pstmt = null;
 	       ResultSet rs = null;
 		   int result = 0;
-		 
 		   try {
 			   conn = getOracle();
-			   String sql = "select mem_id from member where mem_id=?";
-					   pstmt = conn.prepareStatement(sql);
+			   String sql = "select mem_id from member where mem_id = ?";
+			   pstmt = conn.prepareStatement(sql);
 			   pstmt.setString(1, id);
 			   rs = pstmt.executeQuery();
 			   if(rs.next()) {

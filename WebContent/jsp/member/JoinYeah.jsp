@@ -67,13 +67,13 @@
 					// 중복처리
 						
 						function ConfirmId(){
-						alert("실행");
+						
 						var id = document.getElementById("inputID").value;
 							if(document.getElementById("inputID").value == "") {
 							alert('사용하실 ID를 입력하세요.');
 							return;
 						}
-							alert(id);
+						
 						url = "ConfirmId.jsp?id="+id;
 						open(url, "confirm","toolbar=no,location=no,status=no,scrollbars=no,resizable=no");
 						}
@@ -98,6 +98,8 @@
 								return false;
 
 							}
+							
+							
 						}
 
 						// 취소 버튼 클릭시 로그인 화면으로 이동
@@ -113,11 +115,11 @@
 
 						<table>
 							<tr>
-								<div class="form-group">
+							<!--	<div class="form-group">
 									<label for="birth"><font size="4em" color="52478B">생년월일 또는 기념일</font></label>
 									<td id="title"></td> <input type="text" name="mem_no"
 										maxlength="4" placeholder="년(4자)" size="6" required>
-									<!--  &nbsp;<select name="birthmm">
+									  &nbsp;<select name="birthmm">
                             <option value="">월</option>
                             <option value="01" >1</option>
                             <option value="02" >2</option>
@@ -133,13 +135,14 @@
                             <option value="12" >12</option>
                         </select>
                      &nbsp; <input type="text" name="birthdd" maxlength="2" placeholder="일" size="6" >
-                    </td>  -->
-							</tr>
+                    </td>  
+							
+							 </tr>
 							<p class="help-block">기념일 입력시 쿠폰을 발급해드려요</p>
 							</div>
 
 							<br>
-                          	<tr>
+                          	<tr> -->
 								<div class="form-group">
 									<label for="username"><font size="4em" color="52478B">이름</font></label>
 									<td id="title"></td> <input type="text" name="mem_nm"
@@ -174,7 +177,7 @@
 									<label for="InputPassword1"><font size="4em"
 										color="52478B">비밀번호</font></label>
 									<td id="title"></td> <input type="password" name="mem_pw"
-										maxlength="50" class="form-control" id="InputPassword1"
+										maxlength="50" class="form-control" id="password"
 										placeholder="비밀번호" required>
 								</div>
 							</tr>
@@ -188,7 +191,7 @@
 									<td id="title"></td>
 									<!-- name="passwordcheck" -->
 									<input type="password" maxlength="50" class="form-control"
-										id="InputPassword2" placeholder="비밀번호 확인" required>
+										id="passwordcheck" placeholder="비밀번호 확인" required>
 									<p class="help-block">비밀번호 확인을 위해 다시한번 입력해주세요</p>
 								</div>
 							</tr>
@@ -428,7 +431,7 @@
 						<div class="form-group">
 							<div data-toggle="buttons">
 								<label class="btn btn-info active"> <span class="fa fa-check"></span> 
-								<input id="agree" type="checkbox" autocomplete="off" checked >
+								<input id="agree" name="agree" type="checkbox" autocomplete="off" required>
 								</label> <a href="#"><font size="2em">이용약관 및 개인정보 처리방침에동의합니다.(필수)</a></font>
 							</div>
 						</div>
@@ -510,7 +513,7 @@
                 }
             }
         }).open();
-    }
+    } 
 </script>
 
 </body>
