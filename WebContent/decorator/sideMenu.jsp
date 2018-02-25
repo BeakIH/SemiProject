@@ -236,8 +236,7 @@ function fillInAddress() {
       
       
       <li class="nav-item dropdown user-account">
-       
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="ProfilePre.jsp?id=${memId }" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name }님, 어서오세요 
         </a>
         <div class="dropdown-menu">

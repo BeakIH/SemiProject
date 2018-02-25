@@ -30,10 +30,10 @@ public class MemberInfoAction implements CommandAction
         request.setAttribute("memberInfo", member);
         
         forward.setRedirect(false);
-        forward.setNextPath("UserInfoForm.do");
-        // MainForm.jsp?contentPage=member/view/UserInfoForm.jsp
+        forward.setNextPath("ProfilePre.do");
+     
         
-        return "/jsp/member/view/Success.jsp";
+        return "/jsp/member/Success.jsp";
     }
  
 }

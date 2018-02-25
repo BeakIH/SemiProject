@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="jsp.member.model.MemberDAO" %>
+<%@ page import="jsp.member.model.MemberBean" %>    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,31 +12,57 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>BABSAZO</title>
 
-</head>
-<body>
+   <script type="text/javascript">
+    
+        function changeForm(val){
+            if(val == "-1"){
+                location.href="ProfilePre.jsp";
+            }else if(val == "0"){
+                location.href="index.jsp?contentPage=member/pro/ModifyFrom.jsp";
+            }else if(val == "1"){       <!--이거수정-->
+                location.href="index.jsp?contentPage=member/pro/ModifyForm.jsp";
+            }
+        }
+        
+    </script>
+    
 
-          <!-- 프로필.html수정 -->
-          
+</head>
+
+
+<body>
+ 
+<!--  String id = session.getAttribute("sessionID").toString(); 
+String id = request.getParameter("id");
+MemberDAO dao = MemberDAO.getInstance();
+MemberBean memberBean = dao.getUserInfo(id); -->
+<br>
+       
+          <!-- 프로필 수정 -->
+             
           <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
               <h1>프로필 설정<small>BABSAZO에서 사용할 프로필을 설정해주세요</small></h1>
-            </div>
-            <form action="index.php">
-              <h3 class="subheadline">기본 정보</h3>
-              <div class="row">
-                <div class="col-md-6">
+              <h3 class="subheadline">기본 정보</h3></div>
+        
+        
+        
+        
+             
+              <div class="row"> <div class="col-md-6">
                   <div class="form-group">
-                    <label> 성</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="밥">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
+               <label> 아이디</label>
+                   <input type="text" class="form-control form-control-lg" placeholder="" value=""> 
+                    
+                    </div>
+                    
+
+                <div class="col-md-6"> <div class="form-group">
                     <label>이름</label>
                     <input type="text" class="form-control form-control-lg" placeholder="" value="사조">
                   </div>
-                </div>
-              </div>
+              
+              
               <div class="form-group">
                 <label>이메일</label>
                 <input type="text" class="form-control form-control-lg" value="babsazo@email.com">
@@ -45,6 +74,9 @@
                     <input type="text" class="form-control form-control-lg" placeholder="" value="">
                   </div>
                 </div>
+                
+                
+                
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>집/팩스</label>
@@ -52,8 +84,10 @@
                   </div>
                 </div>
               </div>
+              
+              
               <div class="form-group">
-                <label>회원님은 어떤 분이신가요?</label>
+               <!--  <label>회원님은 어떤 분이신가요?</label>
                 <textarea class="form-control form-control-lg text-editor" placeholder=""></textarea>
               </div>
               <h3 class="subheadline">SNS</h3>
@@ -77,13 +111,15 @@
               </div>
               <div class="form-group">
               
-              <!-- 인스타그램으로 바꿔보기-->
+                                     인스타그램으로 바꿔보까?
                 <label>Linkedin</label>
                 <div class="input-group"> <span class="input-group-addon"><i class="fa fa-fw fa-linkedin"></i></span>
                   <input type="text" class="form-control form-control-lg" placeholder="">
                    
                 </div>
-              </div>
+              </div> -->
+              
+              
               <br>
               
               <h3 class="subheadline">거주지 또는 관심 BABSAZO 지역</h3>
@@ -139,74 +175,14 @@
                   --> 
                   
                   
-                  
-                  
-                  </div> 
-                </div>
-              </div>
               <hr>
               <div class="form-group action">
                 <button type="submit" class="btn btn-lg btn-primary">프로필 수정</button>
               </div>
             </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
-<footer id="footer">
-  <div class="container">
-    <div class="row justify-content-md-center">
-          <div class="col col-md-10">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <p><span class="icon-uilove-realestate"></span></p>
-            <address>
-            <strong>Twitter, Inc.</strong><br>
-            1355 Market Street, Suite 900<br>
-            San Francisco, CA 94103<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-            </address>
-            <p class="text-muted">Copyright &copy; 2016<br />
-              All rights reserved</p>
-          </div>
-          <div class="col-md-2  col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li>
-            </ul>
-          </div>
-          <div class="col-md-2 col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#">For Rent</a></li>
-              <li><a href="#">For Sale</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Property Guides</a></li>
-              <li><a href="#">Jobs</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
-            <form>
-              <h4>Subscribe Newsletter</h4>
-              <div class="input-group input-group-lg">
-                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
-                <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Go!</button>
-                </span> </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-</div>
+          </div> 
+
+  
 <script>
 var placeSearch, autocomplete;
 var componentForm = {
