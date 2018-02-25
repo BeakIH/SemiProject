@@ -3,15 +3,13 @@
 <%@ page import="jsp.member.model.MemberDAO" %>
 
 <% 
-System.out.print("그만");
 String id = request.getParameter("id");
-System.out.print(id);
 MemberDAO dao = MemberDAO.getInstance();
 int result = dao.ConfirmId(id);
 %>
 <html>
 <head>
-<title>Insert title here</title>
+<title>ID 중복 확인</title>
 </head>
 <body>
 
