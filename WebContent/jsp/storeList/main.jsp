@@ -188,8 +188,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
          	매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">공지사항</a>
-            <a href="agent.html" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="404.do" class="dropdown-item">공지사항</a>
+            <a href="404.do" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -197,8 +197,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
          	도움말
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
-            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
+            <a href="404.do" class="dropdown-item">자주묻는 질문</a>
+            <a href="404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
       <!--
@@ -319,7 +319,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
 	<!-- <div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div> -->
 	<div class="sideMenu" style="width:95px;padding-left: 45px;">매장명</div>
 	<div class="sideMenu" style="width:95px;padding-left: 50px;">이용중</div>
-	<div class="sideMenu" style="width:95px;padding-left: 35px;">이용가능</div>
+	<div class="sideMenu" style="width:95px;padding-left: 35px;">이용가능상태</div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>
