@@ -96,6 +96,8 @@ function javascript(){
 <script src="../../lib/photoswipe/photoswipe.min.js"></script>
 <script src="../../lib/photoswipe/photoswipe-ui-default.min.js"></script>
 <script src="../../lib/lib.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -241,7 +243,7 @@ $( document ).ready(function() {
  
  $('#bk_cnt').bind('change',function(i){
 	 var data = $(i)[0].target;
-	 $('#useCnt').val($(data).val() + "명");
+	 $('#useCnt').val($(data).val()*1);
  });
  
  useTbl
@@ -269,9 +271,11 @@ $( document ).ready(function() {
  		menuName = "";
  		$('input[name="bk_menu"').each(function(i,item){
  			if($(item).prop("checked")){
+ 				/* alert($(item).val()); */
  				if(menuName == "") menuName = $(item).val().split("/")[0];
  				else menuName = menuName + ", " + $(item).val().split("/")[0];
  				menuSumTemp = menuSumTemp * 1 + $(item).val().split("/")[1] * 1;
+ 				alert(menuSumTemp);
  			}
  		});
  		$('#menuName').html(menuName);
@@ -305,8 +309,9 @@ $( document ).ready(function() {
       <div data-obj-id="yZe8J" data-obj-type="element"
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
+          <!-- 메뉴바 컬러 기존 꺼  #563d7c  -->
          <div data-text-content="true"
-            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            style="background-color:#FFBB00; text-align: center; font-size: 17px;"
             class=""><span style="color:white; font-weight: bold">매장명</span></div>
                 
       <form name="form1">
@@ -323,7 +328,7 @@ $( document ).ready(function() {
       
       
       <div style="overflow:scroll; width:180px; height:600px; padding:10px; background-color:#f5f5f5; white-space:nowrap; float:left;">
-       <div data-text-content="true" style="background-color:#563d7c; 
+       <div data-text-content="true" style="background-color:#FFBB00; 
       text-align: center; font-size: 17px;" class=""><span style="color:white;font-weight: bold">날짜</span></div></br>
           <h2 id="monthText" style="text-align:center"></h2>
           <form name="form3">
@@ -337,7 +342,7 @@ $( document ).ready(function() {
          data-text-editable="true" class=""
          top: 499px; left: 305px; width: 82px; height: 23px;">
       <div data-text-content="true"
-         style="background-color: #563d7c; text-align: center; font-size: 17px;"
+         style="background-color: #FFBB00; text-align: center; font-size: 17px;"
          class=""><span style="color:white;font-weight: bold">이용시간</span></div>
             </div>
             
@@ -352,7 +357,7 @@ $( document ).ready(function() {
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
          <div data-text-content="true"
-            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            style="background-color:#FFBB00; text-align: center; font-size: 17px;"
             class=""><span style="color:white;font-weight: bold">미리주문</span></div>
          </div>
    
@@ -368,7 +373,7 @@ $( document ).ready(function() {
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
          <div data-text-content="true"
-            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            style="background-color:#FFBB00; text-align: center; font-size: 17px;"
             class=""><span style="color:white;font-weight: bold">예약인원</span></div>   
       <label><span style='font-weight:bold; font-size: 16px;'>예약 인원수</span></label>
                 <select name="bk_cnt" id="bk_cnt" style="width:100px; height:30px; font-weight:bold; font-size: 16px;">
@@ -379,7 +384,7 @@ $( document ).ready(function() {
          data-text-editable="true" class=""
           top: 287px; left: 480px; width: 82px; height: 23px;">
          <div data-text-content="true"
-            style="background-color:#563d7c; text-align: center; font-size: 17px;"
+            style="background-color:#FFBB00; text-align: center; font-size: 17px;"
             class=""><span style="color:white;font-weight: bold">예약테이블</span></div>
             <div data-text-content="true"
             style="background-color:#563d7c; text-align: center; font-size: 17px;"
@@ -411,86 +416,126 @@ $( document ).ready(function() {
    <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modar" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
   <div class="modal-dialog modal-lg"> 
     <div class="modal-content"> 
-      <div class="modal-header"> 
-       <div class="row">
+      <div class="modal-header" style="max-width:550px;"> 
+      <div class="row">
           <div class="col-lg-12">
-            <button class="close" data-dismiss="modal">&times;</button>
+           <!--  <button class="close" data-dismiss="modal">&times;</button> -->
             
           <div class="row">
           <div class="col-lg-12">
              <div class="page-header bordered" >
-              <h1>${article.store_nm }<small>예약정보</small></h1>
+              <div style="background-color: #FFBB00; text-align: center; font-size: 17px;"
+         class=""><label><h2 style="padding-top: 15px; color:white; font-weight: bold">예약 결과</h2></label></div>
+             
+             
+              <%-- <h1>${article.store_nm }<small>예약정보</small></h1> --%>
               </div>
             </div>
         </div>
+        
+        <!-- 매장명 -->
         <div class="row">
-            <div class="col-lg-12">
-              <h2 class="subheadline">매장 위치</h2>
-              <input type="text" id="store_plc" name="store_plc"class="form-control form-control-lg" placeholder="" value="${article.store_floor }층">
-          </div>
+            <div class="col-lg-4">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center; font-size: 17px;" class="">
+          	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">매장명</h5></label>
+          	</div>
         </div>
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="form-group">
-         
-	  
-              <label><h5 style="padding-top: 15px";> 예약자 성함</h5></label>
-  		
+        <br>
+        <br>
+        <div class="col-lg-8">
+        <input type="text" id="store_nm" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="${article.store_nm}">
+        </div>
+        </div>
+        <!-- 예약자명 -->
+        <!-- 히든값 -->
 	   	   <c:forEach var="article2" items="${articleList2}">
 	   	    <input type="hidden" value="${article2.mem_no }" name="mem_no" />
 	   	    <input type="hidden" value="${article2.mem_tel }" name="mem_tel" />
-	   	    	
-                <input type="text" id="useName" name="mem_nm" class="form-control form-control-lg" placeholder="" value="${article2.mem_nm }">
-   		   </c:forEach>
-            </div>
-          </div>
-           <div class="col-lg-3">
-            <div class="form-group">
-              <label><h5 style="padding-top: 15px";>예약테이블수</h5></label>
-              <input type="text" id="useTbl" name="bk_tbl_cnt"class="form-control form-control-lg" placeholder="" value="1개">
-             </div>
-           </div>
-          <div class="col-lg-3">
-            <div class="form-group">
-              <label><h5 style="padding-top: 15px";>예약 인원수</h5></label>
-              <input type="text" id="useCnt" name="bk_cnt" class="form-control form-control-lg" placeholder="" value="1명">
-             </div>
-           </div>
-          <div class="col-lg-3">
-            <div class="form-group">
-              <label><h5 style="padding-top: 15px";>매장 전화번호</h5></label>
-              <input type="text" id="store_tel" name="store_tel"class="form-control form-control-lg" placeholder="" value="${article.store_tel }">
-             </div>
-           </div>
-           
-         </div>
-         <div class="row">
-           <div class="col-md-6">
+   		   <!-- 히든값 -->
+        <div class="row">
+            <div class="col-lg-4">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color:white; text-align: center; font-size: 17px;" class="">
+          	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">예약자 성함</h5></label>
+          	</div>
+        </div>
+        <div class="col-lg-8">
+        <input type="text" id="store_nm" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="${article2.mem_nm}">
+        </div>
+        </div>
+        <!-- 이용시간 -->
+        <div class="row">
+            <div class="col-lg-4">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center; font-size: 17px;" class="">
+          	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">이용시간</h5></label>
+          	</div>
+        </div>
+        <div class="col-lg-8">
+        <input type="text" id="bk_date" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
+        </div>
+        </div>
+        <!-- 예약테이블수 -->
+        <div class="row">
+            <div class="col-lg-4">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center; font-size: 17px;" class="">
+          	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">예약테이블수</h5></label>
+          	</div>
+        </div>
+        <div class="col-lg-8">
+        <input type="text" id="useTbl" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
+        </div>
+        </div>
+        <!-- 예약인원수 -->
+        <div class="row">
+            <div class="col-lg-4">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center; font-size: 17px;" class="">
+          	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">예약인원수</h5></label>
+          	</div>
+        </div>
+        <div class="col-lg-8">
+        <input type="text" id="useCnt" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="">
+        </div>
+        </div>
+        <!-- 매장전화번호 -->
+        <div class="row">
+            <div class="col-lg-4">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center; font-size: 17px;" class="">
+          	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">매장전화번호</h5></label>
+          	</div>
+        </div>
+        <div class="col-lg-8">
+        <input type="text" id="store_nm" name="store_nm" class="form-control form-control-lg" style="text-align: center;" placeholder="" value="${article.store_tel}">
+        </div>
+        </div>
+        <!-- 주문한 메뉴 -->
+        <div class="row">
+            <div class="col-lg-4">
+          	<div style="margin-bottom: 12px; max-height :48.5px; background-color: white; text-align: center; font-size: 17px;" class="">
+          	<label><h5 style="padding-top: 15px; color:black; font-weight: bold">주문한 메뉴</h5></label>
+          	</div>
+        </div>
+        <div class="col-lg-8">
+        	<textarea id="menuName" name="bk_menu"class="form-control form-control-lg text-editor" style="text-align: center;"placeholder=""></textarea>
+        </div>
+        </div>
+        <!-- 총가격 -->
+        <div class="row">
+         <div class="col-md-6">
              <div class="form-group">
-               <label><h5>예약 날짜 및 이용시간</h5></label>
-                 <input id="bk_date" name="bk_date" type="text" class="form-control form-control-lg" placeholder="" value="3월19일 12:00">
-             </div>
-           </div>
-           <div class="col-md-6">
-             <div class="form-group">
-               <label><h5>예약음식 총 가격</h5></label>
-               <input type="text"  id="menuSum" name="bk_pri_sum"class="form-control form-control-lg" placeholder="" value="50,000원">
-             </div>
-           </div>
-         </div>
-         <div class="row">
-           <div class="col-md-12">
-             <div class="form-group">
-               <label><h5>예약주문한 음식메뉴</h5></label>
-               <textarea id="menuName" name="bk_menu"class="form-control form-control-lg text-editor" placeholder=""></textarea>
+             <div style="background-color: #FFBB00; text-align: center; font-size: 17px;"
+         class=""><label><h5 style="padding-top: 15px; color:white; font-weight: bold">예약음식 총 가격</h5></label></div>
+              
+               <!-- <label><h5>예약음식 총 가격</h5></label> -->
+               
+               <input type="text"  id="menuSum" name="bk_pri_sum"class="form-control form-control-lg" style="text-align: center;" placeholder="" value="50,000원">
              </div>
            </div>
          </div>
+          </c:forEach>
          <hr>
-           <div class="form-group action">
+           <div class="form-group action" style="padding-left:70%">
            <button type="submit" class="btn btn-lg btn-primary" >예약하기</button>
          </div>
-          <div class="form-group action">
+          <div class="form-group action" style="padding-left:70%">
            <button class="btn btn-lg btn-primary" style="width: 114px;" data-dismiss="modal" >취소</button>
          </div>
       </div>

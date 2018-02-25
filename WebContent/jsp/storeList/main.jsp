@@ -121,7 +121,7 @@ function openNav() {// 사이드메뉴 버튼 기능
 	/* location.href='sideList.do'; */
     /* if (check == 0){ */
     if (check==0){
-    	document.getElementById("mySidenav").style.width = "330px";
+    	document.getElementById("mySidenav").style.width = "380px";
     	check+=1;
     }else{     
 	   	document.getElementById("mySidenav").style.width = "0";

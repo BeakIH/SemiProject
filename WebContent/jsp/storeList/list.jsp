@@ -406,6 +406,7 @@ $(document).ready(function(){
     <![endif]-->
 </head>
 <body>
+	<!-- <img src="../../img/store_img/test.jpg"> -->
 	<div id="main">
 		<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
 			<div class="container">
@@ -531,8 +532,8 @@ $(document).ready(function(){
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="user-image"
-								style="background-image: url(' img/demo/profile3.jpg');"></span>
-								Hi, John
+								style="background-image: url('../../img/store_img/store_profile_default.jpg');"></span>
+								로그인된 아이디의 이름
 						</a>
 							<div class="dropdown-menu">
 								<a href="my_profile.html" class="dropdown-item">My Profile</a> <a
@@ -887,7 +888,7 @@ $(document).ready(function(){
 		</div>
 	</div>
 	<!-- Contact Agent Modal -->
-	<div class="modal fade  item-badge-rightm" id="leadform" tabindex="-1"
+	<!-- <div class="modal fade  item-badge-rightm" id="leadform" tabindex="-1"
 		role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -897,8 +898,9 @@ $(document).ready(function(){
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<div class="media">
-						<!-- 기존값 property/1.jpg -->
+						기존값 property/1.jpg
 						<div class="media-left">
+						아아아아아아아
 							<a href="property_single.html"><img
 								src="img/demo/property/elbon.jpg" class="img-rounded" width="64"
 								alt=""></a>
@@ -950,7 +952,7 @@ $(document).ready(function(){
 	</div>
 	<button class="btn btn-primary btn-circle" id="to-top">
 		<i class="fa fa-angle-up"></i>
-	</button>
+	</button> -->
 	<footer id="footer">
 		<div class="container">
 			<div class="row justify-content-md-center">

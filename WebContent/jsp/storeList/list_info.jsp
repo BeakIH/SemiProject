@@ -20,6 +20,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
 
 <script type="text/javascript">
 $(document).ready(function() { 
@@ -85,7 +86,7 @@ function realtimeClock() {
    
      
      function BookFail(){
-    	 alert('현재 좌석이 없어 예약이 불가능합니다');
+    	 swal ( " 예약 불가 " , " 죄송합니다,\n 현재 좌석이 없어 예약 하실 수 없습니다. " , "error" )   ;
      }
 </script>
 
@@ -362,7 +363,8 @@ function realtimeClock() {
 								<div class="col-md-4">
 									<div class="price">
 								
-										예약가능테이블: ${article.avl_tbl_cnt -5}<br /><span id="realTime" style="font-size:16px; color:blue"></span>										
+										예약가능테이블: ${article.avl_tbl_cnt -5}<br />
+										<!-- <span id="realTime" style="font-size:16px; color:blue"></span>	 -->									
 									</div>
 								</div>
 							</div>
@@ -387,7 +389,8 @@ function realtimeClock() {
 															<a href="../../img/demo/property/1.jpg" itemprop="contentUrl"
 																data-size="2000x1414"> <img
 																src="${menuList.menu_img_root }"
-																class="img-fluid swiper-lazy" alt="Drawing Room">
+																class="img-fluid swiper-lazy" alt="Drawing Room"
+																style="padding-left: 12%;max-width:88%;">
 															</a>
 														</figure>
 													</div>
@@ -429,11 +432,13 @@ function realtimeClock() {
 										</div>
 										
 										<div>
-											<ul class="item-features">
+											
+											<!-- 파이널 프로젝트 때 쓸 것 -->
+											<%-- <ul class="item-features">
 												<li><span>매장테이블</span> 테이블수</li>
 												<li><span>전체테이블</span>${article.tot_tbl_cnt }자리</li>
 												<li><span>예약가능테이블</span>${article.avl_tbl_cnt }자리</li>
-											</ul>
+											</ul> --%>
 											<div class="item-description">
 												<h3 class="headline">매장 소개</h3>
 												<p>
@@ -503,7 +508,7 @@ function realtimeClock() {
 																</tr>
 																<tr>
 																	<td>현재시간</td>
-																	<td id="realtimeTd">
+																	<td style="color:blue;"id="realtimeTd">
  																			
 																</tr>
 															</table>
