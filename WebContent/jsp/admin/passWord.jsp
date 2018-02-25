@@ -6,7 +6,7 @@
  
 <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
-              <h1>Change Password</h1>
+              <h1> 관리자 비밀번호 변경 <small> </small></h1>
             </div>
             <form action="index.php">
               <div class="form-group">
@@ -18,7 +18,7 @@
                 <input type="text" class="form-control form-control-lg" placeholder="Your new password">
               </div>
               <div class="form-group">
-                <label> 한번 더 확인해보세요 ^^ </label>
+                <label> 한번 더 확인해보세요 </label>
                 <input type="text" class="form-control form-control-lg" placeholder="Repeat new password">
               </div>
               <hr>

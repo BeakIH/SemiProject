@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import board.BoardDataBean;
+import java.util.ArrayList;
 /*import board.Exception;
 import board.ResultSet;
 import board.String;
@@ -79,6 +78,24 @@ public class BookingDBBean {
         }
     } //updateConfirm ends.
 	
-	
-	
+	// 예약건 중에서 해당매장에 해당하는 예약건만 관리자 화면에서 뿌려주는 메소드  
+	public ArrayList<BookingDataBean> bookingAdminCall(int store_no) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ArrayList<BookingDataBean> dto = null;
+		try{
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select * from booking where store_no = ? ");
+			pstmt.setInt(1, store_no);
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		
+		} finally {
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+		
+		return dto;
+    } //bookingAdminCall ends.
 }

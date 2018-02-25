@@ -40,11 +40,11 @@ public class StoreInfoAction implements CommandAction {
 		
 		int store_no = Integer.parseInt(request.getParameter("store_no"));
 		StoreListDBBean dao = StoreListDBBean.getInstance();
-		ArrayList<StoreListDBBean> manageList = dao.getEmpList(store_no);
+		StoreListDataBean storeList = dao.updateGetArticle(store_no);
 		
-		request.setAttribute("manageList", manageList);
-		request.setAttribute("errorpage", "0");
+		request.setAttribute("storeList", storeList);
+		//request.setAttribute("errorpage", "0");
 		
-		return "/jsp/admin/management.jsp";
+		return "/jsp/admin/storeInfo.jsp";
 	}
 }
