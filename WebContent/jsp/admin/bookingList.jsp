@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html> 
@@ -14,8 +16,8 @@
               <div class="form-group">
                   <select class="form-control ui-select">
                     <option selected="selected"> 정렬기준 </option>
-                    <option>등록일순</option>
-                    <option>당일예약</option>
+                    <option>접수일순</option>
+                    <option>예약일순</option>
                   </select>
                 </div>
               </div>
@@ -24,35 +26,38 @@
               </div>
               </div>                
             </div>
+            
             <div class="clearfix"></div>
             <div class="item-listing list">
-              <div class="item" data-aos="fade-up">
+            
+			<c:forEach var="confirm" items="${confirmList}"> 
+             <div class="item" data-aos="fade-up">
                 <div class="row">
                   <div class="col-md-3">
-                    <div class="item-image"> <img src="../../img/profiles/cat.jpg" class="img-fluid" alt=""> </div>
+                    <div class="item-image"> <img src="../../img/밥.png" class="img-fluid" alt=""> </div>
                   </div>
-                  <div class="col-md-9"> <a href="/jsp/admin/bookingList.do" class="btn btn-primary float-right">수락</a> &nbsp;
-					<!--  <a href="agent.html" class="btn btn-primary float-right">거절</a>    -->
                   <div class="col-md-9"> 
-                    <h3 class="item-title"><a href="agent.html"> 예약매장 : ${storeNm }</a></h3>
-                    <div class="item-description"><i class="fa fa-calendar-check"> 예약일시 : ${bkDate }</i></div>
-                    <div class="item-description">예약메뉴 : ${bkMenu } </div> 
+                  <a href="bookingList.do?store_no=${confirm.storeNo}" class="btn btn-primary float-right">수락</a> &nbsp;
+				  <a href="agent.html" class="btn btn-primary float-right">거절</a>
+                    <h3 class="item-title"><a href="agent.html"> 예약매장 : ${confirm.storeNm }</a></h3>
+                    <div class="item-description"><i class="fa fa-calendar-check"> 예약일시 : ${confirm.bkDate }</i></div>
+                    <div class="item-description">예약메뉴 : ${confirm.bkMenu } </div> 
                     <div class="item-actions"><!--  <a href="tel:02080226348"> -->
-                    	<i class="fa fa-phone"></i> 예약자 연락처: ${memTel} </a> 
-                    	<i class="fa fa-plus-circle"></i> 메뉴 예상가: ${bkPriSum } 원 
+                    	<i class="fa fa-phone"></i> 예약자 연락처: ${confirm.memTel} </a> 
+                    	<i class="fa fa-plus-circle"></i> 메뉴 예상가: ${confirm.bkPriSum } 원 
                     </div>
-                  </div>
                 </div>
               </div>
+              
+          
+ </c:forEach>
            
             </div>
-            <p><a href="#" class="btn btn-lg btn-link btn-block">Load More <i class="fa fa-caret-down"></i></a></p>
+            <p>
+				<a href="#" class="btn btn-lg btn-link btn-block">Load More <i
+					class="fa fa-caret-down"></i></a>
+			</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 </body>    
 
 </html>

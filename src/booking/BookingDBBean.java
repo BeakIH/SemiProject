@@ -3,6 +3,7 @@ package booking;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 /*import board.Exception;
@@ -82,12 +83,36 @@ public class BookingDBBean {
 	public ArrayList<BookingDataBean> bookingAdminCall(int store_no) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ArrayList<BookingDataBean> dto = null;
-		try{
+		ArrayList<BookingDataBean> list = new ArrayList<BookingDataBean>();
+		ResultSet rs = null;
+		try{			
+			
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select * from booking where store_no = ? ");
+			
+			String sql = "select * from booking where store_no = ? ";
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, store_no);
-			pstmt.executeUpdate();
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+
+				BookingDataBean dto = new BookingDataBean();
+
+				dto.setBkNo(rs.getInt("bk_no"));
+				dto.setEmpNo(rs.getInt("emp_no"));
+				dto.setStoreNo(rs.getInt("mem_no"));
+				dto.setMemNm(rs.getString("mem_nm"));
+				dto.setMemTel(rs.getString("mem_tel"));
+				dto.setStoreNm(rs.getString("store_nm"));
+				dto.setBkDate(rs.getString("bk_date"));
+				dto.setBkCnt(rs.getString("bk_cnt"));
+				dto.setBkMenu(rs.getString("bk_menu"));
+				dto.setCofirmYn(rs.getString("confirm_yn"));
+				dto.setBkTblCnt(rs.getInt("bk_tbl_cnt"));
+				dto.setStoreNo(rs.getInt("store_no"));
+				
+				list.add(dto);
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		
@@ -96,6 +121,6 @@ public class BookingDBBean {
             if (conn != null) try { conn.close(); } catch(SQLException ex) {}
         }
 		
-		return dto;
+		return list;
     } //bookingAdminCall ends.
 }

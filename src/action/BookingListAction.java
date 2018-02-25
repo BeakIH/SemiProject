@@ -9,20 +9,24 @@ import booking.BookingDBBean;
 import booking.BookingDataBean;
 
 
-public class BookingListAction {
+public class BookingListAction implements CommandAction {
+	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
 		request.setCharacterEncoding("UTF-8");
 			
 //		String id = (String)request.getSession().getAttribute("id");
 		
-		int store_no = Integer.parseInt((String)request.getSession().getAttribute("storeNo"));
+	//	int store_no = Integer.parseInt((String)request.getSession().getAttribute("storeNo"));
 
+		int store_no = Integer.parseInt(request.getParameter("store_no"));
+		
 		BookingDBBean dao = BookingDBBean.getInstance();
-		ArrayList<BookingDataBean> callList = dao.bookingAdminCall(store_no);
+		ArrayList<BookingDataBean> confirmList = dao.bookingAdminCall(store_no);
 		
+		System.out.println("aaaa::"+confirmList.size());
 		
-		request.setAttribute("callList", callList);
+		request.setAttribute("confirmList", confirmList);
 		request.setAttribute("errorpage", "0");
 		
 		return "/jsp/admin/bookingList.jsp";

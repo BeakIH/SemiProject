@@ -55,11 +55,11 @@
 							<div class="item-description">
 								이름 : ${manage.empNm} <br /> 직위 : ${manage.position}
 							</div>
-							<div class="item-actions">
+<!-- 							<div class="item-actions">
 								<a href="tel:02080226348"><i class="fa fa-phone"></i> 020
 									8022 6348</a> <a href="agent.html"><i class="fa fa-envelope-o"></i>
 									Contact Agent</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
