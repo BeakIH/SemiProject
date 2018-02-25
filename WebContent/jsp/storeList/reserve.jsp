@@ -238,7 +238,7 @@ $( document ).ready(function() {
 
  
  /* 인원 수 이벤트 */
- var useCnt = "1명";
+ var useCnt = 1;
  $('#useCnt').val(useCnt);
  
  $('#bk_cnt').bind('change',function(i){
@@ -257,7 +257,23 @@ $( document ).ready(function() {
 	 var data = $(i)[0].target;
 	 $('#useTbl').val($(data).val() * 1);
  });
+ /* 숫자 콤마 찍기 이벤트*/
+ /* function comma(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+}
  
+//콤마풀기
+function uncomma(str) {
+    str = String(str);
+    return str.replace(/[^\d]+/g, '');
+}
+ 
+//값 입력시 콤마찍기
+function inputNumberFormat(obj) {
+    obj.value = comma(uncomma(obj.value));
+}
+<input type="text" onkeyup="inputNumberFormat(this)" /> */
  
  /* 메뉴 이벤트 */
  	var menuName = "";
@@ -366,7 +382,7 @@ $( document ).ready(function() {
       <c:forEach var="menu" items="${article.menuList}" varStatus="status">
       <label>
       	<input type="checkbox" name="bk_menu" id="bk_menu" value="${menu.menu_nm}/${menu.menu_price}">
-      	<span style="font-weight: bold;font-size:16px;">${menu.menu_nm} : ${menu.menu_price}원</span></label><br>
+      	<span style="font-weight: bold;font-size:16px;" >${menu.menu_nm} : ${menu.menu_price}원</span></label><br>
       </c:forEach>
       
        <div data-obj-id="yZe8J" data-obj-type="element"
