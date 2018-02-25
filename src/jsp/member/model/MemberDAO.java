@@ -214,7 +214,7 @@ public class MemberDAO
  
             StringBuffer query = new StringBuffer();
             query.append("UPDATE MEMBER SET");
-            query.append(" mem_pw=?, email=?, mem_tel=?, ADDRESS=?");
+            query.append(" mem_pw=?, email=?, mem_tel=?, address=?");
             query.append(" WHERE mem_id=?");
  
             conn = DBConnection.getConnection();

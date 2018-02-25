@@ -62,5 +62,8 @@ public class MemberJoinAction implements CommandAction{
         return "/jsp/member/Success.jsp";
     }
 }
+
+
+
  
 
