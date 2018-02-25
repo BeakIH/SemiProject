@@ -14,12 +14,15 @@ public class Management_ModifyAction implements CommandAction {
 		try {
 			request.setCharacterEncoding("UTF-8");
 			
-			EmpDataBean dto = new EmpDataBean();
+			EmpDataBean dto;
 			EmpDBBean dao = new EmpDBBean();
 			
-			String adm_Id = (String)request.getSession().getAttribute("id");
+			String adm_id = (String)request.getSession().getAttribute("id");
+			dto = dao.selectEmp(adm_id);
 			
-			dto.setAdmId(adm_Id);
+			dto.setEmpNm(request.getParameter("name"));
+			dto.setStoreNo(Integer.parseInt(request.getParameter("sNo")));
+			dto.setPosition(request.getParameter("position"));
 			
 			boolean b = dao.modifyEmp(dto);
 			

@@ -1,16 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 
-<%	request.setCharacterEncoding("utf-8"); %>
-
-<jsp:useBean id="dao" class="emp.EmpDBBean"/>
-<jsp:useBean id="dto" class="emp.EmpDataBean"/>
-
-<jsp:setProperty property="*" name="bean"/>
+<%	request.setCharacterEncoding("UTF-8"); %>
 
 <%
-	boolean b = dao.modifyEmp(dto);
+	boolean b = (boolean)request.getAttribute("result");
 
-	if(b){
+	if(b) {
 %>
 	<script>
 

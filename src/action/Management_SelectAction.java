@@ -23,13 +23,13 @@ public class Management_SelectAction implements CommandAction {
 			
 			dto = dao.selectEmp(adm_id);
 			
-			request.setAttribute("result", dto);
+			request.setAttribute("res", dto);
 			request.setAttribute("errorpage", "0");
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return "/jsp/admin/management_result.jsp";
+		return "/jsp/admin/management_modifyForm.jsp";
 	}
 }

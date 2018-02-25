@@ -340,6 +340,7 @@ public class LoginDBBean {
                result.put("result", 2);
                result.put("id", rs.getString("adm_id"));
                result.put("name", rs.getString("emp_nm"));
+               result.put("position", rs.getString("position"));
                result.put("admYn", rs.getString("adm_yn"));
                result.put("storeNo", rs.getString("store_no"));
                result.put("storeNm", rs.getString("store_nm"));

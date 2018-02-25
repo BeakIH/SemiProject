@@ -148,7 +148,9 @@ public class EmpDBBean {
 				dto = new EmpDataBean();
 				dto.setEmpNo(rs.getInt("emp_no"));
 				dto.setEmpNm(rs.getString("emp_nm"));
+				dto.setStoreNo(rs.getInt("store_no"));
 				dto.setPosition(rs.getString("Position"));
+				dto.setAdmId(rs.getString("adm_id"));
 				dto.setAdmYn(rs.getString("adm_Yn"));
 				dto.setEmpStatus(rs.getString("emp_status"));
 			}
@@ -176,17 +178,20 @@ public class EmpDBBean {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			String sql = "update emp set emp_nm= ? , Position= ? , adm_yn= ? , emp_status = ? where adm_id= ? ";
+			String sql = "update emp set emp_nm=?, Position=? where adm_id=?";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, dto.getEmpNm());
 			pstmt.setString(2, dto.getPosition());
-			pstmt.setString(3, dto.getAdmYn());
-			pstmt.setString(4, dto.getEmpStatus());
-
-			if (pstmt.executeUpdate() > 0) {
+			pstmt.setString(3, dto.getAdmId());
+			
+			if (pstmt.executeUpdate() == 0) {
 				b = true;
 			}
+			
+			conn.commit();
+			conn.setAutoCommit(true);
+			
 		} catch (ClassNotFoundException | SQLException sqle) {
 			conn.rollback();
 		} finally {
