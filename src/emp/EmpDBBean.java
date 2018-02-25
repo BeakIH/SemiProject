@@ -11,7 +11,6 @@ import emp.EmpDataBean;
 import store.list.JdbcUtil;
 
 public class EmpDBBean {
-	ArrayList<EmpDataBean> list = new ArrayList<EmpDataBean>();
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -32,10 +31,9 @@ public class EmpDBBean {
 	}
 
 	public ArrayList<EmpDataBean> getEmpList(int store_no) throws Exception {
-
+		ArrayList<EmpDataBean> list = new ArrayList<EmpDataBean>();
 		try {
 			conn = getConnection();
-			conn.setAutoCommit(false);
 
 			String sql = "select * from emp where store_no = ? order by emp_no";
 			pstmt = conn.prepareStatement(sql);
@@ -57,8 +55,6 @@ public class EmpDBBean {
 				list.add(dto);
 			}
 
-			conn.commit();
-			conn.setAutoCommit(true);
 
 		} catch (ClassNotFoundException | SQLException sqle) {
 			conn.rollback();

@@ -8,6 +8,7 @@
 <title>직원정보 화면</title>
 </head>
 <body>
+
 	<div class="col-md-7 col-lg-8 col-xl-8">
 		<div class="page-header bordered mt0">
 			<h1>
@@ -47,7 +48,7 @@
 							</div>
 						</div>
 						<div class="col-md-9">
-							<a href="management_modifyForm.jsp" class="btn btn-primary float-right">정보 수정</a>
+							<a href="management_modifydo?adm_id=${id }" class="btn btn-primary float-right">정보 수정</a>
 							<h3 class="item-title">
 								<a href="agent.html">직원번호 : ${manage.empNo}</a>
 							</h3>
@@ -70,10 +71,6 @@
 					class="fa fa-caret-down"></i></a>
 			</p>
 		</div>
-	</div>
-	</div>
-	</div>
-	</div>
 	</div>
 </body>
 </html>

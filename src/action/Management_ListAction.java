@@ -16,7 +16,7 @@ public class Management_ListAction implements CommandAction {
 		int store_no = Integer.parseInt(request.getParameter("store_no"));
 		EmpDBBean dao = EmpDBBean.getInstance();
 		ArrayList<EmpDataBean> manageList = dao.getEmpList(store_no);
-		
+	
 		request.setAttribute("manageList", manageList);
 		request.setAttribute("errorpage", "0");
 		
