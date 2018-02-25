@@ -11,7 +11,7 @@
 	<div class="col-md-7 col-lg-8 col-xl-8">
 		<div class="page-header bordered mt0">
 			<h1>
-				${storeNm } <small>매장 직원들 리스트</small>
+				${storeNm } <small> 우리 매장의 메뉴를 소개해보세요 </small>
 			</h1>
 		</div>
 		<div class="sorting">

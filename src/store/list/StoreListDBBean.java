@@ -81,7 +81,8 @@ public class StoreListDBBean { //DAO
        ResultSet rs = null;
        StoreListDataBean article=null;
        try {
-           conn = getConnection(false);
+           conn = getConnection();
+           conn.setAutoCommit(false);
 
            pstmt = conn.prepareStatement(
            "select * from store_list, emp where emp.store_no = storeList.store_no and store_no = ?");

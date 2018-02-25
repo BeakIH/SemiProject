@@ -6,7 +6,7 @@
 <body> 
 <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered mt0">
-              <h1>${storeNm} <small></small></h1>
+              <h1>${storeNm} <small>우리 매장의 예약현황을 확인해보세요 </small></h1>
             </div>
             <div class="sorting">
               <div class="row justify-content-between">
@@ -34,12 +34,13 @@
                   <div class="col-md-9"> <a href="/jsp/admin/bookingList.do" class="btn btn-primary float-right">수락</a> &nbsp;
 					<!--  <a href="agent.html" class="btn btn-primary float-right">거절</a>    -->
                   <div class="col-md-9"> 
-                    <h3 class="item-title"><a href="agent.html">예약자명</a></h3>
-                    <div class="item-description"><i class="fa fa-calendar-check"> 예약일시 예) 2018.02.16 금요일 19:00</i></div>
-                    <div class="item-description">미리주문 </div> 
+                    <h3 class="item-title"><a href="agent.html"> 예약매장 : ${storeNm }</a></h3>
+                    <div class="item-description"><i class="fa fa-calendar-check"> 예약일시 : ${bkDate }</i></div>
+                    <div class="item-description">예약메뉴 : ${bkMenu } </div> 
                     <div class="item-actions"><!--  <a href="tel:02080226348"> -->
-                    <i class="fa fa-phone"></i> 예약자전화번호 </a> 
-                    <i class="fa fa-plus-circle"></i> 요청사항 </div>
+                    	<i class="fa fa-phone"></i> 예약자 연락처: ${memTel} </a> 
+                    	<i class="fa fa-plus-circle"></i> 메뉴 예상가: ${bkPriSum } 원 
+                    </div>
                   </div>
                 </div>
               </div>
