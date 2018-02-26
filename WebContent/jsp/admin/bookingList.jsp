@@ -38,15 +38,19 @@
                   </div>
                   <div class="col-md-9"> 
                   <a href="bookingList.do?store_no=${confirm.storeNo}" class="btn btn-primary float-right">수락</a> &nbsp;
-				  <a href="agent.html" class="btn btn-primary float-right">거절</a>
-                    <h3 class="item-title"><a href="agent.html"> 예약매장 : ${confirm.storeNm }</a></h3>
+				  <!-- <a href="agent.html" class="btn btn-primary float-right">거절</a> -->
+                    <h3 class="item-title"><a href="agent.html"> 예약자 : ${confirm.memNm }님 </a></h3>
                     <div class="item-description"><i class="fa fa-calendar-check"> 예약일시 : ${confirm.bkDate }</i></div>
                     <div class="item-description">예약메뉴 : ${confirm.bkMenu } </div> 
+ 					<%-- <div class="item-description">예약인원(희망테이블수) : ${confirm.bk_cnt}명</div> --%>
+                    <div class="item-description">예약자 연락처: ${confirm.memTel}</div>
+                 </div>
+                 <%-- 
                     <div class="item-actions"><!--  <a href="tel:02080226348"> -->
-                    	<i class="fa fa-phone"></i> 예약자 연락처: ${confirm.memTel} </a> 
+                    	<i class="fa fa-phone"></i> 예약자 연락처: ${confirm.memTel} </a>
                     	<i class="fa fa-plus-circle"></i> 메뉴 예상가: ${confirm.bkPriSum } 원 
                     </div>
-                </div>
+                 --%>
               </div>
               
           
