@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import reserve.MemSelectDBBean;
 //import list.ListDBBean;
 import reserve.ReserveDBBean;
 import review.ReviewDBBean;
@@ -36,6 +37,25 @@ public class List_infoAction implements CommandAction {//글 목록 처리
 		articleList = dbPro.getInfo(storeNo,"ones");
 		//해당 뷰에서 사용할 속성
 		request.setAttribute("articleList", articleList);
+		
+		
+		String id = (String)request.getSession().getAttribute("id");
+		System.out.println("mem_id:::"+id); // 값 넘어옴
+		
+		List articleList2 = null;
+		MemSelectDBBean dbPro2 = MemSelectDBBean.getInstance();
+
+		List searchList2 = new ArrayList();
+
+		System.out.println("테스트3");
+		articleList2= dbPro2.MemInfo(id);
+
+		request.setAttribute("articleList2", articleList2);
+		request.setAttribute("id", id);
+		
+		
+		
+		
 		
 		return "/jsp/storeList/list_info.jsp";//해당 뷰
 	}

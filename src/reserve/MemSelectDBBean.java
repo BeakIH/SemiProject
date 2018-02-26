@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import store.list.JdbcUtil;
 import store.list.StoreListDataBean;
 
 public class MemSelectDBBean {
@@ -73,4 +74,39 @@ public class MemSelectDBBean {
 	       }
 		return articleList2;
 	   }
+	
+	/*public String userLogonCheck(String mem_id) throws Exception {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      int result = 0;
+	      
+
+	      try {
+	         conn = getConnection();
+	         String sql = "select mem_id, from member where mem_id = ?";
+	         pstmt = conn.prepareStatement(sql);
+	         pstmt.setString(1, mem_id);
+	         
+	         rs = pstmt.executeQuery();
+	        
+	         
+	        	
+	     
+	         
+	         
+	      } catch (ClassNotFoundException | SQLException sqle) {
+	         sqle.printStackTrace();
+	      } finally {
+	         try {
+	            JdbcUtil.close(rs);
+	            JdbcUtil.close(pstmt);
+	            JdbcUtil.close(conn);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	         
+	      }
+	     
+}*/
 }

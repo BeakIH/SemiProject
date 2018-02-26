@@ -79,14 +79,25 @@ function realtimeClock() {
     	 var posY=screen.availHeight/2-sizeY/2;
 		 myWin=window.open(pUrl,pName,"width="+sizeX+",height="+sizeY+",top="+posY+",left="+posX);     
  	
+     
      }
      function winClose() {
  		myWin.close();                                                             
  }
    
+   
+     /* // 취소 버튼 클릭시 로그인 화면으로 이동
+     function goLoginForm() {
+         location.href="LoginForm.jsp";
+     }      */
      
      function BookFail(){
     	 swal ( " 예약 불가 " , " 죄송합니다,\n 현재 좌석이 없어 예약 하실 수 없습니다. " , "error" )   ;
+    	 
+    	 
+    	 
+    	 
+    	 
      }
 </script>
 
@@ -301,7 +312,12 @@ function realtimeClock() {
 		</nav>
 </c:when>
 </c:choose>
+		<%-- <c:forEach var="article2" items="${articleList2}">
+		<c:set var="mem_id" value="${articleList2.mem_id}" />
+		</c:forEach> --%>
 		<c:forEach var="article" items="${articleList}">
+		   
+	   	 
 			<div class="container">
 				<div class="row justify-content-md-center">
 					<div class="col col-md-12 col-lg-12 col-xl-10">
@@ -310,18 +326,22 @@ function realtimeClock() {
 						<div class="page-header bordered mb0">
 							<div class="row">
 								<div class="col-md-8">
-									<a href="javascript:history.back();" class="btn-return" title="Back"><i
+									<a href="/SemiProject/jsp/storeList/list.do" class="btn-return" title="Back"><i
 										class="fa fa-angle-left"></i></a>
 									<h1>
 									<input type="hidden" value="${article.store_no }" id="storeNo" />
 										${article.store_nm }<span class="label label-bordered">${article.cate_nm }</span>
 										<small><i class="fa fa-map-marker"></i>${article.store_floor }층</small>
+					
 									</h1>
 								</div>
 								<div class="col-md-4">
 									<div class="price">
 								
-										예약가능테이블: ${article.avl_tbl_cnt -5}<br />
+										예약가능테이블: ${article.avl_tbl_cnt -5}${id} <br />
+										<div style="color:black; font-size:13px;"><br>※ 실제 매장에는 여유석이 있을 수 있습니다.<br> 매장 문의 바랍니다.
+										
+										</div>
 										<!-- <span id="realTime" style="font-size:16px; color:blue"></span>	 -->									
 									</div>
 								</div>
@@ -416,13 +436,19 @@ function realtimeClock() {
 
 												한줄평 위치
 											</div>
-
+											
 											<div class="item-attachments">
 												<h3 class="headline">예약</h3>
 												<c:choose>
+												
 												<c:when test="${article.cur_tbl_cnt>0 && article.cur_tbl_cnt <=5 }">
 												<div class="btn btn-lg btn-inverse" onclick="BookFail()">
 													<i class="fa fa-cloud-download" aria-hidden="true"></i>예약불가</div>
+												</c:when>
+												
+												<c:when test="${mem_id = null }">
+												<div class="btn btn-lg btn-inverse" onclick="BookFail()">
+													<i class="fa fa-cloud-download" aria-hidden="true"></i>로그인을 해주세요.</div>
 												</c:when>
 												<c:otherwise>
 												<a href="#" class="btn btn-lg btn-inverse"
@@ -430,6 +456,21 @@ function realtimeClock() {
 													aria-hidden="true" ></i>예약하기</a>
 												</c:otherwise>
 												</c:choose>
+												
+												<%-- <c:choose>
+												<c:when test="${article2.mem_id = null }">
+												<div class="btn btn-lg btn-inverse" onclick="BookFail()">
+													<i class="fa fa-cloud-download" aria-hidden="true"></i>로그인을 해주세요.</div>
+												</c:when>
+												
+												<c:otherwise>
+												<a href="#" class="btn btn-lg btn-inverse"
+													onclick="winOpen()" style="background-color:#FFBF00"><i class="fa fa-cloud-download"
+													aria-hidden="true" ></i>예약하기</a>
+												</c:otherwise>
+												
+												</c:choose>  --%>
+												
 											</div>
 										</div>
 									</div>
@@ -493,6 +534,7 @@ function realtimeClock() {
 														</p>
 
 													</div>
+													
 												</div>
 
 											</div>
@@ -504,7 +546,8 @@ function realtimeClock() {
 					</div>
 				</div>
 			</div>
-		</c:forEach>
+			</c:forEach>
+		
 
 		<script type="text/javascript">
 // Photoswipe
