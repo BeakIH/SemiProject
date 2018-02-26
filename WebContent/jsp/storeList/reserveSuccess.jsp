@@ -58,9 +58,13 @@
     <div class="row justify-content-md-center">
       <div class="col col-lg-12">
         <div class="error-template text-center"> <i class="fa fa-check fa-5x text-success mb50 animated zoomIn"></i>
-          <h3 class="main-title centered"><span>예약이 완료되었습니다.</span></h3>
-          <div class="main-title-description"> 매장을 이용해주셔서 감사합니다. <br> 최선을 다해 모시겠습니다. </div>
-          <div class="error-actions"><a  href='javascript:MovePage()'; class="btn btn-primary btn-lg" onclick='javascript()'> 확인 </a> </div>
+          <h3 class="main-title centered"><span>예약 신청이 되었습니다.</span></h3>
+          <div class="main-title-description"> 
+          	 예약 내역 확인 페이지에서 예약이 완료가 되었는지 확인 바랍니다.<br>
+          	 <h4 style="color:red;">매장에서 예약 완료까지 약간의 시간이 소요 될 수 있습니다.</h4> 
+          	<br><br> 매장을 이용해주셔서 감사합니다. <br> 최선을 다해 모시겠습니다. <br>
+          	</div>
+          <div class="error-actions"><a  href='javascript:MovePage()'; class="btn btn-primary btn-lg" onclick='javascript()'>예약내역확인 </a> </div>
         </div>
       </div>
     </div>

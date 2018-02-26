@@ -455,7 +455,7 @@ function realtimeClock() {
 												<c:otherwise>
 												<a href="#" class="btn btn-lg btn-inverse"
 													onclick="winOpen()" style="background-color:#FFBF00; border-width: 0px;"><i class="fa fa-cloud-download"
-													aria-hidden="true" ></i>예약하기</a>
+													aria-hidden="true" ></i>예약신청</a>
 												</c:otherwise>
 												</c:choose>
 												

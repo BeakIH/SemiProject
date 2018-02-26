@@ -317,7 +317,7 @@ function inputNumberFormat(obj) {
 <body>
 
 
-<h1 class="maintext">예약</h1>
+<h1 class="maintext">예약 신청 하기</h1>
 	 <c:forEach var="article" items="${articleList}">
 	   <input type="hidden" value="${article.store_exp }" id="oTime" />
 	   <input type="hidden" value="${article.avl_tbl_cnt }" id="avl_tbl_cnt" />
@@ -455,7 +455,7 @@ function inputNumberFormat(obj) {
           <div class="col-lg-12">
              <div class="page-header bordered" >
               <div style="background-color: #FFBB00; text-align: center; font-size: 17px;"
-         class=""><label><h2 style="padding-top: 15px; color:white; font-weight: bold">예약 결과</h2></label></div>
+         class=""><label><h2 style="padding-top: 15px; color:white; font-weight: bold">예약 신청 결과</h2></label></div>
              
              
               <%-- <h1>${article.store_nm }<small>예약정보</small></h1> --%>
@@ -573,14 +573,14 @@ function inputNumberFormat(obj) {
          </div>
         <div class="row">
          <div class="col-md-6">
-           <div class="row justify-content-md-center" style="padding-left:50%" >
-				<button class="btn btn-danger" data-dismiss="modal" >예약취소<i class="fa fa-times spaceLeft"></i></button>
+           <div class="row justify-content-md-center" style="margin-right: 15px; padding-left:50%"  >
+				<button class="btn btn-danger" data-dismiss="modal" >예약신청취소<i class="fa fa-times spaceLeft"></i></button>
 		   </div>
 	 	</div>
 				
 		 <div class="col-md-6">
 		 <div class="row justify-content-md-center" style="padding-right:50%">
-			<button type="submit" class="btn btn-warning" style="background:#1DDB16; border-color: #1DDB16; color:white;"><font color="#800080"></font>예약하기<i class="fa fa-check spaceLeft"></i></button>
+			<button type="submit" class="btn btn-warning" style="background:#1DDB16; border-color: #1DDB16; color:white;"><font color="#800080"></font>예약신청하기<i class="fa fa-check spaceLeft"></i></button>
 		</div>
 		 </div>
 	   </div>
