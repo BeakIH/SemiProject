@@ -10,30 +10,28 @@ public class Management_ModifyAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
-		try {
-			request.setCharacterEncoding("UTF-8");
-			
-			EmpDataBean dto;
-			EmpDBBean dao = new EmpDBBean();
-			
+		request.setCharacterEncoding("UTF-8");
+		EmpDBBean dao = new EmpDBBean();	
+		EmpDataBean dto;			
+		try {	
 			String adm_id = (String)request.getSession().getAttribute("id");
-			dto = dao.selectEmp(adm_id);
-			
-			dto.setEmpNm(request.getParameter("name"));
-			dto.setStoreNo(Integer.parseInt(request.getParameter("sNo")));
-			dto.setPosition(request.getParameter("position"));
-			
-			boolean b = dao.modifyEmp(dto);
-			
-			request.setAttribute("result", b);
-			request.getSession().setAttribute("name", dto.getEmpNm());
-			request.setAttribute("errorpage", "0");
+			String pwd = request.getParameter("pwd");
+			boolean checkPwd = dao.checkPwd(adm_id, pwd);
+			if(checkPwd) { 
+				dto = new EmpDataBean();
+				dto.setAdmId(adm_id);
+				dto.setEmpNm(request.getParameter("name"));
+				dto.setPosition(request.getParameter("position"));
+				dao.modifyEmp(dto);
+				request.getSession().setAttribute("name", dto.getEmpNm());			
+			}else {
+				request.setAttribute("errorpage", "0");
+			}
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return "/jsp/admin/management_result.jsp";
+		return null;
 	}
 }

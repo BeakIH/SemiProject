@@ -339,6 +339,7 @@ public class LoginDBBean {
             while(rs.next()) {
                result.put("result", 2);
                result.put("id", rs.getString("adm_id"));
+               result.put("password", rs.getString("adm_pw"));
                result.put("name", rs.getString("emp_nm"));
                result.put("position", rs.getString("position"));
                result.put("admYn", rs.getString("adm_yn"));

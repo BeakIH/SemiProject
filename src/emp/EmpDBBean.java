@@ -55,7 +55,6 @@ public class EmpDBBean {
 				list.add(dto);
 			}
 
-
 		} catch (ClassNotFoundException | SQLException sqle) {
 			conn.rollback();
 		} finally {
@@ -124,6 +123,7 @@ public class EmpDBBean {
 			conn.rollback();
 		} finally {
 			try {
+				JdbcUtil.close(rs);
 				JdbcUtil.close(pstmt);
 				JdbcUtil.close(conn);
 			} catch (Exception e) {
@@ -131,6 +131,33 @@ public class EmpDBBean {
 			}
 		}
 		return dto;
+	}
+
+	public boolean checkPwd(String adm_id, String adm_pw) throws Exception {
+		boolean b = false;
+		try {
+			conn = getConnection();
+
+			String sql = "select * from emp where adm_id = ? and adm_pw = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adm_id);
+			pstmt.setString(2, adm_pw);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				b = true;
+			}
+		} catch (ClassNotFoundException | SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			try {
+				JdbcUtil.close(rs);
+				JdbcUtil.close(pstmt);
+				JdbcUtil.close(conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return b;
 	}
 
 	public EmpDataBean selectEmp(String adm_id) throws Exception {
@@ -161,6 +188,7 @@ public class EmpDBBean {
 			conn.rollback();
 		} finally {
 			try {
+				JdbcUtil.close(rs);
 				JdbcUtil.close(pstmt);
 				JdbcUtil.close(conn);
 			} catch (Exception e) {
@@ -171,27 +199,25 @@ public class EmpDBBean {
 	}
 
 	public boolean modifyEmp(EmpDataBean dto) throws Exception {
-
+		
 		boolean b = false;
-
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
 			String sql = "update emp set emp_nm=?, Position=? where adm_id=?";
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setString(1, dto.getEmpNm());
 			pstmt.setString(2, dto.getPosition());
 			pstmt.setString(3, dto.getAdmId());
-			
+
 			if (pstmt.executeUpdate() == 1) {
 				b = true;
 			}
-			
+
 			conn.commit();
 			conn.setAutoCommit(true);
-			
+
 		} catch (ClassNotFoundException | SQLException sqle) {
 			conn.rollback();
 		} finally {

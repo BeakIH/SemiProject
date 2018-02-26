@@ -18,7 +18,6 @@
           
                 
             <form method ="post" action="/SemiProject/jsp/login/login.do">
-          
               <div class="form-group">
                 <label for="text">아이디</label>
                 <input type="text" name="userid" class="form-control form-control-lg" placeholder="아이디를 입력하세요">
@@ -49,7 +48,8 @@
         <a href="#" class="btn btn-social btn-block btn-twitter"><i class="icon fa fa-twitter"></i> 트위터로 시작하기</a> 
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;

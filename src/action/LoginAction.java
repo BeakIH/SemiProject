@@ -25,6 +25,7 @@ public class LoginAction implements CommandAction {
       
       if (result.get("name") != null) {
          request.getSession().setAttribute("id", result.get("id"));
+         request.getSession().setAttribute("pwd", result.get("password"));
          request.getSession().setAttribute("name", result.get("name"));
          request.getSession().setAttribute("admYn", result.get("admYn"));
          request.getSession().setAttribute("storeNo", result.get("storeNo"));
