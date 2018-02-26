@@ -37,9 +37,20 @@
                     <div class="item-image"> <img src="../../img/밥.png" class="img-fluid" alt=""> </div>
                   </div>
                   <div class="col-md-9"> 
+                  <script>
+                  alert('${confirm.cofirmYn}')
+                  </script>
+                  <c:choose>
+                  <c:when test= "${confirm.cofirmYn=='N'}">
                   <a href="bookingList.do?store_no=${confirm.storeNo}" class="btn btn-primary float-right">수락</a> &nbsp;
+				  </c:when>
+				  <c:otherwise>
+				  <a href="bookingList.do?store_no=${confirm.storeNo}" class="btn btn-primary float-right"> 완료</a> &nbsp;
+				  </c:otherwise>
+				  </c:choose>
 				  <!-- <a href="agent.html" class="btn btn-primary float-right">거절</a> -->
                     <h3 class="item-title">예약자 : ${confirm.memNm }님 </a></h3>
+                    <div class="item-description"> 예약번호 : ${confirm.bkNo }</i></div>
                     <div class="item-description"> 예약일시 : ${confirm.bkDate }</i></div>
                     <div class="item-description">예약메뉴 : ${confirm.bkMenu } </div> 
  					<%-- <div class="item-description">예약인원(희망테이블수) : ${confirm.bk_cnt}명</div> --%>
