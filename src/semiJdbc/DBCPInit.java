@@ -36,9 +36,9 @@ public class DBCPInit extends HttpServlet {
 	
 	private void initConnectionPool() {
 		try {
-			String jdbcUrl = "jdbc:oracle:thin:@192.168.1.186:1521/orcl";
-			String username = "scott";
-			String pw = "tiger";
+			String jdbcUrl = "jdbc:oracle:thin:@192.168.40.7:1521:xe";
+			String username = "SCOTT1";
+			String pw = "TIGER";
 			
 			/* 이 아래 코드들은 변경없이 그대로 쓰면 된다. */
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(jdbcUrl, username, pw);
