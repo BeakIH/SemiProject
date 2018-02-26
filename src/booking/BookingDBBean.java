@@ -52,15 +52,16 @@ public class BookingDBBean {
 			pstmt.setInt(10, booking.getStoreNo());
 			pstmt.setString(11, booking.getBkPriSum());
 			pstmt.executeUpdate();
-		 
-		} catch (Exception e) {
+			conn.commit();
+			conn.setAutoCommit(true);
+		} 
+		catch (Exception e) {
 			e.printStackTrace();
 		} finally {
             if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
             if (conn != null) try { conn.close(); } catch(SQLException ex) {}
         }
-		conn.commit();
-		conn.setAutoCommit(true);
+		
     }
 	
 	// insert된 예약 건에 대한 매장확인 (confirm_yn컬럼의 값을 Y로 업데이트)
