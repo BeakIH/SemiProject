@@ -29,7 +29,7 @@
 	
 	<c:when test= "${check==2}">
 		<c:out value="${maneger}" escapeXml = "false" />
-		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/admin/bookingList.do?store_no=${storeNo}'">
+		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/admin/bookingList.jsp'">
 	</c:when>
 	
 	<c:when test= "${check==3}">

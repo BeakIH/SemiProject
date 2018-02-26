@@ -59,7 +59,7 @@ public class BookingInsertAction implements CommandAction{
 		System.out.println("article::"+article);
 		dbPro.insertBooking(article);
 
-		return "../member/reserveSuccess.jsp";
+		return "./reserveSuccess.jsp";
 	}
 }
 
