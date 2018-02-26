@@ -91,10 +91,10 @@ function realtimeClock() {
          location.href="LoginForm.jsp";
      }      */
      
-     function BookFail(){
-    	 swal ( " 예약 불가 " , " 죄송합니다,\n 현재 좌석이 없어 예약 하실 수 없습니다. " , "error" )   ;
-    	 
-    	 
+     function BookFail2(){
+    	/*  swal ( " 예약 불가 " , " 죄송합니다,\n 현재 좌석이 없어 예약 하실 수 없습니다. " , "error" )   ; */
+    	 alert("로그인 후 이용해 주세요.")
+    	 location.href="../member/SigninCon.jsp"; 
     	 
     	 
     	 
@@ -338,7 +338,7 @@ function realtimeClock() {
 								<div class="col-md-4">
 									<div class="price">
 								
-										예약가능테이블: ${article.avl_tbl_cnt -5}${id} <br />
+										예약가능테이블: ${article.avl_tbl_cnt -5}<br />
 										<div style="color:black; font-size:13px;"><br>※ 실제 매장에는 여유석이 있을 수 있습니다.<br> 매장 문의 바랍니다.
 										
 										</div>
@@ -446,9 +446,9 @@ function realtimeClock() {
 													<i class="fa fa-cloud-download" aria-hidden="true"></i>예약불가</div>
 												</c:when>
 												
-												<c:when test="${mem_id = null }">
-												<div class="btn btn-lg btn-inverse" onclick="BookFail()">
-													<i class="fa fa-cloud-download" aria-hidden="true"></i>로그인을 해주세요.</div>
+												<c:when test="${id eq null}">
+												<div class="btn btn-lg btn-inverse" onclick="BookFail2()">
+													<i class="fa fa-cloud-download" aria-hidden="true"></i>로그인 후 이용해주세요!!</div>
 												</c:when>
 												<c:otherwise>
 												<a href="#" class="btn btn-lg btn-inverse"
