@@ -53,6 +53,7 @@ public class List_infoAction implements CommandAction {//글 목록 처리
 		request.setAttribute("articleList2", articleList2);
 		request.setAttribute("id", id);
 		
+		request.getSession().removeAttribute("url");
 		
 		
 		
