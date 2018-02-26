@@ -448,28 +448,14 @@ function realtimeClock() {
 												
 												<c:when test="${id eq null}">
 												<div class="btn btn-lg btn-inverse" onclick="BookFail2()">
-													<i class="fa fa-cloud-download" aria-hidden="true"></i>로그인 후 이용해주세요!!</div>
+													<i class="fa fa-cloud-download" aria-hidden="true"></i>로그인</div>
 												</c:when>
 												<c:otherwise>
 												<a href="#" class="btn btn-lg btn-inverse"
-													onclick="winOpen()" style="background-color:#FFBF00"><i class="fa fa-cloud-download"
+													onclick="winOpen()" style="background-color:#FFBF00; border-width: 0px;"><i class="fa fa-cloud-download"
 													aria-hidden="true" ></i>예약하기</a>
 												</c:otherwise>
 												</c:choose>
-												
-												<%-- <c:choose>
-												<c:when test="${article2.mem_id = null }">
-												<div class="btn btn-lg btn-inverse" onclick="BookFail()">
-													<i class="fa fa-cloud-download" aria-hidden="true"></i>로그인을 해주세요.</div>
-												</c:when>
-												
-												<c:otherwise>
-												<a href="#" class="btn btn-lg btn-inverse"
-													onclick="winOpen()" style="background-color:#FFBF00"><i class="fa fa-cloud-download"
-													aria-hidden="true" ></i>예약하기</a>
-												</c:otherwise>
-												
-												</c:choose>  --%>
 												
 											</div>
 										</div>
@@ -767,110 +753,6 @@ var main_gallery = '.gallery-top';
   }
   
   </script>
-
-		<div class="modal" id="modal" tabindex="-1" role="dialog"
-			aria-labelledby="modar" aria-hidden="true">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<div class="row">
-							<div class="col-lg-12">
-								<button class="close" data-dismiss="modal">&times;</button>
-
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="page-header bordered">
-											<h1>
-												윤식당<small>예약신청</small>
-											</h1>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-12">
-										<form action="index.php">
-											<h3 class="subheadline">개인정보입력란</h3>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label>이름</label> <input type="text"
-												class="form-control form-control-lg" placeholder=""
-												value="이수근">
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label>예약 인원수</label> <select name="nnn"
-												style="width: 200px; height: 45px;">
-												<option value="1인">1인</option>
-												<option value="1인" selected="selected">2인</option>
-												<option value="1인">3인</option>
-												<option value="1인">4인</option>
-												<option value="1인">5인</option>
-												<option value="1인">6인</option>
-												<option value="1인">7인</option>
-												<option value="1인">8인</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>음식메뉴</label><br> <select name="test[]" id="test"
-												onChange="sel();">
-												<option value="1">크림파스타</option>
-												<option value="2" selected="selected">봉골레파스타</option>
-												<option value="3">스테이크</option>
-												<option value="4">함박스테이크</option>
-												<option value="5">돈까스</option>
-												<option value="6">커피</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>핸드폰</label> <input type="text"
-												class="form-control form-control-lg" placeholder=""
-												value="01099993333">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>기타</label> <input type="text"
-												class="form-control form-control-lg" placeholder="" value="">
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>전달할 메세지</label>
-											<textarea class="form-control form-control-lg text-editor"
-												placeholder=""></textarea>
-										</div>
-									</div>
-								</div>
-								<hr>
-								<div class="form-group action">
-									<button type="submit" class="btn btn-lg btn-primary">예약</button>
-								</div>
-
-
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
 
 		<button class="btn btn-primary btn-circle" id="to-top">
 			<i class="fa fa-angle-up"></i>

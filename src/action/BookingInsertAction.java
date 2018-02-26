@@ -60,7 +60,7 @@ public class BookingInsertAction implements CommandAction{
 	
 		
 		
-		return "../member/reserveSuccess.jsp";
+		return "./reserveSuccess.jsp";
 	}
 }
 
