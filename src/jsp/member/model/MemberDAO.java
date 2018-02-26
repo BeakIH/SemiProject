@@ -22,10 +22,7 @@ import jsp.util.DBConnection;
  */
 public class MemberDAO 
 {
-	
-	
 	   private static MemberDAO instance = new MemberDAO();
-
 	   
 	   //LogonDBBean.getInstance();   싱글턴패턴
 	   public static MemberDAO getInstance() {
@@ -49,7 +46,7 @@ public class MemberDAO
 	         conn = getConnection();
 	         
 	         //DriverManager.getConnection(jdbc:apache:commons:dbcp:pool);
-	         String sql = "insert into MEMBER values(member_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";  
+	         String sql = "insert into MEMBER values(member_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";  
 	         pstmt = conn.prepareStatement(sql);
 	         
 	            pstmt.setString(1, member.getMem_nm());
@@ -61,6 +58,7 @@ public class MemberDAO
 	            pstmt.setString(7, member.getEmail_yn());
 	            pstmt.setString(8, member.getFvrt_str_1());
 	            pstmt.setString(9, member.getFvrt_str_2());
+	           // pstmt.setString(10, member.getJoindate());
 	            
 	         pstmt.executeUpdate();
 	         
@@ -78,7 +76,6 @@ public class MemberDAO
 	   
 	//아이디중복체크  
 	   
-		//db연동 메서드
 	   public int ConfirmId(String id) {
 		 
 		   Connection conn = null;
@@ -105,13 +102,13 @@ public class MemberDAO
 		   return result;
 	   	
 	   }
-	   //ConfirmId메서드
+	   //ConfirmId메서드 
 		private Connection getOracle() throws Exception {
 	
-			Context ctx = new InitialContext();
-			Context env = (Context) ctx.lookup("java:comp/env");
-			DataSource ds = (DataSource) env.lookup("jdbc/orcl");
-			return ds.getConnection();
+		      String jdbcDriver = "jdbc:apache:commons:dbcp:pool";
+		      return DriverManager.getConnection(jdbcDriver);
+
+				
 	}
 
 
@@ -183,6 +180,7 @@ public class MemberDAO
                 member.setEmail_yn(rs.getString("email_yn"));
                 member.setFvrt_str_1(rs.getString("fvr_str_1"));
                 member.setFvrt_str_2(rs.getString("fvr_str_2"));
+            //    member.setJoindate(rs.getString("joindate"));
              }
  
             return member;
