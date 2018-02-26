@@ -11,6 +11,11 @@ public class SignInConAction implements CommandAction {
     public String requestPro( HttpServletRequest request,
         HttpServletResponse response) throws Throwable {
     	
+    	String url = request.getParameter("url");
+    	if(url != null) {
+    		request.getSession().setAttribute("url", url);
+    		System.out.println(url);
+    	}
     	// 한글 인코딩 처리 
         request.setCharacterEncoding("UTF-8");
 

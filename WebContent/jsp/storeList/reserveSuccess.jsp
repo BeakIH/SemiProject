@@ -37,6 +37,18 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+ <script type="text/javascript">
+ 
+
+ 
+ function  MovePage(){
+ window.opener.top.location.href="./main.jsp"
+ window.close()
+ }
+
+
+ </script>
 </head>
 <body>
 
@@ -48,11 +60,15 @@
         <div class="error-template text-center"> <i class="fa fa-check fa-5x text-success mb50 animated zoomIn"></i>
           <h3 class="main-title centered"><span>예약이 완료되었습니다.</span></h3>
           <div class="main-title-description"> 매장을 이용해주셔서 감사합니다. <br> 최선을 다해 모시겠습니다. </div>
-          <div class="error-actions"><a  href='javascript:self.close()' class="btn btn-primary btn-lg"> 확인 </a> </div>
+          <div class="error-actions"><a  href='javascript:MovePage()'; class="btn btn-primary btn-lg" onclick='javascript()'> 확인 </a> </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
 
 </body></html>
