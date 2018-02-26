@@ -31,6 +31,7 @@ public class BookingDBBean {
 
 		try {
 			conn = getConnection();
+			conn.setAutoCommit(false);
 			//가라 데이터 집어넣기 - 수정해서 가라데이터 집어넣어줘야함
 			pstmt = conn.prepareStatement("insert into booking values(booking_seq.NEXTVAL,?,?,?,?,?,?,?,?,'N',?,?,?)");
 			/*pstmt.setInt(1, booking.getBkNo());*/
@@ -58,25 +59,35 @@ public class BookingDBBean {
             if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
             if (conn != null) try { conn.close(); } catch(SQLException ex) {}
         }
+		conn.commit();
+		conn.setAutoCommit(true);
     }
 	
 	// insert된 예약 건에 대한 매장확인 (confirm_yn컬럼의 값을 Y로 업데이트)
 	// confirm_yn이 y로 업데이트 되면 store_list 테이블의 avl_tbl_cnt 값은 trigger에 의하여 변경됨.
-	public void updateConfirm(int store_no) throws Exception{
+	public void updateConfirm(int bk_no) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null; 
 		try{
 			conn = getConnection();
-			pstmt = conn.prepareStatement("update booking set confirm_yn = 'Y' where store_no = ?");
-			pstmt.setInt(1, store_no);
+			conn.setAutoCommit(false);
+			pstmt = conn.prepareStatement("update booking set confirm_yn = 'Y' where bk_no = ?");
+			pstmt.setInt(1, bk_no);
 			pstmt.executeUpdate();
-		}catch(Exception e) {
+		}
+		
+		
+		
+		catch(Exception e) {
 			e.printStackTrace();
 		
 		} finally {
             if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
             if (conn != null) try { conn.close(); } catch(SQLException ex) {}
         }
+		conn.commit();
+		conn.setAutoCommit(true);
+		
     } //updateConfirm ends.
 	
 	// 예약건 중에서 해당매장에 해당하는 예약건만 관리자 화면에서 뿌려주는 메소드  

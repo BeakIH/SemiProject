@@ -7,10 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>BABSAZO</title>
 
-<!-- Bootstrap -->
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans"
 	rel="stylesheet" />
@@ -24,11 +21,8 @@
 <link href="../../../lib/Magnific-Popup/magnific-popup.css"
 	rel="stylesheet">
 <link href="../../../css/style.css" rel="stylesheet">
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../../lib/jquery-3.2.1.min.js"></script>
 <script src="../../../lib/popper.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../lib/selectric/jquery.selectric.js"></script>
 <script src="../../../lib/aos/aos.js"></script>
@@ -37,50 +31,34 @@
 <script src="../../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
 <script src="../../../lib/lib.js"></script>
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 	<div id="main">
-
-
 		<article class="container">
 			<div class="page-header">
 				<h1>
 					회원가입 <small> BABSAZO 회원만의 다양한 할인 혜택 및 프로모션이 기다리고 있어요!</small>
 				</h1>
 			</div>
-
-
-			<div class="col-md-6 col-md-offset-3">
-
-				<div class="form-group">
-
-
-					<script type="text/javascript">
-					
-					
+		<div class="col-md-6 col-md-offset-3">
+	<div class="form-group">
+	<script type="text/javascript">
+			
 					// 중복처리
-						
+					
 						function ConfirmId(){
 						
 						var id = document.getElementById("inputID").value;
 							if(document.getElementById("inputID").value == "") {
-							alert('사용하실 ID를 입력하세요.');
-							return;
+								alert('사용하실 ID를 입력하세요.');
+								return;
+							}else{
+								url = "ConfirmId.jsp?id="+id;
+								open(url, "confirm","toolbar=no,location=no,status=no,scrollbars=no,resizable=no");		
+							}
 						}
-						
-						url = "ConfirmId.jsp?id="+id;
-						open(url, "confirm","toolbar=no,location=no,status=no,scrollbars=no,resizable=no");
-						}
-						
-						
-						
-						// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+		
+						// 아이디, 비밀번호가 입력 확인하는 함수
 						function checkValue() {
 							if (!document.userInfo.mem_id.value) {
 								alert("아이디를 입력하세요.");
@@ -92,14 +70,12 @@
 								return false;
 							}
 
-							// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+							// 비밀번호와 비밀번호 확인  확인
 							if (document.userInfo.password.value != document.userInfo.passwordcheck.value) {
 								alert("비밀번호를 동일하게 입력하세요.");
 								return false;
-
 							}
-							
-							
+											
 						}
 
 						// 취소 버튼 클릭시 로그인 화면으로 이동
@@ -107,10 +83,7 @@
 							location.href = "LoginForm.jsp";
 						}
 					</script>
-
-
-					<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
-					<!-- 값(파라미터) 전송은 POST 방식, 전송할 페이지는 JoinPro.jsp -->
+					
 					<form method="get" action="/SemiProject/jsp/member/view/JoinYeah.do" name="userInfo" onsubmit="return checkValue()">
 
 						<table>
@@ -136,11 +109,9 @@
                         </select>
                      &nbsp; <input type="text" name="birthdd" maxlength="2" placeholder="일" size="6" >
                     </td>  
-							
 							 </tr>
 							<p class="help-block">기념일 입력시 쿠폰을 발급해드려요</p>
 							</div>
-
 							<br>
                           	<tr> -->
 								<div class="form-group">
@@ -167,12 +138,9 @@
 													class="fa fa-edit spaceLeft"></i>
 											</button>
 										</span>
-							</tr>
-							</div>
+							</tr>	</div>
 
-							<br>
-
-							<tr>
+							<br>	<tr>
 								<div class="form-group">
 									<label for="InputPassword1"><font size="4em"
 										color="52478B">비밀번호</font></label>
@@ -180,9 +148,7 @@
 										maxlength="50" class="form-control" id="password"
 										placeholder="비밀번호" required>
 								</div>
-							</tr>
-
-							<br>
+							</tr>	<br>
 
 							<tr>
 								<div class="form-group">
@@ -194,9 +160,7 @@
 										id="passwordcheck" placeholder="비밀번호 확인" required>
 									<p class="help-block">비밀번호 확인을 위해 다시한번 입력해주세요</p>
 								</div>
-							</tr>
-
-							<br>
+							</tr><br>
                       	<div class="form-group">
 								<label for="username"><font size="4em" color="52478B">휴대폰 번호</font></label>
 								<td id="title"></td> <input type="tel" name="mem_tel"
@@ -229,11 +193,11 @@
 									</span>
 								</div>
 								<div class="form-group">
-									<!-- 여기 우편번호가 들어감 -->
+								
 									<input type="text" class="form-control" id="zip_code"
 										placeholder="우편번호를 입력하세요" required>
 								</div>
-								<!-- name="chk_info" -->
+							
 								<div>
 									<input type="checkbox" value="동의">우편으로 BABSAZO 소식지를 받겠습니다
 								</div>
@@ -258,16 +222,28 @@
                         </select>  -->
 
 								<div class="form-group">
-									<font size="4em" color="52478B">이메일 수신여부</label></font>
-									<td id="title"></td> BABSAZO 이메일 뉴스레터 수신에 동의합니다<br>
-							    	 예<input type="radio" name="email_yn" value="y">
-                                                                                    아니오<input type="radio" name="email_yn" value="n">
-									<p class="help-block">(이메일 BABSAZO 뉴스레터 쿠폰 발급과 이벤트 참여가 가능합니다)</p>
-								</div>
+									<font size="4em" color="52478B">이메일 수신여부</label></font><br>
+								 <br>
+							
+								  <p class="help-block">발신되는 모든 뉴스레터는 BABSAZO 타워 매장의 쿠폰이 포함되어 있습니다</p>
+								<p class="help-block"> 또한 이벤트 페이지를 통해 포인트 적립 및 초대권의 혜택을 받아보세요</p>
+						
+								<button type="button" class="btn btn-outline-secondary" disabled role="button" aria-pressed="true">
+								  BABSAZO 이메일 뉴스레터 수신에 동의합니다 </button><hr>
+								  
 
-								<br>
+<div class="form-group">
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="email_yn" id="option1" autocomplete="off" checked value="y"> 예
+  </label>&nbsp; &nbsp; &nbsp; &nbsp;
+  <label class="btn btn-secondary">
+    <input type="radio" name="email_yn" id="option2" autocomplete="off" value="n"> 아니오
+  </label>
+ </div> </div></div></div><br>
 
-								<!--  <div class="form-group">
+	<!--  <div class="form-group">
+								
                <label for="username"><font size="4em" color="52478B">성별</label>
                <td id="title"></td> 
               <input type="radio" name="gender" value="남" checked >남
@@ -276,75 +252,65 @@
                 </tr><br><br>  -->
                  			
                  			<div class="form-group">
-                 			<label for="username"><font size="4em" color="52478B"> 관심 BABSAZO 메장</font></label>
+                 			<label for="username"><font size="4em" color="52478B"> 관심 BABSAZO 매장</font></label>
                  			<br>
-							
-							
-						
-						  <div class="checkbox" id="store"> 한식
-						  <hr>
+							<br>
+						  한식<hr><div class="checkbox" id="store">
 			
 														
 														<input type="checkbox" name="store0" value="조양관" id="store0">
 														<label for="store0">조양관</label>
-														<input type="checkbox" name="store1" value="석양" id="store1">
-														<label for="store1">석양</label>
-														<input type="checkbox" name="store2" value="스믓스" id="store2">
-														<label for="store2">스믓스</label>
+														<input type="checkbox" name="store1" value="스믓스" id="store1">
+														<label for="store1">스믓스</label>
+														<input type="checkbox" name="store2" value="원기정" id="store2">
+														<label for="store2">원기정</label>
 														<input type="checkbox" name="store3" value="오라방" id="store3">
 														<label for="store3">오라방</label>
-														<input type="checkbox" name="store4" value="큐스닭강정" id="store4">
-														<label for="store4">큐스닭강정</label>
+														<div class="checkbox" id="store">
+														<input type="checkbox" name="store4" value="밀면집" id="store4">
+														<label for="store4">밀면집</label>
 														<input type="checkbox" name="store5" value="꽃추장" id="store5">
 														<label for="store5">꽃추장</label>
 														<input type="checkbox" name="store6" value="태양식당" id="store6">
 														<label for="store6">태양식당</label>
 														<input type="checkbox" name="store7" value="라연" id="store7">
 														<label for="store7">라연</label>
-														<input type="checkbox" name="store8" value="원기정" id="store8">
-														<label for="store8">원기정</label>
+														<div class="checkbox" id="store">
+														<input type="checkbox" name="store8" value="석양" id="store8">
+														<label for="store8">석양</label>
 														<input type="checkbox" name="store9" value="한강껍데기" id="store9">
 														<label for="store9">한강껍데기</label>
-														<input type="checkbox" name="store10" value="밀면집" id="store10">
-														<label for="store10">밀면집</label>
+														<input type="checkbox" name="store10" value="큐스닭강정" id="store10">
+														<label for="store10">큐스닭강정</label>
 														<input type="checkbox" name="store11" value="홍두깨손칼국수" id="store11">
 														<label for="store11">홍두깨손칼국수</label>
-							
-							
-							</div>
-							
-							<div class="checkbox" id="store"> 일식
-									  <hr>
-						  
-														
-														<input type="checkbox" name="store12" value="미자카야" id="store12">
+								</div>
+								일식  <hr><div class="checkbox" id="store"> 
+						  	<input type="checkbox" name="store12" value="미자카야" id="store12">
 														<label for="store12">미자카야</label>
 														<input type="checkbox" name="store13" value="가마덴" id="store13">
 														<label for="store13">가마덴</label>
 														<input type="checkbox" name="store14" value="이치젠" id="store14">
 														<label for="store14">이치젠</label>
-														<input type="checkbox" name="store15" value="로사미나미" id="store15">
-														<label for="store15">로사미나미</label>
+														<div class="checkbox" id="store">
+														<input type="checkbox" name="store15" value="카페나하" id="store15">
+														<label for="store15">카페나하</label>
 														<input type="checkbox" name="store16" value="만뽀" id="store16">
 														<label for="store16">만뽀</label>
-														<input type="checkbox" name="store17" value="카페나하" id="store17">
-														<label for="store17">카페나하</label>
+														<input type="checkbox" name="store17" value="로사미나미" id="store17">
+														<label for="store17">로사미나미</label>
 							</div>
-							<div class="checkbox" id="store"> 중식 
-							<hr>
-							
-														
+							중식<hr><div class="checkbox" id="store"> 
 														<input type="checkbox" name="store18" value="차이" id="store18">
 														<label for="store18">차이</label>
-														<input type="checkbox" name="store19" value="동일루" id="store19">
-														<label for="store19">동일루</label>
-														<input type="checkbox" name="store20" value="경화루" id="store20">
-														<label for="store20">경화루</label>
-														<input type="checkbox" name="store21" value="가향" id="store21">
-														<label for="store21">가향</label>
+														<input type="checkbox" name="store19" value="가향" id="store19">
+														<label for="store19">가향</label> 
+														<input type="checkbox" name="store20" value="동일루" id="store20">
+														<label for="store20">동일루</label>
+														<input type="checkbox" name="store21" value="경화루" id="store21">
+														<label for="store21">경화루</label>
 							</div>
-								<div class="checkbox" id="store"> 양식
-								<hr>
+								양식<hr><div class="checkbox" id="store"> 
 														
 														<input type="checkbox" name="store22" value="엘본더테이블" id="store22">
 														<label for="store22">엘본더테이블</label>
@@ -352,41 +318,38 @@
 														<label for="store23">미스티</label>
 														<input type="checkbox" name="store24" value="다이닝비" id="store24">
 														<label for="store24">다이닝비</label>
-														<input type="checkbox" name="store25" value="문인더랩" id="store25">
-														<label for="store25">문인더랩</label>
-														<input type="checkbox" name="store26" value="베를린키친" id="store26">
-														<label for="store26">베를린키친</label>
-														<input type="checkbox" name="store27" value="주오일식당" id="store27">
-														<label for="store27">주오일식당</label>
-														<input type="checkbox" name="store28" value="파이브테이블즈" id="store28">
-														<label for="store28">파이브테이블즈</label>
-														<input type="checkbox" name="store29" value="시크릿" id="store29">
-														<label for="store29">시크릿</label>
+														<input type="checkbox" name="store25" value="주오일식당"  id="store25">
+														<label for="store25">주오일식당</label>
+														<div class="checkbox" id="store">
+														<input type="checkbox" name="store26" value="파이브테이블즈" id="store26">
+														<label for="store26">파이브테이블즈</label>
+														<input type="checkbox" name="store27" value="시크릿" id="store27">
+														<label for="store27">시크릿</label>
+														<input type="checkbox" name="store28" value="문인더랩" id="store28">
+														<label for="store28">문인더랩</label>
+														<input type="checkbox" name="store29" value="베를린키친" id="store29">
+														<label for="store29">베를린키친</label>
 							</div>
-							<div class="checkbox" id="store"> 기타
-							<hr>
-														
-														<input type="checkbox" name="store30" value="찍먹닭" id="store30">
+							기타<hr><div class="checkbox" id="store"> 
+				                                       	<input type="checkbox" name="store30" value="찍먹닭" id="store30">
 														<label for="store30">찍먹닭</label>
-														<input type="checkbox" name="store31" value="보라초" id="store31">
-														<label for="store31">보라초</label>
-														<input type="checkbox" name="store32" value="발리인망원" id="store32">
-														<label for="store32">발리인망원</label>
-														<input type="checkbox" name="store33" value="프롬하노이" id="store33">
-														<label for="store33">프롬하노이</label>
-														<input type="checkbox" name="store34" value="라오삐약" id="store34">
-														<label for="store34">라오삐약</label>
+														<input type="checkbox" name="store31" value="발리인망원" id="store31">
+														<label for="store31">발리인망원</label>
+														<input type="checkbox" name="store32" value="라오삐약" id="store32">
+														<label for="store32">라오삐약</label>
+														<div class="checkbox" id="store"> 
+														<input type="checkbox" name="store33" value="보라초" id="store33">
+														<label for="store33">보라초</label>
+														<input type="checkbox" name="store34" value="프롬하노이" id="store34">
+														<label for="store34">프롬하노이</label>
 							</div>
-								
 									<p class="help-block">해당 매장의 쿠폰 발행시 자동 발급해드립니다</p>
 								</div>
 									
 									<td id="title"></td> <input type="text" name="fvrt_str_1"
 										class="form-control" id="username"
 										placeholder="BABSAZO 타워에 입점 희망하시는 매장이 있다면 적어주세요">
-									
-				
-
+								
 								<br>
 
 								<div class="form-group">
@@ -420,18 +383,12 @@
 								<input type="text" name="fvrt_str_2" class="form-control"
 									id="username" placeholder="기타">
 							</div>
-							
-							
-							<!-- <input type="submit" value="가입"/>  
-            <input type="button" value="취소" onclick="goLoginForm()">-->
-
-
 						</table>
 						<br>
 						<div class="form-group">
 							<div data-toggle="buttons">
-								<label class="btn btn-info active"> <span class="fa fa-check"></span> 
-								<input id="agree" name="agree" type="checkbox" autocomplete="off" required>
+								 <label class="btn btn-info active"> <span class="fa fa-check"></span> 
+								<input id="agree" name="agree" type="checkbox" required>
 								</label> <a href="#"><font size="2em">이용약관 및 개인정보 처리방침에동의합니다.(필수)</a></font>
 							</div>
 						</div>

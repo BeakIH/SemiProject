@@ -17,6 +17,7 @@ public class MemberBean
     private String email_yn;        
     private String fvrt_str_1;      
     private String fvrt_str_2;
+   // private int joindate;
     
 	public int getMem_no() {
 		return mem_no;
@@ -78,7 +79,11 @@ public class MemberBean
 	public void setFvrt_str_2(String fvrt_str_2) {
 		this.fvrt_str_2 = fvrt_str_2;
 	}
+	/*public int getJoindate() {
+	*	return joindate;
+	*}
+	*public void setJoindate(int joindate) {
+		this.joindate = joindate; */	
     
-    
+
 }
- 

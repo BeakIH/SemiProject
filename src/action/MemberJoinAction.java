@@ -22,13 +22,38 @@ public class MemberJoinAction implements CommandAction{
         	if(!(foodbox2==null || foodbox2=="")) {
         		totalfoodcheckbox += foodbox2;
         	}
-        }
+        
         		
         String checkbox = request.getParameter("food");
         System.out.println("확인");
         System.out.println("checkbox::"+checkbox);
         System.out.println("종료");
         ActionForward forward = new ActionForward();
+        
+	   }
+	   
+         
+         request.setCharacterEncoding("utf-8"); // 인코딩
+         
+        
+        
+       String totalstorecheckkbox="";
+	   
+       for(int i=0;i<35;i++) {
+       	String storebox1="store"+i;
+       	String storebox2=request.getParameter(storebox1);
+       	if(!(storebox2==null || storebox2=="")) {
+       		totalstorecheckkbox += storebox2;
+       	}
+       }
+       		
+       String checkbox = request.getParameter("store");
+       System.out.println("확인");
+       System.out.println("checkbox::"+checkbox);
+       System.out.println("종료");
+       ActionForward forward = new ActionForward();
+       
+	   
 
         MemberDAO dao = MemberDAO.getInstance();
 
@@ -45,7 +70,7 @@ public class MemberJoinAction implements CommandAction{
         member.setAddress(request.getParameter("address"));
         member.setEmail(request.getParameter("email"));
         member.setEmail_yn(request.getParameter("email_yn"));
-        member.setFvrt_str_1(request.getParameter("fvrt_str_1"));
+        member.setFvrt_str_1(totalstorecheckkbox);
         member.setFvrt_str_2(totalfoodcheckbox);
         
         

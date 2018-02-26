@@ -251,7 +251,7 @@ function fillInAddress() {
         </div>
       </li>
        <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> -->
-       <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li>
+       <li class="nav-item add-listing" style="margin-top:20px"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li>
     </ul>
     
   </div>
@@ -534,7 +534,7 @@ function fillInAddress() {
                   <span class="list-group-item heading"> 내 계정 관리</span>
                   <a href="../sessionMenu/ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> ${name}님 정보</a>
                   <a href="../sessionMenu/ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="../sessionMenu/MyCoupon.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 내쿠폰보기</a>
+                  <a href="../sessionMenu/MyCoupon.do" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 내쿠폰보기</a>
                   <a href="../sessionMenu/NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
 				  <a href="../sessionMenu/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-bitcoin"></i> BABSAZO 멤버십</a>
 				  <a href="../sessionMenu/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>

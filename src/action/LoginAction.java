@@ -14,7 +14,7 @@ public class LoginAction implements CommandAction {
       request.setCharacterEncoding("UTF-8");
 
       LoginDBBean loginDao = LoginDBBean.getInstance();
-
+      
       String userid = request.getParameter("userid");
       String userpw = request.getParameter("userpw");
       
@@ -31,7 +31,12 @@ public class LoginAction implements CommandAction {
          request.getSession().setAttribute("storeNo", result.get("storeNo"));
          request.getSession().setAttribute("storeNm", result.get("storeNm"));
       }
-
+      
+      String url = (String) request.getAttribute("url");
+      
+      if(url != null) {
+      request.setAttribute("url", url);
+      }
       // 0 : ID 존재 비밀번호 불일치 / 1 : 일반회원 로그인 성공 / 2 : 관리자 로그인 성공 / 3 : 비회원
 
       return "/jsp/login/loginPro.jsp";

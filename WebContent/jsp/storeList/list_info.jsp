@@ -78,7 +78,9 @@ function realtimeClock() {
     	 var posX=screen.availWidth/2-sizeX/2;
     	 var posY=screen.availHeight/2-sizeY/2;
 		 myWin=window.open(pUrl,pName,"width="+sizeX+",height="+sizeY+",top="+posY+",left="+posX);     
- 	
+		
+
+
      
      }
      function winClose() {
@@ -94,7 +96,7 @@ function realtimeClock() {
      function BookFail2(){
     	/*  swal ( " 예약 불가 " , " 죄송합니다,\n 현재 좌석이 없어 예약 하실 수 없습니다. " , "error" )   ; */
     	 alert("로그인 후 이용해 주세요.")
-    	 location.href="../member/SigninCon.jsp"; 
+    	 location.href="../member/SigninCon.do?url=/SemiProject/jsp/storeList/list_info.do?store_no="+$('#storeNo').val(); 
     	 
     	 
     	 
@@ -453,7 +455,7 @@ function realtimeClock() {
 												<c:otherwise>
 												<a href="#" class="btn btn-lg btn-inverse"
 													onclick="winOpen()" style="background-color:#FFBF00; border-width: 0px;"><i class="fa fa-cloud-download"
-													aria-hidden="true" ></i>예약하기</a>
+													aria-hidden="true" ></i>예약신청</a>
 												</c:otherwise>
 												</c:choose>
 												
