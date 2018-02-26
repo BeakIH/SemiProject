@@ -74,6 +74,8 @@ public class BookingDBBean {
 			pstmt = conn.prepareStatement("update booking set confirm_yn = 'Y' where bk_no = ?");
 			pstmt.setInt(1, bk_no);
 			pstmt.executeUpdate();
+			conn.commit();
+			conn.setAutoCommit(true);
 		}
 		
 		
@@ -85,8 +87,6 @@ public class BookingDBBean {
             if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
             if (conn != null) try { conn.close(); } catch(SQLException ex) {}
         }
-		conn.commit();
-		conn.setAutoCommit(true);
 		
     } //updateConfirm ends.
 	

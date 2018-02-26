@@ -201,7 +201,7 @@
         </div>
       </li>
       <div>
-      <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
+      <button class="btn btn-primary" style="margin-top:20px" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
       </div>
     </ul>
     
