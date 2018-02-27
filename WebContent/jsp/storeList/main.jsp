@@ -47,69 +47,7 @@ $(document).ready(function(){
 	});
 });
 
-/* $(document).ready(function(){
-	$('input:radio[name=searchn]'.click(function()){
-		alert('변경');
-	});
-}); */
 
-// 사이드 바 기능
-/* function openNav() { // 여기에 ajax 기능 추가
-    document.getElementById("mySidenav").style.width = "250px";
-    alert('확인');
-    location.href='sideList.do';
-    // ajax
-    $.ajax({
-    	// 설정
-    	url: "jsp/storeList/sideList.do",
-		type: "get",
-		data:  안넘겨줘도 실행하도록 
-    	async: false,
-    	// 성공시
-    	success:function(data){
-    		
-    	}
-    	// 에러시
-    	error: function(xhr, textStatus, errorThrown) {
-			$("div").html("<div>" + textStatus + " (HTTP-" + xhr.status + " / " + errorThrown + ")</div>" );
-		}
-    })
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-} */
-
-/* 자동완성 */
-/* $(function(){
-    $( "#autocomplete" ).autocomplete({
-        source : function( request, response ) {
-             $.ajax({
-                    type: 'post',
-                    url: "/jsp/storeList/main.do",
-                    dataType: "json",
-                    //request.term = $("#autocomplete").val()
-                    data: { value : request.term },
-                    success: function(data) {
-                        //서버에서 json 데이터 response 후 목록에 뿌려주기 위함
-                        response(
-                            $.map(data, function(item) {
-                                return {
-                                    label: item.data,
-                                    value: item.data
-                                }
-                            })
-                        );
-                    }
-               });
-            },
-        //조회를 위한 최소글자수
-        minLength: 2,
-        select: function( event, ui ) {
-            // 만약 검색리스트에서 선택하였을때 선택한 데이터에 의한 이벤트발생
-        }
-    });
-}) */
 
 </script>
 
@@ -175,11 +113,6 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
         </a>
         <div class="dropdown-menu">
             <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">매장보기</a>
-            <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
-            <a href="property_listing_map.html" class="dropdown-item">Map View</a>
-            <a href="property_single.html" class="dropdown-item">Single View 1</a>
-            <a href="property_single2.html" class="dropdown-item">Single View 2</a>
-            <a href="property_single3.html" class="dropdown-item">Single View 3</a> -->
         </div>
       </li>
       
@@ -201,125 +134,25 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <a href="404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
-      <!--
-      <li class="nav-item dropdown megamenu">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Pages
-        </a>
-        <div class="dropdown-menu">
-        <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col col-md-8">
-            <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Homepage</li>
-                  <li><a href="index.html">Homepage 1</a></li>
-                  <li><a href="index2.html">Homepage 2</a></li>
-                  <li><a href="index3.html">Homepage 3</a></li>
-                  <li><a href="index4.html">Homepage 4</a></li>
-                  <li><a href="index5.html">Homepage 5</a></li>
-                  <li><a href="index6.html">Homepage 6</a></li>
-                  <li><a href="main.do">메인페이지</a></li>
-                  <li class="title">Login Pages</li>
-                  <li><a href="signin.html">Signin</a></li>
-                  <li><a href="register.html">Register</a></li>
-                  <li><a href="forgot-password.html">Forgot Password</a></li>
-                 </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Property Listing</li>
-                  <li><a href="list.do">목록 보기</a></li>
-                  <li><a href="property_grid.html">Grid View</a></li>
-                  <li><a href="property_listing_map.html">Map View</a></li>
-                  <li class="title">Single Property</li>
-                  <li><a href="property_single.html">Single View 1</a></li>
-                  <li><a href="property_single2.html">Single View 2</a></li>
-                  <li><a href="property_single3.html">Single View 3</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Other Pages</li>
-                  <li><a href="plans.html">Plans</a></li>
-                  <li><a href="information_page.html">Information Page</a></li>
-                  <li><a href="coming_soon.html">Coming Soon</a></li>
-                  <li><a href="404_error.html">Error Page</a></li>
-                  <li><a href="success.html">Success Page</a></li>
-                  <li><a href="contact.html">Contact Page</a></li>
-                  <li><a href="compare.html">Compare Properties</a></li>
-                  <li class="title">Agent Pages</li>
-                  <li><a href="agent_list.html">Agent List</a></li>
-                  <li><a href="agent.html">Agent Profile</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Account Pages</li>
-                  <li><a href="my_listing_add.html">Add Listing</a></li>
-                <li><a href="my_bookmarked_listings.html">Bookmarked Listing</a></li>
-                  <li><a href="my_listings.html">My Listings</a></li>
-                  <li><a href="my_profile.html">My Profile</a></li>
-                <li><a href="my_password.html">Change Password</a></li>
-                <li><a href="my_notifications.html">Notifications</a></li>
-                <li><a href="my_membership.html">Membership</a></li>
-                <li><a href="my_payments.html">Payments</a></li>
-                <li><a href="my_account.html">Account</a></li>
-                <li class="title">Blog Pages</li>
-                  <li><a href="blog.html">Blog Archive</a></li>
-                  <li><a href="blog_single.html">Blog Single</a></li>
-                </ul>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
-        </div>
-      </li> -->
       
     </ul>
     
     <ul class="navbar-nav ml-auto">
-      
-      
-      <!-- <li class="nav-item dropdown user-account">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 로그인
-        </a>
-        <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item">My Profile</a>
-            <a href="my_password.html" class="dropdown-item">Change Password</a>
-            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-            <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a>
-            <a href="my_account.html" class="dropdown-item">Account</a>
-        </div>
-      </li> -->
        <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
-       
-      <!-- <li class="nav-item add-listing"><a class="nav-link" href="/jsp/member/SigninCon.jsp"><span> -->
-     <!--  <i class="fa fa-power-off" ></i> 로그인 </span></a></li> -->
-    
     </ul>
     
   </div>
   </div>
 </nav>
 <!-- 사이드 바  -->
-<!-- <div id="mySidenav" class="sidenav" onMouseOut="closeNav()"> -->
 <div id="mySidenav" class="sidenav">
 <!-- <div id="mySidenav" class="sidenav"> -->
 	<br>
 	<br>
-  	<!-- <a href="#">Services</a> -->
   	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
-  	<!-- <a href="#">Clients</a>
-  	<a href="#">Contact</a> -->
-	<!-- <div style="display:inline-block;background-color:none;width:80px;">매장명</div><div style="display:inline-block;width:95px;">현재인원</div><div style="display:inline-block;width:80px;">상태</div> -->
 	<div class="sideMenu" style="width:95px;padding-left: 45px;">매장명</div>
 	<div class="sideMenu" style="width:95px;padding-left: 50px;">이용중</div>
-	<div class="sideMenu" style="width:95px;padding-left: 35px;">이용가능상태</div>
+	<div class="sideMenu" style="width:95px;padding-left: 48px;">상태</div>
   	<c:forEach var="article" items="${articleList}">
   	<table>
   		<tr>
@@ -338,18 +171,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
   		</tr>
   	</table>
 	</c:forEach>
-	<%-- <a id="subside" href="list_info.do?store_no=${article.store_no }"><div style="display:inline-block;background-color:red;width:80px;">${article.store_nm }</div><div style="display:inline-block;width:80px;">${article.avl_tbl_cnt }</div><div style="display:inline-block;width:80px;">예약가능</div></a> --%>
-	<!-- foreach 문 사용 -->
-	
-	<%-- 
-	<c:forEach var="article" items="${articleList}">
-	<a></a>
-	</c:forEach>
-	--%>
-	
 </div>
 
-<!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()"></span> -->
 <span style="font-size:30px;cursor:pointer" onclick="openNav()"></span>
 <!-- 사이드 바 end -->
 <div class="home-search">
@@ -361,20 +184,17 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           <h2> B A B S A Z O</h2>
           <h3> 밥사조와 함께하는 식도락 여행, 시작해볼까요  </h3>
         </div>
-        <!-- <form action="/jsp/storeList/list.do"></form> -->
         <form action="/SemiProject/jsp/storeList/list.do"><!-- 이부분을 test2로 -->
           <div class="row justify-content-md-center">
             <div class="col-md-9 col-lg-8">
             <div class="input-group input-group-lg">
       <input type="text" class="form-control" name="search" id="autocomplete" placeholder="ex) 자장면, 김치찌개, 파스타"> <!-- 여기여깅 -->
    	 <span class="input-group-btn">
-      	 <!-- <button class="btn btn-white" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button> -->
          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button> 
       </span>
     </div>
     <div class="search-in">
 <div class="radio-box" id ="food">
-<!-- <button class="btn btn-primary" type="button"><i class="fas fa-utensils"> 음식명 </i></button>  -->
 <input type="radio" name="searchn" value="0" id="rent22" checked >
 							<!-- label 태그의 for 속성은 해당 속성값과 같은 id를 가진 대상과 연결시켜줌 -->
 <label class="radio-inline" for="rent22" id ="food" >음식명으로 찾기</label><!-- placeholder 변경을 위한 value값 추가, 파라미터와는 상관x -->
@@ -389,9 +209,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
     </div>
     </div>
           </div>
-          
         </form>
-        
       </div>
     </div>
   </div>
@@ -489,268 +307,6 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
       </div>
     </div>
   </div>
-  <!-- <div class="feature-box centered">
-    <div data-aos="fade-up">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-lg-12 col-xl-10">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="content-box">
-                  <div class="image"> <img src="../img/demo/icons/1.png" width="100" alt=""> </div>
-                  <h4>Lifestyle</h4>
-                  <div class="caption">Create your best-ever home with the latest trends in renovating, decorating and more.</div>
-                  <div class="button"><a href="#">FIND YOUR INSPIRATION</a></div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="content-box">
-                  <div class="image"> <img src="../img/demo/icons/2.png" width="100" alt=""> </div>
-                  <h4>International</h4>
-                  <div class="caption">Thinking abroad? You can now dream and discover international properties.</div>
-                  <div class="button"><a href="#">CHOOSE A COUNTRY</a></div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="content-box">
-                  <div class="image"> <img src="../img/demo/icons/3.png" width="100" alt=""> </div>
-                  <h4>Sell</h4>
-                  <div class="caption">Understand your local market, learn how to get the best price for your property and find agents in your area.</div>
-                  <div class="button"><a href="#">EXPLORE NOW</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="feature-box centered gray">
-    <div data-aos="fade-up">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-lg-12 col-xl-10">
-            <div class="item-listing grid">
-            <div class="main-title"><span>Featured Properties</span></div>
-       		<div class="main-title-description">Thinking abroad? You can now dream and discover international properties</div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="item">
-                  	리스트 목록 이미지 관련 경로
-                    <div class="item-image"><a href="property_single.html"><img src="../img/demo/property/1.jpg" class="img-fluid" alt="">
-                      <div class="item-meta">
-                        <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                      </div>
-                      <div class="item-badges">
-                        <div class="item-badge-left">Sponsored</div>
-                        <div class="item-badge-right">For Sale</div>
-                      </div>
-                      </a> <a href="#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">3 bed semi-detached house</h3>
-                      <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="item">
-                    <div class="item-image"><a href="property_single.html"><img src="../img/demo/property/2.jpg" class="img-fluid" alt="">
-                      <div class="item-meta">
-                        <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                      </div>
-                      <div class="item-badges">
-                        <div class="item-badge-left">Sponsored</div>
-                        <div class="item-badge-right">For Sale</div>
-                      </div>
-                      </a> <a href="#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">3 bed semi-detached house</h3>
-                      <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="item">
-                    <div class="item-image"><a href="property_single.html"><img src="../img/demo/property/3.jpg" class="img-fluid" alt="">
-                      <div class="item-meta">
-                        <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                      </div>
-                      <div class="item-badges">
-                        <div class="item-badge-left">Sponsored</div>
-                        <div class="item-badge-right">For Sale</div>
-                      </div>
-                      </a> <a href="#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">3 bed semi-detached house</h3>
-                      <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="feature-box centered">
-    <div data-aos="fade-up">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-lg-12 col-xl-10">
-            <div class="main-title"><span>What our clients say</span></div>
-            <div class="swiper-container testimonials">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="item content-box centered">
-                    <div class="image"> <img class="rounded-circle" src="../img/demo/profile.jpg" width="180" alt=""> </div>
-                    <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
-                    <div class="caption">The Brown Family</div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="item content-box centered">
-                    <div class="image"> <img class="rounded-circle" src="../img/demo/profile2.jpg" width="180" alt="">
-                      <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
-                      <div class="caption">The Brown Family</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="item content-box centered">
-                    <div class="image"> <img class="rounded-circle" src="../img/demo/profile3.jpg" width="180" alt="">
-                      <h4>Thank you for your quick and clear responses. They are much appreciated. This was a site that needed to go up fast and it has – customizations and all!</h4>
-                      <div class="caption">The Brown Family</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              Add Arrows
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-            <script>
-			var swiper = new Swiper('.swiper-container', {
-				loop: true,
-				centeredSlides: true,
-					autoplay: {
-					delay: 5000,
-					disableOnInteraction: false,
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					clickable: true,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});
-        	</script> 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="feature-box gray centered">
-    <div data-aos="fade-up">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-lg-12 col-xl-10">
-            <div class="main-title"><span>News &amp; Updates </span></div>
-            <div class="main-title-description">Stay up to date with the latest happenings.</div>
-            <div class="item-listing grid mb50">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="item">
-                    <div class="item-image"> <a href="blog_single.html"><img src="../img/demo/property/1.jpg" class="img-fluid" alt="">
-                      <div class="item-meta">
-                        <div class="item-price"><small>26th Oct 17</small> </div>
-                      </div>
-                      <div class="item-badges">
-                        <div class="item-badge-right">Legal</div>
-                      </div>
-                      </a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">Allianz invests 100m in Hines European Value Fund</h3>
-                      <div class="item-comments-count"><i class="fa fa-comment-o"></i> 3</div>
-                      <div class="item-author">By John Doe</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="item">
-                    <div class="item-image"> <a href="blog_single.html"><img src="../img/demo/property/1.jpg" class="img-fluid" alt="">
-                      <div class="item-meta">
-                        <div class="item-price"><small>26th Oct 17</small> </div>
-                      </div>
-                      <div class="item-badges">
-                        <div class="item-badge-right">Development</div>
-                      </div>
-                      </a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">Skanska signs 43.2m construction deal in Sollentuna</h3>
-                      <div class="item-comments-count"><i class="fa fa-comment-o"></i> 3</div>
-                      <div class="item-author">By John Doe</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="item">
-                    <div class="item-image"> <a href="blog_single.html"><img src="../img/demo/property/1.jpg" class="img-fluid" alt="">
-                      <div class="item-meta">
-                        <div class="item-price"><small>26th Oct 17</small> </div>
-                      </div>
-                      <div class="item-badges">
-                        <div class="item-badge-right category">Finance</div>
-                      </div>
-                      </a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">Baltic Horizon Fund plans next public offering of new units</h3>
-                      <div class="item-comments-count"><i class="fa fa-comment-o"></i> 3</div>
-                      <div class="item-author">By John Doe</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="text-center"><a href="#" class="btn btn-xlg btn-link">View All</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="feature-box centered pb0">
-    <div data-aos="fade-up">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-lg-10 col-xl-10">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="text-center mt50 mb50">
-                  <div class="main-title"><span>Connect with us from anywhere</span></div>
-                  <div class="main-title-description">Download the mobile app and enjoy the smoothest experience</div>
-                  <img src="../img/store/apple.svg" width="120" alt=""> <img src="../img/store/google.svg" width="120" alt=""> </div>
-              </div>
-              <div class="col-md-6"> <img src="../img/demo/mobile-app-hero.png" class="img-fluid" alt=""> </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-사이드바 버튼
-<div id="mySidenav" class="sidenav">
-  <br>
-  <br>
-  <a href="#">Services</a><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div> -->
 <button class="btn btn-primary btn-circle" id="sidebar-btn" onMouseOver="openNav()">바<br>로<br>가<br>기</button><!-- <i> 태그와 아무상관없음 -->
 <!-- 사이드바 버튼 end -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
@@ -761,13 +317,11 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
           <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
-            <!-- <p><span class="icon-uilove-realestate"></span></p> -->
             <p><span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
             	서울특별시 중구 남대문로 120<br>
            		대일빌딩3층 D CLASS<br>
-            <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
             <p class="text-muted">Copyright &copy; 2018<br />
               All rights reserved</p>
@@ -776,20 +330,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <ul class="list-unstyled">
               <li><a href="#"> About BABSAZO </a></li>
               <li><a href="#"> BABSAZO Introduction </a></li>
-              <!-- <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li> -->
             </ul>
           </div>
-          <!-- <div class="col-md-2 col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#">For Rent</a></li>
-              <li><a href="#">For Sale</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Property Guides</a></li>
-              <li><a href="#">Jobs</a></li>
-            </ul>
-          </div> -->
           <div class="col-md-4 col-sm-12">
             <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
             <form>
