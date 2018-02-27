@@ -6,6 +6,11 @@
 <html> 
 <head><title> </title></head>
 <body> 
+<c:if test="${messege!=null}">
+<script>
+alert('${messege}');
+</script>
+</c:if>
 <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered mt0">
               <h1>${storeNm} <small>우리 매장의 예약현황을 확인해보세요 </small></h1>
@@ -34,15 +39,12 @@
              <div class="item" data-aos="fade-up">
                 <div class="row">
                   <div class="col-md-3">
-                    <div class="item-image"> <img src="../../img/밥.png" class="img-fluid" alt=""> </div>
+                    <div class="item-image"> <img src="../../img/5.png" class="img-fluid" alt=""> </div>
                   </div>
                   <div class="col-md-9"> 
-                  <script>
-                  alert('${confirm.cofirmYn}')
-                  </script>
                   <c:choose>
                   <c:when test= "${confirm.cofirmYn=='N'}">
-                  <a href="bookingList.do?store_no=${confirm.storeNo}" class="btn btn-primary float-right">수락</a> &nbsp;
+                  <a href="bookingList.do?store_no=${confirm.storeNo}&bk_no=${confirm.bkNo}" class="btn btn-primary float-right">수락</a> &nbsp;
               </c:when>
               <c:otherwise>
               <a href="bookingList.do?store_no=${confirm.storeNo}" class="btn btn-primary float-right"> 완료</a> &nbsp;
@@ -52,9 +54,9 @@
                     <h3 class="item-title">예약자 : ${confirm.memNm }님 </a></h3>
                     <div class="item-description"> 예약번호 : ${confirm.bkNo }</i></div>
                     <div class="item-description"> 예약일시 : ${confirm.bkDate }</i></div>
-                    <div class="item-description">예약메뉴 : ${confirm.bkMenu } </div> 
+                    <div class="item-description"> 예약메뉴 : ${confirm.bkMenu } </div> 
                 <%-- <div class="item-description">예약인원(희망테이블수) : ${confirm.bk_cnt}명</div> --%>
-                    <div class="item-description">예약자 연락처: ${confirm.memTel}</div>
+                    <div class="item-description"> 예약자 연락처: ${confirm.memTel}</div>
                  </div>
                  <%-- 
                     <div class="item-actions"><!--  <a href="tel:02080226348"> -->

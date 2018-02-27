@@ -12,32 +12,34 @@
 <title>BABSAZO<decorator:title/></title>
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../lib/animate.css" rel="stylesheet">
+<link href="/SemiProject/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./SemiProject/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/SemiProject/ib/animate.css" rel="stylesheet">
 <c:if test="${errorpage!='0'}">
-<link href="../../lib/selectric/selectric.css" rel="stylesheet">
-<link href="../../lib/aos/aos.css" rel="stylesheet">
+<link href="/SemiProject/lib/selectric/selectric.css" rel="stylesheet">
+<link href="/SemiProject/lib/aos/aos.css" rel="stylesheet">
 </c:if>
-<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css" rel="stylesheet">
+<link href="/SemiProject/lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="/SemiProject/css/style.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../../lib/jquery-3.2.1.min.js"></script>
-<script src="../../lib/popper.min.js"></script>
+<script src="/SemiProject/lib/jquery-3.2.1.min.js"></script>
+<script src="/SemiProject/lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../lib/selectric/jquery.selectric.js"></script>
-<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="../../lib/tinymce/tinymce.min.js"></script>
-<script src="../../lib/aos/aos.js"></script>
-<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="../../lib/lib.js"></script>
-<script src="../../lib/checkValue.js"></script>
+<script src="/SemiProject/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/SemiProject/lib/selectric/jquery.selectric.js"></script>
+<script src="/SemiProject/lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="/SemiProject/lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="/SemiProject/lib/tinymce/tinymce.min.js"></script>
+<script src="/SemiProject/lib/aos/aos.js"></script>
+<script src="/SemiProject/lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="/SemiProject/lib/lib.js"></script>
+<script src="/SemiProject/lib/checkValue.js"></script>
 
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- <script>
 alert('${check}')
@@ -45,47 +47,47 @@ alert('${check}')
 <script>
 var placeSearch, autocomplete;
 var componentForm = {
-	//street_number: 'short_name',
-	//route: 'long_name',
-	locality: 'long_name',
-	administrative_area_level_1: 'long_name',
-	country: 'long_name',
-	postal_code: 'long_name'
+   //street_number: 'short_name',
+   //route: 'long_name',
+   locality: 'long_name',
+   administrative_area_level_1: 'long_name',
+   country: 'long_name',
+   postal_code: 'long_name'
 };
 
 function initAutocomplete() {
-	autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
-	autocomplete.addListener('place_changed', fillInAddress);
+   autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), {types: ['geocode']});
+   autocomplete.addListener('place_changed', fillInAddress);
 }
 
 function fillInAddress() {
-	var place = autocomplete.getPlace();
-	for (var component in componentForm) {
-		document.getElementById(component).value = '';
-		document.getElementById(component).disabled = false;
-	}
-	
-	for (var i = 0; i < place.address_components.length; i++) {
-		var addressType = place.address_components[i].types[0];
-		if (componentForm[addressType]) {
-			var val = place.address_components[i][componentForm[addressType]];
-			document.getElementById(addressType).value = val;
-		}
-	}
+   var place = autocomplete.getPlace();
+   for (var component in componentForm) {
+      document.getElementById(component).value = '';
+      document.getElementById(component).disabled = false;
+   }
+   
+   for (var i = 0; i < place.address_components.length; i++) {
+      var addressType = place.address_components[i].types[0];
+      if (componentForm[addressType]) {
+         var val = place.address_components[i][componentForm[addressType]];
+         document.getElementById(addressType).value = val;
+      }
+   }
 }
 </script> 
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script> 
 <script>
-	tinymce.init({
-		selector: '.text-editor',
-		height: 200,
-		menubar: false,
-		branding: false,
-		plugins: [
-			'lists link image preview',
-		],
-		toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
-	});
+   tinymce.init({
+      selector: '.text-editor',
+      height: 200,
+      menubar: false,
+      branding: false,
+      plugins: [
+         'lists link image preview',
+      ],
+      toolbar: 'undo redo | link | formatselect | bold italic underline  | alignleft aligncenter alignright alignjustify | bullist numlist'
+   });
         </script>
 <decorator:head/>
 </head>
@@ -99,11 +101,11 @@ function fillInAddress() {
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
   <div class="container">
   <!-- <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a> -->
-	<!-- <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>  
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+   <!-- <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>  
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span> -->
     <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
-	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+    <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
   </button>
@@ -112,7 +114,7 @@ function fillInAddress() {
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       	밥사조
+          밥사조
         <span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
@@ -122,7 +124,7 @@ function fillInAddress() {
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	조회
+            조회
         </a>
         <div class="dropdown-menu">
             <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">매장보기</a>
@@ -136,7 +138,7 @@ function fillInAddress() {
       
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	매장소식
+            매장소식
         </a>
         <div class="dropdown-menu">
             <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">공지사항</a>
@@ -145,7 +147,7 @@ function fillInAddress() {
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	도움말
+            도움말
         </a>
         <div class="dropdown-menu">
             <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">자주묻는 질문</a>
@@ -279,7 +281,7 @@ function fillInAddress() {
                    -->
                   <span class="list-group-item heading"> 매장관리  </span>
                   <a href="bookingList.do?store_no=${storeNo}" class="list-group-item d-flex justify-content-between align-items-center">
-                  	<span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
+                     <span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
                     <span class="badge badge-primary badge-pill">7</span>
                   </a>
                   <!-- <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-fw fa-plus-square-o"></i>미리주문 메뉴관리 </a> -->
@@ -287,9 +289,9 @@ function fillInAddress() {
                   <a href="storeInfo.jsp" class="list-group-item active"><i class="fa fa-fw fa-pencil"></i> 매장정보 변경</a>
                   <a href="passWord.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 관리자 비밀번호 변경 </a>
                   <!-- <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
-				  <a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> Membership</a>
-				  <a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
-				  <a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> Account</a> -->
+              <a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> Membership</a>
+              <a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
+              <a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> Account</a> -->
                   <span class="list-group-item heading"> 직원관리  </span>
                   <a href="createEmp.jsp" class="list-group-item"><i class="fa fa-fw fa-user"></i> 직원등록 </a>
                   <a href="management_list.do?store_no=${storeNo}" class="list-group-item"><i class="fa fa-fw fa-address-book"></i> 직원정보 </a>
@@ -325,7 +327,7 @@ function fillInAddress() {
     <span class="navbar-toggler-icon"></span> 
   </button> -->
   <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
-	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+    <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
 
@@ -333,7 +335,7 @@ function fillInAddress() {
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       	밥사조
+          밥사조
         <span class="sr-only">(current)</span>
         </a>
       <div class="dropdown-menu">
@@ -343,7 +345,7 @@ function fillInAddress() {
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	조회
+            조회
         </a>
         <div class="dropdown-menu">
             <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">매장보기</a>
@@ -357,7 +359,7 @@ function fillInAddress() {
       
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	매장소식
+            매장소식
         </a>
         <div class="dropdown-menu">
             <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">공지사항</a>
@@ -366,7 +368,7 @@ function fillInAddress() {
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	도움말
+            도움말
         </a>
         <div class="dropdown-menu">
             <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
@@ -472,7 +474,7 @@ function fillInAddress() {
        --%>
       <%--
       <li class="nav-item dropdown user-account">
-      	<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
         </a>
         <div class="dropdown-menu">
@@ -536,12 +538,12 @@ function fillInAddress() {
                   <a href="../sessionMenu/ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
                   <a href="../sessionMenu/MyCoupon.do" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 내쿠폰보기</a>
                   <a href="../sessionMenu/NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
-				  <a href="../sessionMenu/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-bitcoin"></i> BABSAZO 멤버십</a>
-				  <a href="../sessionMenu/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+              <a href="../sessionMenu/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-bitcoin"></i> BABSAZO 멤버십</a>
+              <a href="../sessionMenu/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
                   <!-- <a href="../sessionMenu/SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a> -->
-                </div> 
+                </div>
               </div>
-            </div> 
+            </div>
           </div>
           
          <!-- 데코레이터 -->
@@ -570,8 +572,8 @@ function fillInAddress() {
             <p><span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
-            	서울특별시 중구 남대문로 120<br>
-           		대일빌딩3층 D CLASS<br>
+               서울특별시 중구 남대문로 120<br>
+                 대일빌딩3층 D CLASS<br>
             <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
             </address>
             <p class="text-muted">Copyright &copy; 2018<br />

@@ -22,7 +22,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Real Estate</title>
+<title>밥은먹고다니니</title>
 
 <!-- Bootstrap -->
 <link
@@ -54,6 +54,7 @@
 <script src="../../lib/sidr/jquery.sidr.min.js"></script>
 <script src="../../lib/lib.js"></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- 나중에 아래쪽 script 문 따로 .js 파일 생성해서 정리해야함 -->
 <script>

@@ -23,7 +23,7 @@
 		<meta http-equiv="refresh" content="0;URL='${url}'">  
 		</c:if>
 		<c:if test="${url==null}">
-		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/admin/bookingList.jsp'"> 
+		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/storeList/list.do'"> 
 		</c:if>
 	</c:when>
 	
