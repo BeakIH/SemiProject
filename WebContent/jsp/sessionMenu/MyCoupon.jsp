@@ -54,7 +54,7 @@
                     <div class="item-image"> <a href="property_single.html"><img src="../../img/mycoupon_img/BABMonth.png" class="img-fluid" alt="">
                       <div class="item-badges">
                    <!-- <div class="item-badge-left">예약하기</div>  -->
-                      <div class="item-badge-right">예약하기</div>
+                      <!-- <div class="item-badge-right">예약하기</div> -->
                       </div>
                       <div class="item-meta">
                       <div class="item-price"> 베를린키친
@@ -102,7 +102,7 @@
                     <div class="item-image"> <a href="property_single.html"><img src="../../img/mycoupon_img/BAB20.png" class="img-fluid" alt="">
                       <div class="item-badges">
                       <!-- <div class="item-badge-left">Sponsored</div>  -->
-                      <div class="item-badge-right">예약하기</div>
+                      <!-- <div class="item-badge-right">예약하기</div> -->
                       </div>
                       <div class="item-meta">
                       <div class="item-price">BABSAZO 전체
@@ -175,7 +175,7 @@
                         <li>사용조건 <span>식사 메뉴 1개 이상 주문 </span></li>
                       </ul>
                     </div>
-                 </div>
+                 </div> 
                     <div class="row">
                     <div class="col-md-6">
                                         <div class="added-on">사용기간</div>

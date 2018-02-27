@@ -71,15 +71,13 @@ public class BookingDBBean {
 		PreparedStatement pstmt = null; 
 		try{
 			conn = getConnection();
-			conn.setAutoCommit(false);
+			conn.setAutoCommit(false); 
 			pstmt = conn.prepareStatement("update booking set confirm_yn = 'Y' where bk_no = ?");
 			pstmt.setInt(1, bk_no);
 			pstmt.executeUpdate();
 			conn.commit();
 			conn.setAutoCommit(true);
 		}
-		
-		
 		
 		catch(Exception e) {
 			e.printStackTrace();

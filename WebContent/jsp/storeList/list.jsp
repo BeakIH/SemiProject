@@ -22,7 +22,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Real Estate</title>
+<title>밥은먹고다니니</title>
 
 <!-- Bootstrap -->
 <link
@@ -54,6 +54,7 @@
 <script src="../../lib/sidr/jquery.sidr.min.js"></script>
 <script src="../../lib/lib.js"></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- 나중에 아래쪽 script 문 따로 .js 파일 생성해서 정리해야함 -->
 <script>
@@ -482,7 +483,7 @@ $(document).ready(function(){
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
              <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
         </div>
-      </li>
+      </li> 
       <div>
       <button class="btn btn-primary" type="button" style="margin-top:20px" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
        <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> -->
@@ -491,7 +492,7 @@ $(document).ready(function(){
     </ul>
 
 				</div>
-			</div>
+			</div> 
 		</nav>
 </c:when>
 <c:when test = "${check != null }">

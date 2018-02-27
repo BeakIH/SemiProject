@@ -786,7 +786,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
               <li><a href="#">For Sale</a></li>
               <li><a href="#">Commercial</a></li>
               <li><a href="#">Agents</a></li>
-              <li><a href="#">Property Guides</a></li>
+              <li><a href="#">Property Guides</a></li>  
               <li><a href="#">Jobs</a></li>
             </ul>
           </div> -->

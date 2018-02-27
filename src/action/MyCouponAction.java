@@ -9,7 +9,8 @@ public class MyCouponAction implements CommandAction {// 글내용 처리
 		
 		request.setAttribute("errorpage", "0");
 		
-//		System.out.println("dd");
+//		System.out.println("dd");  
 		return "/jsp/sessionMenu/MyCoupon.jsp";
 	}
-}
+} 
+ 

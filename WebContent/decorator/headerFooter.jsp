@@ -15,27 +15,28 @@
 
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
-<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../lib/animate.css" rel="stylesheet">
-<link href="../../lib/selectric/selectric.css" rel="stylesheet">
-<link href="../../lib/aos/aos.css" rel="stylesheet">
-<link href="../../lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="../../css/style.css?ver=3" rel="stylesheet">
+<link href="/SemiProject/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/SemiProject/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/SemiProject/lib/animate.css" rel="stylesheet">
+<link href="/SemiProjectlib/selectric/selectric.css" rel="stylesheet">
+<link href="/SemiProject/lib/aos/aos.css" rel="stylesheet">
+<link href="/SemiProject/lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="/SemiProject/css/style.css?ver=3" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script src="../../lib/jquery-3.2.1.min.js"></script>
-<script src="../../lib/popper.min.js"></script>
+<script src="/SemiProject/lib/jquery-3.2.1.min.js"></script>
+<script src="/SemiProject/lib/popper.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../lib/selectric/jquery.selectric.js"></script>
-<script src="../../lib/aos/aos.js"></script>
-<script src="../../lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-<script src="../../lib/sticky-sidebar/ResizeSensor.min.js"></script>
-<script src="../../lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
-<script src="../../lib/lib.js"></script>
+<script src="/SemiProject/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/SemiProject/lib/selectric/jquery.selectric.js"></script>
+<script src="/SemiProject/lib/aos/aos.js"></script>
+<script src="/SemiProject/lib/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+<script src="/SemiProject/lib/sticky-sidebar/ResizeSensor.min.js"></script>
+<script src="/SemiProject/lib/sticky-sidebar/theia-sticky-sidebar.min.js"></script>
+<script src="/SemiProject/lib/lib.js"></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

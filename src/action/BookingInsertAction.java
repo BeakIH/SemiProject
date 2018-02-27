@@ -38,7 +38,7 @@ public class BookingInsertAction implements CommandAction{
 */		
 		
 		/*System.out.println(request.getParameter("emp_no"));*/
-		
+		 
 		
 		BookingDataBean article = new BookingDataBean();
 		article.setMemNo(Integer.parseInt(request.getParameter("mem_no")));

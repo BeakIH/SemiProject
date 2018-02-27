@@ -10,3 +10,4 @@ public class LogoutAction implements CommandAction {// 글내용 처리
 		return "/jsp/login/logout.jsp";
 	}
 }
+  
