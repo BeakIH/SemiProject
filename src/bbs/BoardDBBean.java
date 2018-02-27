@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bbs.BoardDataBean;
+
 //BoardDBBean bd = BoardDBBean.getInstance()
 public class BoardDBBean {
 	private static BoardDBBean instance = new BoardDBBean();
@@ -35,11 +37,9 @@ public class BoardDBBean {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		// 답변글인지 일반글인지를 구분해서 입력시켜주는 로직!!!
-		int bNo = article.getbNo();
+		int cnt = 0;
 
 		int number = 0;
-		int empno = article.getempNo();
-		String empnm = null;
 		String sql = "";
 
 		try {
@@ -53,25 +53,17 @@ public class BoardDBBean {
 			else
 				number = 1;
 
-			
-				pstmt = conn.prepareStatement("select emp_no, emp_nm from emp_adm where emp_no=?");
-				pstmt.setInt(1, empno);
-				rs = pstmt.executeQuery();
-
-				if (rs.next()) {
-					article = new BoardDataBean();
-					article.setempNm(rs.getString("emp_nm"));
-
-				}
-				sql = "insert into board(b_no,emp_no,B_TITLE,";
-				sql += "emp_nm,B_CONTENT,POST_DATE) values(BOARD_SEQ.NEXTVAL,?,?,?,?,?)";
+				sql = "insert into board(b_no, emp_no, b_title, emp_nm, b_content, post_date, b_view_cnt, store_no, board_pw) values(BOARD_SEQ.NEXTVAL,?,?,?,?,?,?,?,?)";
 				pstmt = conn.prepareStatement(sql);
 
-				pstmt.setInt(1, empno);
-				pstmt.setString(2, article.getbTitle());
-				pstmt.setString(3, empnm);
-				pstmt.setString(4, article.getbContent());
-				pstmt.setString(5, article.getpostDate());
+				pstmt.setInt(1, article.getEmp_no());
+				pstmt.setString(2, article.getB_title());
+				pstmt.setString(3, article.getEmp_nm());
+				pstmt.setString(4, article.getB_content());
+				pstmt.setString(5, article.getPost_date());
+				pstmt.setInt(6, cnt);
+				pstmt.setInt(7, article.getStore_no());
+				pstmt.setString(8, article.getBoard_pw());
 				pstmt.executeUpdate();
 			
 		} catch (Exception ex) {
@@ -103,6 +95,8 @@ public class BoardDBBean {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
+
+		
 		int x = 0;
 
 		try {
@@ -128,6 +122,12 @@ public class BoardDBBean {
 					x = rs.getInt(1);
 				}
 
+			} else if (opt.equals("A")) {
+				pstmt = conn.prepareStatement("select count(*) from board where b_content like '%" + condition + "%' and B_TITLE like '%" + condition + "%'");
+				rs = pstmt.executeQuery();
+				if (rs.next()) {
+					x = rs.getInt(1);
+				}
 			}
 
 		} catch (Exception ex) {
@@ -159,15 +159,18 @@ public class BoardDBBean {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List articleList = null;
-
+		
+		/*System.out.println("opt::"+opt);*/
+		
 		try {
 			if (opt == null) {
+				
 				conn = getConnection();
 
-				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,r  "
-						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,rownum r "
-						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT "
-						+ "from board) order by B_NO desc) where r >= ? and r <= ? ");
+				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,store_no,board_pw, store_nm,r "
+						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm,rownum r "
+						+ "from (select b.b_no B_NO,b.emp_no EMP_NO,b.b_title B_TITLE,b.emp_nm EMP_NM,b.b_content B_CONTENT,b.post_date POST_DATE,b.b_view_cnt B_VIEW_CNT, b.store_no store_no, b.board_pw board_pw, s.store_nm store_nm "
+						+ "from board b inner join store_list s on b.store_no = s.store_no) order by B_NO desc) where r >= ? and r <= ? ");
 				pstmt.setInt(1, start);
 				pstmt.setInt(2, end);
 				rs = pstmt.executeQuery();
@@ -176,52 +179,60 @@ public class BoardDBBean {
 					do {
 						BoardDataBean article = new BoardDataBean();
 
-						article.setbNo(rs.getInt("b_no"));
-						article.setempNo(rs.getInt("emp_no"));
-						article.setbTitle(rs.getString("b_title"));
-						article.setempNm(rs.getString("emp_nm"));
-						article.setbContent(rs.getString("b_content"));
-						article.setpostDate(rs.getString("post_date"));
-						// article.setbViewCnt(rs.getInt("b_view_cnt"));
-
+						article.setB_no(rs.getInt("b_no"));
+						article.setEmp_no(rs.getInt("emp_no"));
+						article.setB_title(rs.getString("b_title"));
+						article.setEmp_nm(rs.getString("emp_nm"));
+						article.setB_content(rs.getString("b_content"));
+						article.setPost_date(rs.getString("post_date"));
+						article.setB_view_cnt(rs.getInt("b_view_cnt"));
+						article.setStore_no(rs.getInt("store_no"));
+						article.setBoard_pw(rs.getString("board_pw"));
+						article.setStore_nm(rs.getString("store_nm"));
 						articleList.add(article);
 					} while (rs.next());
 				}
 			} else if (opt.equals("T")) {
+				
 				conn = getConnection();
-				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,r  "
-						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,rownum r "
-						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT "
-						+ "from board where B_TITLE like ? ) order by B_NO desc) where r >= ? and r <= ? ");
-				pstmt.setString(1, '%' + condition + '%');
-				pstmt.setInt(2, start);
-				pstmt.setInt(3, end);
+				/*'%condition%'
+				like '%"+condition+"%'*/
+				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm, r "
+						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,store_no, board_pw, store_nm, rownum r "
+						+ "from (select b.b_no B_NO,b.emp_no EMP_NO,b.b_title B_TITLE,b.emp_nm EMP_NM,b.b_content B_CONTENT,b.post_date POST_DATE,b.b_view_cnt B_VIEW_CNT, b.store_no store_no, b.board_pw board_pw, s.store_nm store_nm "
+						+ "from board b inner join store_list s on b.store_no = s.store_no where B_TITLE like '%"+condition+"%') order by B_NO desc) where r >= ? and r <= ? ");
+				
+				/*System.out.println("start::"+start);*/
+				
+				pstmt.setInt(1, start);
+				pstmt.setInt(2, end);
 				rs = pstmt.executeQuery();
 				if (rs.next()) {
 					articleList = new ArrayList(end);
 					do {
 						BoardDataBean article = new BoardDataBean();
 
-						article.setbNo(rs.getInt("b_no"));
-						article.setempNo(rs.getInt("emp_no"));
-						article.setbTitle(rs.getString("b_title"));
-						article.setempNm(rs.getString("emp_nm"));
-						article.setbContent(rs.getString("b_content"));
-						article.setpostDate(rs.getString("post_date"));
-						// article.setbViewCnt(rs.getInt("b_view_cnt"));
-
+						article.setB_no(rs.getInt("b_no"));
+						article.setEmp_no(rs.getInt("emp_no"));
+						article.setB_title(rs.getString("b_title"));
+						article.setEmp_nm(rs.getString("emp_nm"));
+						article.setB_content(rs.getString("b_content"));
+						article.setPost_date(rs.getString("post_date"));
+						article.setB_view_cnt(rs.getInt("b_view_cnt"));
+						article.setStore_no(rs.getInt("store_no"));
+						article.setBoard_pw(rs.getString("board_pw"));
+						article.setStore_nm(rs.getString("store_nm"));
 						articleList.add(article);
 					} while (rs.next());
 				}
 			} else if (opt.equals("C")) {
 				conn = getConnection();
-				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,r  "
-						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,rownum r "
-						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT "
-						+ "from board where B_CONTENT like ?) order by B_NO desc) where r >= ? and r <= ? ");
-				pstmt.setString(1, '%' + condition + '%');
-				pstmt.setInt(2, start);
-				pstmt.setInt(3, end);
+				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm,r "
+						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm, rownum r "
+						+ "from (select b.b_no B_NO,b.emp_no EMP_NO,b.b_title B_TITLE,b.emp_nm EMP_NM,b.b_content B_CONTENT,b.post_date POST_DATE,b.b_view_cnt B_VIEW_CNT, b.store_no store_no, b.board_pw board_pw, s.store_nm store_nm "
+						+ "from board b inner join store_list s on b.store_no = s.store_no where B_CONTENT like '%"+condition+"%') order by B_NO desc) where r >= ? and r <= ? ");
+				pstmt.setInt(1, start);
+				pstmt.setInt(2, end);
 				rs = pstmt.executeQuery();
 
 				if (rs.next()) {
@@ -229,30 +240,49 @@ public class BoardDBBean {
 					do {
 						BoardDataBean article = new BoardDataBean();
 
-						article.setbNo(rs.getInt("b_no"));
-						article.setempNo(rs.getInt("emp_no"));
-						article.setbTitle(rs.getString("b_title"));
-						article.setempNm(rs.getString("emp_nm"));
-						article.setbContent(rs.getString("b_content"));
-						article.setpostDate(rs.getString("post_date"));
-						// article.setbViewCnt(rs.getInt("b_view_cnt"));
-
+						article.setB_no(rs.getInt("b_no"));
+						article.setEmp_no(rs.getInt("emp_no"));
+						article.setB_title(rs.getString("b_title"));
+						article.setEmp_nm(rs.getString("emp_nm"));
+						article.setB_content(rs.getString("b_content"));
+						article.setPost_date(rs.getString("post_date"));
+						article.setB_view_cnt(rs.getInt("b_view_cnt"));
+						article.setStore_no(rs.getInt("store_no"));
+						article.setBoard_pw(rs.getString("board_pw"));
+						article.setStore_nm(rs.getString("store_nm"));
 						articleList.add(article);
 					} while (rs.next());
 				}
 
+			}else if (opt.equals("A")) {
+				conn = getConnection();
+				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm,r "
+						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm, rownum r "
+						+ "from (select b.b_no B_NO,b.emp_no EMP_NO,b.b_title B_TITLE,b.emp_nm EMP_NM,b.b_content B_CONTENT,b.post_date POST_DATE,b.b_view_cnt B_VIEW_CNT, b.store_no store_no, b.board_pw board_pw, s.store_nm store_nm "
+						+ "from board b inner join store_list s on b.store_no = s.store_no where B_CONTENT like '%"+condition+"%' and b_title like '%"+condition+"%') order by B_NO desc) where r >= ? and r <= ? ");
+				pstmt.setInt(1, start);
+				pstmt.setInt(2, end);
+				rs = pstmt.executeQuery();
+
+				if (rs.next()) {
+					articleList = new ArrayList(end);
+					do {
+						BoardDataBean article = new BoardDataBean();
+
+						article.setB_no(rs.getInt("b_no"));
+						article.setEmp_no(rs.getInt("emp_no"));
+						article.setB_title(rs.getString("b_title"));
+						article.setEmp_nm(rs.getString("emp_nm"));
+						article.setB_content(rs.getString("b_content"));
+						article.setPost_date(rs.getString("post_date"));
+						article.setB_view_cnt(rs.getInt("b_view_cnt"));
+						article.setStore_no(rs.getInt("store_no"));
+						article.setBoard_pw(rs.getString("board_pw"));
+						article.setStore_nm(rs.getString("store_nm"));
+						articleList.add(article);
+					} while (rs.next());
+				}
 			}
-
-			/*
-			 * case "S": pstmt = conn.
-			 * prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,r  "
-			 * +
-			 * "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT,rownum r "
-			 * + "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT " +
-			 * "from board) order by B_NO desc) where r >= ? and r <= ? "); pstmt.setInt(1,
-			 * start); pstmt.setInt(2, end); rs = pstmt.executeQuery(); break;
-			 */
-
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
@@ -294,13 +324,17 @@ public class BoardDBBean {
 
 			if (rs.next()) {
 				article = new BoardDataBean();
-				article.setbNo(rs.getInt("B_NO"));
-				article.setempNo(rs.getInt("EMP_NO"));
-				article.setbTitle(rs.getString("B_TITLE"));
-				article.setempNm(rs.getString("EMP_NM"));
-				article.setbContent(rs.getString("B_CONTENT"));
-				article.setpostDate(rs.getString("POST_DATE"));
-				article.setbViewCnt(rs.getInt("B_VIEW_CNT"));
+				article.setB_no(rs.getInt("b_no"));
+				article.setEmp_no(rs.getInt("emp_no"));
+				article.setB_title(rs.getString("b_title"));
+				article.setEmp_nm(rs.getString("emp_nm"));
+				article.setB_content(rs.getString("b_content"));
+				article.setPost_date(rs.getString("post_date"));
+				article.setB_view_cnt(rs.getInt("b_view_cnt"));
+				article.setStore_no(rs.getInt("store_no"));
+				article.setBoard_pw(rs.getString("board_pw"));
+				article.setStore_nm(rs.getString("store_no"));
+
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -331,21 +365,27 @@ public class BoardDBBean {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		BoardDataBean article = null;
+		
 		try {
 			conn = getConnection();
 
-			pstmt = conn.prepareStatement("select * from board where b_no = ?");
+			pstmt = conn.prepareStatement("select * from board b inner join store_list s on b.store_no= s.store_no where b_no = ?");
 			pstmt.setInt(1, bno);
 			rs = pstmt.executeQuery();
-
+			
 			if (rs.next()) {
-				article.setbNo(rs.getInt("B_NO"));
-				article.setempNo(rs.getInt("EMP_NO"));
-				article.setbTitle(rs.getString("B_TITLE"));
-				article.setempNm(rs.getString("EMP_NM"));
-				article.setbContent(rs.getString("B_CONTENT"));
-				article.setpostDate(rs.getString("POST_DATE"));
-				article.setbViewCnt(rs.getInt("B_VIEW_CNT"));
+				article = new BoardDataBean();
+				article.setB_no(rs.getInt("b_no"));
+				article.setEmp_no(rs.getInt("emp_no"));
+				article.setB_title(rs.getString("b_title"));
+				article.setEmp_nm(rs.getString("emp_nm"));
+				article.setB_content(rs.getString("b_content"));
+				article.setPost_date(rs.getString("post_date"));
+				article.setB_view_cnt(rs.getInt("b_view_cnt"));
+				article.setStore_no(rs.getInt("store_no"));
+				article.setBoard_pw(rs.getString("board_pw"));
+				article.setStore_nm(rs.getString("store_nm"));
+
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -370,6 +410,7 @@ public class BoardDBBean {
 	}
 
 	// updatePro.jsp : 실제 데이터를 수정하는 메소드.
+	@SuppressWarnings("resource")
 	public int updateArticle(BoardDataBean article) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -380,21 +421,26 @@ public class BoardDBBean {
 		int x = -1;
 		try {
 			conn = getConnection();
+			System.out.println("----------디비빈------------");
+			System.out.println(article.getB_no());
 
-			pstmt = conn.prepareStatement("select adm_pw from emp_adm where emp_no = ?");
-			pstmt.setInt(1, article.getempNo());
+			pstmt = conn.prepareStatement("select board_pw from board where b_no = ?");
+			pstmt.setInt(1, article.getB_no());
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				dbpasswd = rs.getString("adm_pw");
-				if (dbpasswd.equals(article.getadm_pw())) {
-					sql = "update board set B_TITLE=?,B_CONTENT=? ";
-					sql += "where emp_no=?";
+				dbpasswd = rs.getString("board_pw");
+
+				if (dbpasswd.equals(article.getBoard_pw())) {
+
+					sql = "update board set B_TITLE=?,B_CONTENT=?";
+					sql += "where b_no=?";
 					pstmt = conn.prepareStatement(sql);
 
-					pstmt.setString(1, article.getbTitle());
-					pstmt.setString(2, article.getbContent());
-					pstmt.setInt(3, article.getempNo());
+					pstmt.setString(1, article.getB_title());
+					pstmt.setString(2, article.getB_content());
+					pstmt.setInt(3, article.getB_no());
+					pstmt.executeUpdate();
 
 					x = 1;
 				} else {
@@ -433,14 +479,14 @@ public class BoardDBBean {
 		try {
 			conn = getConnection();
 
-			pstmt = conn.prepareStatement("select adm_pw from emp_adm where emp_no = ?");
+			pstmt = conn.prepareStatement("select board_pw from board where b_no = ?");
 			pstmt.setInt(1, bno);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				dbpasswd = rs.getString("passwd");
+				dbpasswd = rs.getString("board_pw");
 				if (dbpasswd.equals(passwd)) {
-					pstmt = conn.prepareStatement("delete from board where emp_no=?");
+					pstmt = conn.prepareStatement("delete from board where b_no=?");
 					pstmt.setInt(1, bno);
 					pstmt.executeUpdate();
 					x = 1; // 글삭제 성공

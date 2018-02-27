@@ -2,6 +2,7 @@ package action;
 
 
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 
@@ -30,6 +31,8 @@ public class NoticeAction implements CommandAction {//글목록 처리
         String condition = request.getParameter("condition");
         
 
+        
+
         @SuppressWarnings("rawtypes")
 		List articleList = null;
         BoardDBBean dbPro = BoardDBBean.getInstance();//DB연동
@@ -37,12 +40,11 @@ public class NoticeAction implements CommandAction {//글목록 처리
        
         if (count > 0) {
 			articleList = dbPro.getArticles(startRow, endRow, opt, condition);//현재 페이지에 해당하는 글 목록
-            
         } else {
             articleList = Collections.EMPTY_LIST;
         }
 
-	number=count-(currentPage-1)*pageSize;//글목록에 표시할 글번호
+        number=count-(currentPage-1)*pageSize;//글목록에 표시할 글번호
         //해당 뷰에서 사용할 속성
         request.setAttribute("currentPage", new Integer(currentPage));
         request.setAttribute("startRow", new Integer(startRow));
@@ -52,6 +54,9 @@ public class NoticeAction implements CommandAction {//글목록 처리
 	    request.setAttribute("number", new Integer(number));
         request.setAttribute("articleList", articleList);
        
-        return "/notice/notice2.jsp";//해당 뷰
+        
+
+       
+        return "/notice/notice.jsp";//해당 뷰
     }
 }
