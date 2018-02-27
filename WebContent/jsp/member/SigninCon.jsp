@@ -8,8 +8,38 @@
     
 </head>
 <body>
+<!-- <div class="container">
+    <div class="row justify-content-md-center">
+          <div class="col col-md-12 col-lg-10 col-xl-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
+            <li class="breadcrumb-item"><a href="#">계정</a></li>
+            <li class="breadcrumb-item active" aria-current="page">로그인</li>
+            </ol>
+            </nav>
+        <div class="page-header">
+        <h1>B A B S A Z O</h1>
+        </div>
+      </div>
+    </div>
+  </div> -->
 <div id="content">
   <div class="container">
+  <div class="row justify-content-md-center" style="padding-right:570px">
+          <div class="col col-md-12 col-lg-10 col-xl-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/SemiProject/jsp/storeList/main.do">메인페이지</a></li>
+            <li class="breadcrumb-item"><a href="#">계정</a></li>
+            <li class="breadcrumb-item active" aria-current="page">로그인</li>
+            </ol>
+            </nav>
+        <div class="page-header">
+        <h1>B A B S A Z O</h1>
+        </div>
+      </div>
+    </div>
     <div class="row justify-content-md-center align-items-center">
       <div class="col col-xs-6 col-lg-6 col-xl-6">
         <ul class="nav nav-tabs tab-lg" role="tablist">
@@ -51,8 +81,8 @@
         <a href="../sessionMenu/404.jsp" class="btn btn-social btn-block btn-lg btn-facebook"><i class="icon fa fa-facebook"></i> Facebook으로 로그인</a> 
         <a href="../sessionMenu/404.jsp" class="btn btn-social btn-block btn-lg btn-twitter"><i class="icon fa fa-twitter"></i>  Twitter으로 로그인</a> 
         <a href="../sessionMenu/404.jsp" class="btn btn-social btn-block btn-lg btn-google"><i class="icon fa fa-google"></i>  Google로 로그인</a> </div>
-          <a id="custom-login-btn" href="javascript:loginWithKakao()">
-   <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="360"/></a>
+        <a id="custom-login-btn" href="javascript:loginWithKakao()">
+   <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="350" height="48"/></a>
    <script type='text/javascript'>
     Kakao.init('5116b3bc667703bf84b154ab8a58f70a');
     function loginWithKakao() {

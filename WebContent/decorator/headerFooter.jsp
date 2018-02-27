@@ -18,7 +18,8 @@
 <link href="/SemiProject/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/SemiProject/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link href="/SemiProject/lib/animate.css" rel="stylesheet">
-<link href="/SemiProjectlib/selectric/selectric.css" rel="stylesheet">
+<link href="/SemiProject/lib/selectric/selectric.css" rel="stylesheet">
+
 <link href="/SemiProject/lib/aos/aos.css" rel="stylesheet">
 <link href="/SemiProject/lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
 <link href="/SemiProject/css/style.css?ver=3" rel="stylesheet">
@@ -59,7 +60,7 @@
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span> -->
     <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
-	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+	 <span><img src="/SemiProject/img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
   </button>
@@ -81,7 +82,7 @@
          	조회
         </a>
         <div class="dropdown-menu">
-            <a href="list.do" class="dropdown-item">목록보기</a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item">목록보기</a>
             <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
             <a href="property_listing_map.html" class="dropdown-item">Map View</a>
             <a href="property_single.html" class="dropdown-item">Single View 1</a>
@@ -95,8 +96,8 @@
          	매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="404.do" class="dropdown-item">공지사항</a>
-            <a href="404.do" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="/SemiProject/notice/notice.do" class="dropdown-item">공지사항</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -104,8 +105,8 @@
          	도움말
         </a>
         <div class="dropdown-menu">
-            <a href="404.do" class="dropdown-item">자주묻는 질문</a>
-            <a href="404.do" class="dropdown-item"> 1:1 문의</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item">자주묻는 질문</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
       <!--
@@ -193,8 +194,8 @@
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 안녕하세요  </a> 
         <div class="dropdown-menu">
-            <a href="main.do" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
-            <a href="list.do" class="dropdown-item"> <i class="fa fas fa-street-view"></i> 매장조회</a>
+            <a href="/SemiProject/jsp/storeList/main.do" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item"> <i class="fa fas fa-street-view"></i> 매장조회</a>
             <!-- <a href="my_notifications.html" class="dropdown-item">Notifications</a>
             <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a>
@@ -209,23 +210,6 @@
   </div>
   </div>
 </nav>
-<div class="container">
-    <div class="row justify-content-md-center">
-          <div class="col col-md-12 col-lg-10 col-xl-8">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">메인페이지</a></li>
-            <li class="breadcrumb-item"><a href="#">계정</a></li>
-            <li class="breadcrumb-item active" aria-current="page">로그인</li>
-            </ol>
-            </nav>
-        <div class="page-header">
-        <h1>B A B S A Z O</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 <!-- 데코레이터 -->
 <decorator:body/>
   
@@ -234,41 +218,28 @@
 
 <!-- 푸터 START -->
 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
+
 <footer id="footer">
   <div class="container">
     <div class="row justify-content-md-center">
           <div class="col col-md-10">
         <div class="row">
           <div class="col-md-4 col-sm-4">
-            <!-- <p><span class="icon-uilove-realestate"></span></p> -->
-            <p><span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
+            <p><span><img src="/SemiProject/img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
             <address>
             <strong>BABSAZO, Inc.</strong><br>
-            	서울특별시 중구 남대문로 120<br>
-           		대일빌딩3층 D CLASS<br>
-            <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
+               서울특별시 중구 남대문로 120<br>
+                 대일빌딩3층 D CLASS<br>
             </address>
             <p class="text-muted">Copyright &copy; 2018<br />
               All rights reserved</p>
           </div>
           <div class="col-md-4  col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#"> About BABSAJO </a></li>
-              <li><a href="#"> BABSAJO Introduction </a></li>
-              <!-- <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li> -->
+              <li><a href="#"> About BABSAZO </a></li>
+              <li><a href="#"> BABSAZO Introduction </a></li>
             </ul>
           </div>
-          <!-- <div class="col-md-2 col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#">For Rent</a></li>
-              <li><a href="#">For Sale</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Property Guides</a></li>
-              <li><a href="#">Jobs</a></li>
-            </ul>
-          </div> -->
           <div class="col-md-4 col-sm-12">
             <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
             <form>

@@ -121,8 +121,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="404.do" class="dropdown-item">공지사항</a>
-            <a href="404.do" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="../../notice/notice.do" class="dropdown-item">공지사항</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -130,8 +130,8 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             도움말
         </a>
         <div class="dropdown-menu">
-            <a href="404.do" class="dropdown-item">자주묻는 질문</a>
-            <a href="404.do" class="dropdown-item"> 1:1 문의</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item">자주묻는 질문</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
       
@@ -151,7 +151,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
    <br>
      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
    <div class="sideMenu" style="width:95px;padding-left: 45px;">매장명</div>
-   <div class="sideMenu" style="width:95px;padding-left: 50px;">이용중</div>
+   <div class="sideMenu" style="width:95px;padding-left: 50px;">가용석</div>
    <div class="sideMenu" style="width:95px;padding-left: 48px;">상태</div>
      <c:forEach var="article" items="${articleList}">
      <table>
@@ -160,7 +160,7 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
         <td style="width:80px;padding-left: 10px;padding-right: 10px;background-color:none;display:inline-block;">${article.avl_tbl_cnt }</td>
         <td style="width:80px;padding-right: 10px;background-color:none;display:inline-block;">
         <c:choose>
-        <c:when test="${article.cur_tbl_cnt>0 && article.cur_tbl_cnt <=5 }">
+        <c:when test="${article.cur_tbl_cnt>=0 && article.cur_tbl_cnt <=5 }">
         <font color="red">예약불가</font>
         </c:when>
         <c:when test="${article.cur_tbl_cnt>5 && article.cur_tbl_cnt <=30 }">

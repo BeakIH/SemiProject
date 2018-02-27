@@ -96,6 +96,10 @@ function realtimeClock() {
          location.href="LoginForm.jsp";
      }      */
      
+     function BookFail(){
+     	 swal ( " 예약 불가 " , " 죄송합니다,\n 현재 좌석이 없어 예약 하실 수 없습니다. " , "error" )   ; 
+      }
+     
      function BookFail2(){
     	/*  swal ( " 예약 불가 " , " 죄송합니다,\n 현재 좌석이 없어 예약 하실 수 없습니다. " , "error" )   ; */
     	 alert("로그인 후 이용해 주세요.")

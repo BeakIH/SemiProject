@@ -17,10 +17,11 @@ public class NoticeAction implements CommandAction {//글목록 처리
         HttpServletResponse response)throws Throwable {
        
         String pageNum = request.getParameter("pageNum");//페이지 번호
-
+        
         if (pageNum == null) {
             pageNum = "1";
         }
+        
         int pageSize = 10;//한 페이지의 글의 개수
         int currentPage = Integer.parseInt(pageNum);
         int startRow = (currentPage - 1) * pageSize + 1;//한 페이지의 시작글 번호
@@ -30,9 +31,6 @@ public class NoticeAction implements CommandAction {//글목록 처리
         String opt = request.getParameter("opt");
         String condition = request.getParameter("condition");
         
-
-        
-
         @SuppressWarnings("rawtypes")
 		List articleList = null;
         BoardDBBean dbPro = BoardDBBean.getInstance();//DB연동
@@ -53,9 +51,6 @@ public class NoticeAction implements CommandAction {//글목록 처리
         request.setAttribute("pageSize", new Integer(pageSize));
 	    request.setAttribute("number", new Integer(number));
         request.setAttribute("articleList", articleList);
-       
-        
-
        
         return "/notice/notice.jsp";//해당 뷰
     }

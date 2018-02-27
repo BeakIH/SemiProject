@@ -13,8 +13,8 @@
 <!-- Bootstrap -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
 <link href="/SemiProject/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="./SemiProject/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="/SemiProject/ib/animate.css" rel="stylesheet">
+<link href="/SemiProject/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/SemiProject/lib/animate.css" rel="stylesheet">
 <c:if test="${errorpage!='0'}">
 <link href="/SemiProject/lib/selectric/selectric.css" rel="stylesheet">
 <link href="/SemiProject/lib/aos/aos.css" rel="stylesheet">
@@ -105,7 +105,7 @@ function fillInAddress() {
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span> -->
     <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
-    <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
+    <span><img src="/SemiProject/img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
    <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
   </a>
   </button>
@@ -118,8 +118,8 @@ function fillInAddress() {
         <span class="sr-only">(current)</span>
         </a>
         <div class="dropdown-menu">
-            <a href="main.do" class="dropdown-item">밥사조 이야기</a>
-            <a href="main.do" class="dropdown-item">밥사조 식구들</a>
+            <a href="/SemiProject/jsp/storeList/main.do" class="dropdown-item">밥사조 이야기</a>
+            <a href="/SemiProject/jsp/storeList/main.do" class="dropdown-item">밥사조 식구들</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -141,8 +141,8 @@ function fillInAddress() {
             매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">공지사항</a>
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="/SemiProject/notice/notice.do" class="dropdown-item">공지사항</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.jsp" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -150,96 +150,16 @@ function fillInAddress() {
             도움말
         </a>
         <div class="dropdown-menu">
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">자주묻는 질문</a>
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"> 1:1 문의</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.jsp" class="dropdown-item">자주묻는 질문</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.jsp" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
-      <!--
-      <li class="nav-item dropdown megamenu">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Pages
-        </a>
-        <div class="dropdown-menu">
-        <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col col-md-8">
-            <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Homepage</li>
-                  <li><a href="index.html">Homepage 1</a></li>
-                  <li><a href="index2.html">Homepage 2</a></li>
-                  <li><a href="index3.html">Homepage 3</a></li>
-                  <li><a href="index4.html">Homepage 4</a></li>
-                  <li><a href="index5.html">Homepage 5</a></li>
-                  <li><a href="index6.html">Homepage 6</a></li>
-                  <li><a href="main.do">메인페이지</a></li>
-                  <li class="title">Login Pages</li>
-                  <li><a href="signin.html">Signin</a></li>
-                  <li><a href="register.html">Register</a></li>
-                  <li><a href="forgot-password.html">Forgot Password</a></li>
-                 </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Property Listing</li>
-                  <li><a href="list.do">목록 보기</a></li>
-                  <li><a href="property_grid.html">Grid View</a></li>
-                  <li><a href="property_listing_map.html">Map View</a></li>
-                  <li class="title">Single Property</li>
-                  <li><a href="property_single.html">Single View 1</a></li>
-                  <li><a href="property_single2.html">Single View 2</a></li>
-                  <li><a href="property_single3.html">Single View 3</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Other Pages</li>
-                  <li><a href="plans.html">Plans</a></li>
-                  <li><a href="information_page.html">Information Page</a></li>
-                  <li><a href="coming_soon.html">Coming Soon</a></li>
-                  <li><a href="404_error.html">Error Page</a></li>
-                  <li><a href="success.html">Success Page</a></li>
-                  <li><a href="contact.html">Contact Page</a></li>
-                  <li><a href="compare.html">Compare Properties</a></li>
-                  <li class="title">Agent Pages</li>
-                  <li><a href="agent_list.html">Agent List</a></li>
-                  <li><a href="agent.html">Agent Profile</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <ul class="list-unstyled">
-                  <li class="title">Account Pages</li>
-                  <li><a href="my_listing_add.html">Add Listing</a></li>
-                <li><a href="my_bookmarked_listings.html">Bookmarked Listing</a></li>
-                  <li><a href="my_listings.html">My Listings</a></li>
-                  <li><a href="my_profile.html">My Profile</a></li>
-                <li><a href="my_password.html">Change Password</a></li>
-                <li><a href="my_notifications.html">Notifications</a></li>
-                <li><a href="my_membership.html">Membership</a></li>
-                <li><a href="my_payments.html">Payments</a></li>
-                <li><a href="my_account.html">Account</a></li>
-                <li class="title">Blog Pages</li>
-                  <li><a href="blog.html">Blog Archive</a></li>
-                  <li><a href="blog_single.html">Blog Single</a></li>
-                </ul>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
-        </div>
-      </li> -->
-      
     </ul>
     
-    
     <ul class="navbar-nav ml-auto">
-      
-      
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="ProfilePre.jsp?id=${memId }" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name }님, 어서오세요 
+          <span class="user-image" style="background-image:url(' /img/profiles/default.jpg');"></span> ${name }님, 어서오세요 
         </a>
         <div class="dropdown-menu">
             <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
