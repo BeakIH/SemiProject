@@ -30,6 +30,7 @@ public class MemSelectDBBean {
 		return DriverManager.getConnection(jdbcDriver);
 	}
 	
+	//세션값 id값을 받아와 member테이블 셀렉트하는 메서드
 	public List MemInfo (String mem_id) throws Exception {
 	       Connection conn = null;
 	       PreparedStatement pstmt = null;
@@ -75,38 +76,5 @@ public class MemSelectDBBean {
 		return articleList2;
 	   }
 	
-	/*public String userLogonCheck(String mem_id) throws Exception {
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      int result = 0;
-	      
-
-	      try {
-	         conn = getConnection();
-	         String sql = "select mem_id, from member where mem_id = ?";
-	         pstmt = conn.prepareStatement(sql);
-	         pstmt.setString(1, mem_id);
-	         
-	         rs = pstmt.executeQuery();
-	        
-	         
-	        	
-	     
-	         
-	         
-	      } catch (ClassNotFoundException | SQLException sqle) {
-	         sqle.printStackTrace();
-	      } finally {
-	         try {
-	            JdbcUtil.close(rs);
-	            JdbcUtil.close(pstmt);
-	            JdbcUtil.close(conn);
-	         } catch (Exception e) {
-	            e.printStackTrace();
-	         }
-	         
-	      }
-	     
-}*/
+	
 }

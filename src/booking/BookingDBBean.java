@@ -26,8 +26,8 @@ public class BookingDBBean {
 	public void insertBooking(BookingDataBean booking) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null; 
-		System.out.println("메뉴?:::"+booking.getBkMenu());
-		System.out.println("nm?:::"+booking.getEmpNo());
+		//System.out.println("메뉴?:::"+booking.getBkMenu());
+		//System.out.println("nm?:::"+booking.getEmpNo());
 
 		try {
 			conn = getConnection();

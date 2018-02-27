@@ -32,6 +32,7 @@ public class LoginAction implements CommandAction {
          request.getSession().setAttribute("storeNm", result.get("storeNm"));
       }
       
+      //메뉴 상세 페이지에서 로그인 이후 이전 페이지로 돌아가는 메서드
       String url = (String) request.getAttribute("url");
       
       if(url != null) {

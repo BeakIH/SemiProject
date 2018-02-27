@@ -16,12 +16,12 @@ public String requestPro(HttpServletRequest request, HttpServletResponse respons
 		
 		  
 		int storeNo = Integer.parseInt(request.getParameter("store_no"));
-		System.out.println("storeNo:::"+storeNo); // 값 넘어옴
+		//System.out.println("storeNo:::"+storeNo); // 값 넘어옴
 		
 		List articleList = null;
 		ReserveDBBean dbPro = ReserveDBBean.getInstance();
 
-		List searchList = new ArrayList();
+		
 
 		articleList = dbPro.getInfo(storeNo, "ones");
 
@@ -29,16 +29,17 @@ public String requestPro(HttpServletRequest request, HttpServletResponse respons
 		request.setAttribute("storeNo", storeNo);
 		///////////////////////////////////////////////////////////////
 		
-		
+		//세션값 id를 받아옴
 		String id = (String)request.getSession().getAttribute("id");
-		System.out.println("mem_id:::"+id); // 값 넘어옴
+		//System.out.println("mem_id:::"+id); // 값 넘어옴
 		
 		List articleList2 = null;
 		MemSelectDBBean dbPro2 = MemSelectDBBean.getInstance();
 
-		List searchList2 = new ArrayList();
-
-		System.out.println("테스트2");
+		
+		//System.out.println("테스트2");
+		
+		//세션값 id로 member테이블 셀렉트해오는 메서드
 		articleList2= dbPro2.MemInfo(id);
 
 		request.setAttribute("articleList2", articleList2);

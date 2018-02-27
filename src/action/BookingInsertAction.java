@@ -53,10 +53,10 @@ public class BookingInsertAction implements CommandAction{
 		article.setBkTblCnt(Integer.parseInt(request.getParameter("bk_tbl_cnt"))); //예약테이블수
 		article.setStoreNo(Integer.parseInt(request.getParameter("store_no"))); //매장 번호
 		
-		System.out.println("부킹메뉴::::"+article.getBkMenu());
+		//System.out.println("부킹메뉴::::"+article.getBkMenu());
 		
 		BookingDBBean dbPro = BookingDBBean.getInstance();// DBó��
-		System.out.println("article::"+article);
+		//System.out.println("article::"+article);
 		dbPro.insertBooking(article);
 
 		return "./reserveSuccess.jsp";
