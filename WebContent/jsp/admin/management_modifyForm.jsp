@@ -1,14 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<style>
+.modalPwd{
+	position : absolute;
+	border-radius : 5px;
+	border: 1px solid gray;
+	top:200px;
+	z-index: 9999;
+	width:500px;
+	height:150px;
+	left:5%;
+	background : white;
+	display: none;
+}
+#inputPwd{
+	position:relative;
+	top:5px;
+	left:100px;
+	width:300px;
+}
+.btnDiv{
+	margin-top:20px;
+	padding-right: 30px;
+	float: right;
+}
+.pwdLabel{
+	margin : 10px 0 0 15px;
+}
+</style>
 <div class="col-md-7 col-lg-8 col-xl-8">
 	<div class="page-header bordered">
 		<h1>정보 수정</h1>
 	</div>
 	<form method="post" id="modifyForm" name="info" action="./management_modify.do" onsubmit="return checkValue()">
 		<div class="form-group">
-			<input type="hidden" id="pwd" name="pwd" /> 
+			<input type="hidden" name="id" value="${res.admId}" />
+			<input type="hidden" id="pwd" name="pwd" />
+			<input type="hidden" id="eno" name="eno" value="${res.empNo}"/>
 			<label> 이름 </label> 
 			<input type="text" name="name" class="form-control form-control-lg" value="${res.empNm}" autofocus>
 		</div>
@@ -76,16 +105,29 @@
 
 		<hr>
 		<div class="form-group action">
-			<input type="button" value="수정" id="modifyBtn"
-				class="btn btn-lg btn-primary" /> <input type="reset" value="다시입력"
-				class="btn btn-lg btn-primary" />
+			<input type="button" value="수정" id="modifyBtn" class="btn btn-lg btn-primary" />
+			<input type="button" value="취소" class="btn btn-lg btn-primary" onClick="history.back();" />
 		</div>
 	</form>
+		<div class="modalPwd">
+			<label class="control-label pwdLabel">비밀번호 입력 :</label>
+			<input type="password" id ="inputPwd" class="form-control" />
+			<div class="btnDiv">
+				<button class="pwdCheckBtn btn btn-primary">확인</button>
+				<button class="modalCloseBtn btn btn-primary">취소</button>
+			</div>
+		</div>
 </div>
 <script>
+$(".pwdCheckBtn").click(function(){
+	  var inputPwd = $("#inputPwd").val();
+	  $("#pwd").val(inputPwd);
+	  document.querySelector("#modifyForm").submit();
+});
+$(".modalCloseBtn").click(function(){
+	$(".modalPwd").hide();
+});
 $("#modifyBtn").click(function(){
-	var pwd = prompt();
-	$("#pwd").val(pwd);
-	document.querySelector("#modifyForm").submit();
+	$(".modalPwd").show();
 });
 </script>
