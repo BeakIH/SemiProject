@@ -18,7 +18,7 @@ public class BookingDataBean {
 	    private int memNo;
 
 	    // 회원명 예약자명
-	    private String memNm;
+	    private String memNm;  
 
 	    //  예약자연락처
 	    private String memTel;

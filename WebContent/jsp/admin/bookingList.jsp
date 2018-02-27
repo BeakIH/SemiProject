@@ -25,7 +25,7 @@
               <div class="btn-group float-right" role="group"> <a href="" class="btn btn-light"><i class="fa fa-th"></i></a> <a href="" class="btn btn-light active"><i class="fa fa-bars"></i></a> </div>
               </div>
               </div>                
-            </div>
+            </div> 
             
             <div class="clearfix"></div>
             <div class="item-listing list">

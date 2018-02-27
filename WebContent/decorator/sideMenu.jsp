@@ -539,9 +539,9 @@ function fillInAddress() {
 				  <a href="../sessionMenu/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-bitcoin"></i> BABSAZO 멤버십</a>
 				  <a href="../sessionMenu/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
                   <!-- <a href="../sessionMenu/SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a> -->
-                </div>
+                </div> 
               </div>
-            </div>
+            </div> 
           </div>
           
          <!-- 데코레이터 -->

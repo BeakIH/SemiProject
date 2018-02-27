@@ -9,9 +9,9 @@
 <c:set var="normal" value="<script type='text/javascript'> alert('${name} 님 환영합니다.');</script>"/>
 <c:set var="check" value="${check}"/>
 <c:choose>
-	
-	
-	
+	 
+	      
+	 
 	<c:when test= "${check==0}">
 		<c:out value="${passfalse}" escapeXml = "false" />
 		<meta http-equiv ="refresh" content="0;URL ='/SemiProject/jsp/member/SigninCon.jsp'">
@@ -20,7 +20,7 @@
 	<c:when test= "${check==1}">
 		<c:out value="${normal}" escapeXml = "false" />
 		<c:if test="${url != null}">
-		<meta http-equiv="refresh" content="0;URL='${url}'"> 
+		<meta http-equiv="refresh" content="0;URL='${url}'">  
 		</c:if>
 		<c:if test="${url==null}">
 		<meta http-equiv="refresh" content="0;URL='/SemiProject/jsp/admin/bookingList.jsp'"> 

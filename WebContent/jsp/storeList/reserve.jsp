@@ -236,7 +236,7 @@ $( document ).ready(function() {
  
 /* 	$('#chkBox').children('label').find('#bk_menu').bind('click',function(){ */
 
- 
+  
  /* 인원 수 이벤트 */
  var useCnt = 1;
  $('#useCnt').val(useCnt);

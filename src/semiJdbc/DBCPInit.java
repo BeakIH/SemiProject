@@ -23,8 +23,8 @@ public class DBCPInit extends HttpServlet {
 	public void init() throws ServletException{
 		loadJDBCDriver();
 		initConnectionPool();
-	}
-	
+	} 
+	 
 	private void loadJDBCDriver() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");

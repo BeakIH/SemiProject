@@ -12,4 +12,4 @@
         response.sendRedirect("../login/logout.jsp"); // 로그인 화면으로 다시 돌아간다.
     %>
 </body>
-</html>
+</html> 

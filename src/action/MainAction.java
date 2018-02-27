@@ -13,9 +13,10 @@ public class MainAction implements CommandAction{
 		ListDBBean dbPro = ListDBBean.getInstance();
 		
 		articleList = dbPro.getAllData();
-		
+		 
 		request.setAttribute("articleList", articleList);
 		
 		return "/jsp/storeList/main.jsp";
 	}
 }
+ 

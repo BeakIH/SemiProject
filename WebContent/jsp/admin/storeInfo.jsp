@@ -19,10 +19,10 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group">
+                  <div class="form-group"> 
                     <label>업종명</label>
                     <input type="text" class="form-control form-control-lg" placeholder="" value="${cateNm }">
-                  </div>
+                  </div> 
                 </div>
               </div>
               <div class="form-group">

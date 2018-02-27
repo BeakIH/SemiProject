@@ -482,7 +482,7 @@ $(document).ready(function(){
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
              <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
         </div>
-      </li>
+      </li> 
       <div>
       <button class="btn btn-primary" type="button" style="margin-top:20px" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
        <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> -->
@@ -491,7 +491,7 @@ $(document).ready(function(){
     </ul>
 
 				</div>
-			</div>
+			</div> 
 		</nav>
 </c:when>
 <c:when test = "${check != null }">

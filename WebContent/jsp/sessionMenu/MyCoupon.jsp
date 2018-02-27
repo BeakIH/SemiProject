@@ -175,7 +175,7 @@
                         <li>사용조건 <span>식사 메뉴 1개 이상 주문 </span></li>
                       </ul>
                     </div>
-                 </div>
+                 </div> 
                     <div class="row">
                     <div class="col-md-6">
                                         <div class="added-on">사용기간</div>

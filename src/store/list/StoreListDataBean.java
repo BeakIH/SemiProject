@@ -1,5 +1,5 @@
 package store.list;
-
+ 
 public class StoreListDataBean {
 
 	// 매장번호 매장번호

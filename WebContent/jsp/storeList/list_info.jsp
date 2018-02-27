@@ -311,10 +311,10 @@ function realtimeClock() {
 
 				</div>
 			</div>
-		</nav>
+		</nav> 
 </c:when>
 </c:choose>
-		<%-- <c:forEach var="article2" items="${articleList2}">
+		<%-- <c:forEach var="article2" items="${articleList2}"> 
 		<c:set var="mem_id" value="${articleList2.mem_id}" />
 		</c:forEach> --%>
 		<c:forEach var="article" items="${articleList}">

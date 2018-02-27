@@ -25,7 +25,7 @@ public class BookingListAction implements CommandAction {
 		ArrayList<BookingDataBean> confirmList = dao.bookingAdminCall(store_no);
 		
 		System.out.println("aaaa::"+confirmList.size());
-		
+		 
 //		String[] img = {"../../img/1.png","../../img/2.png","../../img/3.png","../../img/4.png","../../img/5.png"};
 //		for(int i = 0; i<50;i++){
 //			int temp = (int)Math.random()*5;
@@ -42,7 +42,7 @@ public class BookingListAction implements CommandAction {
 		request.setAttribute("confirmList", confirmList);
 		request.setAttribute("errorpage", "0");
 		
-		return "/jsp/admin/bookingList.jsp";
-	
+		return "/jsp/admin/bookingList.jsp"; 
+	 
 	}	
 }

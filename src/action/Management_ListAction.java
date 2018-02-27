@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import emp.EmpDBBean;
 import emp.EmpDataBean;
-
+ 
 public class Management_ListAction implements CommandAction {
 
 	@Override
