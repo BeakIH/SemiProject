@@ -4,6 +4,8 @@
 <html> 
 <head><title> </title>
 
+
+    
 </head>
 <body>
 <div id="content">
@@ -43,9 +45,33 @@
         </div>
       </div>
       
-      <div class="col-md-3 col-lg-3 col-xl-3">
+      
+      <div class="col-md-6 col-lg-5 col-xl-4">
         <div class="socal-login-buttons"> 
-        <a href="#" class="btn btn-social btn-block btn-twitter"><i class="icon fa fa-twitter"></i> 트위터로 시작하기</a> 
+        <a href="../sessionMenu/404.jsp" class="btn btn-social btn-block btn-lg btn-facebook"><i class="icon fa fa-facebook"></i> Facebook으로 로그인</a> 
+        <a href="../sessionMenu/404.jsp" class="btn btn-social btn-block btn-lg btn-twitter"><i class="icon fa fa-twitter"></i>  Twitter으로 로그인</a> 
+        <a href="../sessionMenu/404.jsp" class="btn btn-social btn-block btn-lg btn-google"><i class="icon fa fa-google"></i>  Google로 로그인</a> </div>
+          <a id="custom-login-btn" href="javascript:loginWithKakao()">
+   <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="360"/></a>
+   <script type='text/javascript'>
+    Kakao.init('5116b3bc667703bf84b154ab8a58f70a');
+    function loginWithKakao() {
+   Kakao.Auth.login({
+   success: function(authObj) {
+    alert(JSON.stringify(authObj));  },
+      fail: function(err) {
+       alert(JSON.stringify(err)); }  });    };  </script>
+      
+      
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body></html>
+     
+     
+   <!-- 
 
 <div id="fb-root"></div>
 <script>
@@ -57,18 +83,13 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-
-<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+<div class="fb-login-button" data-max-rows="3" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
 <br>
 <br>
 
 
-
-
-
-  <meta name="google-signin-client_id" content="1040068865620-q458emc189ucg0upk0j04g1tbmi15bn3.apps.googleusercontent.com    
-  .apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="1040068865620-q458emc189ucg0upk0j04g1tbmi15bn3.apps.googleusercontent.com.apps.googleusercontent.com">
 
 
   <div id="my-signin2"></div>
@@ -92,15 +113,9 @@
     }
   </script>
 
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>  
 
-       
-       
        <br>
-       
- 
-       
-       
        
       
  <div id="naver_id_login"></div>
@@ -116,27 +131,6 @@
      naver_id_login.init_naver_id_login();
      
   </script>
-  </div>
+  </div>  -->
      
-     <br>
-       
-       
-       
-          <a id="custom-login-btn" href="javascript:loginWithKakao()">
-   <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/></a>
-   <script type='text/javascript'>
-    Kakao.init('5116b3bc667703bf84b154ab8a58f70a');
-    function loginWithKakao() {
-   Kakao.Auth.login({
-   success: function(authObj) {
-    alert(JSON.stringify(authObj));  },
-      fail: function(err) {
-       alert(JSON.stringify(err)); }  });    };  </script>
-      
-      
-        </div>
-      </div>
-    </div>
-  </div>
-
-</body></html>
+   

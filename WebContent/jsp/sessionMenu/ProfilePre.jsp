@@ -12,19 +12,15 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>BABSAZO</title>
 
-   <script type="text/javascript">
+ <!--   <script type="text/javascript">
     
         function changeForm(val){
             if(val == "-1"){
                 location.href="ProfilePre.jsp";
             }else if(val == "0"){
                 location.href="index.jsp?contentPage=member/pro/ModifyFrom.jsp";
-            }else if(val == "1"){       <!--이거수정-->
-                location.href="index.jsp?contentPage=member/pro/ModifyForm.jsp";
-            }
-        }
-        
-    </script>
+            }else if(val == "1"){       이거수정
+                location.href="index.jsp?contentPage=member/pro/ModifyForm.jsp";  -->
     
 
 </head>
@@ -39,7 +35,9 @@ MemberBean memberBean = dao.getUserInfo(id); -->
 <br>
        
           <!-- 프로필 수정 -->
-             
+        
+
+      
           <div class="col-md-7 col-lg-8 col-xl-8">
             <div class="page-header bordered">
               <h1>프로필 설정<small>BABSAZO에서 사용할 프로필을 설정해주세요</small></h1>
@@ -49,23 +47,22 @@ MemberBean memberBean = dao.getUserInfo(id); -->
         
         
              
-              <div class="row"> <div class="col-md-6">
-                  <div class="form-group">
-               <label> 아이디</label>
-                   <input type="text" class="form-control form-control-lg" placeholder="" value=""> 
-                    
-                    </div>
-                    
+       
+                    <div class="form-group">
+                <label>아이디</label>
+                <input type="text" class="form-control form-control-lg" value="">
+              </div>
+              <div class="row">
 
                 <div class="col-md-6"> <div class="form-group">
                     <label>이름</label>
-                    <input type="text" class="form-control form-control-lg" placeholder="" value="사조">
+                    <input type="text" class="form-control form-control-lg" placeholder="" value="">
                   </div>
               
               
               <div class="form-group">
                 <label>이메일</label>
-                <input type="text" class="form-control form-control-lg" value="babsazo@email.com">
+                <input type="text" class="form-control form-control-lg" value="">
               </div>
               <div class="row">
                 <div class="col-md-6">
@@ -83,10 +80,8 @@ MemberBean memberBean = dao.getUserInfo(id); -->
                     <input type="text" class="form-control form-control-lg" placeholder="" value="">
                   </div>
                 </div>
-              </div>
-              
-              
-              <div class="form-group">
+              </div></div></div>
+             
                <!--  <label>회원님은 어떤 분이신가요?</label>
                 <textarea class="form-control form-control-lg text-editor" placeholder=""></textarea>
               </div>
@@ -119,18 +114,18 @@ MemberBean memberBean = dao.getUserInfo(id); -->
                 </div>
               </div> -->
               
-              
+               <div class="form-group">
               <br>
               
               <h3 class="subheadline">거주지 또는 관심 BABSAZO 지역</h3>
-              <div class="form-group">
+               <div class="form-group">
                 <label>예) 서울/종로구</label>
                 <input type="text" class="form-control form-control-lg">
               </div>
               
               
               <div class="row">
-              
+              </div>
               
               <!-- 주소 / 관심지역설정(?) 일단보류
                 <div class="col-lg-6">
