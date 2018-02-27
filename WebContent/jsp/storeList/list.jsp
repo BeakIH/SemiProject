@@ -22,7 +22,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>밥은먹고다니니</title>
+<title>Real Estate</title>
 
 <!-- Bootstrap -->
 <link
@@ -38,8 +38,6 @@
 	rel="stylesheet">
 <link href="../../css/style.css?ver=4" rel="stylesheet">
 
-<!-- 내가 추가한 css, 나중에 바꿔야함 -->
-<!-- <link href="./style.css" rel="stylesheet"> -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../lib/jquery-3.2.1.min.js"></script>
@@ -54,14 +52,12 @@
 <script src="../../lib/sidr/jquery.sidr.min.js"></script>
 <script src="../../lib/lib.js"></script>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- 나중에 아래쪽 script 문 따로 .js 파일 생성해서 정리해야함 -->
 <script>
-/* 검색어 카테고리에 따라서 선택된 카테고리값 변경 */
-	/* searchn 값이 같은 대상의 속성값을 selected 로 변경 */
-$(function(){
-	var getParameters = function (paramName) {
+	
+/* 넘겨준 파라미터값을 받아오는 펑션 */	
+var getParameters = function (paramName) {
 	    // 리턴값을 위한 변수 선언
 	    var returnValue;
 
@@ -80,40 +76,30 @@ $(function(){
 	        }
 	    }
 	};
-	/* $('.form-group select#mCategory option').val('${search}').prop('selected',true); */
-	/* alert('속성값변경'); */
-/* 	alert('searchn 값'+${searchn}); */
-	/* console.log(getParameters('search')); */
-	/* alert(getParameters('search'));
-	alert(getParameters('searchn')); */
+/* 넘겨준 파라미터값을 받아오는 펑션  end */
 	
+$(function(){
 	if(getParameters('searchn')==undefined || getParameters('search')==undefined){
 		/* alert('아무것도안함'); */
 	}else{
-		/* alert('값이 있는경우'); */
 		if(getParameters('searchn')==1){
 			$('.selectric span.label').text('가게명');
+			// 보류 , 아래에 class 속성을 줘야함
+			$('.col-sm-7 div.form-group').attr("class","selectric-wrapper selectric-form-control selectric-form-control-lg selectric-ui-select selectric-below");
+			$('.selectric-items div.selectric-scroll ul li[data-index=0]').attr("class","highlighted");
+			$('.selectric-items div.selectric-scroll ul li[data-index=1]').attr("class","last selected");
 		}
-		/* $('select#mCategory').val(getParameters('searchn')).attr("selected","selected"); */
-		/* $('.form-group select#mCategory option').val("getParameters('searchn')").prop('selected',true); */
 	}
-		/* searchn 값이 있을경우 */
 });
 
 /* 검색창 카테고리 변경시 placeholder 변경 */
 $(function(){
 	$('.form-group select#mCategory').change(function(){
-/* 		alert('변경');
-		alert($(this).val()); */
 		if(($(this).val()) == 0){// 카테고리 음식
-			/* alert('음식선택'); */
 			$('.form-group input#cCategory').attr("placeholder","ex) 자장면, 김치찌개, 파스타").placeholder();
 		}else if(($(this).val()) == 1){// 카테고리 가게
-			/* alert('가게선택'); */
 			$('.form-group input#cCategory').attr("placeholder","ex) 엘본 더 테이블, 경화루, 라연").placeholder();
-		}/* else if(($(this).val()) == 2){// 카테고리 지역
-			$('.form-group input#cCategory').attr("placeholder","ex) 1~5층 ( 해당 숫자만 입력하세요 )").placeholder();
-		} */
+		}
 	});
 });
 
@@ -121,34 +107,42 @@ $(function(){
 /* 좌측 가격입력시 이벤트 처리 // 포커스 아웃시에 이벤트 발생  */
 $(function(){
 	$('.form-group input#min').change(function(){
-		/* alert('변경');
-		alert($('.form-group input#min').val()); */
-		/* var minVal = $('.form-group input#min').val(); */
 	    if($('.form-group input#max').val() == null || $('.form-group input#max').val() == ""){
-	    	// max 값이 없는경우 파라미터를 min 값만 넘겨줌
-	    	/* alert('max값이 없는 경우'); */
 	    	$('.form-group input#max').focus();
 	    }else{
-	    	// max 값이 있는 경우 둘다넘겨줌
-	    	/* alert('max값이 있는 경우'); */
-	    	location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
+	    	if(getParameters('searchn')!=undefined && getParameters('search')!=undefined && getParameters('cate_nm')!=undefined && getParameters('floor_no')!=undefined){// 금액을 제외한 항목+층별 옵션이 선택된경우
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&cate_nm='+getParameters('cate_nm')+'&searchn=2&search='+getParameters('search')+'&floor_no='+getParameters('floor_no');
+	    	}else if(getParameters('cate_nm')!=undefined){// 항목만 선택된상태에서 금액입력한경우
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&cate_nm='+getParameters('cate_nm');
+	    	}else if(getParameters('searchn')!=undefined && getParameters('search')!=undefined){// 검색한 상태에서 금액 입력한 경우
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&searchn='+getParameters('searchn')+'&search='+getParameters('search');
+	    	}else if(getParameters('floor_no')!=undefined){// 층만 선택한 상태에서 금액입력
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&floor_no='+getParameters('floor_no');
+	    	}else{// 가격만 입력받은 경우
+		    	alert('여기?');
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
+	    	} 
 	    }
 	});
 });
 
 $(function(){
 	$('.form-group input#max').change(function(){
-		/* alert('변경'); */
-		/* alert(minval); */
-		/* var maxVal = $('.form-group input#max').val(); */
 	    if($('.form-group input#min').val() == null || $('.form-group input#min').val() == ""){
-	    	// min 값이 없는경우 파라미터를 max 값만 넘겨줌
-	    	/* alert('min값이 없는 경우'); */
 	    	$('.form-group input#min').focus();
 	    }else{
-	    	// min 값이 있는 경우 둘다넘겨줌
-	    	/* alert('min값이 있는 경우'); */
-	    	location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
+	    	if(getParameters('searchn')!=undefined && getParameters('search')!=undefined && getParameters('cate_nm')!=undefined && getParameters('floor_no')!=undefined){// 금액을 제외한 항목+층별+검색 옵션이 선택된경우
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&cate_nm='+getParameters('cate_nm')+'&searchn='+getParameters('searchn')+'&search='+getParameters('search')+'&floor_no='+getParameters('floor_no');
+	    	}else if(getParameters('cate_nm')!=undefined){// 항목만 선택된상태에서 금액입력한경우
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&cate_nm='+getParameters('cate_nm');
+	    	}else if(getParameters('searchn')!=undefined && getParameters('search')!=undefined){// 검색한 상태에서 금액 입력한 경우
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&searchn='+getParameters('searchn')+'&search='+getParameters('search');
+	    	}else if(getParameters('floor_no')!=undefined){// 층만 선택한 상태에서 금액 입력
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&floor_no='+getParameters('floor_no');
+	    	}else{// 가격만 입력받은 경우
+		    	alert('여기?');
+	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
+	    	} 
 	    }
 	});
 });
@@ -162,18 +156,6 @@ function numCheck(event){
 
 /* 체크박스 선택시 이벤트 // 중복선택시 계속해서 파라미터 추가  혹은 한번씩만 선택가능하게  */
 
-<%-- $(document).ready(function(){ // 아래쪽 펑션에서 페이지 리다이렉트되면 체크박스의 상태값이 초기화되므로 해당 상태값을 유지하기위함
-	/* alert($(".checkbox input").val()); */ // <= 이 값이 항상 0 이기 때문에 
-	alert(<%=iCateName%>); // 값 받아와짐 ,,, int 타입 1~3
-	alert(<%=cateName%>); // 값 받아와짐 ,,, String 타입 1~3 
- 	
-	// 자바스크립트이므로 문자열 비교도 ==
-	if( ($(".checkbox input").val())==<%=cateName%> ){ 
-		alert('확인');
-		$(this).attr("checked", true);
-	}
-}); --%>
-
 $(document).ready(function(){
 	$('input:checkbox[name="CATE_NM"]').each(function(){
 		if(this.value == "${cateName}"){
@@ -184,15 +166,24 @@ $(document).ready(function(){
 
 $(function(){
 	$(".checkbox#food input").click(function() { 
-		/* alert($(this).val()); */
-		
 		// 이부분은 필요없음 (어차피 리다이렉트처리되기때문 )//////
 		$(".checkbox#food input").attr("checked", false); // 모든 대상의 체크를 해제
 		$(this).attr("checked", true); // 클릭한 대상만 체크
-		//////////////////////
-		
 		$(this).val();
 		location.href='list.do?cate_nm='+$(this).val();
+		if(getParameters('search')!=undefined && getParameters('searchn')!=undefined && getParameters('maxSal')!=undefined && getParameters('minSal')!=undefined && getParameters('floor_no')!=undefined){// 음식 선택전에 금액+층+검색 이 선택된경우
+			location.href='list.do?cate_nm='+$(this).val()+'&searchn='+getParameters('searchn')+'&search='+getParameters('search')+'&maxSal='+getParameters('maxSal')+'&minSal='+getParameters('minSal')+'&floor_no='+getParameters('floor_no');
+		}else if(getParameters('search')!=undefined && getParameters('searchn')!=undefined && getParameters('maxSal')!=undefined && getParameters('minSal')!=undefined){// 검색 + 금액 인 상태에서 음식종류 선택
+			location.href='list.do?cate_nm='+$(this).val()+'&searchn='+getParameters('searchn')+'&search='+getParameters('search')+'&maxSal='+getParameters('maxSal')+'&minSal='+getParameters('minSal');
+		}else if(getParameters('maxSal')!=undefined && getParameters('minSal')!=undefined){// 금액입력된 상태에서 음식종류 선택
+			location.href='list.do?cate_nm='+$(this).val()+'&maxSal='+getParameters('maxSal')+'&minSal='+getParameters('minSal');
+		}else if(getParameters('search')!=undefined && getParameters('searchn')!=undefined){// 검색된 상태에서 음식종류 선택
+			location.href='list.do?cate_nm='+$(this).val()+'&searchn='+getParameters('searchn')+'&search='+getParameters('search');
+		}else if(getParameters('floor_no')!=undefined){// 층만 선택된 상태에서 음식종류 선택
+			location.href='list.do?cate_nm='+$(this).val()+'&floor_no='+getParameters('floor_no');
+		}else{// 음식만을 선택했을시 발생
+			location.href='list.do?cate_nm='+$(this).val();
+		}
 	});
 });
 
@@ -202,28 +193,32 @@ $(function() {
 		});
 });
 
-// 층별 이벤트 // 아래되면 여기수정 (cateName 말고 다른 파라미터로)
 $(document).ready(function(){
-	$('input:checkbox[name="search"]').each(function(){
-		if(this.value == "${search}"){
+	$('input:checkbox[name="floor_no"]').each(function(){
+		if(this.value == getParameters('floor_no')){//88
 			this.checked = true;
 		}
 	});
 });
 
-// 여기먼저
 $(function(){
-	$(".checkbox#floor input").click(function() { 
-		
-		// 이부분은 필요없음 (어차피 리다이렉트처리되기때문 )//////
-		$(".checkbox input").attr("checked", false); // 모든 대상의 체크를 해제
+	$(".checkbox#floor input").click(function(){
+		$(".checkbox#floor input").attr("checked", false); // 모든 대상의 체크를 해제
 		$(this).attr("checked", true); // 클릭한 대상만 체크
-		//////////////////////
-		
 		$(this).val();
-		location.href='list.do?searchn=2&search='+$(this).val();
+		
+		if(getParameters('cate_nm')!=undefined && getParameters('maxSal')!=undefined && getParameters('minSal')!=undefined && getParameters('search')!=undefined && getParameters('searchn')!=undefined){// 층 선택전에 금액+음식+검색이 선택된경우
+			location.href='list.do?floor_no='+$(this).val()+'&cate_nm='+getParameters('cate_nm')+'&maxSal='+getParameters('maxSal')+'&minSal='+getParameters('minSal')+'&search='+getParameters('search')+'&searchn='+getParameters('searchn');
+		}else if(getParameters('maxSal')!=undefined && getParameters('minSal')!=undefined){// 금액입력된 상태에서 층별 선택
+			location.href='list.do?floor_no='+$(this).val()+'&maxSal='+getParameters('maxSal')+'&minSal='+getParameters('minSal');
+		}else if(getParameters('cate_nm')!=undefined){// 음식종류 선택된 상태에서 층별 선택
+			location.href='list.do?floor_no='+$(this).val()+'&cate_nm='+getParameters('cate_nm');
+		}else{// 층만을 선택했을시 발생
+			location.href='list.do?floor_no='+$(this).val();
+		}
 	});
 });
+
 
 $(function() { 
 	$('input[type="checkbox"]').bind('click',function() { 
@@ -233,170 +228,25 @@ $(function() {
 
 /* 정렬옵션 선택시 기존검색한 상태로 정렬하는지 아닌지 판별하는 펑션 */
  
-/*  ${search }   기존 검색어 */
 $(function(){
 	$('#sort-category').change(function(){
-		/* alert('이벤트확인'); */
-		var getParameters = function (paramName) {
-		    // 리턴값을 위한 변수 선언
-		    var returnValue;
-
-		    // 현재 URL 가져오기
-		    var url = location.href;
-
-		    // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
-		    var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
-
-		    // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
-		    for (var i = 0; i < parameters.length; i++) {
-		        var varName = parameters[i].split('=')[0];
-		        if (varName.toUpperCase() == paramName.toUpperCase()) {
-		            returnValue = parameters[i].split('=')[1];
-		            return decodeURIComponent(returnValue);
-		        }
-		    }
-		}; // 여기까지 url 파라미터 받아오기
 		
-		/* alert(getParameters('search'));
-		alert(getParameters('searchn'));
-		alert('확인1');
-		alert($(this).val());
-		alert('확인2'); */
-		if(getParameters('search')!=undefined || getParameters('searchn')!=undefined){// 검색한 값이 있는경우
-			/* alert('검색한 값이 있는경우'); */
+		if(getParameters('search')!=undefined && getParameters('searchn')!=undefined && getParameters('maxSal')!=undefined && getParameters('minSal')!=undefined && getParameters('cate_nm')!=undefined && getParameters('floor_no')!=undefined){// 모든 항목이 선택된 경우에서의 정렬
+			location.href='list.do?sortValue='+$(this).val()+'&search='+getParameters('search')+'&searchn='+getParameters('searchn')+'&maxSal='+getParameters('maxSal')+'&minSal='+getParameters('minSal')+'&cate_nm='+getParameters('cate_nm')+'&floor_no='+getParameters('floor_no');
+		}else if(getParameters('maxSal')!=undefined && getParameters('minSal')!=undefined && getParameters('cate_nm')!=undefined){//
+			location.href='list.do?sortValue='+$(this).val()+'&maxSal='+getParameters('maxSal')+'&minSal='+getParameters('minSal')+'&cate_nm='+getParameters('cate_nm');
+		}else if(getParameters('search')!=undefined && getParameters('searchn')!=undefined && getParameters('cate_nm')!=undefined){
+			location.href='list.do?sortValue='+$(this).val()+'&cate_nm='+getParameters('cate_nm')+'&search='+getParameters('search')+'&searchn='+getParameters('searchn');
+		}else if(getParameters('cate_nm')!=undefined){//항목만선택
+			location.href='list.do?sortValue='+$(this).val()+'&cate_nm='+getParameters('cate_nm');
+		}else if(getParameters('search')!=undefined && getParameters('searchn')!=undefined){
 			location.href='list.do?sortValue='+$(this).val()+'&search='+getParameters('search')+'&searchn='+getParameters('searchn');
-		}else{ // 없는경우 
-			/* alert('검색한 값이 없는경우'); */
+		}else{// 모든 값에 대한 정렬 ( 항목선택 x )
+			alert('검색한 값이 없는경우');
 			location.href='list.do?sortValue='+$(this).val();
 		}
-		
 	});
 });
-
-
-/* function checkSort(){
-	var getParameters = function (paramName) {
-	    // 리턴값을 위한 변수 선언
-	    var returnValue;
-
-	    // 현재 URL 가져오기
-	    var url = location.href;
-
-	    // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
-	    var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
-
-	    // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
-	    for (var i = 0; i < parameters.length; i++) {
-	        var varName = parameters[i].split('=')[0];
-	        if (varName.toUpperCase() == paramName.toUpperCase()) {
-	            returnValue = parameters[i].split('=')[1];
-	            return decodeURIComponent(returnValue);
-	        }
-	    }
-	};
-	
-	alert(getParameters('search'));
-	alert(getParameters('searchn'));
-	alert('확인1');
-	alert($(this).val());
-	alert('확인2');
-	if(getParameters('search')!=undefined || getParameters('searchn')!=undefined){// 검색한 값이 있는경우
-		alert('검색한 값이 있는경우');
-	}else{ // 없는경우 
-		alert('검색한 값이 없는경우');
-	}
-} */
-
-
-/* // 검색시 해당 선택옵션값 표시해주기
-$(document).ready(function(){
-	alert('기능확인');
-	function getHttpParam(name) {
-	    var regexS = "[\\?&]" + name + "=([^&#]*)";
-	    var regex = new RegExp(regexS);
-	    var results = regex.exec(window.location.href);
-	    if (results == null) {
-	        return 3;
-	    } else {
-	        return results[1];
-	    }
-	}
-	
-	var str = getHttpParam("searchn");
-	alert(str);
-	alert($('.a').val());
-	if($('.a').val()== str){
-		alert('확인')
-		$('.a').prop("selected", true);
-		$('.form-group select#mCategory option').attr("selected", selected);
-	}  
- 	if(str==0){
- 		alert('음식확인');
- 		$('#main > div:nth-child(2) > form > div > div > div > div:nth-child(2) > div > div.col-sm-7 > div > div > div.selectric-items > div > ul > li:nth-child(3)').attr("selected","selected");
-	}else if(str==1){
-		alert('가게확인');
-		$('#st').attr("selected","selected");   
-	}else if(str==2){
-		alert('지역확인');
-		$('#lc').attr("selected","selected");
-	}
-	
-	// str = 1 이면 ~ 
-	 $(document).ready(function(){
-		alert('확인');
-		$('.a').each(function(){ // each 반복함수
-			if($('.a').value == str){
-				$('.a').selected = true;
-			}
-		});
-	}); 
-	// option 값이 파라미터로 받은 search 값이면 해당
-}); */
-
-
-/* function floorSelect(){
-    // 사용자 ID를 갖고 온다.
-    var userId = $("#userId").val();
- 
-    // name이 같은 체크박스의 값들을 배열에 담는다.
-    var checkboxValues = [];
-    $("input[name='hobby']:checked").each(function(i) {
-        checkboxValues.push($(this).val());
-    });
-     
-    // 사용자 ID(문자열)와 체크박스 값들(배열)을 name/value 형태로 담는다.
-    var allData = { "userId": userId, "checkArray": checkboxValues };
-     
-    $.ajax({
-        url:"goUrl.do",
-        type:'GET',
-        data: allData,
-        success:function(data){
-            alert("완료!");
-            window.opener.location.reload();
-            self.close();
-        },
-        error:function(jqXHR, textStatus, errorThrown){
-            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
-            self.close();
-        }
-    });
-} */
-
-/* function floorSelect(){
-	var lists = [];
-	  $("input[name='search']:checked").each(function(i){   //jQuery로 for문 돌면서 check 된값 배열에 담는다
-	   lists.push($(this).val());
-	  });
-	  
-	  jQuery.ajax({type:"POST", 
-	   data:{'search':lists, 'searchn':2},
-	   url:"jsp/storeList/list.jsp", 
-	   contentType:"application/x-www-form-urlencoded;charset=utf-8", //한글 깨짐 방지
-	   cache: false, 
-	   success:function(data) { }
-	  });
-} */
 </script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -407,171 +257,162 @@ $(document).ready(function(){
     <![endif]-->
 </head>
 <body>
-	<!-- <img src="../../img/store_img/test.jpg"> -->
 	<div id="main">
-<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
-  <div class="container">
-  <!-- <a class="navbar-brand" href="index.html"><span class="icon-uilove-realestate"></span></a> -->
-	<!-- <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>  
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span> -->
-    <a class="navbar-brand" href="/SemiProject/jsp/storeList/main.do"><!-- <span class="icon-uilove-realestate"></span> -->
-	 <span><img src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></span>
-   <!-- <span><img src="../../img/밥사조4층.png" alt="Smiley face" height="30" width="60"></span> -->
-  </a>
-  </button>
+		<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
+			<div class="container">
+				<a class="navbar-brand" href="main.do"><img
+					src="../../img/밥사조로고.png" alt="Smiley face" height="50" width="90"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#menu-content" aria-controls="menu-content"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-  <div class="collapse navbar-collapse" id="menu-content">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       	밥사조
-        <span class="sr-only">(current)</span>
-        </a>
-        <div class="dropdown-menu">
-            <a href="main.do" class="dropdown-item">밥사조 이야기</a>
-            <a href="main.do" class="dropdown-item">밥사조 식구들</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	조회
-        </a>
-        <div class="dropdown-menu">
-            <a href="list.do" class="dropdown-item">목록보기</a>
-            <!-- <a href="property_grid.html" class="dropdown-item">Grid View</a>
-            <a href="property_listing_map.html" class="dropdown-item">Map View</a>
-            <a href="property_single.html" class="dropdown-item">Single View 1</a>
-            <a href="property_single2.html" class="dropdown-item">Single View 2</a>
-            <a href="property_single3.html" class="dropdown-item">Single View 3</a> -->
-        </div>
-      </li>
-      
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	매장소식
-        </a>
-        <div class="dropdown-menu">
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">공지사항</a>
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"> 매장별 이용후기 </a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         	도움말
-        </a>
-        <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
-            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
-        </div>
-      </li>
+				<div class="collapse navbar-collapse" id="menu-content">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								밥사조 <span class="sr-only">(current)</span>
+						</a>
+							<div class="dropdown-menu">
+								<a href="main.do" class="dropdown-item">밥사조 이야기</a> <a
+									href="main.do" class="dropdown-item">밥사조 식구들</a>
+							</div></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								조회 </a>
+							<div class="dropdown-menu">
+								<a href="list.do" class="dropdown-item">목록보기</a>
+							</div></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								매장소식 </a>
+							<div class="dropdown-menu">
+								<a href="agent_list.html" class="dropdown-item">공지사항</a> <a
+									href="agent.html" class="dropdown-item">매장별 이용후기</a>
+							</div></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								도움말 </a>
+							<div class="dropdown-menu">
+								<a href="agent_list.html" class="dropdown-item">자주묻는 질문</a> <a
+									href="agent.html" class="dropdown-item"> 1:1 문의</a>
+							</div></li>
 					</ul>
 
-					<ul class="navbar-nav ml-auto">
-      
-
-<c:choose>
-<c:when test= "${check==null}">
-      <li class="nav-item dropdown user-account">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 안녕하세요  </a> 
-        <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
-            <a href="my_password.html" class="dropdown-item"> <i class="fa fa fa-utensils"></i> 매장조회</a> 
-            <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a> -->
-            <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
-             <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
-        </div>
-      </li> 
-      <div>
-      <button class="btn btn-primary" type="button" style="margin-top:20px" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
-       <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> -->
-       <!-- <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li> -->
-		</div>   
-    </ul>
-
+					<c:choose>
+						<c:when test="${check==null}">
+							<ul class="navbar-nav ml-auto">
+								<li class="nav-item dropdown user-account"><a
+									class="nav-link dropdown-toggle" href="#" role="button"
+									data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false"> <span class="user-image"
+										style="background-image: url(' img/demo/profile3.jpg');"></span>
+										안녕하세요
+								</a>
+									<div class="dropdown-menu">
+										<a href="my_profile.html" class="dropdown-item"> <i
+											class="fa fa-home"></i> 메인으로
+										</a> <a href="my_password.html" class="dropdown-item"> <i
+											class="fa fa fa-utensils"></i> 매장조회
+										</a>
+									</div></li>
+								<div>
+									<button class="btn btn-primary" type="button"
+										onClick="window.location='/SemiProject/jsp/member/SigninCon.do'">
+										<i class="fa fa-power-off">&nbsp;</i> 로그인 </a>
+									</button>
+								</div>
+							</ul>
 				</div>
-			</div> 
-		</nav>
-</c:when>
-<c:when test = "${check != null }">
-      <li class="nav-item dropdown user-account">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
-        </a>
-        <div class="dropdown-menu">
-            <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
-            
-            <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
-            <a href="my_notifications.html" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
-            <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
-            <a href="my_payments.html" class="dropdown-item">Payments</a> -->
-            <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
-             <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
-        </div>
-      </li>
-      <div>
-      <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i>  </a></button> -->
-       <button class="btn btn-primary" type="button" style="margin-top:20px" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button>
-       <!-- <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li> -->
-    	</div>
-    </ul>
-
-				</div>
+				<!-- class collapse nav collapse end -->
 			</div>
+			<!-- class container end -->
 		</nav>
-</c:when>
-</c:choose>
+		</c:when>
+		<c:otherwise>
+			<li class="nav-item dropdown user-account"><a
+				class="nav-link dropdown-toggle" href="#" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="user-image"
+					style="background-image: url(' img/demo/profile3.jpg');"></span>
+					${name}님, 어서오세요
+			</a>
+				<div class="dropdown-menu">
+					<a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i
+						class="fa fa-bell"></i> 예약현황 </a> <a href="jsp/admin/staffInfo.jsp"
+						class="dropdown-item"><i class="fa fa-fw fa-address-book"></i>
+						직원조회 <a> <a href="my_notifications.html" class="dropdown-item"><i
+								class="fa fa-fw fa-thumbs-up" size=5px></i> 우리매장후기 </a> 
+				</div></li>
+			<div>
+				<button class="btn btn-primary" type="button"
+					onClick="window.location='/SemiProject/jsp/member/SigninCon.do'">
+					<i class="fa fa-power-off">&nbsp;</i> 로그인 </a>
+				</button>
+			</div>
+			</ul>
+		</c:otherwise>
+		</c:choose>
 
-		<div class="container">
-			<form>
-				<!-- 나중에 method 속성값 post로 -->
-				<div class="search-form">
-					<div class="card">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
+	</div>
+	</nav>
+	</div>
+	<div class="container">
+		<form>
+			<!-- 나중에 method 속성값 post로 -->
+			<div class="search-form">
+				<div class="card">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
 								<c:set var="numberAsString">${search }</c:set>
 								<c:choose>
-								<c:when test="${numberAsString.matches('[0-9]+')}"><!-- 숫자인경우 value값을 찍어주지 않기위해 -->
-									<input type="text" class="form-control form-control-lg"
-										id="cCategory" name="search" placeholder="ex) 자장면, 김치찌개, 파스타"
-										value="">
-								</c:when>
-								<c:otherwise><!-- 숫자가 아닌경우 검색어를 검색창에 표시해줌 -->
-									<input type="text" class="form-control form-control-lg"
+									<c:when test="${numberAsString.matches('[0-9]+')}">
+										<!-- 숫자인경우 value값을 찍어주지 않기위해 -->
+										<input type="text" class="form-control form-control-lg"
+											id="cCategory" name="search" placeholder="ex) 자장면, 김치찌개, 파스타"
+											value="">
+									</c:when>
+									<c:otherwise>
+										<!-- 숫자가 아닌경우 검색어를 검색창에 표시해줌 -->
+										<input type="text" class="form-control form-control-lg"
 											id="cCategory" name="search" placeholder="ex) 자장면, 김치찌개, 파스타"
 											value=${search }>
-								</c:otherwise>
+									</c:otherwise>
 								</c:choose>
-									<!-- 여기 수정중  search값이 숫자인경우에는 받아오면안되거나 빈값으로 초기화-->
-								</div>
+								<!-- 여기 수정중  search값이 숫자인경우에는 받아오면안되거나 빈값으로 초기화-->
 							</div>
-							<div class="col-lg-6">
-								<div class="row">
-									<div class="col-sm-7">
-										<!-- 여기 폼테그 원래 자리 -->
-										<div class="form-group">
-											<select class="form-control form-control-lg ui-select"
-												id="mCategory" name="searchn"
-												data-placeholder="Property Type">
-												<!-- 데이터 플레이스홀더 -->
-												<option value="0" id="fd">음식명</option>
-												<option value="1" id="st">가게명</option>
-												<!-- <option value="2" id="lc">층별</option> -->
-											</select>
-										</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="row">
+								<div class="col-sm-7">
+									<!-- 여기 폼테그 원래 자리 -->
+									<div class="form-group">
+										<select class="form-control form-control-lg ui-select"
+											id="mCategory" name="searchn"
+											data-placeholder="Property Type">
+											<!-- 데이터 플레이스홀더 -->
+											<option value="0" id="fd">음식명</option>
+											<option value="1" id="st">가게명</option>
+											<!-- <option value="2" id="lc">층별</option> -->
+										</select>
 									</div>
-									<div class="col-sm-5">
-										<!-- 폼 테그 추가함 -->
-										<div class="form-group">
-											<button type="submit"
-												class="btn btn-lg btn-primary btn-block">검색하기</button>
-										</div>
+								</div>
+								<div class="col-sm-5">
+									<!-- 폼 테그 추가함 -->
+									<div class="form-group">
+										<button type="submit" class="btn btn-lg btn-primary btn-block">검색하기</button>
 									</div>
-			</form>
-		</div>
+								</div>
+		</form>
+	</div>
 	</div>
 	</div>
 	</div>
@@ -698,19 +539,19 @@ $(document).ready(function(){
 													<div class="checkbox" id="floor">
 														<!-- value 값으로 판별해도 괜찮고 생각해봐야할듯 -->
 														<!-- CATE_NM 파라미터에 값을 넘겨줘야함  -->
-														<input type="checkbox" name="search" value="1" id="1floor">
+														<input type="checkbox" name="floor_no" value="1" id="1floor">
 														<label for="1floor">1층</label>
 													</div>
 													<div class="checkbox" id="floor">
-														<input type="checkbox" name="search" value="2" id="2floor">
+														<input type="checkbox" name="floor_no" value="2" id="2floor">
 														<label for="2floor">2층</label>
 													</div>
 													<div class="checkbox" id="floor">
-														<input type="checkbox" name="search" value="3" id="3floor">
+														<input type="checkbox" name="floor_no" value="3" id="3floor">
 														<label for="3floor">3층</label>
 													</div>
 													<div class="checkbox" id="floor">
-														<input type="checkbox" name="search" value="4" id="4floor">
+														<input type="checkbox" name="floor_no" value="4" id="4floor">
 														<label for="4floor">4층</label>
 													</div>
 												</div>
@@ -756,7 +597,7 @@ $(document).ready(function(){
 							<c:if test="${count == 0}">
 								<table width="700" border="1" cellpadding="0" cellspacing="0">
 									<tr>
-										<td align="center">등록된 점포가 없습니다.</td>
+										<td align="center">검색 결과, 등록된 점포가 없습니다.</td>
 									</tr>
 								</table>
 							</c:if>
@@ -782,14 +623,20 @@ $(document).ready(function(){
 																	<div class="item-badge-left-fail"><font color="red">예약불가</font></div>
 																</c:when> --%>
 
-																<c:when test="${article.cur_tbl_cnt>0 && article.cur_tbl_cnt <=5 }">
-																	<div class="item-badge-left-fail"><font color="white">예약불가</font></div>
+																<c:when
+																	test="${article.cur_tbl_cnt>0 && article.cur_tbl_cnt <=5 }">
+																	<div class="item-badge-left-fail">
+																		<font color="white">예약불가</font>
+																	</div>
 																</c:when>
 																<c:otherwise>
-																	<div class="item-badge-left"><font color="white">예약가능</font></div>
+																	<div class="item-badge-left">
+																		<font color="white">예약가능</font>
+																	</div>
 																</c:otherwise>
 															</c:choose>
-															<div class="item-badge-right">세일 중</div><!-- 오른쪽 상자, 빼도됨 -->
+															<div class="item-badge-right">세일 중</div>
+															<!-- 오른쪽 상자, 빼도됨 -->
 														</div>
 														<div class="item-meta">
 															<div class="item-price">${article.avg_price }원선
@@ -798,13 +645,19 @@ $(document).ready(function(){
 															</div>
 														</div> </a>
 													<!-- 북마크 기능 버튼  -->
-													<a href="#" class="save-item"><i class="fa fa-star"></i></a>
+													<!-- 
+													파이널때 기능추가  
+													북마크 버튼을 누르면 특정 테이블에 올라가서 개인 북마크 메뉴 누르면 북마크된 점포 목록이 보이도록하기
+													특정 테이블에 
+													-->
+
+													<!-- <a class="save-item" id="bookmark"><i class="fa fa-star"></i></a> -->
 												</div>
 											</div>
 											<div class="col-lg-7">
 												<div class="item-info">
 													<h3 class="item-title">
-														<a href="property_single.html">${article.store_nm }</a>
+														<a href="list_info.do?store_no=${article.store_no }">${article.store_nm }</a>
 													</h3>
 													<!-- 가게명  -->
 													<div class="item-location">
@@ -812,9 +665,12 @@ $(document).ready(function(){
 													<!-- 위치  -->
 													<div class="item-details-i">
 														<span class="bedrooms" data-toggle="tooltip"
-															title="유아용 좌석"><!-- 값이 보여질 공간  --><i class="fa fa-bed"></i></span> <span
-															class="bathrooms" data-toggle="tooltip"
-															title="스터디 가능"><!-- 값이 보여질 공간  --><i class="fa fa-bath"></i></span>
+															title="유아용 좌석"> <!-- 값이 보여질 공간  --> <i
+															class="fa fa-bed"></i>
+														</span> <span class="bathrooms" data-toggle="tooltip"
+															title="스터디 가능"> <!-- 값이 보여질 공간  --> <i
+															class="fa fa-bath"></i>
+														</span>
 													</div>
 													<div class="item-details">
 														<ul>
@@ -844,7 +700,7 @@ $(document).ready(function(){
 							<!--  
             
             -->
-<!-- 							<nav aria-label="Page navigation">
+							<!-- 							<nav aria-label="Page navigation">
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
 									&laquo; = 좌각 인용부호 (<< 모양)  
@@ -861,7 +717,7 @@ $(document).ready(function(){
 		</div>
 	</div>
 	<!-- Contact Agent Modal -->
-	<!-- <div class="modal fade  item-badge-rightm" id="leadform" tabindex="-1"
+	<div class="modal fade  item-badge-rightm" id="leadform" tabindex="-1"
 		role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -871,9 +727,8 @@ $(document).ready(function(){
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<div class="media">
-						기존값 property/1.jpg
+						<!-- 기존값 property/1.jpg -->
 						<div class="media-left">
-						아아아아아아아
 							<a href="property_single.html"><img
 								src="img/demo/property/elbon.jpg" class="img-rounded" width="64"
 								alt=""></a>
@@ -922,7 +777,61 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
+	<button class="btn btn-primary btn-circle" id="to-top">
+		<i class="fa fa-angle-up"></i>
+	</button>
+	<footer id="footer">
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col col-md-10">
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<!-- <p><span class="icon-uilove-realestate"></span></p> -->
+							<p>
+								<span><img src="../../img/밥사조로고.png" alt="Smiley face"
+									height="60" width="120"></span>
+							</p>
+							<address>
+								<strong>BABSAZO, Inc.</strong><br> 서울특별시 중구 남대문로 120<br>
+								대일빌딩3층 D CLASS<br>
+								<!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
+							</address>
+							<p class="text-muted">
+								Copyright &copy; 2018<br /> All rights reserved
+							</p>
+						</div>
+						<div class="col-md-4  col-sm-4">
+							<ul class="list-unstyled">
+								<li><a href="#"> About BABSAZO </a></li>
+								<li><a href="#"> BABSAZO Introduction </a></li>
+							</ul>
+						</div>
+						<div class="col-md-4 col-sm-12">
+							<div class="social-sharebox">
+								<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
+									class="fa fa-facebook"></i></a> <a href="#"><i
+									class="fa fa-google"></i></a> <a href="#"><i
+									class="fa fa-linkedin"></i></a> <a href="#"><i
+									class="fa fa-youtube-play"></i></a> <a href="#"><i
+									class="fa fa-pinterest"></i></a>
+							</div>
+							<form>
+								<h4>밥사조 소식 받아보기</h4>
+								<div class="input-group input-group-lg">
+									<input type="email" class="form-control form-control-lg"
+										placeholder="Email Address"> <span
+										class="input-group-btn">
+										<button class="btn btn-primary" type="button">구독</button>
+									</span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 	</div>
 	<script>
 $(document).ready(function() {
@@ -936,60 +845,6 @@ $('#toggle-filters').sidr({
 	},
 	
 });});
-
-<button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>
-<!-- 푸터 START -->
-<footer id="footer">
-  <div class="container">
-    <div class="row justify-content-md-center">
-          <div class="col col-md-10">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <!-- <p><span class="icon-uilove-realestate"></span></p> -->
-            <p><span><img src="../../img/밥사조로고.png" alt="Smiley face" height="60" width="120"></span></p>
-            <address>
-            <strong>BABSAZO, Inc.</strong><br>
-            	서울특별시 중구 남대문로 120<br>
-           		대일빌딩3층 D CLASS<br>
-            <!-- <abbr title="Phone">P:</abbr> (123) 456-7890 -->
-            </address>
-            <p class="text-muted">Copyright &copy; 2018<br />
-              All rights reserved</p>
-          </div>
-          <div class="col-md-4  col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#"> About BABSAZO </a></li>
-              <li><a href="#"> BABSAZO Introduction </a></li>
-              <!-- <li><a href="#">Security</a></li>
-              <li><a href="#">Plans</a></li> -->
-            </ul>
-          </div>
-          <!-- <div class="col-md-2 col-sm-4">
-            <ul class="list-unstyled">
-              <li><a href="#">For Rent</a></li>
-              <li><a href="#">For Sale</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Property Guides</a></li>
-              <li><a href="#">Jobs</a></li>
-            </ul>
-          </div> -->
-          <div class="col-md-4 col-sm-12">
-            <div class="social-sharebox"> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-google"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a> </div>
-            <form>
-              <h4>밥사조 소식 받아보기 </h4>
-              <div class="input-group input-group-lg">
-                <input type="email" class="form-control form-control-lg" placeholder="Email Address">
-                <span class="input-group-btn">
-                <button class="btn btn-primary" type="button"> 구독 </button>
-                </span> </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-</div>
+</script>
 </body>
 </html>
