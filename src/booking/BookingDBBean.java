@@ -79,8 +79,6 @@ public class BookingDBBean {
 			conn.setAutoCommit(true);
 		}
 		
-		
-		
 		catch(Exception e) {
 			e.printStackTrace();
 		

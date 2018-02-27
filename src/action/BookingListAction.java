@@ -26,6 +26,19 @@ public class BookingListAction implements CommandAction {
 		
 		System.out.println("aaaa::"+confirmList.size());
 		
+//		String[] img = {"../../img/1.png","../../img/2.png","../../img/3.png","../../img/4.png","../../img/5.png"};
+//		for(int i = 0; i<50;i++){
+//			int temp = (int)Math.random()*5;
+//			int temp2 = (int)Math.random()*5;
+//			
+//			String copy=img[temp];
+//			
+//			img[temp] = img[temp2];
+//			img[temp2] = copy;
+//			
+//		}
+//		
+//		request.setAttribute("img", img);
 		request.setAttribute("confirmList", confirmList);
 		request.setAttribute("errorpage", "0");
 		
