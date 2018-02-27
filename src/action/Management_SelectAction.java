@@ -17,11 +17,11 @@ public class Management_SelectAction implements CommandAction {
 			EmpDataBean dto = new EmpDataBean();
 			EmpDBBean dao = new EmpDBBean();
 			
-			String adm_id = (String)request.getSession().getAttribute("id");
+			int emp_no = Integer.parseInt((String)request.getParameter("empNo"));
 			
-			dto.setAdmId(adm_id);
+			dto.setEmpNo(emp_no);
 			
-			dto = dao.selectEmp(adm_id);
+			dto = dao.selectEmp(emp_no);
 			
 			request.setAttribute("res", dto);
 			request.setAttribute("errorpage", "0");

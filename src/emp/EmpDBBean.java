@@ -134,7 +134,9 @@ public class EmpDBBean {
 	}
 
 	public boolean checkPwd(String adm_id, String adm_pw) throws Exception {
+		
 		boolean b = false;
+		
 		try {
 			conn = getConnection();
 
@@ -160,21 +162,21 @@ public class EmpDBBean {
 		return b;
 	}
 
-	public EmpDataBean selectEmp(String adm_id) throws Exception {
+	public EmpDataBean selectEmp(int emp_no) throws Exception {
 
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			String sql = "select * from emp where adm_id = ?";
+			String sql = "select * from emp where emp_no = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, adm_id);
+			pstmt.setInt(1, emp_no);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				dto = new EmpDataBean();
-				dto.setEmpNo(rs.getInt("emp_no"));
 				dto.setEmpNm(rs.getString("emp_nm"));
+				dto.setEmpNo(rs.getInt("emp_no"));
 				dto.setStoreNo(rs.getInt("store_no"));
 				dto.setPosition(rs.getString("Position"));
 				dto.setAdmId(rs.getString("adm_id"));
@@ -201,15 +203,16 @@ public class EmpDBBean {
 	public boolean modifyEmp(EmpDataBean dto) throws Exception {
 		
 		boolean b = false;
+		
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			String sql = "update emp set emp_nm=?, Position=? where adm_id=?";
+			String sql = "update emp set emp_nm=?, Position=? where emp_no=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getEmpNm());
 			pstmt.setString(2, dto.getPosition());
-			pstmt.setString(3, dto.getAdmId());
+			pstmt.setInt(3, dto.getEmpNo());
 
 			if (pstmt.executeUpdate() == 1) {
 				b = true;
