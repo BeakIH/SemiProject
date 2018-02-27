@@ -11,8 +11,8 @@
 	width:500px;
 	height:150px;
 	left:5%;
-	background : white;
 	display: none;
+	background : white;
 }
 #inputPwd{
 	position:relative;
@@ -39,7 +39,7 @@
 			<input type="hidden" id="pwd" name="pwd" />
 			<input type="hidden" id="eno" name="eno" value="${res.empNo}"/>
 			<label> 이름 </label> 
-			<input type="text" name="name" class="form-control form-control-lg" value="${res.empNm}" autofocus>
+			<input type="text" name="name" id="nameFocus" class="form-control form-control-lg" value="${res.empNm}">
 		</div>
 		<div class="form-group">
 			<label> 매장번호 </label> <input type="text" name="sNo" class="form-control form-control-lg" value="${res.storeNo}" readOnly>
@@ -106,12 +106,12 @@
 		<hr>
 		<div class="form-group action">
 			<input type="button" value="수정" id="modifyBtn" class="btn btn-lg btn-primary" />
-			<input type="button" value="취소" class="btn btn-lg btn-primary" onClick="history.back();" />
+			<input type="button" value="취소" class="btn btn-lg btn-primary" onClick="location.href='management_list.do?store_no=${res.storeNo}'" />
 		</div>
 	</form>
 		<div class="modalPwd">
-			<label class="control-label pwdLabel">비밀번호 입력 :</label>
-			<input type="password" id ="inputPwd" class="form-control" />
+			<label class="control-label pwdLabel">관리자 비밀번호 입력 :</label>
+			<input type="password" id ="inputPwd" class="form-control"/>
 			<div class="btnDiv">
 				<button class="pwdCheckBtn btn btn-primary">확인</button>
 				<button class="modalCloseBtn btn btn-primary">취소</button>
@@ -119,6 +119,16 @@
 		</div>
 </div>
 <script>
+$(function(){
+	if("${param.check}" == 1){
+		$(".modalPwd").show();
+		$("#inputPwd").focus();
+		
+	}else{
+		var val = $("#nameFocus").val();
+		$("#nameFocus").focus().val('').val(val);
+	}
+});
 $(".pwdCheckBtn").click(function(){
 	  var inputPwd = $("#inputPwd").val();
 	  $("#pwd").val(inputPwd);
@@ -129,5 +139,9 @@ $(".modalCloseBtn").click(function(){
 });
 $("#modifyBtn").click(function(){
 	$(".modalPwd").show();
+	$("#inputPwd").focus();
 });
+var a = function(){
+	$("#inputPwd").focus();
+}
 </script>
