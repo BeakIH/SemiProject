@@ -387,7 +387,7 @@
 						<br>
 						<div class="form-group">
 							<div data-toggle="buttons">
-								 <label class="btn btn-info active"> <span class="fa fa-check"></span> 
+								 <label class="btn btn-info"> <span class="fa fa-check"></span> 
 								<input id="agree" name="agree" type="checkbox" required>
 								</label> <a href="#"><font size="2em">이용약관 및 개인정보 처리방침에동의합니다.(필수)</a></font>
 							</div>
@@ -400,7 +400,7 @@
 								</button>
 							</form>
 							&nbsp;
-							<form action="#">
+							<form action="SigninCon.jsp">
 								<button type="submit" class="btn btn-danger">
 									가입취소<i class="fa fa-times spaceLeft"></i>
 								</button>
