@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html> 
-<head><title> </title></head>
+<head><title>밥은 먹고 다니니</title></head>
 <body> 
 
 
@@ -18,10 +18,6 @@
       </div>
     </div>
   </div>
-</div>
-
-
-
 </div>
 
 </body></html>

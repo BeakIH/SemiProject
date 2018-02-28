@@ -158,7 +158,7 @@
 <c:when test = "${check == 2 }">
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span>관리자 ${name}님, 어서오세요 
         </a>
         <div class="dropdown-menu">
             <a href="/SemiProject/jsp/admin/bookingList.do?store_no=${storeNo }" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>

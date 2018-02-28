@@ -119,13 +119,12 @@
 <c:when test = "${check != null }">
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span>관리자 ${name}님, 어서오세요 
         </a>
         <div class="dropdown-menu">
-            <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
-            
-            <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
-            <a href="my_notifications.html" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
+            <a href="/SemiProject/jsp/admin/bookingList.do?store_no=${storeNo}" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
+            <a href="/SemiProject/jsp/admin/management_list.do?store_no=${storeNo}" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
             <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a> -->
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->

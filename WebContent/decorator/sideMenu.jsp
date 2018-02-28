@@ -150,8 +150,8 @@ function fillInAddress() {
             도움말
         </a>
         <div class="dropdown-menu">
-            <a href="/SemiProject/jsp/sessionMenu/404.jsp" class="dropdown-item">자주묻는 질문</a>
-            <a href="/SemiProject/jsp/sessionMenu/404.jsp" class="dropdown-item"> 1:1 문의</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item">자주묻는 질문</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
     </ul>
@@ -159,13 +159,12 @@ function fillInAddress() {
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="ProfilePre.jsp?id=${memId }" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="user-image" style="background-image:url(' /img/profiles/default.jpg');"></span> ${name }님, 어서오세요 
+          <span class="user-image" style="background-image:url(' /img/profiles/default.jpg');"></span>관리자 ${name }님, 어서오세요 
         </a>
         <div class="dropdown-menu">
-            <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
-            
-            <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
-            <a href="my_notifications.html" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
+            <a href="/SemiProject/jsp/admin/bookingList.do?store_no=${storeNo}" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
+            <a href="/SemiProject/jsp/admin/management_list.do?store_no=${storeNo}" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
             <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a> -->
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
@@ -200,7 +199,7 @@ function fillInAddress() {
                     </a>
                    -->
                   <span class="list-group-item heading"> 매장관리  </span>
-                  <a href="bookingList.do?store_no=${storeNo}" class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="/SemiProject/jsp/admin/bookingList.do?store_no=${storeNo}" class="list-group-item d-flex justify-content-between align-items-center">
                      <span><i class="fa fa-bell"></i> 우리매장 예약현황 </span>
                     <span class="badge badge-primary badge-pill">7</span>
                   </a>
@@ -259,8 +258,8 @@ function fillInAddress() {
         <span class="sr-only">(current)</span>
         </a>
       <div class="dropdown-menu">
-            <a href="main.do" class="dropdown-item">밥사조 이야기</a>
-            <a href="main.do" class="dropdown-item">밥사조 식구들</a>
+            <a href="/SemiProject/jsp/storeList/main.do" class="dropdown-item">밥사조 이야기</a>
+            <a href="/SemiProject/jsp/storeList/main.do" class="dropdown-item">밥사조 식구들</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -282,8 +281,8 @@ function fillInAddress() {
             매장소식
         </a>
         <div class="dropdown-menu">
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">공지사항</a>
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"> 매장별 이용후기 </a>
+            <a href="/SemiProject/notice/notice.do" class="dropdown-item">공지사항</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 매장별 이용후기 </a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -291,8 +290,8 @@ function fillInAddress() {
             도움말
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
-            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item">자주묻는 질문</a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>     
        <!--
@@ -416,10 +415,10 @@ function fillInAddress() {
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name }님, 어서오세요 
         </a>
         <div class="dropdown-menu">
-            <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 내 예약보기  </a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-bell"></i> 내 예약보기  </a>
             
-            <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 내 쿠폰보기 <a>
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 내가 쓴 글보기 </a>
+            <a href="/SemiProject/jsp/sessionMenu/MyCoupon.do" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 내 쿠폰보기 <a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 내가 쓴 글보기 </a>
             <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a> -->
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
@@ -446,20 +445,20 @@ function fillInAddress() {
                 <div class="list-group no-border list-unstyled">
                 
                   <span class="list-group-item heading"> BABSAZO 즐기기 </span>
-                  <a href="/jsp/sessionMenu/404.jsp" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"> </i> 예약확인  </a>
-                  <a href="/jsp/sessionMenu/404.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한  BABSAZO</span>
+                  <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item"><i class="fa fa-fw fa-plus-square-o"> </i> 예약확인  </a>
+                  <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> 찜한  BABSAZO</span>
                     <span class="badge badge-primary badge-pill">10</span>
                     </a>
-                  <a href="/jsp/sessionMenu/404.jsp" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
+                  <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> 즐겨찾는 BABSAZO</span>
                     <span class="badge badge-primary badge-pill">7</span>
                     </a>
                   <span class="list-group-item heading"> 내 계정 관리</span>
-                  <a href="../sessionMenu/ProfilePre.jsp" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> ${name}님 정보</a>
-                  <a href="../sessionMenu/ChangePWPre.jsp" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
-                  <a href="../sessionMenu/MyCoupon.do" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 내쿠폰보기</a>
-                  <a href="../sessionMenu/NotificationPre.jsp" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
-              <a href="../sessionMenu/MembershipPre.jsp" class="list-group-item active"><i class="fa fa-bitcoin"></i> BABSAZO 멤버십</a>
-              <a href="../sessionMenu/PaymentsPre.jsp" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
+                  <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> ${name}님 정보</a>
+                  <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 비밀번호 변경</a>
+                  <a href="/SemiProject/jsp/sessionMenu/MyCoupon.do" class="list-group-item"><i class="fa fa-fw fa-lock"></i> 내쿠폰보기</a>
+                  <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> BABSAZO 알림</a>
+              <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item active"><i class="fa fa-bitcoin"></i> BABSAZO 멤버십</a>
+              <a href="/SemiProject/jsp/sessionMenu/404.do" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> 결제 정보</a>
                   <!-- <a href="../sessionMenu/SetAccount.jsp" class="list-group-item"><i class="fa fa-fw fa-cog"></i> 계정 설정</a> -->
                 </div>
               </div>
@@ -476,8 +475,6 @@ function fillInAddress() {
   </div>
 </div>
 </c:when>
-
-
 
 </c:choose>
 <!-- 푸터 START -->
