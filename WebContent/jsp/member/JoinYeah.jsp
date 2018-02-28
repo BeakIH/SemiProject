@@ -164,7 +164,7 @@
                       	<div class="form-group">
 								<label for="username"><font size="4em" color="52478B">휴대폰 번호</font></label>
 								<td id="title"></td> <input type="tel" name="mem_tel"
-									class="form-control" id="username" placeholder="- 없이 입력해 주세요" required>
+									class="form-control" id="username" placeholder=" 예  ) 010 - 1234 - 5678 " required>
 							</div>
 					
 							<div>
