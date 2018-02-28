@@ -158,34 +158,43 @@ $( document ).ready(function() {
  			
  		}
  		});
-
-
 	
- 
-	
-	
-	/* 날짜  */
- var a = new Date();
- $('#monthText').html((a.getMonth()+1) + "월");
- var b = [];
- var c = a.getMonth()+1;
- var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
- 
- for(var i = a.getDate()+1; i <= 31; i++){
-	 a.setDate(a.getDate()+1);
-	 if(a.getMonth() == c) break;
-	 b.push(new Date(a.getFullYear() + "-" + (a.getMonth()+1) + "-" + i));
+ 	/* 날짜  */
+ 	 var a = new Date();
+ 	 var b = [];
+ 	 var c = a.getMonth()+1;
+ 	 
+ 	 var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+ 	 
+ 	 var d = new Date();
+ 	 d.setDate(d.getDate()+1);
+ 	 $('#monthText').html((d.getMonth()+1) + "월");
+ 	 
+ 	 if(d.getMonth() * 1 != c){
+ 	      for(var i = a.getDate()+1; i <= 31; i++){
+ 	       a.setDate(a.getDate()+1);
+ 	       if(a.getMonth() == c) break;
+ 	       b.push(new Date(a.getFullYear() + "-" + (a.getMonth()+1) + "-" + i));
+ 	      
+ 	       }
+ 	 }else{
+ 	    for(var i = 1; i <= 31; i++){
+ 	       a.setDate(a.getDate()+1);
+ 	       if(a.getMonth() == (c + 1)) break;
+ 	       b.push(new Date(a.getFullYear() + "-" + (a.getMonth()+1) + "-" + i));
+ 	       }
+ 	 }
 
-	 }
- var from3_text = "";
- for(var i = 0; i < b.length; i++){
-	 var d = b[i].getDay();
-	 var e = b[i].getFullYear() + "-" + (b[i].getMonth()+1) + "-" + b[i].getDate();
-	 if(b[i].getDay() == 0) from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='color:red; font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
-	 else if(b[i].getDay() == 6) from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='color:blue; font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
-	 else from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
-	 
- }
+ 	    
+ 	 var from3_text = "";
+ 	 for(var i = 0; i < b.length; i++){
+ 	    var d = b[i].getDay();
+ 	    var e = b[i].getFullYear() + "-" + (b[i].getMonth()+1) + "-" + b[i].getDate();
+ 	    if(b[i].getDay() == 0) from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='color:red; font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
+ 	    else if(b[i].getDay() == 6) from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='color:blue; font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
+ 	    else from3_text = from3_text + "<label><input type='radio' style='width:35px;' value='" + e + "' name='chk1' /><span style='font-weight:bold; font-size: 16px;'>" + b[i].getDate() + "일 " + week[b[i].getDay()] + "</span></label><br />";
+ 	    
+ 	 }
  //div id로 바꾸고 이름정해주기
  $('form[name="form3"]').html(from3_text);
 

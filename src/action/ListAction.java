@@ -114,6 +114,8 @@ public class ListAction implements CommandAction {//글 목록 처리
 					articleList=dbPro.getSearchSal(search, searchn, iminSal, imaxSal);
 				}else if(iCateName != -1) {// 음식종류 + 검색어
 					articleList=dbPro.getSearchFood(search, searchn, iCateName);
+				}else if(iSortValue != -1) {
+					articleList=dbPro.getSearchSort(search, searchn, iSortValue);
 				}else {// 검색어만 입력한 경우
 					System.out.println("여기돌아야함~~~~~~~~~~~~");
 					articleList = dbPro.getArticles(1, 10, searchn, search);

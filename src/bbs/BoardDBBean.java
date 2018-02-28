@@ -94,15 +94,11 @@ public class BoardDBBean {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-
-
-		
 		int x = 0;
 
 		try {
 			conn = getConnection();
 			if (opt == null) {
-
 				pstmt = conn.prepareStatement("select count(*) from board");
 				rs = pstmt.executeQuery();
 				if (rs.next()) {
@@ -123,7 +119,8 @@ public class BoardDBBean {
 				}
 
 			} else if (opt.equals("A")) {
-				pstmt = conn.prepareStatement("select count(*) from board where b_content like '%" + condition + "%' and B_TITLE like '%" + condition + "%'");
+				System.out.println("count 출력하는 메서드 전체");
+				pstmt = conn.prepareStatement("select count(*) from board where b_content like '%" + condition + "%' or B_TITLE like '%" + condition + "%'");
 				rs = pstmt.executeQuery();
 				if (rs.next()) {
 					x = rs.getInt(1);
@@ -160,7 +157,8 @@ public class BoardDBBean {
 		ResultSet rs = null;
 		List articleList = null;
 		
-		/*System.out.println("opt::"+opt);*/
+		System.out.println("메서드 opt::"+opt);
+		System.out.println("메서드 condition::"+condition);
 		
 		try {
 			if (opt == null) {
@@ -255,11 +253,12 @@ public class BoardDBBean {
 				}
 
 			}else if (opt.equals("A")) {
+				System.out.println("전체일때 확인");
 				conn = getConnection();
 				pstmt = conn.prepareStatement("select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm,r "
 						+ "from (select B_NO,EMP_NO,B_TITLE,EMP_NM,B_CONTENT,POST_DATE,B_VIEW_CNT, store_no, board_pw, store_nm, rownum r "
 						+ "from (select b.b_no B_NO,b.emp_no EMP_NO,b.b_title B_TITLE,b.emp_nm EMP_NM,b.b_content B_CONTENT,b.post_date POST_DATE,b.b_view_cnt B_VIEW_CNT, b.store_no store_no, b.board_pw board_pw, s.store_nm store_nm "
-						+ "from board b inner join store_list s on b.store_no = s.store_no where B_CONTENT like '%"+condition+"%' and b_title like '%"+condition+"%') order by B_NO desc) where r >= ? and r <= ? ");
+						+ "from board b inner join store_list s on b.store_no = s.store_no where B_CONTENT like '%"+condition+"%' or b_title like '%"+condition+"%') order by B_NO desc) where r >= ? and r <= ? ");
 				pstmt.setInt(1, start);
 				pstmt.setInt(2, end);
 				rs = pstmt.executeQuery();
@@ -318,7 +317,7 @@ public class BoardDBBean {
 			pstmt.setInt(1, bno);
 			pstmt.executeUpdate();
 
-			pstmt = conn.prepareStatement("select * from board where b_no = ?");
+			pstmt = conn.prepareStatement("select * from board b inner join store_list s on b.store_no= s.store_no where b_no = ?");
 			pstmt.setInt(1, bno);
 			rs = pstmt.executeQuery();
 
@@ -333,7 +332,7 @@ public class BoardDBBean {
 				article.setB_view_cnt(rs.getInt("b_view_cnt"));
 				article.setStore_no(rs.getInt("store_no"));
 				article.setBoard_pw(rs.getString("board_pw"));
-				article.setStore_nm(rs.getString("store_no"));
+				article.setStore_nm(rs.getString("store_nm"));
 
 			}
 		} catch (Exception ex) {

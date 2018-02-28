@@ -12,9 +12,11 @@
 .top_title_faq .stit_area span { line-height: 16px; vertical-align: middle; }
 .top_title_faq .stit_area .check_tit_area{margin-left:30px;}
 .top_title_faq .stit_area .check_num, .top_title_faq .stit_area .regist_day{margin-left:9px;font-size:12px ;font-family:'Verdana'; color: #222;}
-.view_area{padding:35px 13px;border-bottom:solid 1px #b8b6aa; line-height: 24px;}
+.view_area{padding:35px 13px;border-bottom:solid 1px #b8b6aa; line-height: 100%;}
 .view_area p { min-height: 24px; }
 .customer_btn{margin:20px 0px 30px 0px;text-align:right;}
+.list_title_u{list-style:none;margin-bottom:0px;padding-left:0px;}
+.title_content{width:30px; text-align:center;}
 
 .btm_sup_list{overflow:hidden;border-top:solid 1px #b8b6aa;border-bottom:solid 1px #b8b6aa;font-size:13px;}
 .btm_sup_list .line_sup_next{overflow:hidden;padding:15px 19px 12px 13px;}
@@ -83,15 +85,13 @@
 .inquiry_data_table .inquiry_title span{font-size:16px;font-weight: bold;color:#222222;}
 .inquiry_data_table .inquiry_required{position: absolute; right: 0; top:0;}
 .inquiry_data_table .inquiry_data{width:100%;border-top: hidden;}
-.inquiry_data_table .inquiry_data th{width:371px\9;height:60px;border-bottom:0px solid #c9c9c9;color: #36271d;background-color: #f2f0ef;}
+.inquiry_data_table .inquiry_data th{width:125px;height:60px;border-bottom:0px solid #c9c9c9;color: #36271d;background-color: #f2f0ef;}
 .inquiry_data_table .inquiry_data th span{padding-left:13%;font-size: 15px;font-weight: bold;}/* 2015-08-10 폰트사이즈 수정 */
 .inquiry_data_table .inquiry_data th span.req{padding-left:5px;color:#cc0000;}
 .inquiry_data_table .inquiry_data td{padding-left:15px;border-bottom:0px solid #c9c9c9;}
 .inquiry_data_table .inquiry_data td select{width:200px;padding:10px 0 9px 0;line-height:32px;}
-.inquiry_data_table .inquiry_data td input.input_txt{padding:0px 12px;width:50%;width:549px\9;height:34px;border:1px solid #d0d0d0;-webkit-appearance:none;border-radius:0;line-height:34px}
-.inquiry_data_table .inquiry_data td textarea{padding:0px 0px;width:90%;width:752px\9;height:180px;margin:12px 0; border:1px solid #d0d0d0;resize: none;-webkit-appearance:none;border-radius:0; font-size: 13px;}
 .inquiry_data_table .inquiry_data theard th{visibility:hidden;position:absolute}
-.email_attach_file{width:90%}
+
 
 /* inquiry_privacy */
 .privacy_area{margin-bottom:49px}

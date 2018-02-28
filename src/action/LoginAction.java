@@ -30,6 +30,7 @@ public class LoginAction implements CommandAction {
          request.getSession().setAttribute("admYn", result.get("admYn"));
          request.getSession().setAttribute("storeNo", result.get("storeNo"));
          request.getSession().setAttribute("storeNm", result.get("storeNm"));
+         request.getSession().setAttribute("empno", result.get("empno"));
       }
       
       //메뉴 상세 페이지에서 로그인 이후 이전 페이지로 돌아가는 메서드

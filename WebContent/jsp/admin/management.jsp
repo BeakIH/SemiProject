@@ -35,7 +35,7 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="item-image">
-							<img src="../../img/profiles/기본이미지.jpg" class="img-fluid" alt="">
+							<img src="../../img/profiles/default.jpg" class="img-fluid" alt="">
 						</div>
 					</div>
 					<div class="col-md-9">

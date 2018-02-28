@@ -16,6 +16,8 @@ public class NoticeAction implements CommandAction {//글목록 처리
     public String requestPro(HttpServletRequest request,
         HttpServletResponse response)throws Throwable {
        
+    	request.setCharacterEncoding("UTF-8");
+    	
         String pageNum = request.getParameter("pageNum");//페이지 번호
         
         if (pageNum == null) {
@@ -34,9 +36,22 @@ public class NoticeAction implements CommandAction {//글목록 처리
         @SuppressWarnings("rawtypes")
 		List articleList = null;
         BoardDBBean dbPro = BoardDBBean.getInstance();//DB연동
+
         count = dbPro.getArticleCount(opt, condition);//전체 글의 수
+        /*System.out.println("메서드 돌기 전 후 count::"+count);
+        System.out.println("메서드 돈 후 count::"+count);*/
+        
+        /*Enumeration params = request.getParameterNames();
+        System.out.println("----------------------------");
+        while (params.hasMoreElements()){
+            String name = (String)params.nextElement();
+            System.out.println(name + " : " +request.getParameter(name));
+        }
+        System.out.println("----------------------------");*/
        
         if (count > 0) {
+        	System.out.println("메서드전 opt::"+opt);
+        	System.out.println("메서드전 condition::"+condition);
 			articleList = dbPro.getArticles(startRow, endRow, opt, condition);//현재 페이지에 해당하는 글 목록
         } else {
             articleList = Collections.EMPTY_LIST;

@@ -119,7 +119,7 @@ $(function(){
 	    	}else if(getParameters('floor_no')!=undefined){// 층만 선택한 상태에서 금액입력
 	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&floor_no='+getParameters('floor_no');
 	    	}else{// 가격만 입력받은 경우
-		    	alert('여기?');
+		    	/* alert('여기?'); */
 	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
 	    	} 
 	    }
@@ -140,7 +140,7 @@ $(function(){
 	    	}else if(getParameters('floor_no')!=undefined){// 층만 선택한 상태에서 금액 입력
 	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val()+'&floor_no='+getParameters('floor_no');
 	    	}else{// 가격만 입력받은 경우
-		    	alert('여기?');
+		    	/* alert('여기?'); */
 	    		location.href='list.do?maxSal='+$('.form-group input#max').val()+'&minSal='+$('.form-group input#min').val();
 	    	} 
 	    }
@@ -242,7 +242,7 @@ $(function(){
 		}else if(getParameters('search')!=undefined && getParameters('searchn')!=undefined){
 			location.href='list.do?sortValue='+$(this).val()+'&search='+getParameters('search')+'&searchn='+getParameters('searchn');
 		}else{// 모든 값에 대한 정렬 ( 항목선택 x )
-			alert('검색한 값이 없는경우');
+			/* alert('검색한 값이 없는경우'); */
 			location.href='list.do?sortValue='+$(this).val();
 		}
 	});
@@ -300,7 +300,7 @@ $(function(){
         </a>
         <div class="dropdown-menu">
             <a href="../../notice/notice.do" class="dropdown-item">공지사항</a>
-            <a href="/jsp/sessionMenu/404.jsp" class="dropdown-item">매장별 이용후기</a>
+            <a href="../sessionMenu/404.do" class="dropdown-item">매장별 이용후기</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -308,29 +308,27 @@ $(function(){
          	도움말
         </a>
         <div class="dropdown-menu">
-            <a href="agent_list.html" class="dropdown-item">자주묻는 질문</a>
-            <a href="agent.html" class="dropdown-item"> 1:1 문의</a>
+            <a href="../sessionMenu/404.do" class="dropdown-item">자주묻는 질문</a>
+            <a href="../sessionMenu/404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
 					</ul>
 
 					<ul class="navbar-nav ml-auto">
-      
-
 <c:choose>
 <c:when test= "${check==null}">
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 안녕하세요  </a> 
         <div class="dropdown-menu">
-            <a href="my_profile.html" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
-            <a href="my_password.html" class="dropdown-item"> <i class="fa fa fa-utensils"></i> 매장조회</a> 
+            <a href="/SemiProject/jsp/storeList/main.do" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item"> <i class="fa fa fa-utensils"></i> 매장조회</a> 
             <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a> -->
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
              <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
         </div>
-      </li> 
+      </li>
       <div>
       <button class="btn btn-primary" type="button" style="margin-top:20px" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
        <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> -->
@@ -339,19 +337,18 @@ $(function(){
     </ul>
 
 				</div>
-			</div> 
+			</div>
 		</nav>
 </c:when>
-<c:when test = "${check != null }">
+<c:when test = "${check == 1 }">
       <li class="nav-item dropdown user-account">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
         </a>
         <div class="dropdown-menu">
-            <a href="/jsp/admin/bookingList.jsp" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
-            
-            <a href="jsp/admin/staffInfo.jsp" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
-            <a href="my_notifications.html" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-bell"></i> 내 예약보기  </a>
+            <a href="/SemiProject/jsp/sessionMenu/MyCoupon.do" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 내 쿠폰보기 <a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 내가 쓴 글보기 </a>
             <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
             <a href="my_payments.html" class="dropdown-item">Payments</a> -->
             <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
@@ -359,7 +356,7 @@ $(function(){
         </div>
       </li>
       <div>
-      <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i>  </a></button> -->
+      <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button> -->
        <button class="btn btn-primary" type="button" style="margin-top:20px" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button>
        <!-- <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li> -->
     	</div>
@@ -367,10 +364,35 @@ $(function(){
 
 				</div>
 			</div>
-		</nav>
+		</nav> 
+</c:when>
+<c:when test = "${check == 2 }">
+      <li class="nav-item dropdown user-account">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
+        </a>
+        <div class="dropdown-menu">
+            <a href="/SemiProject/jsp/admin/bookingList.do?store_no=${storeNo }" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
+            <a href="/SemiProject/jsp/admin/management_list.do?store_no=${storeNo }" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
+
+            <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
+            <a href="my_payments.html" class="dropdown-item">Payments</a> -->
+            <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
+             <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
+        </div>
+      </li>
+      <div>
+      <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button> -->
+       <button class="btn btn-primary" type="button" style="margin-top:20px" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button>
+       <!-- <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li> -->
+    	</div>
+    </ul>
+				</div>
+			</div>
+		</nav> 
 </c:when>
 </c:choose>
-
 	<div class="container">
 		<form>
 			<!-- 나중에 method 속성값 post로 -->

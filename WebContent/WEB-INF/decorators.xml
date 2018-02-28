@@ -10,7 +10,7 @@
          <pattern>/jsp/member/*</pattern>
          <pattern>/jsp/login/*</pattern>
          <pattern>/jap/member/view/*</pattern>
-         <pattern>/notice/*</pattern>
+         <!-- <pattern>/notice/*</pattern> -->
          
          <!-- <pattern>/jsp/storeList/*</pattern> -->
       </decorator>

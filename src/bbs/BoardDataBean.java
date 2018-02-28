@@ -114,9 +114,4 @@ public class BoardDataBean {
 		this.board_pw = board_pw;
 	}
 
-
-
-
-
-	
 }

@@ -4,8 +4,15 @@
 <html> 
 <head><title> </title>
 
+<script>
+var getParameters = function (paramName) {
+    // 리턴값을 위한 변수 선언
+    var returnValue;
 
-    
+    // 현재 URL 가져오기
+    var url = location.href;
+};
+</script>
 </head>
 <body>
 <!-- <div class="container">

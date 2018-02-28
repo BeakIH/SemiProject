@@ -1210,6 +1210,80 @@ public class ListDBBean {
 		return articleList;
 	}
 	
+	// 음식종류 + 검색어
+	public List getSearchSort(String search, int searchn, int iSortValue) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List articleList = null;
+		String sql="";
+		
+		String[] column_name = {"store_info", "store_nm"};
+		String[] column_name1 = { "avg_price", "avg_price", "preference", "avl_tbl_cnt" };
+		
+		try {
+			conn = getConnection();
+			
+			if(iSortValue == 1) {
+				sql = "select * from store_list where "+column_name[searchn]+" like '%"+search+"%' order by "+column_name1[iSortValue]+" asc";
+			}else {
+				sql = "select * from store_list where "+column_name[searchn]+" like '%"+search+"%' order by "+column_name1[iSortValue]+" desc";
+			}
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				articleList = new ArrayList(10);
+				
+				do {
+					ListDataBean article = new ListDataBean();
+					
+					article.setStore_no(rs.getInt("store_no"));
+					article.setEmp_no(rs.getInt("emp_no"));
+					article.setCate_nm(rs.getString("cate_nm"));
+					article.setStore_nm(rs.getString("store_nm"));
+					article.setStore_exp(rs.getString("store_exp"));
+					article.setStore_floor(rs.getString("store_floor"));
+					article.setStore_tel(rs.getString("store_tel"));
+					article.setStore_info(rs.getString("store_info"));
+					article.setStore_exp_dt(rs.getString("store_exp_dt"));
+					article.setTot_tbl_cnt(rs.getInt("tot_tbl_cnt"));
+					article.setAvl_tbl_cnt(rs.getInt("avl_tbl_cnt"));
+					article.setStore_url(rs.getString("store_url"));
+					article.setSimg_root(rs.getString("simg_root"));
+					article.setAvg_price(rs.getInt("avg_price"));
+					article.setPreference(rs.getInt("preference"));
+					article.setCur_tbl_cnt(rs.getInt("cur_tbl_cnt"));
+					article.setPimg_root(rs.getString("pimg_root"));
+					article.setEmp_nm(rs.getString("emp_nm"));
+					
+					articleList.add(article); //// 여기~~~
+				} while (rs.next());
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException ex) {
+				}
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+				}
+		}
+		return articleList;
+	}
+	
 	// 좌측 음식종류별 선택시 정렬하기위함
 	public List getTotalArticles2(int iSortValue,int iCateName) throws Exception {
 		Connection conn = null;

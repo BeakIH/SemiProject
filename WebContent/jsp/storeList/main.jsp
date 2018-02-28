@@ -134,12 +134,91 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
             <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"> 1:1 문의</a>
         </div>
       </li>
-      
     </ul>
     
-    <ul class="navbar-nav ml-auto">
+    <!-- <ul class="navbar-nav ml-auto">
        <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
+    </ul> -->
+    
+    <ul class="navbar-nav ml-auto">
+<c:choose>
+<c:when test= "${check==null}">
+      <li class="nav-item dropdown user-account">
+        <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> 안녕하세요  </a>  -->
+        <div class="dropdown-menu">
+            <a href="/SemiProject/jsp/storeList/main.do" class="dropdown-item"> <i class="fa fa-home"></i> 메인으로 </a>
+            <a href="/SemiProject/jsp/storeList/list.do" class="dropdown-item"> <i class="fa fa fa-utensils"></i> 매장조회</a> 
+            <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
+            <a href="my_payments.html" class="dropdown-item">Payments</a> -->
+            <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
+             <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
+        </div>
+      </li>
+      <div>
+      <button class="btn btn-primary" type="button" style="margin-top:8px" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button>
+       <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button> -->
+       <!-- <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li> -->
+		</div>   
     </ul>
+
+				</div>
+			</div>
+		</nav>
+</c:when>
+<c:when test = "${check == 1 }">
+      <li class="nav-item dropdown user-account">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
+        </a>
+        <div class="dropdown-menu">
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-bell"></i> 내 예약보기  </a>
+            <a href="/SemiProject/jsp/sessionMenu/MyCoupon.do" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 내 쿠폰보기 <a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 내가 쓴 글보기 </a>
+            <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
+            <a href="my_payments.html" class="dropdown-item">Payments</a> -->
+            <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
+             <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
+        </div>
+      </li>
+      <div>
+      <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button> -->
+       <button class="btn btn-primary" type="button" style="margin-top:37px" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button>
+       <!-- <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li> -->
+    	</div>
+    </ul>
+
+				</div>
+			</div>
+		</nav> 
+</c:when>
+<c:when test = "${check == 2 }">
+      <li class="nav-item dropdown user-account">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> ${name}님, 어서오세요 
+        </a>
+        <div class="dropdown-menu">
+            <a href="/SemiProject/jsp/admin/bookingList.do?store_no=${storeNo}" class="dropdown-item"><i class="fa fa-bell"></i> 예약현황 </a>
+            <a href="/SemiProject/jsp/admin/management_list.do?store_no=${storeNo}" class="dropdown-item"><i class="fa fa-fw fa-address-book"></i> 직원조회 <a>
+            <a href="/SemiProject/jsp/sessionMenu/404.do" class="dropdown-item"><i class="fa fa-fw fa-thumbs-up" size = 5px></i> 우리매장후기 </a>
+
+            <!-- <a href="my_membership.html" class="dropdown-item">Membership</a>
+            <a href="my_payments.html" class="dropdown-item">Payments</a> -->
+            <!-- <a href="../login/logutPro.jsp" class="dropdown-item">로그아웃</a> -->
+             <!--  <li class="nav-item add-listing"><a class="nav-link" href="/jsp/login/logout.jsp"><span><i class="fa fa-plus" aria-hidden="true"></i> 로그아웃 </span></a></li> -->
+        </div>
+      </li>
+      <div>
+      <!-- <button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/member/SigninCon.do'"><i class="fa fa-power-off">&nbsp;</i> 로그인 </a></button> -->
+       <button class="btn btn-primary" type="button" style="margin-top:37px" onClick="window.location='/SemiProject/jsp/login/logout.do'"><i class="fa fa-power-off">&nbsp;</i> 로그아웃 </a></button>
+       <!-- <li class="nav-item add-listing"><button class="btn btn-primary" type="button" onClick="window.location='/SemiProject/jsp/login/logout.do'"><span><i class="fa fa-power-off">&nbsp;</i> 로그아웃</span></a></li> -->
+    	</div>
+    </ul>
+				</div>
+			</div>
+		</nav> 
+</c:when>
+</c:choose>
     
   </div>
   </div>
@@ -223,14 +302,14 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
         <div class="row justify-content-md-center">
           <div class="col col-lg-12 col-xl-10">
             <div class="main-title"><span>오늘의 추천식당</span></div>
-            <div class="main-title-description">부연 설명</div>
+            <!-- <div class="main-title-description">부연 설명</div> -->
             <div class="clearfix"></div>
             <div class="mt50 mb50">
               <div class="featured-gallery v2 item-listing grid">
               <div class="row">
                 <div class="col-md-6">
                   <div class="item item-lg">
-                    <div class="item-image" style="background-image:url(../../img/store_img/store_elbonmain.jpg);"><a href="list_info.do?store_no=3">
+                    <div class="item-image" style="background-image:url(../../img/store_img/store_elbonmain.jpg);"><a href="list_info.do?store_no=1032">
                       <div class="item-meta">
                         <div class="item-info">
                           <h3 class="item-title">엘본 더 테이블</h3>
@@ -248,13 +327,13 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="item item-md">
-                        <div class="item-image" style="background-image:url(../../img/store_img/store_gyunghwa.jpg);"><a href="list_info.do?store_no=2">
+                        <div class="item-image" style="background-image:url(../../img/store_img/store_gyunghwa.jpg);"><a href="list_info.do?store_no=1031">
                           <div class="item-meta">
                             <div class="item-info">
                               <h3 class="item-title">경화루</h3>
-                              <div class="item-location"><i class="fa fa-map-marker"></i> 2층 </div>
+                              <div class="item-location"><i class="fa fa-map-marker"></i> 3층 </div>
                             </div>
-                            <div class="item-price">7000원대 <small>중화요리의 절대고수 이연복</small> </div>
+                            <div class="item-price">8000원대 <small>중화요리의 절대고수 이연복</small> </div>
                           </div>
                           <div class="item-badges">
                             <div class="item-badge-right">행사중</div>
@@ -266,11 +345,11 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="item item-sm">
-                        <div class="item-image" style="background-image:url(../../img/store_img/store_layuen.jpg);"><a href="list_info.do?store_no=1">
+                        <div class="item-image" style="background-image:url(../../img/store_img/store_layuen.jpg);"><a href="list_info.do?store_no=1030">
                           <div class="item-meta">
                             <div class="item-info">
                               <h3 class="item-title">라연</h3>
-                              <div class="item-location"><i class="fa fa-map-marker"></i> 1층 </div>
+                              <div class="item-location"><i class="fa fa-map-marker"></i> 2층 </div>
                             </div>
                             <div class="item-price">10000원대 <small>미쉐린 스타쉐프 김성일의 식당</small> </div>
                           </div>
@@ -282,13 +361,13 @@ function closeNav() {// 사이드메뉴 버튼 눌렀을때 나오는 창의 x �
                     </div>
                     <div class="col-sm-6">
                       <div class="item item-sm">
-                        <div class="item-image" style="background-image:url(../../img/store_img/store_manbbo.jpg);"><a href="list_info.do?store_no=4">
+                        <div class="item-image" style="background-image:url(../../img/store_img/store_manbbo.jpg);"><a href="list_info.do?store_no=1033">
                           <div class="item-meta">
                             <div class="item-info">
                               <h3 class="item-title">만뽀</h3>
-                              <div class="item-location"><i class="fa fa-map-marker"></i> 2층</div>
+                              <div class="item-location"><i class="fa fa-map-marker"></i>4층</div>
                             </div>
-                            <div class="item-price">6500원대 <small>전통 일식의 그맛</small> </div>
+                            <div class="item-price">10000원대 <small>전통 일식의 그맛</small> </div>
                           </div>
                           <div class="item-badges">
                             <div class="item-badge-right">행사중</div>
